@@ -1,0 +1,3725 @@
+beginState: s32'dmy'
+  sprite: s32'null', 1
+endState: 
+
+beginState: s32'Trial_genji'
+  upon: (FRAME_STEP)
+    Unknown2347: 1601008238, 0x67656E6A690000000000000000000000000000000000000000000000
+  endUpon: 
+  sprite: s32'null', 120
+endState: 
+
+beginState: s32'Trial_kagura'
+  upon: (FRAME_STEP)
+    Unknown2347: 1601008238, 0x6B616775726100000000000000000000000000000000000000000000
+  endUpon: 
+  sprite: s32'null', 120
+endState: 
+
+beginState: s32'UsedKanri'
+  setLinkObjectDestroyOnDamage: 3
+  sprite: s32'null', 60
+endState: 
+
+beginState: s32'OugiCamera'
+  upon: (IMMEDIATE)
+    cameraTargetSelf: 1
+    upon: (FRAME_STEP)
+      moveToObject: (PLAYER)
+      Unknown2329: 0x01000000030000007B000000160000007B000000
+      storeValue: Mem(SpeedX), Mem(Tmp)
+      velocityXPercent: 50
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 20
+  sprite: s32'null', 100
+  upon: 73
+    deactivateObjectById: (SELF)
+  endUpon: 
+  upon: 36
+    Unknown310: 13, 22, 2, 18, 0, 1
+    clearUpon: 36
+    gotoLabelRequests: s32'End'
+  endIf: 
+endUpon: 
+
+beginLabel: s32'End'
+sprite: s32'null', 1
+resetCamera: 
+endState: 
+beginSubroutine: s32'Genji_Color'
+  setLightColor: -12582887
+endSubroutine: 
+
+beginSubroutine: s32'Kagura_Color'
+  setLightColor: -16449472
+endSubroutine: 
+
+beginState: s32'nrm_206_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 95000, 230000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_206_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_206_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), -50000, 185000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_206_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_207_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 80000, 270000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_207_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_207_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 50000, 215000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_207_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_222_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), -60000, 100000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_222_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_222_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 100000, 80000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_222_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_232_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 0, 130000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_232_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_232_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 0, 200000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_232_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_233_Slash'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    setObjectWidth: 900
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_233_Slash01'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_233_Slash02'
+  sprite: s32'null', 30
+  linkParticle: s32'nrm_233_Slash03'
+endState: 
+
+beginState: s32'nrm_250_Slash01'
+  upon: (IMMEDIATE)
+    linkParticle: s32'cmn_thrust'
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    Unknown289: 60
+    callSubroutine: s32'Genji_Color'
+  endUpon: 
+  sprite: s32'null', 30
+  addPositionX: 224955
+  addPositionY: 132903
+  Unknown1727: 50841
+  setAngleX: 18000
+  setAngleY: 24000
+  setAngle: 330000
+  setObjectWidth: 800
+  setObjectHeight: 1100
+  Unknown180: 1100
+endState: 
+
+beginState: s32'nrm_252_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), -100000, 350000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_252_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_252_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  exPointFReset: (PLAYER), 0, 280000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_252_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_253_Slash'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    setObjectWidth: 1100
+    addPositionX: -60000
+  endUpon: 
+  sprite: s32'null', 6
+  linkParticle: s32'nrm_253_slash01'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_253_slash02'
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_253_slash03'
+  linkObjectPosition: 0
+  stopLinkObject: 0
+  setLinkObjectDestroyOnStateChange: 0
+endState: 
+
+beginState: s32'nrm_210_Slash01'
+  upon: (IMMEDIATE)
+    linkParticle: s32'cmn_thrust'
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    Unknown289: 60
+    callSubroutine: s32'Kagura_Color'
+  endUpon: 
+  sprite: s32'null', 30
+  addPositionX: 269946
+  addPositionY: 216722
+  Unknown1727: 14369
+  setAngleX: 0
+  setAngleY: 352000
+  setAngle: 348000
+  setObjectWidth: 800
+  setObjectHeight: 600
+  Unknown180: 600
+endState: 
+
+beginState: s32'nrm_216_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 150000, 320000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_216_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_216_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), -160000, 72000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_216_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_216_bg_GroundBurst01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    addPositionX: -120000
+    Unknown1727: 50000
+    setObjectSize: 800
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'bg_GroundBurst'
+endState: 
+
+beginState: s32'nrm_217_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 60000, 270000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_217_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_217_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -15
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 150000, 80000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_217_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_225_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 50000, 300000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_225_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_225_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 160000, 180000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_225_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_240_Strike'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    callSubroutine: s32'Kagura_Color'
+    addPositionX: -20000
+  endUpon: 
+  sprite: s32'null', 1
+  linkParticle: s32'nrm_240_Strike01'
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_240_Strike02'
+endState: 
+
+beginState: s32'nrm_242_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), -130000, 80000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_242_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_242_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 130000, 80000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_242_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_242_bg_GroundBurst01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    addPositionX: -180000
+    Unknown1727: 70000
+    setObjectSize: 700
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'bg_GroundBurst'
+endState: 
+
+beginState: s32'nrm_243_Slash'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    setObjectSize: 930
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_243_slash01'
+  sprite: s32'null', 30
+  linkParticle: s32'nrm_243_slash02'
+endState: 
+
+beginState: s32'nrm_260_Slash01'
+  upon: (IMMEDIATE)
+    linkParticle: s32'cmn_thrust'
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    Unknown289: 60
+    callSubroutine: s32'Kagura_Color'
+  endUpon: 
+  sprite: s32'null', 30
+  addPositionX: 234953
+  addPositionY: 255380
+  Unknown1727: 111236
+  setAngleX: 36000
+  setAngleY: 12000
+  setAngle: 348000
+  setObjectWidth: 800
+  setObjectHeight: 800
+  Unknown180: 820
+endState: 
+
+beginState: s32'nrm_262_WeaponChange01'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -15
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 0, 230000
+  createParticle: s32'nrm_WeaponChange', (EX_POINT_F)
+  createParticle: s32'nrm_262_nokosi01', (PLAYER)
+  privateSE: s32'nrm_04_a'
+endState: 
+
+beginState: s32'nrm_262_WeaponChange02'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+    Unknown289: 120
+    Unknown264: -10
+  endUpon: 
+  sprite: s32'null', 1
+  exPointFReset: (PLAYER), 150000, 110000
+  createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
+  createParticle: s32'nrm_262_nokosi02', (PLAYER)
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_263_Slash'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_263_slash01'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_263_slash02'
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_263_slash03'
+endState: 
+
+beginState: s32'nrm_300_Burst'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    Unknown289: 50
+    addPositionX: 212008
+    addPositionY: 211046
+    Unknown1727: 49272
+    setAngleX: 7600
+    setAngleY: 26400
+    setAngle: 181600
+  endUpon: 
+  sprite: s32'null', 10
+  linkParticle: s32'nrm_300_Burst'
+  requestShake: 20000, 20000
+  sprite: s32'null', 50
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'nrm_301_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+      haikuEnd: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 15
+  Unknown2074: 3, 35899, 364164, 84614, 40, 235, 0, 60, 0, 15, 0, 0, 0, 0
+  Unknown2875: 5
+  sprite: s32'null', 1
+  Unknown2074: 3, 11987, 251159, 86943, 128, 1877, -3, 60, 0, 1, 0, 0, 0, 0
+  sprite: s32'null', 15
+  Unknown2074: 3, -15599, 382070, 85413, 138, 2060, -3, 60, 10, 5, 6000, 0, 0, 0
+  sprite: s32'null', 25
+  Unknown2876: 15
+  haikuEnd: 
+  Unknown2074: 3, -15599, 382070, 85413, 138, 2060, -3, 60, 0, 0, 25, 0, 2, 2
+  sprite: s32'null', 1
+  Unknown2582: 
+endState: 
+
+beginState: s32'nrm_303_Burst'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    Unknown289: 50
+    addPositionX: 137083
+    addPositionY: 201395
+    Unknown1727: 180968
+    setAngleX: 0
+    setAngleY: 22000
+    setAngle: 139200
+  endUpon: 
+  sprite: s32'null', 10
+  linkParticle: s32'nrm_300_Burst'
+  requestShake: 20000, 20000
+  sprite: s32'null', 50
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'nrm_303_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+      haikuEnd: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 15
+  Unknown2074: 3, -89307, 393810, 64131, 847, 2719, 0, 60, 0, 15, 0, 0, 0, 0
+  Unknown2875: 5
+  sprite: s32'null', 20
+  Unknown2074: 3, 72806, 374929, -8179, 2888, -1162, 0, 60, 5, 15, 6000, 0, 0, 0
+  sprite: s32'null', 15
+  Unknown2876: 15
+  haikuEnd: 
+  Unknown2074: 3, 72806, 374929, -8179, 2888, -1162, 0, 60, 0, 0, 1, 0, 0, 0
+  sprite: s32'null', 1
+  Unknown2582: 
+endState: 
+
+beginState: s32'nrm_309_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+      haikuEnd: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 15
+  Unknown2074: 3, 46680, 344942, 96228, -341, -1597, 0, 60, 15, 0, 6000, 0, 0, 0
+  Unknown2875: 5
+  sprite: s32'null', 15
+  Unknown2074: 3, 16965, 349527, 96228, -341, -1596, 0, 60, 15, 0, 6000, 0, 0, 0
+  sprite: s32'null', 15
+  Unknown2876: 15
+  haikuEnd: 
+  Unknown2074: 3, 16965, 349527, 96228, -341, -1596, 0, 60, 0, 0, 15, 0, 2, 2
+  sprite: s32'null', 1
+  Unknown2582: 
+endState: 
+
+beginState: s32'Hard_ATK_Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'cmn_hard_atk'
+    addPositionX: 103996
+    addPositionY: 155916
+    Unknown1727: 96826
+    setObjectSize: 2000
+  endUpon: 
+  sprite: s32'null', 40
+endState: 
+
+beginState: s32'nrm_306_Slash_G'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_306_slash01_G'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_306_slash02_G'
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_306_slash03_G'
+  linkObjectPosition: 0
+  stopLinkObject: 2
+  setLinkObjectDestroyOnStateChange: 0
+endState: 
+
+beginState: s32'nrm_306_Slash_K'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_306_slash01_K'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_306_slash02_K'
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_306_slash03_K'
+  linkObjectPosition: 0
+  stopLinkObject: 2
+  setLinkObjectDestroyOnStateChange: 0
+endState: 
+
+beginState: s32'nrm_350_Slash_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkObjectZ: 3
+    flipDirection: 
+    ifNot: Mem(PlayerVal0)
+    endIf: 
+    else: 
+    endElse: 
+  endUpon: 
+  gotoLabelIf: s32'Kagura', Mem(PlayerVal0)
+  beginLabel: s32'Genji'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_350_Slash00_genji'
+  sprite: s32'null', 36
+  linkParticle: s32'nrm_350_Slash01_genji'
+  linkObjectPosition: 0
+  setLinkObjectDestroyOnStateChange: 0
+  endSprite: 
+  exitState: 
+  beginLabel: s32'Kagura'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_350_Slash00_kagura'
+  sprite: s32'null', 36
+  linkParticle: s32'nrm_350_Slash01_kagura'
+  linkObjectPosition: 0
+  setLinkObjectDestroyOnStateChange: 0
+endState: 
+
+beginSubroutine: s32'NRM_HitEffColor_G'
+  Unknown2276: 0, -6274817
+endSubroutine: 
+
+beginState: s32'NRM_SPHitEff_G'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_G'
+  createParticleWithArg2: s32'cmn_hit_sp', (PLAYER)
+endState: 
+
+beginState: s32'NRM_SPHitEff2_Long_G'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_G'
+  createParticleWithArg2: s32'cmn_hit_sp_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle20Minus_HitEff_G'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_G'
+  createArgAngle: 0, -20000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle20_HitEff_G'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_G'
+  createArgAngle: 0, 20000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle45_HitEff_G'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_G'
+  createArgAngle: 0, 45000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle75_HitEff_G'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_G'
+  createArgAngle: 0, 75000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle110Minus_HitEff_G'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_G'
+  createArgAngle: 0, -110000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle190_HitEff_G'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_G'
+  createArgAngle: 0, 190000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle190Minus_HitEff_G'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_G'
+  createArgAngle: 0, -190000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginSubroutine: s32'NRM_HitEffColor_K'
+  Unknown2276: 0, -11501313
+endSubroutine: 
+
+beginState: s32'NRM_SPHitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createParticleWithArg2: s32'cmn_hit_sp', (PLAYER)
+endState: 
+
+beginState: s32'NRM_SPHitEff2_Long_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createParticleWithArg2: s32'cmn_hit_sp_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle20Minus_HitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, -20000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle20_HitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, 20000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle45_HitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, 45000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle75_HitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, 75000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle110Minus_HitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, -110000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle190_HitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, 190000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle190Minus_HitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, -190000
+  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle80Minus_HitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, -80000
+  createParticleWithArg2: s32'cmn_slash_normal', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle80Minus_HitEff_K_Short'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, -80000
+  createParticleWithArg2: s32'cmn_slash_Short', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle210_HitEff_K'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, 210000
+  createParticleWithArg2: s32'cmn_slash_normal', (PLAYER)
+endState: 
+
+beginState: s32'NRM_Angle210_HitEff_K_Short'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'NRM_HitEffColor_K'
+  createArgAngle: 0, 210000
+  createParticleWithArg2: s32'cmn_slash_Short', (PLAYER)
+endState: 
+
+beginState: s32'nrm_400_ray_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    Unknown289: 15
+  endUpon: 
+  sprite: s32'null', 15
+  linkParticle: s32'nrm_400_ray'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  setPositionX: 49994
+  setPositionY: 208331
+  setDepth: 64168
+  privateSE: s32'nrm_02'
+endState: 
+
+beginState: s32'nrm_400_slash_A1_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 0
+    linkObjectPosition: 3
+    Unknown289: 30
+  endUpon: 
+  sprite: s32'null', 3
+  sprite: s32'null', 4
+  stopLinkObject: 3
+  linkParticle: s32'nrm_400_slash_A1'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  setObjectWidth: 400
+  setObjectHeight: 400
+  Unknown180: 1000
+  setPositionX: 213930
+  setPositionY: 203890
+  setDepth: 98029
+  Unknown2268: 0, 700
+  exPointFReset: (PLAYER), 50000, 0
+  createParticleWithArg2: s32'nrm_400_slash_nokosi3', (EX_POINT_F)
+  sprite: s32'null', 1
+  linkParticle: s32'nrm_400_slash_A2'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  createObject: s32'nrm_400_slashA_nokosi', (PLAYER)
+  setPositionX: 55001
+  setPositionY: 203407
+  setDepth: 85998
+  sprite: s32'null', 1
+  Unknown180: 800
+  sprite: s32'null', 8
+  Unknown180: 600
+endState: 
+
+beginState: s32'nrm_400_slash_B1_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 0
+    linkObjectPosition: 3
+    Unknown289: 30
+  endUpon: 
+  sprite: s32'null', 3
+  sprite: s32'null', 4
+  stopLinkObject: 3
+  linkParticle: s32'nrm_400_slash_A1'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  setObjectWidth: 400
+  setObjectHeight: 400
+  Unknown180: 1000
+  setPositionX: 213930
+  setPositionY: 203890
+  setDepth: 98029
+  Unknown2268: 0, 800
+  exPointFReset: (PLAYER), 150000, 0
+  createParticleWithArg2: s32'nrm_400_slash_nokosi2', (EX_POINT_F)
+  sprite: s32'null', 1
+  linkParticle: s32'nrm_400_slash_A2'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  createObject: s32'nrm_400_slashA_nokosi', (PLAYER)
+  setPositionX: 55001
+  setPositionY: 203407
+  setDepth: 85998
+  sprite: s32'null', 1
+  Unknown180: 800
+  sprite: s32'null', 8
+  Unknown180: 600
+endState: 
+
+beginState: s32'nrm_400_slash_D_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 0
+    linkObjectPosition: 3
+    Unknown2327: 1
+    Unknown289: 30
+  endUpon: 
+  sprite: s32'null', 3
+  sprite: s32'null', 4
+  stopLinkObject: 3
+  linkParticle: s32'nrm_400_slash_A1'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  setObjectWidth: 400
+  setObjectHeight: 400
+  Unknown180: 1200
+  setPositionX: 213930
+  setPositionY: 203890
+  setDepth: 98029
+  Unknown2268: 0, 800
+  exPointFReset: (PLAYER), 150000, 0
+  createParticleWithArg2: s32'nrm_400_slash_nokosi2', (EX_POINT_F)
+  sprite: s32'null', 1
+  linkParticle: s32'nrm_400_slash_A2'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  createObject: s32'nrm_400_slashA_nokosi', (PLAYER)
+  setPositionX: 55001
+  setPositionY: 203407
+  setDepth: 85998
+  sprite: s32'null', 1
+  Unknown180: 800
+  sprite: s32'null', 8
+  Unknown180: 600
+endState: 
+
+beginState: s32'nrm_400_slash_A2_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 3
+    linkObjectPosition: 3
+    Unknown289: 15
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_400_slash_A1'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  setObjectWidth: 450
+  setObjectHeight: 500
+  Unknown180: 500
+  setPositionX: 157053
+  setPositionY: 285808
+  setDepth: 101645
+  setAngle: 42800
+  createArgAngle: 0, 37000
+  Unknown2268: 0, 800
+  exPointFReset: (PLAYER), 80000, 80000
+  createParticleWithArg2: s32'nrm_400_slash_nokosi3', (EX_POINT_F)
+  sprite: s32'null', 10
+  linkParticle: s32'nrm_400_slash_A2'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  createObject: s32'nrm_400_slashC_nokosi', (PLAYER)
+  setPositionX: 81943
+  setPositionY: 207972
+  setDepth: 87202
+  setAngle: 42800
+endState: 
+
+beginState: s32'nrm_400_slash_B2_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 3
+    linkObjectPosition: 3
+    Unknown289: 15
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_400_slash_A1'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  setObjectWidth: 500
+  setObjectHeight: 800
+  Unknown180: 800
+  setPositionX: 177033
+  setPositionY: 297796
+  setDepth: 102161
+  setAngle: 40000
+  createArgAngle: 0, 37000
+  Unknown2268: 0, 1000
+  exPointFReset: (PLAYER), 50000, 50000
+  createParticleWithArg2: s32'nrm_400_slash_nokosi2', (EX_POINT_F)
+  sprite: s32'null', 10
+  linkParticle: s32'nrm_400_slash_A2'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  createObject: s32'nrm_400_slashB_nokosi', (PLAYER)
+  setObjectWidth: 400
+  setObjectHeight: 800
+  Unknown180: 800
+  setPositionX: 43981
+  setPositionY: 170000
+  setDepth: 85998
+  setAngle: 40000
+endState: 
+
+beginState: s32'nrm_400_slashA_nokosi'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 2
+    linkObjectPosition: 2
+    Unknown289: 40
+  endUpon: 
+  sprite: s32'null', 40
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  stopLinkObject: 0
+  linkObjectPosition: 0
+  if: Mem(405)
+    linkParticle: s32'nrm_400_SPkira'
+  endIf: 
+  else: 
+    linkParticle: s32'nrm_400_slash_nokosi'
+  endElse: 
+endState: 
+
+beginState: s32'nrm_400_slashB_nokosi'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 2
+    linkObjectPosition: 2
+    Unknown289: 40
+    setPositionX: -27972
+    setPositionY: 0
+    setDepth: 0
+    setAngleX: 0
+    setAngleY: 0
+    setAngle: 41600
+  endUpon: 
+  sprite: s32'null', 40
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  stopLinkObject: 0
+  linkObjectPosition: 0
+  linkParticle: s32'nrm_400_slash_nokosi'
+  if: Mem(405)
+    linkParticle: s32'nrm_400_SPkira'
+  endIf: 
+  else: 
+    linkParticle: s32'nrm_400_slash_nokosi'
+  endElse: 
+endState: 
+
+beginState: s32'nrm_400_slashC_nokosi'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 2
+    linkObjectPosition: 2
+    Unknown289: 40
+    setPositionX: -24975
+    setPositionY: -2997
+    setDepth: -129
+    setAngleX: 0
+    setAngleY: 0
+    setAngle: 41600
+  endUpon: 
+  sprite: s32'null', 40
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  stopLinkObject: 0
+  linkObjectPosition: 0
+  linkParticle: s32'nrm_400_slash_nokosi1'
+endState: 
+
+beginState: s32'nrm_400_slashD_nokosi'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 2
+    linkObjectPosition: 2
+    Unknown289: 40
+    setPositionX: -24975
+    setPositionY: -2997
+    setDepth: -129
+    setAngleX: 0
+    setAngleY: 0
+  endUpon: 
+  sprite: s32'null', 40
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  stopLinkObject: 0
+  linkObjectPosition: 0
+  linkParticle: s32'nrm_400_slash_nokosi1'
+endState: 
+
+beginState: s32'nrm_400_DashSmoke'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 0
+    linkObjectPosition: 2
+    setPositionX: 124943
+  endUpon: 
+  sprite: s32'null', 3
+  sprite: s32'null', 1
+  stopLinkObject: 2
+  createParticle: s32'bg_GroundBurstZlink', (PLAYER)
+endState: 
+
+beginState: s32'nrm_400_Slash1'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 2
+    linkObjectPosition: 2
+    Unknown289: 3
+    flipDirection: 
+    callSubroutine: s32'Genji_Color'
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_400_slash01'
+  privateSE: s32'nrm_12_2'
+endState: 
+
+beginState: s32'nrm_400_Slash2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    stopLinkObject: 2
+    linkObjectPosition: 2
+    Unknown289: 2
+    flipDirection: 
+    callSubroutine: s32'Genji_Color'
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_400_slash02'
+  privateSE: s32'nrm_12_2'
+endState: 
+
+beginState: s32'nrm_400_EXSlash_Matome'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+  endUpon: 
+  sprite: s32'null', 2
+  ignoreFinishStop: 1
+  linkParticle: s32'nrm_400_EXbomb'
+  setAngleX: 17600
+  setAngleY: 237600
+  setAngle: 286000
+  setObjectSize: 1500
+  cameraShake: s32'ShakeTate', 2500, 0, 10, 0
+  createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
+  runOnObject: (PREVIOUS)
+  setAngleX: 0
+  setAngleY: 344800
+  setAngle: 334400
+  addPositionY: 52947
+  endRunOnObject: 
+  privateSE: s32'nrm_03_2'
+  sprite: s32'null', 2
+  createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
+  runOnObject: (PREVIOUS)
+  setAngleX: 0
+  setAngleY: 350400
+  setAngle: 199200
+  addPositionY: -75924
+  endRunOnObject: 
+  sprite: s32'null', 2
+  createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
+  runOnObject: (PREVIOUS)
+  setAngleX: 24000
+  setAngleY: 312800
+  setAngle: 228000
+  endRunOnObject: 
+  sprite: s32'null', 2
+  createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
+  runOnObject: (PREVIOUS)
+  setAngleX: 0
+  setAngleY: 352000
+  setAngle: 351200
+  endRunOnObject: 
+  sprite: s32'null', 2
+  createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
+  runOnObject: (PREVIOUS)
+  setAngleX: 344000
+  setAngleY: 60800
+  setAngle: 319200
+  addPositionX: -66933
+  addPositionY: 31968
+  endRunOnObject: 
+  sprite: s32'null', 60
+  ignoreFinishStop: 0
+  createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
+  runOnObject: (PREVIOUS)
+  setObjectSize: 800
+  addPositionX: 25015
+  addPositionY: 120978
+  setAngleX: 344000
+  setAngleY: 335600
+  setAngle: 196800
+  endRunOnObject: 
+endState: 
+
+beginState: s32'nrm_400_++Slash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+  endUpon: 
+  sprite: s32'null', 5
+  linkParticle: s32'nrm_400_slash_A3'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  ignoreFinishStop: 1
+  sprite: s32'null', 30
+  ignoreFinishStop: 0
+endState: 
+
+beginState: s32'nrm_400_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'Land'
+      clearUpon: (SIGNAL_A)
+    endUpon: 
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+      haikuEnd: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 5
+  Unknown2075: 22, 3, -40000, 160000, 280000, 0, 0, 0, -100000, 50, 60, 0, 5, 0, 0, 2, 2
+  Unknown2875: 5
+  sprite: s32'null', 35
+  Unknown2075: 22, 3, -40000, 160000, 280000, 0, 0, 0, -120000, 50, 60, 35, 0, 6000, 0, 2, 2
+  sprite: s32'null', 15
+  Unknown2075: 22, 3, -40000, 160000, 280000, 0, 0, 0, -120000, 50, 60, 0, 0, 1, 0, 2, 2
+  Unknown2876: 15
+  haikuEnd: 
+  sprite: s32'null', 1
+  Unknown2582: 
+endState: 
+
+beginState: s32'nrm_401_Thrust'
+  upon: (IMMEDIATE)
+    linkParticle: s32'cmn_thrust'
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    Unknown289: 60
+    callSubroutine: s32'Genji_Color'
+  endUpon: 
+  sprite: s32'null', 30
+  addPositionX: 160000
+  addPositionY: 340115
+  Unknown1727: -110270
+  setAngleX: 112000
+  setAngleY: 342000
+  setAngle: 52000
+  setObjectWidth: 600
+  setObjectHeight: 750
+  Unknown180: 750
+endState: 
+
+beginState: s32'nrm_401_Slash'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_401_slash01'
+  createArgAngle: 0, 30000
+  exPointFReset: (PLAYER), 50000, 0
+  createParticleWithArg2: s32'nrm_cmn_GenjiNokosi', (EX_POINT_F)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_401_slash02'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_401_slash03'
+  createParticle: s32'nrm_401_slash_nokosi01', (PLAYER)
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_401_slash04'
+endState: 
+
+beginState: s32'nrm_401_Slash++'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_401_slash01'
+  createArgAngle: 0, 30000
+  exPointFReset: (PLAYER), 50000, 0
+  createParticleWithArg2: s32'nrm_cmn_GenjiNokosi', (EX_POINT_F)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_401_slash02'
+  sprite: s32'null', 1
+  linkParticle: s32'nrm_401_slash03'
+  createParticle: s32'nrm_401_slash_nokosi01', (PLAYER)
+  stopLinkObject: 0
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_401_slash04'
+endState: 
+
+beginState: s32'nrm_402_SpeedEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkObjectZ: 3
+    linkParticle: s32'nrm_402_SpeedLoop'
+    upon: (SIGNAL_A)
+      clearUpon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  beginLabel: s32'Loop'
+  sprite: s32'null', 6
+  createParticle: s32'nrm_402_SpeedNokosi', (PLAYER)
+  gotoLabel: s32'Loop'
+  beginLabel: s32'End'
+  sprite: s32'null', 30
+  linkParticle: s32'nrm_402_SpeedEnd'
+  createParticle: s32'nrm_402_SpeedNokosi', (PLAYER)
+  sprite: s32'null', 30
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_403_Slash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    flipDirection: 
+    stopLinkObject: 2
+    linkObjectSize: 3
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_403_Slash01'
+  createArgAngle: 0, 35000
+  exPointFReset: (PLAYER), -100000, 0
+  createParticleWithArg2: s32'nrm_cmn_KaguraNokosi', (EX_POINT_F)
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_403_Slash02'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_403_Slash03'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_403_Slash04'
+  createObject: s32'nrm_403_Slash_nokosi', (PLAYER)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_403_Slash05'
+  sprite: s32'null', 5
+  setLinkObjectDestroyOnStateChange: 0
+  stopLinkObject: 0
+  sprite: s32'null', 30
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'nrm_403_Slash_nokosi'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    Unknown289: 100
+    setPositionX: -75896
+    setPositionY: 98901
+    setDepth: 4257
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_403_Slash_nokosi'
+  setLinkObjectDestroyOnDamage: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'nrm_404_Slash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    flipDirection: 
+    Unknown289: 100
+    addPositionY: -20000
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_404_slash01'
+  createObject: s32'nrm_404_Slash_nokosi', (PLAYER)
+  privateSE: s32'nrm_05_3'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_404_slash02'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_404_slash03'
+  sprite: s32'null', 30
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_404_Slash_nokosi'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    Unknown289: 40
+  endUpon: 
+  sprite: s32'null', 40
+  linkParticle: s32'nrm_404_slash_nokosi'
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+  privateSE: s32'nrm_04_b'
+endState: 
+
+beginState: s32'nrm_404_Slash++'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash11exAir'
+  addPositionX: 0
+  addPositionY: 242416
+  Unknown1727: -74485
+  setAngleX: 348400
+  setAngleY: 337600
+  setAngle: 1600
+  privateSE: s32'nrm_05_3'
+  sprite: s32'null', 70
+  linkParticle: s32'nrm_405_slash12exAir'
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_405_Slash01'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_405_slash01'
+  createParticleWithArg2: s32'nrm_405_nokosi01', (PLAYER)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash02'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash03'
+  sprite: s32'null', 20
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_405_Slash02'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash04'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_405_slash05'
+  createParticleWithArg2: s32'nrm_405_nokosi02', (PLAYER)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash06'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash07'
+  sprite: s32'null', 20
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_405_Slash03'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash08'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash09'
+  createParticleWithArg2: s32'nrm_405_nokosi03', (PLAYER)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash10'
+  createParticleWithArg2: s32'nrm_405_nokosi04', (PLAYER)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash11'
+  sprite: s32'null', 36
+  linkParticle: s32'nrm_405_slash12'
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_405_Slash03++'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash08'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash09'
+  createParticleWithArg2: s32'nrm_405_nokosi03', (PLAYER)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash10ex'
+  createParticleWithArg2: s32'nrm_405_nokosi04', (PLAYER)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_405_slash11ex'
+  sprite: s32'null', 70
+  linkParticle: s32'nrm_405_slash12ex'
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_405_Slash01_Quick'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_405_slash01'
+  createParticleWithArg2: s32'nrm_405_nokosi01', (PLAYER)
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_405_slash03_quick'
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_405_Slash02_Quick'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_405_slash04'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_405_slash05'
+  createParticleWithArg2: s32'nrm_405_nokosi02', (PLAYER)
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_405_slash07_quick'
+  setLinkObjectDestroyOnDamage: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_407_Strike_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+    setObjectSize: 1400
+    setPositionX: 0
+    setPositionY: -51562
+    setDepth: -103334
+    setAngleX: 4400
+    setAngleY: 0
+    setAngle: 800
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_407_Strike00'
+  createParticle: s32'nrm_407_nokoshi', (PLAYER)
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_407_Strike01'
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_407_Strike02'
+  sprite: s32'null', 20
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'nrm_408_SlashA_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_408_Slash00'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_408_Slash01'
+  sprite: s32'null', 45
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_408_SlashB_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_408_Slash02'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_408_Slash03'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_408_Slash04'
+  sprite: s32'null', 45
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_408_SlashC_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_408_Slash00'
+  sprite: s32'null', 5
+  linkParticle: s32'nrm_408_Slash05'
+  sprite: s32'null', 30
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_430_Burst'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    flipDirection: 
+    addPositionX: -25003
+    addPositionY: 1000
+    Unknown1727: -65934
+    setAngleX: 0
+    setAngleY: 334000
+    setAngle: 0
+    setObjectSize: 800
+  endUpon: 
+  sprite: s32'null', 6
+  requestShake: 10000, 10000
+  linkParticle: s32'nrm_430_Burst'
+  sprite: s32'null', 60
+  stopLinkObject: 2
+endState: 
+
+beginState: s32'nrm_430_BodyAura'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    flipDirection: 
+    stopLinkObject: 2
+    setObjectSize: 800
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_431_BodyAuraLoop'
+endState: 
+
+beginState: s32'nrm_430_Aura'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    flipDirection: 
+    stopLinkObject: 2
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+      clearUpon: (SIGNAL_A)
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_430_AuraLoop'
+  beginLabel: s32'End'
+  sprite: s32'null', 60
+  Unknown191: 15
+  linkParticle: s32'nrm_430_AuraEnd'
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_431_Slash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    flipDirection: 
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_431_Slash01'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_431_Slash02'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_431_Slash03'
+  sprite: s32'null', 1
+  linkParticle: s32'nrm_431_Slash04'
+  sprite: s32'null', 1
+  linkParticle: s32'nrm_431_Slash05'
+  requestShake: 10000, 10000
+  addPositionX: -140
+  addPositionY: -13958
+  Unknown1727: -1064
+  sprite: s32'null', 1
+  linkParticle: s32'nrm_431_Slash06'
+  sprite: s32'null', 60
+  stopLinkObject: 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'nrm_430_PetalsCS'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_430_Petals'
+  setPositionX: -134413
+  setPositionY: 270973
+  setDepth: 62830
+  setAngleX: 400
+  setAngleY: 356000
+  setAngle: 355600
+  setObjectSize: 300
+  sprite: s32'null', 4
+  setPositionX: -121234
+  setPositionY: 270973
+  setDepth: 81667
+  sprite: s32'null', 4
+  setPositionX: -155713
+  setPositionY: 271431
+  setDepth: 114128
+  setObjectSize: 150
+  sprite: s32'null', 4
+  setPositionX: -152703
+  setPositionY: 271431
+  setDepth: 118113
+  sprite: s32'null', 4
+  setPositionX: -150852
+  setPositionY: 271431
+  setDepth: 120471
+  sprite: s32'null', 4
+  setPositionX: -151952
+  setPositionY: 271171
+  setDepth: 134561
+  sprite: s32'null', 4
+  setPositionX: -146528
+  setPositionY: 271171
+  setDepth: 140433
+  sprite: s32'null', 4
+  setPositionX: -139497
+  setPositionY: 272170
+  setDepth: 147532
+  sprite: s32'null', 4
+  setPositionX: -119468
+  setPositionY: 272703
+  setDepth: 147762
+  sprite: s32'null', 8
+  setPositionX: -113987
+  setPositionY: 272703
+  setDepth: 152109
+  sprite: s32'null', 30
+  setPositionX: -111530
+  setPositionY: 270707
+  setDepth: 153830
+endState: 
+
+beginState: s32'nrm_430_AuraCS_Upper'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    ignoreSuperFreezeFromAlly: 1
+    setObjectSize: 150
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_430_CSAura'
+  setPositionX: -83184
+  setPositionY: 258946
+  setDepth: 129851
+  setAngleX: 3200
+  setAngleY: 224400
+  setAngle: 26000
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  setPositionX: -78228
+  setPositionY: 258946
+  setDepth: 133229
+  sprite: s32'null', 4
+  setPositionX: -47616
+  setPositionY: 248250
+  setDepth: 111515
+  setAngleX: 3200
+  setAngleY: 224400
+  setAngle: 19600
+  sprite: s32'null', 4
+  setPositionX: -60474
+  setPositionY: 235359
+  setDepth: 149889
+  setAngleX: 24800
+  setAngleY: 209600
+  setAngle: 14800
+  sprite: s32'null', 4
+  setPositionX: -31944
+  setPositionY: 235359
+  setDepth: 159069
+  setAngleX: 15200
+  setAngleY: 209600
+  setAngle: 14800
+  sprite: s32'null', 4
+  setPositionX: -15283
+  setPositionY: 232404
+  setDepth: 162454
+  setAngleX: 15200
+  setAngleY: 209600
+  setAngle: 22000
+  sprite: s32'null', 15
+  setPositionX: -28593
+  setPositionY: 197654
+  setDepth: 197872
+  setAngleX: 15200
+  setAngleY: 209600
+  setAngle: 21200
+endState: 
+
+beginState: s32'nrm_430_AuraCS_Upper2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    ignoreSuperFreezeFromAlly: 1
+    setObjectSize: 150
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_430_CSAura'
+  setPositionX: -77017
+  setPositionY: 249658
+  setDepth: 73622
+  setAngleX: 3200
+  setAngleY: 28800
+  setAngle: 40000
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  setPositionX: -96742
+  setPositionY: 243043
+  setDepth: 104371
+  setAngleX: 3200
+  setAngleY: 28800
+  setAngle: 358400
+  sprite: s32'null', 4
+  setPositionX: -86277
+  setPositionY: 260064
+  setDepth: 110252
+  setAngleX: 330000
+  setAngleY: 22400
+  setAngle: 358400
+  sprite: s32'null', 4
+  setPositionX: -85969
+  setPositionY: 244128
+  setDepth: 111821
+  setAngleX: 313200
+  setAngleY: 22400
+  setAngle: 358000
+  sprite: s32'null', 4
+  setPositionX: -66745
+  setPositionY: 250086
+  setDepth: 117299
+  setAngleX: 313200
+  setAngleY: 22400
+  setAngle: 18400
+  sprite: s32'null', 4
+  setPositionX: -69868
+  setPositionY: 244176
+  setDepth: 117779
+  setAngleX: 313200
+  setAngleY: 22400
+  setAngle: 18400
+  sprite: s32'null', 15
+  setPositionX: -87542
+  setPositionY: 195826
+  setDepth: 127943
+  setAngleX: 313200
+  setAngleY: 22400
+  setAngle: 18400
+endState: 
+
+beginState: s32'nrm_430_AuraCS_Upper3'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    ignoreSuperFreezeFromAlly: 1
+    setObjectSize: 150
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_430_CSAura'
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  setPositionX: -66649
+  setPositionY: 203025
+  setDepth: 137294
+  setAngleX: 337600
+  setAngleY: 16800
+  setAngle: 27200
+  sprite: s32'null', 4
+  setPositionX: -62303
+  setPositionY: 210842
+  setDepth: 152858
+  setAngleX: 55600
+  setAngleY: 172800
+  setAngle: 328400
+  sprite: s32'null', 15
+  setPositionX: -80437
+  setPositionY: 161411
+  setDepth: 194979
+  setAngleX: 20000
+  setAngleY: 163600
+  setAngle: 340800
+endState: 
+
+beginState: s32'nrm_430_AuraCS'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    ignoreSuperFreezeFromAlly: 1
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 90
+  linkParticle: s32'nrm_430_TrailAura1'
+endState: 
+
+beginState: s32'nrm_430_ButterFlyCS'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 90
+  linkParticle: s32'nrm_430_ButterFly'
+endState: 
+
+beginState: s32'nrm_430_LineAuraCS'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 90
+  linkParticle: s32'nrm_430_LineAura'
+endState: 
+
+beginState: s32'nrm_440_Slash_Center'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    flipDirection: 
+    stopLinkObject: 2
+    addPositionX: -50979
+    addPositionY: 202758
+    Unknown1727: 10681
+    setAngleX: 320000
+    setAngleY: 13200
+    setAngle: 2400
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_440_Slash01'
+  sprite: s32'null', 30
+  linkParticle: s32'nrm_440_Slash02'
+  createObject: s32'nrm_440_Slash_CenterSub', (PLAYER)
+  ignoreFinishStop: 1
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_440_Slash_CenterSub'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setAngleX: 320000
+    setAngleY: 13200
+    setAngle: 2400
+  endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'nrm_440_Slash_Nokosi'
+endState: 
+
+beginState: s32'nrm_440_Slash_Up'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    flipDirection: 
+    stopLinkObject: 2
+    addPositionX: -8048
+    addPositionY: 205789
+    Unknown1727: 24995
+    setAngleX: 314800
+    setAngleY: 11000
+    setAngle: 346800
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_440_Slash01'
+  sprite: s32'null', 30
+  linkParticle: s32'nrm_440_Slash02'
+  ignoreFinishStop: 1
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_440_Slash_Down'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    flipDirection: 
+    stopLinkObject: 2
+    addPositionX: -14981
+    addPositionY: 231825
+    Unknown1727: -13950
+    setAngleX: 315200
+    setAngleY: 0
+    setAngle: 26400
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'nrm_440_Slash01'
+  sprite: s32'null', 30
+  linkParticle: s32'nrm_440_Slash02'
+  ignoreFinishStop: 1
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'nrm_440_DashSmoke'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    Unknown289: 120
+  endUpon: 
+  beginLabel: s32'Loop'
+  sprite: s32'null', 10
+  createParticle: s32'bg_GroundBurstZlink', (PLAYER)
+  gotoLabel: s32'Loop'
+endState: 
+
+beginState: s32'nrm_440_HandSpeed'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    Unknown289: 120
+    setObjectSize: 700
+    setAngleY: 174000
+    setAngle: 400
+    addPositionX: -39984
+    addPositionY: 160612
+    Unknown1727: 12023
+  endUpon: 
+  sprite: s32'null', 2147483647
+  linkParticle: s32'nrm_440_HandSpeed'
+endState: 
+
+beginState: s32'nrm_440_SordTwinkle'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    addPositionX: 23928
+    addPositionY: 179670
+    Unknown1727: 58817
+    setObjectSize: 600
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_440_Twinkle'
+endState: 
+
+beginState: s32'nrm_440_Butterflyes'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_440_Butterfly'
+endState: 
+
+beginState: s32'nrm_440_Butterflyes_Front_R'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setObjectSize: 500
+    setPositionX: 217439
+    setPositionY: 202270
+    setDepth: 116894
+    setAngleX: 356000
+    setAngleY: 286000
+    setAngle: 12800
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_440_Butterfly2'
+endState: 
+
+beginState: s32'nrm_440_Butterflyes_Front_C'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setObjectSize: 500
+    setPositionX: 248527
+    setPositionY: 198630
+    setDepth: 6944
+    setAngleX: 305200
+    setAngleY: 270800
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_440_Butterfly3'
+endState: 
+
+beginState: s32'nrm_440_Butterflyes_Front_L'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setObjectSize: 500
+    setPositionX: 150624
+    setPositionY: 195370
+    setDepth: -139003
+    setAngleX: 345200
+    setAngleY: 257200
+    setAngle: 356000
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_440_Butterfly2'
+endState: 
+
+beginState: s32'nrm_440_Butterflyes_Front_U'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setObjectSize: 500
+    setPositionX: 201966
+    setPositionY: 128708
+    setDepth: 6006
+    setAngleX: 355600
+    setAngleY: 270800
+    setAngle: 359600
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_440_Butterfly3'
+endState: 
+
+beginState: s32'nrm_440_AuraCircle1'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    addPositionX: -75876
+    addPositionY: 200039
+    Unknown1727: 5994
+    setAngleX: 12000
+    setAngleY: 4800
+    setAngle: 242400
+  endUpon: 
+  sprite: s32'null', 100
+  linkParticle: s32'nrm_440_CircleAura'
+endState: 
+
+beginState: s32'nrm_440_CSTwinkle'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setObjectSize: 50
+    addPositionX: 204876
+    addPositionY: 202224
+    Unknown1727: -12987
+  endUpon: 
+  sprite: s32'null', 100
+  linkParticle: s32'nrm_440_CSTwinkle'
+endState: 
+
+beginState: s32'nrm_441_BG'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkParticle: s32'nrm_441_BG'
+    setPositionX: 1190316
+    setPositionY: -5052
+    setDepth: -2371
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'Change'
+      clearUpon: (SIGNAL_A)
+    endUpon: 
+    upon: 24
+      gotoLabelRequests: s32'Change2'
+      clearUpon: 24
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 600
+  sceneAddColor: 0, 0, 0
+  sceneMulColor: 235, 255, 250
+  sceneLightColor: 128, 135, 160
+  sceneAmbientColor: 94, 102, 99
+  diffusionFilterToForce: 1
+  diffusionFilterToSaturation: 1000
+  beginLabel: s32'Change'
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_441_BG_BlackOut'
+  sprite: s32'null', 4
+  sceneMulColor: 211, 229, 225
+  sprite: s32'null', 4
+  sceneMulColor: 188, 204, 200
+  sprite: s32'null', 4
+  sceneMulColor: 164, 178, 175
+  sprite: s32'null', 4
+  sceneMulColor: 141, 153, 150
+  sprite: s32'null', 300
+  beginLabel: s32'Change2'
+  sprite: s32'null', 4
+  sceneMulColor: 188, 204, 200
+  sceneLightColor: 140, 148, 176
+  sceneAmbientColor: 84, 91, 89
+  sprite: s32'null', 4
+  sceneMulColor: 211, 204, 225
+  sceneAmbientColor: 75, 81, 79
+  sprite: s32'null', 4
+  sceneMulColor: 235, 255, 250
+  sceneAmbientColor: 65, 71, 69
+  sprite: s32'null', 300
+endState: 
+
+beginState: s32'nrm_441_1stSlash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_1stSlash_01'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_1stSlash_02'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_1stSlash_03'
+endState: 
+
+beginState: s32'nrm_441_BodyBigAura'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkParticle: s32'nrm_441_BodyBigAura'
+  endUpon: 
+  sprite: s32'null', 4
+  setObjectSize: 1500
+  setPositionX: -513324
+  setPositionY: 82229
+  setDepth: -146150
+  setAngleX: 0
+  setAngleY: 280000
+  setAngle: 0
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  setAngleX: 0
+  setAngleY: 279200
+  setAngle: 337200
+  setPositionX: -559138
+  setPositionY: 82229
+  setDepth: -37412
+  sprite: s32'null', 60
+  setPositionX: -473206
+  setPositionY: 68747
+  setDepth: -234497
+  setAngleX: 0
+  setAngleY: 280000
+  setAngle: 320400
+endState: 
+
+beginState: s32'nrm_441_Smoke01'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkParticle: s32'nrm_441_Smoke01'
+  endUpon: 
+  sprite: s32'null', 4
+  setPositionX: -53215
+  setPositionY: 1803
+  setDepth: 79518
+  setObjectSize: 1500
+  setAngleY: 92000
+  sprite: s32'null', 30
+  setObjectSize: 2000
+  setPositionX: 33305
+  setPositionY: 1803
+  setDepth: -111792
+  setAngleY: 92000
+endState: 
+
+beginState: s32'nrm_441_Smoke02'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkParticle: s32'nrm_441_Smoke02'
+  endUpon: 
+  sprite: s32'null', 4
+  setPositionX: 1599019
+  setPositionY: 8207
+  setDepth: -174056
+  setAngleY: 284400
+  sprite: s32'null', 30
+  setPositionX: 1702539
+  setPositionY: 32227
+  setDepth: 249395
+  setAngleY: 247200
+  setObjectSize: 800
+endState: 
+
+beginState: s32'nrm_441_Smoke03'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkParticle: s32'nrm_441_Smoke02'
+  endUpon: 
+  sprite: s32'null', 4
+  setPositionX: 1558938
+  setPositionY: -15564
+  setDepth: -295814
+  setAngleY: 272400
+endState: 
+
+beginState: s32'nrm_441_Smoke04'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkParticle: s32'nrm_441_Smoke03'
+  endUpon: 
+  sprite: s32'null', 30
+  setObjectSize: 1500
+  addPositionX: 914317
+  addPositionY: -7465
+  Unknown1727: 17278
+  setAngleY: 112000
+endState: 
+
+beginState: s32'nrm_441_Smoke05'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkParticle: s32'nrm_441_Smoke04'
+  endUpon: 
+  sprite: s32'null', 4
+  setPositionX: 1466861
+  setPositionY: 209590
+  setDepth: 1066052
+  setAngleX: 342400
+  setAngleY: 111200
+  setAngle: 12000
+  sprite: s32'null', 4
+  setAngleX: 342800
+  setAngleY: 83200
+  setAngle: 1200
+  setPositionX: 1489257
+  setPositionY: 118636
+  setDepth: 1283344
+  sprite: s32'null', 4
+  setAngleX: 342800
+  setAngleY: 80000
+  setAngle: 1200
+  setPositionX: 1538869
+  setPositionY: 90085
+  setDepth: 1400816
+  sprite: s32'null', 30
+  setPositionX: 1526881
+  setPositionY: 55860
+  setDepth: 1408068
+  setAngleX: 342800
+  setAngleY: 80000
+  setAngle: 8400
+endState: 
+
+beginState: s32'nrm_441_Trail'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail01'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail02'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail03'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail04'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail05'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail06'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail07'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail08'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail09'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail10'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail11'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail12'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail13'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail14'
+endState: 
+
+beginState: s32'nrm_441_TrailBloom'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkParticle: s32'nrm_441_TrailBloom'
+  endUpon: 
+  sprite: s32'null', 4
+  setPositionX: 1782590
+  setPositionY: -19006
+  setDepth: 447915
+  sprite: s32'null', 4
+  setPositionX: 1397228
+  setPositionY: 142436
+  setDepth: 182514
+  sprite: s32'null', 4
+  setPositionX: 1774106
+  setPositionY: 151430
+  setDepth: 174344
+  sprite: s32'null', 4
+  setPositionX: 1682326
+  setPositionY: 75242
+  setDepth: 73720
+  sprite: s32'null', 4
+  setPositionX: 1661474
+  setPositionY: 27000
+  setDepth: 87090
+  sprite: s32'null', 4
+  setPositionX: 1644646
+  setPositionY: 50177
+  setDepth: 253837
+  sprite: s32'null', 4
+  setPositionX: 1727648
+  setPositionY: 90567
+  setDepth: 401262
+  sprite: s32'null', 4
+  setPositionX: 1892440
+  setPositionY: 152135
+  setDepth: 505195
+  sprite: s32'null', 4
+  setPositionX: 1908529
+  setPositionY: 165603
+  setDepth: 477306
+  sprite: s32'null', 4
+  setPositionX: 1846139
+  setPositionY: 203581
+  setDepth: 412559
+  sprite: s32'null', 4
+  setPositionX: 1736547
+  setPositionY: 150313
+  setDepth: 363523
+  sprite: s32'null', 4
+  setPositionX: 1792470
+  setPositionY: 49393
+  setDepth: 385259
+  sprite: s32'null', 4
+  setPositionX: 1781162
+  setPositionY: 3011
+  setDepth: 380431
+  sprite: s32'null', 4
+  setPositionX: 1771042
+  setPositionY: -39581
+  setDepth: 376119
+endState: 
+
+beginState: s32'nrm_441_Butterfly01'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_441_ButterFly01'
+  setPositionX: -377924
+  setPositionY: 112865
+  setDepth: 357282
+  setAngleY: 100000
+  setObjectSize: 700
+endState: 
+
+beginState: s32'nrm_441_Butterfly02'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_ButterFly02'
+  setObjectSize: 600
+  setPositionX: -202182
+  setPositionY: 19231
+  setDepth: -458731
+  setAngleX: 0
+  setAngleY: 330000
+  setAngle: 0
+  sprite: s32'null', 60
+  setPositionX: -105362
+  setPositionY: 19231
+  setDepth: -672816
+endState: 
+
+beginState: s32'nrm_441_Butterfly03'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_441_ButterFly03'
+  setObjectSize: 700
+  addPositionX: 996277
+  addPositionY: 182511
+  Unknown1727: -367636
+  setAngleX: 0
+  setAngleY: 4000
+  setAngle: 0
+endState: 
+
+beginState: s32'nrm_441_Butterfly04'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_441_ButterFly04'
+  setObjectSize: 100
+  addPositionX: 1936979
+  addPositionY: 16081
+  Unknown1727: 416312
+  setAngleX: 0
+  setAngleY: 7600
+  setAngle: 0
+endState: 
+
+beginState: s32'nrm_441_Butterfly05'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_441_ButterFly04'
+  setObjectSize: 100
+  addPositionX: -1921736
+  addPositionY: 22522
+  Unknown1727: 461010
+  setAngleX: 356000
+  setAngleY: 142400
+  setAngle: 0
+endState: 
+
+beginState: s32'nrm_441_Butterfly06'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_441_ButterFly05'
+  addPositionX: -1065843
+  addPositionY: 271879
+  Unknown1727: 1874667
+  setAngleX: 0
+  setAngleY: 272000
+  setAngle: 0
+endState: 
+
+beginState: s32'nrm_441_Butterfly07'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_441_ButterFly06'
+  addPositionX: -2082169
+  addPositionY: 44219
+  Unknown1727: 940786
+  setAngleX: 343200
+  setAngleY: 344000
+  setAngle: 14800
+  setObjectSize: 100
+endState: 
+
+beginState: s32'nrm_441_Trail2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_441_trail16'
+  sprite: s32'null', 2
+  linkParticle: s32'nrm_441_trail15'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail17'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail18'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail19'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail20'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail21'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail22'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail23'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_trail24'
+endState: 
+
+beginState: s32'nrm_441_TrailBloom2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_TrailBloom'
+  setPositionX: 1787560
+  setPositionY: 18797
+  setDepth: 386205
+  sprite: s32'null', 2
+  setObjectSize: 250
+  setPositionX: 2019544
+  setPositionY: 65192
+  setDepth: 450413
+  sprite: s32'null', 2
+  setPositionX: 2028441
+  setPositionY: 79727
+  setDepth: 439001
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  setPositionX: 2044216
+  setPositionY: 84067
+  setDepth: 439821
+  sprite: s32'null', 4
+  setPositionX: 2049831
+  setPositionY: 71905
+  setDepth: 477963
+  sprite: s32'null', 4
+  setPositionX: 2039779
+  setPositionY: 54769
+  setDepth: 492772
+  sprite: s32'null', 4
+  setPositionX: 2068182
+  setPositionY: 49799
+  setDepth: 515279
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  setPositionX: 2044857
+  setPositionY: 70523
+  setDepth: 908495
+  sprite: s32'null', 4
+  setPositionX: 2045417
+  setPositionY: 57867
+  setDepth: 916701
+endState: 
+
+beginState: s32'nrm_441_HitSlash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_HitSlash01'
+  setPositionX: 1878056
+  setPositionY: 140442
+  setDepth: 376067
+  setAngleX: 38000
+  setAngleY: 137600
+  setAngle: 356400
+  sprite: s32'null', 4
+  setPositionX: 1927316
+  setPositionY: 143763
+  setDepth: 382014
+  setAngleX: 38000
+  setAngleY: 163200
+  setAngle: 356400
+  sprite: s32'null', 4
+endState: 
+
+beginState: s32'nrm_441_HitSlash2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_HitSlash02'
+  setObjectWidth: 300
+  setObjectHeight: 500
+  Unknown180: 500
+  setPositionX: 1811618
+  setPositionY: -2077
+  setDepth: 388910
+  setAngleX: 0
+  setAngleY: 295200
+  setAngle: 0
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+endState: 
+
+beginState: s32'nrm_441_HitSlash3'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 15
+  linkParticle: s32'nrm_441_HitSlash03'
+endState: 
+
+beginState: s32'nrm_441_SordBake'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_SordBake01'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_SordBake02'
+endState: 
+
+beginState: s32'nrm_441_Ryuhai'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_441_Ryuhai'
+  setObjectSize: 250
+  setPositionX: 187964
+  setPositionY: 167208
+  setDepth: -65123
+  setAngleX: 341600
+  setAngleY: 38400
+  setAngle: 338800
+endState: 
+
+beginState: s32'nrm_441_SordBloom'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_SordBloom'
+  setObjectSize: 100
+  setPositionX: 82004
+  setPositionY: 177463
+  setDepth: 51641
+  sprite: s32'null', 4
+  setObjectSize: 300
+  setPositionX: 73044
+  setPositionY: 201298
+  setDepth: 62527
+  sprite: s32'null', 4
+  setPositionX: 69674
+  setPositionY: 200761
+  setDepth: 71047
+  sprite: s32'null', 4
+  setObjectSize: 150
+  setPositionX: 79124
+  setPositionY: 200761
+  setDepth: 81365
+  sprite: s32'null', 4
+  setObjectSize: 100
+  setPositionX: 79954
+  setPositionY: 196825
+  setDepth: 83319
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  setPositionX: 81174
+  setPositionY: 195841
+  setDepth: 84913
+  sprite: s32'null', 4
+  setObjectSize: 125
+  setPositionX: 50484
+  setPositionY: 192571
+  setDepth: 91345
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_SordBloom'
+  setObjectSize: 80
+  setPositionX: 45719
+  setPositionY: 192739
+  setDepth: 87578
+endState: 
+
+beginState: s32'nrm_441_FinalSlash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_FS01'
+  sprite: s32'null', 50
+  linkParticle: s32'nrm_441_FS02'
+endState: 
+
+beginState: s32'nrm_441_MultiSlash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 50
+  linkParticle: s32'nrm_441_MultiSlash'
+  setObjectSize: 200
+  addPositionX: 37854
+  addPositionY: 221872
+  Unknown1727: 167950
+  setAngleY: 271200
+  setAngle: 336000
+endState: 
+
+beginState: s32'nrm_441_FinalScrew'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_441_FinalScrew'
+  setPositionX: -1818824
+  setPositionY: 414560
+  setDepth: 370411
+  setObjectSize: 900
+  setAngleY: 178400
+  sprite: s32'null', 4
+  setAngleX: -225000
+  sprite: s32'null', 4
+  setAngleX: -450000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -675000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -900000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -1125000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -1350000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -1575000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -1800000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -2025000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -2250000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -2475000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -2700000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -2925000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -3150000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -3375000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -3600000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -225000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -450000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -675000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -900000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -1125000
+  addObjectSize: 100
+  sprite: s32'null', 4
+  setAngleX: -1350000
+  addObjectSize: 100
+endState: 
+
+beginState: s32'nrm_441_FinalHit'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 20
+  linkParticle: s32'nrm_441_FinalHit'
+  setObjectSize: 250
+  addPositionX: 92601
+  addPositionY: 244512
+  Unknown1727: 104549
+  sprite: s32'null', 200
+  Unknown191: 15
+endState: 
+
+beginState: s32'nrm_441_FBSpawn'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setPositionX: -859559
+    setPositionY: 389472
+    setDepth: 256868
+  endUpon: 
+  beginLabel: s32'Loop'
+  sprite: s32'null', 4
+  createObject: s32'nrm_441_FinalButterFly', (PLAYER)
+  sprite: s32'null', 4
+  createObject: s32'nrm_441_FinalButterFly', (PLAYER)
+  runOnObject: (PREVIOUS)
+  setAngle: 450000
+  endRunOnObject: 
+  sprite: s32'null', 4
+  createObject: s32'nrm_441_FinalButterFly', (PLAYER)
+  runOnObject: (PREVIOUS)
+  setAngle: 900000
+  endRunOnObject: 
+  sprite: s32'null', 4
+  createObject: s32'nrm_441_FinalButterFly', (PLAYER)
+  runOnObject: (PREVIOUS)
+  setAngle: 1350000
+  endRunOnObject: 
+  sprite: s32'null', 4
+  createObject: s32'nrm_441_FinalButterFly', (PLAYER)
+  runOnObject: (PREVIOUS)
+  setAngle: 1800000
+  endRunOnObject: 
+  sprite: s32'null', 4
+  createObject: s32'nrm_441_FinalButterFly', (PLAYER)
+  runOnObject: (PREVIOUS)
+  setAngle: 2250000
+  endRunOnObject: 
+  sprite: s32'null', 4
+  createObject: s32'nrm_441_FinalButterFly', (PLAYER)
+  runOnObject: (PREVIOUS)
+  setAngle: 2700000
+  endRunOnObject: 
+  sprite: s32'null', 4
+  createObject: s32'nrm_441_FinalButterFly', (PLAYER)
+  runOnObject: (PREVIOUS)
+  setAngle: 3150000
+  endRunOnObject: 
+  gotoLabel: s32'Loop'
+endState: 
+
+beginState: s32'nrm_441_FinalButterFly'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_441_FinalButterFly'
+  setAngleSpeed: -1500
+  setAngleX: 4000
+  setAngleY: 274000
+endState: 
+
+beginState: s32'nrm_441_WhiteOut'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_441_WhiteOut'
+  addPositionX: 505929
+  addPositionY: 191489
+  Unknown1727: 51684
+endState: 
+
+beginState: s32'nrm_441_WhiteIn'
+  upon: (IMMEDIATE)
+    ignoreSuperFreeze: 1
+    setLinkObjectDestroyOnDamage: 3
+    setAngleY: 13000
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_441_WhiteIn'
+endState: 
+
+beginState: s32'nrm_442_BG'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkParticle: s32'nrm_442_WinBG'
+  endUpon: 
+endUpon: 
+
+sprite: s32'null', 2147483647
+createObject: s32'nrm_442_WhiteIn', (PLAYER)
+sceneAddColor: 0, 0, 0
+sceneMulColor: 235, 255, 250
+sceneLightColor: 128, 135, 160
+sceneAmbientColor: 94, 102, 99
+diffusionFilterToForce: 1
+diffusionFilterToSaturation: 1000
+endState: 
+beginState: s32'nrm_442_WhiteIn'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'nrm_442_WhiteIn'
+endState: 
+
+beginState: s32'nrm_442_ButterFly'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_442_ButterFly01'
+  sprite: s32'null', 2147483647
+  linkParticle: s32'nrm_442_ButterFly02'
+endState: 
+
+beginState: s32'nrm_442_SordBloom1'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_442_SordBloom2'
+  setObjectSize: 500
+  setPositionX: -129257
+  setPositionY: 265893
+  setDepth: 97426
+  sprite: s32'null', 4
+  setPositionX: -154469
+  setPositionY: 296197
+  setDepth: 113350
+  setObjectSize: 250
+  sprite: s32'null', 4
+  setObjectSize: 150
+  setPositionX: -138318
+  setPositionY: 336276
+  setDepth: 125564
+  sprite: s32'null', 4
+  setPositionX: -118720
+  setPositionY: 353956
+  setDepth: 130690
+  sprite: s32'null', 4
+  setPositionX: -78924
+  setPositionY: 383846
+  setDepth: 141327
+  sprite: s32'null', 4
+  setPositionX: -55796
+  setPositionY: 397990
+  setDepth: 147493
+  sprite: s32'null', 4
+  setPositionX: -30654
+  setPositionY: 413741
+  setDepth: 154965
+  sprite: s32'null', 4
+  setPositionX: -27552
+  setPositionY: 415395
+  setDepth: 155760
+  sprite: s32'null', 4
+  setPositionX: -1941
+  setPositionY: 427627
+  setDepth: 149848
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_442_SordBloom3'
+  setPositionX: 3944
+  setPositionY: 425975
+  setDepth: 148452
+  sprite: s32'null', 4
+  setPositionX: 13027
+  setPositionY: 428462
+  setDepth: 149804
+  sprite: s32'null', 4
+  setPositionX: 20983
+  setPositionY: 425090
+  setDepth: 147552
+endState: 
+
+beginState: s32'nrm_442_SordBloom2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_442_SordBloom'
+  setObjectSize: 75
+  setPositionX: -31399
+  setPositionY: 263907
+  setDepth: 83212
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_442_SordBloom'
+  setObjectSize: 100
+  sprite: s32'null', 4
+  setObjectSize: 150
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  setPositionX: -76325
+  setPositionY: 245429
+  setDepth: 186224
+  setObjectWidth: 100
+endState: 
+
+beginState: s32'nrm_700_ButterFly'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly'
+  createObject: s32'nrm_700_ParticleWay', (PLAYER)
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly2'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly3'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly4'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly5'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly6'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly7'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly8'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly9'
+  deactivateObjectByName: s32'nrm_700_ParticleWay'
+  createObject: s32'nrm_700_ParticleWay2', (PLAYER)
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly10'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly11'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly12'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly13'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly14'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly15'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly16'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly17'
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_ButterFly18'
+  sprite: s32'null', 60
+  linkParticle: s32''
+endState: 
+
+beginState: s32'nrm_700_ParticleWay'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    addPositionX: 8679
+    Unknown1727: 6754
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_700_ParticleWay'
+endState: 
+
+beginState: s32'nrm_700_ParticleWay2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_700_ParticleWay2'
+endState: 
+
+beginState: s32'nrm_700_2P_Flash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'nrm_700_2PFlash'
+  setPositionX: 1244988
+  setPositionY: 268345
+  setDepth: 40412
+  setAngleY: 72800
+  sprite: s32'null', 120
+endState: 
+
+beginState: s32'nrm_700_2P_BTF1'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    addPositionX: 625945
+    addPositionY: 280927
+    Unknown1727: -34280
+    setAngleX: 339600
+    setAngleY: 252400
+    setAngle: 0
+    setObjectSize: 650
+  endUpon: 
+  sprite: s32'null', 120
+  physicsXImpulse: -1100
+  linkParticle: s32'nrm_700_2PFlash2'
+endState: 
+
+beginState: s32'nrm_700_2P_BTF2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    addPositionX: 764383
+    addPositionY: 319111
+    Unknown1727: 39096
+    setAngleX: 355600
+    setAngleY: 262000
+    setAngle: 0
+    setObjectSize: 650
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_700_2PFlash2'
+endState: 
+
+beginState: s32'nrm_700_2P_BTF3'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    addPositionX: 725015
+    addPositionY: 406488
+    Unknown1727: -156737
+    setAngleX: 339600
+    setAngleY: 254400
+    setAngle: 351600
+    setObjectSize: 650
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_700_2PFlash2'
+endState: 
+
+beginState: s32'nrm_700_2P_BTF4'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    addPositionX: 808534
+    addPositionY: 240947
+    Unknown1727: -34689
+    setAngleX: 9200
+    setAngleY: 272800
+    setAngle: 351600
+    setObjectSize: 650
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_700_2PFlash2'
+endState: 
+
+beginState: s32'nrm_700_2P_Sord'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    addPositionX: 706190
+    addPositionY: 195268
+    Unknown1727: 96927
+    setAngleY: 359600
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'nrm_700_2PSordTwinkle'
+endState: 
+
+beginState: s32'nrm_800_Twinkle'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setObjectSize: 100
+    addPositionX: 159599
+    addPositionY: 360064
+    Unknown1727: 118298
+    setAngleX: 356000
+    setAngleY: 300000
+    setAngle: 33200
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'nrm_800_Noutou'
+endState: 
+
+beginState: s32'nrm_RoundWin_Camera'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    upon: 114
+      Unknown2582: 
+      haikuEnd: 
+      Unknown2863: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 40
+  Unknown374: 0
+  Unknown2074: 3, 23597, 388058, 96317, 613, -582, 48, 60, 20, 20, 0, 0, 2, 0
+  Unknown2875: 10
+  Unknown2863: 
+  Unknown2873: 3000, 100, 5000, 5000, 0, 10
+  Unknown374: 0
+  runOnObject: (ENEMY)
+  Unknown374: 0
+  endRunOnObject: 
+  linkParticle: s32'cmn_Binet'
+  setColor: -402653184
+  Unknown409: 80, 1
+  Unknown409: 50, 2
+  Unknown409: 0, 3
+  Unknown410: 4, 3
+  sprite: s32'null', 20
+  Unknown2074: 3, 25994, 304943, 82320, -752, -444, 64, 60, 20, 0, 0, 0, 0, 0
+  sprite: s32'null', 900
+  Unknown2074: 3, 22871, 239402, 76216, -1186, -455, 63, 60, 900, 0, 0, 0, 2, 0
+  Unknown410: 0, 3
+  sprite: s32'null', 10
+  Unknown2876: 10
+  Unknown2874: 10
+  Unknown409: 100, 3
+  Unknown410: -10, 3
+endState: 
+
+beginState: s32'DUMMYDUMMY'
+  sprite: s32'null', 1
+endState: 
+
