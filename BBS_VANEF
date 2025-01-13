@@ -1,0 +1,2651 @@
+beginState: s32'dmy'
+  sprite: s32'null', 1
+endState: 
+
+beginState: s32'van430cs_MNP'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    linkPawnWithAnimation: s32'SharedManpu', s32''
+    beginMeshSet: s32'SharedManpu'
+      addToMeshSet: s32'SharedManpu'
+    endMeshSet: 
+    swapMeshSet: s32'SharedManpu'
+    playAnimation: s32'van430cs', 1
+    setNoCollision: 0
+    checkScreenCollision: 0
+    worldCollision: 0
+    invulnForce: 1
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 1200
+endState: 
+
+beginState: s32'van440cs_MNP'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    linkPawnWithAnimation: s32'SharedManpu', s32''
+    beginMeshSet: s32'SharedManpu'
+      addToMeshSet: s32'SharedManpu'
+    endMeshSet: 
+    swapMeshSet: s32'SharedManpu'
+    playAnimation: s32'van440cs', 1
+    setNoCollision: 0
+    checkScreenCollision: 0
+    worldCollision: 0
+    invulnForce: 1
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 1200
+endState: 
+
+beginState: s32'van441cs_MNP'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    linkPawnWithAnimation: s32'SharedManpu', s32''
+    beginMeshSet: s32'SharedManpu'
+      addToMeshSet: s32'SharedManpu'
+    endMeshSet: 
+    swapMeshSet: s32'SharedManpu'
+    playAnimation: s32'van441cs', 1
+    setNoCollision: 0
+    checkScreenCollision: 0
+    worldCollision: 0
+    invulnForce: 1
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 1200
+endState: 
+
+beginState: s32'van_205Eff'
+  upon: (IMMEDIATE)
+    linkParticle: s32'cmn_thrust'
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+  endUpon: 
+  sprite: s32'null', 15
+  setObjectWidth: 1300
+  setObjectHeight: 1200
+  Unknown180: 1200
+  setPositionX: 487908
+  setPositionY: 221110
+  setDepth: 65000
+endState: 
+
+beginState: s32'van_208_SlashEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    flipDirection: 
+    addPositionX: 24975
+    addPositionY: 129
+    Unknown1727: -2997
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'van_208_Slash'
+  sprite: s32'null', 30
+  stopLinkObject: 3
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_208_SlashBuffEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    flipDirection: 
+    addPositionX: 24975
+    addPositionY: 129
+    Unknown1727: -2997
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'van_208_SlashBuff'
+  sprite: s32'null', 30
+  stopLinkObject: 3
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_208_GroundEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    addPositionX: 270000
+  endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'van_208_BuffGround'
+endState: 
+
+beginState: s32'twb_208_GroundBurst01Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    addPositionX: 182938
+    setObjectSize: 800
+  endUpon: 
+  sprite: s32'null', 26
+  linkParticle: s32'bg_GroundBurstZlink'
+endState: 
+
+beginState: s32'twb_208_GroundBurst02Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    flipDirection: 
+    addPositionX: -391947
+    setObjectSize: 800
+  endUpon: 
+  sprite: s32'null', 26
+  linkParticle: s32'bg_GroundBurstZlink'
+endState: 
+
+beginState: s32'van_253_BurstEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    addPositionY: 303202
+    Unknown1727: 37114
+  endUpon: 
+  sprite: s32'null', 10
+  linkParticle: s32'van_253_Burst'
+  createObject: s32'van_253_ThrustEff', (PLAYER)
+  sprite: s32'null', 10
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_253_ThrustEff'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    addPositionX: 500000
+  endUpon: 
+  sprite: s32'null', 10
+  linkParticle: s32'cmn_thrust'
+endState: 
+
+beginState: s32'van_233_StrikeEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'van_233_Strike'
+  setPositionX: -66066
+  setPositionY: 109972
+  setDepth: -44205
+  setAngleX: 168800
+  setAngleY: 208400
+  setAngle: 7200
+  setObjectWidth: 1300
+  setObjectHeight: 1300
+  Unknown180: 1300
+  sprite: s32'null', 12
+  setPositionX: -27105
+  setPositionY: 108682
+  setDepth: -14235
+  setAngleX: 178400
+  setAngleY: 256800
+  setAngle: 12800
+endState: 
+
+beginState: s32'van_224_ImpactEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+  endUpon: 
+  sprite: s32'null', 35
+  linkParticle: s32'van_224_Impact'
+  setPositionX: 193806
+  setPositionY: -99
+  setDepth: 72057
+endState: 
+
+beginState: s32'van_301_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+      haikuEnd: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 5
+  Unknown2074: 3, 100834, 387769, 127264, -898, -1293, 0, 60, 5, 0, 0, 0, 0, 0
+  Unknown2875: 10
+  sprite: s32'null', 30
+  Unknown2074: 3, 101618, 394064, 127811, -897, -1293, 0, 60, 30, 0, 1500, 0, 0, 0
+  sprite: s32'null', 15
+  Unknown2074: 3, -87681, 339803, 130725, -1084, 2570, 0, 60, 15, 0, 1500, 0, 0, 0
+  sprite: s32'null', 15
+  Unknown2074: 3, -99178, 336911, 130725, -1084, 2570, 0, 60, 15, 0, 1500, 0, 0, 0
+  sprite: s32'null', 5
+  Unknown2074: 3, -10906, 284658, 110907, 42, 1553, -30, 60, 5, 0, 1500, 0, 0, 0
+  sprite: s32'null', 20
+  Unknown2074: 3, -31567, 422372, 111481, 42, 1553, -31, 60, 20, 0, 1500, 0, 2, 0
+  cameraShake: s32'ShakeTate', 1000, 0, 20, 0
+  sprite: s32'null', 15
+  Unknown2876: 15
+  Unknown2074: 3, -31567, 422372, 111481, 42, 1553, -31, 60, 0, 0, 15, 0, 0, 0
+  sprite: s32'null', 1
+  Unknown2582: 
+endState: 
+
+beginState: s32'van_306_StrikeEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'van_306_Strike00'
+  setPositionX: 23976
+  setPositionY: -10660
+  setDepth: -77525
+  setAngleX: 6000
+  setAngleY: 350400
+  setAngle: 800
+  sprite: s32'null', 20
+  linkParticle: s32'van_306_Strike01'
+endState: 
+
+beginState: s32'van_309_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 10
+  Unknown2074: 3, 72886, 427664, 125827, 100, 0, 0, 60, 10, 0, 0, 0, 0, 0
+  Unknown2875: 10
+  sprite: s32'null', 20
+  Unknown2074: 3, 72886, 427664, 179161, -2225, 0, 0, 60, 5, 6000, 0, 0, 0, 0
+  cameraShake: s32'ShakeTate', 2500, 0, 15, 0
+  sprite: s32'null', 20
+  Unknown2074: 3, -64867, 334417, 142774, -1624, 2233, 0, 60, 45, 5, 0, 0, 0, 0
+  sprite: s32'null', 30
+  cameraShake: s32'ShakeTate', 500, 0, 30, 0
+  sprite: s32'null', 10
+  Unknown2074: 3, -93959, 454195, 134353, -376, 890, 53, 60, 5, 5, 3000, 0, 0, 0
+  cameraShake: s32'ShakeTate', 1500, 0, 10, 0
+  sprite: s32'null', 15
+  Unknown2876: 15
+  Unknown2074: 3, -93959, 454195, 134353, -376, 890, 53, 60, 0, 0, 15, 0, 0, 0
+  sprite: s32'null', 1
+  Unknown2582: 
+endState: 
+
+beginState: s32'van_350_AxeSpinEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    linkParticle: s32'van_350_Spin00'
+    addPositionX: -180000
+    addPositionY: 265000
+    Unknown1727: 200000
+    Unknown289: 120
+  endUpon: 
+  beginLabel: s32'Rotate'
+  sprite: s32'null', 2
+  setSpriteTime: 4, Mem(Hikitsugi0)
+  setAngle: 20000
+  sprite: s32'null', 2
+  setSpriteTime: 4, Mem(Hikitsugi0)
+  setAngle: 135000
+  gotoLabel: s32'Rotate'
+endState: 
+
+beginState: s32'van_350_ThrustEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    addPositionX: 380000
+    addPositionY: 265000
+  endUpon: 
+  sprite: s32'null', 20
+  linkObjectPosition: 0
+  linkParticle: s32'van_350_Thrust00'
+endState: 
+
+beginState: s32'van_350_RingEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    addPositionY: 240000
+    addPositionX: 23976
+  endUpon: 
+  sprite: s32'null', 20
+  linkObjectPosition: 0
+  linkParticle: s32'van_350_Ring'
+endState: 
+
+beginState: s32'van_350_GroundBurstEff'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    setLinkObjectDestroyOnDamage: 3
+    addPositionX: -50000
+  endUpon: 
+  sprite: s32'null', 1
+  Unknown2279: 0, 900
+  Unknown2281: 0, 800
+  createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+endState: 
+
+beginSubroutine: s32'VAN_HitEffColorY'
+  Unknown2276: 0, -3639286
+endSubroutine: 
+
+beginSubroutine: s32'VAN_HitEffColorB'
+  Unknown2276: 0, -16090881
+endSubroutine: 
+
+beginState: s32'VAN_SPHitEff'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'VAN_HitEffColorY'
+  createParticleWithArg2: s32'cmn_hit_sp', (PLAYER)
+endState: 
+
+beginState: s32'VAN_SPHitEff_Long'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'VAN_HitEffColorY'
+  createParticleWithArg2: s32'cmn_hit_sp_Long', (PLAYER)
+endState: 
+
+beginState: s32'VAN_SPHitEff_LongB'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'VAN_HitEffColorB'
+  createParticleWithArg2: s32'cmn_hit_sp_Long', (PLAYER)
+endState: 
+
+beginState: s32'VAN_SPHitEff_402U'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  addPositionX: 90000
+  addPositionY: 350000
+  createParticleWithArg2: s32'cmn_hit_sp_Long', (PLAYER)
+endState: 
+
+beginState: s32'VAN_SPHit430Eff'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 1
+  callSubroutine: s32'VAN_HitEffColorY'
+  createArgAngle: 0, -40000
+  createParticleWithArg2: s32'cmn_hit_sp_Long', (PLAYER)
+endState: 
+
+beginState: s32'van_400_ThrustEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    setPositionX: 560000
+    setPositionY: 240000
+    setDepth: 65000
+  endUpon: 
+  sprite: s32'null', 1
+  linkParticle: s32'van_400_Thrust01'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  if: Mem(405)
+    createParticle: s32'van_400_ParticleLM', (PLAYER)
+  endIf: 
+  sprite: s32'null', 19
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'van_400_ThrustUpEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    setPositionX: 560000
+    setPositionY: 410000
+    setDepth: 65000
+    setAngle: 18000
+  endUpon: 
+  sprite: s32'null', 1
+  linkParticle: s32'van_400_Thrust01'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  if: Mem(405)
+    createParticle: s32'van_400_ParticleLM', (PLAYER)
+  endIf: 
+  sprite: s32'null', 19
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'van_400_ThrustDownEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    setPositionX: 560000
+    setPositionY: 65000
+    setDepth: 65000
+    setAngle: 339000
+  endUpon: 
+  sprite: s32'null', 1
+  linkParticle: s32'van_400_Thrust01'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  if: Mem(405)
+    createParticle: s32'van_400_ParticleLM', (PLAYER)
+  endIf: 
+  sprite: s32'null', 19
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'van_400_ThrustFinishEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    upon: (SIGNAL_A)
+      clearUpon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+    setPositionX: 580000
+    setPositionY: 240000
+    setDepth: 65000
+  endUpon: 
+  sprite: s32'null', 1
+  linkObjectPosition: 0
+  linkParticle: s32'van_400_Thrust00'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  if: Mem(405)
+    createParticle: s32'van_400_ParticleLM', (PLAYER)
+  endIf: 
+  sprite: s32'null', 29
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'van_400_GroundBurstEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectZ: 3
+    upon: (SIGNAL_A)
+      clearUpon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+    addPositionX: -80000
+    Unknown289: 120
+  endUpon: 
+  beginLabel: s32'Loop'
+  sprite: s32'null', 10
+  Unknown2268: 0, 800
+  createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+  gotoLabel: s32'Loop'
+  beginLabel: s32'End'
+  sprite: s32'null', 1
+  Unknown2268: 0, 850
+  createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+endState: 
+
+beginState: s32'van_401_ThrustEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    linkObjectZ: 2
+    setPositionX: 650000
+    setPositionY: 240000
+    setDepth: 110000
+    setAngleY: 8000
+  endUpon: 
+  sprite: s32'null', 1
+  linkParticle: s32'van_401_Thrust00'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  if: Mem(405)
+    createParticle: s32'van_400_ParticleLM', (PLAYER)
+  endIf: 
+  sprite: s32'null', 39
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_401_GroundBurstEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectZ: 3
+    addPositionX: -50000
+  endUpon: 
+  sprite: s32'null', 1
+  Unknown2268: 0, 900
+  createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+endState: 
+
+beginState: s32'van_401_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 2
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+      haikuEnd: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 5
+  Unknown2074: 3, 112386, 364490, 106845, -18, -671, -14, 60, 5, 0, 6000, 0, 0, 0
+  Unknown2875: 10
+  sprite: s32'null', 25
+  Unknown2074: 3, 117952, 386685, 106891, -18, -671, -14, 60, 10, 15, 6000, 0, 0, 0
+  haiku: 250
+  sprite: s32'null', 15
+  Unknown2074: 3, 113795, 386350, 106886, -19, -671, -15, 60, 0, 0, 15, 0, 0, 0
+  Unknown2876: 15
+  haikuEnd: 
+  sprite: s32'null', 1
+  Unknown2582: 
+endState: 
+
+beginState: s32'van_402_BurstEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    setPositionX: 93982
+    setPositionY: -3702
+    setDepth: -123219
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 6
+  linkParticle: s32'van_402_GroundBurst_Loop'
+  createObject: s32'van_402_RockEff', (PLAYER)
+  createObject: s32'van_402_WindEff', (PLAYER)
+  privateSE: s32'van_03_2'
+  sprite: s32'null', 120
+  linkObjectPosition: 0
+  stopLinkObject: 3
+  beginLabel: s32'End'
+  sprite: s32'null', 10
+  clearUpon: (SIGNAL_A)
+  linkParticle: s32'van_402_GroundBurst_End'
+  sprite: s32'null', 30
+  linkObjectPosition: 0
+  setLinkObjectDestroyOnStateChange: 0
+endState: 
+
+beginState: s32'van_402_LightPillarEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    setPositionX: 110000
+    setPositionY: -2878
+    setDepth: -83067
+    setObjectWidth: 800
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 6
+  linkParticle: s32'van_402_LightPillar_Loop'
+  privateSE: s32'van_06'
+  sprite: s32'null', 120
+  linkObjectPosition: 0
+  stopLinkObject: 3
+  beginLabel: s32'End'
+  sprite: s32'null', 10
+  clearUpon: (SIGNAL_A)
+  linkParticle: s32'van_402_LightPillar_End'
+  sprite: s32'null', 50
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_402_RockEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectZ: 3
+    addPositionY: -2616
+    Unknown1727: -90060
+  endUpon: 
+  sprite: s32'null', 6
+  linkParticle: s32'van_402_Rock'
+  ignoreSuperFreezeFromAlly: 0
+  sprite: s32'null', 40
+  stopLinkObject: 3
+  ignoreSuperFreezeFromAlly: 1
+endState: 
+
+beginState: s32'van_402_WindEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkObjectZ: 3
+  endUpon: 
+  sprite: s32'null', 20
+  linkParticle: s32'van_402_Wind'
+endState: 
+
+beginState: s32'van_402_SparksEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkObjectZ: 2
+    addPositionX: 60000
+    Unknown1727: -90000
+  endUpon: 
+  sprite: s32'null', 1
+  createParticle: s32'van_402_Sparks', (PLAYER)
+endState: 
+
+beginState: s32'van_402_GroundBurstEff'
+  upon: (IMMEDIATE)
+    linkObjectZ: 3
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    addPositionX: -100000
+  endUpon: 
+  sprite: s32'null', 1
+  Unknown2279: 0, 900
+  Unknown2281: 0, 600
+  createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+endState: 
+
+beginState: s32'van_402_RyuhaiEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 120
+  linkParticle: s32'van_402_ryuhai'
+  setPositionX: 212309
+  setPositionY: 115365
+  setDepth: -480884
+  setObjectWidth: 3000
+  setObjectHeight: 2000
+  Unknown180: 3000
+  setAngleX: 18000
+  setAngleY: 276400
+  setAngle: 329600
+endState: 
+
+beginState: s32'van_402_KurumadaEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    ignoreSuperFreezeFromAlly: 1
+    setPositionX: -166636
+    setPositionY: -40878
+    setDepth: 90372
+    setAngleX: 40800
+    setAngleY: 235200
+    setAngle: 341600
+    setObjectWidth: 2700
+    setObjectHeight: 2000
+    Unknown180: 3300
+  endUpon: 
+  sprite: s32'null', 90
+  linkParticle: s32'van_402_Kurumada_End1'
+endState: 
+
+beginState: s32'van_402_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (BEFORE_EXIT)
+      haikuEnd: 
+    endUpon: 
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 5
+  Unknown2074: 3, -30623, 256926, 60718, 4350, 2941, 0, 54, 0, 5, 6000, 0, 2, 2
+  cameraShake: s32'ShakeTate', 3000, 0, 5, 0
+  haiku: 250
+  sprite: s32'null', 35
+  if: Mem(BattleDoing)
+    Unknown2074: 3, -38760, 285017, 47760, 4349, 2941, 0, 60, 20, 15, 6000, 0, 2, 0
+    cameraShake: s32'ShakeTate', 1500, 0, 15, 20
+    Unknown2876: 15
+  endIf: 
+  sprite: s32'null', 1
+  resetCamera: 
+  haikuEnd: 
+endState: 
+
+beginState: s32'van_402_KurumadaEnd2Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    setPositionX: 93982
+    setPositionY: -2799
+    setDepth: -144198
+    setObjectSize: 1300
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 120
+  beginLabel: s32'End'
+  sprite: s32'null', 35
+  clearUpon: (SIGNAL_A)
+  linkParticle: s32'van_402_Kurumada_End2'
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_402_KurumadaEnd1Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    setPositionX: 110000
+    setPositionY: -2878
+    setDepth: -83067
+    setObjectWidth: 800
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 120
+  beginLabel: s32'End'
+  sprite: s32'null', 50
+  clearUpon: (SIGNAL_A)
+  linkParticle: s32'van_402_Kurumada_End3'
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_403_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+    setPositionX: 1938
+    setPositionY: -16791
+    setDepth: 41292
+    setAngleX: 342800
+  endUpon: 
+  sprite: s32'null', 10
+  linkParticle: s32'van_403_slash01'
+  privateSE: s32'van_01'
+  sprite: s32'null', 25
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_403_CrackEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectZ: 3
+    addPositionX: -335980
+    addPositionY: 1781
+    Unknown1727: 30858
+  endUpon: 
+  sprite: s32'null', 10
+  linkParticle: s32'van_403_Crack00'
+  ignoreFinishStop: 1
+  privateSE: s32'van_03_2'
+  sprite: s32'null', 10
+  linkParticle: s32'van_403_Crack01'
+  stopLinkObject: 3
+  privateSE: s32'van_02'
+  sprite: s32'null', 50
+  ignoreFinishStop: 0
+  setLinkObjectDestroyOnStateChange: 0
+endState: 
+
+beginState: s32'van_404_UEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+    setPositionX: -330050
+    setPositionY: 306573
+    setDepth: -52790
+    setObjectWidth: 1000
+    setObjectHeight: 650
+    Unknown180: 1000
+    setAngleX: 310400
+    setAngleY: 5200
+    setAngle: 353600
+  endUpon: 
+  sprite: s32'null', 10
+  linkParticle: s32'van_404_slashU'
+  privateSE: s32'van_01'
+  sprite: s32'null', 30
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_404_CrackUEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectZ: 3
+    addPositionX: -172888
+    addPositionY: 1781
+    Unknown1727: 30858
+    setObjectWidth: 1200
+  endUpon: 
+  sprite: s32'null', 10
+  linkParticle: s32'van_403_Crack00'
+  ignoreFinishStop: 1
+  privateSE: s32'van_03_2'
+  sprite: s32'null', 10
+  linkParticle: s32'van_403_Crack01'
+  stopLinkObject: 3
+  privateSE: s32'van_02_2'
+  sprite: s32'null', 50
+  ignoreFinishStop: 0
+  setLinkObjectDestroyOnStateChange: 0
+endState: 
+
+beginState: s32'van_404_Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 2
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+    setPositionX: 86913
+    setPositionY: 4995
+    setDepth: 215
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 600
+  linkParticle: s32'van_404_Slash00'
+  privateSE: s32'van_01'
+  beginLabel: s32'End'
+  sprite: s32'null', 10
+  clearUpon: (SIGNAL_A)
+  linkParticle: s32'van_404_Slash03'
+  stopLinkObject: 0
+  setPositionX: -100863
+  setPositionY: -18604
+  setDepth: -32846
+  setAngle: 350000
+  sprite: s32'null', 15
+  setLinkObjectDestroyOnStateChange: 0
+endState: 
+
+beginState: s32'van_404_CrackEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    addPositionX: -226020
+    addPositionY: 1781
+    Unknown1727: 30858
+  endUpon: 
+  sprite: s32'null', 10
+  linkParticle: s32'van_403_Crack00'
+  ignoreFinishStop: 1
+  privateSE: s32'van_03_2'
+  sprite: s32'null', 10
+  linkParticle: s32'van_403_Crack01'
+  stopLinkObject: 3
+  linkObjectPosition: 0
+  privateSE: s32'van_02'
+  sprite: s32'null', 50
+  ignoreFinishStop: 0
+  setLinkObjectDestroyOnStateChange: 0
+endState: 
+
+beginSubroutine: s32'406_ShieldEff_Init'
+  linkObjectZ: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+  storeValue: Mem(ActReg6), Mem(Hikitsugi0)
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+    linkObjectPosition: 3
+    Unknown310: 9, 3, 2, 53, 0, 1
+    if: Mem(SideID)
+      linkParticle: s32'van_406_Shield01U_2P'
+    endIf: 
+    else: 
+      linkParticle: s32'van_406_Shield01U'
+    endElse: 
+  endIf: 
+  else: 
+    linkParticle: s32'van_406_Shield01U'
+  endElse: 
+endIf: 
+
+else: 
+  Unknown310: 9, 3, 2, 53, 0, 1
+  if: Mem(SideID)
+    linkParticle: s32'van_406_Shield00_2P'
+  endIf: 
+  else: 
+    linkParticle: s32'van_406_Shield00'
+  endElse: 
+endIf: 
+
+else: 
+  linkParticle: s32'van_406_Shield00'
+endElse: 
+
+endElse: 
+invulnForce: 0
+Unknown2022: 1
+initializeDestroy: 
+numberOfHits: 1
+destroyOnDamageCollision: 1
+Unknown2207: 1
+Unknown2208: 1
+Unknown2209: 1
+Unknown2210: 1
+Unknown2257: 1
+Unknown2212: 1
+Unknown2213: 1
+ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+  numberOfHits: 3
+  destroyOnDamageCollision: 3
+  Unknown2207: 1
+  Unknown2208: 1
+  Unknown2209: 1
+  Unknown2210: 1
+  Unknown2212: 0
+  Unknown2213: 0
+  Unknown2022: 0
+  invulnForce: 1
+endIf: 
+
+callSubroutine: s32'cmnArmor_NotUlt'
+Unknown1821: 1
+superArmorDestroyProjectile: 1
+superArmorHitstop: 1, 12
+upon: (ON_DESTROY)
+  clearUpon: 37
+  gotoLabelRequests: s32'Koware'
+endUpon: 
+
+upon: (FRAME_STEP)
+  modifyVar: (ADD), Mem(ActReg1), Val(-1)
+  ifNot: Mem(BattleDoing)
+    modifyVar: (ADD), Mem(ActReg1), Val(-4)
+  endIf: 
+  ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg1), Val(0)
+    gotoLabelRequests: s32'Koware'
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActionTime), Val(90)
+    velocityXPercentEachFrame: 85
+  endIf: 
+endUpon: 
+
+addPositionX: 280000
+setPositionY: 0
+Unknown1727: 85000
+setAngleY: 308400
+zLine: 5, 5
+gotoLabelUpon: (SIGNAL_B), s32'Koware'
+upon: 24
+  clearUpon: 24
+  linkObjectPosition: 0
+  Unknown2050: 0
+endUpon: 
+
+upon: 25
+  clearUpon: 25
+  linkObjectPosition: 0
+  Unknown2050: 1
+endUpon: 
+
+upon: 36
+  Unknown55: 0x2000000076616E00000000000000000000000000
+  if: Mem(PlayerVal1)
+    Unknown310: 9, 22, 2, 4, 0, 1
+    Unknown266: 3, 32
+    storeValue: Mem(ActReg3), Mem(Tmp)
+    ifOperation: (IS_EQUAL), Mem(ActReg3), Val(1)
+      zLine: 5, 5
+    endIf: 
+    ifOperation: (IS_EQUAL), Mem(ActReg3), Val(0)
+      zLine: 0, 5
+    endIf: 
+  endIf: 
+endIf: 
+
+endIf: 
+endUpon: 
+endSubroutine: 
+beginState: s32'van_406_ShieldEff'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'406_ShieldEff_Init'
+    storeValue: Mem(ActReg1), Val(180)
+    ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(0)
+      physicsXImpulse: 3000
+    endIf: 
+    ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(1)
+      physicsXImpulse: 10000
+    endIf: 
+    ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(2)
+      addPositionX: 90000
+      physicsXImpulse: 11000
+    endIf: 
+    velocityXPercentEachFrame: 97
+    createObjectWithArg: s32'van_406_ShieldEff2', (PLAYER)
+    createObject: s32'van_406_ShieldEff_AntiShot', (PLAYER)
+  endUpon: 
+  sprite: s32'van_ShieldCol', 6
+  cameraShake: s32'ShakeTate', 500, 0, 2, 0
+  privateSE: s32'van_04'
+  beginLabel: s32'Loop'
+  sprite: s32'van_ShieldCol', 6
+  Unknown310: 9, 3, 2, 53, 0, 1
+  if: Mem(SideID)
+    createParticle: s32'van_406_Shield00Nks_2P', (PLAYER_LAND)
+  endIf: 
+  else: 
+    createParticle: s32'van_406_Shield00Nks', (PLAYER_LAND)
+  endElse: 
+endIf: 
+
+else: 
+  createParticle: s32'van_406_Shield00Nks', (PLAYER_LAND)
+endElse: 
+
+endSprite: 
+gotoIfOperation: s32'Loop', (IS_LESSER_OR_EQUAL), Mem(ActionTime), Val(300)
+beginLabel: s32'Koware'
+sprite: s32'null', 60
+Unknown2022: 0
+invulnForce: 1
+deactivateObjectByName: s32'van_406_ShieldEff2'
+deactivateObjectByName: s32'van_406_ShieldEff_AntiShot'
+clearUpon: (FRAME_STEP)
+clearUpon: 41
+clearUpon: (ON_DESTROY)
+clearUpon: (SIGNAL_B)
+setNoCollision: 0
+haltMomentum: 1
+Unknown310: 9, 3, 2, 53, 0, 1
+if: Mem(SideID)
+  linkParticle: s32'van_406_Shield02_Break_2P'
+endIf: 
+
+else: 
+  linkParticle: s32'van_406_Shield02_Break'
+endElse: 
+
+endIf: 
+else: 
+  linkParticle: s32'van_406_Shield02_Break'
+endElse: 
+
+privateSE: s32'van_05'
+endState: 
+beginState: s32'van_406_ShieldEff2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    callSubroutine: s32'cmnMuteki'
+    invulnForce: 0
+    Unknown1821: 1
+    Unknown2204: 1
+    upon: 33
+      clearUpon: 33
+      Unknown1793: 2, 32
+      deactivateObjectById: (SELF)
+    endUpon: 
+  endUpon: 
+  sprite: s32'van_ShieldCol', 300
+endState: 
+
+beginState: s32'van_406_ShieldEff_AntiShot'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    invulnForce: 0
+    Unknown2022: 1
+    initializeDestroy: 
+    numberOfHits: 1
+    destroyOnDamageCollision: 1
+    Unknown2212: 1
+    Unknown2213: 1
+    if: Mem(Hikitsugi0)
+      numberOfHits: 3
+    endIf: 
+    callSubroutine: s32'cmnArmor_Shot_NotUlt'
+    Unknown1821: 1
+    superArmorDestroyProjectile: 1
+    superArmorHitstop: 1, 12
+    upon: (ON_DESTROY)
+      Unknown1793: 2, 32
+      deactivateObjectById: (SELF)
+    endUpon: 
+  endUpon: 
+  sprite: s32'van_ShieldColAntiShot', 300
+endState: 
+
+beginState: s32'van_406_ShieldEff_D'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'406_ShieldEff_Init'
+    callSubroutine: s32'cmnSpecialShot_AtkInit'
+    damage: 500
+    wallPushback: 0, 500
+    Unknown747: 0, -20000
+    Unknown1147: 1
+    damageEffect: 2, s32'VAN_SPHitEff'
+    worldCollision: 1
+    storeValue: Mem(ActReg1), Val(120)
+    addPositionX: -70000
+    physicsXImpulse: 12000
+    velocityXPercentEachFrame: 95
+    createArgHikitsukiVal: Val(1), Val(0)
+    createObjectWithArg: s32'van_406_ShieldEff_AntiShot', (PLAYER)
+    Unknown2022: 0
+    invulnForce: 1
+    Unknown1971: 1
+    clearUpon: (FRAME_STEP)
+    upon: (FRAME_STEP)
+      modifyVar: (ADD), Mem(ActReg1), Val(-1)
+      ifNot: Mem(BattleDoing)
+        modifyVar: (ADD), Mem(ActReg1), Val(-4)
+      endIf: 
+      ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg1), Val(0)
+        gotoLabelRequests: s32'Koware'
+      endIf: 
+      ifOperation: (IS_EQUAL), Mem(ActionTime), Val(6)
+        linkObjectPosition: 0
+        Unknown1147: 0
+        Unknown310: 9, 3, 2, 45, 0, 1
+        storeValue: Mem(PlayerVal9), Val(1)
+      endIf: 
+    endIf: 
+    modifyVar: (ADD), Mem(ActReg4), Val(1)
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg4), Val(15)
+      storeValue: Mem(ActReg4), Val(0)
+      privateSE: s32'van_07'
+    endIf: 
+    ifOperation: (MOD_EQUALS_0), Mem(ActionTime), Val(6)
+      Unknown310: 9, 3, 2, 53, 0, 1
+      if: Mem(SideID)
+        createParticle: s32'van_406_Shield00Nks2_2P', (PLAYER_LAND)
+      endIf: 
+      else: 
+        createParticle: s32'van_406_Shield00Nks2', (PLAYER_LAND)
+      endElse: 
+    endIf: 
+    else: 
+      createParticle: s32'van_406_Shield00Nks2', (PLAYER_LAND)
+    endElse: 
+  endIf: 
+  ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(65000)
+    velocityXPercentEachFrame: 85
+  endIf: 
+  hit: 
+endUpon: 
+
+upon: 8
+  modifyVar: (ADD), Mem(ActReg7), Val(1)
+  ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg7), Val(2)
+    hitAirPushbackX: 1000
+    hitstop: 6
+    modifyVar: (ADD), Mem(ActReg1), Val(10)
+  endIf: 
+  ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg7), Val(3)
+    damage: 600
+    hitAirPushbackX: 14000
+    hitstop: 8
+  endIf: 
+endUpon: 
+
+upon: 37
+  ignoreSlowdown: 1
+  gotoLabelRequests: s32'Sousai'
+endUpon: 
+
+upon: 35
+  clearUpon: 35
+  linkObjectPosition: 0
+endUpon: 
+
+endUpon: 
+sprite: s32'van_ShieldColEx', 6
+cameraShake: s32'ShakeTate', 500, 0, 2, 0
+privateSE: s32'van_04'
+beginLabel: s32'Loop'
+sprite: s32'van_ShieldColEx', 6
+endSprite: 
+gotoIfOperation: s32'Loop', (IS_LESSER_OR_EQUAL), Mem(ActionTime), Val(300)
+beginLabel: s32'Sousai'
+sprite: s32'van_ShieldColEx01', 1
+endSprite: 
+ignoreSlowdown: 0
+gotoIfOperation: s32'Loop', (IS_LESSER_OR_EQUAL), Mem(ActionTime), Val(300)
+beginLabel: s32'Koware'
+sprite: s32'null', 50
+deactivateObjectByName: s32'van_406_ShieldEff_AntiShot'
+clearUpon: (FRAME_STEP)
+clearUpon: 41
+clearUpon: (ON_DESTROY)
+clearUpon: (SIGNAL_B)
+linkObjectPosition: 0
+setNoCollision: 0
+haltMomentum: 1
+Unknown310: 9, 3, 2, 53, 0, 1
+if: Mem(SideID)
+  linkParticle: s32'van_406_Shield02_Break_2P'
+endIf: 
+
+else: 
+  linkParticle: s32'van_406_Shield02_Break'
+endElse: 
+
+endIf: 
+else: 
+  linkParticle: s32'van_406_Shield02_Break'
+endElse: 
+
+privateSE: s32'van_05'
+endState: 
+beginState: s32'van_406_ImpactEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    setPositionX: 54945
+    setPositionY: -3096
+    setDepth: 71928
+  endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'van_306_Impact'
+  privateSE: s32'van_10'
+endState: 
+
+beginState: s32'van_430_Shot_Matome'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    storeValue: Mem(ActReg0), Val(10)
+    addPositionX: 50000
+  endUpon: 
+  upon: (FRAME_STEP)
+    if: Mem(PlayerVal0)
+      worldCollision: 1
+    endIf: 
+  endUpon: 
+  sprite: s32'null', 3
+  beginLabel: s32'Loop'
+  sprite: s32'null', 3
+  addPositionX: 150000
+  createArgHikitsukiVal: Val(0), Val(0)
+  createObjectWithArg: s32'van_430_Shot', (PLAYER)
+  modifyVar: (ADD), Mem(ActReg0), Val(-1)
+  sprite: s32'null', 3
+  addPositionX: 150000
+  createArgHikitsukiVal: Val(1), Val(0)
+  createObjectWithArg: s32'van_430_Shot', (PLAYER)
+  modifyVar: (ADD), Mem(ActReg0), Val(-1)
+  endSprite: 
+  gotoLabelIf: s32'Loop', Mem(ActReg0)
+  sprite: s32'null', 10
+endState: 
+
+beginState: s32'van_430_Shot'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'cmnKaihouShot_AtkInit'
+    damage: 500
+    airHitEffect: (AIR_LAUNCH)
+    groundHitEffect: (AIR_LAUNCH)
+    hitAirPushbackX: 45000
+    hitAirPushbackY: -40000
+    hitstop: 0
+    wallPushback: 0, 2800
+    groundBounceCount: 1
+    groundBounceYVelocityPercent: 45
+    Unknown884: 1
+    damageEffect: 4, s32'cmn_hit_m'
+    Unknown310: 12, 3, 2, 45, 0, 1
+    attackThroughArmor: 1
+  endIf: 
+  upon: (HIT_OR_GUARD)
+    modifyVar: (ADD), Mem(PlayerVal0), Val(1)
+  endUpon: 
+  upon: (FRAME_STEP)
+    if: Mem(PlayerVal0)
+      Unknown1131: 1
+    endIf: 
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal0), Val(6)
+      hitAirPushbackX: 1000
+      hitAirPushbackY: 32000
+      wallPushback: 0, 100
+      groundBounceCount: 0
+      Unknown884: 0
+    endIf: 
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal0), Val(7)
+      recoveryState: 
+    endIf: 
+  endUpon: 
+endUpon: 
+
+sprite: s32'null', 3
+cameraShake: s32'ShakeTate', 1000, 0, 10, 0
+createObject: s32'van_430_Burst01Eff', (PLAYER)
+ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(0)
+  createObject: s32'van_430_BurstPillarEff', (PLAYER)
+endIf: 
+
+ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(1)
+  createObject: s32'van_430_BurstPillarMiniEff', (PLAYER)
+endIf: 
+
+sprite: s32'van_OugiAtkCol_00', 3
+hit: 
+sprite: s32'null', 60
+endState: 
+beginState: s32'van_430_FlareEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    linkParticle: s32'van_430_Flare00'
+    setObjectWidth: 700
+    setObjectHeight: 700
+    Unknown180: 700
+  endUpon: 
+  sprite: s32'null', 20
+  addPositionX: -130050
+  addPositionY: 234965
+  Unknown1727: 1505
+endState: 
+
+beginState: s32'van_430_SlashEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+    setPositionX: -45035
+    setPositionY: 23183
+    setDepth: -3991
+    setAngleY: 3600
+  endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'van_430_Slash00'
+endState: 
+
+beginState: s32'van_430_Burst00Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    setPositionX: 105569
+    setPositionY: -1110
+    setDepth: -11735
+  endUpon: 
+  sprite: s32'null', 45
+  linkParticle: s32'van_430_Burst00'
+endState: 
+
+beginState: s32'van_430_Burst01Eff'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkObjectZ: 3
+    Unknown194: 200, -200
+    Unknown289: 48
+  endUpon: 
+  sprite: s32'null', 3
+  sprite: s32'null', 48
+  linkParticle: s32'van_430_Burst01'
+endState: 
+
+beginState: s32'van_430_BurstPillarEff'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 2
+    linkObjectZ: 3
+    Unknown289: 60
+  endUpon: 
+  sprite: s32'null', 3
+  sprite: s32'null', 50
+  setAngle: 343800
+  Unknown180: 850
+  linkParticle: s32'van_430_LightPillar00'
+endState: 
+
+beginState: s32'van_430_BurstPillarMiniEff'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 2
+    linkObjectZ: 3
+    Unknown289: 60
+  endUpon: 
+  sprite: s32'null', 3
+  sprite: s32'null', 50
+  setAngle: 343800
+  setObjectWidth: 800
+  Unknown180: 600
+  linkParticle: s32'van_430_LightPillar00'
+endState: 
+
+beginState: s32'van_430_ScrEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    stopLinkObject: 2
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'van_430_scr01'
+  sprite: s32'null', 4
+  linkParticle: s32''
+  sprite: s32'null', 4
+  linkParticle: s32'van_430_scr02'
+  sprite: s32'null', 4
+  linkParticle: s32'van_430_scr03'
+  sprite: s32'null', 4
+  linkParticle: s32'van_430_scr04'
+  sprite: s32'null', 4
+  linkParticle: s32''
+  sprite: s32'null', 4
+  linkParticle: s32'van_430_scr05'
+  sprite: s32'null', 4
+  linkParticle: s32'van_430_scr06'
+  sprite: s32'null', 4
+  linkParticle: s32'van_430_scr07'
+endState: 
+
+beginState: s32'van_430_WindEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'van_430_wind'
+  setPositionX: -113332
+  setPositionY: 282436
+  setDepth: -24314
+  setObjectSize: 500
+  setAngleX: 5600
+  setAngleY: 349200
+  setAngle: 332800
+endState: 
+
+beginState: s32'van_430_WindEff2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+  endUpon: 
+  sprite: s32'null', 20
+  sprite: s32'null', 120
+  linkParticle: s32'bg_spwind'
+  setPositionX: 443898
+  setPositionY: -18994
+  setDepth: 391334
+  setAngleY: 320000
+  setAngle: 35200
+endState: 
+
+beginState: s32'van_430_Twinkle'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'van_430_Twinkle'
+  setObjectSize: 400
+  setPositionX: 11920
+  setPositionY: 758718
+  setDepth: 115998
+  setAngleX: 345200
+  setAngleY: 343600
+  setAngle: 215600
+endState: 
+
+beginState: s32'van_430_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+    endUpon: 
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 1
+  sprite: s32'null', 30
+  Unknown2074: 3, -55825, 233187, 112459, -2085, 4977, -4, 60, 0, 20, 10, 0, 0, 0
+  cameraShake: s32'ShakeTate', 2000, 0, 15, 0
+  Unknown2875: 10
+  sprite: s32'null', 1
+  Unknown2582: 
+endState: 
+
+beginState: s32'van_440_SparksEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    setPositionX: -172983
+    setPositionY: 6574
+    setDepth: 149447
+    setObjectWidth: 1300
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'van_402_Sparks'
+  sprite: s32'null', 28
+  stopLinkObject: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_440_Slash01Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'van_440_slash01'
+  setPositionX: -68879
+  setPositionY: 60956
+  setDepth: 210802
+  setAngleX: 327600
+  setAngleY: 359200
+  setAngle: 0
+  sprite: s32'null', 3
+  linkParticle: s32'van_440_slash02'
+  setPositionX: -23952
+  setPositionY: 45930
+  setDepth: 209158
+  setAngleX: 316800
+  setAngleY: 356400
+  setAngle: 10400
+  sprite: s32'null', 3
+  linkParticle: s32'van_440_slash03'
+  setPositionX: 22977
+  setPositionY: 20738
+  setDepth: -85183
+  setAngleX: 0
+  setAngleY: 0
+  setAngle: 0
+  sprite: s32'null', 30
+  linkParticle: s32'van_440_slash04'
+  stopLinkObject: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'van_441_Slash01Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 3
+  linkParticle: s32'van_441_slash01'
+  setPositionX: 390
+  setPositionY: 29820
+  setDepth: -2970
+  setAngle: 2800
+  sprite: s32'null', 3
+  linkParticle: s32'van_441_slash02'
+  setPositionX: 0
+  setPositionY: 0
+  setDepth: 0
+  setAngle: 0
+  sprite: s32'null', 30
+  linkParticle: s32'van_441_slash03'
+endState: 
+
+beginState: s32'van_440_BurstEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    setObjectSize: 1000
+    addPositionX: 180969
+  endUpon: 
+  sprite: s32'null', 2
+  linkParticle: s32'van_440_BurstStart'
+  sprite: s32'null', 6
+  linkParticle: s32'van_440_Burst'
+  sprite: s32'null', 45
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+endState: 
+
+beginState: s32'twb_440_GroundBurstEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    flipDirection: 
+    setPositionX: -125000
+  endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'bg_GroundBurst'
+endState: 
+
+beginState: s32'van_441_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+    endUpon: 
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 1
+  sprite: s32'null', 5
+  Unknown2074: 3, 61195, 250837, 132781, -1113, -1478, 0, 60, 5, 0, 6000, 0, 0, 0
+  cameraShake: s32'ShakeTate', 500, 0, 120, 0
+  Unknown2875: 10
+  sprite: s32'null', 720
+  Unknown2074: 3, 71336, 321928, 140473, -1112, -1478, 0, 60, 120, 0, 6000, 0, 0, 0
+  beginLabel: s32'End'
+  sprite: s32'null', 10
+  clearUpon: (SIGNAL_A)
+  Unknown2074: 3, -70291, 521046, 55970, 2044, 4278, 0, 60, 10, 0, 6000, 0, 0, 0
+  sprite: s32'null', 25
+  Unknown2074: 3, -70291, 521046, 55970, 2044, 4278, 0, 60, 0, 0, 25, 0, 0, 0
+  cameraShake: s32'ShakeTate', 2000, 0, 10, 0
+  sprite: s32'null', 1
+  Unknown2582: 
+endState: 
+
+beginState: s32'van_440cs_KnockEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    ignoreSuperFreezeFromAlly: 1
+    setAngle: 325200
+    setPositionX: 2146
+    setPositionY: 312520
+    setDepth: 37288
+    setObjectSize: 1200
+  endUpon: 
+  sprite: s32'null', 20
+  linkParticle: s32'van_440cs_Knock'
+endState: 
+
+beginState: s32'van_440cs_Steam00Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'van_440cs_Steam02'
+  setPositionX: 15512
+  setPositionY: 285713
+  setDepth: 69601
+  setAngleY: 4000
+  setAngle: 95200
+  setObjectSize: 500
+endState: 
+
+beginState: s32'van_440cs_Steam01Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'van_440cs_Steam00'
+  setPositionX: -42229
+  setPositionY: 230278
+  setDepth: 106540
+  setAngleX: 163600
+  setAngleY: 6000
+  setAngle: 167600
+  setObjectSize: 500
+endState: 
+
+beginState: s32'van_440cs_Steam02Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    ignoreSuperFreezeFromAlly: 1
+  endUpon: 
+  sprite: s32'null', 40
+  linkParticle: s32'van_440cs_Steam01'
+  setPositionX: -82871
+  setPositionY: 201395
+  setDepth: 101246
+  setAngleX: 6000
+  setAngleY: 199600
+endState: 
+
+beginState: s32'van_441cs_BGEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+  endUpon: 
+  sprite: s32'null', 6000
+  linkParticle: s32'van_440_BG'
+endState: 
+
+beginState: s32'van_441cs_GougeEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    flipDirection: 
+    setPositionX: -79450
+    setPositionY: -2473
+    setDepth: 535478
+    setObjectWidth: 1300
+    setObjectHeight: 700
+    Unknown180: 700
+    setAngleX: 0
+    setAngleY: 323200
+    setAngle: 0
+  endUpon: 
+  sprite: s32'null', 90
+  linkParticle: s32'van_441cs_Gouge'
+endState: 
+
+beginState: s32'van_441cs_WindEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+  endUpon: 
+  sprite: s32'null', 8
+  linkParticle: s32'van_441cs_Wind'
+  setPositionX: 253329
+  setPositionY: 517753
+  setDepth: -124508
+  setAngleX: 45600
+  setAngleY: 171600
+  setAngle: 13600
+  setObjectWidth: 1000
+  setObjectHeight: 1000
+  Unknown180: 1000
+  sprite: s32'null', 8
+  setPositionX: 246854
+  setPositionY: 500714
+  setDepth: -186350
+  setAngleX: 46800
+  setAngleY: 180400
+  setAngle: 13600
+  sprite: s32'null', 8
+  setPositionX: 79674
+  setPositionY: 648752
+  setDepth: -487769
+  setAngleX: 51200
+  setAngleY: 153600
+  setAngle: 10000
+  sprite: s32'null', 8
+  setPositionX: -486199
+  setPositionY: 224226
+  setDepth: -48257
+  setAngleX: 314400
+  setAngleY: 136400
+  setAngle: 210400
+  sprite: s32'null', 4
+  setPositionX: -275414
+  setPositionY: 141249
+  setDepth: 459304
+  setAngleX: 126000
+  setAngleY: 294000
+  setAngle: 310000
+  setObjectWidth: 700
+  setObjectHeight: 700
+  Unknown180: 700
+  sprite: s32'null', 4
+  setPositionX: -232650
+  setPositionY: 71139
+  setDepth: 520089
+  setAngleX: 121200
+  setAngleY: 296800
+  setAngle: 333200
+  sprite: s32'null', 4
+  setAngleX: 110800
+  setAngleY: 276800
+  setAngle: 333200
+  setPositionX: -148922
+  setPositionY: 41918
+  setDepth: 535656
+  sprite: s32'null', 4
+  setPositionX: -46173
+  setPositionY: 15028
+  setDepth: 511756
+  setAngleX: 110800
+  setAngleY: 246800
+  setAngle: 336400
+  sprite: s32'null', 4
+  setPositionX: 39976
+  setPositionY: 20511
+  setDepth: 491565
+  setAngleX: 98800
+  setAngleY: 246000
+  setAngle: 356400
+  sprite: s32'null', 4
+  setPositionX: 74513
+  setPositionY: 17075
+  setDepth: 472244
+  setAngleX: 93200
+  setAngleY: 219200
+  setAngle: 359200
+  sprite: s32'null', 4
+  setPositionX: 118412
+  setPositionY: 25755
+  setDepth: 452083
+  setAngleX: 96800
+  setAngleY: 228400
+  setAngle: 4800
+  sprite: s32'null', 4
+  setPositionX: 139738
+  setPositionY: 20293
+  setDepth: 439441
+  setAngleX: 96000
+  setAngleY: 209200
+  setAngle: 2800
+  sprite: s32'null', 4
+  setPositionX: 158010
+  setPositionY: 22857
+  setDepth: 430232
+  setAngleX: 95600
+  setAngleY: 198400
+  setAngle: 2000
+  sprite: s32'null', 4
+  setPositionX: 186322
+  setPositionY: 20490
+  setDepth: 409796
+  setAngleX: 88400
+  setAngleY: 184000
+  setAngle: 2800
+  sprite: s32'null', 4
+  setAngleX: 88400
+  setAngleY: 180400
+  setAngle: 2800
+  setPositionX: 206572
+  setPositionY: 18348
+  setDepth: 400406
+  sprite: s32'null', 4
+  setPositionX: 217459
+  setPositionY: 22807
+  setDepth: 379937
+  setAngleX: 86000
+  setAngleY: 171600
+  setAngle: 800
+  sprite: s32'null', 4
+  setPositionX: 194060
+  setPositionY: 33762
+  setDepth: 344244
+  setAngleX: 69600
+  setAngleY: 166400
+  setAngle: 800
+  sprite: s32'null', 4
+  setPositionX: 237569
+  setPositionY: 36587
+  setDepth: 294305
+  setAngleX: 69600
+  setAngleY: 166400
+  setAngle: 800
+  sprite: s32'null', 4
+  setPositionX: 167289
+  setPositionY: 59891
+  setDepth: 238173
+  setAngleX: 66400
+  setAngleY: 163200
+  setAngle: 355600
+  sprite: s32'null', 4
+  setPositionX: 151021
+  setPositionY: 71884
+  setDepth: 212258
+  setAngleX: 62800
+  setAngleY: 158800
+  setAngle: 352400
+  sprite: s32'null', 4
+  setPositionX: 198418
+  setPositionY: 194173
+  setDepth: -35246
+  setAngleX: 36400
+  setAngleY: 197200
+  setAngle: 353600
+endState: 
+
+beginState: s32'van_441cs_slashEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+  endUpon: 
+  sprite: s32'null', 8
+  linkParticle: s32'van_441_slash'
+  setPositionX: 255583
+  setPositionY: 357136
+  setDepth: -4414
+  setAngleX: 272800
+  setAngleY: 50800
+  setAngle: 99600
+  setObjectWidth: 1000
+  setObjectHeight: 1000
+  Unknown180: 1000
+  sprite: s32'null', 8
+  setPositionX: 245722
+  setPositionY: 386398
+  setDepth: -92295
+  setAngleX: 272800
+  setAngleY: 50800
+  setAngle: 99600
+  sprite: s32'null', 8
+  setPositionX: 184198
+  setPositionY: 468445
+  setDepth: -265237
+  setAngleX: 49200
+  setAngleY: 194400
+  setAngle: 44800
+  sprite: s32'null', 8
+  setPositionX: -493063
+  setPositionY: 328707
+  setDepth: -111966
+  setAngleX: 256400
+  setAngleY: 190800
+  setAngle: 332000
+  sprite: s32'null', 4
+  setPositionX: -313570
+  setPositionY: 183490
+  setDepth: 395178
+  setAngleX: 42400
+  setAngleY: 66000
+  setAngle: 328400
+  setObjectWidth: 700
+  setObjectHeight: 700
+  Unknown180: 700
+  sprite: s32'null', 4
+  setPositionX: -253268
+  setPositionY: 129483
+  setDepth: 459111
+  setAngleX: 65600
+  setAngleY: 49200
+  setAngle: 318000
+  sprite: s32'null', 4
+  setPositionX: -169883
+  setPositionY: 82562
+  setDepth: 498047
+  setAngleX: 70800
+  setAngleY: 38400
+  setAngle: 320000
+  sprite: s32'null', 4
+  setPositionX: -109835
+  setPositionY: 66543
+  setDepth: 544106
+  setAngleX: 286000
+  setAngleY: 146400
+  setAngle: 202800
+  sprite: s32'null', 4
+  setPositionX: -18892
+  setPositionY: 42303
+  setDepth: 545134
+  setAngleX: 110800
+  setAngleY: 311200
+  setAngle: 346400
+  sprite: s32'null', 4
+  setPositionX: 43982
+  setPositionY: 24290
+  setDepth: 567704
+  setAngleX: 111600
+  setAngleY: 284400
+  setAngle: 353600
+  linkParticle: s32'van_441cs_slashEnd'
+endState: 
+
+beginState: s32'van_441cs_SlashDamegeEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    setPositionX: -55978
+    setPositionY: 451769
+    setDepth: 41839
+    setAngleX: 28000
+    setAngleY: 158800
+    setAngle: 122800
+    setObjectSize: 700
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 90
+  linkParticle: s32'van_441cs_SlashDamage'
+endState: 
+
+beginState: s32'van_441cs_SlashDamege2Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    setPositionX: 225339
+    setPositionY: 510918
+    setDepth: -114321
+    setAngleX: 44000
+    setAngleY: 61200
+    setAngle: 236800
+    setObjectSize: 500
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 90
+  linkParticle: s32'van_441cs_SlashDamage2'
+endState: 
+
+beginState: s32'van_441cs_SlashEnd2Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    flipDirection: 
+    setPositionX: 158396
+    setPositionY: 166030
+    setDepth: -314246
+    setAngleX: 800
+    setAngleY: 285600
+    setAngle: 2400
+    setObjectSize: 200
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_slashEnd2'
+  sprite: s32'null', 4
+  setPositionX: 223777
+  setPositionY: 267148
+  setDepth: -264327
+  setAngleX: 7200
+  setAngleY: 265600
+  setAngle: 246000
+endState: 
+
+beginState: s32'van_441cs_SlashEnd3Eff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    flipDirection: 
+    setPositionX: 76355
+    setPositionY: 193259
+    setDepth: -200031
+    setAngleX: 26000
+    setAngleY: 272000
+    setAngle: 65200
+    setObjectWidth: 300
+    setObjectHeight: 300
+    Unknown180: 300
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_slashEnd3'
+  sprite: s32'null', 56
+  linkParticle: s32'van_441cs_slashEnd4'
+  setPositionX: 80917
+  setPositionY: 224702
+  setDepth: -167933
+  setAngleX: 9600
+  setAngleY: 252000
+  setAngle: 16400
+endState: 
+
+beginState: s32'van_441cs_ExplosionEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    linkObjectZ: 3
+    setPositionX: 629020
+    setPositionY: 1746839
+    setDepth: -303987
+    setAngleX: 44000
+    setAngleY: 92400
+    setAngle: 343600
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 300
+  linkParticle: s32'van_441cs_Flare'
+  setObjectSize: 1300
+  beginLabel: s32'End'
+  sprite: s32'null', 150
+  linkParticle: s32'van_441cs_Explosion'
+  setObjectSize: 370
+endState: 
+
+beginState: s32'van_441cs_WhiteOutEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    upon: (BEFORE_EXIT)
+      Unknown409: 0, 1
+      Unknown410: 0, 1
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 8
+  linkParticle: s32'cmn_FadeOut_HUDBack'
+  Unknown409: 0, 1
+  Unknown410: 12, 1
+  sprite: s32'null', 2
+  Unknown409: 200, 1
+  Unknown410: 0, 1
+endState: 
+
+beginState: s32'van_441_WhiteInEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    upon: (BEFORE_EXIT)
+      Unknown409: 0, 1
+      Unknown410: 0, 1
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 40
+  linkParticle: s32'cmn_FadeOut_HUDBack'
+  Unknown409: 100, 1
+  Unknown410: -2, 1
+  sprite: s32'null', 1
+  Unknown409: 0, 1
+  Unknown410: 0, 1
+endState: 
+
+beginState: s32'van_441cs_Blur'
+  upon: (IMMEDIATE)
+    stopLinkObject: 3
+    setLinkObjectDestroyOnStateChange: 3
+    upon: (BEFORE_EXIT)
+      if: Mem(Dir)
+        Unknown2590: s32'van_PP_441RB1P', 1, 0
+        Unknown2587: 1601069430, s32'PP_441RB1P'
+      endIf: 
+      else: 
+        Unknown2590: s32'van_PP_441RB2P', 1, 0
+        Unknown2587: 1601069430, s32'PP_441RB2P'
+      endElse: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 8
+  if: Mem(Dir)
+    Unknown2587: 1601069430, s32'PP_441RB1P'
+    Unknown2588: s32'van_PP_441RB1P', 1, 100
+  endIf: 
+  else: 
+    Unknown2587: 1601069430, s32'PP_441RB2P'
+    Unknown2588: s32'van_PP_441RB2P', 1, 100
+  endElse: 
+  sprite: s32'null', 4
+  if: Mem(Dir)
+    Unknown2588: s32'van_PP_441RB1P', 1, 50
+  endIf: 
+  else: 
+    Unknown2588: s32'van_PP_441RB2P', 1, 50
+  endElse: 
+  sprite: s32'null', 4
+  if: Mem(Dir)
+    Unknown2588: s32'van_PP_441RB1P', 1, 25
+  endIf: 
+  else: 
+    Unknown2588: s32'van_PP_441RB2P', 1, 25
+  endElse: 
+  sprite: s32'null', 1
+  Unknown2587: 1601069430, s32'PP_441RB1P'
+  Unknown2587: 1601069430, s32'PP_441RB2P'
+endState: 
+
+beginState: s32'van_441cs_RyuhaiEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+  endUpon: 
+  sprite: s32'null', 6000
+  linkParticle: s32'van_441_ryuhai'
+  setPositionX: -382102
+  setPositionY: 789128
+  setDepth: 1086342
+  setAngleX: 34000
+  setAngleY: 188000
+  setAngle: 312400
+endState: 
+
+beginState: s32'van_441cs_RockEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    flipDirection: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_Rock01'
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_Rock02'
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_Rock03'
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_Rock04'
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_Rock05'
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_Rock06'
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_Rock07'
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_Rock08'
+  sprite: s32'null', 4
+  linkParticle: s32'van_441cs_Rock09'
+endState: 
+
+beginState: s32'van_442cs_BokehFrontEff'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    setObjectSize: 500
+    setAngleY: 90000
+    setPositionX: 12303
+    setPositionY: 359921
+    setDepth: -446
+    upon: (SIGNAL_A)
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 2147483647
+  linkParticle: s32'van_442cs_Bokeh_front'
+  beginLabel: s32'End'
+  sprite: s32'null', 2147483647
+  clearUpon: (SIGNAL_A)
+  setObjectSize: 300
+  setPositionX: -347605
+  setPositionY: 120849
+  setDepth: 1552
+endState: 
+
+beginState: s32'van_442cs_BokehEff'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    setObjectSize: 500
+    setPositionX: -385341
+    setPositionY: -539
+    setDepth: -5972
+    setAngleX: 307600
+    setAngleY: 90800
+  endUpon: 
+  sprite: s32'null', 2147483647
+  linkParticle: s32'van_442cs_Bokeh'
+endState: 
+
+beginState: s32'van_442cs_HaloEff'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    setObjectSize: 200
+    setPositionX: 196907
+    setPositionY: 826070
+    setDepth: -11975
+    setAngleX: 248400
+    setAngleY: 257200
+    setAngle: 180000
+  endUpon: 
+  sprite: s32'null', 2147483647
+  linkParticle: s32'van_442cs_Halo'
+endState: 
+
+beginState: s32'van_442cs_WhiteInEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+    linkObjectPosition: 3
+    upon: (BEFORE_EXIT)
+      Unknown409: 0, 1
+      Unknown410: 0, 1
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 50
+  linkParticle: s32'cmn_FadeOut_HUDBack'
+  Unknown409: 100, 1
+  Unknown410: -2, 1
+  sprite: s32'null', 1
+  Unknown409: 0, 1
+  Unknown410: 0, 1
+endState: 
+
+beginState: s32'van_442cs_BGEff'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 3
+  endUpon: 
+  sprite: s32'null', 2147483647
+  linkParticle: s32'van_440_BG'
+endState: 
+
+beginState: s32'van_RoundWin_Camera'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    upon: 114
+      Unknown2582: 
+      haikuEnd: 
+      Unknown2863: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 25
+  Unknown2074: 3, 52286, 401035, 97643, 364, -2310, 3, 60, 20, 5, 0, 0, 0, 1
+  Unknown2875: 10
+  Unknown2863: 
+  Unknown2873: 3000, 100, 5000, 5000, 0, 10
+  Unknown374: 0
+  runOnObject: (ENEMY)
+  Unknown374: 0
+  endRunOnObject: 
+  linkParticle: s32'cmn_Binet'
+  setColor: -402653184
+  Unknown409: 80, 1
+  Unknown409: 50, 2
+  Unknown409: 0, 3
+  Unknown410: 4, 3
+  sprite: s32'null', 900
+  Unknown2074: 3, 50436, 392819, 97937, 364, -2310, 3, 60, 300, 600, 0, 0, 2, 2
+  Unknown410: 0, 3
+  sprite: s32'null', 10
+  Unknown2876: 10
+  Unknown2874: 10
+  Unknown409: 100, 3
+  Unknown410: -10, 3
+endState: 
+
+beginState: s32'van_700cs1P_WeaponImpctEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 2
+  endUpon: 
+  sprite: s32'null', 30
+  linkParticle: s32'van_700_GroundShock'
+  setPositionX: -497688
+  setPositionY: 18075
+  setDepth: 87050
+  setObjectSize: 200
+  setAngleX: 352400
+  setAngleY: 18400
+  setAngle: 400
+endState: 
+
+beginState: s32'van_700cs1P_WipeEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 2
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'van_700_wipe'
+  setObjectSize: 100
+  addPositionX: -499770
+  addPositionY: 207117
+  Unknown1727: 153869
+  sprite: s32'null', 4
+  setAngleY: 134800
+  setPositionX: -199732
+  setPositionY: 245304
+  setDepth: 244419
+  sprite: s32'null', 4
+  setPositionX: -179755
+  setPositionY: 256955
+  setDepth: 226257
+  setAngleX: 348800
+  setAngleY: 136800
+  sprite: s32'null', 16
+  setPositionX: -171599
+  setPositionY: 270179
+  setDepth: 184714
+  setAngleX: 348800
+  setAngleY: 136800
+endState: 
+
+beginState: s32'van_700cs1P_ScrAnim'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 2
+  endUpon: 
+  sprite: s32'null', 24
+  linkParticle: s32'van_700_ScrAnimImpact'
+  setObjectSize: 250
+  setPositionX: -199207
+  setPositionY: 327933
+  setDepth: 2712
+endState: 
+
+beginState: s32'van_700cs2P_DashEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 2
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'bg_dash'
+  setPositionX: 574283
+  setPositionY: 60032
+  setDepth: 237882
+  setObjectSize: 600
+  setAngleY: 188800
+endState: 
+
+beginState: s32'van_700cs2P_DashEff2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 2
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'bg_dash2'
+  setAngleY: 213600
+  setObjectSize: 400
+  setPositionX: 608481
+  setPositionY: 97599
+  setDepth: 204982
+endState: 
+
+beginState: s32'van_700cs2P_DashEff3'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 2
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'bg_dash'
+  setObjectSize: 800
+  setPositionX: 901042
+  setPositionY: 41353
+  setDepth: -132000
+  setAngleY: 219200
+endState: 
+
+beginState: s32'van_700cs2P_WeaponSmoke'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 2
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'van_700_smoke'
+  setPositionX: 688005
+  setPositionY: -24486
+  setDepth: 161729
+  setObjectWidth: 250
+  setObjectHeight: 250
+  Unknown180: 250
+  setAngleX: 0
+  setAngleY: 183200
+  setAngle: 0
+endState: 
+
+beginState: s32'van_700cs2P_WeaponSmokeSub'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 2
+  endUpon: 
+  sprite: s32'null', 60
+  linkParticle: s32'van_700_smokeSub'
+  setPositionX: 753833
+  setPositionY: -35340
+  setDepth: 51343
+  setObjectWidth: 250
+  setObjectHeight: 250
+  Unknown180: 250
+  setAngleX: 350400
+  setAngleY: 170400
+  setAngle: 0
+endState: 
+
+beginState: s32'van_800cs_LightEFF'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 2
+  endUpon: 
+  sprite: s32'null', 4
+  sprite: s32'null', 60
+  linkParticle: s32'van_800cs_Light00'
+  setObjectWidth: 250
+  setObjectHeight: 250
+  Unknown180: 250
+  setPositionX: -798670
+  setPositionY: 642945
+  setDepth: -33931
+  setAngleX: 16400
+  setAngleY: 18400
+  setAngle: 38400
+endState: 
+
+beginState: s32'DUMMYDUMMY'
+  sprite: s32'null', 1
+endState: 
+
