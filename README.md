@@ -1,7 +1,7 @@
 # GBVSR-Chara_BBS
 All extracted BBScript files for characters in GBVSR
 
-Character frame data and such will be in the file "BBS_<CharaID>", while effects and other things to make the character work are in "BBS_<CharaID>EF".
+Character frame data and such will be in the file "BBS_(CharaID)", while effects and other things to make the character work are in "BBS_(CharaID)EF".
 
 Character ID's:
 - ABL = Avatar Belial
