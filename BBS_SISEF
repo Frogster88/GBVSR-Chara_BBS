@@ -54,8 +54,8 @@ beginState: s32'sis_309_Rotation_loop'
     setAngleY: 25000
     setAngle: 0
     setObjectSize: 2800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
       linkParticle: s32'sis_309_Rotation04_End'
     endUpon: 
@@ -95,14 +95,14 @@ beginSubroutine: s32'Initialize_Normal'
     Unknown2204: 1
     upon: 8
       clearUpon: 8
-      clearUpon: (ON_DESTROY)
+      clearUpon: 45
       sendSignalToAction: s32'NmlAtk5D', 24
       gotoLabelRequests: s32'End'
       ifOperation: (IS_NOT_EQUAL), Mem(PlayerAttackRate), Val(100)
         storeValue: Mem(PlayerAttackRate), Val(100)
       endIf: 
     endUpon: 
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 8
       storeValue: Mem(ActReg1), Val(1)
       gotoLabelRequests: s32'End'
@@ -117,14 +117,14 @@ beginSubroutine: s32'Initialize_Tame'
     setProjectileDurability: 0
     untechAmount: 30
     wallPushback: 0, 1500
-    Unknown1030: 0, 1320
+    wallPushbackOnHit: 0, 1320
     missionName: s32'sba208_Shot_Tame'
     initializeDestroy: 
     numberOfHits: 1
     destroyOnDamageCollision: 1
     Unknown2204: 1
-    upon: (ON_DESTROY)
-      clearUpon: (ON_DESTROY)
+    upon: 45
+      clearUpon: 45
       clearUpon: 8
       clearUpon: 46
       storeValue: Mem(ActReg0), Val(1)
@@ -144,7 +144,7 @@ beginSubroutine: s32'Initialize_Tame'
       endElse: 
     endUpon: 
     upon: 8
-      clearUpon: (ON_DESTROY)
+      clearUpon: 45
       clearUpon: 8
       clearUpon: 46
       storeValue: Mem(ActReg0), Val(1)
@@ -203,7 +203,7 @@ endSubroutine:
 beginSubroutine: s32'End_Normal'
   ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(0)
     if: Mem(ActReg1)
-      sendSignalToAction: s32'NmlAtk5D', (SIGNAL_A)
+      sendSignalToAction: s32'NmlAtk5D', 23
     endIf: 
   endIf: 
 endSubroutine: 
@@ -337,7 +337,7 @@ beginState: s32'sba208_Shot'
   beginLabel: s32'End'
   sprite: s32'sba208_01', 5
   clearUpon: 13
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 8
   clearUpon: 35
   clearUpon: 46
@@ -349,8 +349,8 @@ beginState: s32'sba208_Shot'
   Unknown2221: 0
   velocityXPercentEachFrame: 50
   createObject: s32'sis_208_bg_dashbrake01', (PLAYER)
-  sendSignalToAction: s32'sis_208_move_Loop', (SIGNAL_A)
-  sendSignalToAction: s32'sis_208_EyeRay', (SIGNAL_A)
+  sendSignalToAction: s32'sis_208_move_Loop', 23
+  sendSignalToAction: s32'sis_208_EyeRay', 23
   Unknown413: -3, 2, 0, 0
   Unknown413: -3, 2, 1, 0
   callSubroutine: s32'End_Normal'
@@ -389,7 +389,7 @@ beginState: s32'sba208_Bunshin'
   Unknown413: -3, 2, 0, 0
   Unknown413: -3, 2, 1, 0
   sprite: s32'sba208_02', 10
-  sendSignalToAction: s32'sis_208_move_Loop', (SIGNAL_A)
+  sendSignalToAction: s32'sis_208_move_Loop', 23
 endState: 
 
 beginState: s32'sis_208_bg_dashbrake01'
@@ -421,9 +421,9 @@ beginState: s32'sis_208_EyeRay'
     setPositionX: -100000
     setPositionY: 263000
     setDepth: 50000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 1
@@ -473,9 +473,9 @@ beginState: s32'sis_208_move_Loop'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'Loop'
@@ -513,8 +513,8 @@ beginState: s32'sis_253_Burst'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     setObjectWidth: 1500
@@ -550,8 +550,8 @@ beginState: s32'sis_253_Burst_nokoshi'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: 35960
@@ -605,7 +605,7 @@ beginState: s32'sba301'
   Unknown413: -2, 2, 0, 0
   Unknown413: -2, 2, 1, 0
   sprite: s32'sba301_03', 20
-  sendSignalToAction: s32'sis_301_move_Loop', (SIGNAL_A)
+  sendSignalToAction: s32'sis_301_move_Loop', 23
 endState: 
 
 beginState: s32'sis_301_move_Loop'
@@ -615,9 +615,9 @@ beginState: s32'sis_301_move_Loop'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'Loop'
@@ -735,7 +735,7 @@ beginState: s32'sis_309_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
     forceCameraMove: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Land'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -750,7 +750,7 @@ beginState: s32'sis_309_EnshutuCamera'
   Unknown2074: 3, 34581, 542825, 136547, -1291, -528, -6, 60, 10, 35, 0, 0, 0, 0
   beginLabel: s32'Land'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown2074: 3, 3699, 315341, 112521, 102, -376, -6, 60, 0, 1, 0, 0, 0, 0
   sprite: s32'null', 15
   Unknown2074: 3, 6833, 402649, 111950, -46, -313, -6, 60, 5, 10, 1800, 0, 0, 0
@@ -1385,7 +1385,7 @@ beginState: s32'sis_400_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
     forceCameraMove: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -1404,7 +1404,7 @@ beginState: s32'sis_400_EnshutuCamera'
   gotoLabel: s32'Loop'
   beginLabel: s32'Atk'
   sprite: s32'null', 25
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown2074: 3, 172967, 375529, 143852, -346, -4511, 283, 60, 5, 20, 1800, 0, 0, 0
   sprite: s32'null', 15
   Unknown2074: 3, 172967, 375529, 143852, -346, -4511, 283, 60, 0, 0, 1, 0, 0, 0
@@ -1420,7 +1420,7 @@ beginState: s32'sis_400Air_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
     forceCameraMove: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -1439,7 +1439,7 @@ beginState: s32'sis_400Air_EnshutuCamera'
   gotoLabel: s32'Loop'
   beginLabel: s32'Atk'
   sprite: s32'null', 25
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown2074: 3, 14288, 389262, 63611, 923, -194, 282, 60, 5, 20, 1800, 0, 0, 0
   sprite: s32'null', 15
   Unknown2074: 3, 14288, 389262, 63611, 923, -194, 282, 60, 0, 0, 15, 0, 0, 0
@@ -1491,8 +1491,8 @@ beginState: s32'sis_405_CrowEff'
     setLinkObjectDestroyOnDamage: 3
     stopLinkObject: 2
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 24
@@ -1572,7 +1572,7 @@ beginState: s32'sis_405_Shot'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 1
-    upon: (ON_DESTROY)
+    upon: 45
       gotoLabelRequests: s32'End'
     endUpon: 
     setEventTrigger: 13, 80
@@ -1600,8 +1600,8 @@ beginState: s32'sis_405_Shot'
       endUpon: 
     endIf: 
   endIf: 
-  upon: (SIGNAL_A)
-    clearUpon: (SIGNAL_A)
+  upon: 23
+    clearUpon: 23
     comboLimitScaling: 0
     Unknown1131: 1
     storeValue: Mem(423), Val(1)
@@ -1668,7 +1668,7 @@ endSprite:
 gotoLabel: s32'Loop'
 beginLabel: s32'End'
 sprite: s32'null', 30
-clearUpon: (ON_DESTROY)
+clearUpon: 45
 clearUpon: (TOUCH_GROUND)
 clearUpon: 13
 deleteMoveForceDisableFlag: 1
@@ -1680,8 +1680,8 @@ callSubroutine: s32'cmnWeaponLvMaxColorInit'
 endState: 
 beginState: s32'sis_405_Shot++'
   upon: (IMMEDIATE)
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     setLinkObjectDestroyOnDamage: 3
@@ -1758,8 +1758,8 @@ beginState: s32'sis_406_CrowEff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
@@ -1777,8 +1777,8 @@ beginState: s32'sis_406_TwinkleEff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1918,7 +1918,7 @@ beginState: s32'sba406'
   Unknown413: -2, 2, 0, 0
   Unknown413: -2, 2, 1, 0
   sprite: s32'sba301_03', 20
-  sendSignalToAction: s32'sis_301_move_Loop', (SIGNAL_A)
+  sendSignalToAction: s32'sis_301_move_Loop', 23
 endState: 
 
 beginState: s32'sis_407_CrowA'
@@ -1929,8 +1929,8 @@ beginState: s32'sis_407_CrowA'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1966,8 +1966,8 @@ beginState: s32'sis_407_CrowB'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2000,8 +2000,8 @@ beginState: s32'sis_407_CrowC'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2033,9 +2033,9 @@ beginState: s32'sis_407_EyeRayA'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       linkParticle: s32'sis_407_EyeRay_End'
       setPositionX: 85000
       setPositionY: 119000
@@ -2066,9 +2066,9 @@ beginState: s32'sis_407_EyeRayB'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       linkParticle: s32'sis_407_EyeRay_End'
       setPositionX: 80000
       setPositionY: 122440
@@ -2099,9 +2099,9 @@ beginState: s32'sis_407_EyeRayC'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       linkParticle: s32'sis_407_EyeRay_End'
       setPositionX: 80000
       setPositionY: 122440
@@ -2132,9 +2132,9 @@ beginState: s32'sis_407_WallEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 60
@@ -2347,9 +2347,9 @@ beginState: s32'sis_430_BinetEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 600
@@ -2398,9 +2398,9 @@ beginState: s32'sis_430_BG'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'PosChange'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'PosChange2'
@@ -2464,9 +2464,9 @@ beginState: s32'sis_430_ScrSlash'
     setPositionX: -377
     setPositionY: 1747847
     setDepth: 176056
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
@@ -2510,9 +2510,9 @@ beginState: s32'sis_430_DamageRing'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 600
@@ -2538,9 +2538,9 @@ beginState: s32'sis_430_DamageRing2'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 600
@@ -2566,9 +2566,9 @@ beginState: s32'sis_430_DamageRing3'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 600
@@ -2593,7 +2593,7 @@ beginState: s32'sis_430_WhiteOut'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown409: 0, 1
       Unknown410: 0, 1
@@ -2698,7 +2698,7 @@ beginState: s32'sis_430_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
     forceCameraMove: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Land'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -2819,7 +2819,7 @@ beginSubroutine: s32'Bunshin_Display'
     if: Mem(ActReg0)
       Unknown412: 0, 2, 0, 0
       Unknown412: 0, 2, 1, 0
-      sendSignalToAction: s32'BunshinAttackObj', (SIGNAL_A)
+      sendSignalToAction: s32'BunshinAttackObj', 23
     endIf: 
     else: 
       Unknown412: 50, 2, 0, 0
@@ -2845,8 +2845,8 @@ beginState: s32'Bunshin_A'
     setObjectSize: 995
     linkObjectZ: 3
     Unknown264: 8
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 24
@@ -2898,8 +2898,8 @@ beginState: s32'Bunshin_B'
     setObjectSize: 990
     linkObjectZ: 3
     Unknown264: 16
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 24
@@ -3033,8 +3033,8 @@ beginState: s32'sis_431_Aura'
     setAngleX: 0
     setAngleY: 180000
     setAngle: 0
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3087,7 +3087,7 @@ beginState: s32'sis_431_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
     forceCameraMove: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Land'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -3110,8 +3110,8 @@ beginState: s32'sis_440_Crow'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3395,8 +3395,8 @@ beginState: s32'sis_440cs_CharaHideRay'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'PosChange'
     endUpon: 
   endUpon: 
@@ -3666,8 +3666,8 @@ beginState: s32'sis_440cs_HandAura'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'IngamePos'
     endUpon: 
   endUpon: 
@@ -3869,8 +3869,8 @@ beginState: s32'sis_440cs_EyeStandBy'
     linkObjectPosition: 2
     stopLinkObject: 3
     linkParticle: s32'sis_440_EyeStandByRay'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3893,8 +3893,8 @@ beginState: s32'sis_440cs_EyeStandBy2'
     linkObjectPosition: 2
     stopLinkObject: 3
     linkParticle: s32'sis_440_EyeStandByRay'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3964,8 +3964,8 @@ beginState: s32'sis_441cs_BG'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Cut1'
     endUpon: 
     upon: 24
@@ -4213,8 +4213,8 @@ beginState: s32'sis_441cs_SpeedLine2'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'PosChange'
     endUpon: 
   endUpon: 
@@ -4650,9 +4650,9 @@ beginState: s32'sis_441cs_HitEff05'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 60
@@ -5162,7 +5162,7 @@ beginState: s32'sis_441cs_SlashRingMatome'
       createObject: s32'sis_441cs_Blur2', (PLAYER)
     endIf: 
     ifOnFrame: Val(334)
-      sendSignalToAction: s32'sis_441cs_HitEff05', (SIGNAL_A)
+      sendSignalToAction: s32'sis_441cs_HitEff05', 23
       deactivateObjectByName: s32'sis_441cs_OverRay2'
     endIf: 
   endUpon: 
@@ -5174,7 +5174,7 @@ beginState: s32'sis_441_WhiteOut'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown409: 0, 1
       Unknown410: 0, 1
@@ -5410,7 +5410,7 @@ beginState: s32'BunshinAttackObj'
         attackOff: 
       endIf: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       attackOff: 
     endUpon: 
   endUpon: 

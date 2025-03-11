@@ -68,8 +68,8 @@ beginState: s32'SRZ_208_Aura'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -556,23 +556,23 @@ beginState: s32'SRZ_400_Burst'
       wallPushback: 0, 1500
       damageEffect: 2, s32'SRZ_SPHitEff'
       if: Mem(PlayerVal0)
-        Unknown712: 0, 100
+        addValToDamage: 0, 100
       endIf: 
       ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
         storeValue: Mem(ActReg0), Val(1)
       endIf: 
       ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(2)
         if: Mem(PlayerVal2)
-          if: Mem(437)
-            mysteryValue: 1
+          if: Mem(440)
+            Unknown1019: 1
           endIf: 
         endIf: 
       endIf: 
       ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(3)
         hitAirPushbackY: 22000
         if: Mem(PlayerVal2)
-          if: Mem(437)
-            mysteryValue: 1
+          if: Mem(440)
+            Unknown1019: 1
           endIf: 
         endIf: 
       endIf: 
@@ -779,8 +779,8 @@ beginState: s32'SRZ_401_FistStandByEff'
     setPositionX: -46953
     setPositionY: 245942
     setDepth: 29791
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Move'
     endUpon: 
   endUpon: 
@@ -973,8 +973,8 @@ beginState: s32'SRZ_403_Strike'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Attack'
     endUpon: 
     upon: 24
@@ -1069,8 +1069,8 @@ beginState: s32'SRZ_403_Strike_SP'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Attack'
     endUpon: 
     upon: 24
@@ -1201,9 +1201,9 @@ beginState: s32'SRZ_405_Trail'
     linkParticle: s32'srz_405_trail_loop'
     flipDirection: 
     Unknown289: 300
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 30
@@ -1222,9 +1222,9 @@ beginState: s32'SRZ_405_Aura'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'Loop'
@@ -1254,9 +1254,9 @@ beginState: s32'SRZ_405_Aura2'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'Loop'
@@ -1288,8 +1288,8 @@ beginState: s32'SRZ_406_ShineEff'
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(360000)
       setPositionX: 1240000
     endIf: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1762,7 +1762,7 @@ beginState: s32'SRZ_440_PointLight_Manager'
     addPositionX: 56943
     addPositionY: 245543
     Unknown1727: 38713
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 540
@@ -1794,7 +1794,7 @@ beginState: s32'SRZ_440_PointLight'
   upon: (IMMEDIATE)
     stopLinkObject: 2
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 600
   linkParticle: s32'srz_440_PointLight'
@@ -2550,7 +2550,7 @@ beginState: s32'SRZ_441_CSBG'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     stopLinkObject: 2
-    gotoLabelUpon: (SIGNAL_A), s32'broken'
+    gotoLabelUpon: 23, s32'broken'
   endUpon: 
   sprite: s32'null', 600
   linkParticle: s32'srz_441_BG01'
@@ -2699,7 +2699,7 @@ beginState: s32'SRZ_441_CSImpact'
     setAngleX: 73600
     setAngleY: 90000
     setAngle: 0
-    gotoLabelUpon: (SIGNAL_A), s32'Move'
+    gotoLabelUpon: 23, s32'Move'
   endUpon: 
   sprite: s32'null', 600
   linkParticle: s32'srz_441_CSImpact01'
@@ -2714,7 +2714,7 @@ beginState: s32'SRZ_441_CSGroundBurst'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     stopLinkObject: 2
-    gotoLabelUpon: (SIGNAL_A), s32'Move'
+    gotoLabelUpon: 23, s32'Move'
   endUpon: 
   sprite: s32'null', 600
   linkParticle: s32'srz_441_CSSmoke01'
@@ -2801,7 +2801,7 @@ endState:
 beginState: s32'SRZ_441_CSWhiteOut'
   upon: (IMMEDIATE)
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown409: 0, 1
       Unknown410: 0, 1
@@ -2879,7 +2879,7 @@ beginState: s32'SRZ_442_GroundCrack'
     setAngleX: 0
     setAngleY: 136400
     setAngle: 0
-    gotoLabelUpon: (SIGNAL_A), s32'Move'
+    gotoLabelUpon: 23, s32'Move'
   endUpon: 
   sprite: s32'null', 2147483647
   linkParticle: s32'srz_442_CSRock'
@@ -2923,7 +2923,7 @@ beginState: s32'SRZ_442_Wind'
     linkObjectPosition: 2
     stopLinkObject: 2
     flipDirection: 
-    gotoLabelUpon: (SIGNAL_A), s32'Move'
+    gotoLabelUpon: 23, s32'Move'
   endUpon: 
   sprite: s32'null', 2147483647
   linkParticle: s32'srz_442_FistWind00'

@@ -334,8 +334,8 @@ beginState: s32'DJT_208_strike_Lv0'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Fall'
     endUpon: 
     upon: 24
@@ -363,8 +363,8 @@ beginState: s32'DJT_208_strike_Lv1'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Fall'
     endUpon: 
     upon: 24
@@ -392,8 +392,8 @@ beginState: s32'DJT_208_strike_Lv2'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Fall'
     endUpon: 
     upon: 24
@@ -424,8 +424,8 @@ beginState: s32'DJT_208_strike_Lv3'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Fall'
     endUpon: 
     upon: 24
@@ -456,8 +456,8 @@ beginState: s32'DJT_208_strike_Lv4'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Fall'
     endUpon: 
     upon: 24
@@ -1238,7 +1238,7 @@ beginState: s32'SpecialShot'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 37
       gotoLabelRequests: s32'Koware'
     endUpon: 
@@ -1278,19 +1278,19 @@ beginState: s32'SpecialShot'
   beginLabel: s32'Koware'
   sprite: s32'null', 5
   clearUpon: 13
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   recoveryState: 
   haltMomentum: 1
   createObjectWithArg: s32'koware_Dummy', (PLAYER)
   Unknown2050: 0
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    skillCooldown: 0, 20
+    Unknown1921: 0, 20
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    skillCooldown: 0, 20
+    Unknown1921: 0, 20
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    skillCooldown: 0, 420
+    Unknown1921: 0, 420
   endIf: 
   Unknown1923: 0
   if: Mem(386)
@@ -1335,7 +1335,7 @@ beginState: s32'Charge_Attack'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: (ON_DESTROY)
+    upon: 45
       gotoLabelRequests: s32'Koware'
     endUpon: 
     setEventTrigger: 13, 80
@@ -1363,7 +1363,7 @@ beginState: s32'Charge_Attack'
   beginLabel: s32'Koware'
   sprite: s32'null', 5
   clearUpon: 13
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   recoveryState: 
   sprite: s32'null', 5
   Unknown2050: 0
@@ -1405,12 +1405,12 @@ beginState: s32'Charge_SpecialShot'
     damageEffect: 2, s32'DJT_SPHitEff3'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
       missionName: s32'Charge_SpecialShot_A'
-      Unknown712: 0, 100
+      addValToDamage: 0, 100
       physicsXImpulse: 24000
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
       missionName: s32'Charge_SpecialShot_B'
-      Unknown712: 0, 100
+      addValToDamage: 0, 100
       physicsXImpulse: 24000
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
@@ -1420,7 +1420,7 @@ beginState: s32'Charge_SpecialShot'
       hitAirPushbackX: 4000
       hitAirPushbackY: 10000
       wallPushback: 0, 450
-      Unknown1030: 0, 216
+      wallPushbackOnHit: 0, 216
       physicsXImpulse: 18000
       upon: 8
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
@@ -1480,7 +1480,7 @@ beginState: s32'Charge_SpecialShot'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 93
       gotoLabelRequests: s32'Koware'
     endUpon: 
@@ -1520,7 +1520,7 @@ beginState: s32'Charge_SpecialShot'
         modifyVar: (ADD), Mem(ActReg1), Val(1)
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(81)
           clearUpon: (FRAME_STEP)
-          clearUpon: (ON_DESTROY)
+          clearUpon: 45
           clearUpon: 37
           attackOff: 
           gotoLabelRequests: s32'Koware'
@@ -1562,14 +1562,14 @@ beginState: s32'Charge_SpecialShot'
         modifyVar: (ADD), Mem(ActReg1), Val(1)
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(15)
           clearUpon: (FRAME_STEP)
-          clearUpon: (ON_DESTROY)
+          clearUpon: 45
           clearUpon: 37
           attackOff: 
           gotoLabelRequests: s32'Koware'
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
           clearUpon: (FRAME_STEP)
-          clearUpon: (ON_DESTROY)
+          clearUpon: 45
           clearUpon: 37
           attackOff: 
           gotoLabelRequests: s32'Koware'
@@ -1631,17 +1631,17 @@ beginState: s32'Charge_SpecialShot'
   sprite: s32'null', 5
   clearUpon: (FRAME_STEP)
   clearUpon: 13
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   recoveryState: 
   haltMomentum: 1
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    skillCooldown: 0, 20
+    Unknown1921: 0, 20
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    skillCooldown: 0, 20
+    Unknown1921: 0, 20
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    skillCooldown: 0, 420
+    Unknown1921: 0, 420
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
     if: Mem(417)
@@ -1649,9 +1649,9 @@ beginState: s32'Charge_SpecialShot'
       storeValue: Mem(287), Mem(Tmp)
     endIf: 
     else: 
-      skillCooldown: 0, 180
+      Unknown1921: 0, 180
     endElse: 
-    sendSignalToAction: s32'SpecialShot_D', (SIGNAL_B)
+    sendSignalToAction: s32'SpecialShot_D', 32
   endIf: 
   Unknown1923: 0
   if: Mem(386)
@@ -1831,7 +1831,7 @@ beginState: s32'DJT_403_nokosi01'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    gotoLabelUpon: (SIGNAL_A), s32'end'
+    gotoLabelUpon: 23, s32'end'
     Unknown289: 180
   endUpon: 
   beginLabel: s32'loop'
@@ -1960,8 +1960,8 @@ beginState: s32'DJT_403_TEN'
     endMeshSet: 
     swapMeshSet: s32'tenseiki_nokosi'
     setObjectSize: 1800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1987,7 +1987,7 @@ beginState: s32'DJT_403_TEN'
   stopLinkObject: 0
   Unknown412: 75, 2, 10, 0
   Unknown413: -3, 2, 10, 0
-  sendSignalToAction: s32'DJT_403_TEN_Speed', (SIGNAL_A)
+  sendSignalToAction: s32'DJT_403_TEN_Speed', 23
   sprite: s32'ten409_00', 1
   Unknown413: 0, 2, 10, 0
   Unknown412: 0, 2, 10, 0
@@ -2006,8 +2006,8 @@ beginState: s32'DJT_403_TEN2'
     endMeshSet: 
     swapMeshSet: s32'tenseiki_nokosi'
     setObjectSize: 1800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2033,7 +2033,7 @@ beginState: s32'DJT_403_TEN2'
   stopLinkObject: 0
   Unknown412: 75, 2, 10, 0
   Unknown413: -3, 2, 10, 0
-  sendSignalToAction: s32'DJT_403_TEN_Speed', (SIGNAL_A)
+  sendSignalToAction: s32'DJT_403_TEN_Speed', 23
   sprite: s32'ten409_07', 1
   Unknown413: 0, 2, 10, 0
   Unknown412: 0, 2, 10, 0
@@ -2052,8 +2052,8 @@ beginState: s32'DJT_403_TEN3'
     endMeshSet: 
     swapMeshSet: s32'tenseiki_nokosi'
     setObjectSize: 1800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2079,7 +2079,7 @@ beginState: s32'DJT_403_TEN3'
   stopLinkObject: 0
   Unknown412: 75, 2, 10, 0
   Unknown413: -3, 2, 10, 0
-  sendSignalToAction: s32'DJT_403_TEN_Speed', (SIGNAL_A)
+  sendSignalToAction: s32'DJT_403_TEN_Speed', 23
   sprite: s32'ten409_04', 1
   Unknown413: 0, 2, 10, 0
   Unknown412: 0, 2, 10, 0
@@ -2098,8 +2098,8 @@ beginState: s32'DJT_403_TEN4'
     endMeshSet: 
     swapMeshSet: s32'tenseiki_nokosi'
     setObjectSize: 1800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2125,7 +2125,7 @@ beginState: s32'DJT_403_TEN4'
   stopLinkObject: 0
   Unknown412: 75, 2, 10, 0
   Unknown413: -3, 2, 10, 0
-  sendSignalToAction: s32'DJT_403_TEN_Speed', (SIGNAL_A)
+  sendSignalToAction: s32'DJT_403_TEN_Speed', 23
   sprite: s32'ten409_03', 1
   Unknown413: 0, 2, 10, 0
   Unknown412: 0, 2, 10, 0
@@ -2138,7 +2138,7 @@ beginState: s32'DJT_403_TEN_Speed'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2160,7 +2160,7 @@ beginState: s32'DJT_403_TEN_Speed'
   beginLabel: s32'End'
   sprite: s32'null', 20
   linkParticle: s32'djt_403_EXSpeedEnd'
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
 endState: 
 
 beginState: s32'DJT_403_TEN_Finish1'
@@ -2951,8 +2951,8 @@ beginState: s32'DJT_408_TEN06'
     endMeshSet: 
     swapMeshSet: s32'tenseiki_nokosi'
     setObjectSize: 1800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Land'
     endUpon: 
   endUpon: 
@@ -3086,8 +3086,8 @@ beginState: s32'ten_430'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -3131,8 +3131,8 @@ beginState: s32'ten_430_End'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -3163,8 +3163,8 @@ beginState: s32'DJT_430_BodyAura'
     setAngleX: 0
     setAngleY: 343200
     setAngle: 0
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Assult'
     endUpon: 
   endUpon: 
@@ -3203,8 +3203,8 @@ beginState: s32'ten_430_Spear'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3236,8 +3236,8 @@ beginState: s32'ten_430_Spear_End'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -3268,8 +3268,8 @@ beginState: s32'DJT_430_Thrust'
     setPositionX: 268955
     setPositionY: 189829
     setDepth: 121428
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'AssultEnd'
     endUpon: 
   endUpon: 
@@ -3297,8 +3297,8 @@ beginState: s32'DJT_430_Thrust2'
     setPositionX: 268955
     setPositionY: 189829
     setDepth: 121428
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'AssultEnd'
     endUpon: 
   endUpon: 
@@ -3539,8 +3539,8 @@ beginState: s32'ten_430_ShortSord'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3817,8 +3817,8 @@ beginState: s32'ten_430_Punchi'
   createObject: s32'DJT_430_PunchAttack2', (PLAYER)
   physicsXImpulse: 40000
   sprite: s32'ten400_09', 1
-  sendSignalToAction: s32'DJT_430_PunchAttack1', (SIGNAL_A)
-  sendSignalToAction: s32'DJT_430_PunchAttack2', (SIGNAL_A)
+  sendSignalToAction: s32'DJT_430_PunchAttack1', 23
+  sendSignalToAction: s32'DJT_430_PunchAttack2', 23
   physicsXImpulse: 10000
   sprite: s32'ten400_10', 2
   sprite: s32'ten400_11', 3
@@ -3845,8 +3845,8 @@ beginState: s32'ten_430_Punchi_End'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -3905,9 +3905,9 @@ beginState: s32'DJT_430_PunchAttack1'
     addPositionX: 342905
     addPositionY: 187273
     Unknown1727: 88247
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 60
@@ -3930,9 +3930,9 @@ beginState: s32'DJT_430_PunchAttack2'
     addPositionX: 440911
     addPositionY: 282042
     Unknown1727: -89779
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 60
@@ -3991,8 +3991,8 @@ beginState: s32'ten_430_LargeSord_End'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -4100,8 +4100,8 @@ beginState: s32'ten_430_Katana_End'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -4200,8 +4200,8 @@ beginState: s32'ten_430_Gakki_End'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -4311,8 +4311,8 @@ beginState: s32'ten_430_Gun_End'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -4479,14 +4479,14 @@ beginState: s32'DJT_430_SuperShot'
     addPositionY: 280000
     addPositionX: 300000
     setObjectSize: 1300
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       clearUpon: 13
       gotoLabelRequests: s32'Atk'
     endUpon: 
     setEventTrigger: 13, 100
     upon: 13
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 13
       gotoLabelRequests: s32'End'
     endUpon: 
@@ -4524,8 +4524,8 @@ beginState: s32'DJT_430_FinalBodyAura'
     setAngleX: 0
     setAngleY: 338400
     setAngle: 8800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4550,8 +4550,8 @@ beginState: s32'DJT_430_FinalBodyAura2'
     setAngleX: 0
     setAngleY: 2400
     setAngle: 1600
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4578,8 +4578,8 @@ beginState: s32'DJT_430_FinalBodyAura3'
     setAngleX: 0
     setAngleY: 19600
     setAngle: 14800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4604,8 +4604,8 @@ beginState: s32'DJT_430_FinalBodyAura4'
     setAngleX: 2800
     setAngleY: 23200
     setAngle: 12000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4630,8 +4630,8 @@ beginState: s32'DJT_430_FinalBodyAura5'
     setAngleX: 2800
     setAngleY: 23200
     setAngle: 12000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4656,8 +4656,8 @@ beginState: s32'DJT_430_FinalBodyAura6'
     setAngleX: 2800
     setAngleY: 14400
     setAngle: 12000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4682,7 +4682,7 @@ beginState: s32'DJT_430_CSSkyRay'
     setPositionX: -2989
     setPositionY: 565224
     setDepth: -62708
-    gotoLabelUpon: (SIGNAL_A), s32'Move'
+    gotoLabelUpon: 23, s32'Move'
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'djt_430_CSSkyRay'
@@ -4978,8 +4978,8 @@ beginState: s32'DJT_440_BodyAura'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'djt_440_AuraEnd'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'PositionLinkOff'
     endUpon: 
   endUpon: 
@@ -5003,8 +5003,8 @@ beginState: s32'DJT_440_BodyAura2'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'djt_440_AuraEnd'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'PositionLinkOff'
     endUpon: 
   endUpon: 
@@ -5305,8 +5305,8 @@ beginState: s32'DJT_440_CSSordRay'
     linkObjectPosition: 2
     stopLinkObject: 2
     setObjectSize: 300
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Move'
     endUpon: 
   endUpon: 
@@ -5500,8 +5500,8 @@ beginState: s32'DJT_441_CSBG'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Change1'
     endUpon: 
     upon: 24
@@ -5568,8 +5568,8 @@ beginState: s32'DJT_441_CSCloud'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Move'
     endUpon: 
   endUpon: 
@@ -5612,8 +5612,8 @@ beginState: s32'DJT_441_CSCloudSub'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Move'
     endUpon: 
   endUpon: 
@@ -5686,8 +5686,8 @@ beginState: s32'DJT_441_CSBeam'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Change'
     endUpon: 
   endUpon: 
@@ -5969,7 +5969,7 @@ beginState: s32'DJT_441_CSThunder'
     linkObjectPosition: 2
     stopLinkObject: 2
     setObjectSize: 2000
-    gotoLabelUpon: (SIGNAL_A), s32'Move1'
+    gotoLabelUpon: 23, s32'Move1'
     gotoLabelUpon: 24, s32'Move2'
     gotoLabelUpon: 25, s32'Move3'
   endUpon: 
@@ -6146,7 +6146,7 @@ endState:
 beginState: s32'DJT_441_CSWhiteOut'
   upon: (IMMEDIATE)
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown409: 0, 1
       Unknown410: 0, 1
@@ -6180,7 +6180,7 @@ beginState: s32'DJT_441_LRIRay'
     setPositionX: 16983
     setPositionY: 1690513
     setDepth: 786279
-    gotoLabelUpon: (SIGNAL_A), s32'PosChange'
+    gotoLabelUpon: 23, s32'PosChange'
   endUpon: 
   sprite: s32'null', 120
   linkParticle: s32'djt_442_LRIRay'
@@ -6343,8 +6343,8 @@ beginState: s32'DJT_442_CSBG'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Change1'
     endUpon: 
     upon: 24
@@ -6400,8 +6400,8 @@ beginState: s32'DJT_442_CSTwinkle'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Change1'
     endUpon: 
   endUpon: 
@@ -6447,8 +6447,8 @@ beginState: s32'DJT_442_CSFallTwinkle'
     setAngleY: 39200
     setAngle: 344400
     setObjectSize: 1500
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Change1'
     endUpon: 
   endUpon: 

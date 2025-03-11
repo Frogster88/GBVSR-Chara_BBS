@@ -197,7 +197,7 @@ beginState: s32'CHA_208_Shield'
     linkObjectDirection: 3
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 120
   beginLabel: s32'End'
@@ -218,8 +218,8 @@ beginState: s32'CHA_209_Slash01'
     setLinkObjectDestroyOnDamage: 3
     addPositionX: -2000
     setObjectSize: 0
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       setObjectSize: 1000
       createObject: s32'CHA_209_Speed01', (PLAYER)
     endUpon: 
@@ -231,7 +231,7 @@ beginState: s32'CHA_209_Slash01'
   linkParticle: s32'cha_209_Slash02'
   sprite: s32'null', 4
   linkParticle: s32'cha_209_Slash03'
-  sendSignalToAction: s32'CHA_209_Speed01', (SIGNAL_A)
+  sendSignalToAction: s32'CHA_209_Speed01', 23
   sprite: s32'null', 8
   linkParticle: s32'cha_209_Slash04'
 endState: 
@@ -245,7 +245,7 @@ beginState: s32'CHA_209_Speed01'
     addPositionX: -90000
     addPositionY: 200000
     setAngle: 10000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -253,7 +253,7 @@ beginState: s32'CHA_209_Speed01'
   linkParticle: s32'cha_209_Speed_Loop'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'cha_209_Speed_End'
 endState: 
 
@@ -266,8 +266,8 @@ beginState: s32'CHA_210_Slash01'
     setObjectSize: 0
     addPositionY: -10000
     setAngle: -5000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       setObjectSize: 1000
       createObject: s32'CHA_210_Speed01', (PLAYER)
     endUpon: 
@@ -279,7 +279,7 @@ beginState: s32'CHA_210_Slash01'
   linkParticle: s32'cha_210_Slash02'
   sprite: s32'null', 4
   linkParticle: s32'cha_210_Slash03'
-  sendSignalToAction: s32'CHA_210_Speed01', (SIGNAL_A)
+  sendSignalToAction: s32'CHA_210_Speed01', 23
   sprite: s32'null', 8
   linkParticle: s32'cha_210_Slash04'
 endState: 
@@ -293,8 +293,8 @@ beginState: s32'CHA_210_Speed01'
     addPositionX: -110000
     addPositionY: 200000
     setAngle: 22000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -492,7 +492,7 @@ beginState: s32'CHA_400_Slash01'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       linkParticle: s32'cha_400_Slash_Hit'
       callSubroutine: s32'cmnWeaponLvMaxColorInit'
       gotoLabelRequests: s32'Hit'
@@ -528,7 +528,7 @@ beginState: s32'CHA_400_Slash01'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   createObject: s32'CHA_400_Smoke', (PLAYER)
   sprite: s32'null', 2
-  sendSignalToAction: s32'CHA_400_Speed', (SIGNAL_A)
+  sendSignalToAction: s32'CHA_400_Speed', 23
   linkParticle: s32'cha_400_Slash04'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   sprite: s32'null', 2
@@ -538,8 +538,8 @@ beginState: s32'CHA_400_Slash01'
   exitState: 
   beginLabel: s32'Hit'
   sprite: s32'null', 4
-  clearUpon: (SIGNAL_A)
-  sendSignalToAction: s32'CHA_400_Speed', (SIGNAL_A)
+  clearUpon: 23
+  sendSignalToAction: s32'CHA_400_Speed', 23
   stopLinkObject: 0
   sprite: s32'null', 20
 endState: 
@@ -583,8 +583,8 @@ beginState: s32'CHA_400_Speed'
     addPositionX: -80000
     addPositionY: 130000
     createParticle: s32'cha_400_Dust', (PLAYER)
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -629,7 +629,7 @@ beginState: s32'CHA_400_Slash01++'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       linkObjectPosition: 0
       linkParticle: s32'cha_400_slash_Hitex'
       callSubroutine: s32'cmnWeaponLvMaxColorInit'
@@ -668,7 +668,7 @@ beginState: s32'CHA_400_Slash01++'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   createObject: s32'CHA_400_Smoke', (PLAYER)
   sprite: s32'null', 2
-  sendSignalToAction: s32'CHA_400_Speed', (SIGNAL_A)
+  sendSignalToAction: s32'CHA_400_Speed', 23
   linkParticle: s32'cha_400_Slash04ex'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   sprite: s32'null', 2
@@ -683,7 +683,7 @@ beginState: s32'CHA_400_Slash01++'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   createObject: s32'CHA_400_Smoke', (PLAYER)
   sprite: s32'null', 2
-  sendSignalToAction: s32'CHA_400_Speed', (SIGNAL_A)
+  sendSignalToAction: s32'CHA_400_Speed', 23
   linkParticle: s32'cha_400_Slash04ex'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   sprite: s32'null', 2
@@ -693,8 +693,8 @@ beginState: s32'CHA_400_Slash01++'
   exitState: 
   beginLabel: s32'Hit'
   sprite: s32'null', 4
-  clearUpon: (SIGNAL_A)
-  sendSignalToAction: s32'CHA_400_Speed', (SIGNAL_A)
+  clearUpon: 23
+  sendSignalToAction: s32'CHA_400_Speed', 23
   stopLinkObject: 0
   sprite: s32'null', 20
 endState: 
@@ -716,7 +716,7 @@ beginState: s32'CHA_401_TornadoEff'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'cha_401_tornado_Loop'
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     Unknown289: 300
   endUpon: 
   beginLabel: s32'loop'
@@ -725,7 +725,7 @@ beginState: s32'CHA_401_TornadoEff'
   gotoLabel: s32'loop'
   beginLabel: s32'End'
   sprite: s32'null', 30
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'cha_401_tornado_End'
   stopLinkObject: 0
   linkObjectPosition: 0
@@ -1040,7 +1040,7 @@ beginState: s32'CHA_403_ThrustEff'
     setLinkObjectDestroyOnDamage: 2
     stopLinkObject: 2
     linkParticle: s32'cha_403_Loop'
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 3
@@ -1048,7 +1048,7 @@ beginState: s32'CHA_403_ThrustEff'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 15
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'cha_403_End'
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
@@ -1185,9 +1185,9 @@ beginState: s32'CHA_406_EnshutuCamera'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: (BEFORE_EXIT)
       Unknown2582: 
@@ -1218,7 +1218,7 @@ beginState: s32'CHA_407_Slash01'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    gotoLabelUpon: (SIGNAL_A), s32'Even'
+    gotoLabelUpon: 23, s32'Even'
     gotoLabelUpon: 24, s32'Odd'
   endUpon: 
   sprite: s32'null', 2
@@ -1499,7 +1499,7 @@ beginState: s32'CHA_430_Slash01'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: 24
       createObject: s32'CHA_430_End', (PLAYER)
       createParticle: s32'cha_430_hit02', (PLAYER)
@@ -1540,7 +1540,7 @@ beginState: s32'CHA_430_Slash01'
   sprite: s32'null', 24
   sprite: s32'null', 6
   linkParticle: s32'cha_430_Slash_Hit'
-  sendSignalToAction: s32'CHA_430_Speed', (SIGNAL_A)
+  sendSignalToAction: s32'CHA_430_Speed', 23
   sprite: s32'null', 20
   linkParticle: s32''
   deactivateObjectByName: s32'CHA_400_Speed'
@@ -1565,8 +1565,8 @@ beginState: s32'CHA_430_Speed'
     setLinkObjectDestroyOnDamage: 3
     addPositionX: -80000
     addPositionY: 130000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1584,7 +1584,7 @@ beginState: s32'CHA_430_Aura'
     stopLinkObject: 3
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: 24
       linkObjectPosition: 0
       gotoLabelRequests: s32'End'
@@ -1969,7 +1969,7 @@ beginState: s32'CHA_441_CSEffMatome'
       createObject: s32'CHA_441_BodyAura', (PLAYER)
     endIf: 
     ifOnFrame: Val(54)
-      sendSignalToAction: s32'CHA_441_Sord', (SIGNAL_A)
+      sendSignalToAction: s32'CHA_441_Sord', 23
       createObject: s32'CHA_441_ScrGradation', (PLAYER)
     endIf: 
     ifOnFrame: Val(70)
@@ -2090,7 +2090,7 @@ beginState: s32'CHA_441_CSEffMatome'
       createObject: s32'CHA_441_Zansi', (PLAYER)
     endIf: 
     ifOnFrame: Val(336)
-      sendSignalToAction: s32'CHA_441_BombYotyou', (SIGNAL_A)
+      sendSignalToAction: s32'CHA_441_BombYotyou', 23
       createObject: s32'CHA_441_Bomb', (PLAYER)
       createObject: s32'CHA_441_Wind', (PLAYER)
       runOnObject: (PREVIOUS)
@@ -2200,7 +2200,7 @@ beginState: s32'CHA_441_Sord'
     setPositionX: 1839
     setPositionY: 501099
     setDepth: 19070
-    gotoLabelUpon: (SIGNAL_A), s32'Move'
+    gotoLabelUpon: 23, s32'Move'
     gotoLabelUpon: 24, s32'Move2'
     gotoLabelUpon: 25, s32'Move3'
     gotoLabelUpon: 26, s32'Move4'
@@ -2302,7 +2302,7 @@ beginState: s32'CHA_441_BombYotyou'
     setObjectSize: 2000
     setAngleY: 20000
     createObject: s32'CHA_441_BombStart', (PLAYER)
-    gotoLabelUpon: (SIGNAL_A), s32'Bomb'
+    gotoLabelUpon: 23, s32'Bomb'
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 4
@@ -2518,7 +2518,7 @@ beginState: s32'CHA_800_WinCutInEff'
       createObject: s32'CHA_800_Kira', (PLAYER)
     endIf: 
     ifOnFrame: Val(245)
-      sendSignalToAction: s32'CHA_800_Kira', (SIGNAL_A)
+      sendSignalToAction: s32'CHA_800_Kira', 23
     endIf: 
     ifOnFrame: Val(260)
       deactivateObjectByName: s32'CHA_800_Kira'
@@ -2598,7 +2598,7 @@ beginState: s32'CHA_800_Kira'
     linkObjectPosition: 3
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
-    gotoLabelUpon: (SIGNAL_A), s32'Bikkuri'
+    gotoLabelUpon: 23, s32'Bikkuri'
   endUpon: 
   sprite: s32'null', 100
   linkParticle: s32'cha_800_kirakira'

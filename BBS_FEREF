@@ -209,7 +209,7 @@ beginSubroutine: s32'geg_start'
   attackIgnoreCaution: 1
   invulnForce: 0
   Unknown2204: 1
-  upon: (ON_DESTROY)
+  upon: 45
     clearUpon: (FRAME_STEP)
     clearUpon: 35
     clearUpon: 38
@@ -223,7 +223,7 @@ beginSubroutine: s32'geg_start'
     checkScreenCollision: 0
     setNoCollision: 0
     clearUpon: (FRAME_STEP)
-    clearUpon: (ON_DESTROY)
+    clearUpon: 45
     clearUpon: 35
     clearUpon: 38
     clearUpon: 12
@@ -236,7 +236,7 @@ beginSubroutine: s32'geg_start'
     checkScreenCollision: 0
     setNoCollision: 0
     clearUpon: (FRAME_STEP)
-    clearUpon: (ON_DESTROY)
+    clearUpon: 45
     clearUpon: 35
     clearUpon: 38
     clearUpon: 12
@@ -266,8 +266,8 @@ beginSubroutine: s32'geg_end'
   enableSuperArmor: 1
   spriteTimeAdd: 5
   recoveryState: 
-  clearUpon: (ON_DESTROY)
-  clearUpon: (SIGNAL_A)
+  clearUpon: 45
+  clearUpon: 23
 endSubroutine: 
 
 beginState: s32'FER_200_GhostEnterEff'
@@ -741,7 +741,7 @@ beginState: s32'FER_233_WipAura'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     flipDirection: 
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'fer_233_aura'
@@ -751,7 +751,7 @@ beginState: s32'FER_233_WipAura'
   stopLinkObject: 2
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   stopLinkObject: 0
@@ -1224,9 +1224,9 @@ beginState: s32'FER_350_Eff'
     setAngleX: 174000
     setAngleY: 294400
     setAngle: 296400
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'PosChange'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'Loop'
@@ -1290,7 +1290,7 @@ beginState: s32'fer_208_WipAura'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 6
   linkParticle: s32'fer_208_RotateAura'
@@ -1350,7 +1350,7 @@ beginState: s32'fer_208_WipAura'
   gotoLabel: s32'RotateLoop'
   beginLabel: s32'End'
   sprite: s32'null', 30
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'fer_208_EndAura'
   linkObjectPosition: 0
   stopLinkObject: 0
@@ -1366,9 +1366,9 @@ beginState: s32'fer_253_WipAura_5D'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       linkParticle: s32'fer_253_jizokuAura_End'
       linkObjectPosition: 0
       stopLinkObject: 0
@@ -1409,9 +1409,9 @@ beginState: s32'fer_253_WipAura_3D'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       linkParticle: s32'fer_253_jizokuAura_End'
       linkObjectPosition: 0
       stopLinkObject: 0
@@ -1452,9 +1452,9 @@ beginState: s32'fer_253_WipAura_2D'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       linkParticle: s32'fer_253_jizokuAura_End'
       linkObjectPosition: 0
       stopLinkObject: 0
@@ -1491,8 +1491,8 @@ beginState: s32'ncf_400'
       addToMeshSet: s32'fugee'
     endMeshSet: 
     swapMeshSet: s32'nicola'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       createObject: s32'FER_400_Ghost_Delete', 0
       createObject: s32'FER_400_Ghost_Delete', 1
       gotoLabelRequests: s32'Koware'
@@ -1571,8 +1571,8 @@ beginState: s32'ncf_411'
     endMeshSet: 
     swapMeshSet: s32'nicola'
     Unknown289: 600
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       createObject: s32'FER_400_Ghost_Delete', 0
       createObject: s32'FER_400_Ghost_Delete', 1
       gotoLabelRequests: s32'Koware'
@@ -1641,8 +1641,8 @@ beginState: s32'ncf_411_EX'
       addToMeshSet: s32'fugee'
     endMeshSet: 
     swapMeshSet: s32'nicola'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       createObject: s32'FER_400_Ghost_Delete', 0
       createObject: s32'FER_400_Ghost_Delete', 1
       gotoLabelRequests: s32'Koware'
@@ -1714,8 +1714,8 @@ beginState: s32'ncf_411_D'
       addToMeshSet: s32'fugee'
     endMeshSet: 
     swapMeshSet: s32'nicola'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       createObject: s32'FER_400_Ghost_Delete', 0
       createObject: s32'FER_400_Ghost_Delete', 1
       gotoLabelRequests: s32'Koware'
@@ -1789,7 +1789,7 @@ beginState: s32'ncf_401'
       addToMeshSet: s32'fugee'
     endMeshSet: 
     swapMeshSet: s32'nicola'
-    gotoLabelUpon: (SIGNAL_A), s32'bom'
+    gotoLabelUpon: 23, s32'bom'
     zLine: 5, 5
     linkObjectPosition: 2
     stopLinkObject: 2
@@ -1848,9 +1848,9 @@ beginState: s32'FER_401_EnshutuCamera_Near'
     linkObjectPosition: 3
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Sign'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'Atk'
@@ -1891,9 +1891,9 @@ beginState: s32'FER_401_EnshutuCamera_Far'
     linkObjectPosition: 3
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Sign'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'Atk'
@@ -1960,7 +1960,7 @@ beginState: s32'ncf_412'
       addToMeshSet: s32'fugee'
     endMeshSet: 
     swapMeshSet: s32'nicola'
-    gotoLabelUpon: (SIGNAL_A), s32'bom'
+    gotoLabelUpon: 23, s32'bom'
     zLine: 5, 5
     linkObjectPosition: 2
     stopLinkObject: 2
@@ -2086,7 +2086,7 @@ beginState: s32'geg_401'
     physicsXImpulse: 8000
     Unknown1909: 0
     gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 32, s32'End'
   endUpon: 
   sprite: s32'geg404_00', 3
   createObject: s32'FER_404_Eff_MoveFire', (PLAYER)
@@ -2094,7 +2094,7 @@ beginState: s32'geg_401'
   sprite: s32'geg404_01', 3
   sprite: s32'geg404_00', 3
   sprite: s32'geg404_02', 3
-  sendSignalToAction: s32'FER_404_Eff_MoveFire', (SIGNAL_A)
+  sendSignalToAction: s32'FER_404_Eff_MoveFire', 23
   sprite: s32'geg404_03', 3
   sprite: s32'geg404_04', 3
   sprite: s32'geg404_05', 3
@@ -2103,7 +2103,7 @@ beginState: s32'geg_401'
   sprite: s32'geg404_08', 3
   sprite: s32'geg404_07', 3
   sprite: s32'geg404_08', 8
-  sendSignalToAction: s32'Hobaku_D', (SIGNAL_A)
+  sendSignalToAction: s32'Hobaku_D', 23
   haltMomentum: 1
   sprite: s32'geg404_01', 3
   physicsYImpulse: 10000
@@ -2134,7 +2134,7 @@ beginState: s32'geg_401'
   beginLabel: s32'End'
   sprite: s32'keep', 1
   clearUpon: (TOUCH_GROUND)
-  clearUpon: (SIGNAL_B)
+  clearUpon: 32
   haltMomentum: 1
   Unknown2050: 0
   exPointFReset: (PLAYER), -100000, -110000
@@ -2153,7 +2153,7 @@ beginState: s32'bep_401'
     moveToObject: (ENEMY)
     addPositionX: -50000
     addPositionY: 100000
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 32, s32'End'
   endUpon: 
   sprite: s32'bep309_02', 20
   sprite: s32'bep309_02', 6
@@ -2189,7 +2189,7 @@ beginState: s32'bep_401'
   beginLabel: s32'End'
   sprite: s32'keep', 15
   sprite: s32'keep', 1
-  clearUpon: (SIGNAL_B)
+  clearUpon: 32
   haltMomentum: 1
   Unknown2050: 0
   createObject: s32'FER_309_End', (PLAYER)
@@ -2220,7 +2220,7 @@ beginState: s32'bep_407'
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(3)
       physicsXImpulse: 40000
       physicsYImpulse: 60000
-      gotoLabelUpon: (SIGNAL_A), s32'Finish'
+      gotoLabelUpon: 23, s32'Finish'
     endIf: 
     velocityXPercentEachFrame: 90
     velocityYPercentEachFrame: 90
@@ -2232,8 +2232,8 @@ beginState: s32'bep_407'
       Unknown2050: 1
       createObject: s32'FER_406_Koware', (PLAYER)
     endUpon: 
-    upon: (AFTER_EXIT)
-      clearUpon: (AFTER_EXIT)
+    upon: 47
+      clearUpon: 47
       linkObjectZ: 0
       linkObjectPosition: 0
       stopLinkObject: 0
@@ -2266,7 +2266,7 @@ beginState: s32'bep_407'
   endSprite: 
   beginLabel: s32'Koware'
   sprite: s32'null', 1
-  sendSignalToAction: s32'FER_406_End', (SIGNAL_A)
+  sendSignalToAction: s32'FER_406_End', 23
   endSprite: 
   exitState: 
   beginLabel: s32'Finish'
@@ -2280,7 +2280,7 @@ beginState: s32'bep_407'
   sprite: s32'bep414_04', 3
   sprite: s32'bep414_05', 3
   sprite: s32'bep414_06', 3
-  sendSignalToAction: s32'bep_414_GhostEff', (SIGNAL_A)
+  sendSignalToAction: s32'bep_414_GhostEff', 23
 endState: 
 
 beginState: s32'bep_414_StrikeEff'
@@ -2304,12 +2304,12 @@ beginState: s32'bep_414_GhostEff'
     stopLinkObject: 2
     Unknown1727: 150000
     setAngle: 50000
-    upon: (SIGNAL_A)
+    upon: 23
       linkObjectPosition: 0
       stopLinkObject: 0
       physicsXImpulse: 1800
       physicsYImpulse: 2000
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       upon: (FRAME_STEP)
         velocityXPercent: 80
         velocityYPercent: 80
@@ -2426,16 +2426,16 @@ beginState: s32'geg_404'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 1
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 8
       clearUpon: (FRAME_STEP)
       clearUpon: (TOUCH_GROUND)
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       haltMomentum: 1
       gotoLabelRequests: s32'KowareEnd'
     endUpon: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       Unknown2203: 23
     endUpon: 
     storeValue: Mem(EnvR21), Val(1)
@@ -2509,7 +2509,7 @@ beginState: s32'geg_404'
   sprite: s32'geg404_01', 3
   beginLabel: s32'Top'
   sprite: s32'geg404_02', 3
-  sendSignalToAction: s32'FER_404_Eff_MoveFire', (SIGNAL_A)
+  sendSignalToAction: s32'FER_404_Eff_MoveFire', 23
   sprite: s32'geg404_03', 3
   sprite: s32'geg404_04', 3
   sprite: s32'geg404_05', 3
@@ -2538,7 +2538,7 @@ beginState: s32'geg_404'
   sprite: s32'geg404_25', 1
   clearUpon: (TOUCH_GROUND)
   clearUpon: 8
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: (FRAME_STEP)
   Unknown2050: 0
   exPointFReset: (PLAYER), -100000, -110000
@@ -2549,10 +2549,10 @@ beginState: s32'geg_404'
   endRunOnObject: 
   privateSE: s32'fer_09'
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    skillCooldown: 2, 10
+    Unknown1921: 2, 10
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    skillCooldown: 2, 10
+    Unknown1921: 2, 10
   endIf: 
   Unknown1923: 2
 endState: 
@@ -2569,11 +2569,15 @@ beginState: s32'geg_405'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 1
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 46
       clearUpon: (FRAME_STEP)
       haltMomentum: 1
       gotoLabelRequests: s32'KowareEnd'
+    endUpon: 
+    upon: 23
+      clearUpon: 23
+      Unknown2203: 23
     endUpon: 
     storeValue: Mem(EnvR21), Val(1)
     addMoveForceDisableFlag: 1
@@ -2673,7 +2677,7 @@ beginLabel: s32'KowareEnd'
 sprite: s32'geg404_25', 1
 recoveryState: 
 clearUpon: 46
-clearUpon: (ON_DESTROY)
+clearUpon: 45
 clearUpon: (FRAME_STEP)
 Unknown2050: 0
 exPointFReset: (PLAYER), -100000, -110000
@@ -2683,9 +2687,9 @@ setAngle: 38000
 addPositionY: -50000
 endRunOnObject: 
 privateSE: s32'fer_09'
-skillCooldown: 2, 420
+Unknown1921: 2, 420
 ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-  skillCooldown: 2, 180
+  Unknown1921: 2, 180
 endIf: 
 
 Unknown1923: 2
@@ -2778,10 +2782,10 @@ beginState: s32'geg_setting'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 1
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 13
       clearUpon: (FRAME_STEP)
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       gotoLabelRequests: s32'KowareEnd'
     endUpon: 
     setEventTrigger: 13, 60
@@ -2794,8 +2798,8 @@ beginState: s32'geg_setting'
       Unknown2208: 1
       Unknown2210: 10
     endIf: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       Unknown2203: 23
     endUpon: 
     storeValue: Mem(EnvR21), Val(1)
@@ -2903,7 +2907,7 @@ beginState: s32'geg_setting'
   sprite: s32'geg404_25', 1
   recoveryState: 
   clearUpon: 8
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: (FRAME_STEP)
   clearUpon: 13
   Unknown2050: 0
@@ -2913,16 +2917,16 @@ beginState: s32'geg_setting'
   setAngle: 38000
   addPositionY: -50000
   endRunOnObject: 
-  sendSignalToAction: s32'FER_404_Eff_AtkFire', (SIGNAL_A)
+  sendSignalToAction: s32'FER_404_Eff_AtkFire', 23
   privateSE: s32'fer_09'
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    skillCooldown: 2, 10
+    Unknown1921: 2, 10
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    skillCooldown: 2, 10
+    Unknown1921: 2, 10
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    skillCooldown: 2, 420
+    Unknown1921: 2, 420
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
     if: Mem(417)
@@ -2930,7 +2934,7 @@ beginState: s32'geg_setting'
       storeValue: Mem(289), Mem(Tmp)
     endIf: 
     else: 
-      skillCooldown: 2, 180
+      Unknown1921: 2, 180
     endElse: 
   endIf: 
   Unknown1923: 2
@@ -2956,7 +2960,7 @@ beginState: s32'FER_404_Eff_MoveFire'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     setObjectSize: 1500
-    gotoLabelUpon: (SIGNAL_A), s32'Rotate'
+    gotoLabelUpon: 23, s32'Rotate'
     gotoLabelUpon: 24, s32'descend'
     gotoLabelUpon: 25, s32'End'
     Unknown289: 600
@@ -3006,7 +3010,7 @@ beginState: s32'FER_405_Eff_MoveFire'
     linkObjectPosition: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     Unknown289: 600
   endUpon: 
   beginLabel: s32'Move'
@@ -3031,7 +3035,7 @@ beginState: s32'FER_404_Eff_AtkFire'
     addPositionX: 24995
     addPositionY: -1526
     Unknown1727: 34965
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(1)
       setLinkObjectDestroyOnDamage: 0
     endIf: 
@@ -3040,7 +3044,7 @@ beginState: s32'FER_404_Eff_AtkFire'
   linkParticle: s32'fer_404_AtkFire_loop'
   beginLabel: s32'End'
   sprite: s32'null', 40
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'fer_404_AtkFire_End'
   linkObjectPosition: 0
   setLinkObjectDestroyOnDamage: 0
@@ -3070,8 +3074,8 @@ beginState: s32'FER_400_Eff_B'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     Unknown289: 600
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Attack'
     endUpon: 
   endUpon: 
@@ -3176,7 +3180,7 @@ beginState: s32'FER_400_BulletEff_A'
     setLinkObjectDestroyOnStateChange: 2
     setPositionY: 218000
     linkParticle: s32'fer_400_Bullet'
-    gotoLabelUpon: (SIGNAL_A), s32'Delete'
+    gotoLabelUpon: 23, s32'Delete'
     upon: 24
       clearUpon: 24
       gotoLabelRequests: s32'Atk1'
@@ -3213,7 +3217,7 @@ beginState: s32'FER_400_BulletEff_A'
   createParticle: s32'fer_400_bullet_nokosi', (PLAYER)
   beginLabel: s32'Delete'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkObjectPosition: 0
   stopLinkObject: 0
   linkParticle: s32''
@@ -3228,7 +3232,7 @@ beginState: s32'FER_400_BulletEff_B'
     setLinkObjectDestroyOnStateChange: 2
     setPositionY: 218000
     linkParticle: s32'fer_400_Bullet'
-    gotoLabelUpon: (SIGNAL_A), s32'Delete'
+    gotoLabelUpon: 23, s32'Delete'
     upon: 24
       clearUpon: 24
       gotoLabelRequests: s32'Atk1'
@@ -3259,7 +3263,7 @@ beginState: s32'FER_400_BulletEff_B'
   createParticle: s32'fer_400_bullet_nokosi', (PLAYER)
   beginLabel: s32'Delete'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkObjectPosition: 0
   stopLinkObject: 0
   linkParticle: s32''
@@ -3274,7 +3278,7 @@ beginState: s32'FER_400_BulletEff_C'
     setLinkObjectDestroyOnStateChange: 2
     setPositionY: 218000
     linkParticle: s32'fer_400_Bullet'
-    gotoLabelUpon: (SIGNAL_A), s32'Delete'
+    gotoLabelUpon: 23, s32'Delete'
     upon: 24
       clearUpon: 24
       gotoLabelRequests: s32'Atk1'
@@ -3305,7 +3309,7 @@ beginState: s32'FER_400_BulletEff_C'
   createParticle: s32'fer_400_bullet_nokosi', (PLAYER)
   beginLabel: s32'Delete'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkObjectPosition: 0
   stopLinkObject: 0
   linkParticle: s32''
@@ -3362,9 +3366,9 @@ beginState: s32'FER_400_Circle'
       storeValue: Mem(ActReg0), Val(1)
     endIf: 
   endIf: 
-  upon: (SIGNAL_A)
+  upon: 23
     gotoLabelRequests: s32'Bomb'
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
   endUpon: 
   upon: 24
     gotoLabelRequests: s32'Draw'
@@ -3528,12 +3532,12 @@ beginState: s32'FER_406_End'
     addPositionY: -30000
     Unknown1727: 150000
     setAngle: 50000
-    upon: (SIGNAL_A)
+    upon: 23
       linkObjectPosition: 0
       stopLinkObject: 0
       physicsXImpulse: 1800
       physicsYImpulse: 2000
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       upon: (FRAME_STEP)
         velocityXPercent: 80
         velocityYPercent: 80
@@ -3776,7 +3780,7 @@ beginState: s32'FER_410_WipAura'
     addPositionY: 209191
     Unknown1727: -45915
     setAngle: 4000
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     Unknown289: 600
     deactivateObjectByName: s32'FER_410_WipAura_Start_A'
     deactivateObjectByName: s32'FER_410_WipAura_Start_B'
@@ -3807,7 +3811,7 @@ beginState: s32'FER_410_WipAura'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   createObject: s32'FER_410_WipAuraEnd', (PLAYER)
 endState: 
 
@@ -3832,9 +3836,9 @@ beginState: s32'FER_415_WhipEff'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     flipDirection: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
@@ -3902,9 +3906,9 @@ beginState: s32'FER_415_AuraLoop'
     setPositionX: -40000
     linkParticle: s32'fer_415_aura_01'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'Loop'
@@ -4037,7 +4041,7 @@ beginState: s32'Fer_UltimateShot'
       ifOperation: (IS_GREATER), Mem(ActionTime), Val(11)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(100000)
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg4), Val(0)
-            sendSignalToAction: s32'FER_430_nokosi', (SIGNAL_A)
+            sendSignalToAction: s32'FER_430_nokosi', 23
             flipDirection: 
             modifyVar: (MUL), Mem(SpeedX), Val(-1)
           endIf: 
@@ -4061,10 +4065,10 @@ beginState: s32'Fer_UltimateShot'
       Unknown963: 0, -10000
       callSubroutine: s32'cmn_Ougi_AttackRate2Init'
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Koware'
     endUpon: 
-    upon: (ON_DESTROY)
+    upon: 45
       haltMomentum: 1
       gotoLabelRequests: s32'Koware'
     endUpon: 
@@ -4087,8 +4091,8 @@ beginState: s32'Fer_UltimateShot'
   sprite: s32'Fer_UltimateShot', 5
   clearUpon: 5
   clearUpon: (FRAME_STEP)
-  clearUpon: (SIGNAL_A)
-  clearUpon: (ON_DESTROY)
+  clearUpon: 23
+  clearUpon: 45
   Unknown2050: 0
   deactivateObjectByName: s32'FER_430_FireBallEff'
   createParticle: s32'fer_430_fireball_koware', (PLAYER)
@@ -4134,7 +4138,7 @@ beginState: s32'FER_430_nokosi'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     Unknown289: 500
-    upon: (SIGNAL_A)
+    upon: 23
       flipDirection: 
     endUpon: 
   endUpon: 
@@ -4407,8 +4411,8 @@ beginState: s32'FER_431_BodyAura'
     setLinkObjectDestroyOnStateChange: 2
     addPositionX: 34080
     setObjectSize: 900
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4467,7 +4471,7 @@ beginState: s32'FER_440_WipAuraMatome'
     ignoreSuperFreezeFromAlly: 1
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 3
@@ -4595,7 +4599,7 @@ beginState: s32'FER_440_WipAuraMatome'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   cameraShake: s32'ShakeTate', 800, 0, 27, 10
   linkParticle: s32'fer_ghost_EnterFire_L'
   setObjectSize: 1800
@@ -4670,7 +4674,7 @@ beginState: s32'FER_440_Screw'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     setObjectSize: 1500
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 2147483647
   linkParticle: s32'fer_440_CS_screw'
@@ -4940,7 +4944,7 @@ beginState: s32'FER_440cs_Effects'
       createObject: s32'FER_440cs_Bomb01', (PLAYER)
     endIf: 
     ifOnFrame: Val(199)
-      sendSignalToAction: s32'FER_440cs_BG', (SIGNAL_A)
+      sendSignalToAction: s32'FER_440cs_BG', 23
     endIf: 
     ifOnFrame: Val(227)
       createObject: s32'FER_440cs_Bomb02', (PLAYER)
@@ -5020,7 +5024,7 @@ beginState: s32'FER_440cs_BG'
     linkObjectPosition: 2
     linkParticle: s32'fer_440_CS2_BG'
     setObjectSize: 12000
-    gotoLabelUpon: (SIGNAL_A), s32'Move2'
+    gotoLabelUpon: 23, s32'Move2'
     gotoLabelUpon: 24, s32'BGchange'
   endUpon: 
   sprite: s32'null', 76
@@ -5763,7 +5767,7 @@ beginState: s32'FER_700cs_SoulEnd1'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'fer_700_appear_Loop'
@@ -5786,7 +5790,7 @@ beginState: s32'FER_700cs_SoulEnd2'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'fer_700_appear_Loop'
@@ -5811,7 +5815,7 @@ beginState: s32'FER_700cs_SoulEnd3'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'fer_700_appear_Loop'
@@ -5837,7 +5841,7 @@ beginState: s32'FER_700cs_SoulEnd4'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 600
   linkParticle: s32'fer_700_appear_Loop'

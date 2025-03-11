@@ -498,8 +498,8 @@ beginState: s32'van_400_ThrustFinishEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     setPositionX: 580000
@@ -524,8 +524,8 @@ beginState: s32'van_400_GroundBurstEff'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: -80000
@@ -610,7 +610,7 @@ beginState: s32'van_402_BurstEff'
     setPositionX: 93982
     setPositionY: -3702
     setDepth: -123219
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -624,7 +624,7 @@ beginState: s32'van_402_BurstEff'
   stopLinkObject: 3
   beginLabel: s32'End'
   sprite: s32'null', 10
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'van_402_GroundBurst_End'
   sprite: s32'null', 30
   linkObjectPosition: 0
@@ -641,7 +641,7 @@ beginState: s32'van_402_LightPillarEff'
     setPositionY: -2878
     setDepth: -83067
     setObjectWidth: 800
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -653,7 +653,7 @@ beginState: s32'van_402_LightPillarEff'
   stopLinkObject: 3
   beginLabel: s32'End'
   sprite: s32'null', 10
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'van_402_LightPillar_End'
   sprite: s32'null', 50
   setLinkObjectDestroyOnStateChange: 0
@@ -721,20 +721,29 @@ beginState: s32'van_402_RyuhaiEff'
     setLinkObjectDestroyOnStateChange: 3
     linkObjectPosition: 3
     ignoreSuperFreezeFromAlly: 1
+    upon: 12
+      Unknown310: 13, 22, 2, 77, 0, 0
+      clearUpon: 12
+      fadeOutStart: 0, 0
+      upon: (BEFORE_EXIT)
+        fadeInStart: 0
+      endUpon: 
+    endIf: 
   endUpon: 
-  sprite: s32'null', 120
-  linkParticle: s32'van_402_ryuhai'
-  setPositionX: 212309
-  setPositionY: 115365
-  setDepth: -480884
-  setObjectWidth: 3000
-  setObjectHeight: 2000
-  Unknown180: 3000
-  setAngleX: 18000
-  setAngleY: 276400
-  setAngle: 329600
-endState: 
+endUpon: 
 
+sprite: s32'null', 120
+linkParticle: s32'van_402_ryuhai'
+setPositionX: 212309
+setPositionY: 115365
+setDepth: -480884
+setObjectWidth: 3000
+setObjectHeight: 2000
+Unknown180: 3000
+setAngleX: 18000
+setAngleY: 276400
+setAngle: 329600
+endState: 
 beginState: s32'van_402_KurumadaEff'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnDamage: 3
@@ -764,7 +773,7 @@ beginState: s32'van_402_EnshutuCamera'
     upon: (BEFORE_EXIT)
       haikuEnd: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -793,14 +802,14 @@ beginState: s32'van_402_KurumadaEnd2Eff'
     setPositionY: -2799
     setDepth: -144198
     setObjectSize: 1300
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
   sprite: s32'null', 120
   beginLabel: s32'End'
   sprite: s32'null', 35
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'van_402_Kurumada_End2'
   linkObjectPosition: 0
 endState: 
@@ -815,14 +824,14 @@ beginState: s32'van_402_KurumadaEnd1Eff'
     setPositionY: -2878
     setDepth: -83067
     setObjectWidth: 800
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
   sprite: s32'null', 120
   beginLabel: s32'End'
   sprite: s32'null', 50
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'van_402_Kurumada_End3'
   linkObjectPosition: 0
 endState: 
@@ -930,7 +939,7 @@ beginState: s32'van_404_Eff'
     setPositionX: 86913
     setPositionY: 4995
     setDepth: 215
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -939,7 +948,7 @@ beginState: s32'van_404_Eff'
   privateSE: s32'van_01'
   beginLabel: s32'End'
   sprite: s32'null', 10
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'van_404_Slash03'
   stopLinkObject: 0
   setPositionX: -100863
@@ -1038,7 +1047,7 @@ callSubroutine: s32'cmnArmor_NotUlt'
 Unknown1821: 1
 superArmorDestroyProjectile: 1
 superArmorHitstop: 1, 12
-upon: (ON_DESTROY)
+upon: 45
   clearUpon: 37
   gotoLabelRequests: s32'Koware'
 endUpon: 
@@ -1061,7 +1070,7 @@ setPositionY: 0
 Unknown1727: 85000
 setAngleY: 308400
 zLine: 5, 5
-gotoLabelUpon: (SIGNAL_B), s32'Koware'
+gotoLabelUpon: 32, s32'Koware'
 upon: 24
   clearUpon: 24
   linkObjectPosition: 0
@@ -1138,8 +1147,8 @@ deactivateObjectByName: s32'van_406_ShieldEff2'
 deactivateObjectByName: s32'van_406_ShieldEff_AntiShot'
 clearUpon: (FRAME_STEP)
 clearUpon: 41
-clearUpon: (ON_DESTROY)
-clearUpon: (SIGNAL_B)
+clearUpon: 45
+clearUpon: 32
 setNoCollision: 0
 haltMomentum: 1
 Unknown310: 9, 3, 2, 53, 0, 1
@@ -1195,7 +1204,7 @@ beginState: s32'van_406_ShieldEff_AntiShot'
     Unknown1821: 1
     superArmorDestroyProjectile: 1
     superArmorHitstop: 1, 12
-    upon: (ON_DESTROY)
+    upon: 45
       Unknown1793: 2, 32
       deactivateObjectById: (SELF)
     endUpon: 
@@ -1304,8 +1313,8 @@ sprite: s32'null', 50
 deactivateObjectByName: s32'van_406_ShieldEff_AntiShot'
 clearUpon: (FRAME_STEP)
 clearUpon: 41
-clearUpon: (ON_DESTROY)
-clearUpon: (SIGNAL_B)
+clearUpon: 45
+clearUpon: 32
 linkObjectPosition: 0
 setNoCollision: 0
 haltMomentum: 1
@@ -1379,7 +1388,7 @@ beginState: s32'van_430_Shot'
     hitAirPushbackX: 45000
     hitAirPushbackY: -40000
     hitstop: 0
-    wallPushback: 0, 2800
+    wallPushback: 0, 1200
     groundBounceCount: 1
     groundBounceYVelocityPercent: 45
     Unknown884: 1
@@ -1420,6 +1429,10 @@ endIf:
 
 sprite: s32'van_OugiAtkCol_00', 3
 hit: 
+ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal0), Val(2)
+  moveToPosType: 22, 123
+endIf: 
+
 sprite: s32'null', 60
 endState: 
 beginState: s32'van_430_FlareEff'
@@ -1601,7 +1614,7 @@ beginState: s32'van_430_EnshutuCamera'
     upon: (BEFORE_EXIT)
       Unknown2582: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1738,7 +1751,7 @@ beginState: s32'van_441_EnshutuCamera'
     upon: (BEFORE_EXIT)
       Unknown2582: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1751,7 +1764,7 @@ beginState: s32'van_441_EnshutuCamera'
   Unknown2074: 3, 71336, 321928, 140473, -1112, -1478, 0, 60, 120, 0, 6000, 0, 0, 0
   beginLabel: s32'End'
   sprite: s32'null', 10
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown2074: 3, -70291, 521046, 55970, 2044, 4278, 0, 60, 10, 0, 6000, 0, 0, 0
   sprite: s32'null', 25
   Unknown2074: 3, -70291, 521046, 55970, 2044, 4278, 0, 60, 0, 0, 25, 0, 0, 0
@@ -2216,7 +2229,7 @@ beginState: s32'van_441cs_ExplosionEff'
     setAngleX: 44000
     setAngleY: 92400
     setAngle: 343600
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2363,7 +2376,7 @@ beginState: s32'van_442cs_BokehFrontEff'
     setPositionX: 12303
     setPositionY: 359921
     setDepth: -446
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2371,7 +2384,7 @@ beginState: s32'van_442cs_BokehFrontEff'
   linkParticle: s32'van_442cs_Bokeh_front'
   beginLabel: s32'End'
   sprite: s32'null', 2147483647
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setObjectSize: 300
   setPositionX: -347605
   setPositionY: 120849

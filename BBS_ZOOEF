@@ -90,9 +90,9 @@ beginState: s32'zoo_222_Shield_Eff'
     setPositionX: 140000
     setPositionY: 240000
     setDepth: 40000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
@@ -146,9 +146,9 @@ beginState: s32'zoo_222_Nokoshi_Eff'
     setLinkObjectDestroyOnDamage: 3
     setPositionX: -30000
     setPositionY: 180000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'loop'
@@ -703,7 +703,7 @@ beginState: s32'dyr_307_Emotion'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     callSubroutine: s32'DYR_Start'
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'dyr307_00', 4
   sprite: s32'dyr307_01', 4
@@ -723,7 +723,7 @@ beginState: s32'dyr_307_Emotion'
   sprite: s32'dyr307_14', 300
   beginLabel: s32'End'
   sprite: s32'dyr307_15', 4
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   sprite: s32'dyr307_16', 4
   sprite: s32'dyr307_17', 4
   sprite: s32'dyr307_18', 4
@@ -965,8 +965,8 @@ beginSubroutine: s32'Thunder_Init'
       endElse: 
     endUpon: 
   endIf: 
-  upon: (SIGNAL_A)
-    clearUpon: (SIGNAL_A)
+  upon: 23
+    clearUpon: 23
     Unknown1131: 1
     comboLimitScaling: 0
   endUpon: 
@@ -1008,7 +1008,7 @@ beginSubroutine: s32'Thunder_Init'
   ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
     Unknown2212: 1
     Unknown2213: 1
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: (FRAME_STEP)
       storeValue: Mem(ActReg2), Val(0)
       storeValue: Mem(ActReg3), Val(0)
@@ -1114,8 +1114,8 @@ beginState: s32'ZOO_400_Thunder'
     callSubroutine: s32'Thunder_Init'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
       storeValue: Mem(ActReg1), Val(1)
-      upon: (SIGNAL_A)
-        clearUpon: (SIGNAL_A)
+      upon: 23
+        clearUpon: 23
         Unknown2212: 0
         Unknown2213: 0
       endUpon: 
@@ -1209,7 +1209,7 @@ ifOperation: (IS_EQUAL), Mem(ActReg1), Val(1)
 endIf: 
 
 sprite: s32'null', 8
-clearUpon: (ON_DESTROY)
+clearUpon: 45
 Unknown310: 9, 3, 2, 55, 0, 1
 ifNot: Mem(SideID)
   linkParticle: s32'zoo_400_SignEnd'
@@ -1258,7 +1258,7 @@ hit:
 clearUpon: 35
 clearUpon: 38
 ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-  sendSignalToAction: s32'ZOO_400_Thunder', (SIGNAL_A)
+  sendSignalToAction: s32'ZOO_400_Thunder', 23
 endIf: 
 
 sprite: s32'ZOO_LandThunder_Atk', 5
@@ -1515,8 +1515,8 @@ beginState: s32'ZOO_400_ThunderChild_Fast'
       clearUpon: 24
       gotoLabelRequests: s32'End'
     endUpon: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Start'
     endUpon: 
     upon: 25
@@ -1541,7 +1541,7 @@ endElse:
 Unknown409: 0, 1
 beginLabel: s32'Start'
 sprite: s32'null', 2
-clearUpon: (SIGNAL_A)
+clearUpon: 23
 Unknown409: 40, 1
 sprite: s32'null', 2
 Unknown409: 60, 1
@@ -1750,8 +1750,8 @@ beginState: s32'ZOO_400_SordImpact'
   else: 
     linkParticle: s32'zoo_400_GSLoop'
   endElse: 
-  upon: (SIGNAL_A)
-    clearUpon: (SIGNAL_A)
+  upon: 23
+    clearUpon: 23
     gotoLabelRequests: s32'End'
   endUpon: 
 endUpon: 
@@ -2003,7 +2003,7 @@ beginState: s32'ZOO_400_ChargeDEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2014,7 +2014,7 @@ beginState: s32'ZOO_400_ChargeDEff'
   setDepth: 65638
   beginLabel: s32'End'
   sprite: s32'null', 10
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setAlphaColorSpeed: -100
 endState: 
 
@@ -2055,8 +2055,8 @@ beginState: s32'ZOO_401_Jump_loopEff'
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
     Unknown289: 30
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2076,8 +2076,8 @@ beginState: s32'ZOO_401_Jump_loop2Eff'
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
     Unknown289: 60
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2157,8 +2157,8 @@ beginState: s32'ZOO_402_SpinSlash'
     setObjectSize: 780
     addPositionY: 85000
     setAngleX: 355600
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2252,7 +2252,7 @@ beginState: s32'ZOO_403_ThunderBeam'
       storeValue: Mem(ActReg0), Val(1)
       setAngle: -50000
     endIf: 
-    gotoLabelUpon: (SIGNAL_A), s32'Start'
+    gotoLabelUpon: 23, s32'Start'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
@@ -2269,7 +2269,7 @@ beginState: s32'ZOO_403_ThunderBeam'
   setLinkObjectDestroyOnStateChange: 0
   setLinkObjectDestroyOnDamage: 0
   linkObjectPosition: 0
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   requestShake: 10000, 10000
   ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
     linkParticle: s32'zoo_403_BeamLoop'
@@ -2434,7 +2434,7 @@ beginState: s32'ZOO_403_ElecShock'
         gotoLabelRequests: s32'Koware'
       endIf: 
     endUpon: 
-    upon: (ON_DESTROY)
+    upon: 45
       gotoLabelRequests: s32'Koware'
     endUpon: 
   endUpon: 
@@ -2737,7 +2737,7 @@ beginSubroutine: s32'LYR_Homing'
 endSubroutine: 
 
 beginSubroutine: s32'LYR_SignalReceive'
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 24
   clearUpon: 25
   clearUpon: (FRAME_STEP)
@@ -2766,7 +2766,7 @@ beginState: s32'LYR_407_Wait'
     if: Mem(Tmp)
       callSubroutine: s32'LYR_Homing'
     endIf: 
-    upon: (SIGNAL_A)
+    upon: 23
       callSubroutine: s32'LYR_SignalReceive'
       storeValue: Mem(ActReg1), Val(4)
       upon: (FRAME_STEP)
@@ -2804,7 +2804,7 @@ beginState: s32'LYR_407_Wait'
         callSubroutine: s32'LYR_Homing'
       endIf: 
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(ExGage0), Val(1)
-        clearUpon: (SIGNAL_A)
+        clearUpon: 23
         clearUpon: 24
         clearUpon: 25
         storeValue: Mem(ActReg5), Val(1)
@@ -2953,7 +2953,7 @@ beginState: s32'LYR_407_Wait'
     setInertia: -5000
   endIf: 
   velocityXPercentEachFrame: 80
-  sendSignalToAction: s32'zoo_408_speed', (SIGNAL_A)
+  sendSignalToAction: s32'zoo_408_speed', 23
   storeValue: Mem(ObjReg6), Val(0)
   storeValue: Mem(ObjReg7), Val(0)
   storeValue: Mem(ActReg5), Val(1)
@@ -3076,7 +3076,7 @@ beginState: s32'LYR_407_Wait'
     storeValue: Mem(ExGage0), Val(0)
   endIf: 
   storeValue: Mem(PlayerVal297), Val(0)
-  skillCooldown: 0, 900
+  Unknown1921: 0, 900
   Unknown1923: 0
   sprite: s32'keep', 3
   callSubroutine: s32'LYR_End'
@@ -3280,7 +3280,7 @@ beginState: s32'LYR_408_Assault'
   sprite: s32'lyr408_06', 3
   recoveryState: 
   velocityXPercentEachFrame: 70
-  sendSignalToAction: s32'zoo_408_speed', (SIGNAL_A)
+  sendSignalToAction: s32'zoo_408_speed', 23
   clearUpon: 6
   clearUpon: 46
   sprite: s32'lyr408_05', 3
@@ -3375,7 +3375,7 @@ beginState: s32'LYR_408_Assault_ReAction'
   sprite: s32'lyr408_06', 3
   recoveryState: 
   velocityXPercentEachFrame: 70
-  sendSignalToAction: s32'zoo_408_speed', (SIGNAL_A)
+  sendSignalToAction: s32'zoo_408_speed', 23
   clearUpon: 6
   clearUpon: 46
   sprite: s32'lyr408_05', 3
@@ -3399,8 +3399,8 @@ beginState: s32'zoo_408_speed'
     addPositionX: -45942
     addPositionY: 263847
     Unknown1727: 284811
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3667,7 +3667,7 @@ beginState: s32'ZOO_409_Breath'
     addPositionX: 156905
     addPositionY: 291708
     storeValue: Mem(EnvR23), Val(0)
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 1
   linkParticle: s32'zoo_409_BreathLoop'
@@ -3690,7 +3690,7 @@ beginState: s32'ZOO_409_Breath'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   deactivateObjectByName: s32'ZOO_409_Breath_Atk'
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
 endState: 
 
 beginState: s32'ZOO_409_Breath_Atk'
@@ -4053,12 +4053,12 @@ beginState: s32'ZOO_410_Beam'
     callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
     damage: 200
     chipDamagePercent: 20
-    untechAmount: 40
+    untechAmount: 60
     hitAirPushbackX: 12000
     hitAirPushbackY: 18000
     groundHitEffect: (NORMAL_LOWER)
     wallPushback: 0, 700
-    Unknown1030: 0, 300
+    wallPushbackOnHit: 0, 300
     hitstop: 0
     enemyHitstopAddition: 12, 0, 0
     setProjectileDurability: 2
@@ -4289,7 +4289,7 @@ beginState: s32'ZOO_410_HitEff'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   linkParticle: s32'zoo_410_HitEnd'
   if: Mem(405)
-    sendSignalToAction: s32'ZOO_410_BeamKira', (SIGNAL_A)
+    sendSignalToAction: s32'ZOO_410_BeamKira', 23
   endIf: 
   physicsYImpulse: 3500
   Unknown191: -40
@@ -4348,7 +4348,7 @@ beginState: s32'ZOO_410_Beam_Straight'
   recoveryState: 
   clearUpon: (FRAME_STEP)
   if: Mem(405)
-    sendSignalToAction: s32'ZOO_410_BeamKira', (SIGNAL_A)
+    sendSignalToAction: s32'ZOO_410_BeamKira', 23
   endIf: 
   sprite: s32'null', 10
 endState: 
@@ -4360,8 +4360,8 @@ beginState: s32'ZOO_410_BeamKira'
     stopLinkObject: 2
     linkObjectPosition: 2
     linkObjectAngle: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4425,11 +4425,11 @@ beginState: s32'GND_407_Assalt'
     upon: (HIT)
       sendSignalToAction: s32'SpecialShot_D', 24
     endUpon: 
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 32, s32'End'
     gotoLabelUpon: 35, s32'End'
     upon: 37
       gotoLabelRequests: s32'Sousai'
-      sendSignalToAction: s32'zoo_gnd962_Speed', (SIGNAL_A)
+      sendSignalToAction: s32'zoo_gnd962_Speed', 23
       Unknown55: 0x200000007A6F6F00000000000000000000000000
       checkCurrentStateName: (ENEMY), s32'SpecialShot_D'
       if: Mem(Tmp)
@@ -4577,10 +4577,10 @@ setDepth: -12939
 endRunOnObject: 
 beginLabel: s32'End'
 sprite: s32'gnd962_27', 3
-clearUpon: (SIGNAL_B)
+clearUpon: 32
 clearUpon: 35
 createObject: s32'zoo_gnd962_KillEff', (PLAYER)
-sendSignalToAction: s32'zoo_gnd962_Speed', (SIGNAL_A)
+sendSignalToAction: s32'zoo_gnd962_Speed', 23
 Unknown412: 50, 1, 0, 0
 haltMomentum: 1
 sprite: s32'gnd962_28', 3
@@ -4665,8 +4665,8 @@ beginState: s32'zoo_gnd962_Speed'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'zoo_440_Speed'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     Unknown289: 300
@@ -4922,7 +4922,7 @@ beginState: s32'ZOO_430CS_BG'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'CutChange'
+    gotoLabelUpon: 23, s32'CutChange'
     gotoLabelUpon: 24, s32'CutChange2'
     sceneAddColor: 8, 8, 16
     sceneMulColor: 240, 240, 255
@@ -4959,7 +4959,7 @@ beginState: s32'ZOO_430CS_Twinkle'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'CutChange'
+    gotoLabelUpon: 23, s32'CutChange'
     gotoLabelUpon: 24, s32'CutChange2'
   endUpon: 
   sprite: s32'null', 7
@@ -4982,7 +4982,7 @@ beginState: s32'ZOO_430CS_Twinkle2'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'CutChange'
+    gotoLabelUpon: 23, s32'CutChange'
     gotoLabelUpon: 24, s32'CutChange2'
   endUpon: 
   sprite: s32'null', 15
@@ -5002,7 +5002,7 @@ beginState: s32'ZOO_430CS_Twinkle3'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'CutChange'
+    gotoLabelUpon: 23, s32'CutChange'
     gotoLabelUpon: 24, s32'CutChange2'
   endUpon: 
   sprite: s32'null', 30
@@ -5191,8 +5191,8 @@ beginState: s32'ZOO_440_SwordRayEff'
     setPositionY: 531602
     setDepth: 21136
     setObjectSize: 400
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -5222,8 +5222,8 @@ beginState: s32'ZOO_440_BullAttackEff'
     setAngleX: 0
     setAngleY: 22000
     setAngle: 355200
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -5242,8 +5242,8 @@ beginState: s32'ZOO_440_BullAttack_Speed'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'zoo_440_Speed'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     Unknown289: 300
@@ -5343,8 +5343,8 @@ beginState: s32'GND_zoo440'
       Unknown412: 0, 1, 0, 0
       Unknown412: 0, 1, 0, 1
     endUpon: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       storeValue: Mem(ActReg0), Val(1)
     endUpon: 
   endUpon: 
@@ -5428,7 +5428,7 @@ beginState: s32'ZOO_440CS_Tornado'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'CutChange'
+    gotoLabelUpon: 23, s32'CutChange'
     gotoLabelUpon: 24, s32'CutChange2'
   endUpon: 
   sprite: s32'null', 120
@@ -5538,7 +5538,7 @@ beginState: s32'ZOO_440CS_WhiteOut'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'cmn_FadeOut'
@@ -5685,7 +5685,7 @@ beginState: s32'ZOO_441CS_BG'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'Sky'
+    gotoLabelUpon: 23, s32'Sky'
     gotoLabelUpon: 24, s32'Sky2'
     gotoLabelUpon: 25, s32'CameraNear'
     gotoLabelUpon: 26, s32'Hide'
@@ -6151,7 +6151,7 @@ beginState: s32'ZOO_441CS_WhiteOut'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown409: 0, 1
       Unknown410: 0, 1
@@ -6347,7 +6347,7 @@ beginState: s32'ZOO_442CS_WhiteOut'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown409: 0, 1
       Unknown410: 0, 1
@@ -6558,7 +6558,7 @@ endState:
 
 beginState: s32'LYR_407_Wait_Test'
   upon: (IMMEDIATE)
-    upon: (SIGNAL_NAME)
+    upon: 49
     endUpon: 
     upon: (FRAME_STEP)
       ifNot: Mem(ActReg2)
@@ -6690,7 +6690,7 @@ beginState: s32'ZOO_400_Thunder_log'
     Unknown2212: 1
     Unknown2213: 1
     numberOfHits: 1
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: (FRAME_STEP)
       storeValue: Mem(ActReg2), Val(0)
       storeValue: Mem(ActReg3), Val(0)
@@ -6769,7 +6769,7 @@ beginState: s32'ZOO_400_Thunder_log'
   else: 
     linkParticle: s32'zoo_400_2PSignEnd'
   endElse: 
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   privateSE: s32'zoo_08'
   createObject: s32'ZOO_400_ThunderChild', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)

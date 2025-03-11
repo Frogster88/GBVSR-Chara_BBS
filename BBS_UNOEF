@@ -86,8 +86,8 @@ beginState: s32'uno_208_BlockingStartEff'
     setAngle: 6000
     setObjectSize: 700
     setObjectHeight: 800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 24
@@ -177,8 +177,8 @@ beginState: s32'uno_233_SpeedEff'
     stopLinkObject: 2
     flipDirection: 
     Unknown289: 60
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -235,9 +235,9 @@ beginState: s32'uno_233_nokosiEff'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'Loop'
@@ -284,12 +284,15 @@ beginState: s32'uno_253_BlockingStartEff'
     setAngleX: 334400
     setAngleY: 325600
     setAngle: 13200
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 24
       addPositionX: -99908
+    endUpon: 
+    upon: 25
+      deactivateObjectById: (SELF)
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
@@ -309,6 +312,7 @@ beginState: s32'uno_253_BlockingStartEff'
   sprite: s32'null', 10
   stopLinkObject: 0
   setLinkObjectDestroyOnStateChange: 0
+  clearUpon: 25
   Unknown409: 0, 2
   Unknown410: -8, 1
   sprite: s32'null', 15
@@ -327,8 +331,8 @@ beginState: s32'uno_253_MandaraA'
     Unknown1727: -110000
     setAngleY: 150000
     setObjectSize: 750
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -373,8 +377,8 @@ beginState: s32'uno_253_MandaraB'
     setAngleY: 147200
     setObjectSize: 800
     Unknown180: 600
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -426,8 +430,8 @@ beginState: s32'uno_254_RotateSlashEff'
     setObjectWidth: 1000
     setObjectHeight: 1200
     Unknown180: 1200
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
       linkParticle: s32'uno_254_RotateSlash_End'
     endUpon: 
@@ -477,8 +481,8 @@ beginState: s32'uno_254_SpeedEff'
     linkObjectPosition: 2
     stopLinkObject: 2
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -500,9 +504,9 @@ beginState: s32'uno_254_ThrustEff'
     addPositionY: 245400
     Unknown1727: -4300
     setObjectSize: 1100
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 3
@@ -559,8 +563,8 @@ beginState: s32'uno_254B_SpeedEff'
     setAngleX: 336000
     setAngleY: 24000
     setAngle: 308000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -585,9 +589,9 @@ beginState: s32'uno_254B_ThrustEff'
     setAngleY: 24000
     setAngle: 310000
     setObjectSize: 1100
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 3
@@ -621,9 +625,9 @@ beginState: s32'uno_301_RotateSlashEff'
     setAngleX: 400
     setAngleY: 252000
     setAngle: 170800
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 3
@@ -698,8 +702,8 @@ beginState: s32'uno_301_psycokinesisEff'
     flipDirection: 
     addPositionY: 50000
     linkParticle: s32'uno_303_psycokinesis'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -830,8 +834,8 @@ beginState: s32'uno_309_psycokinesisEff'
     flipDirection: 
     addPositionY: 50000
     linkParticle: s32'uno_303_psycokinesis'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1087,9 +1091,9 @@ beginState: s32'uno_400_RotateSlashEff'
     Unknown1727: 33600
     setAngleY: 39200
     setAngle: 4800
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: (FRAME_STEP)
     endUpon: 
     upon: (FRAME_STEP)
@@ -1102,7 +1106,7 @@ beginState: s32'uno_400_RotateSlashEff'
             checkCurrentStateName: (PLAYER), s32'AntiAir_D'
             ifNot: Mem(Tmp)
               gotoLabelRequests: s32'End'
-              clearUpon: (SIGNAL_A)
+              clearUpon: 23
               clearUpon: (FRAME_STEP)
             endIf: 
           endIf: 
@@ -1155,9 +1159,9 @@ beginState: s32'uno_401_RotateSlashEff'
     Unknown180: 500
     setAngleY: 52800
     setAngle: 25600
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: (FRAME_STEP)
     endUpon: 
     upon: (FRAME_STEP)
@@ -1168,7 +1172,7 @@ beginState: s32'uno_401_RotateSlashEff'
           checkCurrentStateName: (PLAYER), s32'AntiAir_C'
           ifNot: Mem(Tmp)
             gotoLabelRequests: s32'End'
-            clearUpon: (SIGNAL_A)
+            clearUpon: 23
             clearUpon: (FRAME_STEP)
           endIf: 
         endIf: 
@@ -1227,7 +1231,7 @@ beginState: s32'uno_402_weaponShot'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 37
       gotoLabelRequests: s32'Koware'
     endUpon: 
@@ -1280,7 +1284,7 @@ beginState: s32'uno_402_weaponShot'
   beginLabel: s32'Koware'
   sprite: s32'null', 20
   clearUpon: 13
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: (FRAME_STEP)
   linkParticle: s32'uno_402_WeaponShotEnd'
   Unknown409: 100, 1
@@ -1357,9 +1361,9 @@ beginState: s32'uno_404_Screw'
     addPositionX: 50090
     addPositionY: 146155
     Unknown1727: -11293
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 1
@@ -1390,8 +1394,8 @@ beginState: s32'uno_405_SpeedEff'
     linkObjectPosition: 2
     stopLinkObject: 2
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1410,8 +1414,8 @@ beginState: s32'uno_405_AuraEff'
     linkObjectPosition: 2
     stopLinkObject: 2
     setPositionY: 220000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1434,9 +1438,9 @@ beginState: s32'uno_405_nokoshiEff'
     stopLinkObject: 2
     Unknown289: 60
     setPositionY: 220000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'Loop'
@@ -1478,10 +1482,10 @@ beginState: s32'uno_412_weaponShot_Atk'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 0
-    upon: (ON_DESTROY)
+    upon: 45
       gotoLabelRequests: s32'Koware'
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       createObject: s32'uno_412_weaponShot', (PLAYER)
       stackObject: (STACK0), (PREVIOUS)
       createObject: s32'uno_412_AuraEff', (PLAYER)
@@ -1546,8 +1550,8 @@ beginState: s32'uno_412_weaponShot_Atk'
           velocityXPercentEachFrame: 90
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg1), Val(18)
-          sendSignalToAction: s32'uno_412_AuraEff', (SIGNAL_A)
-          sendSignalToAction: s32'uno_412_GroundBurstEff', (SIGNAL_A)
+          sendSignalToAction: s32'uno_412_AuraEff', 23
+          sendSignalToAction: s32'uno_412_GroundBurstEff', 23
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
           ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(60)
@@ -1606,7 +1610,7 @@ beginState: s32'uno_412_weaponShot_Atk'
   beginLabel: s32'Koware'
   sprite: s32'null', 30
   Unknown1793: 4, 32
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 13
 endState: 
 
@@ -1621,7 +1625,7 @@ beginState: s32'uno_412_weaponShot'
     Unknown1727: 93600
     setAngleY: 32000
     setAngle: 3000
-    gotoLabelUpon: (SIGNAL_B), s32'Koware'
+    gotoLabelUpon: 32, s32'Koware'
   endUpon: 
   sprite: s32'null', 3
   linkParticle: s32'uno_412_Rotate01'
@@ -1655,7 +1659,7 @@ beginState: s32'uno_412_weaponShot'
   gotoLabel: s32'Loop'
   beginLabel: s32'Koware'
   sprite: s32'null', 30
-  clearUpon: (SIGNAL_B)
+  clearUpon: 32
   linkObjectPosition: 0
   stopLinkObject: 0
   linkParticle: s32'uno_412_Rotate04'
@@ -1671,8 +1675,8 @@ beginState: s32'uno_412_AuraEff'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1697,8 +1701,8 @@ beginState: s32'uno_412_GroundBurstEff'
     linkObjectZ: 3
     addPositionX: -32000
     Unknown1727: -80000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Stop'
     endUpon: 
   endUpon: 
@@ -1781,9 +1785,9 @@ beginState: s32'uno_408_ScrewEff'
     addPositionY: 227855
     Unknown1727: 7938
     setAngleY: 308000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Start2'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'Start3'
@@ -1862,9 +1866,9 @@ beginState: s32'uno_408_Tail'
     setPositionY: 237416
     setDepth: 54687
     setAngleY: 8400
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 1
@@ -1921,9 +1925,9 @@ beginState: s32'uno_409_Thurust'
     setPositionX: 274937
     setPositionY: 257206
     setDepth: 46255
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'StandBy2'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'Atk'
@@ -2123,9 +2127,9 @@ beginState: s32'uno_410_RingEff'
     addPositionY: 234765
     setAngleX: 0
     setAngleY: 0
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 1
@@ -2183,9 +2187,9 @@ beginState: s32'uno_411_RingEff'
     setPositionX: 24975
     setPositionY: 215933
     setAngle: 318800
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 1
@@ -2211,7 +2215,7 @@ beginState: s32'uno_413_weaponShot'
     callSubroutine: s32'cmnSpecialShot_AtkInit'
     callSubroutine: s32'cmnSpecialAttackD_AtkInit'
     damage: 800
-    Unknown1030: 0, 2500
+    wallPushbackOnHit: 0, 2500
     damageEffect: 2, s32'UNO_SPHitEff_Long'
     storeValue: Mem(PlayerVal9), Val(1)
     if: Mem(Hikitsugi1)
@@ -2245,12 +2249,12 @@ Unknown2212: 1
 Unknown2213: 1
 setEventTrigger: 13, 20
 upon: 13
-  sendSignalToAction: s32'Counter_D', (SIGNAL_B)
+  sendSignalToAction: s32'Counter_D', 32
   gotoLabelRequests: s32'Koware'
 endUpon: 
 
-upon: (ON_DESTROY)
-  sendSignalToAction: s32'Counter_D', (SIGNAL_B)
+upon: 45
+  sendSignalToAction: s32'Counter_D', 32
   gotoLabelRequests: s32'Koware'
 endUpon: 
 
@@ -2266,7 +2270,7 @@ createParticle: s32'uno_402_ShotNokoshi', (PLAYER)
 createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER_LAND)
 sprite: s32'uno_DeriveShot1stAtkCol_D', 1
 Unknown909: 0, 0
-Unknown1030: 0, 1300
+wallPushbackOnHit: 0, 1300
 upon: (FRAME_STEP)
   modifyVar: (ADD), Mem(ActReg3), Val(1)
   ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg3), Val(8)
@@ -2297,12 +2301,12 @@ whiffIfCombo: 1
 dontAddComboCount: 1
 Unknown1048: 0
 nextHitActionName: s32'uno_413_weaponShot2nd'
-sendSignalToAction: s32'Counter_D', (SIGNAL_A)
+sendSignalToAction: s32'Counter_D', 23
 gotoLabel: s32'Loop'
 beginLabel: s32'Koware'
 sprite: s32'null', 20
 clearUpon: 13
-clearUpon: (ON_DESTROY)
+clearUpon: 45
 clearUpon: (HIT)
 linkParticle: s32'uno_402_WeaponShotEnd'
 Unknown409: 100, 1
@@ -2374,7 +2378,7 @@ endIf:
 
 haltMomentum: 1
 sprite: s32'null', 20
-sendSignalToAction: s32'Counter_D', (SIGNAL_B)
+sendSignalToAction: s32'Counter_D', 32
 linkParticle: s32'uno_402_WeaponShotEnd'
 Unknown409: 100, 1
 Unknown410: -4, 1
@@ -2416,9 +2420,9 @@ beginState: s32'uno_430cs_Screw'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     setObjectSize: 100
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Move'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
@@ -2669,8 +2673,8 @@ beginState: s32'uno_430_ShotRing'
     setPositionY: 235698
     setAngleY: 157600
     setObjectSize: 1200
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Shot'
     endUpon: 
   endUpon: 
@@ -2751,9 +2755,9 @@ beginState: s32'uno_430_AtkShotCol'
     groundHitEffect: (AIR_STRONG)
     hitAirPushbackX: 20000
     hitAirPushbackY: 18000
-    comboLimitScaling: -1
     hitstop: 12
     damageEffect: 2, s32'UNO_SPHitEff_Long'
+    wallPushback: 0, 400
     Unknown310: 12, 3, 2, 45, 0, 1
     damage: 2500
     Unknown864: 32
@@ -2774,7 +2778,7 @@ beginState: s32'uno_430_AtkShotCol'
   numberOfHits: 1
   Unknown2210: 1
   Unknown2257: 1
-  upon: (ON_DESTROY)
+  upon: 45
     gotoLabelRequests: s32'End'
   endUpon: 
   Unknown310: 12, 3, 2, 46, 0, 1
@@ -2860,8 +2864,8 @@ beginState: s32'uno_430_weaponShot'
     linkObjectPosition: 2
     linkObjectAngle: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2893,8 +2897,8 @@ beginState: s32'uno_430_weaponShot02'
     linkObjectPosition: 2
     linkObjectAngle: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2926,8 +2930,8 @@ beginState: s32'uno_430_weaponShot03'
     linkObjectPosition: 2
     linkObjectAngle: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2959,8 +2963,8 @@ beginState: s32'uno_430_weaponShot04'
     linkObjectPosition: 2
     linkObjectAngle: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2992,8 +2996,8 @@ beginState: s32'uno_430_weaponShot05'
     linkObjectPosition: 2
     linkObjectAngle: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3025,8 +3029,8 @@ beginState: s32'uno_430_weaponShot06'
     linkObjectPosition: 2
     linkObjectAngle: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3058,8 +3062,8 @@ beginState: s32'uno_430_weaponShot07'
     linkObjectPosition: 2
     linkObjectAngle: 2
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3108,7 +3112,7 @@ beginState: s32'uno_430_ShotRing_214'
       storeValue: Mem(PlayerVal0), Val(0)
     endUpon: 
     upon: 26
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
       clearUpon: 25
       clearUpon: 26
@@ -3131,8 +3135,8 @@ beginState: s32'uno_430_ShotRing_214'
   linkParticle: s32'uno_430_SparkRingLoop7'
   beginLabel: s32'Wait'
   sprite: s32'null', 2147483647
-  upon: (SIGNAL_A)
-    clearUpon: (SIGNAL_A)
+  upon: 23
+    clearUpon: 23
     clearUpon: 24
     clearUpon: 25
     clearUpon: (FRAME_STEP)
@@ -3161,7 +3165,7 @@ beginState: s32'uno_430_ShotRing_214'
     endIf: 
   endUpon: 
   upon: 24
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     clearUpon: 24
     clearUpon: 25
     clearUpon: (FRAME_STEP)
@@ -3190,7 +3194,7 @@ beginState: s32'uno_430_ShotRing_214'
     endIf: 
   endUpon: 
   upon: 25
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     clearUpon: 24
     clearUpon: 25
     clearUpon: (FRAME_STEP)
@@ -3277,7 +3281,7 @@ sprite: s32'null', 20
 Unknown409: 100, 1
 Unknown410: -5, 1
 storeValue: Mem(PlayerVal0), Val(0)
-clearUpon: (SIGNAL_A)
+clearUpon: 23
 clearUpon: 24
 clearUpon: 25
 clearUpon: 26
@@ -3325,7 +3329,7 @@ beginState: s32'uno_430_AtkShotCol_214ALL'
     numberOfHits: 1
     Unknown2210: 1
     Unknown2257: 1
-    upon: (ON_DESTROY)
+    upon: 45
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3448,7 +3452,7 @@ beginSubroutine: s32'uno_430_AtkShotCol_214Atk_Init'
   Unknown2257: 1
   Unknown2212: 0
   Unknown2213: 0
-  upon: (ON_DESTROY)
+  upon: 45
     setAngleBySpeed: 0
     Unknown2020: 
     gotoLabelRequests: s32'End'
@@ -3457,8 +3461,8 @@ beginSubroutine: s32'uno_430_AtkShotCol_214Atk_Init'
   upon: 13
     gotoLabelRequests: s32'End'
   endUpon: 
-  upon: (SIGNAL_A)
-    clearUpon: (SIGNAL_A)
+  upon: 23
+    clearUpon: 23
     gotoLabelRequests: s32'End'
   endUpon: 
   stopLinkObject: 3
@@ -4044,8 +4048,8 @@ beginState: s32'uno_440_MandaraA'
     addPositionY: 219780
     addPositionX: -32500
     setObjectSize: 1050
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4062,9 +4066,9 @@ beginState: s32'uno_440_MandaraA'
   sprite: s32'null', 20
   linkObjectPosition: 0
   deactivateObjectByName: s32'uno_440_MandaraNokoshi'
-  sendSignalToAction: s32'uno_440_MandaraB', (SIGNAL_A)
-  sendSignalToAction: s32'uno_440_MandaraC', (SIGNAL_A)
-  sendSignalToAction: s32'uno_440_MandaraD', (SIGNAL_A)
+  sendSignalToAction: s32'uno_440_MandaraB', 23
+  sendSignalToAction: s32'uno_440_MandaraC', 23
+  sendSignalToAction: s32'uno_440_MandaraD', 23
   Unknown409: 100, 2
   Unknown410: -2, 1
   sprite: s32'null', 30
@@ -4087,8 +4091,8 @@ beginState: s32'uno_440_MandaraB'
     setAngle: 0
     setObjectSize: 1100
     setObjectHeight: 1200
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4115,8 +4119,8 @@ beginState: s32'uno_440_MandaraC'
     setObjectWidth: 1350
     setObjectHeight: 1450
     setAngleY: 344800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4141,8 +4145,8 @@ beginState: s32'uno_440_MandaraD'
     ignoreSuperFreezeFromAlly: 1
     setObjectSize: 1200
     setAngleY: 346000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4181,8 +4185,8 @@ beginState: s32'uno_440_Beam'
     addPositionX: 227936
     addPositionY: 300000
     setObjectSize: 1200
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     setEventTrigger: 13, 120
@@ -4228,8 +4232,8 @@ beginState: s32'uno_440_Beam'
   deactivateObjectByName: s32'uno_440_BeamSmokes'
   deactivateObjectByName: s32'uno_440_BeamSmokes2'
   deactivateObjectByName: s32'uno_440_BeamSmokes3'
-  sendSignalToAction: s32'uno_440_BeamLootScrew', (SIGNAL_A)
-  sendSignalToAction: s32'uno_440_ChargeCore', (SIGNAL_A)
+  sendSignalToAction: s32'uno_440_BeamLootScrew', 23
+  sendSignalToAction: s32'uno_440_ChargeCore', 23
   Unknown409: 85, 4
   Unknown410: -1, 4
   Unknown409: 70, 2
@@ -4252,7 +4256,7 @@ beginState: s32'uno_440_Beam_Atk'
     untechAmount: 120
     Unknown864: 21
     hitstop: 6
-    pushbackOnBlockX: 30
+    wallPushback: 0, 400
     damageEffect: 2, s32'UNO_SPHitEff'
     Unknown1961: 1
     initializeDestroy: 
@@ -4264,11 +4268,11 @@ beginState: s32'uno_440_Beam_Atk'
     Unknown2212: 1
     Unknown2213: 1
     numberOfHits: 10
-    upon: (ON_DESTROY)
+    upon: 45
       gotoLabelRequests: s32'Koware'
     endUpon: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Koware'
     endUpon: 
     upon: (HIT_OR_GUARD)
@@ -4341,7 +4345,7 @@ beginState: s32'uno_440_Beam_Atk'
   gotoLabel: s32'Loop'
   beginLabel: s32'Koware'
   sprite: s32'null', 3
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   recoveryState: 
 endState: 
 
@@ -4352,8 +4356,8 @@ beginState: s32'uno_440_ChargeCore'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4387,8 +4391,8 @@ beginState: s32'uno_440_BeamLootScrew'
     setAngleY: 326400
     setObjectWidth: 750
     Unknown1727: -14985
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4505,8 +4509,8 @@ beginState: s32'uno_440CS_MandaraA'
     setAngleY: 8000
     setAngle: 0
     setObjectSize: 1000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4815,8 +4819,8 @@ beginState: s32'uno_441cs_Ryuhai'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'AngleChange'
     endUpon: 
   endUpon: 
@@ -4851,8 +4855,8 @@ beginState: s32'uno_441cs_BG'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     setObjectSize: 5000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Change'
     endUpon: 
   endUpon: 
@@ -4922,8 +4926,8 @@ beginState: s32'uno_441CS_MandaraA'
     setDepth: -1800923
     setAngleY: 9000
     setObjectSize: 1000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Move'
     endUpon: 
   endUpon: 
@@ -5671,8 +5675,8 @@ endState:
 beginState: s32'uno_441_CSWhiteOut'
   upon: (IMMEDIATE)
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -5698,8 +5702,8 @@ beginState: s32'uno_441cs_OverRay'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -5758,8 +5762,8 @@ beginState: s32'uno_441_CSBinet'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 

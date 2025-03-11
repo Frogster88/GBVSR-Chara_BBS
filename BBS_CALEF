@@ -288,7 +288,7 @@ beginState: s32'cal_202_Eff'
   sprite: s32'spi202_07', 2
   sprite: s32'spi202_08', 1
   sprite: s32'spi202_08', 1
-  sendSignalToAction: s32'cal_202_WeaponRay', (SIGNAL_A)
+  sendSignalToAction: s32'cal_202_WeaponRay', 23
   sprite: s32'spi202_09', 2
   Unknown2050: 0
 endState: 
@@ -299,9 +299,9 @@ beginState: s32'cal_202_WeaponRay'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 60
@@ -381,7 +381,7 @@ beginState: s32'cal_203_Eff'
   sprite: s32'spi203_08', 3
   sprite: s32'spi203_09', 2
   sprite: s32'spi203_09', 1
-  sendSignalToAction: s32'cal_202_WeaponRay', (SIGNAL_A)
+  sendSignalToAction: s32'cal_202_WeaponRay', 23
   sprite: s32'spi203_10', 3
   Unknown2050: 0
 endState: 
@@ -478,7 +478,7 @@ beginState: s32'cal_205_Eff'
   createObject: s32'cal_205_Weapon', (PLAYER)
   sprite: s32'chk205_02', 2
   sprite: s32'chk205_02', 1
-  sendSignalToAction: s32'cal_205_Weapon', (SIGNAL_A)
+  sendSignalToAction: s32'cal_205_Weapon', 23
   privateSE: s32'cal_04'
   sprite: s32'chk205_03', 1
   createObject: s32'cal_205_WeaponSpawn', (PLAYER)
@@ -510,13 +510,13 @@ beginState: s32'cal_205_Weapon'
     setLightRedColorSpeed: -127
     setLightGreenColorSpeed: -64
     setLightBlueColorSpeed: -32
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Loop'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
   endUpon: 
@@ -564,9 +564,9 @@ beginState: s32'cal_205_SpeedLine_Child'
     setLinkObjectDestroyOnStateChange: 2
     setObjectSize: 1800
     setAngleX: 283600
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 300
@@ -684,7 +684,7 @@ beginState: s32'cal_206_Eff'
   addPositionX: -4995
   addPositionY: 1998
   Unknown1727: 86
-  sendSignalToAction: s32'cal_206_Chakram', (SIGNAL_A)
+  sendSignalToAction: s32'cal_206_Chakram', 23
   sprite: s32'null', 2
   sprite: s32'null', 2
   sprite: s32'null', 3
@@ -703,9 +703,9 @@ beginState: s32'cal_206_Chakram'
     setLightRedColorSpeed: -127
     setLightGreenColorSpeed: -64
     setLightBlueColorSpeed: -32
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'Loop'
@@ -773,7 +773,7 @@ beginState: s32'cal_206_SpeedLine'
   sprite: s32'null', 2
   sprite: s32'null', 2
   sprite: s32'null', 30
-  sendSignalToAction: s32'cal_206_SpeedLine_Child', (SIGNAL_A)
+  sendSignalToAction: s32'cal_206_SpeedLine_Child', 23
 endState: 
 
 beginState: s32'cal_206_WeaponStart'
@@ -796,9 +796,9 @@ beginState: s32'cal_206_SpeedLine_Child'
     setLinkObjectDestroyOnStateChange: 2
     setObjectSize: 1100
     Unknown1727: 12500
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'RotateLoop'
@@ -887,9 +887,9 @@ beginState: s32'cal_207_WarmHoleEff'
     addPositionY: 206406
     Unknown1727: 87084
     setAngleY: 310000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 100
@@ -925,8 +925,8 @@ beginState: s32'cal_RenkinBall'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: (ON_DESTROY)
-      clearUpon: (SIGNAL_A)
+    upon: 45
+      clearUpon: 23
       clearUpon: 24
       clearUpon: 25
       clearUpon: 26
@@ -961,7 +961,7 @@ beginState: s32'cal_RenkinBall'
         gotoLabelRequests: s32'Lv5_End'
       endIf: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
         ifOperation: (IS_EQUAL), Mem(ActReg1), Val(0)
           Unknown308: 3, 2, 31
@@ -1006,7 +1006,7 @@ beginState: s32'cal_RenkinBall'
 endIf: 
 
 ifOperation: (IS_EQUAL), Mem(ActReg0), Val(3)
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   ifOperation: (IS_EQUAL), Mem(ActReg1), Val(0)
     Unknown308: 3, 2, 31
     Unknown1793: 4, 26
@@ -1095,7 +1095,7 @@ endIf:
 endIf: 
 endUpon: 
 upon: 28
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 24
   clearUpon: 25
   clearUpon: 26
@@ -1635,9 +1635,9 @@ beginState: s32'cal_RenkinBall_ChargeEff'
     stopLinkObject: 2
     linkObjectPosition: 2
     linkObjectDirection: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'ChargeLv2'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'ChargeLv3'
@@ -1672,7 +1672,7 @@ beginState: s32'cal_RenkinBall_ChargeEff'
   sprite: s32'null', 10
   createObject: s32'cal_RenkinBall_ChargeLv2Eff', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
-  sendSignalToAction: s32'cal_RenkinBall_ChargeLv1Eff', (SIGNAL_A)
+  sendSignalToAction: s32'cal_RenkinBall_ChargeLv1Eff', 23
   privateSE: s32'cal_07_2'
   beginLabel: s32'ChargeLv2Loop'
   sprite: s32'null', 4
@@ -1681,7 +1681,7 @@ beginState: s32'cal_RenkinBall_ChargeEff'
   sprite: s32'null', 10
   createObject: s32'cal_RenkinBall_ChargeLv3Eff', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
-  sendSignalToAction: s32'cal_RenkinBall_ChargeLv2Eff', (SIGNAL_A)
+  sendSignalToAction: s32'cal_RenkinBall_ChargeLv2Eff', 23
   privateSE: s32'cal_07_3'
   beginLabel: s32'ChargeLv3Loop'
   sprite: s32'null', 4
@@ -1690,7 +1690,7 @@ beginState: s32'cal_RenkinBall_ChargeEff'
   sprite: s32'null', 10
   createObject: s32'cal_RenkinBall_ChargeLv4Eff', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
-  sendSignalToAction: s32'cal_RenkinBall_ChargeLv3Eff', (SIGNAL_A)
+  sendSignalToAction: s32'cal_RenkinBall_ChargeLv3Eff', 23
   privateSE: s32'cal_07_4'
   beginLabel: s32'ChargeLv4Loop'
   sprite: s32'null', 4
@@ -1701,7 +1701,7 @@ beginState: s32'cal_RenkinBall_ChargeEff'
   stackObject: (STACK0), (PREVIOUS)
   privateSE: s32'cal_09'
   sprite: s32'null', 10
-  sendSignalToAction: s32'cal_RenkinBall_ChargeLv4Eff', (SIGNAL_A)
+  sendSignalToAction: s32'cal_RenkinBall_ChargeLv4Eff', 23
   beginLabel: s32'ChargeLv5Loop'
   sprite: s32'null', 4
   gotoLabel: s32'ChargeLv5Loop'
@@ -1724,9 +1724,9 @@ beginState: s32'cal_RenkinBall_ChargeLv1Eff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 36
       if: Mem(PlayerDamage)
@@ -1747,9 +1747,9 @@ beginState: s32'cal_RenkinBall_ChargeLv2Eff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 36
       if: Mem(PlayerDamage)
@@ -1770,9 +1770,9 @@ beginState: s32'cal_RenkinBall_ChargeLv3Eff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 36
       if: Mem(PlayerDamage)
@@ -1793,9 +1793,9 @@ beginState: s32'cal_RenkinBall_ChargeLv4Eff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 36
       if: Mem(PlayerDamage)
@@ -1917,9 +1917,9 @@ beginState: s32'cal_RenkinBall_ChargeEff_Air'
     stopLinkObject: 2
     linkObjectPosition: 2
     linkObjectDirection: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'ChargeLv2'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'ChargeLv3'
@@ -1954,7 +1954,7 @@ beginState: s32'cal_RenkinBall_ChargeEff_Air'
   sprite: s32'null', 10
   createObject: s32'cal_RenkinBall_ChargeLv2Eff_Air', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
-  sendSignalToAction: s32'cal_RenkinBall_ChargeLv1Eff_Air', (SIGNAL_A)
+  sendSignalToAction: s32'cal_RenkinBall_ChargeLv1Eff_Air', 23
   privateSE: s32'cal_07_2'
   beginLabel: s32'ChargeLv2Loop'
   sprite: s32'null', 4
@@ -1963,7 +1963,7 @@ beginState: s32'cal_RenkinBall_ChargeEff_Air'
   sprite: s32'null', 10
   createObject: s32'cal_RenkinBall_ChargeLv3Eff_Air', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
-  sendSignalToAction: s32'cal_RenkinBall_ChargeLv2Eff_Air', (SIGNAL_A)
+  sendSignalToAction: s32'cal_RenkinBall_ChargeLv2Eff_Air', 23
   privateSE: s32'cal_07_3'
   beginLabel: s32'ChargeLv3Loop'
   sprite: s32'null', 4
@@ -1972,7 +1972,7 @@ beginState: s32'cal_RenkinBall_ChargeEff_Air'
   sprite: s32'null', 10
   createObject: s32'cal_RenkinBall_ChargeLv4Eff_Air', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
-  sendSignalToAction: s32'cal_RenkinBall_ChargeLv3Eff_Air', (SIGNAL_A)
+  sendSignalToAction: s32'cal_RenkinBall_ChargeLv3Eff_Air', 23
   privateSE: s32'cal_07_4'
   beginLabel: s32'ChargeLv4Loop'
   sprite: s32'null', 4
@@ -1983,7 +1983,7 @@ beginState: s32'cal_RenkinBall_ChargeEff_Air'
   stackObject: (STACK0), (PREVIOUS)
   privateSE: s32'cal_09'
   sprite: s32'null', 10
-  sendSignalToAction: s32'cal_RenkinBall_ChargeLv4Eff_Air', (SIGNAL_A)
+  sendSignalToAction: s32'cal_RenkinBall_ChargeLv4Eff_Air', 23
   beginLabel: s32'ChargeLv5Loop'
   sprite: s32'null', 4
   gotoLabel: s32'ChargeLv5Loop'
@@ -1995,9 +1995,9 @@ beginState: s32'cal_RenkinBall_ChargeLv1Eff_Air'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 36
       if: Mem(PlayerDamage)
@@ -2018,9 +2018,9 @@ beginState: s32'cal_RenkinBall_ChargeLv2Eff_Air'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 36
       if: Mem(PlayerDamage)
@@ -2041,9 +2041,9 @@ beginState: s32'cal_RenkinBall_ChargeLv3Eff_Air'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 36
       if: Mem(PlayerDamage)
@@ -2064,9 +2064,9 @@ beginState: s32'cal_RenkinBall_ChargeLv4Eff_Air'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 36
       if: Mem(PlayerDamage)
@@ -2161,7 +2161,7 @@ beginState: s32'cal_220_Eff'
   setLightColor: 2139045952
   sprite: s32'spi220_08', 2
   setLightColor: -3618716
-  sendSignalToAction: s32'cal_220_SpikeRay', (SIGNAL_A)
+  sendSignalToAction: s32'cal_220_SpikeRay', 23
 endState: 
 
 beginState: s32'cal_220_SpikeRay'
@@ -2170,9 +2170,9 @@ beginState: s32'cal_220_SpikeRay'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 60
@@ -2228,9 +2228,9 @@ beginState: s32'cal_221_WeaponSpawn'
     addPositionY: 125000
     Unknown1727: 5500
     setObjectSize: 500
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 30
@@ -2526,7 +2526,7 @@ beginState: s32'cal_231_Eff'
   createObject: s32'cal_231_Chakram', (PLAYER)
   sprite: s32'chk231_02', 2
   sprite: s32'chk231_02', 1
-  sendSignalToAction: s32'cal_231_Chakram', (SIGNAL_A)
+  sendSignalToAction: s32'cal_231_Chakram', 23
   privateSE: s32'cal_04'
   sprite: s32'chk231_03', 1
   createObject: s32'cal_231_WeaponSpawn', (PLAYER)
@@ -2553,13 +2553,13 @@ beginState: s32'cal_231_Chakram'
     setLightRedColorSpeed: -127
     setLightGreenColorSpeed: -64
     setLightBlueColorSpeed: -32
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Loop'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
   endUpon: 
@@ -2600,9 +2600,9 @@ beginState: s32'cal_231_SpeedLine_Child'
     setLinkObjectDestroyOnStateChange: 2
     setObjectSize: 1800
     setAngleX: 281200
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 300
@@ -2669,7 +2669,7 @@ beginState: s32'cal_232_Eff'
   sprite: s32'urr232_07', 4
   sprite: s32'urr232_08', 4
   createObject: s32'cal_232_EndEff', (PLAYER)
-  sendSignalToAction: s32'cal_232_WarmHoleEff', (SIGNAL_A)
+  sendSignalToAction: s32'cal_232_WarmHoleEff', 23
 endState: 
 
 beginState: s32'cal_232_EndEff'
@@ -2693,9 +2693,9 @@ beginState: s32'cal_232_WarmHoleEff'
     setPositionY: 9859
     setDepth: -111601
     setAngleX: 90000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 100
@@ -2996,7 +2996,7 @@ beginState: s32'cal_301_Eff'
   sprite: s32'lnc301_04', 3
   commonSE: s32'SE_BTL_SwingWeaponLognL'
   sprite: s32'lnc301_05', 5
-  sendSignalToAction: s32'cal_301_Rock', (SIGNAL_A)
+  sendSignalToAction: s32'cal_301_Rock', 23
   sprite: s32'lnc301_06', 5
   sprite: s32'lnc301_07', 6
   sprite: s32'lnc301_08', 6
@@ -3062,9 +3062,9 @@ beginState: s32'cal_301_Rock'
     setAngleY: 332000
     setObjectSize: 700
     Unknown289: 200
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'End'
@@ -3312,9 +3312,9 @@ beginState: s32'cal_306_Rock'
     linkObjectPosition: 3
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'PreAtk'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'Atk'
@@ -3483,7 +3483,7 @@ beginState: s32'cal_309_SpeedLine'
   sprite: s32'null', 4
   setDepth: -28595
   sprite: s32'null', 4
-  sendSignalToAction: s32'cal_309_SpeedLine_Child', (SIGNAL_A)
+  sendSignalToAction: s32'cal_309_SpeedLine_Child', 23
   setDepth: -27646
   sprite: s32'null', 30
   setDepth: -26571
@@ -3495,9 +3495,9 @@ beginState: s32'cal_309_SpeedLine_Child'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     setObjectSize: 1100
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'RotateLoop'
@@ -3575,9 +3575,9 @@ beginState: s32'cal_350_Eff'
     linkObjectPosition: 3
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     setPositionX: 250000
     setPositionY: 240000
@@ -3786,8 +3786,8 @@ beginState: s32'cal_400_Eff_nee'
     setLinkObjectDestroyOnDamage: 3
     callSubroutine: s32'needle_Init'
     zLine: 0, 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Start'
     endUpon: 
     upon: 24
@@ -3802,8 +3802,8 @@ beginState: s32'cal_400_Eff_nee'
       clearUpon: 31
       gotoLabelRequests: s32'EndPre'
     endUpon: 
-    upon: (SIGNAL_B)
-      clearUpon: (SIGNAL_B)
+    upon: 32
+      clearUpon: 32
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3857,9 +3857,9 @@ beginState: s32'cal_400_Rock'
     addPositionY: 3587
     Unknown1727: 0
     Unknown289: 200
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       setLinkObjectDestroyOnStateChange: 0
       setLinkObjectDestroyOnDamage: 0
     endUpon: 
@@ -3937,7 +3937,7 @@ beginState: s32'ShotSousaiObject'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 1
-    upon: (ON_DESTROY)
+    upon: 45
       deactivateObjectById: (SELF)
     endUpon: 
     stopLinkObject: 3
@@ -3987,7 +3987,7 @@ beginState: s32'cal_301_Eff_623D'
       setLinkObjectDestroyOnStateChange: 0
       setLinkObjectDestroyOnDamage: 0
       if: Mem(BattleDoing)
-        sendSignalToAction: s32'AntiAir_D', (SIGNAL_A)
+        sendSignalToAction: s32'AntiAir_D', 23
       endIf: 
       else: 
         enemyHitstopAddition: 10, 0, 0
@@ -4020,7 +4020,7 @@ beginState: s32'cal_301_Eff_623D'
   commonSE: s32'SE_BTL_SwingWeaponLognL'
   sprite: s32'lnc401_03', 2
   hit: 
-  sendSignalToAction: s32'cal_301_Rock', (SIGNAL_A)
+  sendSignalToAction: s32'cal_301_Rock', 23
   sprite: s32'lnc401_04', 3
   sprite: s32'lnc401_05', 3
   recoveryState: 
@@ -4128,7 +4128,7 @@ beginState: s32'cal400_U_AddAtk'
       callSubroutine: s32'statue_f_Init'
       createObject: s32'cal_406_Eff_D_Blm', (PLAYER)
     endIf: 
-    upon: (SIGNAL_A)
+    upon: 23
       grabOrRelease: 
       setGravity: 4000
     endUpon: 
@@ -4424,15 +4424,15 @@ beginState: s32'cal_406_Eff_stf'
   upon: (IMMEDIATE)
     callSubroutine: s32'statue_f_Init'
     ifNot: Mem(Hikitsugi0)
-      upon: (SIGNAL_A)
-        clearUpon: (SIGNAL_A)
+      upon: 23
+        clearUpon: 23
         gotoLabelRequests: s32'End'
       endUpon: 
     endIf: 
     if: Mem(Hikitsugi0)
       linkObjectPosition: 3
-      upon: (SIGNAL_A)
-        clearUpon: (SIGNAL_A)
+      upon: 23
+        clearUpon: 23
         linkObjectPosition: 0
         gotoLabelRequests: s32'End'
       endUpon: 
@@ -4453,7 +4453,7 @@ beginState: s32'cal_406_Eff_stf'
   beginLabel: s32'End'
   sprite: s32'null', 1
   linkObjectPosition: 0
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 35
   Unknown2050: 0
   createObject: s32'cal_406_Eff_Dbreak_ATK', (PLAYER)
@@ -4650,7 +4650,7 @@ beginState: s32'cal_403_Eff'
     linkObjectZ: 3
     callSubroutine: s32'urr_Init'
     Unknown289: 120
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown413: 0, 2, 11, 0
     endUpon: 
@@ -4675,7 +4675,7 @@ beginState: s32'cal_403_Eff'
   sprite: s32'urr403_08', 25
   Unknown412: 100, 2, 11, 0
   Unknown413: -2, 2, 11, 0
-  sendSignalToAction: s32'cal_403_SpinEff', (SIGNAL_A)
+  sendSignalToAction: s32'cal_403_SpinEff', 23
   setLightRedColorSpeed: 85
   setLightGreenColorSpeed: 42
   setLightBlueColorSpeed: 21
@@ -4699,9 +4699,9 @@ beginState: s32'cal_403_SpinEff'
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(2)
       storeValue: Mem(ActReg1), Val(1)
     endIf: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 3
@@ -4877,16 +4877,16 @@ beginState: s32'cal_Trap_Land_nee'
     invulnForce: 1
     enableSuperArmor: 1
     superArmorHontaiAttack: 0
-    upon: (ON_DESTROY)
-      clearUpon: (ON_DESTROY)
-      clearUpon: (SIGNAL_A)
+    upon: 45
+      clearUpon: 45
+      clearUpon: 23
       clearUpon: (FRAME_STEP)
       clearUpon: 37
       gotoLabelRequests: s32'End'
     endUpon: 
-    upon: (SIGNAL_A)
-      clearUpon: (ON_DESTROY)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 45
+      clearUpon: 23
       clearUpon: (FRAME_STEP)
       clearUpon: 37
       gotoLabelRequests: s32'End'
@@ -4896,7 +4896,7 @@ beginState: s32'cal_Trap_Land_nee'
       ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
         modifyVar: (ADD), Mem(PlayerVal3), Val(-1)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(PlayerVal3), Val(0)
-          skillCooldown: 0, 420
+          Unknown1921: 0, 420
           Unknown1923: 0
         endIf: 
       endIf: 
@@ -5004,7 +5004,7 @@ onlyHitAirborne: 1
 canGrabDuringHitstun: 1
 upon: (HIT_OR_GUARD)
   clearUpon: (HIT_OR_GUARD)
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   Unknown2203: 23
 endUpon: 
 
@@ -5014,9 +5014,9 @@ onlyHitGrounded: 0
 onlyHitAirborne: 0
 canGrabDuringHitstun: 0
 commonSE: s32'SE_BTL_SwingWeaponLognL'
-clearUpon: (SIGNAL_A)
+clearUpon: 23
 invulnForce: 1
-clearUpon: (ON_DESTROY)
+clearUpon: 45
 sprite: s32'nee404_02', 2
 recoveryState: 
 beginLabel: s32'AtkEnd'
@@ -5033,8 +5033,8 @@ exitState:
 beginLabel: s32'End'
 sprite: s32'null', 30
 Unknown1793: 4, 24
-clearUpon: (ON_DESTROY)
-clearUpon: (SIGNAL_A)
+clearUpon: 45
+clearUpon: 23
 clearUpon: (FRAME_STEP)
 clearUpon: 37
 privateSE: s32'cal_14_2'
@@ -5053,15 +5053,15 @@ beginState: s32'cal_404_Rock'
     Unknown1727: -4995
     setAngleY: 308400
     Unknown289: 200
-    upon: (SIGNAL_A)
+    upon: 23
       Unknown1793: 4, 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       deactivateObjectById: (STACK0)
       deactivateObjectById: (SELF)
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
   endUpon: 
@@ -5110,9 +5110,9 @@ beginState: s32'cal_404_WarmHoleEff'
     addPositionY: 100
     setAngleX: 272800
     setObjectSize: 1200
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 100
@@ -5132,9 +5132,9 @@ beginState: s32'cal_404_Flash_1P'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     setObjectSize: 900
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 100
@@ -5189,9 +5189,9 @@ beginState: s32'cal_404_MagicCircle_Ground'
     setAngle: 277200
     setObjectSize: 1300
     setObjectSize: 1300
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'End'
@@ -5315,22 +5315,22 @@ beginState: s32'cal_Trap_Air_spi'
   initializeDestroy: 
   Unknown2204: 1
   invulnForce: 1
-  upon: (ON_DESTROY)
-    clearUpon: (ON_DESTROY)
-    clearUpon: (SIGNAL_A)
+  upon: 45
+    clearUpon: 45
+    clearUpon: 23
     clearUpon: (FRAME_STEP)
     clearUpon: 37
     gotoLabelRequests: s32'End'
   endUpon: 
-  upon: (SIGNAL_A)
-    clearUpon: (ON_DESTROY)
-    clearUpon: (SIGNAL_A)
+  upon: 23
+    clearUpon: 45
+    clearUpon: 23
     clearUpon: (FRAME_STEP)
     clearUpon: 37
     gotoLabelRequests: s32'End'
   endUpon: 
   upon: 24
-    clearUpon: (ON_DESTROY)
+    clearUpon: 45
     clearUpon: 24
     clearUpon: (FRAME_STEP)
     clearUpon: 37
@@ -5341,7 +5341,7 @@ beginState: s32'cal_Trap_Air_spi'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
       modifyVar: (ADD), Mem(PlayerVal3), Val(-1)
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(PlayerVal3), Val(0)
-        skillCooldown: 0, 420
+        Unknown1921: 0, 420
         Unknown1923: 0
       endIf: 
     endIf: 
@@ -5440,7 +5440,7 @@ ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         ifOperation: (IS_LESSER), Mem(EnemyDistanceX), Val(220000)
           clearUpon: (FRAME_STEP)
           clearUpon: 37
-          clearUpon: (SIGNAL_A)
+          clearUpon: 23
           clearUpon: 24
           gotoLabelRequests: s32'Atk'
         endIf: 
@@ -5481,7 +5481,7 @@ onlyHitAirborne: 1
 canGrabDuringHitstun: 1
 upon: (HIT_OR_GUARD)
   clearUpon: (HIT_OR_GUARD)
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   Unknown2203: 23
 endUpon: 
 
@@ -5501,9 +5501,9 @@ onlyHitGrounded: 0
 onlyHitAirborne: 0
 canGrabDuringHitstun: 0
 commonSE: s32'SE_BTL_SwingWeaponLognL'
-clearUpon: (SIGNAL_A)
+clearUpon: 23
 invulnForce: 1
-clearUpon: (ON_DESTROY)
+clearUpon: 45
 sprite: s32'spi405_02', 2
 recoveryState: 
 beginLabel: s32'AtkEnd'
@@ -5527,8 +5527,8 @@ exitState:
 beginLabel: s32'End'
 sprite: s32'null', 30
 Unknown1793: 4, 23
-clearUpon: (ON_DESTROY)
-clearUpon: (SIGNAL_A)
+clearUpon: 45
+clearUpon: 23
 clearUpon: (FRAME_STEP)
 clearUpon: 37
 privateSE: s32'cal_14_2'
@@ -5551,9 +5551,9 @@ beginState: s32'cal_405_SpawnEffect'
     addPositionX: 9990
     Unknown1727: -40173
     setObjectSize: 800
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 200
@@ -5595,9 +5595,9 @@ beginState: s32'cal_405_MagicCircle_Air'
     addPositionY: 1733
     Unknown1727: 43
     setAngleY: 90000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 20
@@ -5701,7 +5701,7 @@ beginState: s32'cal_430_Eff_urb'
   createObject: s32'cal_430_RotationRayEff', (PLAYER)
   sprite: s32'urb430_06', 3
   createObject: s32'cal_430_DragonBEff', (PLAYER)
-  sendSignalToAction: s32'cal_430_SpeedLineB', (SIGNAL_A)
+  sendSignalToAction: s32'cal_430_SpeedLineB', 23
   setLightRedColorSpeed: 2
   setLightGreenColorSpeed: 2
   setLightBlueColorSpeed: 127
@@ -5722,8 +5722,8 @@ beginState: s32'cal_430_Eff_urb'
   sprite: s32'urb430_08', 3
   sprite: s32'urb430_09', 1
   sprite: s32'urb430_09', 2
-  sendSignalToAction: s32'cal_430_RotationRayEff', (SIGNAL_A)
-  sendSignalToAction: s32'cal_430_DragonBEff', (SIGNAL_A)
+  sendSignalToAction: s32'cal_430_RotationRayEff', 23
+  sendSignalToAction: s32'cal_430_DragonBEff', 23
   stopLinkObject: 0
   linkObjectPosition: 0
 endState: 
@@ -5745,7 +5745,7 @@ beginState: s32'cal_430_Eff_urr'
   sprite: s32'urr430_05', 3
   createObject: s32'cal_430_SpeedLineR', (PLAYER)
   sprite: s32'urr430_06', 3
-  sendSignalToAction: s32'cal_430_SpeedLineR', (SIGNAL_A)
+  sendSignalToAction: s32'cal_430_SpeedLineR', 23
   createObject: s32'cal_430_DragonREff', (PLAYER)
   setLightRedColorSpeed: 127
   setLightGreenColorSpeed: 2
@@ -5767,7 +5767,7 @@ beginState: s32'cal_430_Eff_urr'
   sprite: s32'urr430_08', 3
   sprite: s32'urr430_09', 1
   sprite: s32'urr430_09', 2
-  sendSignalToAction: s32'cal_430_DragonREff', (SIGNAL_A)
+  sendSignalToAction: s32'cal_430_DragonREff', 23
   stopLinkObject: 0
   linkObjectPosition: 0
 endState: 
@@ -5825,9 +5825,9 @@ beginState: s32'cal_430_DragonBEff'
     addPositionY: 187306
     Unknown1727: 43203
     setObjectSize: 2600
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 15
@@ -5872,9 +5872,9 @@ beginState: s32'cal_430_DragonREff'
     addPositionY: 195880
     Unknown1727: -16479
     setObjectSize: 2600
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 15
@@ -5917,9 +5917,9 @@ beginState: s32'cal_430_RotationRayEff'
     Unknown169: -90000, 90000
     addPositionY: 200000
     Unknown1727: 100000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 1
@@ -5979,9 +5979,9 @@ beginState: s32'cal_430_SpeedLineR'
     addPositionY: 198801
     Unknown1727: 8662
     setObjectSize: 2450
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 200
@@ -6003,9 +6003,9 @@ beginState: s32'cal_430_SpeedLineB'
     Unknown1727: 67603
     setAngleY: 180000
     setObjectSize: 2450
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 200
@@ -6034,21 +6034,21 @@ beginState: s32'cal_440_Gold_Matome'
     stopLinkObject: 3
     linkObjectZ: 3
     Unknown289: 1000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
-      clearUpon: (AFTER_EXIT)
+      clearUpon: 23
+      clearUpon: 47
     endUpon: 
-    upon: (AFTER_EXIT)
+    upon: 47
       if: Mem(BattleDoing)
         gotoLabelRequests: s32'End'
-        clearUpon: (SIGNAL_A)
-        clearUpon: (AFTER_EXIT)
+        clearUpon: 23
+        clearUpon: 47
       endIf: 
       Unknown310: 13, 3, 2, 77, 0, 0
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
-      clearUpon: (AFTER_EXIT)
+      clearUpon: 23
+      clearUpon: 47
     endIf: 
   endUpon: 
 endUpon: 
@@ -6075,9 +6075,9 @@ privateSE: s32'cal_05'
 sprite: s32'null', 2147483647
 beginLabel: s32'End'
 sprite: s32'null', 10
-clearUpon: (SIGNAL_A)
-clearUpon: (AFTER_EXIT)
-sendSignalToAction: s32'cal_440_Gold', (SIGNAL_A)
+clearUpon: 23
+clearUpon: 47
+sendSignalToAction: s32'cal_440_Gold', 23
 privateSE: s32'cal_08_3'
 privateSE: s32'cal_05'
 endState: 
@@ -6122,9 +6122,9 @@ beginState: s32'cal_440_Gold'
     Unknown194: 0, 200
     ignoreFinishStop: 1
     Unknown289: 1000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'CSNoDisp'
@@ -6242,9 +6242,9 @@ beginState: s32'cal_440_PPOverRay'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: (BEFORE_EXIT)
       Unknown2590: s32'cal_MI_PP_441OverRay', 1, 0
@@ -6267,7 +6267,7 @@ beginState: s32'cal_440_PPOverRay'
   beginLabel: s32'End'
   sprite: s32'null', 2
   Unknown2588: s32'cal_MI_PP_441OverRay', 1, 40
-  sendSignalToAction: s32'cal_440_HitGradation', (SIGNAL_A)
+  sendSignalToAction: s32'cal_440_HitGradation', 23
   sprite: s32'null', 2
   Unknown2588: s32'cal_MI_PP_441OverRay', 1, 30
   sprite: s32'null', 2
@@ -6280,9 +6280,9 @@ beginState: s32'cal_440_HitGradation'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 1000
@@ -6415,9 +6415,9 @@ beginState: s32'cal_441_Statue'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     callSubroutine: s32'daiza_Init'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'ColorChange'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2147483647
@@ -6500,9 +6500,9 @@ beginState: s32'cal_441_BG'
     setPositionY: 326331
     setDepth: -1167946
     setObjectSize: 1500
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'PosChange'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 300
@@ -6545,9 +6545,9 @@ beginState: s32'cal_441_WhiteOut02'
       Unknown409: 0, 1
       Unknown410: 0, 1
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 30
@@ -6570,7 +6570,7 @@ endState:
 beginState: s32'cal_441_PPOverRay'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnDamage: 3
-    gotoLabelUpon: (SIGNAL_A), s32'Change'
+    gotoLabelUpon: 23, s32'Change'
     gotoLabelUpon: 24, s32'End'
     upon: (BEFORE_EXIT)
       Unknown2590: s32'cal_MI_PP_441OverRay', 1, 0
@@ -6620,9 +6620,9 @@ beginState: s32'cal_442_WhiteIn'
       Unknown409: 0, 1
       Unknown410: 0, 1
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 20

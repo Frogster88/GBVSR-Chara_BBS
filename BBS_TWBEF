@@ -239,7 +239,7 @@ beginState: s32'pod_Wait'
 endState: 
 
 beginSubroutine: s32'ON_SIGNAL_NAME'
-  upon: (SIGNAL_NAME)
+  upon: 49
     checkSignalName: s32'pod254'
     if: Mem(Tmp)
       jumpToState: s32'pod254'
@@ -410,7 +410,7 @@ beginState: s32'knc272'
   gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
   beginLabel: s32'Landing'
   sprite: s32'keep', 20
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: (TOUCH_GROUND)
   setLinkObjectDestroyOnStateChange: 0
   setLinkObjectDestroyOnDamage: 0
@@ -557,8 +557,8 @@ beginState: s32'knc280'
     velocityXPercentEachFrame: 98
     Unknown1909: 15000
     gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       clearUpon: (TOUCH_GROUND)
       gotoLabelRequests: s32'Atk'
     endUpon: 
@@ -600,7 +600,7 @@ sprite: s32'knc280_03', 4
 sprite: s32'knc280_04', 2147483647
 beginLabel: s32'Landing'
 sprite: s32'knc280_04', 20
-clearUpon: (SIGNAL_A)
+clearUpon: 23
 clearUpon: (TOUCH_GROUND)
 setLinkObjectDestroyOnStateChange: 0
 setLinkObjectDestroyOnDamage: 0
@@ -623,7 +623,7 @@ sprite: s32'keep', 2
 Unknown2050: 0
 sprite: s32'keep', 2
 Unknown2050: 1
-sendSignalToAction: s32'twb_278_ThunderEff', (SIGNAL_A)
+sendSignalToAction: s32'twb_278_ThunderEff', 23
 endSprite: 
 exitState: 
 beginLabel: s32'Atk'
@@ -634,7 +634,7 @@ setPositionY: 225000
 physicsXImpulse: 30000
 velocityXPercentEachFrame: 105
 worldCollision: 0
-sendSignalToAction: s32'twb_278_ThunderEff', (SIGNAL_A)
+sendSignalToAction: s32'twb_278_ThunderEff', 23
 createObject: s32'twb_278_RocketEff', (PLAYER)
 sprite: s32'knc280_05ex', 2
 stopLinkObject: 0
@@ -697,7 +697,7 @@ beginState: s32'twb_278_ThunderEff'
   upon: (IMMEDIATE)
     linkObjectZ: 2
     linkObjectPosition: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -707,7 +707,7 @@ beginState: s32'twb_278_ThunderEff'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
 endState: 
 
 beginState: s32'twb208_Parry_Bunshin'
@@ -807,7 +807,7 @@ endState:
 
 beginState: s32'pod254'
   upon: (IMMEDIATE)
-    upon: (SIGNAL_NAME)
+    upon: 49
       checkSignalName: s32'Atk'
       if: Mem(Tmp)
         gotoLabelRequests: s32'Atk'
@@ -931,8 +931,8 @@ beginState: s32'twb_306_StrikeEff'
     stopLinkObject: 3
     linkObjectZ: 2
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1171,7 +1171,7 @@ beginSubroutine: s32'twb_400_PodMGStart'
   setObjectSize: 400
   setAngleX: 340000
   setAngleY: 130000
-  upon: (SIGNAL_A)
+  upon: 23
     gotoLabelRequests: s32'End'
   endUpon: 
 endSubroutine: 
@@ -1186,7 +1186,7 @@ beginState: s32'twb_404_MGStart'
   sprite: s32'null', 2147483647
   beginLabel: s32'End'
   sprite: s32'null', 20
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'twb_400_PodMGEnd'
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
@@ -1214,7 +1214,7 @@ beginState: s32'twb_405_MGStart'
   sprite: s32'null', 2147483647
   beginLabel: s32'End'
   sprite: s32'null', 20
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'twb_400_PodMGEnd'
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
@@ -1285,7 +1285,7 @@ beginState: s32'pod404'
   sprite: s32'pod404_06', 3
   sprite: s32'pod404_07', 3
   deactivateObjectByName: s32'pod_404_AtkMatome'
-  sendSignalToAction: s32'twb_404_MGStart', (SIGNAL_A)
+  sendSignalToAction: s32'twb_404_MGStart', 23
   sprite: s32'pod404_08', 3
   sprite: s32'pod404_09', 3
   sprite: s32'pod404_10', 3
@@ -1441,11 +1441,11 @@ beginState: s32'pod405'
   sprite: s32'pod405_06', 2
   sprite: s32'pod405_07', 2
   sprite: s32'pod405_08', 2
-  sendSignalToAction: s32'pod_405_MuzzleEff', (SIGNAL_A)
-  sendSignalToAction: s32'pod_405_BeamEff', (SIGNAL_A)
+  sendSignalToAction: s32'pod_405_MuzzleEff', 23
+  sendSignalToAction: s32'pod_405_BeamEff', 23
   sprite: s32'pod405_09', 2
   sprite: s32'pod405_10', 3
-  sendSignalToAction: s32'twb_405_MGStart', (SIGNAL_A)
+  sendSignalToAction: s32'twb_405_MGStart', 23
   sprite: s32'pod405_11', 3
   sprite: s32'pod405_12', 3
   sprite: s32'pod405_13', 3
@@ -1461,8 +1461,8 @@ beginState: s32'pod_405_BeamEff'
     linkObjectPosition: 2
     stopLinkObject: 3
     linkObjectZ: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: 45000
@@ -1503,7 +1503,7 @@ beginState: s32'pod_405_MuzzleEff'
     addPositionY: 22000
     Unknown1727: 15500
     setAngleY: 24000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1512,14 +1512,14 @@ beginState: s32'pod_405_MuzzleEff'
   beginLabel: s32'End'
   sprite: s32'null', 50
   linkParticle: s32'twb_405_Muzzle01'
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkObjectPosition: 0
 endState: 
 
 beginState: s32'pod406'
   upon: (IMMEDIATE)
     callSubroutine: s32'pod_Ability_Init'
-    upon: (SIGNAL_A)
+    upon: 23
       storeValue: Mem(ActReg0), Val(1)
     endUpon: 
   endUpon: 
@@ -1554,7 +1554,7 @@ beginState: s32'pod406'
   sprite: s32'pod406_09', 2
   sprite: s32'pod406_09', 1
   sprite: s32'pod406_10', 1
-  sendSignalToAction: s32'twb_405_MGStart', (SIGNAL_A)
+  sendSignalToAction: s32'twb_405_MGStart', 23
   sprite: s32'pod406_10', 2
   sprite: s32'pod406_11', 3
   sprite: s32'pod406_12', 3
@@ -1590,15 +1590,15 @@ beginSubroutine: s32'pod_406_ShotAtkInit'
   stackObjectEx: (SELF), 4, 2, 4
   linkObjectPosition: 4
   stopLinkObject: 4
-  upon: (SIGNAL_A)
-    clearUpon: (SIGNAL_A)
+  upon: 23
+    clearUpon: 23
     clearUpon: (FRAME_STEP)
     createObject: s32'twb_406_HitEff', (PLAYER)
     gotoLabelRequests: s32'End'
   endUpon: 
   upon: (FRAME_STEP)
     Unknown310: 9, 2, 2, 45, 0, 1
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     clearUpon: (FRAME_STEP)
     createObject: s32'twb_406_HitEff', (PLAYER)
     gotoLabelRequests: s32'End'
@@ -1644,19 +1644,19 @@ beginState: s32'pod_406_ShellAtk'
       createObject: s32'pod_406_Shell_Counter', (ENEMY_BODY_RANDOM)
       createObject: s32'pod_406_Shell_Counter', (ENEMY_BODY_RANDOM)
     endUpon: 
-    upon: (ON_DESTROY)
-      sendSignalToAction: s32'pod_406_ShellTOP1Eff', (SIGNAL_A)
-      sendSignalToAction: s32'pod_406_ShellBottom1Eff', (SIGNAL_A)
-      sendSignalToAction: s32'pod_406_ShellTOP2Eff', (SIGNAL_A)
-      sendSignalToAction: s32'pod_406_ShellBottom2Eff', (SIGNAL_A)
-      sendSignalToAction: s32'pod_406_ShellEff', (SIGNAL_A)
+    upon: 45
+      sendSignalToAction: s32'pod_406_ShellTOP1Eff', 23
+      sendSignalToAction: s32'pod_406_ShellBottom1Eff', 23
+      sendSignalToAction: s32'pod_406_ShellTOP2Eff', 23
+      sendSignalToAction: s32'pod_406_ShellBottom2Eff', 23
+      sendSignalToAction: s32'pod_406_ShellEff', 23
     endUpon: 
     upon: (ACTION_END)
-      sendSignalToAction: s32'pod_406_ShellTOP1Eff', (SIGNAL_A)
-      sendSignalToAction: s32'pod_406_ShellBottom1Eff', (SIGNAL_A)
-      sendSignalToAction: s32'pod_406_ShellTOP2Eff', (SIGNAL_A)
-      sendSignalToAction: s32'pod_406_ShellBottom2Eff', (SIGNAL_A)
-      sendSignalToAction: s32'pod_406_ShellEff', (SIGNAL_A)
+      sendSignalToAction: s32'pod_406_ShellTOP1Eff', 23
+      sendSignalToAction: s32'pod_406_ShellBottom1Eff', 23
+      sendSignalToAction: s32'pod_406_ShellTOP2Eff', 23
+      sendSignalToAction: s32'pod_406_ShellBottom2Eff', 23
+      sendSignalToAction: s32'pod_406_ShellEff', 23
     endUpon: 
     upon: 37
       gotoLabelRequests: s32'Sousai'
@@ -1850,9 +1850,9 @@ beginState: s32'pod407'
   sprite: s32'pod407_07', 3
   sprite: s32'pod407_08', 3
   sprite: s32'pod407_09', 3
-  sendSignalToAction: s32'pod_407_BeamEff', (SIGNAL_A)
+  sendSignalToAction: s32'pod_407_BeamEff', 23
   sprite: s32'pod407_10', 3
-  sendSignalToAction: s32'twb_405_MGStart', (SIGNAL_A)
+  sendSignalToAction: s32'twb_405_MGStart', 23
   sprite: s32'pod407_11', 3
   sprite: s32'pod407_12', 3
   sprite: s32'pod407_13', 3
@@ -1868,8 +1868,8 @@ beginState: s32'pod_407_BeamEff'
     linkObjectPosition: 2
     linkObjectZ: 2
     Unknown2327: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: 45000
@@ -1928,7 +1928,7 @@ beginState: s32'pod_407_MuzzleEff'
     linkObjectZ: 2
     linkObjectAngle: 2
     Unknown2327: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: 8000
@@ -1959,7 +1959,7 @@ endState:
 beginState: s32'pod408'
   upon: (IMMEDIATE)
     callSubroutine: s32'pod_Ability_Init'
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (FRAME_STEP)
       checkCurrentStateName: (PLAYER), s32'Mirage'
       ifNot: Mem(Tmp)
@@ -2009,7 +2009,7 @@ beginState: s32'twb_408_MirageLoop'
     flipDirection: 
     setObjectSize: 1200
     Unknown2327: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2030,7 +2030,7 @@ beginState: s32'twb_408_MirageLoop'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 30
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'twb_408_MirageEnd'
 endState: 
 
@@ -2122,7 +2122,7 @@ beginState: s32'twb_409_HammerEff'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     setObjectSize: 900
-    upon: (SIGNAL_A)
+    upon: 23
       stopLinkObject: 0
     endUpon: 
   endUpon: 
@@ -2179,7 +2179,7 @@ beginState: s32'twb_409_HammerEff'
   Unknown212: -100
   linkParticle: s32'twb_409_Hummer03'
   linkObjectPosition: 0
-  sendSignalToAction: s32'twb_409_MagicCircle01Eff', (SIGNAL_A)
+  sendSignalToAction: s32'twb_409_MagicCircle01Eff', 23
   setAlphaColor: 1000
   setAlphaColorSpeed: -10
 endState: 
@@ -2192,7 +2192,7 @@ beginState: s32'twb_409_MagicCircle01Eff'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     setObjectSize: 1100
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 24
@@ -2208,7 +2208,7 @@ beginState: s32'twb_409_MagicCircle01Eff'
   linkParticle: s32'twb_409_MagicCircle02'
   beginLabel: s32'End'
   sprite: s32'null', 30
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setPositionX: 140859
   setPositionY: 230471
   setDepth: 110290
@@ -2238,18 +2238,18 @@ endState:
 beginState: s32'pod410'
   upon: (IMMEDIATE)
     callSubroutine: s32'pod_Ability_Init'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
-      clearUpon: (AFTER_EXIT)
+    upon: 23
+      clearUpon: 23
+      clearUpon: 47
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
       linkObjectZ: 0
       linkObjectPosition: 0
     endUpon: 
-    upon: (AFTER_EXIT)
-      clearUpon: (AFTER_EXIT)
-      clearUpon: (SIGNAL_A)
+    upon: 47
+      clearUpon: 47
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2288,7 +2288,7 @@ beginState: s32'twb_410_MissileRushEff'
     setPositionX: 239936
     setPositionY: 249918
     setDepth: -16107
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2297,7 +2297,7 @@ beginState: s32'twb_410_MissileRushEff'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   beginLabel: s32'End'
   sprite: s32'null', 50
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'twb_410_RushEnd'
   linkObjectPosition: 0
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
@@ -2314,7 +2314,7 @@ beginState: s32'twb_410_MissileRushSmokeEff'
     setPositionX: 269906
     setPositionY: 243829
     setDepth: 78712
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2323,7 +2323,7 @@ beginState: s32'twb_410_MissileRushSmokeEff'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   beginLabel: s32'End'
   sprite: s32'null', 50
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'twb_410_RushSmokeEnd'
   linkObjectPosition: 0
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
@@ -2336,7 +2336,7 @@ beginState: s32'twb_410_NokoshiSPEff'
     linkObjectPosition: 3
     linkObjectZ: 3
     stopLinkObject: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: 262000
@@ -2349,7 +2349,7 @@ beginState: s32'twb_410_NokoshiSPEff'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
 endState: 
 
 beginState: s32'WireObj'
@@ -2365,7 +2365,7 @@ beginState: s32'WireObj'
         bpBattleScriptParam: 0, 0, 0, 0
       endIf: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       clearUpon: 36
       gotoLabelRequests: s32'Hit'
     endUpon: 
@@ -2394,7 +2394,7 @@ beginState: s32'WireObj'
   gotoLabel: s32'End'
   beginLabel: s32'Hit'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   bpBattleScriptParam: 1, 1, 1, 900
   sprite: s32'null', 1
   bpBattleScriptParam: 1, 1, 1, 800
@@ -2468,7 +2468,7 @@ beginState: s32'WireObj'
   setAlphaColor: 450
   sprite: s32'null', 2
   setAlphaColor: 350
-  sendSignalToAction: s32'twb_411_SparkEff', (SIGNAL_A)
+  sendSignalToAction: s32'twb_411_SparkEff', 23
   sprite: s32'null', 2
   setAlphaColor: 250
   sprite: s32'null', 2
@@ -2482,7 +2482,7 @@ endState:
 beginState: s32'pod411'
   upon: (IMMEDIATE)
     callSubroutine: s32'pod_Ability_Init'
-    gotoLabelUpon: (SIGNAL_A), s32'Dash'
+    gotoLabelUpon: 23, s32'Dash'
     gotoLabelUpon: 24, s32'Stop'
     upon: 25
       storeValue: Mem(EnvR23), Val(1)
@@ -2516,8 +2516,8 @@ beginState: s32'pod411'
   sprite: s32'keep', 9
   sprite: s32'pod411_00', 3
   createObject: s32'twb_411_SparkEff', (PLAYER)
-  sendSignalToAction: s32'twb_411_MGStart', (SIGNAL_A)
-  sendSignalToAction: s32'twb_411_FontEff', (SIGNAL_A)
+  sendSignalToAction: s32'twb_411_MGStart', 23
+  sendSignalToAction: s32'twb_411_FontEff', 23
   sprite: s32'pod411_01', 3
   sprite: s32'pod411_02', 3
   sprite: s32'pod411_02', 117
@@ -2530,7 +2530,7 @@ beginState: s32'pod411'
   sprite: s32'pod411_05', 3
   sprite: s32'pod411_06', 3
   sprite: s32'pod411_07', 3
-  sendSignalToAction: s32'twb_411_RockonEff', (SIGNAL_A)
+  sendSignalToAction: s32'twb_411_RockonEff', 23
   sendSignalToAction: s32'twb_411_FontEff', 24
   sprite: s32'pod411_08', 3
   sprite: s32'pod411_09', 3
@@ -2568,9 +2568,9 @@ beginState: s32'pod411_Shot'
       storeValueFromObject: (SELF), Mem(PosXRaw), (ENEMY), Mem(PosXRaw)
       storeValue: Mem(ActReg0), Val(1)
       gotoLabelRequests: s32'Hit'
-      sendSignalToAction: s32'Wire', (SIGNAL_A)
+      sendSignalToAction: s32'Wire', 23
       sendSignalToAction: s32'Wire', 25
-      sendSignalToAction: s32'Wire_Sp', (SIGNAL_A)
+      sendSignalToAction: s32'Wire_Sp', 23
     endUpon: 
     upon: 86
       clearUpon: (HIT)
@@ -2579,8 +2579,8 @@ beginState: s32'pod411_Shot'
       storeValueFromObject: (SELF), Mem(PosXRaw), (ENEMY), Mem(PosXRaw)
       storeValue: Mem(ActReg0), Val(1)
       gotoLabelRequests: s32'Hit'
-      sendSignalToAction: s32'Wire', (SIGNAL_A)
-      sendSignalToAction: s32'Wire_Sp', (SIGNAL_A)
+      sendSignalToAction: s32'Wire', 23
+      sendSignalToAction: s32'Wire_Sp', 23
     endUpon: 
     ifOpponentCharacterMain: s16'nie'
     if: Mem(Tmp)
@@ -2614,8 +2614,8 @@ beginState: s32'pod411_Shot'
     Unknown2210: 1
     Unknown2212: 1
     Unknown2257: 1
-    upon: (ON_DESTROY)
-      clearUpon: (SIGNAL_A)
+    upon: 45
+      clearUpon: 23
       haltMomentum: 1
       sendSignalToAction: s32'twb_411_ShotHeadEff', 25
       gotoLabelRequests: s32'End'
@@ -2663,8 +2663,8 @@ endUpon:
 
 clearUpon: 126
 sprite: s32'keep', 90
-upon: (SIGNAL_A)
-  clearUpon: (SIGNAL_A)
+upon: 23
+  clearUpon: 23
   clearUpon: (HIT)
   Unknown310: 9, 22, 2, 36, 0, 1
   grabOrRelease: 
@@ -2675,8 +2675,8 @@ hitstop: 8
 wallPushback: 0, 1000
 gotoLabelRequests: s32'End'
 endUpon: 
-sendSignalToAction: s32'twb_411_ShotHeadEff', (SIGNAL_A)
-sendSignalToAction: s32'WireObj', (SIGNAL_A)
+sendSignalToAction: s32'twb_411_ShotHeadEff', 23
+sendSignalToAction: s32'WireObj', 23
 endSprite: 
 exitState: 
 beginLabel: s32'End'
@@ -2697,7 +2697,7 @@ beginState: s32'twb_411_ShotHeadEff'
     setLinkObjectDestroyOnStateChange: 2
     addPositionX: -75934
     callSubroutine: s32'twb_411_Func'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 24
@@ -2714,7 +2714,7 @@ beginState: s32'twb_411_ShotHeadEff'
   linkParticle: s32'twb_411_Bit'
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 35
   linkParticle: s32'twb_411_BitEnd'
   createObject: s32'twb_411_FontEff', (PLAYER)
@@ -2739,7 +2739,7 @@ beginState: s32'twb_411_MGStart'
   sprite: s32'null', 2147483647
   beginLabel: s32'End'
   sprite: s32'null', 20
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'twb_400_PodMGEnd'
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
@@ -2754,7 +2754,7 @@ beginState: s32'twb_411_RockonEff'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     callSubroutine: s32'twb_411_Func'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (FRAME_STEP)
@@ -2771,7 +2771,7 @@ beginState: s32'twb_411_RockonEff'
   setAlphaColorSpeed: 0
   beginLabel: s32'End'
   sprite: s32'null', 5
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setAlphaColor: 1000
   setAlphaColorSpeed: -200
   sprite: s32'null', 1
@@ -2806,7 +2806,7 @@ beginState: s32'twb_411_SparkEff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     callSubroutine: s32'twb_411_Func'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2816,7 +2816,7 @@ beginState: s32'twb_411_SparkEff'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
 endState: 
 
 beginState: s32'twb_411_FontEff'
@@ -2827,7 +2827,7 @@ beginState: s32'twb_411_FontEff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     callSubroutine: s32'twb_411_Func'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Loop'
     endUpon: 
     upon: 24
@@ -2841,13 +2841,13 @@ beginState: s32'twb_411_FontEff'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
 endState: 
 
 beginState: s32'pod413'
   upon: (IMMEDIATE)
     callSubroutine: s32'pod_Ability_Init'
-    upon: (SIGNAL_A)
+    upon: 23
       storeValue: Mem(EnvR23), Val(1)
       storeValue: Mem(EnvR24), Val(1)
       callSubroutine: s32'ON_SIGNAL_NAME'
@@ -2876,7 +2876,7 @@ beginState: s32'pod413'
   createObject: s32'twb_413_GravityTame', (PLAYER)
   privateSE: s32'twb_22'
   sprite: s32'pod413_07', 3
-  sendSignalToAction: s32'twb_405_MGStart', (SIGNAL_A)
+  sendSignalToAction: s32'twb_405_MGStart', 23
   linkObjectPosition: 0
   sprite: s32'pod413_08', 3
   sprite: s32'pod413_09', 3
@@ -2911,8 +2911,8 @@ beginState: s32'twb_413_GravityTame'
       storeValue: Mem(EnvR21), Val(0)
     endUpon: 
     worldCollision: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       storeValue: Mem(ActReg0), Val(1)
     endUpon: 
   endUpon: 
@@ -2942,8 +2942,8 @@ beginState: s32'twb_413_Gravity'
     linkObjectPosition: 0
     setLinkObjectDestroyOnStateChange: 0
     Unknown2294: 2500
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       clearUpon: 35
       clearUpon: 38
       gotoLabelRequests: s32'End'
@@ -2955,14 +2955,14 @@ beginState: s32'twb_413_Gravity'
     upon: 35
       clearUpon: 35
       clearUpon: 38
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       storeValue: Mem(ActReg0), Val(1)
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 38
       clearUpon: 35
       clearUpon: 38
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       storeValue: Mem(ActReg0), Val(1)
       gotoLabelRequests: s32'End'
     endUpon: 
@@ -2979,7 +2979,7 @@ beginState: s32'twb_413_Gravity'
   Unknown2246: 600000, 0
   upon: (FRAME_STEP)
     runOnObject: (ENEMY)
-    slipperyEffect: 0
+    Unknown2253: 0
     endRunOnObject: 
     ifNot: Mem(BattleDoing)
       clearUpon: (FRAME_STEP)
@@ -2993,14 +2993,14 @@ beginState: s32'twb_413_Gravity'
   deactivateObjectByName: s32'twb_413_Gravity_Sub'
   Unknown2247: 0, 0, 0
   clearUpon: (FRAME_STEP)
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 35
   clearUpon: 38
   setAlphaColorSpeed: -30
   Unknown2268: 0, 1700
   createParticleWithArg2: s32'twb_413_GravityEnd', (PLAYER_LAND)
   requestShake: 6000, 6000
-  sendSignalToAction: s32'twb_413_GravityRock', (SIGNAL_A)
+  sendSignalToAction: s32'twb_413_GravityRock', 23
   clearUpon: (BEFORE_EXIT)
   storeValue: Mem(EnvR21), Val(0)
   if: Mem(ActReg0)
@@ -3038,7 +3038,7 @@ beginState: s32'twb_413_GravityRock'
   upon: (IMMEDIATE)
     setObjectSize: 2000
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3046,7 +3046,7 @@ beginState: s32'twb_413_GravityRock'
   linkParticle: s32'twb_413_RockLoop'
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'twb_413_RockEnd'
 endState: 
 
@@ -3083,8 +3083,8 @@ beginState: s32'pod414'
   setPositionY: 0
   linkObjectPosition: 22
   setPositionX: -350000
-  upon: (SIGNAL_A)
-    clearUpon: (SIGNAL_A)
+  upon: 23
+    clearUpon: 23
     linkObjectPosition: 0
   endUpon: 
   upon: 24
@@ -3134,7 +3134,7 @@ upon: (FRAME_STEP)
   endIf: 
 endUpon: 
 
-upon: (SIGNAL_NAME)
+upon: 49
   checkSignalName: s32'pod430'
   if: Mem(Tmp)
     jumpToState: s32'pod430'
@@ -3177,7 +3177,7 @@ gotoLabel: s32'Loop'
 beginLabel: s32'Attack'
 sprite: s32'pod414_08', 4
 clearUpon: (FRAME_STEP)
-clearUpon: (SIGNAL_A)
+clearUpon: 23
 clearUpon: 24
 sendSignalToAction: s32'pod_414_VoltEff', 24
 sprite: s32'pod414_09', 4
@@ -3191,7 +3191,7 @@ endUpon:
 
 sprite: s32'pod414_11', 4
 sprite: s32'pod000_17', 6
-sendSignalToAction: s32'twb_405_MGStart', (SIGNAL_A)
+sendSignalToAction: s32'twb_405_MGStart', 23
 sprite: s32'pod000_18', 6
 sprite: s32'pod000_19', 6
 endSprite: 
@@ -3219,8 +3219,8 @@ beginState: s32'pod_414_VoltEff'
     attackThroughArmor: 1
     damageEffect: 2, s32'twb_409_HitEff'
     missionName: s32'Volt_shot'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       spriteTimeAdd: 120
       Unknown1793: 2, 25
     endUpon: 
@@ -3235,7 +3235,7 @@ beginState: s32'pod_414_VoltEff'
 endUpon: 
 
 upon: 25
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 24
   clearUpon: 25
   linkObjectPosition: 0
@@ -3250,7 +3250,7 @@ endSprite:
 gotoLabel: s32'NoHitEnd'
 beginLabel: s32'Atk'
 sprite: s32'null', 8
-clearUpon: (SIGNAL_A)
+clearUpon: 23
 clearUpon: 24
 linkParticle: s32'twb_414_BitLoop'
 privateSE: s32'twb_21'
@@ -3275,6 +3275,12 @@ beginState: s32'pod_414_VoltEff_Atk'
     Unknown1911: 17, 1
     Unknown478: 2
     tensionGainOnConnect: 40
+    upon: (FRAME_STEP)
+      ifOperation: (IS_EQUAL), Mem(PlayerDamage), Val(1)
+        attackEndDelay: 
+        Unknown1793: 2, 25
+      endIf: 
+    endUpon: 
   endUpon: 
   sprite: s32'SpecialShot_Volt', 3
   hit: 
@@ -3287,7 +3293,7 @@ beginState: s32'pod415'
     Unknown2482: 0x020000002D0000000200000042000000
     upon: 36
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(55)
-        sendSignalToAction: s32'twb_415_BomTame', (SIGNAL_A)
+        sendSignalToAction: s32'twb_415_BomTame', 23
         ifNot: Mem(ActReg1)
           storeValue: Mem(ActReg1), Val(1)
           clearUpon: 35
@@ -3370,7 +3376,7 @@ beginState: s32'pod415'
   haltMomentum: 1
   clearUpon: (FRAME_STEP)
   sprite: s32'pod415_12', 3
-  sendSignalToAction: s32'twb_405_MGStart', (SIGNAL_A)
+  sendSignalToAction: s32'twb_405_MGStart', 23
   sprite: s32'pod415_13', 3
   sprite: s32'pod415_14', 3
   endSprite: 
@@ -3392,8 +3398,8 @@ beginState: s32'twb_415_BomTame'
     Unknown2482: 0x02000000A101000002000000A1010000
     Unknown2482: 0x020000002D000000020000002D000000
     storeValue: Mem(ActReg1), Mem(PosXRaw)
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       setLinkObjectDestroyOnDamage: 0
     endUpon: 
   endUpon: 
@@ -3499,7 +3505,7 @@ beginState: s32'pod412'
     groundBounceCount: 1
     groundBounceYVelocityPercent: 10
     damageEffect: 2, s32'twb_405_HitEff'
-    gotoLabelUpon: (SIGNAL_A), s32'Atk'
+    gotoLabelUpon: 23, s32'Atk'
     gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
     upon: (FRAME_STEP)
       checkCurrentStateName: (PLAYER), s32'Wave'
@@ -3515,10 +3521,10 @@ beginState: s32'pod412'
   Unknown2050: 0
   Unknown264: -16
   Unknown2024: 0x0000000003000000670000000000000020D1FFFF0000000048E8010000000000640000000000000014000000
-  upon: (SIGNAL_NAME)
+  upon: 49
     checkSignalName: s32'DispModel_TRUE'
     if: Mem(Tmp)
-      clearUpon: (SIGNAL_NAME)
+      clearUpon: 49
       Unknown2050: 1
       createObject: s32'twb_400_PodRay', (PLAYER)
       runOnObject: (PREVIOUS)
@@ -3533,7 +3539,7 @@ beginState: s32'pod412'
   jumpToState: s32'pod_Wait'
   beginLabel: s32'Atk'
   sprite: s32'pod412_02', 2
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   sprite: s32'pod412_03', 2
   sprite: s32'pod412_04', 2147483647
   Unknown2020: 
@@ -3621,13 +3627,13 @@ beginState: s32'twb_412_WaveAtk'
     wallPushback: 0, 100
     damageEffect: 2, s32'twb_405_HitEff'
     upon: 8
-      sendSignalToAction: s32'twb_412_WaveAtk', (SIGNAL_A)
+      sendSignalToAction: s32'twb_412_WaveAtk', 23
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       attackEndDelay: 
     endUpon: 
     upon: 35
-      sendSignalToAction: s32'twb_412_WaveAtk', (SIGNAL_A)
+      sendSignalToAction: s32'twb_412_WaveAtk', 23
     endUpon: 
   endUpon: 
   sprite: s32'SpecialShot_Wave_RingAtk1st', 1
@@ -3749,8 +3755,8 @@ beginState: s32'pod_430_BeamEff'
     linkObjectPosition: 2
     linkObjectZ: 2
     Unknown2327: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: 45000
@@ -3803,7 +3809,7 @@ beginState: s32'pod_430_MuzzleEff'
     linkObjectPosition: 2
     stopLinkObject: 3
     linkObjectZ: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: 8000
@@ -3879,7 +3885,7 @@ beginState: s32'twb_430_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
     forceCameraMove: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Land'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -4487,7 +4493,7 @@ beginState: s32'twb_442cs_WinGlareEff'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 3
     linkObjectPosition: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4496,7 +4502,7 @@ beginState: s32'twb_442cs_WinGlareEff'
   beginLabel: s32'End'
   sprite: s32'null', 2147483647
   linkParticle: s32'twb_442_WinGlare02'
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
 endState: 
 
 beginState: s32'twb_442cs_WinParticleNearEff'
@@ -4509,7 +4515,7 @@ beginState: s32'twb_442cs_WinParticleNearEff'
     setDepth: -78058
     setAngleY: 38000
     setAngle: 800
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End01'
     endUpon: 
     upon: 24
@@ -4521,7 +4527,7 @@ beginState: s32'twb_442cs_WinParticleNearEff'
   beginLabel: s32'End01'
   sprite: s32'null', 2147483647
   linkParticle: s32''
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   beginLabel: s32'End02'
   sprite: s32'null', 2147483647
   linkParticle: s32'twb_442_WinParticle_Near'
@@ -4788,7 +4794,7 @@ beginState: s32'twb_441_EnshutuCamera'
       haikuEnd: 
       Unknown2863: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Landing'
     endUpon: 
     upon: 24
@@ -4804,7 +4810,7 @@ beginState: s32'twb_441_EnshutuCamera'
   sprite: s32'null', 2147483647
   beginLabel: s32'Landing'
   sprite: s32'null', 300
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown2074: 3, 6935, 457658, 82891, 455, 0, 0, 60, 40, 60, 0, 0, 0, 0
   Unknown2875: 5
   beginLabel: s32'Fast'
@@ -4831,7 +4837,7 @@ beginState: s32'twb442_AtkPlayer'
     callSubroutine: s32'cmnKaihouShot_AtkInit'
     damage: 0
     Unknown2483: 2, 0, 2, 78
-    Unknown712: 2, 0
+    addValToDamage: 2, 0
     hitstop: 1
     groundHitEffect: (AIR_FACE_UP)
     hitAirPushbackX: 9000
@@ -4867,7 +4873,7 @@ beginState: s32'twb_442_CircleEff'
     addPositionY: 190809
     Unknown1727: 8339
     setAngleX: 8400
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End00'
     endUpon: 
     upon: 24
@@ -4879,7 +4885,7 @@ beginState: s32'twb_442_CircleEff'
   beginLabel: s32'End00'
   sprite: s32'null', 40
   linkParticle: s32'twb_442_CircleStart'
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   beginLabel: s32'End01'
   sprite: s32'null', 60
   linkParticle: s32'twb_442_Circle'
@@ -4904,7 +4910,7 @@ beginState: s32'twb_442_SelfDestructEff'
   Unknown1727: 59961
   setAngleY: 180000
   Unknown264: -10
-  upon: (SIGNAL_A)
+  upon: 23
     gotoLabelRequests: s32'End'
   endUpon: 
 endUpon: 
@@ -4931,7 +4937,7 @@ beginLabel: s32'End'
 sprite: s32'null', 2
 linkParticle: s32'twb_442_SelfDestructUI01'
 linkObjectPosition: 0
-clearUpon: (SIGNAL_A)
+clearUpon: 23
 sprite: s32'null', 2
 linkParticle: s32'twb_442_SelfDestructUI02'
 sprite: s32'null', 2
@@ -4972,7 +4978,7 @@ beginState: s32'twb_442_Aura02Eff'
     setPositionX: 11988
     setPositionY: 239760
     setDepth: 10473
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     Unknown289: 300
@@ -4984,7 +4990,7 @@ beginState: s32'twb_442_Aura02Eff'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
 endState: 
 
 beginState: s32'twb_442_GroundBurst01'
@@ -5019,7 +5025,7 @@ endState:
 beginState: s32'twb_442_GCEff'
   upon: (IMMEDIATE)
     stopLinkObject: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -5038,7 +5044,7 @@ beginState: s32'twb_442_GCEff'
   Unknown419: 0, 0, 0
   beginLabel: s32'End'
   sprite: s32'null', 20
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown2588: s32'twb_PP_442CG', 1, 50
   Unknown2590: s32'twb_PP_442CG', 1, -1
   Unknown419: 0, 1000, 20
@@ -5056,7 +5062,7 @@ beginState: s32'twb_442_EnshutuCamera'
       Unknown2582: 
       haikuEnd: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -5067,7 +5073,7 @@ beginState: s32'twb_442_EnshutuCamera'
   cameraShake: s32'ShakeTate', 500, 0, 120, 0
   beginLabel: s32'End'
   sprite: s32'null', 15
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown2074: 3, 26171, 368539, 105127, -177, -728, -2, 60, 0, 0, 15, 0, 0, 0
   haiku: 150
   cameraShake: s32'ShakeTate', 2000, 0, 10, 0
@@ -5245,7 +5251,7 @@ beginState: s32'pod_A_700cs_1p'
     setLinkObjectDestroyOnStateChange: 2
     callSubroutine: s32'pod_A'
     callSubroutine: s32'pod_InitCS'
-    gotoLabelUpon: (SIGNAL_A), s32'700cs_1p_05'
+    gotoLabelUpon: 23, s32'700cs_1p_05'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'twb700cs_1P_04', 1
@@ -5253,7 +5259,7 @@ beginState: s32'pod_A_700cs_1p'
   sprite: s32'null', 1
   sprite: s32'null', 2147483647
   playAnimation: s32'twb700cs_1P_05', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   endSprite: 
 endState: 
 
@@ -5262,7 +5268,7 @@ beginState: s32'pod_A_700cs_2p'
     setLinkObjectDestroyOnStateChange: 2
     callSubroutine: s32'pod_A'
     callSubroutine: s32'pod_InitCS'
-    gotoLabelUpon: (SIGNAL_A), s32'700cs_2P_03'
+    gotoLabelUpon: 23, s32'700cs_2P_03'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'twb700cs_2P_02', 1
@@ -5270,7 +5276,7 @@ beginState: s32'pod_A_700cs_2p'
   sprite: s32'null', 1
   sprite: s32'null', 2147483647
   playAnimation: s32'twb700cs_2P_03', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   endSprite: 
 endState: 
 
@@ -5569,7 +5575,7 @@ beginState: s32'pod_A_800cs'
     endMeshSet: 
     swapMeshSet: s32'Body'
     callSubroutine: s32'pod_InitCS'
-    gotoLabelUpon: (SIGNAL_A), s32'twb800cs_02'
+    gotoLabelUpon: 23, s32'twb800cs_02'
     gotoLabelUpon: 24, s32'twb800cs_03'
     if: Mem(Dir)
       Unknown412: 100, 2, 5, 0
@@ -5590,7 +5596,7 @@ beginState: s32'pod_A_800cs'
   sprite: s32'null', 1
   sprite: s32'null', 2147483647
   playAnimation: s32'twb800cs_02', 1
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown412: 0, 3, 5, 0
   beginLabel: s32'twb800cs_03'
   sprite: s32'null', 1

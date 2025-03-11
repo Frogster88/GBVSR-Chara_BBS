@@ -9,7 +9,7 @@ beginState: s32'ZET_201_Strike01'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     Unknown289: 120
-    gotoLabelUpon: (SIGNAL_A), s32'end'
+    gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'zet_201_strike01'
@@ -243,8 +243,8 @@ beginState: s32'ZET_300_BeamEff'
   sprite: s32'null', 15
   createObject: s32'ZET_300_Beam', (PLAYER)
   sprite: s32'null', 30
-  sendSignalToAction: s32'ZET_300_Beam', (SIGNAL_A)
-  sendSignalToAction: s32'ZET_300_Hexagon', (SIGNAL_A)
+  sendSignalToAction: s32'ZET_300_Beam', 23
+  sendSignalToAction: s32'ZET_300_Hexagon', 23
 endState: 
 
 beginState: s32'ZET_300_Beam'
@@ -259,7 +259,7 @@ beginState: s32'ZET_300_Beam'
     setAngleY: 0
     setAngle: 38400
     setObjectSize: 800
-    gotoLabelUpon: (SIGNAL_A), s32'end'
+    gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'zet_300_beam_loop'
@@ -276,7 +276,7 @@ beginState: s32'ZET_300_Hexagon'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     Unknown289: 120
-    gotoLabelUpon: (SIGNAL_A), s32'end'
+    gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'zet_300_Hexagon_Loop'
@@ -312,8 +312,8 @@ beginState: s32'ZET_301_BeamEff'
   sprite: s32'null', 15
   createObject: s32'ZET_301_Beam', (PLAYER)
   sprite: s32'null', 30
-  sendSignalToAction: s32'ZET_301_Beam', (SIGNAL_A)
-  sendSignalToAction: s32'ZET_301_Hexagon', (SIGNAL_A)
+  sendSignalToAction: s32'ZET_301_Beam', 23
+  sendSignalToAction: s32'ZET_301_Hexagon', 23
 endState: 
 
 beginState: s32'ZET_301_Beam'
@@ -332,7 +332,7 @@ beginState: s32'ZET_301_Beam'
     setAngleY: 0
     setAngle: 32000
     setObjectSize: 1200
-    gotoLabelUpon: (SIGNAL_A), s32'end'
+    gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'zet_300_beam_loop'
@@ -362,7 +362,7 @@ beginState: s32'ZET_301_Hexagon'
     setAngleY: 346400
     setAngle: 54000
     setObjectSize: 1300
-    gotoLabelUpon: (SIGNAL_A), s32'end'
+    gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'zet_302_Hexagon_Loop'
@@ -416,8 +416,8 @@ beginState: s32'ZET_302_BeamEff'
   sprite: s32'null', 15
   createObject: s32'ZET_302_Beam', (PLAYER)
   sprite: s32'null', 30
-  sendSignalToAction: s32'ZET_302_Beam', (SIGNAL_A)
-  sendSignalToAction: s32'ZET_302_Hexagon', (SIGNAL_A)
+  sendSignalToAction: s32'ZET_302_Beam', 23
+  sendSignalToAction: s32'ZET_302_Hexagon', 23
 endState: 
 
 beginState: s32'ZET_302_Beam'
@@ -435,7 +435,7 @@ beginState: s32'ZET_302_Beam'
     setAngleY: 4800
     setAngle: 312400
     setObjectSize: 900
-    gotoLabelUpon: (SIGNAL_A), s32'end'
+    gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'zet_302_beam_loop'
@@ -461,7 +461,7 @@ beginState: s32'ZET_302_Hexagon'
     setAngleX: 44400
     setAngleY: 346400
     setAngle: 306000
-    gotoLabelUpon: (SIGNAL_A), s32'end'
+    gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'zet_302_Hexagon_Loop'
@@ -529,7 +529,7 @@ beginState: s32'per_208_Thrust'
     stopLinkObject: 2
     linkObjectZ: 2
     flipDirection: 
-    upon: (SIGNAL_A)
+    upon: 23
       createObject: s32'per_208_Thrust02', (PLAYER)
     endUpon: 
     upon: 24
@@ -641,8 +641,8 @@ beginState: s32'zet_263_Thrust'
     linkObjectPosition: 3
     stopLinkObject: 2
     setAngle: -90000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
     upon: 24
@@ -882,7 +882,7 @@ beginState: s32'zet_400_Thrust'
   createObject: s32'zet_400_Flare01', (PLAYER)
   beginLabel: s32'Start'
   sprite: s32'null', 2
-  sendSignalToAction: s32'zet_400_Tame', (SIGNAL_A)
+  sendSignalToAction: s32'zet_400_Tame', 23
   sprite: s32'null', 2
   createObject: s32'zet_400_Flare02', (PLAYER)
   sprite: s32'null', 2
@@ -895,9 +895,9 @@ beginState: s32'zet_400_Thrust'
   deactivateObjectByName: s32'zet_400_Tame'
   sprite: s32'null', 3
   sprite: s32'null', 3
-  sendSignalToAction: s32'zet_400_ThrustPos', (SIGNAL_A)
+  sendSignalToAction: s32'zet_400_ThrustPos', 23
   sprite: s32'null', 3
-  sendSignalToAction: s32'zet_400_Speed', (SIGNAL_A)
+  sendSignalToAction: s32'zet_400_Speed', 23
   sprite: s32'null', 3
   sendSignalToAction: s32'zet_400_ThrustPos', 24
   sprite: s32'null', 3
@@ -909,8 +909,8 @@ beginState: s32'zet_400_Tame'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
   endUpon: 
@@ -957,9 +957,9 @@ beginState: s32'zet_400_ThrustPos'
     setPositionY: 229598
     setDepth: 14018
     setObjectSize: 1300
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 3
@@ -1015,9 +1015,9 @@ beginState: s32'zet_400_Speed'
     stopLinkObject: 2
     setObjectSize: 1130
     flipDirection: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 60
@@ -1135,14 +1135,14 @@ beginState: s32'zet_401_ThrustPos'
     setAngleY: 270000
     setAngle: 100000
     setObjectSize: 1300
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'LandingEnd'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
   endUpon: 
@@ -1221,9 +1221,9 @@ beginState: s32'zet_401_Speed'
     setPositionY: 223235
     setDepth: -58633
     setAngle: 269200
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 200
@@ -1252,7 +1252,7 @@ beginState: s32'zet_401B_Tame'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    gotoLabelUpon: (SIGNAL_A), s32'2nd'
+    gotoLabelUpon: 23, s32'2nd'
     gotoLabelUpon: 24, s32'3rd'
     gotoLabelUpon: 25, s32'4th'
   endUpon: 
@@ -1302,14 +1302,14 @@ beginState: s32'zet_401B_ThrustPos'
     setDepth: 115110
     setAngle: 55200
     setObjectSize: 1300
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'LandingEnd'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
   endUpon: 
@@ -1392,9 +1392,9 @@ beginState: s32'zet_401B_Speed'
     setPositionY: 229659
     setDepth: -68365
     setAngle: 236800
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 200
@@ -1410,7 +1410,7 @@ beginState: s32'zet_402_Tame'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
   endUpon: 
@@ -1466,14 +1466,14 @@ beginState: s32'zet_402_ThrustPos'
     setAngleY: 274800
     setAngle: 249200
     setObjectSize: 1300
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'LandingEnd'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
   endUpon: 
@@ -1549,9 +1549,9 @@ beginState: s32'zet_402_Speed'
     setPositionY: 327145
     setDepth: -67740
     setAngle: 90000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 200
@@ -1570,7 +1570,7 @@ beginState: s32'zet_402B_Tame'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    gotoLabelUpon: (SIGNAL_A), s32'2nd'
+    gotoLabelUpon: 23, s32'2nd'
     gotoLabelUpon: 24, s32'3rd'
     gotoLabelUpon: 25, s32'4th'
     gotoLabelUpon: 26, s32'5th'
@@ -1642,14 +1642,14 @@ beginState: s32'zet_402B_ThrustPos'
     setAngleY: 198800
     setAngle: 222000
     setObjectSize: 1300
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'LandingEnd'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
     upon: 24
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
     endUpon: 
   endUpon: 
@@ -1704,9 +1704,9 @@ beginState: s32'zet_402B_Speed'
     setPositionY: 290197
     setDepth: -33797
     setAngle: 140000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 200
@@ -1740,8 +1740,8 @@ beginState: s32'ZET_404_KiraEff'
     setAngleY: 349600
     setAngle: 332400
     setObjectSize: 600
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       ignoreSuperFreezeFromAlly: 1
     endUpon: 
   endUpon: 
@@ -1843,9 +1843,9 @@ beginState: s32'zet_408_Speed'
     setPositionY: 162947
     setDepth: 92090
     setObjectSize: 800
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2147483647
@@ -1867,7 +1867,7 @@ beginState: s32'zet_408_Bomb'
     stopLinkObject: 2
     flipDirection: 
     addPositionX: 129950
-    gotoLabelUpon: (SIGNAL_A), s32'Bomb'
+    gotoLabelUpon: 23, s32'Bomb'
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'zet_408_bomb_standBy'
@@ -2048,10 +2048,10 @@ beginState: s32'zet_409_matome'
       wallBounceXVelocityPercent: 20
       wallBounceWaitTime: 5
       ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
-        Unknown712: 0, 200
+        addValToDamage: 0, 200
       endIf: 
       ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(2)
-        Unknown712: 0, 400
+        addValToDamage: 0, 400
       endIf: 
     endIf: 
     upon: 8
@@ -2060,8 +2060,8 @@ beginState: s32'zet_409_matome'
     upon: 37
       Unknown1793: 3, 23
     endUpon: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       Unknown1793: 4, 23
       Unknown1793: 5, 23
       gotoLabelRequests: s32'End'
@@ -2083,7 +2083,7 @@ beginState: s32'zet_409_matome'
   beginLabel: s32'End'
   sprite: s32'keep', 1
   sprite: s32'null', 30
-  sendSignalToAction: s32'zet_409_Hexagon', (SIGNAL_A)
+  sendSignalToAction: s32'zet_409_Hexagon', 23
   linkObjectPosition: 0
   stopLinkObject: 0
 endState: 
@@ -2098,11 +2098,11 @@ beginState: s32'zet_409_+matome'
     hitstop: 8
     enemyHitstopAddition: 0, 0, 4
     wallPushback: 0, 750
-    Unknown1030: 0, 120
+    wallPushbackOnHit: 0, 120
     damageEffect: 4, s32'cmn_hit_l_Multiple'
     missionName: s32'BeamC_Shot'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       Unknown1793: 5, 23
       gotoLabelRequests: s32'Shot'
     endUpon: 
@@ -2167,11 +2167,11 @@ beginState: s32'zet_409_+matome'
   numberOfHits: 3
   Unknown2210: 1
   Unknown2257: 1
-  upon: (ON_DESTROY)
+  upon: 45
     clearUpon: 8
     clearUpon: 37
     clearUpon: (FRAME_STEP)
-    sendSignalToAction: s32'ChargeBeam_C', (SIGNAL_A)
+    sendSignalToAction: s32'ChargeBeam_C', 23
   endUpon: 
   upon: 37
     hitstop: 6
@@ -2192,7 +2192,7 @@ beginState: s32'zet_409_+matome'
   beginLabel: s32'End'
   sprite: s32'keep', 1
   clearUpon: (FRAME_STEP)
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   sprite: s32'null', 30
   stopLinkObject: 0
   linkObjectCollision: 0
@@ -2208,12 +2208,12 @@ beginState: s32'zet_409_++matome'
     hitAirPushbackY: 5000
     hitstop: 8
     wallPushback: 0, 750
-    Unknown1030: 0, 120
+    wallPushbackOnHit: 0, 120
     isAirUnblockable: 0
     damageEffect: 4, s32'cmn_hit_l_Multiple'
     missionName: s32'BeamD_Shot'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       Unknown1793: 5, 23
       gotoLabelRequests: s32'Shot'
     endUpon: 
@@ -2291,7 +2291,7 @@ beginState: s32'zet_409_++matome'
   numberOfHits: 1
   Unknown2210: 1
   Unknown2257: 1
-  upon: (ON_DESTROY)
+  upon: 45
     clearUpon: 8
     clearUpon: 37
     clearUpon: (FRAME_STEP)
@@ -2325,7 +2325,7 @@ beginState: s32'zet_409_++matome'
   beginLabel: s32'End'
   sprite: s32'keep', 1
   clearUpon: (FRAME_STEP)
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   sprite: s32'null', 30
   stopLinkObject: 0
   linkObjectCollision: 0
@@ -2340,9 +2340,9 @@ beginState: s32'zet_409_ScaleBeam'
     setPositionX: 275972
     setPositionY: 202797
     Unknown2327: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
@@ -2372,9 +2372,9 @@ beginState: s32'zet_409_ScaleBeam++'
     setPositionX: 275972
     setPositionY: 202797
     Unknown2327: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
@@ -2405,9 +2405,9 @@ beginState: s32'zet_409_ChargeAura'
     setObjectWidth: 1200
     setAngleY: 328000
     Unknown2327: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2147483647
@@ -2430,9 +2430,9 @@ beginState: s32'zet_409_BeamEff'
     setPositionX: 15972
     setPositionY: 202797
     Unknown2327: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
@@ -2462,9 +2462,9 @@ beginState: s32'zet_409_BeamEff++'
     setPositionX: 15972
     setPositionY: 202797
     Unknown2327: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
@@ -2496,9 +2496,9 @@ beginState: s32'zet_409_Hexagon'
     addPositionX: 22977
     addPositionY: 207792
     Unknown1727: 9061
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 200
@@ -2524,7 +2524,7 @@ beginState: s32'zet_409_RotateSlashEff'
     setPositionY: 238666
     setDepth: -56656
     Unknown289: 300
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   beginLabel: s32'Rot'
   sprite: s32'null', 2
@@ -2567,9 +2567,9 @@ beginState: s32'zet_410_Hexagon'
     addPositionX: 23000
     addPositionY: 208000
     Unknown1727: 9000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 60
@@ -2656,8 +2656,8 @@ beginState: s32'zet_410_BeamEff'
 endIf: 
 
 endUpon: 
-upon: (SIGNAL_A)
-  clearUpon: (SIGNAL_A)
+upon: 23
+  clearUpon: 23
   Unknown1793: 4, 23
   Unknown1793: 5, 23
   gotoLabelRequests: s32'End'
@@ -2725,9 +2725,9 @@ beginState: s32'zet_410_ScaleBeam'
     setPositionX: 275972
     setPositionY: 202797
     Unknown2327: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
@@ -2757,9 +2757,9 @@ beginState: s32'zet_410_BeamRootEff'
     setPositionX: 15972
     setPositionY: 202797
     Unknown2327: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
@@ -2917,7 +2917,7 @@ beginState: s32'zet_430_ThurustEffect'
     linkObjectZ: 2
     flipDirection: 
     setObjectSize: 1000
-    gotoLabelUpon: (SIGNAL_A), s32'LoopStart'
+    gotoLabelUpon: 23, s32'LoopStart'
     gotoLabelUpon: 24, s32'End'
   endUpon: 
   sprite: s32'null', 6
@@ -3014,7 +3014,7 @@ beginState: s32'zet_430_Air_ThurustEffect'
     linkObjectZ: 2
     flipDirection: 
     setObjectSize: 1000
-    gotoLabelUpon: (SIGNAL_A), s32'LoopStart'
+    gotoLabelUpon: 23, s32'LoopStart'
     gotoLabelUpon: 24, s32'End'
   endUpon: 
   sprite: s32'null', 5
@@ -3104,7 +3104,7 @@ beginState: s32'zet_440_ChargeAura'
     linkParticle: s32'zet_440_ChargeFire'
     addPositionX: 15984
     setObjectSize: 1300
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 100
   beginLabel: s32'End'
@@ -3124,7 +3124,7 @@ beginState: s32'zet_440_AssultEff'
     stopLinkObject: 2
     linkObjectZ: 2
     linkParticle: s32'zet_440_AtkLoop'
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 3
   setPositionX: 305003
@@ -3171,8 +3171,8 @@ beginState: s32'zet_440_SpearEnd'
     linkObjectZ: 2
     linkParticle: s32'zet_440_SpearEnd'
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
       linkObjectPosition: 0
       stopLinkObject: 0
@@ -3208,7 +3208,7 @@ beginState: s32'zet_440CS_Eff'
     endIf: 
     ifOnFrame: Val(35)
       deactivateObjectByName: s32'zet_440CS_BG'
-      sendSignalToAction: s32'zet_440CS_ScreenWhite', (SIGNAL_A)
+      sendSignalToAction: s32'zet_440CS_ScreenWhite', 23
       createObject: s32'zet_440CS_YariRay', (PLAYER)
       fadeOutStart: 500, 1
     endIf: 
@@ -3220,7 +3220,7 @@ beginState: s32'zet_440CS_Eff'
       createObject: s32'zet_440CS_GroundRay', (PLAYER)
     endIf: 
     ifOnFrame: Val(118)
-      sendSignalToAction: s32'zet_440CS_YariRay2', (SIGNAL_A)
+      sendSignalToAction: s32'zet_440CS_YariRay2', 23
     endIf: 
   endUpon: 
 endState: 
@@ -3295,8 +3295,8 @@ beginState: s32'zet_440CS_ScreenWhite'
     stopLinkObject: 2
     linkObjectZ: 2
     linkParticle: s32'zet_440_white_out'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3334,7 +3334,7 @@ beginState: s32'zet_440CS_YariRay2'
     addPositionY: 269858
     Unknown1727: 133154
     setObjectSize: 375
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
   endUpon: 
   sprite: s32'null', 120
   beginLabel: s32'End'

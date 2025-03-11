@@ -474,7 +474,7 @@ beginState: s32'vrs_250_HandAuraEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -489,7 +489,7 @@ beginState: s32'vrs_250_HandAuraEff'
   setAngle: 18400
   beginLabel: s32'End'
   sprite: s32'null', 10
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setAlphaColorSpeed: -10
   setLinkObjectDestroyOnStateChange: 0
 endState: 
@@ -864,7 +864,7 @@ beginState: s32'vrs_350_FireRing'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'CancelType'
     endUpon: 
   endUpon: 
@@ -921,7 +921,7 @@ beginState: s32'vrs_350_FireRing'
   gotoLabelRequests: s32'End'
   beginLabel: s32'CancelType'
   sprite: s32'null', 2
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setPositionX: -83884
   setPositionY: 41655
   setDepth: 124850
@@ -965,7 +965,7 @@ beginState: s32'vrs_350_FireRing2'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'CancelType'
     endUpon: 
   endUpon: 
@@ -1022,7 +1022,7 @@ beginState: s32'vrs_350_FireRing2'
   gotoLabelRequests: s32'End'
   beginLabel: s32'CancelType'
   sprite: s32'null', 2
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setPositionX: -157882
   setPositionY: 76597
   setDepth: 149405
@@ -1066,7 +1066,7 @@ beginState: s32'vrs_350_FireRing3'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'CancelType'
     endUpon: 
   endUpon: 
@@ -1124,7 +1124,7 @@ beginState: s32'vrs_350_FireRing3'
   gotoLabelRequests: s32'End'
   beginLabel: s32'CancelType'
   sprite: s32'null', 2
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setPositionX: 7069
   setPositionY: 52042
   setDepth: 115320
@@ -1305,11 +1305,11 @@ beginState: s32'vrs_400_SpecialShot'
       Unknown2208: 0
       Unknown2209: 0
     endIf: 
-    upon: (ON_DESTROY)
+    upon: 45
       gotoLabelRequests: s32'Koware'
     endUpon: 
     addMoveForceDisableFlag: 1
-    gotoLabelUpon: (SIGNAL_A), s32'Atk'
+    gotoLabelUpon: 23, s32'Atk'
   endUpon: 
   sprite: s32'null', 60
   createObject: s32'vrs_400_RockStartEff', (PLAYER)
@@ -1321,7 +1321,7 @@ beginState: s32'vrs_400_SpecialShot'
   privateSE: s32'vrs_04'
   beginLabel: s32'Atk'
   sprite: s32'vrs400_AtkCol', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkObjectPosition: 0
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
     linkParticle: s32'vrs_400_FireLoopU'
@@ -1360,8 +1360,8 @@ beginState: s32'vrs_400_SpecialShot'
   hit: 
   beginLabel: s32'Koware'
   sprite: s32'keep', 6
-  clearUpon: (ON_DESTROY)
-  clearUpon: (SIGNAL_A)
+  clearUpon: 45
+  clearUpon: 23
   clearUpon: 35
   clearUpon: (HIT_OR_GUARD)
   ifNot: Mem(ActReg0)
@@ -1388,13 +1388,13 @@ beginState: s32'vrs_400_SpecialShot'
   attackEndDelay: 
   deleteMoveForceDisableFlag: 1
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    skillCooldown: 0, 20
+    Unknown1921: 0, 20
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    skillCooldown: 0, 20
+    Unknown1921: 0, 20
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    skillCooldown: 0, 480
+    Unknown1921: 0, 480
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
     if: Mem(417)
@@ -1402,7 +1402,7 @@ beginState: s32'vrs_400_SpecialShot'
       storeValue: Mem(287), Mem(Tmp)
     endIf: 
     else: 
-      skillCooldown: 0, 180
+      Unknown1921: 0, 180
     endElse: 
   endIf: 
   Unknown1923: 0
@@ -1421,18 +1421,18 @@ beginState: s32'vrs_400_RockStartEff'
     linkObjectZ: 2
     linkParticle: s32'vrs_400_RockStart'
     setObjectSize: 700
-    upon: (SIGNAL_A)
+    upon: 23
       linkParticle: s32'vrs_400_Rockloop'
     endUpon: 
     upon: 31
       linkParticle: s32'vrs_400_RockStartEnd'
       clearUpon: 31
-      clearUpon: (SIGNAL_B)
+      clearUpon: 32
     endUpon: 
-    upon: (SIGNAL_B)
+    upon: 32
       linkParticle: s32'vrs_400_RockEnd'
       clearUpon: 31
-      clearUpon: (SIGNAL_B)
+      clearUpon: 32
     endUpon: 
   endUpon: 
   sprite: s32'null', 120
@@ -1446,18 +1446,18 @@ beginState: s32'vrs_400_RockStartUEff'
     linkObjectZ: 2
     linkParticle: s32'vrs_400_RockStartU'
     setObjectSize: 750
-    upon: (SIGNAL_A)
+    upon: 23
       linkParticle: s32'vrs_400_RockloopU'
     endUpon: 
     upon: 31
       linkParticle: s32'vrs_400_RockStartUEnd'
       clearUpon: 31
-      clearUpon: (SIGNAL_B)
+      clearUpon: 32
     endUpon: 
-    upon: (SIGNAL_B)
+    upon: 32
       linkParticle: s32'vrs_400_RockEndU'
       clearUpon: 31
-      clearUpon: (SIGNAL_B)
+      clearUpon: 32
     endUpon: 
   endUpon: 
   sprite: s32'null', 120
@@ -1753,7 +1753,7 @@ beginState: s32'vrs_402_EyeRay'
     setPositionX: 45986
     setPositionY: 341348
     setDepth: 114997
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1761,7 +1761,7 @@ beginState: s32'vrs_402_EyeRay'
   linkParticle: s32'vrs_402_EyeRay'
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setPositionX: 78953
   setPositionY: 281910
   setDepth: 99039
@@ -1871,7 +1871,7 @@ beginState: s32'vrs_403_ThunderEff'
     moveToObject: (ENEMY)
     setPositionY: 0
     upon: (HIT)
-      sendSignalToAction: s32'SpecialAddShot', (SIGNAL_A)
+      sendSignalToAction: s32'SpecialAddShot', 23
     endUpon: 
     upon: 99
       wallPushback: 0, 0
@@ -2066,7 +2066,7 @@ beginState: s32'vrs_405_Beam02Eff'
     setAngleY: 0
     setAngle: 180000
     flipDirection: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2077,7 +2077,7 @@ beginState: s32'vrs_405_Beam02Eff'
   linkObjectPosition: 0
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'vrs_405_BeamEndU'
   cameraShake: s32'ShakeYoko', 1000, 0, 5, 0
 endState: 
@@ -2093,7 +2093,7 @@ beginState: s32'vrs_405_EnshutuCamera1'
       Unknown2582: 
       haikuEnd: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Beam'
     endUpon: 
   endUpon: 
@@ -2103,7 +2103,7 @@ beginState: s32'vrs_405_EnshutuCamera1'
   Unknown2074: 3, -28381, 448796, 118751, 500, 1529, 0, 60, 10, 14, 6000, 0, 0, 0
   beginLabel: s32'Beam'
   sprite: s32'null', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown2074: 3, 112386, 364490, 106845, -18, -671, -14, 60, 6, 0, 6000, 0, 0, 0
   sprite: s32'null', 6
   Unknown2074: 3, 117952, 384490, 106891, -18, -671, -14, 60, 3, 3, 6000, 0, 0, 0
@@ -2181,7 +2181,7 @@ beginState: s32'vrs_406_StartAEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'00'
     endUpon: 
     upon: 24
@@ -2197,7 +2197,7 @@ beginState: s32'vrs_406_StartAEff'
   privateSE: s32'vrs_10'
   beginLabel: s32'00'
   sprite: s32'null', 300
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'vrs_406_Start01'
   setObjectSize: 300
   setPositionX: -153838
@@ -2236,7 +2236,7 @@ beginState: s32'vrs_406_StartBEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'00'
     endUpon: 
     upon: 24
@@ -2251,7 +2251,7 @@ beginState: s32'vrs_406_StartBEff'
   endUpon: 
   beginLabel: s32'00'
   sprite: s32'null', 300
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'vrs_406_Start01'
   setObjectSize: 300
   setPositionX: 83105
@@ -2329,15 +2329,15 @@ beginState: s32'vrs_406_Ball04Eff'
       groundCounterHitEffect: (CRUMPLE)
       hitAirPushbackY: 35000
       hitstop: 12
-      Unknown1030: 0, 200
+      wallPushbackOnHit: 0, 200
       missionName: s32'vrs_406_Ball_D'
       worldCollision: 1
     endIf: 
     addMoveForceDisableFlag: 2
     upon: 35
       gotoLabelRequests: s32'End'
-      sendSignalToAction: s32'vrs_406_BallEff', (SIGNAL_A)
-      sendSignalToAction: s32'vrs_406_BallUEff', (SIGNAL_A)
+      sendSignalToAction: s32'vrs_406_BallEff', 23
+      sendSignalToAction: s32'vrs_406_BallUEff', 23
       deactivateObjectByName: s32'vrs_406_DustEff'
     endUpon: 
     upon: (HIT_OR_GUARD)
@@ -2346,17 +2346,17 @@ beginState: s32'vrs_406_Ball04Eff'
     endUpon: 
     upon: (HIT)
       clearUpon: (HIT)
-      sendSignalToAction: s32'SwayBackShot_A', (SIGNAL_A)
-      sendSignalToAction: s32'SwayBackShot_B', (SIGNAL_A)
-      sendSignalToAction: s32'SwayBackShot_C', (SIGNAL_A)
-      sendSignalToAction: s32'SwayBackShot_D', (SIGNAL_A)
+      sendSignalToAction: s32'SwayBackShot_A', 23
+      sendSignalToAction: s32'SwayBackShot_B', 23
+      sendSignalToAction: s32'SwayBackShot_C', 23
+      sendSignalToAction: s32'SwayBackShot_D', 23
     endUpon: 
     upon: 86
       clearUpon: 86
-      sendSignalToAction: s32'SwayBackShot_A', (SIGNAL_A)
-      sendSignalToAction: s32'SwayBackShot_B', (SIGNAL_A)
-      sendSignalToAction: s32'SwayBackShot_C', (SIGNAL_A)
-      sendSignalToAction: s32'SwayBackShot_D', (SIGNAL_A)
+      sendSignalToAction: s32'SwayBackShot_A', 23
+      sendSignalToAction: s32'SwayBackShot_B', 23
+      sendSignalToAction: s32'SwayBackShot_C', 23
+      sendSignalToAction: s32'SwayBackShot_D', 23
     endUpon: 
     setObjectSize: 500
     setObjectHeight: 1000
@@ -2383,7 +2383,7 @@ beginState: s32'vrs_406_Ball04Eff'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 37
       haltMomentum: 1
       gotoLabelRequests: s32'Koware'
@@ -2443,10 +2443,10 @@ beginState: s32'vrs_406_Ball04Eff'
   endIf: 
   beginLabel: s32'Koware'
   sprite: s32'vrs406_AtkCol', 6
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: (FRAME_STEP)
-  sendSignalToAction: s32'vrs_406_BallEff', (SIGNAL_A)
-  sendSignalToAction: s32'vrs_406_BallUEff', (SIGNAL_A)
+  sendSignalToAction: s32'vrs_406_BallEff', 23
+  sendSignalToAction: s32'vrs_406_BallUEff', 23
   deactivateObjectByName: s32'vrs_406_DustEff'
   privateSE: s32'vrs_07'
   beginLabel: s32'End'
@@ -2456,13 +2456,13 @@ beginState: s32'vrs_406_Ball04Eff'
   attackEndDelay: 
   deleteMoveForceDisableFlag: 2
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    skillCooldown: 2, 20
+    Unknown1921: 2, 20
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    skillCooldown: 2, 20
+    Unknown1921: 2, 20
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    skillCooldown: 2, 480
+    Unknown1921: 2, 480
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
     if: Mem(417)
@@ -2470,7 +2470,7 @@ beginState: s32'vrs_406_Ball04Eff'
       storeValue: Mem(289), Mem(Tmp)
     endIf: 
     else: 
-      skillCooldown: 2, 180
+      Unknown1921: 2, 180
     endElse: 
   endIf: 
   Unknown1923: 2
@@ -2521,7 +2521,7 @@ beginState: s32'vrs_406_BallEff'
     linkObjectPosition: 2
     linkObjectZ: 2
     setObjectSize: 500
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     gotoLabelUpon: 24, s32'Hit'
@@ -2537,11 +2537,11 @@ beginState: s32'vrs_406_BallEff'
   gotoLabel: s32'End'
   beginLabel: s32'Hit'
   sprite: s32'null', 10
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 24
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 24
   setLinkObjectDestroyOnDamage: 0
   setLinkObjectDestroyOnStateChange: 0
@@ -2556,7 +2556,7 @@ beginState: s32'vrs_406_BallUEff'
     linkObjectPosition: 2
     linkObjectZ: 2
     setObjectSize: 500
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     gotoLabelUpon: 24, s32'Hit'
@@ -2572,11 +2572,11 @@ beginState: s32'vrs_406_BallUEff'
   gotoLabel: s32'End'
   beginLabel: s32'Hit'
   sprite: s32'null', 10
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 24
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 24
   linkParticle: s32'vrs_406_EndU'
 endState: 
@@ -2698,7 +2698,7 @@ beginState: s32'vrs_430_EnshutuCamera2'
       haikuEnd: 
       Unknown2863: 
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Hit'
     endUpon: 
     upon: 24
@@ -2712,7 +2712,7 @@ beginState: s32'vrs_430_EnshutuCamera2'
   Unknown2074: 3, 83724, 617250, 188120, -145, 638, 0, 60, 8, 270, 1000, 0, 0, 0
   beginLabel: s32'Hit'
   sprite: s32'null', 300
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   Unknown2074: 3, 92726, 366385, 177063, -658, 117, 0, 60, 6, 270, 1000, 0, 0, 0
   beginLabel: s32'End'
   sprite: s32'null', 30
@@ -2731,7 +2731,7 @@ beginState: s32'vrs_430_HandFireREff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2755,7 +2755,7 @@ beginState: s32'vrs_430_HandFireREff'
   setDepth: 58953
   beginLabel: s32'End'
   sprite: s32'null', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setPositionX: -63380
   setPositionY: 328598
   setDepth: 26862
@@ -2791,7 +2791,7 @@ beginState: s32'vrs_430_HandFireLEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2815,7 +2815,7 @@ beginState: s32'vrs_430_HandFireLEff'
   setDepth: -26068
   beginLabel: s32'End'
   sprite: s32'null', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setPositionX: 191053
   setPositionY: 293779
   setDepth: 8641
@@ -2857,7 +2857,7 @@ beginState: s32'vrs_430_RushEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2869,7 +2869,7 @@ beginState: s32'vrs_430_RushEff'
   setAngleY: 5600
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'vrs_430_RushEnd'
 endState: 
 
@@ -2918,7 +2918,7 @@ beginState: s32'vrs_430_SuperShotEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2933,7 +2933,7 @@ beginState: s32'vrs_430_SuperShotEff'
   physicsXImpulse: 2000
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'vrs_430_SuperShotEnd'
 endState: 
 
@@ -2944,7 +2944,7 @@ beginState: s32'vrs_430_HaloShotEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2959,7 +2959,7 @@ beginState: s32'vrs_430_HaloShotEff'
   setObjectSize: 850
   beginLabel: s32'End'
   sprite: s32'null', 30
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'vrs_HaloEnd'
 endState: 
 
@@ -3234,7 +3234,7 @@ beginState: s32'vrs_440_WingDustLoop'
     setPositionY: 376115
     setDepth: -63644
     setAngleY: 344000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4250,7 +4250,7 @@ endState:
 beginState: s32'vrs_RoundWin_Camera2'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 114
@@ -4314,7 +4314,7 @@ beginState: s32'vrs_601_ArmFireEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4351,7 +4351,7 @@ beginState: s32'vrs_601_ArmFireEff2'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -4413,7 +4413,7 @@ beginState: s32'vrs_601_Light'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 

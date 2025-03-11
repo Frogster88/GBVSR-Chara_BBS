@@ -468,7 +468,7 @@ beginSubroutine: s32'death_Stand_ActionChange'
 endSubroutine: 
 
 beginSubroutine: s32'death_Suicide'
-  clearUpon: (SIGNAL_NAME)
+  clearUpon: 49
   clearUpon: (FRAME_STEP)
   clearUpon: 35
   ifNot: Mem(ActReg0)
@@ -487,7 +487,7 @@ beginState: s32'death_Stand'
     storeValue: Mem(ObjReg7), Val(0)
     createObject: s32'dea_400_StandbyAuraEff', (PLAYER)
     stackObject: (STACK1), (PREVIOUS)
-    upon: (SIGNAL_NAME)
+    upon: 49
       checkSignalName: s32'dea401_A'
       if: Mem(Tmp)
         callSubroutine: s32'death_Stand_ActionChange'
@@ -638,7 +638,7 @@ beginState: s32'death_Stand'
   endElse: 
 endUpon: 
 
-upon: (SIGNAL_A)
+upon: 23
   storeValue: Mem(ActReg0), Val(1)
 endUpon: 
 
@@ -646,6 +646,7 @@ upon: 35
   clearUpon: 35
   callSubroutine: s32'death_Suicide'
   storeValue: Mem(PlayerVal0), Val(0)
+  callSubroutine: s32'death_Kieta_Flag'
 endUpon: 
 
 upon: (BEFORE_EXIT)
@@ -701,7 +702,7 @@ beginState: s32'dea_400_GroundAuraEff'
     linkObjectPosition: 2
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 2
-    upon: (SIGNAL_A)
+    upon: 23
       linkObjectPosition: 0
       gotoLabelRequests: s32'End'
     endUpon: 
@@ -714,7 +715,7 @@ beginState: s32'dea_400_GroundAuraEff'
   sprite: s32'null', 2147483647
   beginLabel: s32'End'
   sprite: s32'null', 35
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_400_GroundEndD'
   setLinkObjectDestroyOnStateChange: 0
 endState: 
@@ -724,7 +725,7 @@ beginState: s32'dea_400_StandbyAuraEff'
     linkObjectZ: 2
     linkObjectPosition: 2
     setLinkObjectDestroyOnDamage: 2
-    upon: (SIGNAL_A)
+    upon: 23
       linkObjectPosition: 0
       gotoLabelRequests: s32'End'
     endUpon: 
@@ -737,7 +738,7 @@ beginState: s32'dea_400_StandbyAuraEff'
   sprite: s32'null', 2147483647
   beginLabel: s32'End'
   sprite: s32'null', 35
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_400_AuraBurstEndD'
   setLinkObjectDestroyOnStateChange: 0
 endState: 
@@ -1263,8 +1264,8 @@ beginState: s32'nie_GuardEff'
       destroyOnDamageCollision: 1
       numberOfHits: 1
       Unknown2204: 1
-      upon: (ON_DESTROY)
-        clearUpon: (SIGNAL_NAME)
+      upon: 45
+        clearUpon: 49
         clearUpon: (FRAME_STEP)
         clearUpon: 35
         clearUpon: (BEFORE_EXIT)
@@ -1307,7 +1308,7 @@ beginState: s32'nie_GuardEff'
       attackIgnoreCaution: 1
       hitEffectSlash: 1
       atkAngle: -85
-      upon: (SIGNAL_NAME)
+      upon: 49
         callSubroutine: s32'NextAction_SignalWait'
       endUpon: 
       callSubroutine: s32'PlayerDamage'
@@ -1362,7 +1363,7 @@ beginState: s32'nie_GuardEff'
     privateSE: s32'nie_07'
     Unknown269: 0
     createObject: s32'nie_253_GroundBurstEff', (PLAYER_LAND)
-    sendSignalToAction: s32'nie_253_SlashDEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_253_SlashDEff', 23
     sprite: s32'dea253_15', 3
     recoveryState: 
     createObject: s32'dea_400_GroundAuraEff', (PLAYER)
@@ -1499,8 +1500,8 @@ beginState: s32'nie_GuardEff'
       addPositionX: -100000
       setPositionY: -400000
       Unknown2024: 0x00000000160000006700000000000000000000000000000000000000000000001E0000000000000000000000
-      upon: (SIGNAL_A)
-        clearUpon: (SIGNAL_A)
+      upon: 23
+        clearUpon: 23
         Unknown2020: 
         gotoLabelRequests: s32'End'
       endUpon: 
@@ -1514,7 +1515,7 @@ beginState: s32'nie_GuardEff'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'keep', 1
-    sendSignalToAction: s32'nie_309_BloodScytheDEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_309_BloodScytheDEff', 23
     addAngle: 12000
     setColorRGBA: 1000, 1000, 1000, 1000
     privateSE: s32'nie_09'
@@ -1668,7 +1669,7 @@ beginState: s32'nie_GuardEff'
       setLinkObjectDestroyOnStateChange: 3
       setLinkObjectDestroyOnDamage: 3
       linkParticle: s32'nie_001_loopfire'
-      upon: (SIGNAL_A)
+      upon: 23
         gotoLabelRequests: s32'End'
       endUpon: 
     endUpon: 
@@ -1678,7 +1679,7 @@ beginState: s32'nie_GuardEff'
     setDepth: 63312
     beginLabel: s32'End'
     sprite: s32'null', 1
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     linkParticle: s32''
   endState: 
   beginState: s32'nie_200_FireEff'
@@ -1920,8 +1921,8 @@ beginState: s32'nie_GuardEff'
       setLinkObjectDestroyOnDamage: 3
       linkParticle: s32'nie_220_fire'
       flipDirection: 
-      upon: (SIGNAL_A)
-        clearUpon: (SIGNAL_A)
+      upon: 23
+        clearUpon: 23
         linkObjectPosition: 0
       endUpon: 
     endUpon: 
@@ -2215,7 +2216,7 @@ beginState: s32'nie_GuardEff'
       setLinkObjectDestroyOnStateChange: 2
       setLinkObjectDestroyOnDamage: 3
       flipDirection: 
-      upon: (SIGNAL_A)
+      upon: 23
         gotoLabelRequests: s32'End'
       endUpon: 
     endUpon: 
@@ -2225,7 +2226,7 @@ beginState: s32'nie_GuardEff'
     linkParticle: s32'nie_253_Slash01D'
     beginLabel: s32'End'
     sprite: s32'null', 15
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     linkParticle: s32'nie_253_SlashEndD'
     setLinkObjectDestroyOnStateChange: 0
     linkObjectPosition: 0
@@ -2437,7 +2438,7 @@ beginState: s32'nie_GuardEff'
       setLinkObjectDestroyOnStateChange: 3
       setLinkObjectDestroyOnDamage: 3
       linkParticle: s32'nie_307_fire'
-      upon: (SIGNAL_A)
+      upon: 23
         gotoLabelRequests: s32'End'
       endUpon: 
     endUpon: 
@@ -2449,7 +2450,7 @@ beginState: s32'nie_GuardEff'
     setAngleY: 154400
     beginLabel: s32'End'
     sprite: s32'null', 8
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     setPositionX: 68983
     setPositionY: 316032
     setDepth: 97892
@@ -2472,7 +2473,7 @@ beginState: s32'nie_GuardEff'
       linkParticle: s32'nie_350_GC'
       setObjectSize: 1500
       setAngleY: 236800
-      upon: (SIGNAL_A)
+      upon: 23
         gotoLabelRequests: s32'End'
       endUpon: 
     endUpon: 
@@ -2482,7 +2483,7 @@ beginState: s32'nie_GuardEff'
     stopLinkObject: 3
     beginLabel: s32'End'
     sprite: s32'null', 40
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     linkParticle: s32'nie_350_GCEnd'
   endState: 
   beginState: s32'nie_350_StonesEff'
@@ -2504,7 +2505,7 @@ beginState: s32'nie_GuardEff'
       setLinkObjectDestroyOnStateChange: 3
       setLinkObjectDestroyOnDamage: 3
       linkParticle: s32'nie_350_fire'
-      upon: (SIGNAL_A)
+      upon: 23
         gotoLabelRequests: s32'End'
       endUpon: 
     endUpon: 
@@ -2515,7 +2516,7 @@ beginState: s32'nie_GuardEff'
     privateSE: s32'nie_01'
     beginLabel: s32'End'
     sprite: s32'null', 5
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     sprite: s32'null', 60
     linkParticle: s32'nie_350_fireEnd'
     stopLinkObject: 0
@@ -2531,7 +2532,7 @@ beginState: s32'nie_GuardEff'
       setLinkObjectDestroyOnDamage: 3
       linkParticle: s32'nie_350_fire'
       setPositionX: 200000
-      upon: (SIGNAL_A)
+      upon: 23
         gotoLabelRequests: s32'End'
       endUpon: 
     endUpon: 
@@ -2545,7 +2546,7 @@ beginState: s32'nie_GuardEff'
     privateSE: s32'nie_10_2'
     beginLabel: s32'End'
     sprite: s32'null', 5
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     sprite: s32'null', 60
     linkParticle: s32'nie_350_fireEnd'
     stopLinkObject: 0
@@ -2635,7 +2636,7 @@ beginState: s32'nie_GuardEff'
       setLinkObjectDestroyOnDamage: 3
       linkParticle: s32'nie_301_Sphere'
       ignoreSuperFreezeFromAlly: 1
-      upon: (SIGNAL_A)
+      upon: 23
         gotoLabelRequests: s32'End1'
       endUpon: 
       upon: 24
@@ -2649,7 +2650,7 @@ beginState: s32'nie_GuardEff'
     sprite: s32'null', 300
     beginLabel: s32'End1'
     sprite: s32'null', 45
-    clearUpon: (SIGNAL_A)
+    clearUpon: 23
     linkParticle: s32'nie_301_SphereEnd'
     setPositionX: 116951
     setPositionY: 280929
@@ -2699,7 +2700,7 @@ beginState: s32'nie_303_SphereAuraEff'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'nie_301_Sphere'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End1'
     endUpon: 
     upon: 24
@@ -2726,7 +2727,7 @@ beginState: s32'nie_303_SphereAuraEff'
   setDepth: -22817
   beginLabel: s32'End1'
   sprite: s32'null', 55
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_301_SphereEnd'
   setPositionX: 82985
   setPositionY: 119245
@@ -2743,7 +2744,7 @@ beginState: s32'nie_303_SphereNokoshiEff'
     linkObjectPosition: 3
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Loop'
     endUpon: 
     upon: 24
@@ -2757,7 +2758,7 @@ beginState: s32'nie_303_SphereNokoshiEff'
   createParticle: s32'nie_303_End', (PLAYER)
   beginLabel: s32'Loop'
   sprite: s32'null', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   createParticle: s32'nie_303_Particle', (PLAYER)
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
@@ -2771,7 +2772,7 @@ beginState: s32'nie_303_EnshutuCamera'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Fall'
     endUpon: 
     upon: 24
@@ -2796,7 +2797,7 @@ endIf:
 
 beginLabel: s32'Fall'
 sprite: s32'null', 300
-clearUpon: (SIGNAL_A)
+clearUpon: 23
 Unknown2074: 3, 43267, 352021, 177205, -2277, -265, -256, 60, 10, 300, 0, 0, 0, 0
 beginLabel: s32'landing'
 sprite: s32'null', 20
@@ -2820,7 +2821,7 @@ beginState: s32'nie_309_BloodEff'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'nie_309_bloodStart'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2833,7 +2834,7 @@ beginState: s32'nie_309_BloodEff'
   sprite: s32'null', 300
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   linkParticle: s32'nie_309_bloodEnd'
@@ -2847,7 +2848,7 @@ beginState: s32'nie_309_MistEff'
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'nie_309_Darkmist'
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2858,7 +2859,7 @@ beginState: s32'nie_309_MistEff'
   privateSE: s32'nie_08'
   beginLabel: s32'End'
   sprite: s32'null', 28
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   linkParticle: s32'nie_309_DarkmistEnd'
@@ -2903,7 +2904,7 @@ beginState: s32'nie_309_BloodDEff'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'nie_309_bloodStart'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 24
@@ -2921,7 +2922,7 @@ beginState: s32'nie_309_BloodDEff'
   sprite: s32'null', 600
   beginLabel: s32'End'
   sprite: s32'null', 600
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   linkParticle: s32'nie_309_bloodEndD'
@@ -2939,7 +2940,7 @@ beginState: s32'nie_309_BloodScytheDEff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
     linkParticle: s32'nie_309_SliceD'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2950,7 +2951,7 @@ beginState: s32'nie_309_BloodScytheDEff'
   sprite: s32'null', 60
   beginLabel: s32'End'
   sprite: s32'null', 15
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setLinkObjectDestroyOnStateChange: 0
   linkParticle: s32'nie_309_SliceEndD'
   sprite: s32'null', 30
@@ -3266,8 +3267,8 @@ beginSubroutine: s32'koware_Setting'
   numberOfHits: 1
   invulnForce: 0
   Unknown2204: 1
-  upon: (ON_DESTROY)
-    clearUpon: (SIGNAL_NAME)
+  upon: 45
+    clearUpon: 49
     clearUpon: (FRAME_STEP)
     clearUpon: 35
     clearUpon: (BEFORE_EXIT)
@@ -3503,7 +3504,7 @@ beginState: s32'dea401_A'
     endIf: 
     storeValue: Mem(ObjReg7), Val(90)
     attackIgnoreCaution: 0
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -3547,13 +3548,13 @@ beginState: s32'dea401_A'
   sprite: s32'dea401_13', 1
   sprite: s32'dea401_13', 1
   ifNot: Mem(ActReg1)
-    sendSignalToAction: s32'dea_401_slash01Eff', (SIGNAL_A)
+    sendSignalToAction: s32'dea_401_slash01Eff', 23
   endIf: 
   sprite: s32'dea401_14', 2
   hit: 
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleM'
   callSubroutine: s32'dea401_Finish'
-  sendSignalToAction: s32'dea_401_slash01Eff', (SIGNAL_A)
+  sendSignalToAction: s32'dea_401_slash01Eff', 23
   upon: (HIT)
     clearUpon: (HIT)
     privateSE: s32'nie_09_2'
@@ -3595,7 +3596,7 @@ beginState: s32'dea401_B'
     callSubroutine: s32'dea401_Init'
     storeValue: Mem(417), Val(45)
     storeValue: Mem(ObjReg7), Val(91)
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -3678,13 +3679,13 @@ beginState: s32'dea401_B'
   sprite: s32'dea401_13', 1
   sprite: s32'dea401_13', 1
   ifNot: Mem(ActReg1)
-    sendSignalToAction: s32'dea_401_slash01Eff', (SIGNAL_A)
+    sendSignalToAction: s32'dea_401_slash01Eff', 23
   endIf: 
   sprite: s32'dea401_14', 2
   hit: 
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleM'
   callSubroutine: s32'dea401_Finish'
-  sendSignalToAction: s32'dea_401_slash01Eff', (SIGNAL_A)
+  sendSignalToAction: s32'dea_401_slash01Eff', 23
   upon: (HIT)
     clearUpon: (HIT)
     privateSE: s32'nie_09_2'
@@ -3818,7 +3819,7 @@ beginState: s32'dea401_C'
     storeValue: Mem(ObjReg7), Val(92)
     attackIgnoreCaution: 0
     callSubroutine: s32'Ability+_Init'
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     storeValue: Mem(ActReg1), Val(33)
@@ -3881,14 +3882,14 @@ beginState: s32'dea401_C'
   sprite: s32'dea401_13', 1
   sprite: s32'dea401_13', 1
   ifOperation: (IS_EQUAL), Mem(ActReg1), Val(33)
-    sendSignalToAction: s32'dea_401_slash01Eff', (SIGNAL_A)
+    sendSignalToAction: s32'dea_401_slash01Eff', 23
   endIf: 
   sprite: s32'dea401_14', 2
   hit: 
   callSubroutine: s32'dea401_Finish'
   untechAmount: 60
   hitAirPushbackX: 12000
-  sendSignalToAction: s32'dea_401_slash01Eff', (SIGNAL_A)
+  sendSignalToAction: s32'dea_401_slash01Eff', 23
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleM'
   upon: (HIT)
     clearUpon: (HIT)
@@ -3933,7 +3934,7 @@ beginState: s32'dea401_D'
     attackIgnoreCaution: 0
     callSubroutine: s32'Ability++_Init'
     damage: 150
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (HIT_OR_GUARD)
@@ -4034,7 +4035,7 @@ beginState: s32'dea401_D'
   endUpon: 
   sprite: s32'dea401_13', 1
   ifNot: Mem(ActReg1)
-    sendSignalToAction: s32'dea_401_slash01Eff', (SIGNAL_A)
+    sendSignalToAction: s32'dea_401_slash01Eff', 23
   endIf: 
   sprite: s32'dea401_14', 2
   hit: 
@@ -4043,7 +4044,7 @@ beginState: s32'dea401_D'
   damage: 600
   chipDamagePercent: 50
   untechAmount: 60
-  sendSignalToAction: s32'dea_401_slash01Eff', (SIGNAL_A)
+  sendSignalToAction: s32'dea_401_slash01Eff', 23
   haltMomentum: 1
   upon: (HIT)
     clearUpon: (HIT)
@@ -4222,7 +4223,7 @@ beginState: s32'dea402_A'
     endIf: 
     storeValue: Mem(ObjReg7), Val(74)
     attackIgnoreCaution: 0
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -4305,7 +4306,7 @@ beginState: s32'dea402_B'
     storeValue: Mem(ObjReg7), Val(75)
     damage: 1200
     callSubroutine: s32'hasei_damage'
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -4488,7 +4489,7 @@ beginState: s32'dea402_C'
     callSubroutine: s32'Ability+_Init'
     damage: 1300
     callSubroutine: s32'hasei_damage'
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -4574,7 +4575,7 @@ beginState: s32'dea402_D'
     hitAirPushbackX: 18000
     hitAirPushbackY: 14000
     pushbackOnBlockX: 200
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -4938,7 +4939,7 @@ beginState: s32'dea404_A'
     endIf: 
     storeValue: Mem(ObjReg7), Val(106)
     attackIgnoreCaution: 0
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -5020,7 +5021,7 @@ beginState: s32'dea404_B'
     storeValue: Mem(417), Val(23)
     storeValue: Mem(ObjReg7), Val(107)
     attackIgnoreCaution: 0
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -5206,7 +5207,7 @@ beginState: s32'dea404_C'
     callSubroutine: s32'Ability+_Init'
     damage: 1500
     callSubroutine: s32'hasei_damage'
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -5295,7 +5296,7 @@ beginState: s32'dea404_D'
     hitAirPushbackY: 24000
     isAirUnblockable: 1
     attackThroughArmor: 1
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: 90
@@ -5468,11 +5469,11 @@ beginState: s32'dea404_D'
   killType: (NORMAL)
   damageEffect: 2, s32'dea_405_HitEff_Impact'
   cameraShake: s32'ShakeTate', 800, 0, 10, 0
-  sendSignalToAction: s32'dea_405_Chain01Eff', (SIGNAL_A)
-  sendSignalToAction: s32'dea_405_Chain02Eff', (SIGNAL_A)
-  sendSignalToAction: s32'dea_405_Chain03Eff', (SIGNAL_A)
-  sendSignalToAction: s32'dea_405_Chain04Eff', (SIGNAL_A)
-  sendSignalToAction: s32'dea_405_Chain05Eff', (SIGNAL_A)
+  sendSignalToAction: s32'dea_405_Chain01Eff', 23
+  sendSignalToAction: s32'dea_405_Chain02Eff', 23
+  sendSignalToAction: s32'dea_405_Chain03Eff', 23
+  sendSignalToAction: s32'dea_405_Chain04Eff', 23
+  sendSignalToAction: s32'dea_405_Chain05Eff', 23
   Unknown1113: 0x7878780000000000000000000000000000000000000000000000000000000000
   privateSE: s32'nie_12'
   Unknown1962: 0
@@ -5634,7 +5635,7 @@ beginState: s32'dea406_A'
     endIf: 
     storeValue: Mem(ObjReg7), Val(42)
     attackIgnoreCaution: 0
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -5717,7 +5718,7 @@ beginState: s32'dea406_B'
     untechAmount: 40
     groundHitEffect: (WALL_STICK)
     hitstunAmount: 32
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -5891,7 +5892,7 @@ beginState: s32'dea406_C'
     callSubroutine: s32'hasei_damage'
     groundHitEffect: (AIR_FACE_UP)
     hitAirPushbackY: 20000
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -5974,7 +5975,7 @@ beginState: s32'dea406_D'
     hitAirPushbackX: -5000
     hitAirPushbackY: 6000
     pushbackOnBlockX: -50
-    upon: (SIGNAL_NAME)
+    upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
     upon: (FRAME_STEP)
@@ -6058,7 +6059,7 @@ beginState: s32'nie_400_JewelRayEff'
     stopLinkObject: 3
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6069,7 +6070,7 @@ beginState: s32'nie_400_JewelRayEff'
   setDepth: 16220
   beginLabel: s32'End'
   sprite: s32'null', 20
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_400_JewelRayEnd'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -6088,7 +6089,7 @@ endSubroutine:
 beginState: s32'nie_400_CardEff'
   upon: (IMMEDIATE)
     callSubroutine: s32'nie_CardInit'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     faceLeft: 
@@ -6103,7 +6104,7 @@ beginState: s32'nie_400_CardEff'
   endElse: 
   beginLabel: s32'End'
   sprite: s32'null', 50
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_400_CardEnd'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -6113,7 +6114,7 @@ endState:
 beginState: s32'nie_400_Card2PEff'
   upon: (IMMEDIATE)
     callSubroutine: s32'nie_CardInit'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     faceLeft: 
@@ -6128,7 +6129,7 @@ beginState: s32'nie_400_Card2PEff'
   endElse: 
   beginLabel: s32'End'
   sprite: s32'null', 50
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_400_CardEnd2P'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -6179,7 +6180,7 @@ beginState: s32'dea_401_slash01Eff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
     flipDirection: 
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 24
@@ -6202,7 +6203,7 @@ beginState: s32'dea_401_slash01Eff'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 6
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 24
   linkParticle: s32'nie_401_skash04D'
   setPositionX: -25974
@@ -6356,7 +6357,7 @@ beginState: s32'dea_405_Chain01Eff'
     setAngle: 322000
     setObjectWidth: 1700
     callSubroutine: s32'Chain_Gamenhashi'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6366,7 +6367,7 @@ beginState: s32'dea_405_Chain01Eff'
   linkObjectPosition: 0
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_405_Chain01CrashD'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -6386,7 +6387,7 @@ beginState: s32'dea_405_Chain02Eff'
     setAngle: 43200
     setObjectWidth: 1400
     callSubroutine: s32'Chain_Gamenhashi'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6396,7 +6397,7 @@ beginState: s32'dea_405_Chain02Eff'
   linkObjectPosition: 0
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_405_Chain01CrashD'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -6416,7 +6417,7 @@ beginState: s32'dea_405_Chain03Eff'
     setAngle: 284000
     setObjectWidth: 1500
     callSubroutine: s32'Chain_Gamenhashi'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6426,7 +6427,7 @@ beginState: s32'dea_405_Chain03Eff'
   linkObjectPosition: 0
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_405_Chain01CrashD'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -6447,7 +6448,7 @@ beginState: s32'dea_405_Chain04Eff'
     setAngle: 249600
     setObjectWidth: 1600
     callSubroutine: s32'Chain_Gamenhashi'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6457,7 +6458,7 @@ beginState: s32'dea_405_Chain04Eff'
   linkObjectPosition: 0
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_405_Chain01CrashD'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -6477,7 +6478,7 @@ beginState: s32'dea_405_Chain05Eff'
     setAngle: 14000
     setObjectWidth: 1500
     callSubroutine: s32'Chain_Gamenhashi'
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6487,7 +6488,7 @@ beginState: s32'dea_405_Chain05Eff'
   linkObjectPosition: 0
   beginLabel: s32'End'
   sprite: s32'null', 60
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'nie_405_Chain01CrashD'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -6659,13 +6660,13 @@ beginState: s32'dea430'
       storeValue: Mem(ObjReg7), Val(0)
       callSubroutine: s32'death_Kieta_Flag'
     endUpon: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Hit'
     endUpon: 
     upon: 35
       clearUpon: 35
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       gotoLabelRequests: s32'Koware'
     endUpon: 
     upon: 36
@@ -6841,8 +6842,8 @@ storeValue: Mem(ActReg0), Val(1)
 beginLabel: s32'End'
 sprite: s32'null', 30
 recoveryState: 
-sendSignalToAction: s32'nie_430_ScreamEff', (SIGNAL_A)
-sendSignalToAction: s32'nie_430_BurstEff', (SIGNAL_A)
+sendSignalToAction: s32'nie_430_ScreamEff', 23
+sendSignalToAction: s32'nie_430_BurstEff', 23
 exitState: 
 beginLabel: s32'Hit'
 sprite: s32'UltimateShot', 2
@@ -6882,14 +6883,14 @@ beginState: s32'nie_430_BurstEff'
     linkObjectPosition: 2
     ignoreFinishStop: 1
     setPositionX: 9940
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 13
     endUpon: 
     setEventTrigger: 13, 120
     upon: 13
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 13
       gotoLabelRequests: s32'End'
     endUpon: 
@@ -6916,9 +6917,9 @@ beginState: s32'nie_430_ScreamEff'
     stopLinkObject: 3
     addPositionX: -30000
     addPositionY: 430000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 60
@@ -7002,7 +7003,7 @@ beginState: s32'nie_431_Filter'
     setPositionX: 0
     setPositionY: 0
     hideByCutscene: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -7013,7 +7014,7 @@ beginState: s32'nie_431_Filter'
   ignoreSuperFreezeFromAlly: 0
   beginLabel: s32'End'
   sprite: s32'null', 20
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   setAlphaColorSpeed: -50
 endState: 
 
@@ -7097,6 +7098,7 @@ beginState: s32'dea440'
       storeValue: Mem(PlayerVal0), Val(0)
       storeValue: Mem(PlayerVal2), Val(0)
       storeValue: Mem(ObjReg7), Val(0)
+      callSubroutine: s32'death_Kieta_Flag'
     endUpon: 
   endUpon: 
   sprite: s32'dea440_00', 3
@@ -7579,8 +7581,8 @@ beginState: s32'dea700cs_1p_04'
   upon: (IMMEDIATE)
     callSubroutine: s32'CS_Init'
     playAnimation: s32'nie700cs_1p_04', 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       Unknown413: 10, 1, 0, 0
     endUpon: 
     upon: 24

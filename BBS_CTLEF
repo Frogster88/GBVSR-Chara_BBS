@@ -107,7 +107,7 @@ beginState: s32'SpecialShot'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: (HIT)
       clearUpon: 37
       gotoLabelRequests: s32'Koware'
@@ -151,20 +151,20 @@ beginState: s32'SpecialShot'
   beginLabel: s32'Koware'
   sprite: s32'null', 10
   clearUpon: 13
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   haltMomentum: 1
   deactivateObjectByName: s32'ctl400_nokosiEff'
   deactivateObjectByName: s32'ctl400_Ground'
   createObjectWithArg: s32'koware_Dummy', (PLAYER)
   Unknown2050: 0
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    skillCooldown: 0, 10
+    Unknown1921: 0, 10
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    skillCooldown: 0, 10
+    Unknown1921: 0, 10
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    skillCooldown: 0, 420
+    Unknown1921: 0, 420
   endIf: 
   Unknown1923: 0
 endState: 
@@ -636,9 +636,9 @@ beginState: s32'306Eff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Landing'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 20
@@ -755,6 +755,7 @@ beginState: s32'CTL_400_D'
     hitGravity: 200
     wallPushback: 0, 2000
     hitstop: 24
+    enemyHitstopAddition: 1, 7, 7
     hitEffectFire: 1
     damageEffect: 2, s32'ctl_SPHitEff_Long'
     atkAngle: 2
@@ -765,7 +766,7 @@ beginState: s32'CTL_400_D'
     wallBounceXVelocityPercent: 25
     wallBounceWaitTime: 5
     upon: 8
-      sendSignalToAction: s32'SpecialShot_D', (SIGNAL_A)
+      sendSignalToAction: s32'SpecialShot_D', 23
       gotoLabelRequests: s32'Hit'
     endUpon: 
     upon: (HIT)
@@ -781,22 +782,22 @@ beginState: s32'CTL_400_D'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 37
-      clearUpon: (ON_DESTROY)
-      clearUpon: (SIGNAL_B)
+      clearUpon: 45
+      clearUpon: 32
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: 37
       clearUpon: 37
-      clearUpon: (ON_DESTROY)
-      clearUpon: (SIGNAL_B)
+      clearUpon: 45
+      clearUpon: 32
       gotoLabelRequests: s32'Sousai'
     endUpon: 
-    upon: (SIGNAL_B)
+    upon: 32
       clearUpon: 37
-      clearUpon: (ON_DESTROY)
-      clearUpon: (SIGNAL_B)
+      clearUpon: 45
+      clearUpon: 32
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -837,8 +838,8 @@ beginState: s32'CTL_400_D'
   sprite: s32'SpecialShot_D_4th', 6
   upon: 37
     clearUpon: 37
-    clearUpon: (ON_DESTROY)
-    clearUpon: (SIGNAL_B)
+    clearUpon: 45
+    clearUpon: 32
     gotoLabelRequests: s32'End'
   endUpon: 
   Unknown1950: 0x63746C5F3430305F443400000000000000000000000000000000000000000000
@@ -860,14 +861,14 @@ beginState: s32'CTL_400_D'
   beginLabel: s32'End'
   sprite: s32'null', 40
   clearUpon: 37
-  clearUpon: (ON_DESTROY)
-  clearUpon: (SIGNAL_B)
+  clearUpon: 45
+  clearUpon: 32
   if: Mem(417)
     modifyVar2: (ADD), Val(180), Mem(287)
     storeValue: Mem(287), Mem(Tmp)
   endIf: 
   else: 
-    skillCooldown: 0, 180
+    Unknown1921: 0, 180
   endElse: 
   Unknown1923: 0
   Unknown1950: 0x63746C5F3430305F443500000000000000000000000000000000000000000000
@@ -909,7 +910,7 @@ beginState: s32'ctl400_are'
       addToMeshSet: s32'shield'
     endMeshSet: 
     swapMeshSet: s32'ARE'
-    gotoLabelUpon: (SIGNAL_A), s32'Atk'
+    gotoLabelUpon: 23, s32'Atk'
     setLightRedColor: 750
     setLightGreenColor: 750
     setLightBlueColor: 750
@@ -990,7 +991,7 @@ beginState: s32'CTL401_Slash01'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Loop01'
       sendSignalToAction: s32'401Eff_slash_bloom', 24
       sendSignalToAction: s32'401Eff_slash_bloom2', 24
@@ -1010,7 +1011,7 @@ beginState: s32'CTL401_Slash01'
   sprite: s32'null', 15
   beginLabel: s32'Loop01'
   sprite: s32'null', 15
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'ctl_401_slash02'
   createObject: s32'CTL401_splash02', (PLAYER)
   createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
@@ -1035,7 +1036,7 @@ beginState: s32'CTL401_Slash01_Easy'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
-    gotoLabelUpon: (SIGNAL_A), s32'Loop01'
+    gotoLabelUpon: 23, s32'Loop01'
     gotoLabelUpon: 24, s32'End'
   endUpon: 
   sprite: s32'null', 15
@@ -1327,13 +1328,13 @@ beginState: s32'402Eff_Shield'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       addPositionX: 90000
       Unknown191: 0
     endUpon: 
-    upon: (SIGNAL_B)
-      clearUpon: (SIGNAL_B)
+    upon: 32
+      clearUpon: 32
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1417,10 +1418,10 @@ beginState: s32'ctl402_are'
     zLine: 0, 5
     Unknown264: 5
     addPositionX: 20000
-    gotoLabelUpon: (SIGNAL_A), s32'Attack1st'
+    gotoLabelUpon: 23, s32'Attack1st'
     gotoLabelUpon: 24, s32'PreAttack2nd'
     gotoLabelUpon: 25, s32'Attack2nd'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 32, s32'End'
     upon: (BEFORE_EXIT)
       createObject: s32'ctl_areWarpEff', (PLAYER)
       runOnObject: (PREVIOUS)
@@ -1627,8 +1628,8 @@ beginState: s32'430Eff_thrust'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     linkParticle: s32'ctl_430_thrust01'
@@ -1640,7 +1641,7 @@ beginState: s32'430Eff_thrust'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'ctl_430_thrust02'
   createObject: s32'430Eff_thrust_sub', (PLAYER)
   sprite: s32'null', 30
@@ -1680,7 +1681,7 @@ beginState: s32'430csEff'
         createObject: s32'430csEff_BG', (PLAYER)
       endIf: 
       ifOnFrame: Val(47)
-        sendSignalToAction: s32'430csEff_BG', (SIGNAL_A)
+        sendSignalToAction: s32'430csEff_BG', 23
       endIf: 
       ifOnFrame: Val(60)
         createObject: s32'430csEff_swordrotaion', (PLAYER)
@@ -1785,7 +1786,7 @@ beginState: s32'430csEff_BG'
     linkParticle: s32'ctl_cs430_kouya'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'0'
       setPositionX: -3661567
       setPositionY: 3427926
@@ -1816,7 +1817,7 @@ beginState: s32'430csEff_BG'
   setAngle: 324000
   beginLabel: s32'0'
   sprite: s32'null', 500
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   beginLabel: s32'1'
   sprite: s32'null', 500
   clearUpon: 24

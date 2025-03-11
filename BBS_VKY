@@ -951,12 +951,20 @@ beginSubroutine: s32'RoundInit'
     moveStance: (STANDING)
     moveInput: 119
     moveInput: 35
-    moveInput: (INPUT_BOOLEAN_OR)
+    addMoveFlag: (REQUIRES_100_METER)
+    Unknown1431: 109
+    Unknown1447: 1, 1
+    usableByCPU: 0
+  endMove: 
+  addMove: s32'vky_Ougi_Tec'
+    moveType: (SUPER)
+    moveAlias: s32'vky_Ougi'
+    moveStance: (STANDING)
     moveInput: 120
     moveInput: 35
     addMoveFlag: (REQUIRES_100_METER)
-    GOODBattleText: 1
     Unknown1431: 109
+    Unknown1447: 1, 2
     usableByCPU: 0
   endMove: 
   addMove: s32'vky_Ougi_Easy'
@@ -969,6 +977,7 @@ beginSubroutine: s32'RoundInit'
     moveInput: 35
     addMoveFlag: (REQUIRES_100_METER)
     Unknown1431: 919
+    Unknown1447: 1, 0
     cpuEstimateAttackBox: -438, 0, 438, 0
     cpuEstimatePoint: 50
     cpuEstimateTagCombo: 
@@ -983,13 +992,23 @@ beginSubroutine: s32'RoundInit'
     moveStance: (STANDING)
     moveInput: 121
     moveInput: 35
-    moveInput: (INPUT_BOOLEAN_OR)
+    addMoveFlag: (REQUIRES_100_METER)
+    addMoveFlag: (HEALTH_LEFT_30_TRUE)
+    Unknown1431: 109
+    Unknown1447: 1, 1
+    usableByCPU: 0
+  endMove: 
+  addMove: s32'vky_Kaihou_Tec'
+    moveType: (SUPER)
+    Unknown1511: 1
+    moveAlias: s32'vky_Kaihou'
+    moveStance: (STANDING)
     moveInput: 122
     moveInput: 35
     addMoveFlag: (REQUIRES_100_METER)
     addMoveFlag: (HEALTH_LEFT_30_TRUE)
-    GOODBattleText: 1
     Unknown1431: 109
+    Unknown1447: 1, 2
     usableByCPU: 0
   endMove: 
   addMove: s32'vky_Kaihou_Easy'
@@ -1004,6 +1023,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_100_METER)
     addMoveFlag: (HEALTH_LEFT_30_TRUE)
     Unknown1431: 919
+    Unknown1447: 1, 0
     cpuEstimateAttackBox: -438, 0, 438, 0
     cpuEstimatePoint: 50
     cpuEstimateTagCombo: 
@@ -1091,7 +1111,9 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'SummonDormouse_C_Easy'
   registerMove: s32'SummonDormouse_D_Easy'
   registerMove: s32'vky_Ougi'
+  registerMove: s32'vky_Ougi_Tec'
   registerMove: s32'vky_Kaihou'
+  registerMove: s32'vky_Kaihou_Tec'
   callSubroutine: s32'cmn_SkillRegist_2Button'
   registerMove: s32'vky_Ougi_Easy'
   registerMove: s32'vky_Kaihou_Easy'
@@ -1492,6 +1514,16 @@ beginSubroutine: s32'RoundInit'
   vsCharaMouthTable: s16'VS_ZOO', s16'vVKY_APR_01_c', s32'c1r6c25r5c19', s32'', s32'', s32''
   vsCharaMouthTable: s16'VS_ZOO', s16'vVKY_APR_01_d', s32'c3r47c4r33c13', s32'', s32'', s32''
   vsCharaMouthTable: s16'VS_ZOO', s16'vVKY_APR_01_e', s32'c2r6c3r7c3r11c3r27c2r16c21r14c3r', s32'27c5r13c1r33c15', s32'', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_APR_00_a', s32'c2r6c3r39c1r12c4r34c4r56c10r12c1', s32'r8c6r15c3r17c3r70c5r46c11', s32'', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_APR_00_b', s32'r21c7r15c17r17c7r29c1r13c1r18c4r', s32'13c2r17c10', s32'', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_APR_00_c', s32'c2r47c12r27c18r11c7r31c1r7c2r46c', s32'1r18c26r10c5r27c18r18c3r7c1r23c1', s32'2', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_APR_00_d', s32'c1r8c2r26c4r31c4r29c11', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_APR_01_a', s32'c2r21c13', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_APR_01_b', s32'r16c1r42c9', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_APR_01_c', s32'c1r7c22r9c17', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_APR_01_d', s32'c2r49c3r34c12', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_APR_01_e', s32'c3r19c1r25c2r18c2r8c1r13c2r18c1r', s32'17c19r31c42r10c2r47c2r11c6r37c2r', s32'23c10', s32''
+  vsCharaMouthTable: s16'VS_SAN', s16'vVKY_WIN_00', s32'c1r13c5r14c2r8c5r45c15', s32'', s32'', s32''
   linkPawn: s32''
   beginMeshSet: s32'high'
     addToMeshSet: s32'Body'
@@ -1843,6 +1875,19 @@ beginSubroutine: s32'RoundInit'
   meshSetSpriteTable: s32'vky610_21', 1
   resetMaterialSet: 
   changeDefaultMeshSet: 
+  Unknown1878: 0
+  Unknown1891: 0, 1
+  Unknown1883: 0, 7
+  Unknown1882: 0, 0
+  Unknown1887: 0, 0
+  Unknown1889: 0, 3
+  Unknown1878: 1
+  Unknown1891: 1, 0
+  Unknown1883: 1, 300
+  storeValue: Mem(ObjReg5), Val(1)
+  if: Mem(IsTrainingMode)
+    requestInstantKillBGM: 
+  endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'OnFrameStep'
@@ -1858,6 +1903,71 @@ beginSubroutine: s32'OnFrameStep'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(11)
     Unknown1925: 1, 0
+  endIf: 
+  if: Mem(BattleDoing)
+    if: Mem(IsTrainingMode)
+      getTrainingItemVal: s32'ETMI_UniqueGauge_VKY_Choice', 2, 61
+      if: Mem(GTmpReg0)
+        storeValue: Mem(ExGage1), Val(0)
+        ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(1)
+          storeValue: Mem(ObjReg5), Val(40)
+          Unknown1889: 0, 3
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(2)
+          storeValue: Mem(ObjReg5), Val(45)
+          Unknown1889: 0, 7
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(3)
+          storeValue: Mem(ObjReg5), Val(65)
+          Unknown1889: 0, 6
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(4)
+          storeValue: Mem(ObjReg5), Val(75)
+          Unknown1889: 0, 1
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(5)
+          storeValue: Mem(ObjReg5), Val(80)
+          Unknown1889: 0, 4
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(6)
+          storeValue: Mem(ObjReg5), Val(90)
+          Unknown1889: 0, 5
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(7)
+          storeValue: Mem(ObjReg5), Val(95)
+          Unknown1889: 0, 2
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(8)
+          storeValue: Mem(ObjReg5), Val(100)
+          Unknown1889: 0, 0
+        endIf: 
+      endIf: 
+    endIf: 
+    ifNot: Mem(ObjReg4)
+      ifNot: Mem(DebugSkillEx)
+        ifNot: Mem(295)
+          modifyVar: (ADD), Mem(ExGage1), Val(1)
+          ifOperation: (IS_GREATER_OR_EQUAL), Mem(ExGage1), Val(300)
+            storeValue: Mem(ExGage1), Val(0)
+            callSubroutine: s32'ItemChange'
+          endIf: 
+          ifOperation: (IS_GREATER_OR_EQUAL), Mem(ExGage1), Val(240)
+            ifOperation: (MOD_EQUALS_0), Mem(ExGage1), Val(5)
+              Unknown1891: 0, 0
+            endIf: 
+            else: 
+              Unknown1891: 0, 1
+            endElse: 
+          endIf: 
+        endIf: 
+        else: 
+          Unknown1891: 0, 1
+        endElse: 
+      endIf: 
+    endIf: 
+    else: 
+      Unknown1891: 0, 1
+    endElse: 
   endIf: 
 endSubroutine: 
 
@@ -1879,6 +1989,7 @@ endSubroutine:
 
 beginSubroutine: s32'OnFinalize'
   callSubroutine: s32'cmn_FN_OnFinalize'
+  storeValue: Mem(ObjReg4), Val(0)
 endSubroutine: 
 
 beginSubroutine: s32'OnIdling'
@@ -1921,6 +2032,50 @@ beginSubroutine: s32'OnDamage'
     callSubroutine: s32'AbilityCoolDown_4'
     callSubroutine: s32'AbilityCoolDown_2'
   endIf: 
+endSubroutine: 
+
+beginSubroutine: s32'ItemChange'
+  Unknown2197: 0x020000003A00000000000000010000000000000064000000
+  ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(40)
+    Unknown1889: 0, 3
+  endIf: 
+  else: 
+    ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(45)
+      Unknown1889: 0, 7
+    endIf: 
+    else: 
+      ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(65)
+        Unknown1889: 0, 6
+      endIf: 
+      else: 
+        ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(75)
+          Unknown1889: 0, 1
+        endIf: 
+        else: 
+          ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(80)
+            Unknown1889: 0, 4
+          endIf: 
+          else: 
+            ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(90)
+              Unknown1889: 0, 5
+            endIf: 
+            else: 
+              ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(95)
+                Unknown1889: 0, 2
+              endIf: 
+              else: 
+                ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(100)
+                  Unknown1889: 0, 0
+                endIf: 
+                else: 
+                endElse: 
+              endElse: 
+            endElse: 
+          endElse: 
+        endElse: 
+      endElse: 
+    endElse: 
+  endElse: 
 endSubroutine: 
 
 beginSubroutine: s32'AbilityCoolDown_6_DAMAGE'
@@ -3960,7 +4115,6 @@ endState:
 beginSubroutine: s32'Func_Atk5DInit'
   attackIgnoreCaution: 1
   enableSpecialCancel: 0
-  Unknown2197: 0x020000003A00000000000000010000000000000064000000
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(40)
     storeValue: Mem(ActReg7), Val(1)
   endIf: 
@@ -4069,12 +4223,17 @@ beginSubroutine: s32'Func_ItemInit_Random'
           storeValue: Mem(ActReg7), Mem(GTmpReg0)
         endIf: 
       endIf: 
-      ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(2)
-        storeValue: Mem(ActReg7), Val(3)
+      if: Mem(386)
+        ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(2)
+          storeValue: Mem(ActReg7), Val(3)
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(7)
+          storeValue: Mem(ActReg7), Val(2)
+        endIf: 
       endIf: 
-      ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(7)
-        storeValue: Mem(ActReg7), Val(2)
-      endIf: 
+      else: 
+        storeValue: Mem(PlayerVal1), Val(0)
+      endElse: 
       ifOperation: (IS_EQUAL), Mem(ActReg7), Val(1)
         pawnAnimation: 4, s32'Item01', 0
       endIf: 
@@ -4380,6 +4539,7 @@ endSubroutine:
 beginState: s32'NmlAtk5D'
   upon: (IMMEDIATE)
     callSubroutine: s32'Func_Atk5DInit'
+    storeValue: Mem(ObjReg4), Val(1)
   endUpon: 
   sprite: s32'vky208_00', 2
   sprite: s32'vky208_01', 8
@@ -4803,6 +4963,7 @@ endState:
 beginState: s32'NmlAtkAir5D'
   upon: (IMMEDIATE)
     callSubroutine: s32'Func_Atk5DInit'
+    storeValue: Mem(ObjReg4), Val(1)
   endUpon: 
   sprite: s32'vky253_00', 2
   sprite: s32'vky253_01', 8
@@ -5026,6 +5187,10 @@ beginState: s32'ThrowExe'
     stackObject: (STACK7), (PREVIOUS)
   endIf: 
   sprite: s32'vky301_04', 3
+  Unknown2644: 0
+  upon: (BEFORE_EXIT)
+    Unknown2644: 1
+  endUpon: 
   createObject: s32'vky_301_EnshutuCamera', (PLAYER)
   Unknown538: 54
   runOnObject: (ENEMY)
@@ -5051,6 +5216,7 @@ beginState: s32'ThrowExe'
   ignoreSuperFreezeFromAlly: 1
   superFreeze: 0, 119, 27, 27
   sprite: s32'vky301_08', 1
+  Unknown2644: 1
   setColor: -385875969
   runOnObject: (ENEMY)
   callSubroutine: s32'StandBy_Photo2'
@@ -5492,6 +5658,7 @@ beginState: s32'SpecialCannon_A'
     callSubroutine: s32'cmnShotCounterUkeru'
     whiffCancelOptionBufferTime: s32'SpecialCannon_Add_Land', 15
     whiffCancelOptionBufferTime: s32'SpecialCannon_Add_Air', 15
+    storeValue: Mem(ObjReg4), Val(1)
   endUpon: 
   sprite: s32'vky400_00', 2
   sprite: s32'vky400_01', 2
@@ -5564,6 +5731,7 @@ beginState: s32'SpecialCannon_B'
     callSubroutine: s32'cmnShotCounterUkeru'
     whiffCancelOptionBufferTime: s32'SpecialCannon_Add_Land', 15
     whiffCancelOptionBufferTime: s32'SpecialCannon_Add_Air', 15
+    storeValue: Mem(ObjReg4), Val(1)
   endUpon: 
   sprite: s32'vky400_00', 2
   sprite: s32'vky400_01', 2
@@ -5638,6 +5806,7 @@ beginState: s32'SpecialCannon_C'
     whiffCancelOptionBufferTime: s32'SpecialCannon_Add_Ex', 13
     storeValue: Mem(ObjReg1), Val(0)
     storeValue: Mem(PlayerVal0), Val(0)
+    storeValue: Mem(ObjReg4), Val(1)
   endUpon: 
   sprite: s32'vky400_00', 2
   sprite: s32'vky400_01', 2
@@ -5772,6 +5941,7 @@ beginState: s32'SpecialCannon_D'
 endState: 
 
 beginSubroutine: s32'Func_Cannon_Add_Item'
+  storeValue: Mem(ObjReg4), Val(1)
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg5), Val(40)
     storeValue: Mem(ActReg7), Val(1)
   endIf: 
@@ -5818,12 +5988,17 @@ beginSubroutine: s32'Func_Cannon_Add_Item'
       storeValue: Mem(ActReg7), Mem(GTmpReg0)
     endIf: 
   endIf: 
-  ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(2)
-    storeValue: Mem(ActReg7), Val(3)
+  if: Mem(386)
+    ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(2)
+      storeValue: Mem(ActReg7), Val(3)
+    endIf: 
+    ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(7)
+      storeValue: Mem(ActReg7), Val(2)
+    endIf: 
   endIf: 
-  ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(7)
-    storeValue: Mem(ActReg7), Val(2)
-  endIf: 
+  else: 
+    storeValue: Mem(PlayerVal1), Val(0)
+  endElse: 
 endSubroutine: 
 
 beginState: s32'SpecialCannon_Add_Land'
@@ -7284,7 +7459,7 @@ beginState: s32'vky_Ougi'
   sprite: s32'vky430_07', 3
   sprite: s32'vky430_08', 3
   sprite: s32'vky430_09', 3
-  physicsXImpulse: 50000
+  physicsXImpulse: 70000
   velocityXPercentEachFrame: 80
   sprite: s32'vky430_10', 3
   sprite: s32'vky430_11', 3
@@ -7307,8 +7482,7 @@ beginState: s32'vky_Ougi'
     endIf: 
   endIf: 
   else: 
-    attackEndDelay: 
-    callSubroutine: s32'cmnMuteki_False'
+    Unknown1302: 17, s32'cmnMuteki_False'
   endElse: 
   sprite: s32'vky430_18', 4
   sprite: s32'vky430_19', 4
@@ -7535,6 +7709,7 @@ beginState: s32' vky_430_Kira'
                     callSubroutine: s32'cmnKaihou_ON_FINALIZE'
                   endUpon: 
                   callSubroutine: s32'cmnKaihou_ON_WORLD_STOP'
+                  Unknown2543: 
                   swapMeshSet: s32'high_takt'
                   playAnimation: s32'vky440cs', 0
                   playCameraAnimation: s32'vky440cs', 23, 0, 0
@@ -7623,8 +7798,8 @@ beginState: s32' vky_430_Kira'
                 clearUpon: (SIGNAL_A)
                 clearUpon: 24
                 clearUpon: 25
-                attackEndDelay: 
-                sprite: s32'vky440_10', 3
+                Unknown1302: 2, s32'vky440_10'
+                endSprite: 
                 sprite: s32'vky440_11', 3
                 createObject: s32'vky_440_TactDel', (PLAYER)
                 sprite: s32'vky440_12', 3
@@ -7659,6 +7834,7 @@ beginState: s32' vky_430_Kira'
                 runOnObject: (ENEMY)
                 Unknown2050: 1
                 playAnimation: s32'xxx_vky441cs', 0
+                callSubroutine: s32'VKY441csDamage'
                 endRunOnObject: 
                 fadeOutStart: 0, 0
                 deactivateObjectByName: s32'vkd440_Atk'

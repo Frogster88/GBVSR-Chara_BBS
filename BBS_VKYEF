@@ -1491,9 +1491,14 @@ beginState: s32'vky_208_ItemEff'
   beginLabel: s32'End'
   sprite: s32'null', 20
   linkParticle: s32'vky_Item_end'
+  setLinkObjectDestroyOnDamage: 0
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   stopLinkObject: 0
+  runOnObject: (PLAYER)
+  storeValue: Mem(ObjReg4), Val(0)
+  storeValue: Mem(ExGage1), Val(9999)
+  endRunOnObject: 
 endState: 
 
 beginSubroutine: s32'ShotAtk_Init_Land'
@@ -1693,6 +1698,13 @@ beginSubroutine: s32'SpecialCannon_Add_Init'
     callSubroutine: s32'ShotAtk_Init_Land'
     stackObjectEx: (SELF), 5, 3, 5
     callSubroutine: s32'Func_SetCannon_STACK1'
+    checkCurrentStateName: (SELF), s32'Item04_ShotAtk'
+    if: Mem(Tmp)
+      checkCurrentStateName: (PLAYER), s32'SpecialCannon_Add_Land'
+      if: Mem(Tmp)
+        missionName: s32'Item04_ShotAtk_ShootL'
+      endIf: 
+    endIf: 
   endUpon: 
   upon: 26
     callSubroutine: s32'ShotAtk_Init_Land'
@@ -2165,7 +2177,7 @@ beginState: s32'Item02_ShotAtk'
   Unknown191: 0
   setObjectSize: 1000
   hit: 
-  damage: 1000
+  damage: 1400
   hitstop: 1
   hitEffectIce: 1
   clearUpon: 8
@@ -2272,7 +2284,7 @@ endState:
 beginState: s32'Item03_ShotAtk'
   upon: (IMMEDIATE)
     callSubroutine: s32'ShotAtk_Init'
-    damage: 800
+    damage: 1000
     untechAmount: 30
     chipDamagePercent: 20
     hitstop: 12
@@ -2317,7 +2329,7 @@ beginState: s32'Item03_ShotAtk'
   setLinkObjectDestroyOnStateChange: 0
   sprite: s32'vbl208_11', 300
   hit: 
-  damage: 1000
+  damage: 1200
   Unknown2050: 1
   Unknown110: 
   Unknown115: 
@@ -2363,11 +2375,12 @@ endState:
 beginState: s32'Item04_ShotAtk'
   upon: (IMMEDIATE)
     callSubroutine: s32'ShotAtk_Init'
-    damage: 200
+    damage: 120
     wallPushback: 0, 100
     tensionGainOnConnect: 10
-    numberOfHits: 3
-    Unknown2210: 3
+    hitstop: 4
+    numberOfHits: 5
+    Unknown2210: 5
     upon: (HIT_OR_GUARD)
       modifyVar: (ADD), Mem(ActReg3), Val(-1)
       worldCollision: 1
@@ -2424,7 +2437,7 @@ beginState: s32'Item04_ShotAtk'
   setLinkObjectDestroyOnStateChange: 0
   sprite: s32'vbl208_11', 1
   hit: 
-  damage: 250
+  damage: 150
   Unknown2050: 1
   Unknown110: 
   Unknown115: 
@@ -2441,12 +2454,12 @@ beginState: s32'Item04_ShotAtk'
     endIf: 
   endUpon: 
   initializeDestroy: 
-  numberOfHits: 3
+  numberOfHits: 5
   destroyOnDamageCollision: 1
   Unknown2207: 1
   Unknown2208: 1
   Unknown2209: 1
-  Unknown2210: 3
+  Unknown2210: 5
   Unknown2257: 1
   Unknown2212: 1
   Unknown2213: 0
@@ -2460,6 +2473,7 @@ beginState: s32'Item04_ShotAtk'
   Unknown2050: 0
   createParticle: s32'vky_CmnItemKill', (CENTER)
   deactivateObjectByName: s32'Item_LandingWalkEff'
+  privateSE: s32'vky_08'
 endState: 
 
 beginState: s32'Item05_ShotAtk'
@@ -2752,10 +2766,13 @@ endState:
 beginState: s32'Item07_ShotAtk'
   upon: (IMMEDIATE)
     callSubroutine: s32'ShotAtk_Init'
+    damage: 0
     worldCollision: 1
     Unknown2212: 0
     Unknown2213: 0
     upon: (TOUCH_GROUND)
+      Unknown2212: 0
+      Unknown2213: 0
       createParticle: s32'vky_ItemLand', (PLAYER_LAND)
       haltMomentum: 1
       attackEndDelay: 
@@ -2763,6 +2780,17 @@ beginState: s32'Item07_ShotAtk'
       setAngleSpeed: 0
       storeValue: Mem(ActReg4), Val(1)
       clearUpon: 36
+    endUpon: 
+    upon: (HIT_OR_GUARD)
+      clearUpon: (HIT_OR_GUARD)
+      createParticle: s32'vky_ItemHealGet', (PLAYER)
+      privateSE: s32'vky_31'
+      runOnObject: (ENEMY)
+      modifyHP: 500
+      uiBattleText: 15
+      endRunOnObject: 
+      deactivateObjectById: (SELF)
+      storeValue: Mem(ActReg4), Val(0)
     endUpon: 
     upon: (FRAME_STEP)
       if: Mem(ActReg4)
@@ -2782,13 +2810,15 @@ beginState: s32'Item07_ShotAtk'
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
             Unknown2329: 0x0200000017000000640000001600000064000000
             ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(220000)
-              createParticle: s32'vky_ItemHealGet', (PLAYER)
-              privateSE: s32'vky_31'
-              runOnObject: (ENEMY)
-              modifyHP: 500
-              uiBattleText: 15
-              endRunOnObject: 
-              deactivateObjectById: (SELF)
+              ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg4), Val(1)
+                createParticle: s32'vky_ItemHealGet', (PLAYER)
+                privateSE: s32'vky_31'
+                runOnObject: (ENEMY)
+                modifyHP: 500
+                uiBattleText: 15
+                endRunOnObject: 
+                deactivateObjectById: (SELF)
+              endIf: 
             endIf: 
           endIf: 
         endElse: 
@@ -2834,6 +2864,8 @@ beginState: s32'Item07_ShotAtk'
   gotoLabelRequests: s32'Koware'
   beginLabel: s32'Cannon'
   sprite: s32'vbl208_11', 5
+  Unknown2212: 1
+  Unknown2213: 1
   setLinkObjectDestroyOnDamage: 0
   setLinkObjectDestroyOnStateChange: 0
   storeValue: Mem(ActReg4), Val(0)
@@ -2842,6 +2874,7 @@ beginState: s32'Item07_ShotAtk'
   sprite: s32'vbl208_11', 300
   createObject: s32'Item_HeartNokosiEff', (CENTER)
   stackObject: (STACK0), (PREVIOUS)
+  hit: 
   Unknown2050: 1
   Unknown110: 
   Unknown115: 
@@ -2849,7 +2882,7 @@ beginState: s32'Item07_ShotAtk'
   Unknown97: 
   Unknown101: 
   storeValue: Mem(ActReg3), Val(1)
-  storeValue: Mem(ActReg4), Val(1)
+  storeValue: Mem(ActReg4), Val(2)
   callSubroutine: s32'SetCannon'
   beginLabel: s32'Koware'
   sprite: s32'null', 10
@@ -2880,10 +2913,13 @@ endState:
 beginState: s32'Item08_ShotAtk'
   upon: (IMMEDIATE)
     callSubroutine: s32'ShotAtk_Init'
+    damage: 0
     worldCollision: 1
     Unknown2212: 0
     Unknown2213: 0
     upon: (TOUCH_GROUND)
+      Unknown2212: 0
+      Unknown2213: 0
       createParticle: s32'vky_ItemLand', (PLAYER_LAND)
       haltMomentum: 1
       attackEndDelay: 
@@ -2891,6 +2927,17 @@ beginState: s32'Item08_ShotAtk'
       setAngleSpeed: 0
       storeValue: Mem(ActReg4), Val(1)
       clearUpon: 36
+    endUpon: 
+    upon: (HIT_OR_GUARD)
+      clearUpon: (HIT_OR_GUARD)
+      createParticle: s32'vky_ItemHealGet', (PLAYER)
+      privateSE: s32'vky_31'
+      runOnObject: (ENEMY)
+      addTensionUnscaled: 0, 1000
+      uiBattleText: 16
+      endRunOnObject: 
+      deactivateObjectById: (SELF)
+      storeValue: Mem(ActReg4), Val(0)
     endUpon: 
     upon: (FRAME_STEP)
       if: Mem(ActReg4)
@@ -2910,13 +2957,15 @@ beginState: s32'Item08_ShotAtk'
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
             Unknown2329: 0x0200000017000000640000001600000064000000
             ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(220000)
-              createParticle: s32'vky_ItemHealGet', (PLAYER)
-              privateSE: s32'vky_31'
-              runOnObject: (ENEMY)
-              addTensionUnscaled: 0, 1000
-              uiBattleText: 16
-              endRunOnObject: 
-              deactivateObjectById: (SELF)
+              ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg4), Val(1)
+                createParticle: s32'vky_ItemHealGet', (PLAYER)
+                privateSE: s32'vky_31'
+                runOnObject: (ENEMY)
+                addTensionUnscaled: 0, 1000
+                uiBattleText: 16
+                endRunOnObject: 
+                deactivateObjectById: (SELF)
+              endIf: 
             endIf: 
           endIf: 
         endElse: 
@@ -2962,6 +3011,8 @@ beginState: s32'Item08_ShotAtk'
   gotoLabelRequests: s32'Koware'
   beginLabel: s32'Cannon'
   sprite: s32'vbl208_11', 5
+  Unknown2212: 1
+  Unknown2213: 1
   setLinkObjectDestroyOnDamage: 0
   setLinkObjectDestroyOnStateChange: 0
   storeValue: Mem(ActReg4), Val(0)
@@ -2970,6 +3021,7 @@ beginState: s32'Item08_ShotAtk'
   linkParticle: s32'vky_ItemHealLoop'
   createObject: s32'Item08_NksEff', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
+  hit: 
   Unknown2050: 1
   Unknown110: 
   Unknown115: 
@@ -2977,7 +3029,7 @@ beginState: s32'Item08_ShotAtk'
   Unknown97: 
   Unknown101: 
   storeValue: Mem(ActReg3), Val(1)
-  storeValue: Mem(ActReg4), Val(1)
+  storeValue: Mem(ActReg4), Val(2)
   callSubroutine: s32'SetCannon'
   beginLabel: s32'Koware'
   sprite: s32'null', 10
@@ -4632,6 +4684,7 @@ endIf:
 endSubroutine: 
 beginSubroutine: s32'SpecialCannon_Init'
   callSubroutine: s32'MeshSet_cannon'
+  Unknown2006: 0x01000000
   callSubroutine: s32'cmnSpecialShot_AtkInit'
   damage: 600
   untechAmount: 22
@@ -5213,6 +5266,7 @@ beginState: s32'Baloon_CannonAirLow'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
+    Unknown2006: 0x01000000
     setDepth: -40000
     gotoLabelUpon: 24, s32'Shot'
     gotoLabelUpon: 25, s32'Setting'
@@ -5252,6 +5306,7 @@ beginState: s32'Baloon_CannonAirHigh'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
+    Unknown2006: 0x01000000
     setDepth: -40000
     gotoLabelUpon: 24, s32'Shot'
     gotoLabelUpon: 25, s32'Setting'
@@ -5911,6 +5966,7 @@ beginState: s32'vkc404_Atk'
       clearUpon: (HIT)
       Unknown2329: 0x03000000030000007B000000160000007B000000
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(400000)
+        Unknown1048: 1
         hitstop: 0
         killType: (NOT_KILL)
         magnetismX: 0, 0, 0, 0, 0
@@ -8406,7 +8462,7 @@ beginState: s32'vkd440_Atk'
     hitGravity: 1500
     hitstop: 10
     enemyHitstopAddition: -4, -4, -4
-    wallPushback: 0, 1000
+    wallPushback: 0, 100
     groundBounceCount: 1
     groundBounceYVelocityPercent: 30
     magnetismY: 1, 100000, 80000, 100, 0

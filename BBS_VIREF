@@ -156,7 +156,7 @@ beginState: s32'vir_210_Bit'
     upon: 35
       Unknown1793: 23, 32
     endUpon: 
-    upon: (SIGNAL_B)
+    upon: 32
       deactivateObjectById: (SELF)
       createParticle: s32'vir_bit_SpawnEnd', (PLAYER)
       privateSE: s32'vir_11'
@@ -230,8 +230,8 @@ beginState: s32'vir_211_ThurustEff'
     setAngleX: 40400
     setAngleY: 56400
     setAngle: 126800
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -398,8 +398,8 @@ beginState: s32'vir_301_prickle'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     setObjectSize: 1100
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -428,8 +428,8 @@ beginState: s32'vir_309_prickle'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     setObjectSize: 1100
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -573,8 +573,8 @@ beginState: s32'vir_306_BurstEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     setObjectWidth: 1200
@@ -637,8 +637,8 @@ beginState: s32'vir_310_BurstEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     setObjectWidth: 1200
@@ -718,9 +718,9 @@ beginState: s32'vir_350_Eff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnDamage: 2
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: 24
       linkObjectPosition: 0
@@ -1169,8 +1169,8 @@ beginState: s32'vir_403_Slash'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Atk2'
     endUpon: 
     upon: 24
@@ -1255,13 +1255,13 @@ beginState: s32'AntiAir_C_Bit'
       setAngleBySpeed: 0
       haltMomentum: 1
     endUpon: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       clearUpon: (FRAME_STEP)
       Unknown2020: 
-      sendSignalToAction: s32'AntiAir_C_BitBeam', (SIGNAL_A)
+      sendSignalToAction: s32'AntiAir_C_BitBeam', 23
     endUpon: 
-    upon: (SIGNAL_B)
+    upon: 32
       deactivateObjectById: (SELF)
       Unknown2268: 0, 700
       createParticleWithArg2: s32'vir_bit_SpawnEnd', (PLAYER)
@@ -1318,7 +1318,7 @@ beginState: s32'AntiAir_C_BitBeam'
       hitAirPushbackY: 19000
       tensionGainOnConnect: 0
     endIf: 
-    gotoLabelUpon: (SIGNAL_A), s32'Shot'
+    gotoLabelUpon: 23, s32'Shot'
     linkObjectZ: 3
     linkObjectPosition: 2
     stopLinkObject: 2
@@ -1336,7 +1336,7 @@ beginState: s32'AntiAir_C_BitBeam'
   Unknown410: 10, 2
   createParticle: s32'vir_431_BitBeamNokosi', (PLAYER)
   Unknown1793: 2, 23
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   deactivateObjectByName: s32'vir_403_Slash'
   if: Mem(BattleDoing)
     cameraShake: s32'ShakeYoko', 1000, 0, 10, 0
@@ -1914,7 +1914,7 @@ beginState: s32'vir_409_Suv'
       endUpon: 
       upon: 37
         clearUpon: 37
-        sendSignalToAction: s32'SpecialChevalier_D', (SIGNAL_B)
+        sendSignalToAction: s32'SpecialChevalier_D', 32
       endUpon: 
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDistanceX), Val(500000)
         addPositionX: 500000
@@ -1962,8 +1962,8 @@ beginState: s32'vir_409_Suv'
       numberOfHits: 1
       Unknown2210: 1
     endIf: 
-    upon: (ON_DESTROY)
-      clearUpon: (ON_DESTROY)
+    upon: 45
+      clearUpon: 45
       gotoLabelRequests: s32'Koware'
     endUpon: 
     setEventTrigger: 13, 300
@@ -1973,15 +1973,15 @@ beginState: s32'vir_409_Suv'
     addMoveForceDisableFlag: 1
     upon: (BEFORE_EXIT)
       ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        skillCooldown: 2, 20
+        Unknown1921: 2, 20
       endIf: 
       ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        skillCooldown: 2, 20
+        Unknown1921: 2, 20
       endIf: 
       ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        skillCooldown: 2, 420
+        Unknown1921: 2, 420
         if: Mem(ActReg3)
-          skillCooldown: 2, 390
+          Unknown1921: 2, 390
         endIf: 
       endIf: 
       ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
@@ -1990,9 +1990,9 @@ beginState: s32'vir_409_Suv'
           storeValue: Mem(289), Mem(Tmp)
         endIf: 
         else: 
-          skillCooldown: 2, 180
+          Unknown1921: 2, 180
         endElse: 
-        sendSignalToAction: s32'SpecialChevalier_D', (SIGNAL_B)
+        sendSignalToAction: s32'SpecialChevalier_D', 32
       endIf: 
       Unknown1923: 2
     endUpon: 
@@ -2101,7 +2101,7 @@ beginState: s32'vir_409_Suv'
   endElse: 
   createObject: s32'vir_412_ReSpawn', (PLAYER)
   createObject: s32'vir_413_AtkEff', (PLAYER)
-  sendSignalToAction: s32'vir_413_MoveNokoshi', (SIGNAL_A)
+  sendSignalToAction: s32'vir_413_MoveNokoshi', 23
   Unknown412: 100, 1, 0, 0
   Unknown413: -10, 1, 0, 0
   privateSE: s32'vir_06'
@@ -2132,8 +2132,8 @@ beginState: s32'vir_409_Suv'
   haltMomentum: 1
   sprite: s32'suv413_05', 4
   recoveryState: 
-  sendSignalToAction: s32'vir_413_AtkEff', (SIGNAL_A)
-  sendSignalToAction: s32'SpecialChevalier_D', (SIGNAL_B)
+  sendSignalToAction: s32'vir_413_AtkEff', 23
+  sendSignalToAction: s32'SpecialChevalier_D', 32
   sprite: s32'suv413_06', 4
   gotoLabelIf: s32'Koware', Mem(ActReg7)
   sprite: s32'suv413_07', 4
@@ -2142,8 +2142,8 @@ beginState: s32'vir_409_Suv'
   sprite: s32'suv413_07', 4
   beginLabel: s32'Koware'
   sprite: s32'suv413_08', 2
-  clearUpon: (ON_DESTROY)
-  sendSignalToAction: s32'vir_409_Suv_Bit', (SIGNAL_B)
+  clearUpon: 45
+  sendSignalToAction: s32'vir_409_Suv_Bit', 32
   sprite: s32'suv413_09', 2
   sprite: s32'suv413_10', 2
   createParticle: s32'vir_bit_SpawnEnd', (PLAYER)
@@ -2165,8 +2165,8 @@ beginState: s32'vir_409_Suv_Bit'
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
-    upon: (ON_DESTROY)
-      clearUpon: (ON_DESTROY)
+    upon: 45
+      clearUpon: 45
       Unknown1793: 23, 32
     endUpon: 
     storeValue: Mem(ActReg0), Mem(Hikitsugi0)
@@ -2194,8 +2194,8 @@ beginState: s32'vir_409_Suv_Bit'
       endUpon: 
     endIf: 
     Unknown289: 120
-    upon: (SIGNAL_B)
-      clearUpon: (ON_DESTROY)
+    upon: 32
+      clearUpon: 45
       deactivateObjectById: (SELF)
       Unknown2268: 0, 700
       createParticleWithArg2: s32'vir_bit_SpawnEnd', (PLAYER)
@@ -2237,7 +2237,7 @@ beginState: s32'vir_409_Suv_Bit'
   gotoLabel: s32'Loop'
   beginLabel: s32'Ultimate'
   sprite: s32'suv405_00', 13
-  clearUpon: (SIGNAL_B)
+  clearUpon: 32
   sprite: s32'suv405_00', 3
   linkPawnWithAnimation: s32'bit_00', s32''
   beginMeshSet: s32'bit_00'
@@ -2272,8 +2272,8 @@ beginState: s32'vir_409_Suv_Bit_Beam'
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
-    upon: (ON_DESTROY)
-      clearUpon: (ON_DESTROY)
+    upon: 45
+      clearUpon: 45
       stopLinkObject: 0
       gotoLabelRequests: s32'Koware'
     endUpon: 
@@ -2380,8 +2380,8 @@ beginState: s32'vir_409_Suv_Bit_BeamLandEff'
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
-    upon: (ON_DESTROY)
-      clearUpon: (ON_DESTROY)
+    upon: 45
+      clearUpon: 45
       deactivateObjectById: (SELF)
     endUpon: 
     Unknown1909: 0
@@ -2390,8 +2390,8 @@ beginState: s32'vir_409_Suv_Bit_BeamLandEff'
       linkObjectAngle: 0
       setAngle: 0
       haltMomentum: 1
-      upon: (ON_DESTROY)
-        clearUpon: (ON_DESTROY)
+      upon: 45
+        clearUpon: 45
         stopLinkObject: 0
         gotoLabelRequests: s32'End'
       endUpon: 
@@ -2449,8 +2449,8 @@ beginState: s32'vir_413_AtkEff'
     setDepth: 19583
     setObjectSize: 800
     linkParticle: s32'vir_413_shokushu'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2486,8 +2486,8 @@ beginState: s32'vir_413_MoveNokoshi'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     linkParticle: s32'vir_suvLight'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'StandBy'
     endUpon: 
     upon: 24
@@ -2684,8 +2684,8 @@ beginState: s32'vir_431Bit'
     endMeshSet: 
     swapMeshSet: s32'bit_00'
     Unknown289: 120
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2723,7 +2723,6 @@ beginState: s32'vir431_BeamAtk'
     damage: 1200
     chipDamagePercent: 25
     groundHitEffect: (AIR_STRONG)
-    comboLimitScaling: -1
     disableHitstopForSelf: 1
     maxHit: 15
     damageEffect: 4, s32'vir_431_HitEff'
@@ -2733,8 +2732,8 @@ beginState: s32'vir431_BeamAtk'
     addPositionX: 0
     addPositionY: 250000
     Unknown1727: 0
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       damage: 200
       setObjectWidth: 1000
       Unknown151: 0
@@ -2800,12 +2799,12 @@ beginState: s32'vir_431Beam'
     linkObjectPosition: 2
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Start'
     endUpon: 
-    upon: (SIGNAL_B)
-      clearUpon: (SIGNAL_B)
+    upon: 32
+      clearUpon: 32
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -2843,7 +2842,7 @@ beginState: s32'vir_431Beam'
   setPositionY: 265000
   cameraShake: s32'ShakeYoko', 2000, 0, 40, 20
   sprite: s32'null', 120
-  sendSignalToAction: s32'vir_431BeamHead', (SIGNAL_A)
+  sendSignalToAction: s32'vir_431BeamHead', 23
   Unknown409: 100, 2
   Unknown410: 0, 2
   createObject: s32'vir_431Nokoshi', (PLAYER)
@@ -2870,8 +2869,8 @@ beginState: s32'vir_431BeamHead'
     addPositionX: 200000
     addPositionY: 5743
     linkParticle: s32'vir_431_BeamHead'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Stop'
     endUpon: 
     upon: 24
@@ -2946,10 +2945,9 @@ beginState: s32'vir_431Beam_Bit'
     untechAmount: 60
     isAirUnblockable: 0
     groundTech: 0
-    comboLimitScaling: -1
     disableHitstopForSelf: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -3397,8 +3395,8 @@ beginState: s32'vir_441_BG'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Change'
     endUpon: 
   endUpon: 
@@ -3521,8 +3519,8 @@ beginState: s32'vir_441cs_Binet'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Change1'
     endUpon: 
     upon: 24
@@ -3683,8 +3681,8 @@ beginState: s32'vir_443MC'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'PosChange'
     endUpon: 
   endUpon: 
@@ -3913,8 +3911,8 @@ beginState: s32'vir_443MC_Battle'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Move'
     endUpon: 
     upon: 24

@@ -170,9 +170,9 @@ beginState: s32'FAS_232_StrikeEff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     Unknown289: 120
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'end'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   sprite: s32'null', 30
@@ -414,9 +414,9 @@ beginState: s32'FAS_301_EnshutuCamera'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: (BEFORE_EXIT)
       Unknown2582: 
@@ -476,7 +476,7 @@ beginState: s32'FAS_303_line01_all'
     linkObjectZ: 3
     linkObjectPosition: 2
     stopLinkObject: 2
-    gotoLabelUpon: (SIGNAL_A), s32'end'
+    gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 5
   createObject: s32'FAS_303_line01_01', (PLAYER)
@@ -614,9 +614,9 @@ beginState: s32'FAS_303_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     linkObjectDirection: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Land'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: (BEFORE_EXIT)
       Unknown2582: 
@@ -785,9 +785,9 @@ beginState: s32'FAS_309_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     linkObjectDirection: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Land'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: (BEFORE_EXIT)
       Unknown2582: 
@@ -937,8 +937,8 @@ beginState: s32'FAS_401_Eff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Hit'
       deactivateObjectByName: s32'FAS_401_DashEff'
       Unknown2268: 0, 800
@@ -1019,8 +1019,8 @@ beginState: s32'FAS_401_EffD'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Hit'
       deactivateObjectByName: s32'FAS_401_DashEff'
       Unknown2268: 0, 800
@@ -1312,8 +1312,8 @@ beginState: s32'FAS_405_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
     ignoreFinishStop: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Land'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -1482,9 +1482,9 @@ beginState: s32'FAS_412_SpinEff'
     setLinkObjectDestroyOnDamage: 3
     setPositionX: 165000
     setPositionY: 600000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'loop'
@@ -1516,8 +1516,8 @@ beginState: s32'FAS_412_BakeEff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1542,9 +1542,9 @@ beginState: s32'FAS_412_LineEff'
     setLinkObjectDestroyOnDamage: 3
     setPositionX: -65000
     setPositionY: 100000
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
   endUpon: 
   beginLabel: s32'loop'
@@ -1578,9 +1578,9 @@ beginState: s32'FAS_412_EnshutuCamera'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Land'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: (BEFORE_EXIT)
       Unknown2582: 
@@ -1713,9 +1713,9 @@ beginState: s32'FAS_430Throw_EnshutuCamera'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
     endUpon: 
     upon: (BEFORE_EXIT)
       Unknown2582: 
@@ -2187,6 +2187,10 @@ beginState: s32'FAS_441_Ring'
   ifOpponentCharacterMain: s16'vky'
   if: Mem(Tmp)
     playAnimation: s32'fas441cs_vky', 1
+  endIf: 
+  ifOpponentCharacterMain: s16'san'
+  if: Mem(Tmp)
+    playAnimation: s32'fas441cs_san', 1
   endIf: 
   sprite: s32'null', 447
   Unknown2050: 1
@@ -2694,7 +2698,7 @@ beginState: s32'FAS_440_CS_CameraFlash'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'fas_440_RingCameraFlash'
-    gotoLabelUpon: (SIGNAL_A), s32'Disp'
+    gotoLabelUpon: 23, s32'Disp'
     gotoLabelUpon: 24, s32'Move'
     gotoLabelUpon: 25, s32'Move2'
     gotoLabelUpon: 26, s32'Move3'
