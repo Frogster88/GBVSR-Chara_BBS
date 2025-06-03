@@ -58,7 +58,7 @@ beginState: s32'lri_700cs_1P_04'
     Unknown374: 0
   endUpon: 
   sprite: s32'null', 144
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'vee_700cs_1P_04'
@@ -78,7 +78,7 @@ beginState: s32'vee_700cs_1P_04'
     Unknown374: 0
   endUpon: 
   sprite: s32'null', 144
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'lri_700cs_1P_05'
@@ -158,7 +158,7 @@ beginState: s32'lri_700cs_2P_03'
   endUpon: 
   sprite: s32'null', 212
   playAnimation: s32'djt700cs_2p_03', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'vee_700cs_2P_01'
@@ -181,7 +181,7 @@ beginState: s32'vee_700cs_2P_01'
   playAnimation: s32'djt700cs_2P_01', 1
   sprite: s32'null', 2147483647
   playAnimation: s32'djt700cs_2p_02', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'vee_700cs_2P_03'
@@ -202,7 +202,7 @@ beginState: s32'vee_700cs_2P_03'
   endUpon: 
   sprite: s32'null', 212
   playAnimation: s32'djt700cs_2p_03', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'DJT_201_Strike'
@@ -789,7 +789,7 @@ beginState: s32'DJT_350_Eff'
   setAngle: 351600
   setObjectWidth: 1750
   setObjectHeight: 1100
-  Unknown180: 1100
+  setObjectDepth: 1100
   sprite: s32'null', 30
   linkParticle: s32'djt_350_Slash02'
 endState: 
@@ -1022,7 +1022,7 @@ beginState: s32'400Eff_atkmesh'
     linkObjectDirection: 2
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 200
+    setMaxActionTime: 200
     linkParticle: s32'djt_400_atkmesh'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
   endUpon: 
@@ -1039,7 +1039,7 @@ beginState: s32'djt400_nokosiEff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnDamage: 2
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 200
+    setMaxActionTime: 200
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 8
@@ -1076,7 +1076,7 @@ beginState: s32'djt401_nokosiEff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnDamage: 2
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 200
+    setMaxActionTime: 200
   endUpon: 
   sprite: s32'null', 8
   beginLabel: s32'loop'
@@ -1095,7 +1095,7 @@ beginState: s32'djt401_nokosiEffD'
     linkObjectPosition: 2
     setLinkObjectDestroyOnDamage: 2
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 200
+    setMaxActionTime: 200
   endUpon: 
   sprite: s32'null', 8
   beginLabel: s32'loop'
@@ -1119,7 +1119,7 @@ beginState: s32'djt400_GroundRay'
     upon: (BEFORE_EXIT)
       createParticle: s32'djt_400_GroundRay_End', (PLAYER_LAND)
     endUpon: 
-    Unknown289: 110
+    setMaxActionTime: 110
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 6
@@ -1137,7 +1137,7 @@ beginState: s32'djt400_GroundRayD'
     upon: (BEFORE_EXIT)
       createParticle: s32'djt_400_GroundRay_End', (PLAYER_LAND)
     endUpon: 
-    Unknown289: 110
+    setMaxActionTime: 110
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 12
@@ -1295,7 +1295,7 @@ beginState: s32'SpecialShot'
   Unknown1923: 0
   if: Mem(386)
     if: Mem(IsEnemysCutScene)
-      Unknown2347: 1953458259, 0x446F6467650000000000000000000000000000000000000000000000
+      Unknown2347: s32'ShotDodge'
     endIf: 
   endIf: 
 endState: 
@@ -1385,7 +1385,7 @@ beginState: s32'djt_Charge_AtkEffect'
     setAngleX: 0
     setAngleY: 336800
     setAngle: 0
-    Unknown180: 600
+    setObjectDepth: 600
   endUpon: 
   sprite: s32'null', 60
 endState: 
@@ -1414,7 +1414,7 @@ beginState: s32'Charge_SpecialShot'
       physicsXImpulse: 24000
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-      Unknown72: s32'Charge_Attack'
+      postSubroutineBegin: s32'Charge_Attack'
       missionName: s32'Charge_SpecialShot_C'
       callSubroutine: s32'cmnSpecialAttackC_AtkInit'
       hitAirPushbackX: 4000
@@ -1622,7 +1622,7 @@ beginState: s32'Charge_SpecialShot'
   untechAmount: 18
   haltMomentum: 1
   physicsXImpulse: 5000
-  Unknown122: 450
+  addAcceleration: 450
   beginLabel: s32'Loop_Sousai'
   sprite: s32'SpecialShot', 1
   hit: 
@@ -1656,7 +1656,7 @@ beginState: s32'Charge_SpecialShot'
   Unknown1923: 0
   if: Mem(386)
     if: Mem(IsEnemysCutScene)
-      Unknown2347: 1953458259, 0x446F6467650000000000000000000000000000000000000000000000
+      Unknown2347: s32'ShotDodge'
     endIf: 
   endIf: 
   sprite: s32'null', 5
@@ -1673,7 +1673,7 @@ endState:
 beginState: s32'DJT_402_dash'
   upon: (IMMEDIATE)
     linkParticle: s32'bg_GroundBurst'
-    Unknown157: 300
+    addObjectHeight: 300
     addPositionX: 100000
   endUpon: 
   sprite: s32'null', 50
@@ -1701,7 +1701,7 @@ beginState: s32'DJT_402_Slash02'
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
     linkParticle: s32'djt_402_slash02'
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 4
@@ -1799,7 +1799,7 @@ beginState: s32'DJT_402_B_nokosi'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 4
@@ -1832,7 +1832,7 @@ beginState: s32'DJT_403_nokosi01'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     gotoLabelUpon: 23, s32'end'
-    Unknown289: 180
+    setMaxActionTime: 180
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 4
@@ -1976,9 +1976,9 @@ beginState: s32'DJT_403_TEN'
   setAngle: 359200
   createObject: s32'DJT_403_TEN_Speed', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 333600
-  setAngleY: 18000
-  setAngle: 359200
+    setAngleX: 333600
+    setAngleY: 18000
+    setAngle: 359200
   endRunOnObject: 
   beginLabel: s32'End'
   sprite: s32'ten409_00', 10
@@ -2022,9 +2022,9 @@ beginState: s32'DJT_403_TEN2'
   setAngle: 359200
   createObject: s32'DJT_403_TEN_Speed', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 333600
-  setAngleY: 18000
-  setAngle: 359200
+    setAngleX: 333600
+    setAngleY: 18000
+    setAngle: 359200
   endRunOnObject: 
   beginLabel: s32'End'
   sprite: s32'ten409_07', 10
@@ -2068,9 +2068,9 @@ beginState: s32'DJT_403_TEN3'
   setAngle: 6800
   createObject: s32'DJT_403_TEN_Speed', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 338000
-  setAngleY: 38000
-  setAngle: 6800
+    setAngleX: 338000
+    setAngleY: 38000
+    setAngle: 6800
   endRunOnObject: 
   beginLabel: s32'End'
   sprite: s32'ten409_04', 10
@@ -2114,9 +2114,9 @@ beginState: s32'DJT_403_TEN4'
   setAngle: 1600
   createObject: s32'DJT_403_TEN_Speed', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 337600
-  setAngleY: 31600
-  setAngle: 1600
+    setAngleX: 337600
+    setAngleY: 31600
+    setAngle: 1600
   endRunOnObject: 
   beginLabel: s32'End'
   sprite: s32'ten409_03', 10
@@ -2612,7 +2612,7 @@ beginState: s32'DJT_408_BuffAura'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 200
+    setMaxActionTime: 200
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 5
@@ -2688,7 +2688,7 @@ beginState: s32'DJT_408_TEN01_Slash'
   setAngle: 29600
   setObjectWidth: 1000
   setObjectHeight: 1200
-  Unknown180: 800
+  setObjectDepth: 800
   sprite: s32'null', 25
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -3026,7 +3026,7 @@ beginState: s32'DJT_408_TEN06_Slash'
   linkParticle: s32'djt_408_EXslash01'
   setObjectWidth: 1200
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
   setAngleX: 176000
   setAngleY: 61200
   setAngle: 50400
@@ -3383,7 +3383,7 @@ beginState: s32'DJT_430_TenseiRay2'
     Unknown1727: 10716
     setObjectWidth: 1200
     setObjectHeight: 1200
-    Unknown180: 1200
+    setObjectDepth: 1200
   endUpon: 
   sprite: s32'null', 15
   linkParticle: s32'djt_430_TenseiRay'
@@ -4016,7 +4016,7 @@ beginState: s32'DJT_430_TenseiRay7'
     stopLinkObject: 2
     setObjectWidth: 1100
     setObjectHeight: 1100
-    Unknown180: 1100
+    setObjectDepth: 1100
     addPositionX: -84983
     addPositionY: 123203
     Unknown1727: 135504
@@ -4962,7 +4962,7 @@ beginState: s32'DJT_440_nokosi'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 4
@@ -5038,7 +5038,7 @@ beginState: s32'DJT_440_ScrewWindSpawn'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 6
@@ -5592,12 +5592,12 @@ beginState: s32'DJT_441_CSCloud'
   setAngle: 800
   setObjectWidth: 3000
   setObjectHeight: 3000
-  Unknown180: 4000
+  setObjectDepth: 4000
   beginLabel: s32'Move'
   sprite: s32'null', 600
   setObjectWidth: 3000
   setObjectHeight: 3000
-  Unknown180: 3000
+  setObjectDepth: 3000
   setPositionX: 2093144
   setPositionY: 3895239
   setDepth: 25968
@@ -5652,7 +5652,7 @@ beginState: s32'DJT_441_CSCloud2'
   linkParticle: s32'djt_441_CSCloud02'
   setObjectWidth: 3000
   setObjectHeight: 3000
-  Unknown180: 4000
+  setObjectDepth: 4000
   addPositionX: 89956
   addPositionY: 486297
   Unknown1727: -708470
@@ -5677,7 +5677,7 @@ beginState: s32'DJT_441_CSCloud3'
   setAngleY: 15600
   setAngle: 5600
   setObjectSize: 2700
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
 endState: 
 
 beginState: s32'DJT_441_CSBeam'
@@ -5760,7 +5760,7 @@ beginState: s32'DJT_441_CSYabure3'
     Unknown1727: 1973094
     setObjectWidth: 2300
     setObjectHeight: 2000
-    Unknown180: 2000
+    setObjectDepth: 2000
     setAngleX: 196000
     setAngleY: 168400
     setAngle: 800
@@ -5936,7 +5936,7 @@ beginState: s32'DJT_441_CSFire'
   Unknown1727: 72551
   setObjectWidth: 1000
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
   setAngleX: 356000
   setAngleY: 358400
   setAngle: 69600
@@ -5959,7 +5959,7 @@ beginState: s32'DJT_441_CSFire2'
   setAngle: 334000
   setObjectWidth: 1000
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
 endState: 
 
 beginState: s32'DJT_441_CSThunder'
@@ -5977,7 +5977,7 @@ beginState: s32'DJT_441_CSThunder'
   linkParticle: s32'djt_441_CSChargeThunder'
   setObjectWidth: 2000
   setObjectHeight: 4000
-  Unknown180: 4000
+  setObjectDepth: 4000
   setPositionX: -300672
   setPositionY: 1035795
   setDepth: 1064585
@@ -5989,7 +5989,7 @@ beginState: s32'DJT_441_CSThunder'
   linkParticle: s32'djt_441_CSChargeThunder'
   setObjectWidth: 2000
   setObjectHeight: 4000
-  Unknown180: 4000
+  setObjectDepth: 4000
   setPositionX: 399018
   setPositionY: 1699046
   setDepth: 1118975
@@ -5999,7 +5999,7 @@ beginState: s32'DJT_441_CSThunder'
   sprite: s32'null', 20
   setObjectWidth: 500
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: -10235
   setPositionY: 1496557
   setDepth: 1123485
@@ -6011,7 +6011,7 @@ beginState: s32'DJT_441_CSThunder'
   linkParticle: s32'djt_441_CSChargeThunder'
   setObjectWidth: 2000
   setObjectHeight: 3000
-  Unknown180: 3000
+  setObjectDepth: 3000
   setPositionX: 143535
   setPositionY: 2181519
   setDepth: 307155
@@ -6021,7 +6021,7 @@ beginState: s32'DJT_441_CSThunder'
   sprite: s32'null', 4
   setObjectWidth: 1000
   setObjectHeight: 2250
-  Unknown180: 2250
+  setObjectDepth: 2250
   setPositionX: 168065
   setPositionY: 2234968
   setDepth: 550933
@@ -6040,7 +6040,7 @@ beginState: s32'DJT_441_CSThunder'
   linkParticle: s32'djt_441_CSChargeThunder'
   setObjectWidth: 2000
   setObjectHeight: 3000
-  Unknown180: 3000
+  setObjectDepth: 3000
   setPositionX: 258311
   setPositionY: 1618558
   setDepth: 1246531
@@ -6058,7 +6058,7 @@ beginState: s32'DJT_441_CSThunder'
   linkParticle: s32'djt_441_CSChargeThunder'
   setObjectWidth: 1800
   setObjectHeight: 2700
-  Unknown180: 2700
+  setObjectDepth: 2700
   setPositionX: 430618
   setPositionY: 1703942
   setDepth: 1447854
@@ -6075,7 +6075,7 @@ beginState: s32'DJT_441_CSThunder'
   setAngle: 57200
   setObjectWidth: 1250
   setObjectHeight: 2700
-  Unknown180: 2700
+  setObjectDepth: 2700
   sprite: s32'null', 12
   createObject: s32'DJT_441_CSThunderSub', (PLAYER)
   linkParticle: s32'djt_441_CSChargeThunder'
@@ -6095,7 +6095,7 @@ beginState: s32'DJT_441_CSThunderSub'
     stopLinkObject: 2
     setObjectWidth: 1250
     setObjectHeight: 2500
-    Unknown180: 2500
+    setObjectDepth: 2500
   endUpon: 
   sprite: s32'null', 20
   linkParticle: s32'djt_441_CSChargeThunder'
@@ -6133,7 +6133,7 @@ beginState: s32'DJT_441_CSPBHEye'
     stopLinkObject: 2
     setObjectWidth: 1950
     setObjectHeight: 1950
-    Unknown180: 1950
+    setObjectDepth: 1950
     addPositionX: 5757
     addPositionY: 1182500
     Unknown1727: 597873
@@ -6218,7 +6218,7 @@ beginState: s32'lri_800cs'
     Unknown374: 0
   endUpon: 
   sprite: s32'null', 452
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'vee_800cs'
@@ -6238,7 +6238,7 @@ beginState: s32'vee_800cs'
     Unknown374: 0
   endUpon: 
   sprite: s32'null', 452
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'lri_442cs'
@@ -6259,7 +6259,7 @@ beginState: s32'lri_442cs'
     Unknown374: 0
   endUpon: 
   sprite: s32'null', 376
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'vee_442cs'
@@ -6279,7 +6279,7 @@ beginState: s32'vee_442cs'
     Unknown374: 0
   endUpon: 
   sprite: s32'null', 376
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'pbh_442cs_Kakusei'
@@ -6315,7 +6315,7 @@ beginState: s32'pbh_442cs_Kakusei'
   sprite: s32'null', 246
   Unknown412: 100, 1, 0, 0
   Unknown413: 0, 1, 0, 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'DJT_442_CSWhiteIn'
@@ -6483,7 +6483,7 @@ beginState: s32'djt_KaihouFinish_Camera'
     cameraTargetSelf: 1
     checkScreenCollision: 0
     setLinkObjectDestroyOnStateChange: 3
-    Unknown289: 600
+    setMaxActionTime: 600
   endUpon: 
   sprite: s32'null', 2147483647
   upon: (FRAME_STEP)

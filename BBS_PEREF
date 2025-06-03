@@ -8,7 +8,7 @@ beginState: s32'PER_205_SlashEff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   sprite: s32'null', 30
   addPositionX: 449910
@@ -16,7 +16,7 @@ beginState: s32'PER_205_SlashEff'
   Unknown1727: 84735
   setObjectWidth: 1150
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 0
   setAngleY: 358000
   setAngle: 354000
@@ -29,7 +29,7 @@ beginState: s32'PER_208_AuraEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 90
+    setMaxActionTime: 90
   endUpon: 
   sprite: s32'null', 3
   setPositionX: -43956
@@ -54,7 +54,7 @@ beginState: s32'PER_208_StrikeEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 90
+    setMaxActionTime: 90
   endUpon: 
   sprite: s32'null', 3
   deactivateObjectByName: s32'PER_208_AuraEff'
@@ -69,7 +69,7 @@ beginState: s32'PER_209_HitEff01'
   upon: (IMMEDIATE)
     linkObjectPosition: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 20
   linkParticle: s32'per_209_hit01'
@@ -102,7 +102,7 @@ beginState: s32'PER_209_StrikeEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   sprite: s32'null', 30
   setPositionX: -40959
@@ -145,7 +145,7 @@ beginState: s32'per_231_thrust'
   setAngle: 324000
   setObjectWidth: 900
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
 endState: 
 
 beginState: s32'per_233_Eff'
@@ -187,7 +187,7 @@ beginState: s32'per_250_thrust'
   setAngle: 208000
   setObjectWidth: 1250
   setObjectHeight: 1300
-  Unknown180: 1300
+  setObjectDepth: 1300
 endState: 
 
 beginState: s32'per_253_Eff'
@@ -197,7 +197,7 @@ beginState: s32'per_253_Eff'
     linkObjectPosition: 3
     stopLinkObject: 2
     flipDirection: 
-    Unknown289: 180
+    setMaxActionTime: 180
     gotoLabelUpon: 24, s32'End'
   endUpon: 
   sprite: s32'null', 4
@@ -248,7 +248,7 @@ beginState: s32'per_301_Eff'
   setDepth: 30000
   setAngle: 23000
   setObjectSize: 1200
-  Unknown202: 4000, 0
+  setSpeedByAngle: 4000, 0
 endState: 
 
 beginState: s32'per_301_EnshutuCamera'
@@ -533,7 +533,7 @@ beginState: s32'per_400_Eff'
     flipDirection: 
     setObjectSize: 700
     addPositionX: -15000
-    Unknown289: 180
+    setMaxActionTime: 180
     linkParticle: s32'per_400_loop'
     createObject: s32'per_400_Eff_Ring', (PLAYER)
     gotoLabelUpon: 23, s32'End'
@@ -559,8 +559,8 @@ beginState: s32'per_400_Eff_D'
     flipDirection: 
     setObjectSize: 700
     addPositionX: -15000
-    Unknown264: 10
-    Unknown289: 180
+    setZOffset: 10
+    setMaxActionTime: 180
     upon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
@@ -706,7 +706,7 @@ beginState: s32'SpecialShot'
   deactivateObjectById: (SELF)
   createObject: s32'per_401_end', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 900
+    setObjectSize: 900
   endRunOnObject: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
     Unknown1921: 0, 5
@@ -726,7 +726,7 @@ beginState: s32'SpecialShot_nokosi'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     setObjectSize: 900
     gotoLabelUpon: 23, s32'loop2'
     gotoLabelUpon: 24, s32'loop3'
@@ -758,7 +758,7 @@ beginState: s32'per_401_gunframe'
     addPositionX: 229970
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 300
+    setMaxActionTime: 300
     linkParticle: s32'per_401_gunframe'
   endUpon: 
   sprite: s32'SpecialShot', 5
@@ -952,7 +952,7 @@ beginState: s32'SpecialShot_TM'
       ifOperation: (IS_EQUAL), Mem(ActionTime), Val(10)
         createObject: s32'SpecialShotTm_nokosi', (PLAYER)
         runOnObject: (PREVIOUS)
-        setObjectSize: 1200
+          setObjectSize: 1200
         endRunOnObject: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
           sendSignalToAction: s32'SpecialShotTm_nokosi', 23
@@ -1015,7 +1015,7 @@ beginState: s32'SpecialShot_TM'
   deactivateObjectById: (SELF)
   createObject: s32'per_401Tm_end', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 1200
+    setObjectSize: 1200
   endRunOnObject: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
     Unknown1921: 0, 5
@@ -1042,7 +1042,7 @@ beginState: s32'SpecialShotTm_nokosi'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     gotoLabelUpon: 23, s32'loop2'
     gotoLabelUpon: 24, s32'loop3'
   endUpon: 
@@ -1256,12 +1256,12 @@ beginState: s32'per_401_SpecialShot_D_TM'
     addPositionX: -410000
     if: Mem(Dir)
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(PosX), Val(-1210000)
-        Unknown93: -1210000
+        setRawPositionX: -1210000
       endIf: 
     endIf: 
     else: 
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(PosX), Val(1210000)
-        Unknown93: 1210000
+        setRawPositionX: 1210000
       endIf: 
     endElse: 
   endUpon: 
@@ -1279,12 +1279,12 @@ beginState: s32'per_401_SpecialShot_D_TM'
   sprite: s32'null', 1
   if: Mem(Dir)
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(PosX), Val(-890000)
-      Unknown93: -890000
+      setRawPositionX: -890000
     endIf: 
   endIf: 
   else: 
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(PosX), Val(890000)
-      Unknown93: 890000
+      setRawPositionX: 890000
     endIf: 
   endElse: 
   clearUpon: 35
@@ -1313,6 +1313,7 @@ beginState: s32'per_401_SpecialShot_D_TM'
   clearUpon: (FRAME_STEP)
   clearUpon: 45
   clearUpon: 23
+  clearUpon: 35
   recoveryState: 
   sendSignalToAction: s32'per_401_FrameEff_DamageField', 32
   ifNot: Mem(ActReg0)
@@ -1340,23 +1341,23 @@ beginState: s32'per_401_FrameEffMatome'
   sprite: s32'null', 6
   createObject: s32'per_401_FrameEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -150000
-  setObjectSize: 750
+    addPositionX: -150000
+    setObjectSize: 750
   endRunOnObject: 
   createObject: s32'per_401_FrameEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 800
-  endRunOnObject: 
-  sprite: s32'null', 3
-  createObject: s32'per_401_FrameEff', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: 150000
+    setObjectSize: 800
   endRunOnObject: 
   sprite: s32'null', 3
   createObject: s32'per_401_FrameEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 300000
-  setObjectSize: 800
+    addPositionX: 150000
+  endRunOnObject: 
+  sprite: s32'null', 3
+  createObject: s32'per_401_FrameEff', (PLAYER)
+  runOnObject: (PREVIOUS)
+    addPositionX: 300000
+    setObjectSize: 800
   endRunOnObject: 
   sprite: s32'null', 20
   sendSignalToAction: s32'per_401_FrameEff', 23
@@ -1845,7 +1846,7 @@ beginState: s32'per_407_EXSlash'
   setDepth: 78980
   setObjectWidth: 2000
   setObjectHeight: 1600
-  Unknown180: 1600
+  setObjectDepth: 1600
   setAngleX: 350800
   setAngleY: 43600
   setAngle: 800
@@ -1855,7 +1856,7 @@ beginState: s32'per_407_EXSlash'
   setDepth: 149270
   setObjectWidth: 1500
   setObjectHeight: 2000
-  Unknown180: 1600
+  setObjectDepth: 1600
   setAngleX: 350800
   setAngleY: 45200
   setAngle: 8800
@@ -1889,7 +1890,7 @@ beginState: s32'per_407_EXSlash_TM'
   setDepth: 78980
   setObjectWidth: 2000
   setObjectHeight: 1600
-  Unknown180: 1600
+  setObjectDepth: 1600
   setAngleX: 350800
   setAngleY: 43600
   setAngle: 800
@@ -1899,7 +1900,7 @@ beginState: s32'per_407_EXSlash_TM'
   setDepth: 149270
   setObjectWidth: 1500
   setObjectHeight: 2000
-  Unknown180: 1600
+  setObjectDepth: 1600
   setAngleX: 350800
   setAngleY: 45200
   setAngle: 8800
@@ -2009,7 +2010,7 @@ beginState: s32'per_403_SparkEff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 300
+    setMaxActionTime: 300
     addPositionX: -334993
     Unknown1727: -60000
     setObjectSize: 800
@@ -2038,7 +2039,7 @@ beginState: s32'PER_404_SparkEff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 300
+    setMaxActionTime: 300
     setObjectSize: 800
     gotoLabelUpon: 23, s32'loop'
     gotoLabelUpon: 24, s32'End'
@@ -2047,14 +2048,14 @@ beginState: s32'PER_404_SparkEff'
   setPositionX: -27105
   createObject: s32'PER_404_SparkEff_Nokosi', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -70000
+    addPositionX: -70000
   endRunOnObject: 
   beginLabel: s32'loop'
   sprite: s32'null', 40
   addPositionX: 266513
   createObject: s32'PER_404_SparkEff_Nokosi', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -70000
+    addPositionX: -70000
   endRunOnObject: 
   beginLabel: s32'End'
   sprite: s32'null', 40
@@ -2075,7 +2076,7 @@ beginState: s32'PER_404_ShockEff'
     linkObjectPosition: 2
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 180
+    setMaxActionTime: 180
     gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 90
@@ -2105,7 +2106,7 @@ beginState: s32'PER_404tm_ShockEff'
     linkObjectPosition: 2
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 180
+    setMaxActionTime: 180
     gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 90
@@ -2430,17 +2431,17 @@ beginState: s32'per_430Eff'
   sprite: s32'null', 6
   createObject: s32'per_430_ChargeEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 90000
+    setAngle: 90000
   endRunOnObject: 
   sprite: s32'null', 6
   createObject: s32'per_430_ChargeEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 270000
+    setAngle: 270000
   endRunOnObject: 
   sprite: s32'null', 6
   createObject: s32'per_430_ChargeEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 180000
+    setAngle: 180000
   endRunOnObject: 
   sprite: s32'null', 6
   createObject: s32'per_430_ChargeEff', (PLAYER)
@@ -2507,8 +2508,8 @@ beginState: s32'per_430_ChargeEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown194: -200, -400
-    Unknown169: 40000, -40000
+    randomAddObjectSize: -200, -400
+    randomAddAngle: 40000, -40000
     addPositionX: 100000
     addPositionY: 220000
     Unknown1727: 120000
@@ -2719,7 +2720,7 @@ beginState: s32'per_430_CircleEff'
   sprite: s32'null', 3
   linkParticle: s32'per_430_Circle04'
   createParticle: s32'per_430_circle_nokosi', (PLAYER)
-  Unknown192: 10
+  addObjectSizeScaleSpeed: 10
   physicsYImpulse: -2000
   sprite: s32'null', 3
   linkParticle: s32'per_430_Circle05'
@@ -3027,7 +3028,7 @@ beginState: s32'per_440_Eff'
     linkObjectPosition: 3
     stopLinkObject: 2
     gotoLabelUpon: 23, s32'HoldOff'
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 3
   linkParticle: s32'per_440_slash01'
@@ -3059,9 +3060,9 @@ beginState: s32'per_440_Eff'
   sprite: s32'null', 3
   linkParticle: s32'per_440_slash05'
   runOnObject: (PREVIOUS)
-  setPositionY: 270000
-  setDepth: 0
-  addObjectSize: 10
+    setPositionY: 270000
+    setDepth: 0
+    addObjectSize: 10
   endRunOnObject: 
   sprite: s32'null', 3
   linkParticle: s32'per_440_slash06'
@@ -3081,12 +3082,12 @@ beginState: s32'per_440_RingFire'
     linkObjectPosition: 3
     stopLinkObject: 2
     linkParticle: s32'per_440_ring_loop'
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 2147483647
   setObjectWidth: 1050
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 346000
   setAngleY: 24000
   setAngle: 21000
@@ -3107,7 +3108,7 @@ beginState: s32'per_440_Shot'
     pushbackOnBlockX: 30
     nextHitActionName: s32'Kaihou'
     hitEffectIce: 1
-    Unknown58: 1
+    worldOutToEliminate: 1
     initializeDestroy: 
     numberOfHits: 1
     destroyOnDamageCollision: 1
@@ -3136,7 +3137,7 @@ beginState: s32'per_440_Shot'
       Unknown2212: 0
       Unknown2213: 0
     endUpon: 
-    Unknown289: 300
+    setMaxActionTime: 300
     linkParticle: s32'per_440_loop'
     physicsXImpulse: 40000
     setObjectSize: 800
@@ -3347,7 +3348,7 @@ beginState: s32'per_441_CS_Tornado'
     setAngleX: 0
     setAngleY: 88000
     setAngle: 0
-    Unknown289: 252
+    setMaxActionTime: 252
     setObjectSize: 1500
     upon: 23
       linkParticle: s32'per_441_tornado02'
@@ -3366,7 +3367,7 @@ endState:
 beginState: s32'per_441_CS_Bloom'
   upon: (IMMEDIATE)
     callSubroutine: s32'per_441_CS_Func'
-    Unknown289: 256
+    setMaxActionTime: 256
     setObjectSize: 2000
     linkParticle: s32'per_441_bloom01'
   endUpon: 
@@ -3448,7 +3449,7 @@ beginState: s32'per_441_CS_FireExplosion'
     setAngleX: 332800
     setAngleY: 257200
     setAngle: 18800
-    Unknown289: 200
+    setMaxActionTime: 200
     linkParticle: s32'per_441_FireExplosion01'
   endUpon: 
   beginLabel: s32'Loop'
@@ -3505,7 +3506,7 @@ beginState: s32'per_441_CS_ryuhai01'
     callSubroutine: s32'per_441_CS_Func'
     setObjectWidth: 4000
     setObjectHeight: 1500
-    Unknown180: 1500
+    setObjectDepth: 1500
     setPositionX: -1412377
     setPositionY: -129104
     setDepth: -1949002
@@ -3903,7 +3904,7 @@ beginState: s32'per_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -3938,7 +3939,7 @@ beginState: s32'per_RoundWin_Camera2'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -4178,7 +4179,7 @@ beginState: s32'per_BlazeSord'
   linkParticle: s32'per_700_blade01_loop'
   setObjectWidth: 2000
   setObjectHeight: 2000
-  Unknown180: 2000
+  setObjectDepth: 2000
   setAngleX: 351600
   setAngleY: 345200
   setAngle: 352400
@@ -4267,7 +4268,7 @@ beginState: s32'per_BlazeSord'
   setDepth: 63622
   setObjectWidth: 2000
   setObjectHeight: 2000
-  Unknown180: 2000
+  setObjectDepth: 2000
   setAngleX: 4000
   setAngleY: 0
   setAngle: 330800
@@ -4364,7 +4365,7 @@ beginState: s32'per_BlazeSord2'
   setDepth: 67043
   setObjectWidth: 1500
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
   setAngleX: 4000
   setAngleY: 0
   setAngle: 325600
@@ -4403,7 +4404,7 @@ beginState: s32'per_Glare'
   setDepth: 112869
   setObjectWidth: 100
   setObjectHeight: 100
-  Unknown180: 100
+  setObjectDepth: 100
 endState: 
 
 beginState: s32'per800_Slash'
@@ -4461,7 +4462,7 @@ beginState: s32'per800_SordRay'
   setDepth: 50984
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleX: 359600
   setAngleY: 353600
   setAngle: 270400

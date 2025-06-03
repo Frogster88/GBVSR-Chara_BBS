@@ -4,14 +4,14 @@ endState:
 
 beginState: s32'Trial_genji'
   upon: (FRAME_STEP)
-    Unknown2347: 1601008238, 0x67656E6A690000000000000000000000000000000000000000000000
+    Unknown2347: s32'nrm_genji'
   endUpon: 
   sprite: s32'null', 120
 endState: 
 
 beginState: s32'Trial_kagura'
   upon: (FRAME_STEP)
-    Unknown2347: 1601008238, 0x6B616775726100000000000000000000000000000000000000000000
+    Unknown2347: s32'nrm_kagura'
   endUpon: 
   sprite: s32'null', 120
 endState: 
@@ -26,7 +26,7 @@ beginState: s32'OugiCamera'
     cameraTargetSelf: 1
     upon: (FRAME_STEP)
       moveToObject: (PLAYER)
-      Unknown2329: 0x01000000030000007B000000160000007B000000
+      Unknown2329: 1, 3, 123, 22, 123
       storeValue: Mem(SpeedX), Mem(Tmp)
       velocityXPercent: 50
     endUpon: 
@@ -62,8 +62,8 @@ beginState: s32'nrm_206_WeaponChange01'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 95000, 230000
@@ -79,8 +79,8 @@ beginState: s32'nrm_206_WeaponChange02'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), -50000, 185000
@@ -95,8 +95,8 @@ beginState: s32'nrm_207_WeaponChange01'
     linkObjectPosition: 2
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 80000, 270000
@@ -111,8 +111,8 @@ beginState: s32'nrm_207_WeaponChange02'
     linkObjectPosition: 2
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 50000, 215000
@@ -128,8 +128,8 @@ beginState: s32'nrm_222_WeaponChange01'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), -60000, 100000
@@ -145,8 +145,8 @@ beginState: s32'nrm_222_WeaponChange02'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 100000, 80000
@@ -162,8 +162,8 @@ beginState: s32'nrm_232_WeaponChange01'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 0, 130000
@@ -179,8 +179,8 @@ beginState: s32'nrm_232_WeaponChange02'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 0, 200000
@@ -213,7 +213,7 @@ beginState: s32'nrm_250_Slash01'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     callSubroutine: s32'Genji_Color'
   endUpon: 
   sprite: s32'null', 30
@@ -225,7 +225,7 @@ beginState: s32'nrm_250_Slash01'
   setAngle: 330000
   setObjectWidth: 800
   setObjectHeight: 1100
-  Unknown180: 1100
+  setObjectDepth: 1100
 endState: 
 
 beginState: s32'nrm_252_WeaponChange01'
@@ -235,8 +235,8 @@ beginState: s32'nrm_252_WeaponChange01'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), -100000, 350000
@@ -252,8 +252,8 @@ beginState: s32'nrm_252_WeaponChange02'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   exPointFReset: (PLAYER), 0, 280000
   createParticle: s32'nrm_WeaponChange_End', (EX_POINT_F)
@@ -290,7 +290,7 @@ beginState: s32'nrm_210_Slash01'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     callSubroutine: s32'Kagura_Color'
   endUpon: 
   sprite: s32'null', 30
@@ -302,7 +302,7 @@ beginState: s32'nrm_210_Slash01'
   setAngle: 348000
   setObjectWidth: 800
   setObjectHeight: 600
-  Unknown180: 600
+  setObjectDepth: 600
 endState: 
 
 beginState: s32'nrm_216_WeaponChange01'
@@ -312,8 +312,8 @@ beginState: s32'nrm_216_WeaponChange01'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 150000, 320000
@@ -329,8 +329,8 @@ beginState: s32'nrm_216_WeaponChange02'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), -160000, 72000
@@ -362,8 +362,8 @@ beginState: s32'nrm_217_WeaponChange01'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 60000, 270000
@@ -379,8 +379,8 @@ beginState: s32'nrm_217_WeaponChange02'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -15
+    setMaxActionTime: 120
+    setZOffset: -15
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 150000, 80000
@@ -396,8 +396,8 @@ beginState: s32'nrm_225_WeaponChange01'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 50000, 300000
@@ -413,8 +413,8 @@ beginState: s32'nrm_225_WeaponChange02'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 160000, 180000
@@ -446,8 +446,8 @@ beginState: s32'nrm_242_WeaponChange01'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), -130000, 80000
@@ -463,8 +463,8 @@ beginState: s32'nrm_242_WeaponChange02'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 130000, 80000
@@ -510,7 +510,7 @@ beginState: s32'nrm_260_Slash01'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     callSubroutine: s32'Kagura_Color'
   endUpon: 
   sprite: s32'null', 30
@@ -522,7 +522,7 @@ beginState: s32'nrm_260_Slash01'
   setAngle: 348000
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 820
+  setObjectDepth: 820
 endState: 
 
 beginState: s32'nrm_262_WeaponChange01'
@@ -532,8 +532,8 @@ beginState: s32'nrm_262_WeaponChange01'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -15
+    setMaxActionTime: 120
+    setZOffset: -15
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 0, 230000
@@ -549,8 +549,8 @@ beginState: s32'nrm_262_WeaponChange02'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 120
-    Unknown264: -10
+    setMaxActionTime: 120
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 1
   exPointFReset: (PLAYER), 150000, 110000
@@ -581,7 +581,7 @@ beginState: s32'nrm_300_Burst'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    Unknown289: 50
+    setMaxActionTime: 50
     addPositionX: 212008
     addPositionY: 211046
     Unknown1727: 49272
@@ -627,7 +627,7 @@ beginState: s32'nrm_303_Burst'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    Unknown289: 50
+    setMaxActionTime: 50
     addPositionX: 137083
     addPositionY: 201395
     Unknown1727: 180968
@@ -1022,7 +1022,7 @@ beginState: s32'nrm_400_ray_Eff'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
-    Unknown289: 15
+    setMaxActionTime: 15
   endUpon: 
   sprite: s32'null', 15
   linkParticle: s32'nrm_400_ray'
@@ -1039,7 +1039,7 @@ beginState: s32'nrm_400_slash_A1_Eff'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 0
     linkObjectPosition: 3
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 3
   sprite: s32'null', 4
@@ -1048,7 +1048,7 @@ beginState: s32'nrm_400_slash_A1_Eff'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   setObjectWidth: 400
   setObjectHeight: 400
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: 213930
   setPositionY: 203890
   setDepth: 98029
@@ -1063,9 +1063,9 @@ beginState: s32'nrm_400_slash_A1_Eff'
   setPositionY: 203407
   setDepth: 85998
   sprite: s32'null', 1
-  Unknown180: 800
+  setObjectDepth: 800
   sprite: s32'null', 8
-  Unknown180: 600
+  setObjectDepth: 600
 endState: 
 
 beginState: s32'nrm_400_slash_B1_Eff'
@@ -1074,7 +1074,7 @@ beginState: s32'nrm_400_slash_B1_Eff'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 0
     linkObjectPosition: 3
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 3
   sprite: s32'null', 4
@@ -1083,7 +1083,7 @@ beginState: s32'nrm_400_slash_B1_Eff'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   setObjectWidth: 400
   setObjectHeight: 400
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: 213930
   setPositionY: 203890
   setDepth: 98029
@@ -1098,9 +1098,9 @@ beginState: s32'nrm_400_slash_B1_Eff'
   setPositionY: 203407
   setDepth: 85998
   sprite: s32'null', 1
-  Unknown180: 800
+  setObjectDepth: 800
   sprite: s32'null', 8
-  Unknown180: 600
+  setObjectDepth: 600
 endState: 
 
 beginState: s32'nrm_400_slash_D_Eff'
@@ -1110,7 +1110,7 @@ beginState: s32'nrm_400_slash_D_Eff'
     stopLinkObject: 0
     linkObjectPosition: 3
     Unknown2327: 1
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 3
   sprite: s32'null', 4
@@ -1119,7 +1119,7 @@ beginState: s32'nrm_400_slash_D_Eff'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   setObjectWidth: 400
   setObjectHeight: 400
-  Unknown180: 1200
+  setObjectDepth: 1200
   setPositionX: 213930
   setPositionY: 203890
   setDepth: 98029
@@ -1134,9 +1134,9 @@ beginState: s32'nrm_400_slash_D_Eff'
   setPositionY: 203407
   setDepth: 85998
   sprite: s32'null', 1
-  Unknown180: 800
+  setObjectDepth: 800
   sprite: s32'null', 8
-  Unknown180: 600
+  setObjectDepth: 600
 endState: 
 
 beginState: s32'nrm_400_slash_A2_Eff'
@@ -1145,14 +1145,14 @@ beginState: s32'nrm_400_slash_A2_Eff'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 3
     linkObjectPosition: 3
-    Unknown289: 15
+    setMaxActionTime: 15
   endUpon: 
   sprite: s32'null', 4
   linkParticle: s32'nrm_400_slash_A1'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   setObjectWidth: 450
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setPositionX: 157053
   setPositionY: 285808
   setDepth: 101645
@@ -1177,14 +1177,14 @@ beginState: s32'nrm_400_slash_B2_Eff'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 3
     linkObjectPosition: 3
-    Unknown289: 15
+    setMaxActionTime: 15
   endUpon: 
   sprite: s32'null', 4
   linkParticle: s32'nrm_400_slash_A1'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   setObjectWidth: 500
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setPositionX: 177033
   setPositionY: 297796
   setDepth: 102161
@@ -1199,7 +1199,7 @@ beginState: s32'nrm_400_slash_B2_Eff'
   createObject: s32'nrm_400_slashB_nokosi', (PLAYER)
   setObjectWidth: 400
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setPositionX: 43981
   setPositionY: 170000
   setDepth: 85998
@@ -1212,7 +1212,7 @@ beginState: s32'nrm_400_slashA_nokosi'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
     linkObjectPosition: 2
-    Unknown289: 40
+    setMaxActionTime: 40
   endUpon: 
   sprite: s32'null', 40
   setLinkObjectDestroyOnDamage: 0
@@ -1233,7 +1233,7 @@ beginState: s32'nrm_400_slashB_nokosi'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
     linkObjectPosition: 2
-    Unknown289: 40
+    setMaxActionTime: 40
     setPositionX: -27972
     setPositionY: 0
     setDepth: 0
@@ -1261,7 +1261,7 @@ beginState: s32'nrm_400_slashC_nokosi'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
     linkObjectPosition: 2
-    Unknown289: 40
+    setMaxActionTime: 40
     setPositionX: -24975
     setPositionY: -2997
     setDepth: -129
@@ -1283,7 +1283,7 @@ beginState: s32'nrm_400_slashD_nokosi'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
     linkObjectPosition: 2
-    Unknown289: 40
+    setMaxActionTime: 40
     setPositionX: -24975
     setPositionY: -2997
     setDepth: -129
@@ -1318,7 +1318,7 @@ beginState: s32'nrm_400_Slash1'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
     linkObjectPosition: 2
-    Unknown289: 3
+    setMaxActionTime: 3
     flipDirection: 
     callSubroutine: s32'Genji_Color'
   endUpon: 
@@ -1333,7 +1333,7 @@ beginState: s32'nrm_400_Slash2'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
     linkObjectPosition: 2
-    Unknown289: 2
+    setMaxActionTime: 2
     flipDirection: 
     callSubroutine: s32'Genji_Color'
   endUpon: 
@@ -1357,53 +1357,53 @@ beginState: s32'nrm_400_EXSlash_Matome'
   cameraShake: s32'ShakeTate', 2500, 0, 10, 0
   createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
   runOnObject: (PREVIOUS)
-  setAngleX: 0
-  setAngleY: 344800
-  setAngle: 334400
-  addPositionY: 52947
+    setAngleX: 0
+    setAngleY: 344800
+    setAngle: 334400
+    addPositionY: 52947
   endRunOnObject: 
   privateSE: s32'nrm_03_2'
   sprite: s32'null', 2
   createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
   runOnObject: (PREVIOUS)
-  setAngleX: 0
-  setAngleY: 350400
-  setAngle: 199200
-  addPositionY: -75924
+    setAngleX: 0
+    setAngleY: 350400
+    setAngle: 199200
+    addPositionY: -75924
   endRunOnObject: 
   sprite: s32'null', 2
   createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
   runOnObject: (PREVIOUS)
-  setAngleX: 24000
-  setAngleY: 312800
-  setAngle: 228000
+    setAngleX: 24000
+    setAngleY: 312800
+    setAngle: 228000
   endRunOnObject: 
   sprite: s32'null', 2
   createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
   runOnObject: (PREVIOUS)
-  setAngleX: 0
-  setAngleY: 352000
-  setAngle: 351200
+    setAngleX: 0
+    setAngleY: 352000
+    setAngle: 351200
   endRunOnObject: 
   sprite: s32'null', 2
   createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
   runOnObject: (PREVIOUS)
-  setAngleX: 344000
-  setAngleY: 60800
-  setAngle: 319200
-  addPositionX: -66933
-  addPositionY: 31968
+    setAngleX: 344000
+    setAngleY: 60800
+    setAngle: 319200
+    addPositionX: -66933
+    addPositionY: 31968
   endRunOnObject: 
   sprite: s32'null', 60
   ignoreFinishStop: 0
   createObject: s32'nrm_400_++Slash', (ENEMY_CENTER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 800
-  addPositionX: 25015
-  addPositionY: 120978
-  setAngleX: 344000
-  setAngleY: 335600
-  setAngle: 196800
+    setObjectSize: 800
+    addPositionX: 25015
+    addPositionY: 120978
+    setAngleX: 344000
+    setAngleY: 335600
+    setAngle: 196800
   endRunOnObject: 
 endState: 
 
@@ -1455,7 +1455,7 @@ beginState: s32'nrm_401_Thrust'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     callSubroutine: s32'Genji_Color'
   endUpon: 
   sprite: s32'null', 30
@@ -1467,7 +1467,7 @@ beginState: s32'nrm_401_Thrust'
   setAngle: 52000
   setObjectWidth: 600
   setObjectHeight: 750
-  Unknown180: 750
+  setObjectDepth: 750
 endState: 
 
 beginState: s32'nrm_401_Slash'
@@ -1580,7 +1580,7 @@ beginState: s32'nrm_403_Slash_nokosi'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 3
-    Unknown289: 100
+    setMaxActionTime: 100
     setPositionX: -75896
     setPositionY: 98901
     setDepth: 4257
@@ -1598,7 +1598,7 @@ beginState: s32'nrm_404_Slash'
     linkObjectPosition: 2
     stopLinkObject: 3
     flipDirection: 
-    Unknown289: 100
+    setMaxActionTime: 100
     addPositionY: -20000
   endUpon: 
   sprite: s32'null', 2
@@ -1622,7 +1622,7 @@ beginState: s32'nrm_404_Slash_nokosi'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 3
-    Unknown289: 40
+    setMaxActionTime: 40
   endUpon: 
   sprite: s32'null', 40
   linkParticle: s32'nrm_404_slash_nokosi'
@@ -1929,7 +1929,7 @@ beginState: s32'nrm_430_Aura'
   linkParticle: s32'nrm_430_AuraLoop'
   beginLabel: s32'End'
   sprite: s32'null', 60
-  Unknown191: 15
+  setObjectSizeScaleSpeed: 15
   linkParticle: s32'nrm_430_AuraEnd'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -2302,7 +2302,7 @@ beginState: s32'nrm_440_DashSmoke'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 10
@@ -2316,7 +2316,7 @@ beginState: s32'nrm_440_HandSpeed'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
-    Unknown289: 120
+    setMaxActionTime: 120
     setObjectSize: 700
     setAngleY: 174000
     setAngle: 400
@@ -3021,7 +3021,7 @@ beginState: s32'nrm_441_HitSlash2'
   linkParticle: s32'nrm_441_HitSlash02'
   setObjectWidth: 300
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setPositionX: 1811618
   setPositionY: -2077
   setDepth: 388910
@@ -3254,7 +3254,7 @@ beginState: s32'nrm_441_FinalHit'
   addPositionY: 244512
   Unknown1727: 104549
   sprite: s32'null', 200
-  Unknown191: 15
+  setObjectSizeScaleSpeed: 15
 endState: 
 
 beginState: s32'nrm_441_FBSpawn'
@@ -3273,37 +3273,37 @@ beginState: s32'nrm_441_FBSpawn'
   sprite: s32'null', 4
   createObject: s32'nrm_441_FinalButterFly', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 450000
+    setAngle: 450000
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'nrm_441_FinalButterFly', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 900000
+    setAngle: 900000
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'nrm_441_FinalButterFly', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 1350000
+    setAngle: 1350000
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'nrm_441_FinalButterFly', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 1800000
+    setAngle: 1800000
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'nrm_441_FinalButterFly', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 2250000
+    setAngle: 2250000
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'nrm_441_FinalButterFly', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 2700000
+    setAngle: 2700000
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'nrm_441_FinalButterFly', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 3150000
+    setAngle: 3150000
   endRunOnObject: 
   gotoLabel: s32'Loop'
 endState: 
@@ -3699,7 +3699,7 @@ beginState: s32'nrm_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184

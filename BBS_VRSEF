@@ -14,7 +14,7 @@ beginState: s32'vrs_001_TwinkleEff'
   linkParticle: s32'vrs_001_heartRay'
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setPositionX: 38961
   setPositionY: 376668
   setDepth: 85496
@@ -200,7 +200,7 @@ beginState: s32'vrs_209_AuraStrikeEff'
   setDepth: 53026
   setObjectWidth: 1500
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
   setAngleX: 118800
   setAngleY: 331200
   setAngle: 188000
@@ -216,7 +216,7 @@ beginState: s32'vrs_209_AuraStrikeEff'
   setAngle: 338800
   setObjectWidth: 1800
   setObjectHeight: 1600
-  Unknown180: 1600
+  setObjectDepth: 1600
   beginLabel: s32'SIGAL4'
   sprite: s32'null', 15
   clearUpon: 27
@@ -262,7 +262,7 @@ beginState: s32'vrs_209_AuraStrikeEff2'
   linkParticle: s32'vrs_209_Strike'
   setObjectWidth: 1700
   setObjectHeight: 1700
-  Unknown180: 1700
+  setObjectDepth: 1700
   setAngleX: 53600
   setAngleY: 344800
   setAngle: 359600
@@ -397,13 +397,13 @@ beginState: s32'vrs_233_AuraStrikeEff'
   setAngle: 346800
   setObjectWidth: 1700
   setObjectHeight: 1300
-  Unknown180: 1300
+  setObjectDepth: 1300
   beginLabel: s32'SIGAL5'
   sprite: s32'null', 10
   clearUpon: 28
   setObjectWidth: 1650
   setObjectHeight: 1650
-  Unknown180: 1750
+  setObjectDepth: 1750
   setAngleX: 336800
   setAngleY: 278400
   setAngle: 212800
@@ -482,7 +482,7 @@ beginState: s32'vrs_250_HandAuraEff'
   linkParticle: s32'vrs_250_HandAura'
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: 42989
   setPositionY: 134294
   setDepth: 112003
@@ -515,7 +515,7 @@ beginState: s32'vrs_253_AuraDust'
   setAngle: 58800
   setObjectWidth: 3000
   setObjectHeight: 3000
-  Unknown180: 3000
+  setObjectDepth: 3000
   beginLabel: s32'SIGAL1'
   sprite: s32'null', 5
   clearUpon: 24
@@ -539,7 +539,7 @@ beginState: s32'vrs_253_AuraDust'
   setAngle: 74400
   setObjectWidth: 4000
   setObjectHeight: 3000
-  Unknown180: 3000
+  setObjectDepth: 3000
 endState: 
 
 beginState: s32'vrs_253_AuraDust2'
@@ -560,7 +560,7 @@ beginState: s32'vrs_253_AuraDust2'
   setDepth: -157772
   setObjectWidth: 3000
   setObjectHeight: 3000
-  Unknown180: 3000
+  setObjectDepth: 3000
   setAngleX: 22000
   setAngleY: 65600
   setAngle: 52800
@@ -575,7 +575,7 @@ beginState: s32'vrs_253_AuraDust2'
   setAngle: 38000
   setObjectWidth: 3000
   setObjectHeight: 3000
-  Unknown180: 3000
+  setObjectDepth: 3000
   beginLabel: s32'SIGAL2'
   sprite: s32'null', 5
   clearUpon: 25
@@ -602,7 +602,7 @@ beginState: s32'vrs_253_AuraDust3'
   linkParticle: s32'vrs_253_AuraDust2'
   setObjectWidth: 3000
   setObjectHeight: 2000
-  Unknown180: 2000
+  setObjectDepth: 2000
   setAngleX: 14000
   setAngleY: 87600
   setAngle: 18400
@@ -626,7 +626,7 @@ beginState: s32'vrs_253_AuraDust4'
   setDepth: -72571
   setObjectWidth: 3000
   setObjectHeight: 3000
-  Unknown180: 2500
+  setObjectDepth: 2500
   setAngleX: 2800
   setAngleY: 47200
   setAngle: 28400
@@ -644,7 +644,7 @@ beginState: s32'vrs_253_AuraDust5'
   linkParticle: s32'vrs_253_AuraDust2'
   setObjectWidth: 2000
   setObjectHeight: 2000
-  Unknown180: 2000
+  setObjectDepth: 2000
   setPositionX: -178953
   setPositionY: 235673
   setDepth: 82218
@@ -1184,7 +1184,7 @@ beginState: s32'vrs_400_SpecialShot'
   upon: (IMMEDIATE)
     linkObjectZ: 3
     callSubroutine: s32'cmnSpecialShot_AtkInit'
-    Unknown72: s32'SpecialShot'
+    postSubroutineBegin: s32'SpecialShot'
     damage: 1200
     groundHitEffect: (AIR_LAUNCH)
     airHitEffect: (AIR_LAUNCH)
@@ -1201,7 +1201,7 @@ beginState: s32'vrs_400_SpecialShot'
     damageEffect: 2, s32'VRS_SPHitEff_LongG'
     worldCollision: 1
     setObjectSize: 800
-    Unknown2329: 0x0300000017000000640000001600000064000000
+    Unknown2329: 3, 23, 100, 22, 100
     storeValue: Mem(ActReg2), Mem(Tmp)
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg2), Val(200000)
@@ -1222,12 +1222,7 @@ beginState: s32'vrs_400_SpecialShot'
         addPositionX: 750000
       endIf: 
       else: 
-        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(1100000)
-          addPositionX: 1100000
-        endIf: 
-        else: 
-          moveToObject: (ENEMY)
-        endElse: 
+        moveToObject: (ENEMY)
       endElse: 
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
@@ -1239,7 +1234,12 @@ beginState: s32'vrs_400_SpecialShot'
         addPositionX: 200000
       endIf: 
       else: 
-        moveToObject: (ENEMY)
+        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(700000)
+          addPositionX: 700000
+        endIf: 
+        else: 
+          moveToObject: (ENEMY)
+        endElse: 
       endElse: 
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
@@ -1248,7 +1248,7 @@ beginState: s32'vrs_400_SpecialShot'
       hitAirPushbackX: 4000
       wallPushback: 0, 1000
       storeValue: Mem(PlayerVal8), Val(1)
-      Unknown264: 6
+      setZOffset: 6
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg2), Val(200000)
         addPositionX: 200000
       endIf: 
@@ -1635,7 +1635,7 @@ beginState: s32'vrs_401_ThunderAEff'
     addPositionY: 130000
     setObjectWidth: 800
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
     linkObjectAngle: 2
     setAngle: -40000
   endUpon: 
@@ -1667,7 +1667,7 @@ beginState: s32'vrs_401_ThunderCEff'
   setDepth: -87643
   setObjectWidth: 800
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
   privateSE: s32'vrs_09'
   sprite: s32'null', 57
   addPositionX: -340579
@@ -1677,7 +1677,7 @@ beginState: s32'vrs_401_ThunderCEff'
   setAngle: 39200
   setObjectWidth: 900
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
   stopLinkObject: 0
@@ -1837,7 +1837,7 @@ endState:
 beginState: s32'vrs_403_ThunderEff'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnSpecialShot_AtkInit'
-    Unknown72: s32'SpecialShot'
+    postSubroutineBegin: s32'SpecialShot'
     damage: 400
     attackComboForceHitEx: 200
     tensionGainOnConnect: 60
@@ -1867,7 +1867,7 @@ beginState: s32'vrs_403_ThunderEff'
     stopLinkObject: 3
     linkObjectZ: 3
     setObjectWidth: 500
-    Unknown180: 700
+    setObjectDepth: 700
     moveToObject: (ENEMY)
     setPositionY: 0
     upon: (HIT)
@@ -1899,7 +1899,7 @@ beginState: s32'vrs_404_DashEff'
     Unknown1727: 43
     setObjectWidth: 1550
     setObjectHeight: 1550
-    Unknown180: 1550
+    setObjectDepth: 1550
   endUpon: 
   sprite: s32'null', 2
   privateSE: s32'vrs_06'
@@ -1994,7 +1994,7 @@ beginState: s32'vrs_405_Rush01Eff'
     linkObjectZ: 3
     setObjectWidth: 850
     setObjectHeight: 850
-    Unknown180: 850
+    setObjectDepth: 850
     addPositionX: -160855
     addPositionY: 261070
     Unknown1727: 25375
@@ -2298,7 +2298,7 @@ beginState: s32'vrs_406_Ball04Eff'
     untechAmount: 22
     blockstunAmount: 18
     wallPushback: 0, 500
-    Unknown746: 0, 5000
+    atkEnemyHitSuperArmorHitstop: 0, 5000
     Unknown747: 0, 5000
     hitEffectIce: 1
     damageEffect: 2, s32'VRS_SPHitEff_406'
@@ -2406,8 +2406,8 @@ beginState: s32'vrs_406_Ball04Eff'
     velocityXPercentEachFrame: 95
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    physicsXImpulse: 60000
-    velocityXPercentEachFrame: 90
+    physicsXImpulse: 10000
+    velocityXPercentEachFrame: 102
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
     physicsXImpulse: 60000
@@ -2423,10 +2423,10 @@ beginState: s32'vrs_406_Ball04Eff'
     spriteTimeAdd: 6
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    spriteTimeAdd: 24
+    spriteTimeAdd: 40
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    spriteTimeAdd: 48
+    spriteTimeAdd: 24
     upon: (FRAME_STEP)
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(150000)
         velocityXPercent: 95
@@ -2775,7 +2775,7 @@ beginState: s32'vrs_430_HandFireREff'
   stopLinkObject: 0
   setObjectWidth: 800
   setObjectHeight: 600
-  Unknown180: 600
+  setObjectDepth: 600
   addPositionX: -139212
   addPositionY: 6138
   Unknown1727: -134848
@@ -2847,7 +2847,7 @@ beginState: s32'vrs_430_HandStrikeEff'
   setAngle: 350000
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
 endState: 
 
 beginState: s32'vrs_430_RushEff'
@@ -3061,7 +3061,7 @@ beginState: s32'vrs_430cs_SlashEff'
   setDepth: 173172
   setObjectWidth: 400
   setObjectHeight: 400
-  Unknown180: 400
+  setObjectDepth: 400
   setAngleX: 106800
   setAngleY: 323200
   setAngle: 236800
@@ -3075,7 +3075,7 @@ beginState: s32'vrs_430cs_SlashEff'
   setAngle: 309600
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   sprite: s32'null', 60
   linkParticle: s32'vrs_430cs_Slash1'
   setPositionX: 14527
@@ -3135,18 +3135,18 @@ beginState: s32'vrs_430cs_Blur'
     setLinkObjectDestroyOnStateChange: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'vrs_PP_430RB', 1, 0
-      Unknown2587: 1601401462, s32'PP_430RB'
+      Unknown2587: s32'vrs_PP_430RB', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1601401462, s32'PP_430RB'
+  Unknown2587: s32'vrs_PP_430RB', 1
   Unknown2588: s32'vrs_PP_430RB', 1, 100
   sprite: s32'null', 4
   Unknown2588: s32'vrs_PP_430RB', 1, 50
   sprite: s32'null', 4
   Unknown2588: s32'vrs_PP_430RB', 1, 25
   sprite: s32'null', 1
-  Unknown2587: 1601401462, s32'PP_430RB'
+  Unknown2587: s32'vrs_PP_430RB', 0
 endState: 
 
 beginState: s32'vrs440cs_MNP'
@@ -3412,14 +3412,14 @@ beginState: s32'vrs_440cs_Smoke01Eff'
     setAngleY: 210000
     setObjectWidth: 2500
     setObjectHeight: 3000
-    Unknown180: 2500
+    setObjectDepth: 2500
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'vrs_440csSmoke01'
   sprite: s32'null', 300
   setObjectWidth: 4000
   setObjectHeight: 4500
-  Unknown180: 4000
+  setObjectDepth: 4000
 endState: 
 
 beginState: s32'vrs_440cs_Smoke02Eff'
@@ -3437,7 +3437,7 @@ beginState: s32'vrs_440cs_Smoke02Eff'
     setAngle: 9200
     setObjectWidth: 3000
     setObjectHeight: 3000
-    Unknown180: 3000
+    setObjectDepth: 3000
     setColorRGBA: 750, 750, 750, 1000
   endUpon: 
   sprite: s32'null', 3
@@ -3445,7 +3445,7 @@ beginState: s32'vrs_440cs_Smoke02Eff'
   sprite: s32'null', 300
   setObjectWidth: 3500
   setObjectHeight: 4500
-  Unknown180: 3500
+  setObjectDepth: 3500
 endState: 
 
 beginState: s32'vrs_440cs_Smoke03Eff'
@@ -3461,7 +3461,7 @@ beginState: s32'vrs_440cs_Smoke03Eff'
     setAngleY: 254400
     setObjectWidth: 3500
     setObjectHeight: 4500
-    Unknown180: 3500
+    setObjectDepth: 3500
     setColorRGBA: 600, 600, 600, 1000
   endUpon: 
   sprite: s32'null', 3
@@ -3469,7 +3469,7 @@ beginState: s32'vrs_440cs_Smoke03Eff'
   sprite: s32'null', 300
   setObjectWidth: 4500
   setObjectHeight: 5000
-  Unknown180: 4500
+  setObjectDepth: 4500
 endState: 
 
 beginState: s32'vrs_440cs_Smoke04Eff'
@@ -3485,7 +3485,7 @@ beginState: s32'vrs_440cs_Smoke04Eff'
     setAngleY: 262400
     setObjectWidth: 4500
     setObjectHeight: 6000
-    Unknown180: 4500
+    setObjectDepth: 4500
     setColorRGBA: 450, 450, 450, 1000
   endUpon: 
   sprite: s32'null', 4
@@ -3493,8 +3493,8 @@ beginState: s32'vrs_440cs_Smoke04Eff'
   sprite: s32'null', 15
   setObjectWidth: 5000
   setObjectHeight: 7000
-  Unknown180: 5000
-  Unknown191: 1
+  setObjectDepth: 5000
+  setObjectSizeScaleSpeed: 1
 endState: 
 
 beginState: s32'vrs_440cs_Smoke05Eff'
@@ -3512,11 +3512,11 @@ beginState: s32'vrs_440cs_Smoke05Eff'
     setAngle: 179200
     setObjectWidth: 5300
     setObjectHeight: 4000
-    Unknown180: 5300
+    setObjectDepth: 5300
   endUpon: 
   sprite: s32'null', 4
   linkParticle: s32'vrs_440csSmoke02'
-  Unknown191: 1
+  setObjectSizeScaleSpeed: 1
   sprite: s32'null', 24
 endState: 
 
@@ -3536,11 +3536,11 @@ beginState: s32'vrs_440cs_Smoke06Eff'
     setColorRGBA: 700, 700, 700, 1000
     setObjectWidth: 4000
     setObjectHeight: 3500
-    Unknown180: 4000
+    setObjectDepth: 4000
   endUpon: 
   sprite: s32'null', 4
   linkParticle: s32'vrs_440csSmoke05'
-  Unknown191: 1
+  setObjectSizeScaleSpeed: 1
   sprite: s32'null', 24
 endState: 
 
@@ -3660,7 +3660,7 @@ beginState: s32'vrs_440cs_MouthFireEff'
   setAngle: 348400
   setObjectWidth: 600
   setObjectHeight: 600
-  Unknown180: 600
+  setObjectDepth: 600
   sprite: s32'null', 4
   setPositionX: 102142
   setPositionY: 317858
@@ -3714,7 +3714,7 @@ beginState: s32'vrs_440cs_Bless00Eff'
     setAngle: 4800
     setObjectWidth: 1000
     setObjectHeight: 500
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'vrs_440cs_BlessStart00'
@@ -3732,7 +3732,7 @@ beginState: s32'vrs_440cs_Bless01Eff'
     setDepth: 40035
     setObjectWidth: 8000
     setObjectHeight: 11000
-    Unknown180: 8000
+    setObjectDepth: 8000
   endUpon: 
   sprite: s32'null', 300
   linkParticle: s32'vrs_440cs_BlessStart01'
@@ -3749,7 +3749,7 @@ beginState: s32'vrs_440cs_Bless02Eff'
     setPositionY: 2209
     setDepth: 40035
     setObjectWidth: 8000
-    Unknown180: 8000
+    setObjectDepth: 8000
     setObjectHeight: 11500
     setAngleY: 274800
   endUpon: 
@@ -3757,11 +3757,11 @@ beginState: s32'vrs_440cs_Bless02Eff'
   linkParticle: s32'vrs_440cs_BlessStart02'
   sprite: s32'null', 4
   setObjectWidth: 9000
-  Unknown180: 9000
+  setObjectDepth: 9000
   setObjectHeight: 15000
   sprite: s32'null', 300
   setObjectWidth: 9500
-  Unknown180: 9500
+  setObjectDepth: 9500
   setObjectHeight: 16000
 endState: 
 
@@ -3777,11 +3777,11 @@ beginState: s32'vrs_440cs_Bless03Eff'
     setDepth: 40035
     setObjectWidth: 9000
     setObjectHeight: 13000
-    Unknown180: 9000
+    setObjectDepth: 9000
   endUpon: 
   sprite: s32'null', 300
   linkParticle: s32'vrs_440cs_BlessStart03'
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
 endState: 
 
 beginState: s32'vrs_440cs_Bless04Eff'
@@ -3798,7 +3798,7 @@ beginState: s32'vrs_440cs_Bless04Eff'
   endUpon: 
   sprite: s32'null', 300
   linkParticle: s32'vrs_440cs_BlessStartSub'
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
 endState: 
 
 beginState: s32'vrs_440cs_Blur'
@@ -3807,18 +3807,18 @@ beginState: s32'vrs_440cs_Blur'
     setLinkObjectDestroyOnStateChange: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'vrs_PP_440RB', 1, 0
-      Unknown2587: 1601401462, s32'PP_440RB'
+      Unknown2587: s32'vrs_PP_440RB', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1601401462, s32'PP_440RB'
+  Unknown2587: s32'vrs_PP_440RB', 1
   Unknown2588: s32'vrs_PP_440RB', 1, 100
   sprite: s32'null', 4
   Unknown2588: s32'vrs_PP_440RB', 1, 50
   sprite: s32'null', 4
   Unknown2588: s32'vrs_PP_440RB', 1, 25
   sprite: s32'null', 1
-  Unknown2587: 1601401462, s32'PP_440RB'
+  Unknown2587: s32'vrs_PP_440RB', 0
 endState: 
 
 beginState: s32'vrs_440cs_scr01Eff'
@@ -3855,7 +3855,7 @@ beginState: s32'vrs_440cs_WhiteOutEff'
   sprite: s32'null', 300
   deactivateObjectByName: s32'vrs_440cs_Bless03Eff'
   deactivateObjectByName: s32'vrs_440cs_Bless04Eff'
-  Unknown70: s32'cmn_OverrayBinet'
+  deactivateObjectByNameAll: s32'cmn_OverrayBinet'
   Unknown409: 200, 1
   Unknown410: 0, 1
 endState: 
@@ -3900,7 +3900,7 @@ beginState: s32'vrs_442cs_BG01Eff'
   setAngleX: 4800
   setAngleY: 358000
   setAngle: 10400
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'vrs_442cs_BG02Eff'
@@ -4039,7 +4039,7 @@ beginState: s32'vrs_700_1pAuraEnd2'
   setDepth: -19602
   setObjectWidth: 700
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
   setAngleX: 77200
   setAngleY: 153200
   setAngle: 14400
@@ -4190,7 +4190,7 @@ beginState: s32'vrs_700_2pEyes'
   linkParticle: s32'vrs_700_2pEyes'
   setObjectWidth: 550
   setObjectHeight: 550
-  Unknown180: 550
+  setObjectDepth: 550
   setPositionX: 913027
   setPositionY: 517726
   setDepth: 228852
@@ -4229,7 +4229,7 @@ beginState: s32'vrs_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -4266,7 +4266,7 @@ beginState: s32'vrs_RoundWin_Camera2'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -4374,7 +4374,7 @@ beginState: s32'vrs_601_ArmFireEff2'
   setAngle: 39600
   setObjectWidth: 400
   setObjectHeight: 400
-  Unknown180: 400
+  setObjectDepth: 400
   sprite: s32'null', 30
   setObjectSize: 300
   setAngleX: 0
@@ -4397,7 +4397,7 @@ beginState: s32'vrs_601_ArmFireEff3'
   linkParticle: s32'vrs_601_FireTrail'
   setObjectWidth: 400
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setPositionX: -16189
   setPositionY: 464366
   setDepth: 145348
@@ -4614,7 +4614,7 @@ beginState: s32'vrs_800_CloudEnter'
   linkParticle: s32'vrs_800_ColoudEnter'
   setObjectWidth: 125
   setObjectHeight: 125
-  Unknown180: 125
+  setObjectDepth: 125
   setPositionX: -1375
   setPositionY: 149890
   setDepth: 8094

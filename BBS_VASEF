@@ -43,7 +43,7 @@ beginState: s32'vas_208_Ability'
     setDepth: -59940
     setAngleY: 330400
     setAngle: 357200
-    Unknown289: 300
+    setMaxActionTime: 300
     upon: 23
       gotoLabelRequests: s32'End'
       clearUpon: 23
@@ -174,7 +174,7 @@ beginState: s32'vas_250_thrust'
   setAngle: 270000
   setObjectWidth: 1200
   setObjectHeight: 1200
-  Unknown180: 1000
+  setObjectDepth: 1000
 endState: 
 
 beginState: s32'vas_253_GroundBurst'
@@ -596,7 +596,7 @@ beginState: s32'vas_400_aura'
     stopLinkObject: 3
     setObjectWidth: 1000
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 3
   linkParticle: s32'vas_400_Aura00'
@@ -644,7 +644,7 @@ beginState: s32'vas_400_Eff'
   setDepth: 0
   setObjectWidth: 1200
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   sprite: s32'null', 60
   linkParticle: s32'vas_400_Slash02'
   setLinkObjectDestroyOnStateChange: 0
@@ -666,7 +666,7 @@ beginState: s32'vas_400_ShotEff'
     hitstop: 12
     damageEffect: 2, s32'VAS_SPHitEff_Long'
     atkAngle: 50
-    Unknown2482: 0x020000002D000000020000002D000000
+    Unknown2482: 2, 45, 2, 45
     if: Mem(ActReg0)
       comboLimitScaling: 0
       Unknown1131: 1
@@ -677,13 +677,13 @@ beginState: s32'vas_400_ShotEff'
       hitAirPushbackX: 8000
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-      Unknown72: s32'Blow_B'
+      postSubroutineBegin: s32'Blow_B'
       missionName: s32'vas_400_Shot_B'
       untechAmount: 40
       physicsXImpulse: 35000
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-      Unknown72: s32'Blow_C'
+      postSubroutineBegin: s32'Blow_C'
       missionName: s32'vas_400_Shot_C'
       callSubroutine: s32'cmnSpecialAttackC_AtkInit'
       damage: 1200
@@ -703,7 +703,7 @@ beginState: s32'vas_400_ShotEff'
       gotoLabelRequests: s32'End'
     endUpon: 
     addMoveForceDisableFlag: 1
-    Unknown289: 90
+    setMaxActionTime: 90
     linkParticle: s32'vas_400_BurstLoop'
     linkObjectPosition: 2
     stopLinkObject: 3
@@ -754,7 +754,7 @@ beginState: s32'vas_400_ShotEff_D'
     groundCounterHitEffect: (AIR_FACE_UP)
     hitAirPushbackX: 18000
     hitAirPushbackY: 18000
-    Unknown746: 0, 18000
+    atkEnemyHitSuperArmorHitstop: 0, 18000
     Unknown747: 0, 1000
     wallPushback: 0, 1000
     hitstop: 12
@@ -776,7 +776,7 @@ beginState: s32'vas_400_ShotEff_D'
       gotoLabelRequests: s32'End'
     endUpon: 
     addMoveForceDisableFlag: 1
-    Unknown289: 90
+    setMaxActionTime: 90
     upon: 8
       modifyVar: (ADD), Mem(ActReg7), Val(1)
       ifOperation: (IS_EQUAL), Mem(ActReg7), Val(1)
@@ -908,34 +908,34 @@ beginState: s32'NmlAtk2A'
   createObject: s32'vas_402_GroundSmoke', (PLAYER)
   createObject: s32'vas_402_Eff', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionY: 362637
-  Unknown1727: 15834
+    addPositionY: 362637
+    Unknown1727: 15834
   endRunOnObject: 
   createObject: s32'vas_402_Eff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectWidth: 1500
-  addPositionX: -222913
-  addPositionY: 37090
-  Unknown1727: 21674
+    setObjectWidth: 1500
+    addPositionX: -222913
+    addPositionY: 37090
+    Unknown1727: 21674
   endRunOnObject: 
   createObject: s32'vas_402_Eff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 2000
-  addPositionX: -14913
-  addPositionY: 218085
-  Unknown1727: -20438
+    setObjectSize: 2000
+    addPositionX: -14913
+    addPositionY: 218085
+    Unknown1727: -20438
   endRunOnObject: 
   createObject: s32'vas_402_Eff', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -14913
-  addPositionY: 218085
-  Unknown1727: -20438
+    addPositionX: -14913
+    addPositionY: 218085
+    Unknown1727: -20438
   endRunOnObject: 
   createObject: s32'vas_402_Eff', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 52036
-  addPositionY: 104666
-  Unknown1727: 32731
+    addPositionX: 52036
+    addPositionY: 104666
+    Unknown1727: 32731
   endRunOnObject: 
   sprite: s32'null', 30
   Unknown2050: 1
@@ -1017,7 +1017,7 @@ beginState: s32'vas_407_EyeRay'
     setAngleX: 19200
     setAngleY: 330400
     setAngle: 4000
-    Unknown289: 300
+    setMaxActionTime: 300
     linkParticle: s32'vas_407_EyeRay'
     upon: 23
       gotoLabelRequests: s32'End'
@@ -1218,6 +1218,9 @@ beginState: s32'vas_408_EyeRay_EX'
   setPositionY: 346458
   setDepth: 111249
   sprite: s32'null', 4
+  ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(2)
+    setSpriteTime: 3, Val(1)
+  endIf: 
   sprite: s32'null', 4
   setPositionX: 159860
   setPositionY: 340024
@@ -1297,7 +1300,7 @@ beginState: s32'vas_408_EyeRay_End'
     setAngleX: 19200
     setAngleY: 330400
     setAngle: 4000
-    Unknown289: 500
+    setMaxActionTime: 500
     linkParticle: s32'vas_407_EyeRay'
     upon: 23
       gotoLabelRequests: s32'End'
@@ -1337,7 +1340,7 @@ beginState: s32'vas_408_EyeRay_End++'
     setAngleX: 19200
     setAngleY: 330400
     setAngle: 4000
-    Unknown289: 500
+    setMaxActionTime: 500
     linkParticle: s32'vas_407_EyeRay'
     upon: 23
       gotoLabelRequests: s32'End'
@@ -1361,7 +1364,7 @@ beginState: s32'vas_408_Spark'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 3
-    Unknown289: 300
+    setMaxActionTime: 300
     linkParticle: s32'vas_408_Spark'
     setPositionX: -286016
     setPositionY: -5417
@@ -1434,7 +1437,7 @@ beginState: s32'vas_409_Aura'
     linkParticle: s32'vas_409_Aura01'
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     addPositionX: -184963
     addPositionY: 554106
     Unknown1727: -381233
@@ -1461,7 +1464,7 @@ beginState: s32'vas_409_Aura2'
     linkParticle: s32'vas_409_Aura01'
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     setPositionX: -385914
     setPositionY: 517194
     setDepth: -362904
@@ -1501,7 +1504,7 @@ beginState: s32'vas_409_Aura3'
     linkParticle: s32'vas_409_Aura01'
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     setPositionX: -479892
     setPositionY: 411395
     setDepth: -210356
@@ -1528,7 +1531,7 @@ beginState: s32'vas_409_Aura4'
     linkParticle: s32'vas_409_Aura01'
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     setPositionX: -506885
     setPositionY: 295431
     setDepth: -120225
@@ -1574,7 +1577,7 @@ beginState: s32'vas_409_Slash'
   Unknown1727: -60106
   setObjectWidth: 1000
   setObjectHeight: 700
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 8400
   setAngleY: 0
   setAngle: 358800
@@ -1594,7 +1597,7 @@ beginState: s32'vas_410_Aura'
     linkParticle: s32'vas_409_Aura01'
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     addPositionX: -247924
     addPositionY: 117564
     Unknown1727: 307257
@@ -1630,7 +1633,7 @@ beginState: s32'vas_410_Aura2'
     Unknown1727: 426803
     setObjectWidth: 600
     setObjectHeight: 600
-    Unknown180: 600
+    setObjectDepth: 600
     upon: 23
       clearUpon: 23
       gotoLabelRequests: s32'End'
@@ -1663,7 +1666,7 @@ beginState: s32'vas_410_Aura3'
     linkParticle: s32'vas_409_Aura01'
     setObjectWidth: 450
     setObjectHeight: 450
-    Unknown180: 450
+    setObjectDepth: 450
     setPositionX: 43005
     setPositionY: 86864
     setDepth: 438050
@@ -1708,7 +1711,7 @@ beginState: s32'vas_410_Eff_Slash'
     setAngle: 7600
     setObjectWidth: 1200
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 3
   linkParticle: s32'vas_410_slash01'
@@ -1944,7 +1947,7 @@ beginState: s32'vas_430_Speed'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 3
-    Unknown289: 300
+    setMaxActionTime: 300
     upon: 23
       gotoLabelRequests: s32'End'
       clearUpon: 23
@@ -1966,7 +1969,7 @@ beginState: s32'vas_430_GroundShock'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 200
+    setMaxActionTime: 200
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 10
@@ -1992,7 +1995,7 @@ beginState: s32'vas_430_Slash'
     linkObjectPosition: 2
     stopLinkObject: 3
     flipDirection: 
-    Unknown289: 300
+    setMaxActionTime: 300
     upon: 23
       gotoLabelRequests: s32'End'
       clearUpon: 23
@@ -2009,7 +2012,7 @@ beginState: s32'vas_430_Slash'
   setDepth: 3139
   setObjectWidth: 1000
   setObjectHeight: 700
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 0
   setAngleY: 2400
   setAngle: 358800
@@ -2020,7 +2023,7 @@ beginState: s32'vas_430_Slash'
   setDepth: -56784
   setObjectWidth: 1100
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 7600
   setAngleY: 8800
   setAngle: 356800
@@ -2117,7 +2120,7 @@ beginState: s32'vas_430_CSEff_EyeRay'
     setObjectSize: 800
     setObjectWidth: 1000
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
     addPositionY: 401212
     Unknown1727: 122458
   endUpon: 
@@ -2256,10 +2259,10 @@ beginState: s32'vas_430_CSEff_Slash'
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown191: 5
+  setObjectSizeScaleSpeed: 5
   setObjectWidth: 1400
   setObjectHeight: 1400
-  Unknown180: 1400
+  setObjectDepth: 1400
   setPositionX: 286696
   setPositionY: 182755
   setDepth: 157317
@@ -2272,7 +2275,7 @@ beginState: s32'vas_430_CSEff_Slash'
   setAngleSpeed: 500
   beginLabel: s32'RotSpeedUp'
   sprite: s32'null', 4
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   setAngleSpeed: 1000
   sprite: s32'null', 4
   setAngleSpeed: 4000
@@ -2540,42 +2543,42 @@ beginState: s32'vas_441_CSEffMatome'
     ifOnFrame: Val(295)
       createObject: s32'vas_RayPillar_1', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 773818
-      setPositionY: -27428
-      setDepth: -1178720
+        setPositionX: 773818
+        setPositionY: -27428
+        setDepth: -1178720
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(299)
       createObject: s32'vas_RayPillar_1', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -802132
-      addPositionY: -11774
-      Unknown1727: -814820
+        addPositionX: -802132
+        addPositionY: -11774
+        Unknown1727: -814820
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(303)
       createObject: s32'vas_RayPillar_1', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: 1111725
-      addPositionY: -19000
-      Unknown1727: -334970
+        addPositionX: 1111725
+        addPositionY: -19000
+        Unknown1727: -334970
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(307)
       createObject: s32'vas_RayPillar_1', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -1158909
-      addPositionY: -29794
-      Unknown1727: -52715
+        addPositionX: -1158909
+        addPositionY: -29794
+        Unknown1727: -52715
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(311)
       createObject: s32'vas_RayPillar_1', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: 144027
-      addPositionY: 161686
-      Unknown1727: 1429080
-      setObjectSize: 1500
+        addPositionX: 144027
+        addPositionY: 161686
+        Unknown1727: 1429080
+        setObjectSize: 1500
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(329)
@@ -2586,23 +2589,23 @@ beginState: s32'vas_441_CSEffMatome'
       createObject: s32'vas_441_cs_Smoke', (PLAYER)
       createObject: s32'vas_441_cs_Wind', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: 31557
-      addPositionY: 47648
-      Unknown1727: 3108578
-      setAngleX: 334000
-      setAngleY: 345600
-      setAngle: 348000
-      setObjectSize: 500
+        addPositionX: 31557
+        addPositionY: 47648
+        Unknown1727: 3108578
+        setAngleX: 334000
+        setAngleY: 345600
+        setAngle: 348000
+        setObjectSize: 500
       endRunOnObject: 
       createObject: s32'vas_441_cs_Wind', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -113443
-      addPositionY: 115367
-      Unknown1727: 2929486
-      setAngleX: 338000
-      setAngleY: 24000
-      setAngle: 349600
-      setObjectSize: 500
+        addPositionX: -113443
+        addPositionY: 115367
+        Unknown1727: 2929486
+        setAngleX: 338000
+        setAngleY: 24000
+        setAngle: 349600
+        setObjectSize: 500
       endRunOnObject: 
     endIf: 
   endUpon: 
@@ -2700,7 +2703,7 @@ beginState: s32'vas_441_cs_Smoke'
   setDepth: 3720695
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
 endState: 
 
 beginState: s32'vas_441_cs_Wind'
@@ -2782,7 +2785,7 @@ beginState: s32'vas_441_cs_slash'
   setDepth: -1296163
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setAngleX: 0
   setAngleY: 14000
   setAngle: 153200
@@ -2792,7 +2795,7 @@ beginState: s32'vas_441_cs_slash'
   setDepth: -894820
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setAngleX: 32000
   setAngleY: 32000
   setAngle: 334000
@@ -3094,7 +3097,7 @@ beginState: s32'vas_441_cs_Foot_slash'
   linkParticle: s32'vas_441_cs_Foot_slash'
   setObjectWidth: 100
   setObjectHeight: 100
-  Unknown180: 100
+  setObjectDepth: 100
   setPositionX: 103327
   setPositionY: 85473
   setDepth: -1522289
@@ -3433,7 +3436,7 @@ beginState: s32'vas_442_cs_Smoke'
   linkParticle: s32'vas_442_cs_Smoke'
   setObjectWidth: 750
   setObjectHeight: 750
-  Unknown180: 750
+  setObjectDepth: 750
   setPositionX: -66409
   setPositionY: 309359
   setDepth: 63289
@@ -3668,7 +3671,7 @@ beginState: s32'vas_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -3713,16 +3716,16 @@ beginState: s32'vas_700_Smoke'
   endUpon: 
   sprite: s32'null', 40
   linkParticle: s32'vas_700_Smoke'
-  Unknown191: 20
+  setObjectSizeScaleSpeed: 20
   sprite: s32'null', 80
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   beginLabel: s32'End'
   sprite: s32'null', 40
   linkParticle: s32'vas_700_Smoke_End'
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   setObjectWidth: 860
   setObjectHeight: 1000
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleY: 332000
   setPositionX: -1483966
   setPositionY: -31842
@@ -3745,9 +3748,9 @@ beginState: s32'vas_700_SlashAura'
   endUpon: 
   sprite: s32'null', 40
   linkParticle: s32'vas_700_SlashAura'
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   sprite: s32'null', 80
-  Unknown191: 2
+  setObjectSizeScaleSpeed: 2
 endState: 
 
 beginState: s32'vas_700_SlashAura2'
@@ -3765,9 +3768,9 @@ beginState: s32'vas_700_SlashAura2'
   endUpon: 
   sprite: s32'null', 40
   linkParticle: s32'vas_700_SlashAura2'
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   sprite: s32'null', 80
-  Unknown191: 2
+  setObjectSizeScaleSpeed: 2
 endState: 
 
 beginState: s32'DUMMYDUMMY'

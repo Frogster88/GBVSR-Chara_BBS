@@ -130,12 +130,12 @@ beginSubroutine: s32'Initialize_Tame'
       storeValue: Mem(ActReg0), Val(1)
       recoveryState: 
       runOnObject: (PLAYER)
-      createObject: s32'sba208_Bunshin', (PLAYER)
-      onSpriteChange: s32'sis208_18ex'
-      moveToObject: (STACK2)
+        createObject: s32'sba208_Bunshin', (PLAYER)
+        onSpriteChange: s32'sis208_18ex'
+        moveToObject: (STACK2)
       endRunOnObject: 
       gotoLabelRequests: s32'End'
-      Unknown2329: 0x0300000017000000680000001700000066000000
+      Unknown2329: 3, 23, 104, 23, 102
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(0)
         Unknown1793: 3, 25
       endIf: 
@@ -155,12 +155,12 @@ beginSubroutine: s32'Initialize_Tame'
       checkCurrentStateName: (PLAYER), s32'NmlAtk5D'
       if: Mem(Tmp)
         runOnObject: (PLAYER)
-        createArgHikitsukiVal: Val(1), Val(0)
-        createObjectWithArg: s32'sba208_Bunshin', (PLAYER)
-        checkScreenCollision: 0
-        Unknown60: 0x17000000680000000600000068000000
-        storeValue: Mem(SpeedX), Mem(Tmp)
-        gotoLabelRequests: s32'Hit'
+          createArgHikitsukiVal: Val(1), Val(0)
+          createObjectWithArg: s32'sba208_Bunshin', (PLAYER)
+          checkScreenCollision: 0
+          calcDistance: 23, 104, 6, 104
+          storeValue: Mem(SpeedX), Mem(Tmp)
+          gotoLabelRequests: s32'Hit'
         endRunOnObject: 
       endIf: 
       gotoLabelRequests: s32'End'
@@ -215,14 +215,14 @@ beginSubroutine: s32'End_Tame'
       checkCurrentStateName: (PLAYER), s32'NmlAtk5D'
       if: Mem(Tmp)
         runOnObject: (PLAYER)
-        createObject: s32'sba208_Bunshin', (PLAYER)
-        onSpriteChange: s32'sis208_18'
-        checkScreenCollision: 0
-        setNoCollision: 0
-        Unknown60: 0x17000000680000000600000068000000
-        storeValue: Mem(SpeedX), Mem(Tmp)
-        gotoLabelRequests: s32'Warp'
-        storeValue: Mem(ActReg1), Val(1)
+          createObject: s32'sba208_Bunshin', (PLAYER)
+          onSpriteChange: s32'sis208_18'
+          checkScreenCollision: 0
+          setNoCollision: 0
+          calcDistance: 23, 104, 6, 104
+          storeValue: Mem(SpeedX), Mem(Tmp)
+          gotoLabelRequests: s32'Warp'
+          storeValue: Mem(ActReg1), Val(1)
         endRunOnObject: 
       endIf: 
     endIf: 
@@ -258,7 +258,7 @@ beginState: s32'sba208_Shot'
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: 100000
-    Unknown264: 8
+    setZOffset: 8
     Unknown412: 80, 2, 0, 0
     Unknown412: 80, 2, 1, 0
     Unknown412: 500, 3, 0, 0
@@ -519,7 +519,7 @@ beginState: s32'sis_253_Burst'
     endUpon: 
     setObjectWidth: 1500
     setObjectHeight: 1500
-    Unknown180: 1000
+    setObjectDepth: 1000
     setPositionX: 186969
     setPositionY: 23462
     setDepth: 56069
@@ -541,7 +541,7 @@ beginState: s32'sis_253_Burst'
   Unknown1727: 179964
   setObjectWidth: 1200
   setObjectHeight: 1400
-  Unknown180: 1400
+  setObjectDepth: 1400
 endState: 
 
 beginState: s32'sis_253_Burst_nokoshi'
@@ -581,7 +581,7 @@ beginState: s32'sba301'
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
     linkObjectZ: 3
-    Unknown264: 8
+    setZOffset: 8
     Unknown412: 80, 2, 0, 0
     Unknown412: 80, 2, 1, 0
     Unknown412: 500, 3, 0, 0
@@ -1025,7 +1025,7 @@ beginState: s32'sis_400_Crow02'
     setAngle: 16000
     setObjectWidth: 850
     setObjectHeight: 850
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'sis_400_Crow02'
@@ -1054,7 +1054,7 @@ beginState: s32'sis_400_Crow02_B'
     setAngle: 16000
     setObjectWidth: 850
     setObjectHeight: 850
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'sis_400_Crow02'
@@ -1084,7 +1084,7 @@ beginState: s32'sis_400_Crow02_C'
     setAngle: 16000
     setObjectWidth: 850
     setObjectHeight: 850
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'sis_400_Crow02'
@@ -1550,10 +1550,10 @@ beginState: s32'sis_405_Shot'
       enemyHitstopAddition: 0, 0, 2
       ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(0)
         wallPushback: 0, 300
-        Unknown72: s32'SpecialJump_C'
+        postSubroutineBegin: s32'SpecialJump_C'
       endIf: 
       else: 
-        Unknown72: s32'SpecialJump_Air_C'
+        postSubroutineBegin: s32'SpecialJump_Air_C'
         missionName: s32'sis_405_Shot_Air'
       endElse: 
     endIf: 
@@ -1673,7 +1673,7 @@ clearUpon: (TOUCH_GROUND)
 clearUpon: 13
 deleteMoveForceDisableFlag: 1
 linkParticle: s32'sis_405_ShotEnd'
-Unknown191: 10
+setObjectSizeScaleSpeed: 10
 physicsXImpulse: 0
 physicsYImpulse: 0
 callSubroutine: s32'cmnWeaponLvMaxColorInit'
@@ -1724,7 +1724,7 @@ beginState: s32'sis_405_Shot++'
   beginLabel: s32'End'
   sprite: s32'null', 30
   linkParticle: s32'sis_405_ShotEndSP'
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   physicsXImpulse: 0
   physicsYImpulse: 0
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
@@ -1885,7 +1885,7 @@ beginState: s32'sba406'
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
     linkObjectZ: 3
-    Unknown264: 8
+    setZOffset: 8
     Unknown412: 80, 2, 0, 0
     Unknown412: 80, 2, 1, 0
     Unknown412: 500, 3, 0, 0
@@ -1949,7 +1949,7 @@ beginState: s32'sis_407_CrowA'
   setAngle: 336000
   setObjectWidth: 950
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   beginLabel: s32'End'
   sprite: s32'null', 60
   linkParticle: s32'sis_407_Crow_End'
@@ -2366,17 +2366,17 @@ beginState: s32'sis_430_HitBlur'
     stopLinkObject: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'sis_MI_PP_440_Blur', 1, 0
-      Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+      Unknown2587: s32'sis_MI_PP_440_Blur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
-  Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+  Unknown2587: s32'sis_MI_PP_440_Blur', 1
   Unknown2588: s32'sis_MI_PP_440_Blur', 1, 100
   sprite: s32'null', 5
   Unknown2590: s32'sis_MI_PP_440_Blur', 1, -20
   sprite: s32'null', 1
   Unknown2590: s32'sis_MI_PP_440_Blur', 1, 0
-  Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+  Unknown2587: s32'sis_MI_PP_440_Blur', 0
 endState: 
 
 beginState: s32'sis_430_WipeEff'
@@ -2497,7 +2497,7 @@ beginState: s32'sis_430_ScrSlash'
   setDepth: 583982
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setAngleX: 340000
   setAngleY: 130400
   setAngle: 348000
@@ -2522,7 +2522,7 @@ beginState: s32'sis_430_DamageRing'
   Unknown1727: -123412
   setObjectWidth: 4500
   setObjectHeight: 2000
-  Unknown180: 2500
+  setObjectDepth: 2500
   setAngleX: 80800
   setAngleY: 117200
   setAngle: 340000
@@ -2553,7 +2553,7 @@ beginState: s32'sis_430_DamageRing2'
   setAngle: 214400
   setObjectWidth: 3000
   setObjectHeight: 2000
-  Unknown180: 1500
+  setObjectDepth: 1500
   beginLabel: s32'End'
   sprite: s32'null', 30
   linkParticle: s32'sis_430_HitDamageRingEnd'
@@ -2581,7 +2581,7 @@ beginState: s32'sis_430_DamageRing3'
   setAngle: 159200
   setObjectWidth: 3000
   setObjectHeight: 2000
-  Unknown180: 1500
+  setObjectDepth: 1500
   beginLabel: s32'End'
   sprite: s32'null', 30
   linkParticle: s32'sis_430_HitDamageRingEnd'
@@ -2631,17 +2631,17 @@ beginState: s32'sis_430_TateBlur'
     stopLinkObject: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'sis_MI_PP_430_Blur', 1, 0
-      Unknown2587: 1601399155, s32'MI_PP_430_Blur'
+      Unknown2587: s32'sis_MI_PP_430_Blur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
-  Unknown2587: 1601399155, s32'MI_PP_430_Blur'
+  Unknown2587: s32'sis_MI_PP_430_Blur', 1
   Unknown2588: s32'sis_MI_PP_430_Blur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'sis_MI_PP_430_Blur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'sis_MI_PP_430_Blur', 1, 0
-  Unknown2587: 1601399155, s32'MI_PP_430_Blur'
+  Unknown2587: s32'sis_MI_PP_430_Blur', 0
 endState: 
 
 beginState: s32'sis_430_shilet'
@@ -2844,7 +2844,7 @@ beginState: s32'Bunshin_A'
     ignoreSuperFreezeFromAlly: 1
     setObjectSize: 995
     linkObjectZ: 3
-    Unknown264: 8
+    setZOffset: 8
     upon: 23
       clearUpon: 23
       gotoLabelRequests: s32'End'
@@ -2897,7 +2897,7 @@ beginState: s32'Bunshin_B'
     ignoreSuperFreezeFromAlly: 1
     setObjectSize: 990
     linkObjectZ: 3
-    Unknown264: 16
+    setZOffset: 16
     upon: 23
       clearUpon: 23
       gotoLabelRequests: s32'End'
@@ -2948,7 +2948,7 @@ beginState: s32'Bunshin_A_Appear'
     worldCollision: 0
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
-    Unknown264: 3
+    setZOffset: 3
     addPositionX: 300000
   endUpon: 
   sprite: s32'sba431_10', 3
@@ -2993,7 +2993,7 @@ beginState: s32'Bunshin_B_Appear'
     invulnForce: 1
     ignoreSuperFreezeFromAlly: 1
     addPositionX: -300000
-    Unknown264: 3
+    setZOffset: 3
   endUpon: 
   sprite: s32'sbb431_10', 3
   Unknown412: 0, 2, 0, 0
@@ -3067,17 +3067,17 @@ beginState: s32'sis_440cs_Blur'
     ignoreFinishStop: 1
     upon: (BEFORE_EXIT)
       Unknown2590: s32'sis_MI_PP_440_Blur', 1, 0
-      Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+      Unknown2587: s32'sis_MI_PP_440_Blur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+  Unknown2587: s32'sis_MI_PP_440_Blur', 1
   Unknown2588: s32'sis_MI_PP_440_Blur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'sis_MI_PP_440_Blur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'sis_MI_PP_440_Blur', 1, 0
-  Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+  Unknown2587: s32'sis_MI_PP_440_Blur', 0
 endState: 
 
 beginState: s32'sis_431_EnshutuCamera'
@@ -3288,7 +3288,7 @@ beginState: s32'sis_440cs_Star2'
   linkParticle: s32'sis_440_Star02'
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 600
+  setObjectDepth: 600
   addPositionX: 263600
   addPositionY: 500306
   Unknown1727: 509990
@@ -3571,7 +3571,7 @@ beginState: s32'sis_440cs_Screw4'
   Unknown1727: 357694
   setObjectWidth: 50
   setObjectHeight: 50
-  Unknown180: 50
+  setObjectDepth: 50
   setAngleX: 88400
   setAngleY: 354400
   setAngle: 226800
@@ -3592,7 +3592,7 @@ beginState: s32'sis_440cs_Screw5'
   Unknown1727: 347920
   setObjectWidth: 50
   setObjectHeight: 50
-  Unknown180: 50
+  setObjectDepth: 50
   setAngleX: 314800
   setAngleY: 112800
   setAngle: 138400
@@ -3638,7 +3638,7 @@ beginState: s32'sis_440cs_HandPow'
   setDepth: 282144
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setAngleX: 0
   setAngleY: 0
   setAngle: 0
@@ -3979,13 +3979,13 @@ beginState: s32'sis_441cs_BG'
   sprite: s32'null', 600
   setObjectWidth: 3000
   setObjectHeight: 1500
-  Unknown180: 600
+  setObjectDepth: 600
   beginLabel: s32'Cut2'
   sprite: s32'null', 600
   linkParticle: s32'sis_441_BG2'
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
 endState: 
 
 beginState: s32'sis_441cs_Smoke_Spawn01'
@@ -4146,17 +4146,17 @@ beginState: s32'sis_441cs_Blur'
     stopLinkObject: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'sis_MI_PP_440_Blur', 1, 0
-      Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+      Unknown2587: s32'sis_MI_PP_440_Blur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+  Unknown2587: s32'sis_MI_PP_440_Blur', 1
   Unknown2588: s32'sis_MI_PP_440_Blur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'sis_MI_PP_440_Blur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'sis_MI_PP_440_Blur', 1, 0
-  Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+  Unknown2587: s32'sis_MI_PP_440_Blur', 0
 endState: 
 
 beginState: s32'sis_441cs_Blur2'
@@ -4166,17 +4166,17 @@ beginState: s32'sis_441cs_Blur2'
     stopLinkObject: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'sis_MI_PP_440_Blur', 1, 0
-      Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+      Unknown2587: s32'sis_MI_PP_440_Blur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+  Unknown2587: s32'sis_MI_PP_440_Blur', 1
   Unknown2588: s32'sis_MI_PP_440_Blur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'sis_MI_PP_440_Blur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'sis_MI_PP_440_Blur', 1, 0
-  Unknown2587: 1601399155, s32'MI_PP_440_Blur'
+  Unknown2587: s32'sis_MI_PP_440_Blur', 0
 endState: 
 
 beginState: s32'sis_441cs_OverRay1'
@@ -4222,7 +4222,7 @@ beginState: s32'sis_441cs_SpeedLine2'
   linkParticle: s32'sis_441_SpeedLine2'
   setObjectWidth: 1600
   setObjectHeight: 1000
-  Unknown180: 1600
+  setObjectDepth: 1600
   setAngleY: 180000
   setPositionX: -1638294
   setPositionY: 26091
@@ -4234,7 +4234,7 @@ beginState: s32'sis_441cs_SpeedLine2'
   setDepth: -219577
   setObjectWidth: 1400
   setObjectHeight: 1400
-  Unknown180: 1400
+  setObjectDepth: 1400
   setAngleX: 0
   setAngleY: 348800
   setAngle: 0
@@ -4242,7 +4242,7 @@ beginState: s32'sis_441cs_SpeedLine2'
   sprite: s32'null', 4
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 0
   setAngleY: 800
   setAngle: 0
@@ -4320,7 +4320,7 @@ beginState: s32'sis_441cs_SpeedLine2'
   sprite: s32'null', 4
   setObjectWidth: 1800
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: 967823
   setPositionY: 1146627
   setDepth: 133993
@@ -4344,7 +4344,7 @@ beginState: s32'sis_441cs_SpeedGround'
   linkParticle: s32'sis_441_SpeedLine3'
   setObjectWidth: 400
   setObjectHeight: 1000
-  Unknown180: 650
+  setObjectDepth: 650
   addPositionX: -387116
   addPositionY: 544
   Unknown1727: -1359
@@ -4363,7 +4363,7 @@ beginState: s32'sis_441cs_SpeedLine3'
   linkParticle: s32'sis_441_SpeedLine4'
   setObjectWidth: 1000
   setObjectHeight: 400
-  Unknown180: 400
+  setObjectDepth: 400
   addPositionX: -727446
   addPositionY: 495455
   Unknown1727: 45577
@@ -4389,7 +4389,7 @@ beginState: s32'sis_441cs_ZuzaaSmoke'
   Unknown1727: 42443
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleY: 266800
 endState: 
 
@@ -4680,7 +4680,7 @@ beginState: s32'sis_441_FinalRing'
   linkParticle: s32'sis_441_FinalRing'
   setObjectWidth: 2500
   setObjectHeight: 2300
-  Unknown180: 2000
+  setObjectDepth: 2000
   addPositionX: -2304472
   addPositionY: 3519953
   Unknown1727: 511003
@@ -4702,299 +4702,299 @@ beginState: s32'sis_441cs_SlashRingMatome'
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 600
-      addPositionX: 99691
-      addPositionY: 654212
-      Unknown1727: 256756
-      setAngleX: 6800
-      setAngleY: 7600
-      setAngle: 59600
+        setObjectSize: 600
+        addPositionX: 99691
+        addPositionY: 654212
+        Unknown1727: 256756
+        setAngleX: 6800
+        setAngleY: 7600
+        setAngle: 59600
       endRunOnObject: 
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 600
-      addPositionX: -14029
-      addPositionY: 679373
-      Unknown1727: 189716
-      setAngleX: 277200
-      setAngleY: 284800
-      setAngle: 68800
+        setObjectSize: 600
+        addPositionX: -14029
+        addPositionY: 679373
+        Unknown1727: 189716
+        setAngleX: 277200
+        setAngleY: 284800
+        setAngle: 68800
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(211)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 2000
-      addPositionX: -12945
-      addPositionY: 710670
-      Unknown1727: 10977
-      setAngleX: 227600
-      setAngleY: 296000
-      setAngle: 290800
+        setObjectSize: 2000
+        addPositionX: -12945
+        addPositionY: 710670
+        Unknown1727: 10977
+        setAngleX: 227600
+        setAngleY: 296000
+        setAngle: 290800
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(215)
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 800
-      addPositionX: -136963
-      addPositionY: 688524
-      Unknown1727: 72444
-      setAngleX: 36800
-      setAngleY: 336800
-      setAngle: 309600
+        setObjectSize: 800
+        addPositionX: -136963
+        addPositionY: 688524
+        Unknown1727: 72444
+        setAngleX: 36800
+        setAngleY: 336800
+        setAngle: 309600
       endRunOnObject: 
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 600
-      setAngleX: 334800
-      setAngleY: 350800
-      setAngle: 4400
-      addPositionX: -18069
-      addPositionY: 749337
-      Unknown1727: 102522
+        setObjectSize: 600
+        setAngleX: 334800
+        setAngleY: 350800
+        setAngle: 4400
+        addPositionX: -18069
+        addPositionY: 749337
+        Unknown1727: 102522
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(219)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -12945
-      addPositionY: 710670
-      Unknown1727: 10977
-      setObjectWidth: 2000
-      setObjectHeight: 2000
-      Unknown180: 2500
-      setAngleX: 201600
-      setAngleY: 296000
-      setAngle: 208800
+        addPositionX: -12945
+        addPositionY: 710670
+        Unknown1727: 10977
+        setObjectWidth: 2000
+        setObjectHeight: 2000
+        setObjectDepth: 2500
+        setAngleX: 201600
+        setAngleY: 296000
+        setAngle: 208800
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(223)
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 800
-      addPositionX: -223247
-      addPositionY: 1066253
-      Unknown1727: 271908
-      setAngleX: 325200
-      setAngleY: 326400
-      setAngle: 69200
+        setObjectSize: 800
+        addPositionX: -223247
+        addPositionY: 1066253
+        Unknown1727: 271908
+        setAngleX: 325200
+        setAngleY: 326400
+        setAngle: 69200
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(227)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -34430
-      addPositionY: 961752
-      Unknown1727: 225725
-      setObjectSize: 2500
-      setAngleX: 184400
-      setAngleY: 347600
-      setAngle: 114800
+        addPositionX: -34430
+        addPositionY: 961752
+        Unknown1727: 225725
+        setObjectSize: 2500
+        setAngleX: 184400
+        setAngleY: 347600
+        setAngle: 114800
       endRunOnObject: 
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1000
-      addPositionX: 1231
-      addPositionY: 925377
-      Unknown1727: -60823
-      setAngleX: 338800
-      setAngleY: 350800
-      setAngle: 357600
+        setObjectSize: 1000
+        addPositionX: 1231
+        addPositionY: 925377
+        Unknown1727: -60823
+        setAngleX: 338800
+        setAngleY: 350800
+        setAngle: 357600
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(231)
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 800
-      addPositionX: 271616
-      addPositionY: 1228688
-      Unknown1727: 111352
-      setAngleX: 22800
-      setAngleY: 186800
-      setAngle: 62000
+        setObjectSize: 800
+        addPositionX: 271616
+        addPositionY: 1228688
+        Unknown1727: 111352
+        setAngleX: 22800
+        setAngleY: 186800
+        setAngle: 62000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(235)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 2500
-      addPositionX: -78571
-      addPositionY: 1224593
-      Unknown1727: 290802
-      setAngleX: 128000
-      setAngleY: 287200
-      setAngle: 27600
+        setObjectSize: 2500
+        addPositionX: -78571
+        addPositionY: 1224593
+        Unknown1727: 290802
+        setAngleX: 128000
+        setAngleY: 287200
+        setAngle: 27600
       endRunOnObject: 
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1000
-      addPositionX: 31518
-      addPositionY: 1105543
-      Unknown1727: 100979
-      setAngleX: 338800
-      setAngleY: 336400
-      setAngle: 18000
+        setObjectSize: 1000
+        addPositionX: 31518
+        addPositionY: 1105543
+        Unknown1727: 100979
+        setAngleX: 338800
+        setAngleY: 336400
+        setAngle: 18000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(239)
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 800
-      addPositionX: -88217
-      addPositionY: 1260002
-      Unknown1727: 133637
-      setAngleX: 23600
-      setAngleY: 2400
-      setAngle: 62000
+        setObjectSize: 800
+        addPositionX: -88217
+        addPositionY: 1260002
+        Unknown1727: 133637
+        setAngleX: 23600
+        setAngleY: 2400
+        setAngle: 62000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(243)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 3000
-      addPositionX: 7521
-      addPositionY: 1277638
-      Unknown1727: -78136
-      setAngleX: 250000
-      setAngleY: 19200
-      setAngle: 134800
+        setObjectSize: 3000
+        addPositionX: 7521
+        addPositionY: 1277638
+        Unknown1727: -78136
+        setAngleX: 250000
+        setAngleY: 19200
+        setAngle: 134800
       endRunOnObject: 
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1000
-      addPositionX: -34225
-      addPositionY: 1315909
-      Unknown1727: -17953
-      setAngleX: 342800
-      setAngleY: 322000
-      setAngle: 34400
+        setObjectSize: 1000
+        addPositionX: -34225
+        addPositionY: 1315909
+        Unknown1727: -17953
+        setAngleX: 342800
+        setAngleY: 322000
+        setAngle: 34400
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(247)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 5000
-      addPositionX: 18329
-      addPositionY: 1416564
-      Unknown1727: 88105
-      setAngleX: 172000
-      setAngleY: 331200
-      setAngle: 47600
+        setObjectSize: 5000
+        addPositionX: 18329
+        addPositionY: 1416564
+        Unknown1727: 88105
+        setAngleX: 172000
+        setAngleY: 331200
+        setAngle: 47600
       endRunOnObject: 
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectWidth: 1000
-      setObjectHeight: 1000
-      Unknown180: 1000
-      addPositionX: 164737
-      addPositionY: 1443472
-      Unknown1727: 113057
-      setAngleX: 17600
-      setAngleY: 162400
-      setAngle: 69600
+        setObjectWidth: 1000
+        setObjectHeight: 1000
+        setObjectDepth: 1000
+        addPositionX: 164737
+        addPositionY: 1443472
+        Unknown1727: 113057
+        setAngleX: 17600
+        setAngleY: 162400
+        setAngle: 69600
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(251)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 3000
-      addPositionX: 18329
-      addPositionY: 1416564
-      Unknown1727: 88105
-      setAngleX: 136000
-      setAngleY: 331200
-      setAngle: 47600
+        setObjectSize: 3000
+        addPositionX: 18329
+        addPositionY: 1416564
+        Unknown1727: 88105
+        setAngleX: 136000
+        setAngleY: 331200
+        setAngle: 47600
       endRunOnObject: 
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1500
-      addPositionX: -362316
-      addPositionY: 1108300
-      Unknown1727: -546503
-      setAngleX: 264400
-      setAngleY: 237200
-      setAngle: 72000
+        setObjectSize: 1500
+        addPositionX: -362316
+        addPositionY: 1108300
+        Unknown1727: -546503
+        setAngleX: 264400
+        setAngleY: 237200
+        setAngle: 72000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(255)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 4500
-      addPositionX: 19113
-      addPositionY: 1551568
-      Unknown1727: 24153
-      setAngleX: 222400
-      setAngleY: 308000
-      setAngle: 306000
+        setObjectSize: 4500
+        addPositionX: 19113
+        addPositionY: 1551568
+        Unknown1727: 24153
+        setAngleX: 222400
+        setAngleY: 308000
+        setAngle: 306000
       endRunOnObject: 
       deactivateObjectByName: s32'sis_441cs_SlashHit'
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1000
-      addPositionX: -353984
-      addPositionY: 1706540
-      Unknown1727: 69025
-      setAngleX: 21200
-      setAngleY: 165200
-      setAngle: 299200
+        setObjectSize: 1000
+        addPositionX: -353984
+        addPositionY: 1706540
+        Unknown1727: 69025
+        setAngleX: 21200
+        setAngleY: 165200
+        setAngle: 299200
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(259)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 3000
-      addPositionX: 19113
-      addPositionY: 1551568
-      Unknown1727: 24153
-      setAngleX: 142400
-      setAngleY: 308000
-      setAngle: 306000
+        setObjectSize: 3000
+        addPositionX: 19113
+        addPositionY: 1551568
+        Unknown1727: 24153
+        setAngleX: 142400
+        setAngleY: 308000
+        setAngle: 306000
       endRunOnObject: 
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1300
-      addPositionX: -307449
-      addPositionY: 1356176
-      Unknown1727: -195611
-      setAngleX: 324800
-      setAngleY: 293200
-      setAngle: 29600
+        setObjectSize: 1300
+        addPositionX: -307449
+        addPositionY: 1356176
+        Unknown1727: -195611
+        setAngleX: 324800
+        setAngleY: 293200
+        setAngle: 29600
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(263)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 2000
-      addPositionX: -6446
-      addPositionY: 1731236
-      Unknown1727: -1908
-      setAngleX: 218400
-      setAngleY: 266000
-      setAngle: 218000
+        setObjectSize: 2000
+        addPositionX: -6446
+        addPositionY: 1731236
+        Unknown1727: -1908
+        setAngleX: 218400
+        setAngleY: 266000
+        setAngle: 218000
       endRunOnObject: 
       deactivateObjectByName: s32'sis_441cs_SlashHit'
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1000
-      addPositionX: 12578
-      addPositionY: 1498419
-      Unknown1727: 351827
-      setAngleX: 21200
-      setAngleY: 159200
-      setAngle: 42800
+        setObjectSize: 1000
+        addPositionX: 12578
+        addPositionY: 1498419
+        Unknown1727: 351827
+        setAngleX: 21200
+        setAngleY: 159200
+        setAngle: 42800
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(267)
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1300
-      addPositionX: -51464
-      addPositionY: 1612828
-      Unknown1727: -108936
-      setAngleX: 338800
-      setAngleY: 314000
-      setAngle: 35600
+        setObjectSize: 1300
+        addPositionX: -51464
+        addPositionY: 1612828
+        Unknown1727: -108936
+        setAngleX: 338800
+        setAngleY: 314000
+        setAngle: 35600
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(271)
@@ -5002,115 +5002,115 @@ beginState: s32'sis_441cs_SlashRingMatome'
       deactivateObjectByName: s32'sis_441cs_HitEff04'
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1000
-      addPositionX: -232375
-      addPositionY: 2005722
-      Unknown1727: 392504
-      setAngleX: 21200
-      setAngleY: 125200
-      setAngle: 288000
+        setObjectSize: 1000
+        addPositionX: -232375
+        addPositionY: 2005722
+        Unknown1727: 392504
+        setAngleX: 21200
+        setAngleY: 125200
+        setAngle: 288000
       endRunOnObject: 
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 3000
-      addPositionX: -21961
-      addPositionY: 1731236
-      Unknown1727: 17692
-      setAngleX: 224400
-      setAngleY: 352000
-      setAngle: 152000
+        setObjectSize: 3000
+        addPositionX: -21961
+        addPositionY: 1731236
+        Unknown1727: 17692
+        setAngleX: 224400
+        setAngleY: 352000
+        setAngle: 152000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(275)
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1300
-      addPositionX: -77269
-      addPositionY: 1722105
-      Unknown1727: -45211
-      setAngleX: 335600
-      setAngleY: 313200
-      setAngle: 344000
+        setObjectSize: 1300
+        addPositionX: -77269
+        addPositionY: 1722105
+        Unknown1727: -45211
+        setAngleX: 335600
+        setAngleY: 313200
+        setAngle: 344000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(279)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 5000
-      addPositionX: 151341
-      addPositionY: 2057522
-      Unknown1727: 65420
-      setAngleX: 7600
-      setAngleY: 125200
-      setAngle: 40400
+        setObjectSize: 5000
+        addPositionX: 151341
+        addPositionY: 2057522
+        Unknown1727: 65420
+        setAngleX: 7600
+        setAngleY: 125200
+        setAngle: 40400
       endRunOnObject: 
       deactivateObjectByName: s32'sis_441cs_SlashHit'
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1000
-      addPositionX: 205698
-      addPositionY: 2074999
-      Unknown1727: 55005
-      setAngleX: 13600
-      setAngleY: 125200
-      setAngle: 34400
+        setObjectSize: 1000
+        addPositionX: 205698
+        addPositionY: 2074999
+        Unknown1727: 55005
+        setAngleX: 13600
+        setAngleY: 125200
+        setAngle: 34400
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(283)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 3200
-      addPositionX: 114158
-      addPositionY: 2143613
-      Unknown1727: 67947
-      setAngleX: 162400
-      setAngleY: 310000
-      setAngle: 64000
+        setObjectSize: 3200
+        addPositionX: 114158
+        addPositionY: 2143613
+        Unknown1727: 67947
+        setAngleX: 162400
+        setAngleY: 310000
+        setAngle: 64000
       endRunOnObject: 
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1300
-      addPositionX: -18003
-      addPositionY: 1889077
-      Unknown1727: -24701
-      setAngleX: 39200
-      setAngleY: 271600
-      setAngle: 231200
+        setObjectSize: 1300
+        addPositionX: -18003
+        addPositionY: 1889077
+        Unknown1727: -24701
+        setAngleX: 39200
+        setAngleY: 271600
+        setAngle: 231200
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(287)
       deactivateObjectByName: s32'sis_441cs_SlashHit'
       createObject: s32'sis_441cs_SlashHit', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1000
-      addPositionX: -70611
-      addPositionY: 2174421
-      Unknown1727: 234345
-      setAngleX: 13600
-      setAngleY: 116800
-      setAngle: 284000
+        setObjectSize: 1000
+        addPositionX: -70611
+        addPositionY: 2174421
+        Unknown1727: 234345
+        setAngleX: 13600
+        setAngleY: 116800
+        setAngle: 284000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(291)
       createObject: s32'sis_441cs_SlashRing', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 3000
-      addPositionX: -366886
-      addPositionY: 1951452
-      Unknown1727: -120900
-      setAngleX: 173200
-      setAngleY: 294000
-      setAngle: 122000
+        setObjectSize: 3000
+        addPositionX: -366886
+        addPositionY: 1951452
+        Unknown1727: -120900
+        setAngleX: 173200
+        setAngleY: 294000
+        setAngle: 122000
       endRunOnObject: 
       createObject: s32'sis_441cs_HitEff04', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 1000
-      addPositionX: -188250
-      addPositionY: 1909050
-      Unknown1727: -124954
-      setAngleX: 69200
-      setAngleY: 236000
-      setAngle: 231200
+        setObjectSize: 1000
+        addPositionX: -188250
+        addPositionY: 1909050
+        Unknown1727: -124954
+        setAngleX: 69200
+        setAngleY: 236000
+        setAngle: 231200
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(295)
@@ -5119,27 +5119,27 @@ beginState: s32'sis_441cs_SlashRingMatome'
       deactivateObjectByName: s32'sis_441cs_SlashHit'
       createObject: s32'sis_441cs_SlashRing2', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectWidth: 5000
-      setObjectHeight: 7500
-      Unknown180: 5000
-      addPositionX: -199727
-      addPositionY: 2207814
-      Unknown1727: 18773
-      setAngleX: 225200
-      setAngleY: 244400
-      setAngle: 300400
+        setObjectWidth: 5000
+        setObjectHeight: 7500
+        setObjectDepth: 5000
+        addPositionX: -199727
+        addPositionY: 2207814
+        Unknown1727: 18773
+        setAngleX: 225200
+        setAngleY: 244400
+        setAngle: 300400
       endRunOnObject: 
       createObject: s32'sis_441cs_SlashRing2', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectWidth: 5000
-      setObjectHeight: 7500
-      Unknown180: 5000
-      addPositionX: -118786
-      addPositionY: 2142734
-      Unknown1727: -37493
-      setAngleX: 224000
-      setAngleY: 316800
-      setAngle: 253600
+        setObjectWidth: 5000
+        setObjectHeight: 7500
+        setObjectDepth: 5000
+        addPositionX: -118786
+        addPositionY: 2142734
+        Unknown1727: -37493
+        setAngleX: 224000
+        setAngleY: 316800
+        setAngle: 253600
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(299)
@@ -5147,15 +5147,15 @@ beginState: s32'sis_441cs_SlashRingMatome'
       createObject: s32'sis_441_FinalRing', (PLAYER)
       createObject: s32'sis_441cs_HitEff05', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectWidth: 100
-      setObjectHeight: 100
-      Unknown180: 100
-      addPositionX: 1070714
-      addPositionY: 1933608
-      Unknown1727: -23
-      setAngleX: 20800
-      setAngleY: 270400
-      setAngle: 0
+        setObjectWidth: 100
+        setObjectHeight: 100
+        setObjectDepth: 100
+        addPositionX: 1070714
+        addPositionY: 1933608
+        Unknown1727: -23
+        setAngleX: 20800
+        setAngleY: 270400
+        setAngle: 0
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(331)
@@ -5255,16 +5255,16 @@ beginState: s32'sis_700_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'sis_MI_PP_700_Blur', 1, 0
-      Unknown2587: 1601399155, s32'MI_PP_700_Blur'
+      Unknown2587: s32'sis_MI_PP_700_Blur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
-  Unknown2587: 1601399155, s32'MI_PP_700_Blur'
+  Unknown2587: s32'sis_MI_PP_700_Blur', 1
   Unknown2588: s32'sis_MI_PP_700_Blur', 1, 100
   Unknown2590: s32'sis_MI_PP_700_Blur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'sis_MI_PP_700_Blur', 1, 0
-  Unknown2587: 1601399155, s32'MI_PP_700_Blur'
+  Unknown2587: s32'sis_MI_PP_700_Blur', 0
 endState: 
 
 beginState: s32'sis_700_Ring'
@@ -5291,7 +5291,7 @@ beginState: s32'sis_700_Ring2'
     linkObjectPosition: 2
     setObjectWidth: 4000
     setObjectHeight: 3500
-    Unknown180: 3500
+    setObjectDepth: 3500
     setAngleX: 22400
     setAngleY: 82400
     setAngle: 342400
@@ -5316,7 +5316,7 @@ beginState: s32'sis_700_Ring3'
     setAngle: 185200
     setObjectWidth: 1600
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 120
   linkParticle: s32'sis_700_HitRing3'
@@ -5334,7 +5334,7 @@ beginState: s32'sis_600_RoundWinR'
     setDepth: 78356
     setObjectWidth: 500
     setObjectHeight: 500
-    Unknown180: 500
+    setObjectDepth: 500
     setAngleX: 0
     setAngleY: 327600
     setAngle: 347600
@@ -5355,7 +5355,7 @@ beginState: s32'sis_600_RoundWinL'
     setDepth: 40977
     setObjectWidth: 300
     setObjectHeight: 300
-    Unknown180: 300
+    setObjectDepth: 300
     setAngleY: 326000
     setAngle: 228400
   endUpon: 
@@ -5371,7 +5371,7 @@ beginState: s32'BunshinAttackObj'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnNormalShot_AtkInit'
     Unknown478: 3
-    Unknown957: 50
+    wallBreakDamageNoUpdate: 50
     chipDamagePercent: 0
     guardType: (ANY)
     comboLimitScaling: 0

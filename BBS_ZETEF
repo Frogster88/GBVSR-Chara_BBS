@@ -8,7 +8,7 @@ beginState: s32'ZET_201_Strike01'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 60
@@ -132,7 +132,7 @@ beginState: s32'ZET_233_Eff'
     setLinkObjectDestroyOnDamage: 3
     linkObjectSize: 2
     flipDirection: 
-    Unknown289: 30
+    setMaxActionTime: 30
     setObjectSize: 1070
   endUpon: 
   sprite: s32'null', 3
@@ -158,7 +158,7 @@ beginState: s32'ZET_233_Eff2'
     setLinkObjectDestroyOnDamage: 3
     linkObjectSize: 2
     flipDirection: 
-    Unknown289: 30
+    setMaxActionTime: 30
     setObjectSize: 1070
   endUpon: 
   sprite: s32'null', 3
@@ -192,7 +192,7 @@ beginState: s32'zet_306_Eff'
     setLinkObjectDestroyOnDamage: 3
     linkObjectSize: 2
     flipDirection: 
-    Unknown289: 50
+    setMaxActionTime: 50
   endUpon: 
   sprite: s32'null', 3
   linkParticle: s32'zet_306_slash01'
@@ -236,7 +236,7 @@ beginState: s32'ZET_300_BeamEff'
     setLinkObjectDestroyOnDamage: 3
     setPositionX: 15972
     setPositionY: 202797
-    Unknown289: 90
+    setMaxActionTime: 90
   endUpon: 
   sprite: s32'null', 15
   createObject: s32'ZET_300_Hexagon', (PLAYER)
@@ -253,7 +253,7 @@ beginState: s32'ZET_300_Beam'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     addPositionY: 103896
     setAngleX: 322000
     setAngleY: 0
@@ -275,7 +275,7 @@ beginState: s32'ZET_300_Hexagon'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 60
@@ -292,7 +292,7 @@ beginState: s32'ZET_301_Strike01'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   sprite: s32'null', 3
   linkParticle: s32'zet_301_strike01'
@@ -307,7 +307,7 @@ beginState: s32'ZET_301_BeamEff'
     setLinkObjectDestroyOnDamage: 3
     setPositionX: 15972
     setPositionY: 202797
-    Unknown289: 90
+    setMaxActionTime: 90
   endUpon: 
   sprite: s32'null', 15
   createObject: s32'ZET_301_Beam', (PLAYER)
@@ -322,7 +322,7 @@ beginState: s32'ZET_301_Beam'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     ignoreSuperFreezeFromAlly: 1
     ignoreFinishStop: 1
     addPositionX: -25962
@@ -354,7 +354,7 @@ beginState: s32'ZET_301_Hexagon'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectDirection: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     addPositionX: 73882
     addPositionY: 319419
     Unknown1727: 24468
@@ -411,7 +411,7 @@ beginState: s32'ZET_302_BeamEff'
     setLinkObjectDestroyOnDamage: 3
     setPositionX: 15972
     setPositionY: 202797
-    Unknown289: 90
+    setMaxActionTime: 90
   endUpon: 
   sprite: s32'null', 15
   createObject: s32'ZET_302_Beam', (PLAYER)
@@ -427,7 +427,7 @@ beginState: s32'ZET_302_Beam'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     addPositionX: -44955
     addPositionY: 101574
     Unknown1727: 53946
@@ -454,7 +454,7 @@ beginState: s32'ZET_302_Hexagon'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectDirection: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     setPositionX: -79001
     setPositionY: 310805
     setDepth: -11456
@@ -702,10 +702,10 @@ beginState: s32'zet_350_Eff'
   linkParticle: s32'zet_350_Slash01'
   createObject: s32'zet_350_BurstEff', (PLAYER_LAND)
   runOnObject: (PREVIOUS)
-  setObjectSize: 500
-  addPositionX: 50000
-  Unknown1727: -70000
-  flipDirection: 
+    setObjectSize: 500
+    addPositionX: 50000
+    Unknown1727: -70000
+    flipDirection: 
   endRunOnObject: 
 endState: 
 
@@ -973,7 +973,7 @@ beginState: s32'zet_400_ThrustPos'
   endElse: 
   createObject: s32'zet_400_nokosiAura', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionY: -40000
+    addPositionY: -40000
   endRunOnObject: 
   beginLabel: s32'Loop'
   sprite: s32'null', 3
@@ -985,7 +985,7 @@ beginState: s32'zet_400_ThrustPos'
   endElse: 
   createObject: s32'zet_400_nokosiAura', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionY: -40000
+    addPositionY: -40000
   endRunOnObject: 
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
@@ -1327,7 +1327,7 @@ beginState: s32'zet_401B_ThrustPos'
   createArgAngle: 0, 60000
   createObjectWithArg: s32'zet_400_nokosiAura', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -40000
+    addPositionX: -40000
   endRunOnObject: 
   deactivateObjectByName: s32'zet_402_Tame'
   beginLabel: s32'Loop'
@@ -1343,7 +1343,7 @@ beginState: s32'zet_401B_ThrustPos'
   createArgAngle: 0, 60000
   createObjectWithArg: s32'zet_400_nokosiAura', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -40000
+    addPositionX: -40000
   endRunOnObject: 
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
@@ -1747,11 +1747,11 @@ beginState: s32'ZET_404_KiraEff'
   endUpon: 
   sprite: s32'null', 7
   linkParticle: s32'zet_404_kira01'
-  Unknown191: 80
+  setObjectSizeScaleSpeed: 80
   sprite: s32'null', 7
-  Unknown191: 40
+  setObjectSizeScaleSpeed: 40
   sprite: s32'null', 15
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'ZET_405_KiraEff'
@@ -1768,11 +1768,11 @@ beginState: s32'ZET_405_KiraEff'
   endUpon: 
   sprite: s32'null', 7
   linkParticle: s32'zet_404_kira01'
-  Unknown191: 80
+  setObjectSizeScaleSpeed: 80
   sprite: s32'null', 7
-  Unknown191: 40
+  setObjectSizeScaleSpeed: 40
   sprite: s32'null', 15
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'ZET_406_Eff'
@@ -1797,7 +1797,7 @@ beginState: s32'ZET_407_Eff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     setObjectSize: 1070
   endUpon: 
   sprite: s32'null', 3
@@ -1812,7 +1812,7 @@ beginState: s32'ZET_407_Eff'
   linkParticle: s32'zet_407_slash02'
   setObjectWidth: 800
   setObjectHeight: 1070
-  Unknown180: 1070
+  setObjectDepth: 1070
   setPositionX: -141858
   setPositionY: 64974
   setDepth: -20225
@@ -1902,7 +1902,7 @@ beginState: s32'ZET_AddSlash_Eff01'
   setDepth: 122489
   setObjectWidth: 500
   setObjectHeight: 700
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleX: 177200
   setAngleY: 279600
   setAngle: 234800
@@ -1913,7 +1913,7 @@ beginState: s32'ZET_AddSlash_Eff01'
   setDepth: -16026
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 850
+  setObjectDepth: 850
   setAngleX: 153600
   setAngleY: 94800
   setAngle: 118800
@@ -1934,7 +1934,7 @@ beginState: s32'ZET_AddSlash_Eff02'
   linkParticle: s32'zet_AddSlash01'
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: -48951
   setPositionY: 189750
   setDepth: 198466
@@ -1945,7 +1945,7 @@ beginState: s32'ZET_AddSlash_Eff02'
   linkParticle: s32'zet_AddSlash02'
   setObjectWidth: 1000
   setObjectHeight: 900
-  Unknown180: 900
+  setObjectDepth: 900
   setPositionX: 71049
   setPositionY: 207280
   setDepth: -134078
@@ -1980,7 +1980,7 @@ beginState: s32'ZET_AddSlash_Eff03'
   setDepth: -130941
   setObjectWidth: 1000
   setObjectHeight: 900
-  Unknown180: 1300
+  setObjectDepth: 1300
   setAngleX: 350000
   setAngleY: 263600
   setAngle: 26000
@@ -2238,8 +2238,8 @@ beginState: s32'zet_409_++matome'
   createObject: s32'zet_409_ChargeAura', (PLAYER)
   stackObject: (STACK1), (PREVIOUS)
   runOnObject: (STACK1)
-  setObjectWidth: 1700
-  Unknown180: 1700
+    setObjectWidth: 1700
+    setObjectDepth: 1700
   endRunOnObject: 
   sprite: s32'chargebeam_atk0', 300
   hit: 
@@ -2523,7 +2523,7 @@ beginState: s32'zet_409_RotateSlashEff'
     setPositionX: -33998
     setPositionY: 238666
     setDepth: -56656
-    Unknown289: 300
+    setMaxActionTime: 300
     gotoLabelUpon: 23, s32'End'
   endUpon: 
   beginLabel: s32'Rot'
@@ -2615,17 +2615,17 @@ beginState: s32'zet_410_BeamEff'
     endUpon: 
     checkCurrentStateName: (PLAYER), s32'Assault_Straight_D'
     if: Mem(Tmp)
-      Unknown72: s32'Assault_Straight_D'
+      postSubroutineBegin: s32'Assault_Straight_D'
       storeValue: Mem(ActReg1), Val(0)
     endIf: 
     checkCurrentStateName: (PLAYER), s32'Assault_Upper_D'
     if: Mem(Tmp)
-      Unknown72: s32'Assault_Upper_D'
+      postSubroutineBegin: s32'Assault_Upper_D'
       storeValue: Mem(ActReg1), Val(1)
     endIf: 
     checkCurrentStateName: (PLAYER), s32'Assault_Air_D'
     if: Mem(Tmp)
-      Unknown72: s32'Assault_Air_D'
+      postSubroutineBegin: s32'Assault_Air_D'
       storeValue: Mem(ActReg1), Val(2)
     endIf: 
     upon: 90
@@ -2899,7 +2899,7 @@ beginState: s32'zet_440_cs_hexagon'
     setDepth: 100530
     setObjectWidth: 600
     setObjectHeight: 600
-    Unknown180: 600
+    setObjectDepth: 600
     setAngleX: 356000
     setAngleY: 34000
     setAngle: 334000
@@ -3992,7 +3992,7 @@ beginState: s32'zet_440CS2_Explosion'
     setObjectSize: 2000
   endUpon: 
   sprite: s32'null', 500
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
 endState: 
 
 beginState: s32'zet_440CS2_WhiteOut'
@@ -4032,7 +4032,7 @@ beginState: s32'zet_440_Barrier'
     setDepth: 39087
     setObjectWidth: 2000
     setObjectHeight: 1400
-    Unknown180: 2000
+    setObjectDepth: 2000
     setAngleY: 42800
   endUpon: 
   sprite: s32'null', 200
@@ -4050,7 +4050,7 @@ beginState: s32'zet_440_Barrier2'
   sprite: s32'null', 4
   setObjectWidth: 1800
   setObjectHeight: 1400
-  Unknown180: 1800
+  setObjectDepth: 1800
   setPositionX: 10474657
   setPositionY: 4129858
   setDepth: 1945401
@@ -4189,7 +4189,7 @@ beginState: s32'zet_601_Eff'
     linkObjectPosition: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 300
+    setMaxActionTime: 300
     setPositionX: -20987
     setPositionY: 415984
   endUpon: 
@@ -4238,7 +4238,7 @@ beginState: s32'zet_700_CrackBurst'
     setDepth: 173329
     setObjectWidth: 700
     setObjectHeight: 700
-    Unknown180: 700
+    setObjectDepth: 700
     setAngleX: 0
     setAngleY: 54400
     setAngle: 10400

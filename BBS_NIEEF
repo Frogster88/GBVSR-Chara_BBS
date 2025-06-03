@@ -3,7 +3,7 @@ beginState: s32'dmy'
 endState: 
 
 beginSubroutine: s32'PosZ_Init'
-  Unknown264: 3
+  setZOffset: 3
   setDepth: -120000
 endSubroutine: 
 
@@ -116,14 +116,14 @@ beginSubroutine: s32'Body_SpecialAttack_Init'
     endIf: 
     storeValue: Mem(PlayerVal0), Val(1)
     linkObjectPosition: 3
-    Unknown269: 1
+    forceShadowOff: 1
     createObject: s32'dea_400_AuraStartEff', (PLAYER)
     createObject: s32'dea_400_GroundAuraEff', (PLAYER)
     stackObject: (STACK0), (PREVIOUS)
     upon: 116
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(15)
         clearUpon: 116
-        Unknown269: 0
+        forceShadowOff: 0
       endIf: 
       ifOperation: (IS_EQUAL), Mem(ActionTime), Val(10)
         linkObjectPosition: 0
@@ -131,14 +131,14 @@ beginSubroutine: s32'Body_SpecialAttack_Init'
     endUpon: 
   endIf: 
   else: 
-    Unknown269: 0
+    forceShadowOff: 0
     checkCurrentStateName: (SELF), s32'death_Stand'
     ifNot: Mem(Tmp)
       checkLastStateName: s32'death_Stand'
       if: Mem(Tmp)
         checkCurrentStateName: (SELF), s32'death_Damage'
         ifNot: Mem(Tmp)
-          Unknown2329: 0x03000000030000007B000000170000007B000000
+          Unknown2329: 3, 3, 123, 23, 123
           ifOperation: (IS_LESSER), Mem(Tmp), Val(-200000)
             createObject: s32'death_Disappear', (PLAYER)
             Unknown1793: 4, 23
@@ -181,11 +181,11 @@ beginSubroutine: s32'Body_SpecialAttack_Init'
             endIf: 
             createObject: s32'dea_400_GroundAuraEff', (PLAYER)
             stackObject: (STACK0), (PREVIOUS)
-            Unknown269: 1
+            forceShadowOff: 1
             upon: 116
               ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(15)
                 clearUpon: 116
-                Unknown269: 0
+                forceShadowOff: 0
               endIf: 
             endUpon: 
           endIf: 
@@ -211,7 +211,7 @@ beginSubroutine: s32'Body_SpecialAttack_Init'
   else: 
     setNoCollision: 0
   endElse: 
-  Unknown55: 0x200000006E696500000000000000000000000000
+  Unknown55: 32, 6646126, 0, 0, 0
   Unknown266: 3, 32
   storeValue: Mem(ActReg6), Mem(Tmp)
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
@@ -230,7 +230,7 @@ endIf:
 endUpon: 
 endSubroutine: 
 beginSubroutine: s32'PushCollision_Init'
-  Unknown2329: 0x03000000170000007B000000160000007B000000
+  Unknown2329: 3, 23, 123, 22, 123
   ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(1)
     Unknown2483: 2, 50, 2, 33
     ifOperation: (IS_NOT_EQUAL), Mem(Dir), Mem(ActReg5)
@@ -328,11 +328,11 @@ beginSubroutine: s32'Body_NormalAttack_Init'
     addToMeshSet: s32'body'
     addToMeshSet: s32'SlashEffect_Main'
   endMeshSet: 
-  Unknown269: 1
+  forceShadowOff: 1
   upon: 116
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(10)
       clearUpon: 116
-      Unknown269: 0
+      forceShadowOff: 0
     endIf: 
   endUpon: 
   linkObjectPosition: 3
@@ -615,7 +615,7 @@ beginState: s32'death_Stand'
     upon: 41
       onSpriteChange: s32'dea404_00'
       runOnObject: (PLAYER)
-      doNotBeginCancel: 1
+        doNotBeginCancel: 1
       endRunOnObject: 
       checkCurrentStateName: (PLAYER), s32'AntiAir_D'
       if: Mem(Tmp)
@@ -642,11 +642,29 @@ upon: 23
   storeValue: Mem(ActReg0), Val(1)
 endUpon: 
 
+upon: 137
+  storeValue: Mem(GTmpReg1), Val(1)
+endUpon: 
+
 upon: 35
-  clearUpon: 35
-  callSubroutine: s32'death_Suicide'
-  storeValue: Mem(PlayerVal0), Val(0)
-  callSubroutine: s32'death_Kieta_Flag'
+  ifNot: Mem(GTmpReg1)
+    checkCurrentStateName: (PLAYER), s32'ThrowExe'
+    ifNot: Mem(Tmp)
+      checkCurrentStateName: (PLAYER), s32'BackThrowExe'
+    endIf: 
+    ifNot: Mem(Tmp)
+      checkCurrentStateName: (PLAYER), s32'AirThrowExe'
+    endIf: 
+    ifNot: Mem(Tmp)
+      clearUpon: 35
+      callSubroutine: s32'death_Suicide'
+      storeValue: Mem(PlayerVal0), Val(0)
+      callSubroutine: s32'death_Kieta_Flag'
+    endIf: 
+  endIf: 
+  else: 
+    storeValue: Mem(GTmpReg1), Val(0)
+  endElse: 
 endUpon: 
 
 upon: (BEFORE_EXIT)
@@ -913,21 +931,21 @@ beginState: s32'nie_GuardEff'
     Unknown413: -5, 2, 1, 0
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: -45113
-    setPositionY: 282812
-    setDepth: -10989
-    setAngleY: 355600
-    setAngle: 33600
+      setObjectSize: 1400
+      setPositionX: -45113
+      setPositionY: 282812
+      setDepth: -10989
+      setAngleY: 355600
+      setAngle: 33600
     endRunOnObject: 
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1300
-    setPositionX: -19980
-    setPositionY: 269552
-    setDepth: 84834
-    setAngleY: 26800
-    setAngle: 238000
+      setObjectSize: 1300
+      setPositionX: -19980
+      setPositionY: 269552
+      setDepth: 84834
+      setAngleY: 26800
+      setAngle: 238000
     endRunOnObject: 
   endState: 
   beginState: s32'dea205'
@@ -949,13 +967,13 @@ beginState: s32'nie_GuardEff'
     Unknown413: -5, 2, 1, 0
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: 40833
-    setPositionY: 219944
-    setDepth: 100386
-    setAngleX: 244000
-    setAngleY: 183200
-    setAngle: 17200
+      setObjectSize: 1400
+      setPositionX: 40833
+      setPositionY: 219944
+      setDepth: 100386
+      setAngleX: 244000
+      setAngleY: 183200
+      setAngle: 17200
     endRunOnObject: 
     sprite: s32'dea205_08', 4
     sprite: s32'dea205_09', 4
@@ -980,23 +998,23 @@ beginState: s32'nie_GuardEff'
     Unknown413: -4, 2, 1, 0
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: 25864
-    setPositionY: 155571
-    setDepth: 131643
-    setAngleX: 64400
-    setAngleY: 18000
-    setAngle: 219200
+      setObjectSize: 1400
+      setPositionX: 25864
+      setPositionY: 155571
+      setDepth: 131643
+      setAngleX: 64400
+      setAngleY: 18000
+      setAngle: 219200
     endRunOnObject: 
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: 27886
-    setPositionY: 173681
-    setDepth: -52742
-    setAngleX: 347200
-    setAngleY: 33200
-    setAngle: 180000
+      setObjectSize: 1400
+      setPositionX: 27886
+      setPositionY: 173681
+      setDepth: -52742
+      setAngleX: 347200
+      setAngleY: 33200
+      setAngle: 180000
     endRunOnObject: 
     sprite: s32'dea206_07', 3
     sprite: s32'dea206_08', 3
@@ -1023,12 +1041,12 @@ beginState: s32'nie_GuardEff'
     sprite: s32'dea207_09', 3
     createObject: s32'dea_DeathDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setPositionX: 111888
-    setPositionY: 254877
-    setDepth: -105983
-    setAngleX: 356800
-    setAngleY: 342800
-    setAngle: 1600
+      setPositionX: 111888
+      setPositionY: 254877
+      setDepth: -105983
+      setAngleX: 356800
+      setAngleY: 342800
+      setAngle: 1600
     endRunOnObject: 
     sprite: s32'null', 3
     Unknown2050: 0
@@ -1055,23 +1073,23 @@ beginState: s32'nie_GuardEff'
     Unknown413: -4, 2, 1, 0
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: 90847
-    setPositionY: 301321
-    setDepth: -67204
-    setAngleX: 9200
-    setAngleY: 43600
-    setAngle: 309600
+      setObjectSize: 1400
+      setPositionX: 90847
+      setPositionY: 301321
+      setDepth: -67204
+      setAngleX: 9200
+      setAngleY: 43600
+      setAngle: 309600
     endRunOnObject: 
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: -36046
-    setPositionY: 138907
-    setDepth: -59242
-    setAngleX: 316000
-    setAngleY: 200000
-    setAngle: 218000
+      setObjectSize: 1400
+      setPositionX: -36046
+      setPositionY: 138907
+      setDepth: -59242
+      setAngleX: 316000
+      setAngleY: 200000
+      setAngle: 218000
     endRunOnObject: 
     sprite: s32'dea222_10', 2
     swapMeshSet: s32'Sickle'
@@ -1093,13 +1111,13 @@ beginState: s32'nie_GuardEff'
     Unknown413: -5, 2, 1, 0
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: 22915
-    setPositionY: 85587
-    setDepth: 38455
-    setAngleX: 254800
-    setAngleY: 145200
-    setAngle: 352800
+      setObjectSize: 1400
+      setPositionX: 22915
+      setPositionY: 85587
+      setDepth: 38455
+      setAngleX: 254800
+      setAngleY: 145200
+      setAngle: 352800
     endRunOnObject: 
     sprite: s32'dea231_05', 4
     swapMeshSet: s32'Sickle'
@@ -1124,23 +1142,23 @@ beginState: s32'nie_GuardEff'
     sprite: s32'dea232_08', 3
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: -58004
-    setPositionY: 155434
-    setDepth: 157639
-    setAngleX: 342800
-    setAngleY: 25600
-    setAngle: 14400
+      setObjectSize: 1400
+      setPositionX: -58004
+      setPositionY: 155434
+      setDepth: 157639
+      setAngleX: 342800
+      setAngleY: 25600
+      setAngle: 14400
     endRunOnObject: 
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1200
-    setPositionX: 52973
-    setPositionY: 198453
-    setDepth: 19370
-    setAngleX: 303600
-    setAngleY: 61600
-    setAngle: 330800
+      setObjectSize: 1200
+      setPositionX: 52973
+      setPositionY: 198453
+      setDepth: 19370
+      setAngleX: 303600
+      setAngleY: 61600
+      setAngle: 330800
     endRunOnObject: 
     sprite: s32'dea232_09', 3
   endState: 
@@ -1167,23 +1185,23 @@ beginState: s32'nie_GuardEff'
     swapMeshSet: s32'Sickle'
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: 8981
-    setPositionY: 140580
-    setDepth: 176016
-    setAngleX: 100800
-    setAngleY: 19200
-    setAngle: 342400
+      setObjectSize: 1400
+      setPositionX: 8981
+      setPositionY: 140580
+      setDepth: 176016
+      setAngleX: 100800
+      setAngleY: 19200
+      setAngle: 342400
     endRunOnObject: 
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: 25964
-    setPositionY: 146228
-    setDepth: -34652
-    setAngleX: 282800
-    setAngleY: 30400
-    setAngle: 344000
+      setObjectSize: 1400
+      setPositionX: 25964
+      setPositionY: 146228
+      setDepth: -34652
+      setAngleX: 282800
+      setAngleY: 30400
+      setAngle: 344000
     endRunOnObject: 
     sprite: s32'dea233_10', 3
     sprite: s32'dea233_11', 3
@@ -1207,13 +1225,13 @@ beginState: s32'nie_GuardEff'
     Unknown413: -5, 2, 1, 0
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: 40949
-    setPositionY: 249589
-    setDepth: 96959
-    setAngleX: 65600
-    setAngleY: 1200
-    setAngle: 189600
+      setObjectSize: 1400
+      setPositionX: 40949
+      setPositionY: 249589
+      setDepth: 96959
+      setAngleX: 65600
+      setAngleY: 1200
+      setAngle: 189600
     endRunOnObject: 
     sprite: s32'dea251_06', 3
   endState: 
@@ -1237,13 +1255,13 @@ beginState: s32'nie_GuardEff'
     sprite: s32'dea252_07', 3
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1650
-    setAngleX: 27600
-    setAngleY: 11600
-    setAngle: 237600
-    setPositionX: 19970
-    setPositionY: 252454
-    setDepth: 123103
+      setObjectSize: 1650
+      setAngleX: 27600
+      setAngleY: 11600
+      setAngle: 237600
+      setPositionX: 19970
+      setPositionY: 252454
+      setDepth: 123103
     endRunOnObject: 
     sprite: s32'dea252_08', 3
     swapMeshSet: s32'SlashEffect_Main_Sub_Only'
@@ -1270,7 +1288,7 @@ beginState: s32'nie_GuardEff'
         clearUpon: 35
         clearUpon: (BEFORE_EXIT)
         storeValue: Mem(EnvR22), Val(0)
-        Unknown71: s32'death_Damage'
+        preSubroutineBegin: s32'death_Damage'
       endUpon: 
       storeValue: Mem(PlayerVal0), Val(1)
       storeValue: Mem(PlayerVal2), Val(10000)
@@ -1281,7 +1299,7 @@ beginState: s32'nie_GuardEff'
       endUpon: 
       storeValue: Mem(PlayerVal297), Val(0)
       storeValue: Mem(PlayerVal298), Val(0)
-      Unknown269: 1
+      forceShadowOff: 1
       upon: (FRAME_STEP)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(PosY), Val(400000)
           invulnForce: 1
@@ -1347,8 +1365,8 @@ beginState: s32'nie_GuardEff'
     velocityYPercentEachFrame: 130
     hit: 
     createObject: s32'nie_253_SlashDEff', (PLAYER)
-    Unknown600: 1
-    Unknown601: 
+    optionVoicePriority: 1
+    clearSoundOptions: 
     voiceLine: s16'vNIE_ATKAby_05'
     beginLabel: s32'Loop'
     sprite: s32'dea253_11', 3
@@ -1361,7 +1379,7 @@ beginState: s32'nie_GuardEff'
     haltMomentum: 1
     landingEffect: 104, 1, 0
     privateSE: s32'nie_07'
-    Unknown269: 0
+    forceShadowOff: 0
     createObject: s32'nie_253_GroundBurstEff', (PLAYER_LAND)
     sendSignalToAction: s32'nie_253_SlashDEff', 23
     sprite: s32'dea253_15', 3
@@ -1377,7 +1395,9 @@ beginState: s32'nie_GuardEff'
     sprite: s32'dea253_19', 3
     sprite: s32'dea253_20', 3
     sprite: s32'dea253_21', 3
+    beginLabel: s32'Death_End'
     sprite: s32'dea253_22', 2
+    setPositionY: 0
     endSprite: 
     sprite: s32'keep', 2147483647
     jumpToState: s32'death_Stand'
@@ -1413,13 +1433,13 @@ beginState: s32'nie_GuardEff'
     sprite: s32'dea301_14', 3
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: 6891
-    setPositionY: 235872
-    setDepth: 55051
-    setAngleX: 65600
-    setAngleY: 206400
-    setAngle: 6800
+      setObjectSize: 1400
+      setPositionX: 6891
+      setPositionY: 235872
+      setDepth: 55051
+      setAngleX: 65600
+      setAngleY: 206400
+      setAngle: 6800
     endRunOnObject: 
     sprite: s32'dea301_15', 3
     sprite: s32'dea301_16', 3
@@ -1434,7 +1454,7 @@ beginState: s32'nie_GuardEff'
       addPositionY: 800000
       gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
       callSubroutine: s32'Death_MeshSet_Body'
-      Unknown269: 1
+      forceShadowOff: 1
     endUpon: 
     sprite: s32'dea253_08', 3
     sprite: s32'dea253_09', 2
@@ -1456,7 +1476,7 @@ beginState: s32'nie_GuardEff'
     beginLabel: s32'Landing'
     sprite: s32'dea253_14', 2
     haltMomentum: 1
-    Unknown269: 0
+    forceShadowOff: 0
     Unknown1793: 3, 23
     commonSE: s32'SE_BTL_SwingWeaponSmallSickleL'
     sprite: s32'dea253_15', 3
@@ -1472,18 +1492,18 @@ beginState: s32'nie_GuardEff'
     Unknown2050: 0
     createObject: s32'dea_DeathDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setPositionX: -50601
-    setPositionY: 313637
-    setDepth: -3003
-    setAngleX: 344400
-    setAngleY: 342800
-    setAngle: 18800
+      setPositionX: -50601
+      setPositionY: 313637
+      setDepth: -3003
+      setAngleX: 344400
+      setAngleY: 342800
+      setAngle: 18800
     endRunOnObject: 
   endState: 
   beginState: s32'dea309'
     upon: (IMMEDIATE)
       worldCollision: 1
-      Unknown289: 120
+      setMaxActionTime: 120
       linkPawnWithAnimation: s32'DEA', s32''
       beginMeshSet: s32'Sickle'
         addToMeshSet: s32'SickleOnly'
@@ -1587,25 +1607,25 @@ beginState: s32'nie_GuardEff'
     addAngle: 3000
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1400
-    setPositionX: -63059
-    setPositionY: 34018
-    setDepth: 140290
-    setAngleX: 0
-    setAngleY: 22800
-    setAngle: 65200
-    physicsYImpulse: 0
+      setObjectSize: 1400
+      setPositionX: -63059
+      setPositionY: 34018
+      setDepth: 140290
+      setAngleX: 0
+      setAngleY: 22800
+      setAngle: 65200
+      physicsYImpulse: 0
     endRunOnObject: 
     createObject: s32'dea_ScytheDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1300
-    setPositionX: 71009
-    setPositionY: -20166
-    setDepth: 95231
-    setAngleX: 62400
-    setAngleY: 290000
-    setAngle: 254000
-    physicsYImpulse: 0
+      setObjectSize: 1300
+      setPositionX: 71009
+      setPositionY: -20166
+      setDepth: 95231
+      setAngleX: 62400
+      setAngleY: 290000
+      setAngle: 254000
+      physicsYImpulse: 0
     endRunOnObject: 
   endState: 
   beginState: s32'dea350'
@@ -1637,13 +1657,13 @@ beginState: s32'nie_GuardEff'
     sprite: s32'dea350_15', 3
     createObject: s32'dea_DeathDellEff01', (PLAYER)
     runOnObject: (PREVIOUS)
-    setObjectSize: 1200
-    setPositionX: -122845
-    setPositionY: 333175
-    setDepth: 4494
-    setAngleX: 357600
-    setAngleY: 156400
-    setAngle: 358400
+      setObjectSize: 1200
+      setPositionX: -122845
+      setPositionY: 333175
+      setDepth: 4494
+      setAngleX: 357600
+      setAngleY: 156400
+      setAngle: 358400
     endRunOnObject: 
     sprite: s32'null', 3
     Unknown2050: 0
@@ -1867,7 +1887,7 @@ beginState: s32'nie_GuardEff'
     setAngle: 355200
     setObjectWidth: 1000
     setObjectHeight: 1000
-    Unknown180: 800
+    setObjectDepth: 800
     linkParticle: s32'nie_207_fire02'
     sprite: s32'null', 36
     setLinkObjectDestroyOnStateChange: 0
@@ -3005,84 +3025,84 @@ beginSubroutine: s32'NextAction_Check'
         clearUpon: (FRAME_STEP)
         callSubroutine: s32'NextAction_Kuriage'
         faceOpponent: 
-        Unknown71: s32'dea401_A'
+        preSubroutineBegin: s32'dea401_A'
       endIf: 
       else: 
         ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(3)
           clearUpon: (FRAME_STEP)
           callSubroutine: s32'NextAction_Kuriage'
           faceOpponent: 
-          Unknown71: s32'dea401_B'
+          preSubroutineBegin: s32'dea401_B'
         endIf: 
         else: 
           ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(4)
             clearUpon: (FRAME_STEP)
             callSubroutine: s32'NextAction_Kuriage'
             faceOpponent: 
-            Unknown71: s32'dea401_C'
+            preSubroutineBegin: s32'dea401_C'
           endIf: 
           else: 
             ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(5)
               clearUpon: (FRAME_STEP)
               callSubroutine: s32'NextAction_Kuriage'
               faceOpponent: 
-              Unknown71: s32'dea402_A'
+              preSubroutineBegin: s32'dea402_A'
             endIf: 
             else: 
               ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(6)
                 clearUpon: (FRAME_STEP)
                 callSubroutine: s32'NextAction_Kuriage'
                 faceOpponent: 
-                Unknown71: s32'dea402_B'
+                preSubroutineBegin: s32'dea402_B'
               endIf: 
               else: 
                 ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(7)
                   clearUpon: (FRAME_STEP)
                   callSubroutine: s32'NextAction_Kuriage'
                   faceOpponent: 
-                  Unknown71: s32'dea402_C'
+                  preSubroutineBegin: s32'dea402_C'
                 endIf: 
                 else: 
                   ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(8)
                     clearUpon: (FRAME_STEP)
                     callSubroutine: s32'NextAction_Kuriage'
                     faceOpponent: 
-                    Unknown71: s32'dea404_A'
+                    preSubroutineBegin: s32'dea404_A'
                   endIf: 
                   else: 
                     ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(9)
                       clearUpon: (FRAME_STEP)
                       callSubroutine: s32'NextAction_Kuriage'
                       faceOpponent: 
-                      Unknown71: s32'dea404_B'
+                      preSubroutineBegin: s32'dea404_B'
                     endIf: 
                     else: 
                       ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(10)
                         clearUpon: (FRAME_STEP)
                         callSubroutine: s32'NextAction_Kuriage'
                         faceOpponent: 
-                        Unknown71: s32'dea404_C'
+                        preSubroutineBegin: s32'dea404_C'
                       endIf: 
                       else: 
                         ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(11)
                         clearUpon: (FRAME_STEP)
                         callSubroutine: s32'NextAction_Kuriage'
                         faceOpponent: 
-                        Unknown71: s32'dea406_A'
+                        preSubroutineBegin: s32'dea406_A'
                         endIf: 
                         else: 
                         ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(12)
                         clearUpon: (FRAME_STEP)
                         callSubroutine: s32'NextAction_Kuriage'
                         faceOpponent: 
-                        Unknown71: s32'dea406_B'
+                        preSubroutineBegin: s32'dea406_B'
                         endIf: 
                         else: 
                         ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(13)
                         clearUpon: (FRAME_STEP)
                         callSubroutine: s32'NextAction_Kuriage'
                         faceOpponent: 
-                        Unknown71: s32'dea406_C'
+                        preSubroutineBegin: s32'dea406_C'
                         endIf: 
                         endElse: 
                         endElse: 
@@ -3192,18 +3212,53 @@ beginSubroutine: s32'NextAction_SignalWait'
 endSubroutine: 
 
 beginSubroutine: s32'PlayerDamage'
+  upon: 137
+    storeValue: Mem(GTmpReg1), Val(1)
+  endUpon: 
   upon: 35
-    clearUpon: 35
-    clearUpon: (FRAME_STEP)
-    clearUpon: (TOUCH_GROUND)
-    recoveryState: 
-    invulnForce: 1
-    checkCurrentStateName: (SELF), s32'dea253'
-    ifNot: Mem(Tmp)
-      linkObjectPosition: 0
-      setPositionY: 0
+    ifNot: Mem(GTmpReg1)
+      checkCurrentStateName: (PLAYER), s32'ThrowExe'
+      ifNot: Mem(Tmp)
+        checkCurrentStateName: (PLAYER), s32'BackThrowExe'
+      endIf: 
+      ifNot: Mem(Tmp)
+        checkCurrentStateName: (PLAYER), s32'AirThrowExe'
+      endIf: 
+      if: Mem(Tmp)
+        clearUpon: (FRAME_STEP)
+        storeValue: Mem(ObjReg0), Val(0)
+        storeValue: Mem(ObjReg1), Val(0)
+        storeValue: Mem(ObjReg2), Val(0)
+        storeValue: Mem(ObjReg3), Val(0)
+        storeValue: Mem(ObjReg4), Val(0)
+        storeValue: Mem(ObjReg5), Val(0)
+        gotoLabelRequests: s32'Death_End'
+      endIf: 
+      else: 
+        clearUpon: 35
+        clearUpon: (FRAME_STEP)
+        clearUpon: (TOUCH_GROUND)
+        recoveryState: 
+        invulnForce: 1
+        checkCurrentStateName: (SELF), s32'dea253'
+        ifNot: Mem(Tmp)
+          linkObjectPosition: 0
+          setPositionY: 0
+        endIf: 
+        gotoLabelRequests: s32'Koware'
+      endElse: 
     endIf: 
-    gotoLabelRequests: s32'Koware'
+    else: 
+      storeValue: Mem(GTmpReg1), Val(0)
+      clearUpon: (FRAME_STEP)
+      storeValue: Mem(ObjReg0), Val(0)
+      storeValue: Mem(ObjReg1), Val(0)
+      storeValue: Mem(ObjReg2), Val(0)
+      storeValue: Mem(ObjReg3), Val(0)
+      storeValue: Mem(ObjReg4), Val(0)
+      storeValue: Mem(ObjReg5), Val(0)
+      gotoLabelRequests: s32'Death_End'
+    endElse: 
   endUpon: 
 endSubroutine: 
 
@@ -3237,7 +3292,7 @@ endSubroutine:
 
 beginSubroutine: s32'hasei_damage'
   if: Mem(ActReg4)
-    Unknown957: 80
+    wallBreakDamageNoUpdate: 80
   endIf: 
 endSubroutine: 
 
@@ -3275,7 +3330,7 @@ beginSubroutine: s32'koware_Setting'
     linkObjectPosition: 0
     setPositionY: 0
     storeValue: Mem(EnvR21), Val(1)
-    Unknown71: s32'death_Damage'
+    preSubroutineBegin: s32'death_Damage'
   endUpon: 
 endSubroutine: 
 
@@ -3321,7 +3376,7 @@ beginSubroutine: s32'dea401_Init'
   guardEffectEconomy: 1
   damageEffect: 2, s32'dea_400_HitEff_Impact'
   isAirUnblockable: 0
-  Unknown746: 0, 1000
+  atkEnemyHitSuperArmorHitstop: 0, 1000
   Unknown747: 0, -1000
   clearUpon: 126
   checkCurrentStateName: (SELF), s32'dea401_A'
@@ -3342,7 +3397,7 @@ beginSubroutine: s32'dea401_Init'
     callSubroutine: s32'SpecialAttack_Check'
   endIf: 
   upon: 78
-    Unknown2329: 0x03000000170000007B000000160000007B000000
+    Unknown2329: 3, 23, 123, 22, 123
     ifOperation: (IS_LESSER), Mem(Tmp), Val(0)
       hitAirPushbackX: 12000
     endIf: 
@@ -3357,6 +3412,7 @@ beginSubroutine: s32'dea401_Init'
   upon: (HIT_OR_GUARD)
     clearUpon: (HIT_OR_GUARD)
     storeValue: Mem(ActReg1), Val(1)
+    attackRange: -1, -1, -1, -1
   endUpon: 
   callSubroutine: s32'koware_Setting'
   ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(10001)
@@ -3383,7 +3439,7 @@ beginSubroutine: s32'dea401_Finish'
   pushbackOnBlockX: 40
   guardEffectEconomy: 0
   isAirUnblockable: 0
-  Unknown746: 0, 1000
+  atkEnemyHitSuperArmorHitstop: 0, 1000
   Unknown747: 0, -1000
   clearUpon: 126
   checkCurrentStateName: (SELF), s32'dea401_A'
@@ -3528,8 +3584,8 @@ beginState: s32'dea401_A'
   beginLabel: s32'Attack'
   sprite: s32'dea401_06', 3
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_03', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea401_07', 2
   callSubroutine: s32'MeshChange_BodyAndSickle'
@@ -3581,6 +3637,7 @@ beginState: s32'dea401_A'
   sprite: s32'dea401_19', 3
   sprite: s32'dea401_20', 2
   sprite: s32'dea401_21', 2
+  beginLabel: s32'Death_End'
   sprite: s32'dea401_22', 2
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -3623,8 +3680,8 @@ beginState: s32'dea401_B'
   beginLabel: s32'Attack'
   sprite: s32'dea401_06', 3
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_04', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea401_07', 2
   callSubroutine: s32'MeshChange_BodyAndSickle'
@@ -3712,6 +3769,7 @@ beginState: s32'dea401_B'
   sprite: s32'dea401_19', 3
   sprite: s32'dea401_20', 2
   sprite: s32'dea401_21', 2
+  beginLabel: s32'Death_End'
   sprite: s32'dea401_22', 2
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -3826,6 +3884,7 @@ beginState: s32'dea401_C'
     upon: (HIT_OR_GUARD)
       clearUpon: (HIT_OR_GUARD)
       storeValue: Mem(ActReg1), Val(45)
+      attackRange: -1, -1, -1, -1
     endUpon: 
     upon: (FRAME_STEP)
       ifOperation: (IS_EQUAL), Mem(OnIdlingTime), Mem(417)
@@ -3848,8 +3907,8 @@ beginState: s32'dea401_C'
   beginLabel: s32'Attack'
   sprite: s32'dea401_06', 3
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_05', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea401_07', 2
   callSubroutine: s32'MeshChange_BodyAndSickle'
@@ -3917,6 +3976,7 @@ beginState: s32'dea401_C'
   sprite: s32'dea401_19', 3
   sprite: s32'dea401_20', 2
   sprite: s32'dea401_21', 2
+  beginLabel: s32'Death_End'
   sprite: s32'dea401_22', 2
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -3959,8 +4019,8 @@ beginState: s32'dea401_D'
   sprite: s32'dea401_04', 1
   sprite: s32'dea401_06', 3
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_06', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea401_07', 2
   callSubroutine: s32'MeshChange_BodyAndSickle'
@@ -4077,6 +4137,7 @@ beginState: s32'dea401_D'
   sprite: s32'dea401_19', 4
   sprite: s32'dea401_20', 2
   sprite: s32'dea401_21', 2
+  beginLabel: s32'Death_End'
   sprite: s32'dea401_22', 2
   sprite: s32'keep', 2
   jumpToState: s32'death_Stand'
@@ -4098,7 +4159,7 @@ beginSubroutine: s32'dea402_Init'
   setProjectileDurability: 0
   damageEffect: 2, s32'dea_400_HitEff_Impact'
   isAirUnblockable: 0
-  Unknown746: 0, 12000
+  atkEnemyHitSuperArmorHitstop: 0, 12000
   Unknown747: 0, -1000
   clearUpon: 126
   tensionGainOnConnect: 40
@@ -4274,8 +4335,8 @@ beginState: s32'dea402_A'
   createObject: s32'dea_402_slash01Eff', (PLAYER)
   hit: 
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleM'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_07', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea402_08', 2
   sprite: s32'dea402_09', 2
@@ -4289,6 +4350,7 @@ beginState: s32'dea402_A'
   sprite: s32'dea402_15', 2
   sprite: s32'dea402_16', 3
   haltMomentum: 1
+  beginLabel: s32'Death_End'
   sprite: s32'dea402_17', 3
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -4365,8 +4427,8 @@ beginState: s32'dea402_B'
   hit: 
   createObject: s32'dea_402_slash01Eff', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleM'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_08', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea402_08', 3
   sprite: s32'dea402_09', 3
@@ -4380,6 +4442,7 @@ beginState: s32'dea402_B'
   sprite: s32'dea402_15', 2
   sprite: s32'dea402_16', 3
   haltMomentum: 1
+  beginLabel: s32'Death_End'
   sprite: s32'dea402_17', 3
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -4519,6 +4582,10 @@ beginState: s32'dea402_C'
         endIf: 
       endUpon: 
     endUpon: 
+    upon: (HIT_OR_GUARD)
+      clearUpon: (HIT_OR_GUARD)
+      storeValue: Mem(ActReg1), Val(1)
+    endUpon: 
   endUpon: 
   sprite: s32'dea402_00', 2
   sprite: s32'dea402_01', 2
@@ -4539,21 +4606,29 @@ beginState: s32'dea402_C'
   hit: 
   createObject: s32'dea_402_slash01Eff', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleM'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_09', 100, s16'', 0, s16'', 0, s16'', 0
-  sprite: s32'dea402_08', 2
+  sprite: s32'dea402_08', 1
+  sprite: s32'dea402_08', 1
+  ifNot: Mem(ActReg1)
+    velocityXPercent: 50
+    velocityXPercentEachFrame: 70
+  endIf: 
   sprite: s32'dea402_09', 2
   sprite: s32'dea402_10', 3
   sprite: s32'dea402_11', 3
-  velocityXPercent: 50
-  velocityXPercentEachFrame: 70
+  if: Mem(ActReg1)
+    velocityXPercent: 50
+    velocityXPercentEachFrame: 70
+  endIf: 
   sprite: s32'dea402_12', 2
   sprite: s32'dea402_13', 2
   sprite: s32'dea402_14', 2
   sprite: s32'dea402_15', 2
   sprite: s32'dea402_16', 3
   haltMomentum: 1
+  beginLabel: s32'Death_End'
   sprite: s32'dea402_17', 3
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -4603,8 +4678,8 @@ beginState: s32'dea402_D'
   hit: 
   createObject: s32'dea_402_slash02Eff', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleM'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_10', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea402_07', 1
   upon: 12
@@ -4744,6 +4819,7 @@ sprite: s32'dea403_13', 3
 sprite: s32'dea403_14', 3
 haltMomentum: 1
 sprite: s32'dea403_15', 2
+beginLabel: s32'Death_End'
 sprite: s32'dea403_16', 2
 sprite: s32'keep', 2
 jumpToState: s32'death_Stand'
@@ -4767,7 +4843,7 @@ beginSubroutine: s32'dea404_Init'
   setProjectileDurability: 0
   damageEffect: 2, s32'dea_400_HitEff_ImpactLong'
   isAirUnblockable: 0
-  Unknown746: 0, 10000
+  atkEnemyHitSuperArmorHitstop: 0, 10000
   Unknown747: 0, -1000
   clearUpon: 126
   tensionGainOnConnect: 40
@@ -4839,6 +4915,7 @@ beginState: s32'dea404_A'
     callSubroutine: s32'Body_SpecialAttack_Init'
     callSubroutine: s32'dea404_Init'
     storeValue: Mem(417), Val(7)
+    untechAmount: 25
     modifyVarAfterOperation: (MOD), Mem(ObjReg7), Val(256), Mem(418)
     modifyVarAfterOperation: (DIV), Mem(ObjReg7), Val(256), Mem(419)
     ifOperation: (IS_EQUAL), Mem(418), Val(90)
@@ -4974,8 +5051,8 @@ beginState: s32'dea404_A'
   sprite: s32'dea404_00', 1
   sprite: s32'dea404_01', 1
   privateSE: s32'nie_10'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_11', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea404_02', 1
   sprite: s32'dea404_03', 1
@@ -5005,6 +5082,7 @@ beginState: s32'dea404_A'
   sprite: s32'dea404_14', 2
   sprite: s32'dea404_18', 3
   sprite: s32'dea404_19', 3
+  beginLabel: s32'Death_End'
   sprite: s32'dea404_20', 3
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -5020,6 +5098,7 @@ beginState: s32'dea404_B'
     callSubroutine: s32'dea404_Init'
     storeValue: Mem(417), Val(23)
     storeValue: Mem(ObjReg7), Val(107)
+    untechAmount: 25
     attackIgnoreCaution: 0
     upon: 49
       callSubroutine: s32'NextAction_SignalWait'
@@ -5071,8 +5150,8 @@ beginState: s32'dea404_B'
   sprite: s32'dea404_08', 3
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleL'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_12', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea404_09', 3
   hit: 
@@ -5087,6 +5166,7 @@ beginState: s32'dea404_B'
   sprite: s32'dea404_16', 1
   sprite: s32'dea404_18', 3
   sprite: s32'dea404_19', 3
+  beginLabel: s32'Death_End'
   sprite: s32'dea404_20', 3
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -5255,8 +5335,8 @@ beginState: s32'dea404_C'
   sprite: s32'dea404_08', 3
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleL'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_13', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea404_09', 3
   hit: 
@@ -5274,6 +5354,7 @@ beginState: s32'dea404_C'
   sprite: s32'dea404_14', 2
   sprite: s32'dea404_18', 3
   sprite: s32'dea404_19', 3
+  beginLabel: s32'Death_End'
   sprite: s32'dea404_20', 3
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -5301,7 +5382,12 @@ beginState: s32'dea404_D'
     endUpon: 
     upon: 90
       clearUpon: 90
-      Unknown2329: 0x03000000160000007B000000170000007B000000
+      if: Mem(ActReg2)
+        Unknown2329: 3, 22, 123, 3, 123
+      endIf: 
+      else: 
+        Unknown2329: 3, 22, 123, 23, 123
+      endElse: 
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(400000)
         hitAirPushbackX: 12000
         hitAirPushbackY: 28000
@@ -5352,7 +5438,7 @@ beginState: s32'dea404_D'
       Unknown1793: 3, 27
       upon: 67
         clearUpon: 67
-        Unknown909: 1, 0
+        atkFrozen: 1, 0
       endUpon: 
     endUpon: 
     upon: 64
@@ -5371,8 +5457,8 @@ beginState: s32'dea404_D'
   sprite: s32'dea404_08', 3
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSmallSickleL'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_14', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea404_09ex', 3
   hit: 
@@ -5401,6 +5487,7 @@ beginState: s32'dea404_D'
   sprite: s32'dea404_16', 3
   sprite: s32'dea404_18', 3
   sprite: s32'dea404_19', 3
+  beginLabel: s32'Death_End'
   sprite: s32'dea404_20', 3
   sprite: s32'keep', 2
   jumpToState: s32'death_Stand'
@@ -5440,8 +5527,8 @@ beginState: s32'dea404_D'
   attackThroughArmor: 1
   damageEffect: 2, s32'dea_400_HitEff_Impact'
   cameraShake: s32'ShakeTate', 200, 0, 10, 0
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   voiceLine: s16'vNIE_ATKS_15'
   sprite: s32'dea405_10', 3
   sprite: s32'dea405_11', 3
@@ -5460,10 +5547,10 @@ beginState: s32'dea404_D'
   sprite: s32'dea405_15', 3
   hit: 
   damage: 800
-  groundHitEffect: (AIR_FACE_UP)
-  airHitEffect: (AIR_FACE_UP)
-  hitAirPushbackX: 20000
-  hitAirPushbackY: 15000
+  groundHitEffect: (AIR_LAUNCH)
+  airHitEffect: (AIR_LAUNCH)
+  hitAirPushbackX: 2000
+  hitAirPushbackY: 24000
   resetHitGravity: 
   enemyHitstopAddition: 0, 0, 0
   killType: (NORMAL)
@@ -5516,7 +5603,7 @@ beginSubroutine: s32'dea406_Init'
   setProjectileDurability: 0
   damageEffect: 2, s32'dea_400_HitEff_Impact'
   isAirUnblockable: 0
-  Unknown746: 0, -12000
+  atkEnemyHitSuperArmorHitstop: 0, -12000
   Unknown747: 0, -20000
   clearUpon: 126
   tensionGainOnConnect: 40
@@ -5542,7 +5629,7 @@ beginState: s32'dea406_A'
   upon: (IMMEDIATE)
     callSubroutine: s32'Body_SpecialAttack_Init'
     callSubroutine: s32'dea406_Init'
-    storeValue: Mem(417), Val(10)
+    storeValue: Mem(417), Val(9)
     modifyVarAfterOperation: (MOD), Mem(ObjReg7), Val(256), Mem(418)
     modifyVarAfterOperation: (DIV), Mem(ObjReg7), Val(256), Mem(419)
     ifOperation: (IS_EQUAL), Mem(418), Val(90)
@@ -5635,6 +5722,9 @@ beginState: s32'dea406_A'
     endIf: 
     storeValue: Mem(ObjReg7), Val(42)
     attackIgnoreCaution: 0
+    if: Mem(ActReg0)
+      hitstop: 13
+    endIf: 
     upon: 49
       callSubroutine: s32'NextAction_SignalWait'
     endUpon: 
@@ -5642,7 +5732,7 @@ beginState: s32'dea406_A'
       ifOperation: (IS_EQUAL), Mem(OnIdlingTime), Mem(417)
         gotoLabelRequests: s32'Attack'
       endIf: 
-      ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(23)
+      ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(22)
         callSubroutine: s32'Next_Action_Available'
       endIf: 
     endUpon: 
@@ -5681,8 +5771,8 @@ beginState: s32'dea406_A'
   sprite: s32'dea406_08', 2
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSickleL'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_16', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea406_09', 2
   createObject: s32'dea_406_slash01Eff', (PLAYER)
@@ -5698,6 +5788,7 @@ beginState: s32'dea406_A'
   sprite: s32'dea406_18', 2
   sprite: s32'dea406_19', 2
   sprite: s32'dea406_20', 2
+  beginLabel: s32'Death_End'
   sprite: s32'dea406_21', 2
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -5764,8 +5855,8 @@ beginState: s32'dea406_B'
   sprite: s32'dea406_08', 3
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSickleL'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_17', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea406_09', 2
   hit: 
@@ -5781,6 +5872,7 @@ beginState: s32'dea406_B'
   sprite: s32'dea406_18', 2
   sprite: s32'dea406_19', 2
   sprite: s32'dea406_20', 2
+  beginLabel: s32'Death_End'
   sprite: s32'dea406_21', 2
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -5938,8 +6030,8 @@ beginState: s32'dea406_C'
   sprite: s32'dea406_08', 2
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSickleL'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_18', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea406_09', 2
   hit: 
@@ -5955,6 +6047,7 @@ beginState: s32'dea406_C'
   sprite: s32'dea406_18', 2
   sprite: s32'dea406_19', 2
   sprite: s32'dea406_20', 2
+  beginLabel: s32'Death_End'
   sprite: s32'dea406_21', 2
   endSprite: 
   sprite: s32'keep', 2147483647
@@ -5997,8 +6090,8 @@ beginState: s32'dea406_D'
   sprite: s32'dea406_08', 2
   createParticle: s32'nie_400_ReactionParticleD', (PLAYER)
   commonSE: s32'SE_BTL_SwingWeaponSickleL'
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_19', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea406_09', 2
   hit: 
@@ -6044,6 +6137,7 @@ beginState: s32'dea406_D'
   sprite: s32'dea406_18', 2
   sprite: s32'dea406_19', 2
   sprite: s32'dea406_20', 2
+  beginLabel: s32'Death_End'
   sprite: s32'dea406_21', 2
   sprite: s32'keep', 2
   jumpToState: s32'death_Stand'
@@ -6569,15 +6663,15 @@ beginState: s32'death_Damage'
   endUpon: 
   if: Mem(386)
     if: Mem(IsEnemysCutScene)
-      Unknown2347: 809847118, 0x315F5375636365737300000000000000000000000000000000000000
+      Unknown2347: s32'NIE01_Success'
     endIf: 
   endIf: 
   sprite: s32'dea407_01', 3
   if: Mem(IsLand)
     setInertia: -10000
   endIf: 
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   smartRandomVoiceLine: s16'vNIE_ATKS_02', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'dea407_02', 3
   sprite: s32'dea407_03', 3
@@ -6638,7 +6732,7 @@ beginState: s32'dea430'
         setPositionX: 1200000
       endIf: 
     endIf: 
-    Unknown2329: 0x03000000030000007B000000170000007B000000
+    Unknown2329: 3, 3, 123, 23, 123
     ifOperation: (IS_LESSER), Mem(Tmp), Val(-200000)
       createObject: s32'death_Disappear', (PLAYER)
       moveToObject: (PLAYER)
@@ -6653,7 +6747,7 @@ beginState: s32'dea430'
       createObject: s32'dea_400_GroundAuraEff', (PLAYER)
       stackObject: (STACK0), (PREVIOUS)
     endIf: 
-    Unknown269: 0
+    forceShadowOff: 0
     storeValue: Mem(PlayerVal0), Val(0)
     upon: (BEFORE_EXIT)
       storeValue: Mem(PlayerVal2), Val(0)
@@ -6664,10 +6758,27 @@ beginState: s32'dea430'
       clearUpon: 23
       gotoLabelRequests: s32'Hit'
     endUpon: 
+    upon: 137
+      storeValue: Mem(GTmpReg1), Val(1)
+    endUpon: 
     upon: 35
-      clearUpon: 35
-      clearUpon: 23
-      gotoLabelRequests: s32'Koware'
+      ifNot: Mem(GTmpReg1)
+        checkCurrentStateName: (PLAYER), s32'ThrowExe'
+        ifNot: Mem(Tmp)
+          checkCurrentStateName: (PLAYER), s32'BackThrowExe'
+        endIf: 
+        ifNot: Mem(Tmp)
+          checkCurrentStateName: (PLAYER), s32'AirThrowExe'
+        endIf: 
+        ifNot: Mem(Tmp)
+          clearUpon: 35
+          clearUpon: 23
+          gotoLabelRequests: s32'Koware'
+        endIf: 
+      endIf: 
+      else: 
+        storeValue: Mem(GTmpReg1), Val(0)
+      endElse: 
     endUpon: 
     upon: 36
       Unknown310: 9, 22, 2, 36, 0, 1
@@ -6720,14 +6831,15 @@ sprite: s32'dea000_00', 1
 Unknown1793: 4, 23
 createObject: s32'dea_DeathDellEff01', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: -50601
-setPositionY: 313637
-setDepth: -3003
-setAngleX: 344400
-setAngleY: 342800
-setAngle: 18800
-setLinkObjectDestroyOnStateChange: 0
+  setPositionX: -50601
+  setPositionY: 313637
+  setDepth: -3003
+  setAngleX: 344400
+  setAngleY: 342800
+  setAngle: 18800
+  setLinkObjectDestroyOnStateChange: 0
 endRunOnObject: 
+
 endSprite: 
 exitState: 
 beginLabel: s32'Hit'
@@ -6761,13 +6873,14 @@ Unknown2050: 0
 Unknown1793: 4, 23
 createObject: s32'dea_DeathDellEff01', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: -50601
-setPositionY: 313637
-setDepth: -3003
-setAngleX: 344400
-setAngleY: 342800
-setAngle: 18800
+  setPositionX: -50601
+  setPositionY: 313637
+  setDepth: -3003
+  setAngleX: 344400
+  setAngleY: 342800
+  setAngle: 18800
 endRunOnObject: 
+
 endState: 
 beginState: s32'UltimateShot'
   upon: (IMMEDIATE)
@@ -6988,14 +7101,14 @@ beginState: s32'nie_430cs_Blur'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'nie_PP_RadialBlur', 1, 0
-      Unknown2587: 1600481646, s32'PP_RadialBlur'
+      Unknown2587: s32'nie_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1600481646, s32'PP_RadialBlur'
+  Unknown2587: s32'nie_PP_RadialBlur', 1
   Unknown2588: s32'nie_PP_RadialBlur', 1, 100
   sprite: s32'null', 1
-  Unknown2587: 1600481646, s32'PP_RadialBlur'
+  Unknown2587: s32'nie_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'nie_431_Filter'
@@ -7063,7 +7176,7 @@ beginState: s32'dea440'
     addPositionX: -200000
     deactivateObjectByName: s32'dea_400_GroundAuraEff'
     deactivateObjectByName: s32'dea_400_StandbyAuraEff'
-    Unknown269: 0
+    forceShadowOff: 0
     callSubroutine: s32'cmnKaihouShot_AtkInit'
     callSubroutine: s32'cmnUltimateAtkLv4_AtkInit'
     damage: 0
@@ -7077,7 +7190,7 @@ beginState: s32'dea440'
     dontAddComboCount: 1
     Unknown1131: 1
     ifNot: Mem(Hikitsugi0)
-      Unknown909: 1, 0
+      atkFrozen: 1, 0
     endIf: 
     Unknown1048: 0
     nextHitActionName: s32'nie_Kaihou'
@@ -7109,7 +7222,9 @@ beginState: s32'dea440'
   createObject: s32'nie_440_DarkStrikeEff', (PLAYER)
   createObject: s32'nie_440_DarkStrikeEff2', (PLAYER)
   sprite: s32'dea440_05', 3
-  hit: 
+  if: Mem(BattleDoing)
+    hit: 
+  endIf: 
   sprite: s32'dea440_06', 3
   sprite: s32'dea440_07', 3
   sprite: s32'dea440_08', 3
@@ -7124,16 +7239,17 @@ beginState: s32'dea440'
   sprite: s32'dea440_13', 4
   sprite: s32'dea440_14', 4
   sprite: s32'dea440_15', 4
+  beginLabel: s32'Death_End'
   sprite: s32'dea000_00', 3
   Unknown1793: 4, 23
   createObject: s32'dea_DeathDellEff01', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -50601
-  setPositionY: 313637
-  setDepth: -3003
-  setAngleX: 344400
-  setAngleY: 342800
-  setAngle: 18800
+    setPositionX: -50601
+    setPositionY: 313637
+    setDepth: -3003
+    setAngleX: 344400
+    setAngleY: 342800
+    setAngle: 18800
   endRunOnObject: 
   sprite: s32'null', 3
   Unknown2050: 0
@@ -7519,7 +7635,7 @@ beginState: s32'nie_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -7544,10 +7660,10 @@ beginState: s32'dea601'
   sprite: s32'dea601_08', 5
   createObject: s32'dea_DeathDellEff01', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 1200
-  setPositionX: -39001
-  setPositionY: 335224
-  setDepth: -88484
+    setObjectSize: 1200
+    setPositionX: -39001
+    setPositionY: 335224
+    setDepth: -88484
   endRunOnObject: 
   sprite: s32'dea601_09', 5
   sprite: s32'dea601_10', 5
@@ -7557,8 +7673,8 @@ beginState: s32'dea601'
   sprite: s32'dea601_14', 5
   sprite: s32'dea601_15', 6
   sprite: s32'dea601_16', 6
-  Unknown600: 1
-  Unknown601: 
+  optionVoicePriority: 1
+  clearSoundOptions: 
   voiceLine: s16'vNIE_WIN_01'
   sprite: s32'dea601_17', 6
   sprite: s32'dea601_18', 6

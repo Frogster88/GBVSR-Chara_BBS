@@ -236,45 +236,45 @@ beginState: s32'cal_202_Eff'
   commonSE: s32'SE_BTL_SwingWeaponLognM'
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -6000
-  addPositionY: -126000
-  Unknown1727: 89570
-  setAngleX: 300800
-  setAngle: 352400
+    addPositionX: -6000
+    addPositionY: -126000
+    Unknown1727: 89570
+    setAngleX: 300800
+    setAngle: 352400
   endRunOnObject: 
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 90980
-  addPositionY: -91800
-  Unknown1727: 63000
-  setAngleX: 314000
-  setAngle: 45600
+    addPositionX: 90980
+    addPositionY: -91800
+    Unknown1727: 63000
+    setAngleX: 314000
+    setAngle: 45600
   endRunOnObject: 
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 164000
-  addPositionY: 1500
-  Unknown1727: -12000
-  setAngleY: 4400
-  setAngle: 94400
+    addPositionX: 164000
+    addPositionY: 1500
+    Unknown1727: -12000
+    setAngleY: 4400
+    setAngle: 94400
   endRunOnObject: 
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 122000
-  addPositionY: 99790
-  Unknown1727: -176970
-  setAngleX: 58800
-  setAngleY: 27600
-  setAngle: 156800
+    addPositionX: 122000
+    addPositionY: 99790
+    Unknown1727: -176970
+    setAngleX: 58800
+    setAngleY: 27600
+    setAngle: 156800
   endRunOnObject: 
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 27000
-  addPositionY: 124376
-  Unknown1727: -208768
-  setAngleX: 307200
-  setAngleY: 6000
-  setAngle: 333600
+    addPositionX: 27000
+    addPositionY: 124376
+    Unknown1727: -208768
+    setAngleX: 307200
+    setAngleY: 6000
+    setAngle: 333600
   endRunOnObject: 
   sprite: s32'spi202_03', 3
   sprite: s32'spi202_04', 3
@@ -331,45 +331,45 @@ beginState: s32'cal_203_Eff'
   sprite: s32'spi203_04', 3
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -194961
-  addPositionY: -24975
-  Unknown1727: 125954
-  setAngleY: 330000
-  setAngle: 282400
+    addPositionX: -194961
+    addPositionY: -24975
+    Unknown1727: 125954
+    setAngleY: 330000
+    setAngle: 282400
   endRunOnObject: 
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -114977
-  addPositionY: -64935
-  Unknown1727: 172688
-  setAngleX: 306800
-  setAngleY: 6800
-  setAngle: 315600
+    addPositionX: -114977
+    addPositionY: -64935
+    Unknown1727: 172688
+    setAngleX: 306800
+    setAngleY: 6800
+    setAngle: 315600
   endRunOnObject: 
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 9998
-  addPositionY: -64935
-  Unknown1727: 167907
-  setAngleX: 300000
-  setAngleY: 357200
-  setAngle: 4800
+    addPositionX: 9998
+    addPositionY: -64935
+    Unknown1727: 167907
+    setAngleX: 300000
+    setAngleY: 357200
+    setAngle: 4800
   endRunOnObject: 
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 124975
-  addPositionY: -19980
-  Unknown1727: 142356
-  setAngleX: 312000
-  setAngleY: 342000
-  setAngle: 57600
+    addPositionX: 124975
+    addPositionY: -19980
+    Unknown1727: 142356
+    setAngleX: 312000
+    setAngleY: 342000
+    setAngle: 57600
   endRunOnObject: 
   createObject: s32'cal_202_WeaponRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 194961
-  addPositionY: 44955
-  Unknown1727: 53022
-  setAngle: 95200
+    addPositionX: 194961
+    addPositionY: 44955
+    Unknown1727: 53022
+    setAngle: 95200
   endRunOnObject: 
   sprite: s32'spi203_05', 3
   linkObjectPosition: 0
@@ -433,7 +433,7 @@ beginState: s32'cal_204_WeaponStart'
   sprite: s32'null', 3
   linkParticle: s32'cal_WeaponStart'
   sprite: s32'null', 15
-  Unknown191: -20
+  setObjectSizeScaleSpeed: -20
 endState: 
 
 beginState: s32'cal_204_WeaponEnd'
@@ -616,7 +616,7 @@ beginState: s32'cal_206_ChakramSlash_Fast'
   upon: (IMMEDIATE)
     ignoreSuperFreeze: 1
     ignoreFinishStop: 1
-    Unknown169: -17500, 17500
+    randomAddAngle: -17500, 17500
     setObjectSize: 800
   endUpon: 
   sprite: s32'null', 30
@@ -650,9 +650,9 @@ beginState: s32'cal_206_Eff'
   privateSE: s32'cal_04'
   createObject: s32'cal_AfterImage', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -49966
-  addPositionY: -86913
-  Unknown1727: -3804
+    addPositionX: -49966
+    addPositionY: -86913
+    Unknown1727: -3804
   endRunOnObject: 
   sprite: s32'null', 2
   addPositionX: 6993
@@ -661,9 +661,9 @@ beginState: s32'cal_206_Eff'
   privateSE: s32'cal_04'
   createObject: s32'cal_AfterImage', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -23976
-  addPositionY: -80919
-  Unknown1727: -3534
+    addPositionX: -23976
+    addPositionY: -80919
+    Unknown1727: -3534
   endRunOnObject: 
   sprite: s32'null', 2
   addPositionX: -4995
@@ -672,9 +672,9 @@ beginState: s32'cal_206_Eff'
   privateSE: s32'cal_04'
   createObject: s32'cal_AfterImage', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 0
-  addPositionY: -83916
-  Unknown1727: -3630
+    addPositionX: 0
+    addPositionY: -83916
+    Unknown1727: -3630
   endRunOnObject: 
   sprite: s32'null', 2
   addPositionX: -5994
@@ -828,7 +828,7 @@ beginState: s32'cal_206_ChakramSlash_s'
   upon: (IMMEDIATE)
     ignoreSuperFreeze: 1
     ignoreFinishStop: 1
-    Unknown169: -17500, 17500
+    randomAddAngle: -17500, 17500
     setObjectSize: 800
   endUpon: 
   sprite: s32'null', 30
@@ -897,7 +897,7 @@ beginState: s32'cal_207_WarmHoleEff'
   beginLabel: s32'End'
   sprite: s32'null', 60
   linkParticle: s32'cal_207_holeEnd'
-  Unknown191: 15
+  setObjectSizeScaleSpeed: 15
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
 endState: 
@@ -913,7 +913,7 @@ beginState: s32'cal_RenkinBall'
     comboLimitScaling: 2
     isAirUnblockable: 0
     guardEffectEconomy: 1
-    Unknown988: 3
+    ignorePushbackXScaling: 3
     chipDamagePercent: 0
     attackComboForceHitEx: 50
     initializeDestroy: 
@@ -1054,20 +1054,20 @@ upon: 27
     moveToPosType: 3, 104
     Unknown308: 3, 2, 32
     Unknown308: 3, 2, 31
-    Unknown93: -150000
+    setRawPositionX: -150000
   endIf: 
   else: 
-    Unknown93: -100000
+    setRawPositionX: -100000
   endElse: 
 endIf: 
 
 else: 
   Unknown308: 3, 2, 31
-  Unknown93: 150000
+  setRawPositionX: 150000
 endIf: 
 
 else: 
-  Unknown93: 100000
+  setRawPositionX: 100000
 endElse: 
 
 endElse: 
@@ -1210,8 +1210,9 @@ linkParticle: s32'cal_208_lv2Loop'
 callSubroutine: s32'cmnWeaponLvMaxColorInit'
 createObject: s32'cal_RenkinBall_LvUp', (PLAYER)
 runOnObject: (PREVIOUS)
-setObjectSize: 500
+  setObjectSize: 500
 endRunOnObject: 
+
 requestShake: 0, 2000
 setLightColor: -32704
 setLightRedColorSpeed: -63
@@ -1235,8 +1236,9 @@ linkParticle: s32'cal_208_lv3Loop'
 callSubroutine: s32'cmnWeaponLvMaxColorInit'
 createObject: s32'cal_RenkinBall_LvUp', (PLAYER)
 runOnObject: (PREVIOUS)
-setObjectSize: 700
+  setObjectSize: 700
 endRunOnObject: 
+
 requestShake: 0, 2000
 setLightColor: -32704
 setLightRedColorSpeed: -63
@@ -1267,8 +1269,9 @@ endElse:
 
 createObject: s32'cal_RenkinBall_LvUp', (PLAYER)
 runOnObject: (PREVIOUS)
-setObjectSize: 800
+  setObjectSize: 800
 endRunOnObject: 
+
 requestShake: 0, 2000
 setLightColor: -32704
 setLightRedColorSpeed: -63
@@ -1302,8 +1305,9 @@ endElse:
 
 createObject: s32'cal_RenkinBall_LvUp', (PLAYER)
 runOnObject: (PREVIOUS)
-setObjectSize: 1000
+  setObjectSize: 1000
 endRunOnObject: 
+
 requestShake: 0, 2000
 setLightColor: -32704
 setLightRedColorSpeed: -63
@@ -1469,7 +1473,7 @@ if: Mem(Tmp)
   endIf: 
   createObject: s32'cal_RenkinBall_ShotImpact', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionY: -40000
+    addPositionY: -40000
   endRunOnObject: 
 endIf: 
 
@@ -1485,12 +1489,12 @@ if: Mem(Tmp)
   endIf: 
   createObject: s32'cal_RenkinBall_ShotImpact', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -56008
-  addPositionY: -21390
-  Unknown1727: 77148
-  setAngleX: 64000
-  setAngleY: 273600
-  setAngle: 59200
+    addPositionX: -56008
+    addPositionY: -21390
+    Unknown1727: 77148
+    setAngleX: 64000
+    setAngleY: 273600
+    setAngle: 59200
   endRunOnObject: 
 endIf: 
 
@@ -1506,12 +1510,12 @@ if: Mem(Tmp)
   endIf: 
   createObject: s32'cal_RenkinBall_ShotImpact', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -87976
-  addPositionY: -29810
-  Unknown1727: 18733
-  setAngleX: 12800
-  setAngleY: 319200
-  setAngle: 335600
+    addPositionX: -87976
+    addPositionY: -29810
+    Unknown1727: 18733
+    setAngleX: 12800
+    setAngleY: 319200
+    setAngle: 335600
   endRunOnObject: 
 endIf: 
 
@@ -1738,7 +1742,7 @@ beginState: s32'cal_RenkinBall_ChargeLv1Eff'
   linkParticle: s32'cal_208_ChargeLv1'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'cal_RenkinBall_ChargeLv2Eff'
@@ -1761,7 +1765,7 @@ beginState: s32'cal_RenkinBall_ChargeLv2Eff'
   linkParticle: s32'cal_208_ChargeLv2'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'cal_RenkinBall_ChargeLv3Eff'
@@ -1784,7 +1788,7 @@ beginState: s32'cal_RenkinBall_ChargeLv3Eff'
   linkParticle: s32'cal_208_ChargeLv3'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'cal_RenkinBall_ChargeLv4Eff'
@@ -1807,7 +1811,7 @@ beginState: s32'cal_RenkinBall_ChargeLv4Eff'
   linkParticle: s32'cal_208_ChargeLv4'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'cal_RenkinBall_AtkEff'
@@ -1849,7 +1853,7 @@ beginState: s32'cal_RenkinBall_NokoshiLv1'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 100
+    setMaxActionTime: 100
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 5
@@ -1862,7 +1866,7 @@ beginState: s32'cal_RenkinBall_NokoshiLv2'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 100
+    setMaxActionTime: 100
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 5
@@ -1875,7 +1879,7 @@ beginState: s32'cal_RenkinBall_NokoshiLv3'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 100
+    setMaxActionTime: 100
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 5
@@ -1889,7 +1893,7 @@ beginState: s32'cal_RenkinBall_NokoshiLv4'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 100
+    setMaxActionTime: 100
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 5
@@ -1903,7 +1907,7 @@ beginState: s32'cal_RenkinBall_NokoshiLv5'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 100
+    setMaxActionTime: 100
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 5
@@ -2009,7 +2013,7 @@ beginState: s32'cal_RenkinBall_ChargeLv1Eff_Air'
   linkParticle: s32'cal_208_ChargeLv1Air'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'cal_RenkinBall_ChargeLv2Eff_Air'
@@ -2032,7 +2036,7 @@ beginState: s32'cal_RenkinBall_ChargeLv2Eff_Air'
   linkParticle: s32'cal_208_ChargeLv2Air'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'cal_RenkinBall_ChargeLv3Eff_Air'
@@ -2055,7 +2059,7 @@ beginState: s32'cal_RenkinBall_ChargeLv3Eff_Air'
   linkParticle: s32'cal_208_ChargeLv3Air'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'cal_RenkinBall_ChargeLv4Eff_Air'
@@ -2078,7 +2082,7 @@ beginState: s32'cal_RenkinBall_ChargeLv4Eff_Air'
   linkParticle: s32'cal_208_ChargeLv4Air'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'cal_208_SPkira_Eff'
@@ -2090,7 +2094,9 @@ beginState: s32'cal_208_SPkira_Eff'
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 3
-  createParticle: s32'cal_208_SPkira', (PLAYER)
+  ifNot: Mem(Timeup)
+    createParticle: s32'cal_208_SPkira', (PLAYER)
+  endIf: 
   gotoLabel: s32'loop'
 endState: 
 
@@ -2115,43 +2121,43 @@ beginState: s32'cal_220_Eff'
   setLinkObjectDestroyOnStateChange: 0
   createObject: s32'cal_220_SpikeRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 20000
-  addPositionY: -95000
-  Unknown1727: 158000
-  setAngleY: 84000
-  setAngle: 66000
+    addPositionX: 20000
+    addPositionY: -95000
+    Unknown1727: 158000
+    setAngleY: 84000
+    setAngle: 66000
   endRunOnObject: 
   createObject: s32'cal_220_SpikeRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 95000
-  addPositionY: -67000
-  Unknown1727: 100000
-  setAngleY: 55000
-  setAngle: 72000
+    addPositionX: 95000
+    addPositionY: -67000
+    Unknown1727: 100000
+    setAngleY: 55000
+    setAngle: 72000
   endRunOnObject: 
   createObject: s32'cal_220_SpikeRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 170000
-  addPositionY: -6000
-  Unknown1727: 20000
-  setAngleY: 20000
-  setAngle: 90000
+    addPositionX: 170000
+    addPositionY: -6000
+    Unknown1727: 20000
+    setAngleY: 20000
+    setAngle: 90000
   endRunOnObject: 
   createObject: s32'cal_220_SpikeRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 140000
-  addPositionY: 50000
-  Unknown1727: -113000
-  setAngleY: 325000
-  setAngle: 104000
+    addPositionX: 140000
+    addPositionY: 50000
+    Unknown1727: -113000
+    setAngleY: 325000
+    setAngle: 104000
   endRunOnObject: 
   createObject: s32'cal_220_SpikeRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 70000
-  addPositionY: 70000
-  Unknown1727: -233000
-  setAngleY: 290000
-  setAngle: 110000
+    addPositionX: 70000
+    addPositionY: 70000
+    Unknown1727: -233000
+    setAngleY: 290000
+    setAngle: 110000
   endRunOnObject: 
   sprite: s32'spi220_04', 3
   sprite: s32'spi220_05', 3
@@ -2333,7 +2339,7 @@ beginState: s32'cal_223_WeaponStart'
   sprite: s32'null', 3
   linkParticle: s32'cal_WeaponStart'
   sprite: s32'null', 15
-  Unknown191: -20
+  setObjectSizeScaleSpeed: -20
 endState: 
 
 beginState: s32'cal_223_WeaponEnd'
@@ -2415,7 +2421,7 @@ beginState: s32'cal_224_WeaponStart'
   sprite: s32'null', 3
   linkParticle: s32'cal_WeaponStart'
   sprite: s32'null', 15
-  Unknown191: -20
+  setObjectSizeScaleSpeed: -20
 endState: 
 
 beginState: s32'cal_224_SpeedLine'
@@ -2491,7 +2497,7 @@ beginState: s32'cal_230_WeaponStart'
   sprite: s32'null', 3
   linkParticle: s32'cal_WeaponStart'
   sprite: s32'null', 1
-  Unknown191: -20
+  setObjectSizeScaleSpeed: -20
   sprite: s32'null', 29
   addPositionX: 5000
   addPositionY: -5000
@@ -2703,7 +2709,7 @@ beginState: s32'cal_232_WarmHoleEff'
   beginLabel: s32'End'
   sprite: s32'null', 60
   linkParticle: s32'cal_207_holeEnd'
-  Unknown191: 15
+  setObjectSizeScaleSpeed: 15
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
 endState: 
@@ -2762,7 +2768,7 @@ beginState: s32'cal_233_SpeedLine'
     setDepth: 88601
     setObjectWidth: 1400
     setObjectHeight: 1600
-    Unknown180: 1400
+    setObjectDepth: 1400
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'cal_233_SpeedLine'
@@ -2839,7 +2845,7 @@ beginState: s32'cal_251_StrikeEff'
   Unknown1727: -1806
   setObjectWidth: 1450
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngle: 9200
   sprite: s32'null', 3
   linkParticle: s32'cal_251_StrikeEff02'
@@ -2973,7 +2979,7 @@ beginState: s32'cal_252_StrikeEff'
   linkParticle: s32'cal_252_strike'
   setObjectWidth: 1300
   setObjectHeight: 1100
-  Unknown180: 1300
+  setObjectDepth: 1300
 endState: 
 
 beginState: s32'cal_301_Eff'
@@ -3010,44 +3016,44 @@ beginState: s32'cal_301_Eff'
   sendSignalToAction: s32'cal_301_Rock', 24
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -5035
-  addPositionY: 66267
-  Unknown1727: -27175
+    addPositionX: -5035
+    addPositionY: 66267
+    Unknown1727: -27175
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 42949
-  addPositionY: -5888
-  Unknown1727: 43784
-  setAngleX: 351200
-  setAngle: 12400
+    addPositionX: 42949
+    addPositionY: -5888
+    Unknown1727: 43784
+    setAngleX: 351200
+    setAngle: 12400
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 600
-  addPositionX: 87936
-  addPositionY: 38931
-  Unknown1727: 4641
-  setAngleX: 7600
-  setAngle: 13200
+    setObjectSize: 600
+    addPositionX: 87936
+    addPositionY: 38931
+    Unknown1727: 4641
+    setAngleX: 7600
+    setAngle: 13200
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -68044
-  addPositionY: 28828
-  Unknown1727: 30228
-  setObjectSize: 750
-  setAngleX: 1600
-  setAngle: 341200
+    addPositionX: -68044
+    addPositionY: 28828
+    Unknown1727: 30228
+    setObjectSize: 750
+    setAngleX: 1600
+    setAngle: 341200
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -128991
-  addPositionY: -13482
-  Unknown1727: -9647
-  setAngleX: 357600
-  setAngle: 342800
-  setObjectSize: 700
+    addPositionX: -128991
+    addPositionY: -13482
+    Unknown1727: -9647
+    setAngleX: 357600
+    setAngle: 342800
+    setObjectSize: 700
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd_BG', (PLAYER)
 endState: 
@@ -3061,7 +3067,7 @@ beginState: s32'cal_301_Rock'
     addPositionX: 13560
     setAngleY: 332000
     setObjectSize: 700
-    Unknown289: 200
+    setMaxActionTime: 200
     upon: 23
       gotoLabelRequests: s32'Atk'
       clearUpon: 23
@@ -3416,7 +3422,7 @@ beginState: s32'cal_309_Eff'
   createObject: s32'cal_309_SpeedLine', (PLAYER)
   createObject: s32'cal_309_AfterImage01', (PLAYER)
   runOnObject: (PREVIOUS)
-  Unknown1727: -30388
+    Unknown1727: -30388
   endRunOnObject: 
   privateSE: s32'cal_02'
   sprite: s32'chk309_09', 4
@@ -3424,26 +3430,26 @@ beginState: s32'cal_309_Eff'
   addPositionY: 61136
   createObject: s32'cal_309_AfterImage01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 79984
-  addPositionY: -39960
-  Unknown1727: -40517
+    addPositionX: 79984
+    addPositionY: -39960
+    Unknown1727: -40517
   endRunOnObject: 
   createObject: s32'cal_309_AfterImage01', (PLAYER)
   runOnObject: (PREVIOUS)
-  Unknown1727: -32631
+    Unknown1727: -32631
   endRunOnObject: 
   sprite: s32'chk309_10', 4
   addPositionX: -23061
   addPositionY: 205151
   createObject: s32'cal_309_AfterImage01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -4999
-  addPositionY: -119880
-  Unknown1727: -41571
+    addPositionX: -4999
+    addPositionY: -119880
+    Unknown1727: -41571
   endRunOnObject: 
   createObject: s32'cal_309_AfterImage01', (PLAYER)
   runOnObject: (PREVIOUS)
-  Unknown1727: -36603
+    Unknown1727: -36603
   endRunOnObject: 
   privateSE: s32'cal_04'
   sprite: s32'chk309_11', 4
@@ -3593,14 +3599,14 @@ beginState: s32'cal_350_Eff'
   cameraShake: s32'ShakeTate', 700, 0, 20, 0
   createObject: s32'cal_350_groundBurst', (PLAYER_LAND)
   runOnObject: (PREVIOUS)
-  setObjectSize: 800
-  addPositionX: -50000
+    setObjectSize: 800
+    addPositionX: -50000
   endRunOnObject: 
   createObject: s32'cal_350_groundBurst', (PLAYER_LAND)
   runOnObject: (PREVIOUS)
-  setObjectSize: 800
-  addPositionX: 50000
-  flipDirection: 
+    setObjectSize: 800
+    addPositionX: 50000
+    flipDirection: 
   endRunOnObject: 
   linkParticle: s32'cal_350_RockEnd'
   createObject: s32'cal_350_WindEnd', (PLAYER_LAND)
@@ -3703,7 +3709,7 @@ beginState: s32'cal_400_Eff_lnc'
   sprite: s32'lnc400_03', 3
   setSpriteTime: 4, Mem(ActReg0)
   commonSE: s32'SE_BTL_SwingWeaponLognL'
-  Unknown2329: 0x0300000017000000640000001600000064000000
+  Unknown2329: 3, 23, 100, 22, 100
   storeValue: Mem(ActReg2), Mem(Tmp)
   ifOperation: (IS_LESSER), Mem(ActReg2), Val(0)
   endIf: 
@@ -3856,7 +3862,7 @@ beginState: s32'cal_400_Rock'
     addPositionX: 12593
     addPositionY: 3587
     Unknown1727: 0
-    Unknown289: 200
+    setMaxActionTime: 200
     upon: 23
       gotoLabelRequests: s32'Atk'
       clearUpon: 23
@@ -4005,7 +4011,7 @@ beginState: s32'cal_301_Eff_623D'
   sprite: s32'keep', 4
   createObject: s32'cal_301_Rock', (PLAYER)
   privateSE: s32'cal_05'
-  Unknown2329: 0x0300000017000000640000001600000064000000
+  Unknown2329: 3, 23, 100, 22, 100
   storeValue: Mem(ActReg2), Mem(Tmp)
   ifOperation: (IS_LESSER), Mem(ActReg2), Val(0)
   endIf: 
@@ -4035,44 +4041,44 @@ beginState: s32'cal_301_Eff_623D'
   sendSignalToAction: s32'cal_301_Rock', 24
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -5035
-  addPositionY: 66267
-  Unknown1727: -27175
+    addPositionX: -5035
+    addPositionY: 66267
+    Unknown1727: -27175
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 42949
-  addPositionY: -5888
-  Unknown1727: 43784
-  setAngleX: 351200
-  setAngle: 12400
+    addPositionX: 42949
+    addPositionY: -5888
+    Unknown1727: 43784
+    setAngleX: 351200
+    setAngle: 12400
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 600
-  addPositionX: 87936
-  addPositionY: 38931
-  Unknown1727: 4641
-  setAngleX: 7600
-  setAngle: 13200
+    setObjectSize: 600
+    addPositionX: 87936
+    addPositionY: 38931
+    Unknown1727: 4641
+    setAngleX: 7600
+    setAngle: 13200
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -68044
-  addPositionY: 28828
-  Unknown1727: 30228
-  setObjectSize: 750
-  setAngleX: 1600
-  setAngle: 341200
+    addPositionX: -68044
+    addPositionY: 28828
+    Unknown1727: 30228
+    setObjectSize: 750
+    setAngleX: 1600
+    setAngle: 341200
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -128991
-  addPositionY: -13482
-  Unknown1727: -9647
-  setAngleX: 357600
-  setAngle: 342800
-  setObjectSize: 700
+    addPositionX: -128991
+    addPositionY: -13482
+    Unknown1727: -9647
+    setAngleX: 357600
+    setAngle: 342800
+    setObjectSize: 700
   endRunOnObject: 
   createObject: s32'cal_301_WeaponEnd_BG', (PLAYER)
 endState: 
@@ -4084,7 +4090,7 @@ beginState: s32'cal400_U_AddAtk'
     damage: 1500
     hitAirPushbackX: 0
     hitAirPushbackY: -60000
-    Unknown864: 26
+    groundBounceXVelocityPercent: 26
     attackRange: 100000, 100000, 0, -320000
     attackThroughArmor: 1
     Unknown1131: 1
@@ -4108,9 +4114,9 @@ beginState: s32'cal400_U_AddAtk'
         privateSE: s32'cal_08_2'
       endIf: 
     endUpon: 
-    Unknown2197: 0x020000002D00000000000000010000000000000004000000
+    Unknown2197: 2, 45, 0, 1, 0, 4
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyFrontDistance), Val(200000)
-      Unknown2197: 0x020000002D00000000000000010000000000000003000000
+      Unknown2197: 2, 45, 0, 1, 0, 3
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
       callSubroutine: s32'statue_b_Init'
@@ -4374,13 +4380,13 @@ beginState: s32'cal_401_Eff_Cbreak_Spark'
   physicsYImpulse: 15000
   linkParticle: s32'cal_401_BodySpark'
   createObject: s32'cal_401_Eff_Cbreak_SparkTrail', (PLAYER)
-  Unknown191: 35
+  setObjectSizeScaleSpeed: 35
   sprite: s32'null', 10
-  Unknown191: -65
+  setObjectSizeScaleSpeed: -65
   sprite: s32'null', 20
   linkParticle: s32''
   physicsYImpulse: 0
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'cal_401_Eff_Cbreak_SparkTrail'
@@ -4537,11 +4543,11 @@ beginState: s32'cal_406_Eff_Dbreak_Spark'
   linkParticle: s32'cal_401_BodySpark'
   sprite: s32'null', 10
   physicsXImpulse: 4000
-  Unknown191: -65
+  setObjectSizeScaleSpeed: -65
   sprite: s32'null', 20
   linkParticle: s32''
   physicsYImpulse: 0
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'cal_402_Eff_stb'
@@ -4632,13 +4638,13 @@ beginState: s32'cal_402_Eff_Cbreak_Spark'
   sprite: s32'null', 13
   physicsYImpulse: 15000
   linkParticle: s32'cal_401_BodySpark'
-  Unknown191: 35
+  setObjectSizeScaleSpeed: 35
   sprite: s32'null', 10
-  Unknown191: -65
+  setObjectSizeScaleSpeed: -65
   sprite: s32'null', 20
   linkParticle: s32''
   physicsYImpulse: 0
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'cal_403_Eff'
@@ -4649,7 +4655,7 @@ beginState: s32'cal_403_Eff'
     setLinkObjectDestroyOnDamage: 3
     linkObjectZ: 3
     callSubroutine: s32'urr_Init'
-    Unknown289: 120
+    setMaxActionTime: 120
     gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown413: 0, 2, 11, 0
@@ -5052,7 +5058,7 @@ beginState: s32'cal_404_Rock'
     addPositionX: 36963
     Unknown1727: -4995
     setAngleY: 308400
-    Unknown289: 200
+    setMaxActionTime: 200
     upon: 23
       Unknown1793: 4, 23
       gotoLabelRequests: s32'End'
@@ -5120,7 +5126,7 @@ beginState: s32'cal_404_WarmHoleEff'
   beginLabel: s32'End'
   sprite: s32'null', 60
   linkParticle: s32'cal_207_holeEnd'
-  Unknown191: 15
+  setObjectSizeScaleSpeed: 15
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
 endState: 
@@ -5216,15 +5222,15 @@ sprite: s32'null', 2147483647
 Unknown212: 1000
 beginLabel: s32'Atk'
 sprite: s32'null', 20
-Unknown191: 50
+setObjectSizeScaleSpeed: 50
 sprite: s32'null', 2147483647
-Unknown191: 0
+setObjectSizeScaleSpeed: 0
 beginLabel: s32'End'
 sprite: s32'null', 30
 linkObjectPosition: 0
 setLinkObjectDestroyOnStateChange: 0
 stopLinkObject: 0
-Unknown191: 0
+setObjectSizeScaleSpeed: 0
 Unknown310: 9, 3, 2, 54, 0, 1
 ifNot: Mem(SideID)
   linkParticle: s32'cal_MagicCircle_GroundEnd'
@@ -5295,7 +5301,7 @@ beginState: s32'cal_Trap_Air_spi'
       endUpon: 
       Unknown2483: 2, 55, 2, 53
       if: Mem(ObjReg2)
-        Unknown72: s32'cal_Trap_Air_spi2'
+        postSubroutineBegin: s32'cal_Trap_Air_spi2'
       endIf: 
       Unknown2483: 2, 53, 2, 92
       if: Mem(ObjReg0)
@@ -5376,7 +5382,7 @@ createObject: s32'cal_405_MagicCircle_Air', (PLAYER)
 stackObject: (STACK0), (PREVIOUS)
 ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
   runOnObject: (STACK0)
-  setObjectSize: 2000
+    setObjectSize: 2000
   endRunOnObject: 
 endIf: 
 
@@ -5388,7 +5394,7 @@ upon: (FRAME_STEP)
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(24)
       callSubroutine: s32'Trap_CheckEnemyAction'
       ifNot: Mem(ActReg0)
-        Unknown2329: 0x0200000017000000000000001600000067000000
+        Unknown2329: 2, 23, 0, 22, 103
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(200000)
           ifOperation: (IS_LESSER), Mem(EnemyDistanceX), Val(110000)
             clearUpon: (FRAME_STEP)
@@ -5403,7 +5409,7 @@ upon: (FRAME_STEP)
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(24)
       callSubroutine: s32'Trap_CheckEnemyAction'
       ifNot: Mem(ActReg0)
-        Unknown2329: 0x0200000017000000000000001600000067000000
+        Unknown2329: 2, 23, 0, 22, 103
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(200000)
           ifOperation: (IS_LESSER), Mem(EnemyDistanceX), Val(110000)
             clearUpon: (FRAME_STEP)
@@ -5418,7 +5424,7 @@ upon: (FRAME_STEP)
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(24)
       callSubroutine: s32'Trap_CheckEnemyAction'
       ifNot: Mem(ActReg0)
-        Unknown2329: 0x0200000017000000000000001600000067000000
+        Unknown2329: 2, 23, 0, 22, 103
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(200000)
           ifOperation: (IS_LESSER), Mem(EnemyDistanceX), Val(110000)
             clearUpon: (FRAME_STEP)
@@ -5435,7 +5441,7 @@ ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
   ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(24)
     callSubroutine: s32'Trap_CheckEnemyAction'
     ifNot: Mem(ActReg0)
-      Unknown2329: 0x0200000017000000000000001600000067000000
+      Unknown2329: 2, 23, 0, 22, 103
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
         ifOperation: (IS_LESSER), Mem(EnemyDistanceX), Val(220000)
           clearUpon: (FRAME_STEP)
@@ -5487,7 +5493,7 @@ endUpon:
 
 if: Mem(386)
   if: Mem(IsEnemysCutScene)
-    Unknown2347: 810303811, 0x325F5375636365737330310000000000000000000000000000000000
+    Unknown2347: s32'CAL02_Success01'
   endIf: 
 endIf: 
 
@@ -5518,7 +5524,7 @@ createObject: s32'cal_405_WeaponEnd', (PLAYER)
 Unknown2050: 0
 if: Mem(386)
   if: Mem(IsEnemysCutScene)
-    Unknown2347: 810303811, 0x325F5375636365737330320000000000000000000000000000000000
+    Unknown2347: s32'CAL02_Success02'
   endIf: 
 endIf: 
 
@@ -5649,10 +5655,10 @@ beginState: s32'cal405_U_AddAtk'
     Unknown1131: 1
     comboLimitScaling: 0
     damageEffect: 2, s32'CAL_SPHitEff_Long'
-    Unknown72: s32'cal_Trap_Air_spi'
-    Unknown2482: 0x02000000370000000200000037000000
+    postSubroutineBegin: s32'cal_Trap_Air_spi'
+    Unknown2482: 2, 55, 2, 55
     if: Mem(ObjReg2)
-      Unknown72: s32'cal_Trap_Air_spi2'
+      postSubroutineBegin: s32'cal_Trap_Air_spi2'
     endIf: 
     storeValue: Mem(PlayerVal9), Val(1)
     stackObjectEx: (SELF), 5, 2, 5
@@ -5776,7 +5782,7 @@ beginState: s32'CAL_430_NonVectorSpEff'
   upon: (IMMEDIATE)
     ignoreFinishStop: 1
     ignoreSuperFreeze: 1
-    Unknown169: -90000, 90000
+    randomAddAngle: -90000, 90000
   endUpon: 
   sprite: s32'null', 20
   setLightColor: -12577152
@@ -5835,13 +5841,13 @@ beginState: s32'cal_430_DragonBEff'
   Unknown212: -7000
   sprite: s32'null', 3
   Unknown212: -6000
-  Unknown191: -5
+  setObjectSizeScaleSpeed: -5
   sprite: s32'null', 3
   Unknown212: -2500
-  Unknown191: -10
+  setObjectSizeScaleSpeed: -10
   sprite: s32'null', 3
   Unknown212: -1500
-  Unknown191: -15
+  setObjectSizeScaleSpeed: -15
   sprite: s32'null', 100
   linkParticle: s32'cal_MagicCircle_SpecialLoop_B'
   beginLabel: s32'End'
@@ -5849,13 +5855,13 @@ beginState: s32'cal_430_DragonBEff'
   linkParticle: s32'cal_MagicCircle_SpecialEnd_B'
   Unknown212: -1000
   setObjectSize: 2400
-  Unknown191: 20
+  setObjectSizeScaleSpeed: 20
   physicsXImpulse: 1250
   stopLinkObject: 0
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
   sprite: s32'null', 15
-  Unknown191: 5
+  setObjectSizeScaleSpeed: 5
   Unknown212: -800
   sprite: s32'null', 15
   sprite: s32'null', 15
@@ -5882,13 +5888,13 @@ beginState: s32'cal_430_DragonREff'
   Unknown212: 7000
   sprite: s32'null', 3
   Unknown212: 6000
-  Unknown191: -5
+  setObjectSizeScaleSpeed: -5
   sprite: s32'null', 3
   Unknown212: 2500
-  Unknown191: -10
+  setObjectSizeScaleSpeed: -10
   sprite: s32'null', 3
   Unknown212: 1500
-  Unknown191: -15
+  setObjectSizeScaleSpeed: -15
   sprite: s32'null', 100
   linkParticle: s32'cal_MagicCircle_SpecialLoop_R'
   beginLabel: s32'End'
@@ -5896,13 +5902,13 @@ beginState: s32'cal_430_DragonREff'
   linkParticle: s32'cal_MagicCircle_SpecialEnd_R'
   Unknown212: 1000
   setObjectSize: 2600
-  Unknown191: 20
+  setObjectSizeScaleSpeed: 20
   physicsXImpulse: -1250
   stopLinkObject: 0
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
   sprite: s32'null', 15
-  Unknown191: 5
+  setObjectSizeScaleSpeed: 5
   Unknown212: 800
   sprite: s32'null', 15
   sprite: s32'null', 15
@@ -5914,7 +5920,7 @@ beginState: s32'cal_430_RotationRayEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown169: -90000, 90000
+    randomAddAngle: -90000, 90000
     addPositionY: 200000
     Unknown1727: 100000
     upon: 23
@@ -6033,7 +6039,7 @@ beginState: s32'cal_440_Gold_Matome'
   upon: (IMMEDIATE)
     stopLinkObject: 3
     linkObjectZ: 3
-    Unknown289: 1000
+    setMaxActionTime: 1000
     upon: 23
       gotoLabelRequests: s32'End'
       clearUpon: 23
@@ -6057,20 +6063,23 @@ sprite: s32'null', 2
 createObject: s32'cal_440_StartBurst', (PLAYER)
 createObject: s32'cal_440_Gold', (PLAYER)
 runOnObject: (PREVIOUS)
-addPositionX: 200000
+  addPositionX: 200000
 endRunOnObject: 
+
 privateSE: s32'cal_05'
 sprite: s32'null', 6
 createObject: s32'cal_440_Gold', (PLAYER)
 runOnObject: (PREVIOUS)
-addPositionX: 600000
+  addPositionX: 600000
 endRunOnObject: 
+
 privateSE: s32'cal_05'
 sprite: s32'null', 6
 createObject: s32'cal_440_Gold', (PLAYER)
 runOnObject: (PREVIOUS)
-addPositionX: 1000000
+  addPositionX: 1000000
 endRunOnObject: 
+
 privateSE: s32'cal_05'
 sprite: s32'null', 2147483647
 beginLabel: s32'End'
@@ -6119,9 +6128,9 @@ endState:
 beginState: s32'cal_440_Gold'
   upon: (IMMEDIATE)
     linkObjectZ: 3
-    Unknown194: 0, 200
+    randomAddObjectSize: 0, 200
     ignoreFinishStop: 1
-    Unknown289: 1000
+    setMaxActionTime: 1000
     upon: 23
       gotoLabelRequests: s32'End'
       clearUpon: 23
@@ -6174,7 +6183,7 @@ endState:
 beginState: s32'cal_440_Statue'
   upon: (IMMEDIATE)
     callSubroutine: s32'daiza_Init'
-    Unknown289: 1000
+    setMaxActionTime: 1000
   endUpon: 
   gotoLabelIfNot: s32'Finish', Mem(BattleDoing)
   sprite: s32'std440_00', 15
@@ -6214,16 +6223,16 @@ beginState: s32'cal_440_break_SparkEff'
   sprite: s32'null', 26
   physicsYImpulse: 15000
   linkParticle: s32'cal_401_BodySpark'
-  Unknown191: 35
+  setObjectSizeScaleSpeed: 35
   createObject: s32'cal_440_break_Noikoshi', (PLAYER)
   privateSE: s32'cal_17'
   sprite: s32'null', 10
   deactivateObjectByName: s32'cal_440_break_Noikoshi'
-  Unknown191: -30
+  setObjectSizeScaleSpeed: -30
   sprite: s32'null', 15
   physicsYImpulse: 3250
   sprite: s32'null', 5
-  Unknown191: -60
+  setObjectSizeScaleSpeed: -60
 endState: 
 
 beginState: s32'cal_440_break_Noikoshi'
@@ -6248,13 +6257,13 @@ beginState: s32'cal_440_PPOverRay'
     endUpon: 
     upon: (BEFORE_EXIT)
       Unknown2590: s32'cal_MI_PP_441OverRay', 1, 0
-      Unknown2587: 1600938339, s32'MI_PP_441OverRay'
+      Unknown2587: s32'cal_MI_PP_441OverRay', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 5
   createObject: s32'cal_440_HitGradation', (PLAYER)
   sprite: s32'null', 2
-  Unknown2587: 1600938339, s32'MI_PP_441OverRay'
+  Unknown2587: s32'cal_MI_PP_441OverRay', 1
   Unknown2588: s32'cal_MI_PP_441OverRay', 1, 10
   sprite: s32'null', 2
   Unknown2588: s32'cal_MI_PP_441OverRay', 1, 20
@@ -6324,7 +6333,7 @@ beginState: s32'cal_440_cs_Ray'
     Unknown1727: 169275
     setObjectWidth: 500
     setObjectHeight: 500
-    Unknown180: 500
+    setObjectDepth: 500
   endUpon: 
   sprite: s32'null', 62
   sprite: s32'null', 17
@@ -6574,11 +6583,11 @@ beginState: s32'cal_441_PPOverRay'
     gotoLabelUpon: 24, s32'End'
     upon: (BEFORE_EXIT)
       Unknown2590: s32'cal_MI_PP_441OverRay', 1, 0
-      Unknown2587: 1600938339, s32'MI_PP_441OverRay'
+      Unknown2587: s32'cal_MI_PP_441OverRay', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 600
-  Unknown2587: 1600938339, s32'MI_PP_441OverRay'
+  Unknown2587: s32'cal_MI_PP_441OverRay', 1
   Unknown2588: s32'cal_MI_PP_441OverRay', 1, 100
   beginLabel: s32'Change'
   sprite: s32'null', 600
@@ -6640,11 +6649,11 @@ beginState: s32'cal_442_PPOverRay'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'cal_MI_PP_441OverRay', 1, 0
-      Unknown2587: 1600938339, s32'MI_PP_441OverRay'
+      Unknown2587: s32'cal_MI_PP_441OverRay', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 2147483647
-  Unknown2587: 1600938339, s32'MI_PP_441OverRay'
+  Unknown2587: s32'cal_MI_PP_441OverRay', 1
   Unknown2588: s32'cal_MI_PP_441OverRay', 1, 40
 endState: 
 
@@ -6707,7 +6716,7 @@ beginState: s32'cal_700_cs_Ray'
     Unknown1727: -221862
     setObjectWidth: 750
     setObjectHeight: 850
-    Unknown180: 900
+    setObjectDepth: 900
     setAngleX: 355200
     setAngleY: 14000
   endUpon: 

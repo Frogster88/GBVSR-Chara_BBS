@@ -94,7 +94,7 @@ beginSubroutine: s32'pod_Ability_Init'
   endUpon: 
   upon: 35
     clearUpon: 35
-    Unknown71: s32'pod_Wait'
+    preSubroutineBegin: s32'pod_Wait'
   endUpon: 
 endSubroutine: 
 
@@ -185,7 +185,7 @@ beginState: s32'pod_Wait'
     callSubroutine: s32'pod_A'
     storeValue: Mem(EnvR23), Val(1)
     storeValue: Mem(EnvR24), Val(1)
-    Unknown264: 16
+    setZOffset: 16
     Unknown2024: 0x00000000030000006700000000000000E040FDFF00000000605B030000000000050000000000000014000000
     setDepth: 0
     ifNot: Mem(ObjReg7)
@@ -356,7 +356,7 @@ beginState: s32'knc272'
     hitAirPushbackX: 15000
     hitAirPushbackY: 18000
     hitstop: 10
-    Unknown988: 2
+    ignorePushbackXScaling: 2
     checkCurrentStateName: (PLAYER), s32'NmlAtk5A4th'
     if: Mem(Tmp)
       comboLimitScaling: 1
@@ -369,7 +369,7 @@ beginState: s32'knc272'
       hitAirPushbackY: 11000
       untechAmount: 28
       tensionGainOnConnect: 10
-      Unknown72: s32'NmlAtkAB'
+      postSubroutineBegin: s32'NmlAtkAB'
     endIf: 
     if: Mem(Hikitsugi0)
       Unknown1131: 1
@@ -543,8 +543,8 @@ beginState: s32'knc280'
     hitstop: 16
     wallPushback: 0, 1500
     tensionGainOnConnect: 10
-    Unknown988: 2
-    Unknown72: s32'NmlAtkAC'
+    ignorePushbackXScaling: 2
+    postSubroutineBegin: s32'NmlAtkAC'
     upon: (HIT_OR_GUARD)
       clearUpon: (HIT_OR_GUARD)
       stopLinkObject: 0
@@ -852,7 +852,7 @@ beginState: s32'pod254'
   stopLinkObject: 3
   createObject: s32'twb_400_PodRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionY: 515000
+    addPositionY: 515000
   endRunOnObject: 
   beginLabel: s32'Float'
   sprite: s32'pod254_03', 3
@@ -1007,7 +1007,7 @@ beginState: s32'twb_350_SlashEff'
     setAngle: 320000
     setObjectWidth: 2500
     setObjectHeight: 2500
-    Unknown180: 2500
+    setObjectDepth: 2500
   endUpon: 
   sprite: s32'null', 25
   linkParticle: s32'twb_Sp_Slash035'
@@ -1226,7 +1226,7 @@ beginState: s32'twb_400_PodGlitch'
     linkObjectZ: 2
     setLinkObjectDestroyOnDamage: 3
     moveToPosType: 2, 103
-    Unknown264: -30
+    setZOffset: -30
     Unknown2327: 1
   endUpon: 
   sprite: s32'null', 20
@@ -1238,7 +1238,7 @@ beginState: s32'twb_400_PodRay'
     linkObjectZ: 2
     setLinkObjectDestroyOnDamage: 3
     moveToPosType: 2, 103
-    Unknown264: -30
+    setZOffset: -30
     Unknown2327: 1
   endUpon: 
   sprite: s32'null', 10
@@ -1302,7 +1302,7 @@ beginState: s32'pod_404_AtkMatome'
     linkObjectZ: 2
     addPositionY: -10000
     setAngle: -38000
-    Unknown289: 300
+    setMaxActionTime: 300
     callSubroutine: s32'twb_SpecialShot_AtkInit'
     callSubroutine: s32'cmnSpecialAtkLv2_AtkInit'
     callSubroutine: s32'cmnHACT_Back'
@@ -1388,7 +1388,7 @@ beginState: s32'pod_404_ShellEff'
   linkParticle: s32'twb_404_GatlingShell'
   physicsXImpulse: 135000
   physicsYImpulse: -80000
-  Unknown118: -20000, 0
+  randomAddVelocityY: -20000, 0
   setAngleBySpeed: 0
   addPositionY: 40000
   Unknown1727: 20000
@@ -1667,13 +1667,13 @@ beginState: s32'pod_406_ShellAtk'
         physicsXImpulse: 35000
         setPositionX: 30000
         setPositionY: 8000
-        Unknown159: 165
+        setObjectHeightScaleSpeed: 165
       endIf: 
       ifOperation: (IS_EQUAL), Mem(ActionTime), Val(6)
-        Unknown159: 0
+        setObjectHeightScaleSpeed: 0
       endIf: 
       ifOperation: (IS_EQUAL), Mem(ActionTime), Val(11)
-        Unknown159: -80
+        setObjectHeightScaleSpeed: -80
       endIf: 
       ifOperation: (IS_EQUAL), Mem(ActionTime), Val(15)
         clearUpon: (FRAME_STEP)
@@ -1875,7 +1875,7 @@ beginState: s32'pod_407_BeamEff'
     addPositionX: 45000
     addPositionY: 22000
     Unknown1727: 15000
-    Unknown289: 150
+    setMaxActionTime: 150
     callSubroutine: s32'twb_SpecialShot_AtkInit'
     callSubroutine: s32'cmnHACT_BlowOff'
     damage: 1600
@@ -1969,7 +1969,7 @@ beginState: s32'pod408'
   endUpon: 
   sprite: s32'keep', 1
   Unknown2024: 0x000000000300000067000000000000000000000000000000605B030000000000140000000000000014000000
-  Unknown264: -8
+  setZOffset: -8
   sprite: s32'pod408_00', 2
   sprite: s32'pod408_01', 2
   sprite: s32'pod408_02', 2
@@ -2092,7 +2092,7 @@ beginState: s32'pod409'
   addPositionY: 250000
   addPositionX: -100000
   addPositionY: -40000
-  Unknown264: -16
+  setZOffset: -16
   linkObjectPosition: 3
   createObject: s32'twb_400_PodRay', (PLAYER)
   sprite: s32'pod414_00', 2
@@ -2264,7 +2264,7 @@ beginState: s32'pod410'
   moveToPosType: 3, 100
   linkObjectZ: 3
   linkObjectPosition: 3
-  Unknown264: 0
+  setZOffset: 0
   addPositionX: 262000
   addPositionY: 236000
   Unknown1727: -20000
@@ -2355,7 +2355,7 @@ endState:
 beginState: s32'WireObj'
   upon: (IMMEDIATE)
     linkObjectZ: 2
-    Unknown264: -17
+    setZOffset: -17
     linkBP: s32'Wire'
     bpBattleScriptParam: 1, 1, 1, 1000
     upon: (FRAME_STEP)
@@ -2500,7 +2500,7 @@ beginState: s32'pod411'
   upon: (BEFORE_EXIT)
     linkObjectPosition: 0
   endUpon: 
-  Unknown264: -16
+  setZOffset: -16
   createObject: s32'twb_411_MGStart', (PLAYER)
   sprite: s32'pod000_00', 40
   checkCurrentStateName: (PLAYER), s32'Wire_Sp'
@@ -2685,7 +2685,7 @@ sendSignalToAction: s32'twb_411_ShotHeadEff', 24
 sendSignalToAction: s32'WireObj', 24
 endState: 
 beginSubroutine: s32'twb_411_Func'
-  Unknown264: -16
+  setZOffset: -16
   hideByCutscene: 1
 endSubroutine: 
 
@@ -2979,7 +2979,7 @@ beginState: s32'twb_413_Gravity'
   Unknown2246: 600000, 0
   upon: (FRAME_STEP)
     runOnObject: (ENEMY)
-    Unknown2253: 0
+      Unknown2253: 0
     endRunOnObject: 
     ifNot: Mem(BattleDoing)
       clearUpon: (FRAME_STEP)
@@ -3056,7 +3056,7 @@ beginState: s32'pod414'
     clearUpon: 35
     upon: 26
       clearUpon: 26
-      Unknown71: s32'pod_Wait'
+      preSubroutineBegin: s32'pod_Wait'
       sendSignalToAction: s32'pod_414_VoltEff', 25
     endUpon: 
     storeValue: Mem(PlayerVal2), Val(1)
@@ -3186,7 +3186,7 @@ sprite: s32'pod414_10', 3
 clearUpon: 26
 upon: 35
   clearUpon: 35
-  Unknown71: s32'pod_Wait'
+  preSubroutineBegin: s32'pod_Wait'
 endUpon: 
 
 sprite: s32'pod414_11', 4
@@ -3290,7 +3290,7 @@ beginState: s32'pod415'
   upon: (IMMEDIATE)
     callSubroutine: s32'pod_Ability_Init'
     Unknown2483: 2, 417, 2, 417
-    Unknown2482: 0x020000002D0000000200000042000000
+    Unknown2482: 2, 45, 2, 66
     upon: 36
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(55)
         sendSignalToAction: s32'twb_415_BomTame', 23
@@ -3310,13 +3310,13 @@ beginState: s32'pod415'
   linkObjectDirection: 0
   faceOpponent: 
   storeValue: Mem(EnvR23), Val(0)
-  Unknown264: -8
+  setZOffset: -8
   upon: (BEFORE_EXIT)
     linkObjectDirection: 3
     storeValue: Mem(EnvR23), Val(1)
     storeValue: Mem(EnvR24), Val(1)
   endUpon: 
-  Unknown2329: 0x03000000030000007B000000160000007B000000
+  Unknown2329: 3, 3, 123, 22, 123
   ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(0)
     moveToObject: (ENEMY)
     addPositionX: -350000
@@ -3332,7 +3332,7 @@ beginState: s32'pod415'
   endIf: 
   createObject: s32'twb_405_MGStart', (PLAYER)
   runOnObject: (PREVIOUS)
-  Unknown264: -8
+    setZOffset: -8
   endRunOnObject: 
   sprite: s32'pod415_01', 2
   sprite: s32'pod415_02', 3
@@ -3395,8 +3395,8 @@ beginState: s32'twb_415_BomTame'
     addPositionX: 95964
     addPositionY: 35000
     Unknown1727: 16455
-    Unknown2482: 0x02000000A101000002000000A1010000
-    Unknown2482: 0x020000002D000000020000002D000000
+    Unknown2482: 2, 417, 2, 417
+    Unknown2482: 2, 45, 2, 45
     storeValue: Mem(ActReg1), Mem(PosXRaw)
     upon: 23
       clearUpon: 23
@@ -3409,13 +3409,13 @@ beginState: s32'twb_415_BomTame'
   physicsXImpulse: 5000
   physicsYImpulse: 3000
   randomAddVelocityX: -2500, 2500
-  Unknown118: -3000, 3000
+  randomAddVelocityY: -3000, 3000
   privateSE: s32'twb_22'
   sprite: s32'null', 8
   physicsXImpulse: 18000
   physicsYImpulse: -35000
   randomAddVelocityX: -3500, 3500
-  Unknown118: -4000, 4000
+  randomAddVelocityY: -4000, 4000
   sprite: s32'null', 10
   haltMomentum: 1
   setPositionY: 0
@@ -3434,7 +3434,7 @@ beginState: s32'twb_415_BomEnd'
     linkObjectPosition: 0
     setLinkObjectDestroyOnStateChange: 0
     Unknown2327: 1
-    Unknown203: -200, 200
+    randomAddObjectSizeFix: -200, 200
   endUpon: 
   sprite: s32'null', 60
   requestShake: 0, 4000
@@ -3450,8 +3450,8 @@ beginState: s32'twb_415_BomEnd_Atk'
     storeValueFromObject: (SELF), Mem(PosXRaw), (PARENT), Mem(ActReg1)
     addPositionX: 250000
     callSubroutine: s32'twb_SpecialShot_AtkInit'
-    Unknown2482: 0x02000000A101000002000000A1010000
-    Unknown2482: 0x020000002D000000020000002D000000
+    Unknown2482: 2, 417, 2, 417
+    Unknown2482: 2, 45, 2, 45
     damage: 300
     hitAirPushbackX: 0
     hitAirPushbackY: -20000
@@ -3519,7 +3519,7 @@ beginState: s32'pod412'
   privateSE: s32'twb_16'
   sprite: s32'keep', 4
   Unknown2050: 0
-  Unknown264: -16
+  setZOffset: -16
   Unknown2024: 0x0000000003000000670000000000000020D1FFFF0000000048E8010000000000640000000000000014000000
   upon: 49
     checkSignalName: s32'DispModel_TRUE'
@@ -3528,7 +3528,7 @@ beginState: s32'pod412'
       Unknown2050: 1
       createObject: s32'twb_400_PodRay', (PLAYER)
       runOnObject: (PREVIOUS)
-      linkObjectPosition: 2
+        linkObjectPosition: 2
       endRunOnObject: 
     endIf: 
   endUpon: 
@@ -3565,10 +3565,10 @@ beginState: s32'pod412'
   groundBounceCount: 0
   guardType: (LOW)
   ifOperation: (IS_GREATER), Mem(PosX), Val(1900000)
-    Unknown93: 1900000
+    setRawPositionX: 1900000
   endIf: 
   ifOperation: (IS_LESSER), Mem(PosX), Val(-1900000)
-    Unknown93: -1900000
+    setRawPositionX: -1900000
   endIf: 
   createObject: s32'twb_412_BomEnd', (PLAYER)
   createObject: s32'twb_412_Wave', (PLAYER)
@@ -3599,14 +3599,14 @@ beginState: s32'twb_412_Wave'
   upon: (IMMEDIATE)
     linkObjectZ: 3
     addPositionY: 30000
-    Unknown191: 200
+    setObjectSizeScaleSpeed: 200
     setAngleY: 346000
   endUpon: 
   sprite: s32'SpecialShot_Wave_Ring', 5
   linkParticle: s32'twb_412_Wave'
   privateSE: s32'twb_19'
   sprite: s32'keep', 1
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   sprite: s32'keep', 3
   setAlphaColorSpeed: -70
   sprite: s32'keep', 57
@@ -3639,9 +3639,9 @@ beginState: s32'twb_412_WaveAtk'
   sprite: s32'SpecialShot_Wave_RingAtk1st', 1
   hit: 
   sprite: s32'SpecialShot_Wave_RingAtk1st', 8
-  Unknown151: 80
+  setObjectWidthScaleSpeed: 80
   sprite: s32'SpecialShot_Wave_RingAtk1st', 3
-  Unknown151: 0
+  setObjectWidthScaleSpeed: 0
 endState: 
 
 beginState: s32'pod430'
@@ -3697,7 +3697,7 @@ beginState: s32'pod430_Pod_B'
   createObject: s32'pod_430_BeamEff', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
   runOnObject: (STACK0)
-  linkObjectAngle: 2
+    linkObjectAngle: 2
   endRunOnObject: 
   requestShake: 7000, 7000
   sprite: s32'pdb430_05', 2
@@ -3731,7 +3731,7 @@ beginState: s32'pod430_Pod_C'
   createObject: s32'pod_430_BeamEff', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
   runOnObject: (STACK0)
-  linkObjectAngle: 2
+    linkObjectAngle: 2
   endRunOnObject: 
   requestShake: 7000, 7000
   sprite: s32'pdc430_05', 2
@@ -3762,7 +3762,7 @@ beginState: s32'pod_430_BeamEff'
     addPositionX: 45000
     addPositionY: 22000
     Unknown1727: 15000
-    Unknown289: 150
+    setMaxActionTime: 150
     callSubroutine: s32'cmnSpecialShot_AtkInit'
     callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
     callSubroutine: s32'cmnSpecialAttackD_AtkInit'
@@ -3869,7 +3869,7 @@ beginState: s32'twb_430_SlashEff'
     setDepth: 20566
     setObjectWidth: 2500
     setObjectHeight: 2500
-    Unknown180: 2500
+    setObjectDepth: 2500
     setAngleX: 34400
     setAngleY: 9600
     setAngle: 338800
@@ -4329,7 +4329,7 @@ beginState: s32'twb_441cs_Speed03Eff'
     Unknown1727: -3136
     setObjectWidth: 200
     setObjectHeight: 200
-    Unknown180: 200
+    setObjectDepth: 200
     setAngleX: 348000
     setAngleY: 234000
     setAngle: 0
@@ -4419,21 +4419,21 @@ beginState: s32'twb_441cs_Blur'
     upon: (BEFORE_EXIT)
       if: Mem(Dir)
         Unknown2590: s32'twb_PP_441RB1P', 1, 0
-        Unknown2587: 1600288628, s32'PP_441RB1P'
+        Unknown2587: s32'twb_PP_441RB1P', 0
       endIf: 
       else: 
         Unknown2590: s32'twb_PP_441RB2P', 1, 0
-        Unknown2587: 1600288628, s32'PP_441RB2P'
+        Unknown2587: s32'twb_PP_441RB2P', 0
       endElse: 
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
   if: Mem(Dir)
-    Unknown2587: 1600288628, s32'PP_441RB1P'
+    Unknown2587: s32'twb_PP_441RB1P', 1
     Unknown2588: s32'twb_PP_441RB1P', 1, 100
   endIf: 
   else: 
-    Unknown2587: 1600288628, s32'PP_441RB2P'
+    Unknown2587: s32'twb_PP_441RB2P', 1
     Unknown2588: s32'twb_PP_441RB2P', 1, 100
   endElse: 
   sprite: s32'null', 4
@@ -4451,8 +4451,8 @@ beginState: s32'twb_441cs_Blur'
     Unknown2588: s32'twb_PP_441RB2P', 1, 25
   endElse: 
   sprite: s32'null', 1
-  Unknown2587: 1600288628, s32'PP_441RB1P'
-  Unknown2587: 1600288628, s32'PP_441RB2P'
+  Unknown2587: s32'twb_PP_441RB1P', 0
+  Unknown2587: s32'twb_PP_441RB2P', 0
 endState: 
 
 beginState: s32'twb_442cs_BGEff'
@@ -4668,7 +4668,7 @@ beginState: s32'twb_441_barrierEndEff'
     Unknown1727: -102887
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     setAngleX: 0
     setAngleY: 232000
     setAngle: 357200
@@ -4688,7 +4688,7 @@ beginState: s32'twb_441_ImpactEndEff'
     Unknown1727: -63926
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     setAngleY: 67600
     setAngle: 357200
   endUpon: 
@@ -4723,7 +4723,7 @@ beginState: s32'twb_441_Slash01Eff'
     flipDirection: 
     setObjectWidth: 3000
     setObjectHeight: 3000
-    Unknown180: 3000
+    setObjectDepth: 3000
     setPositionX: 30734
     setPositionY: 206873
     setDepth: 85194
@@ -4748,7 +4748,7 @@ beginState: s32'twb_441_Slash03Eff'
     setDepth: 99079
     setObjectWidth: 2300
     setObjectHeight: 2300
-    Unknown180: 2300
+    setObjectDepth: 2300
     setAngleX: 152800
     setAngleY: 198400
     setAngle: 340000
@@ -4773,7 +4773,7 @@ beginState: s32'twb_441_Slash04Eff'
     setDepth: -80522
     setObjectWidth: 1800
     setObjectHeight: 1800
-    Unknown180: 1800
+    setObjectDepth: 1800
     setAngleX: 94000
     setAngleY: 351200
     setAngle: 19200
@@ -4843,14 +4843,14 @@ beginState: s32'twb442_AtkPlayer'
     hitAirPushbackX: 9000
     hitAirPushbackY: 12000
     hitGravity: 1200
-    Unknown864: 60
+    groundBounceXVelocityPercent: 60
     tensionGainOnConnect: 0
     noFinishCamera: 1
     counterHitType: 1
     displayHitSparks: 1
     armorBreak: 1
     attackFrontDirection: 3
-    Unknown909: 1, 0
+    atkFrozen: 1, 0
     attackTarget: 1
     Unknown1048: 1
     Unknown914: 0, 1000
@@ -4909,7 +4909,7 @@ beginState: s32'twb_442_SelfDestructEff'
   addPositionY: 387761
   Unknown1727: 59961
   setAngleY: 180000
-  Unknown264: -10
+  setZOffset: -10
   upon: 23
     gotoLabelRequests: s32'End'
   endUpon: 
@@ -4981,7 +4981,7 @@ beginState: s32'twb_442_Aura02Eff'
     upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 3
@@ -5029,12 +5029,12 @@ beginState: s32'twb_442_GCEff'
       gotoLabelRequests: s32'End'
     endUpon: 
     upon: (BEFORE_EXIT)
-      Unknown2587: 1600288628, s32'PP_442CG'
+      Unknown2587: s32'twb_PP_442CG', 0
       Unknown419: 1000, 1000, 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 15
-  Unknown2587: 1600288628, s32'PP_442CG'
+  Unknown2587: s32'twb_PP_442CG', 1
   Unknown2588: s32'twb_PP_442CG', 1, 0
   Unknown2590: s32'twb_PP_442CG', 1, 0
   Unknown419: 1000, 0, 15
@@ -5049,7 +5049,7 @@ beginState: s32'twb_442_GCEff'
   Unknown2590: s32'twb_PP_442CG', 1, -1
   Unknown419: 0, 1000, 20
   sprite: s32'null', 1
-  Unknown2587: 1600288628, s32'PP_442CG'
+  Unknown2587: s32'twb_PP_442CG', 0
   Unknown419: 1000, 1000, 0
 endState: 
 
@@ -5137,7 +5137,7 @@ beginState: s32'twb_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -5191,11 +5191,11 @@ beginState: s32'pod601'
   haltMomentum: 1
   moveToObject: (PLAYER)
   zLine: 5, 1
-  Unknown264: -5
+  setZOffset: -5
   createObject: s32'twb_400_PodRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 125000
-  addPositionY: 215000
+    addPositionX: 125000
+    addPositionY: 215000
   endRunOnObject: 
   sprite: s32'pod601_01', 6
   sprite: s32'pod601_02', 6
@@ -5489,7 +5489,7 @@ beginState: s32'twb_700cs_Smoke01Eff'
   linkParticle: s32'bg_GroundBurstZlink'
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setPositionX: -406021
   setPositionY: -3166
   setDepth: 269847
@@ -5506,7 +5506,7 @@ beginState: s32'twb_700cs_Smoke02Eff'
   linkParticle: s32'bg_GroundBurstZlink'
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setPositionX: 420813
   setPositionY: -2624
   setDepth: 185950
@@ -5551,18 +5551,18 @@ beginState: s32'twb_700cs_Blur'
     setLinkObjectDestroyOnStateChange: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'twb_PP_700RB', 1, 0
-      Unknown2587: 1600288628, s32'PP_700RB'
+      Unknown2587: s32'twb_PP_700RB', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1600288628, s32'PP_700RB'
+  Unknown2587: s32'twb_PP_700RB', 1
   Unknown2588: s32'twb_PP_700RB', 1, 100
   sprite: s32'null', 4
   Unknown2588: s32'twb_PP_700RB', 1, 50
   sprite: s32'null', 4
   Unknown2588: s32'twb_PP_700RB', 1, 25
   sprite: s32'null', 1
-  Unknown2587: 1600288628, s32'PP_700RB'
+  Unknown2587: s32'twb_PP_700RB', 0
 endState: 
 
 beginState: s32'pod_A_800cs'
@@ -5623,7 +5623,7 @@ beginState: s32'twb_800_HUDEnd'
   setDepth: -77667
   setObjectWidth: 400
   setObjectHeight: 400
-  Unknown180: 400
+  setObjectDepth: 400
   setAngleY: 272800
 endState: 
 

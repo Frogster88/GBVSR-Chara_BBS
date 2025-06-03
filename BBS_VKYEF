@@ -366,14 +366,14 @@ beginState: s32'vky_205_RotEff'
   setDepth: 12498
   setObjectWidth: 2300
   setObjectHeight: 3000
-  Unknown180: 2300
+  setObjectDepth: 2300
   setAngleX: 255600
   setAngleY: 49600
   setAngle: 157200
   sprite: s32'null', 3
   setObjectWidth: 2300
   setObjectHeight: 2600
-  Unknown180: 2300
+  setObjectDepth: 2300
   setPositionX: 90985
   setPositionY: 236811
   setDepth: -13648
@@ -613,33 +613,33 @@ beginState: s32'vkd207'
   createObject: s32'vky_207_KillEff', (PLAYER)
   createObject: s32'vky_207_KillEff2', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 14985
-  setPositionY: 139449
-  setDepth: 153200
-  setAngleX: 0
-  setAngleY: 346000
-  setAngle: 72000
-  setObjectSize: 1300
+    setPositionX: 14985
+    setPositionY: 139449
+    setDepth: 153200
+    setAngleX: 0
+    setAngleY: 346000
+    setAngle: 72000
+    setObjectSize: 1300
   endRunOnObject: 
   createObject: s32'vky_207_KillEff2', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 262933
-  setPositionY: 140579
-  setDepth: 127199
-  setAngleX: 0
-  setAngleY: 352800
-  setAngle: 108000
-  setObjectSize: 1200
+    setPositionX: 262933
+    setPositionY: 140579
+    setDepth: 127199
+    setAngleX: 0
+    setAngleY: 352800
+    setAngle: 108000
+    setObjectSize: 1200
   endRunOnObject: 
   createObject: s32'vky_207_KillEff2', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 129982
-  setPositionY: 205941
-  setDepth: -132172
-  setAngleX: 0
-  setAngleY: 318000
-  setAngle: 131200
-  setObjectSize: 1000
+    setPositionX: 129982
+    setPositionY: 205941
+    setDepth: -132172
+    setAngleX: 0
+    setAngleY: 318000
+    setAngle: 131200
+    setObjectSize: 1000
   endRunOnObject: 
   sprite: s32'vkd207_10', 3
   sprite: s32'vkd207_11', 3
@@ -658,7 +658,7 @@ beginState: s32'vky_207_Strike'
   linkParticle: s32'vky_207_Strike'
   setObjectWidth: 4500
   setObjectHeight: 7500
-  Unknown180: 4500
+  setObjectDepth: 4500
   setAngleX: 79200
   setAngleY: 115200
   setAngle: 323600
@@ -674,11 +674,11 @@ beginState: s32'vky_207_Strike'
   setAngle: 327200
   setObjectWidth: 4500
   setObjectHeight: 6000
-  Unknown180: 4500
+  setObjectDepth: 4500
   sprite: s32'null', 10
   setObjectWidth: 4500
   setObjectHeight: 5000
-  Unknown180: 4500
+  setObjectDepth: 4500
   setPositionX: 43940
   setPositionY: 182449
   setDepth: -171368
@@ -705,12 +705,12 @@ beginState: s32'vky_207_Strike_Sub'
   setAngle: 312400
   setObjectWidth: 2500
   setObjectHeight: 5000
-  Unknown180: 2500
+  setObjectDepth: 2500
   setColorRGBA: 1000, 100, 100, 1000
   sprite: s32'null', 3
   setObjectWidth: 2500
   setObjectHeight: 5000
-  Unknown180: 2500
+  setObjectDepth: 2500
   setPositionX: -44827
   setPositionY: 89174
   setDepth: -96405
@@ -722,7 +722,7 @@ endState:
 beginState: s32'vky_207_Strike2'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
@@ -737,12 +737,12 @@ beginState: s32'vky_207_Strike2'
   setAngle: 32800
   setObjectWidth: 3000
   setObjectHeight: 5000
-  Unknown180: 3500
+  setObjectDepth: 3500
   setColorRGBA: 2000, 200, 200, 1000
   sprite: s32'null', 10
   setObjectWidth: 3500
   setObjectHeight: 5000
-  Unknown180: 3500
+  setObjectDepth: 3500
   setPositionX: 128879
   setPositionY: 250772
   setDepth: -84298
@@ -763,7 +763,7 @@ beginState: s32'vky_207_KillEff'
   linkParticle: s32'vky_vkdKill'
   setObjectWidth: 1250
   setObjectHeight: 1250
-  Unknown180: 1250
+  setObjectDepth: 1250
   setPositionX: -275940
   setPositionY: 292764
   setDepth: -56293
@@ -1265,7 +1265,7 @@ beginState: s32'vky_252_Strike'
   setAngle: 52400
   setObjectWidth: 2500
   setObjectHeight: 5500
-  Unknown180: 4500
+  setObjectDepth: 4500
   sprite: s32'null', 3
   setPositionX: 17954
   setPositionY: 335972
@@ -1275,7 +1275,7 @@ beginState: s32'vky_252_Strike'
   setAngle: 60800
   setObjectWidth: 2500
   setObjectHeight: 5500
-  Unknown180: 4500
+  setObjectDepth: 4500
   sprite: s32'null', 3
   sprite: s32'null', 20
   setPositionX: -102993
@@ -1286,7 +1286,7 @@ beginState: s32'vky_252_Strike'
   setAngle: 37200
   setObjectWidth: 4000
   setObjectHeight: 5500
-  Unknown180: 4500
+  setObjectDepth: 4500
 endState: 
 
 beginState: s32'vky_252_Strike2'
@@ -1307,7 +1307,7 @@ beginState: s32'vky_252_Strike2'
   setAngle: 326800
   setObjectWidth: 3500
   setObjectHeight: 4000
-  Unknown180: 4500
+  setObjectDepth: 4500
 endState: 
 
 beginState: s32'vky_252_KillEff'
@@ -1361,8 +1361,8 @@ beginState: s32'vky_253_CloudEff'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1388,8 +1388,8 @@ beginState: s32'vky_253_CloudEff2'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -1429,7 +1429,7 @@ beginState: s32'vky_208_ItemEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_NAME)
+    upon: 49
       checkSignalName: s32'Item01'
       if: Mem(Tmp)
         linkParticle: s32'vky_Item_01'
@@ -1467,19 +1467,19 @@ beginState: s32'vky_208_ItemEff'
         linkParticle: s32'vky_Item_09'
       endIf: 
     endUpon: 
-    upon: (SIGNAL_B)
-      clearUpon: (SIGNAL_NAME)
-      clearUpon: (SIGNAL_B)
+    upon: 32
+      clearUpon: 49
+      clearUpon: 32
       gotoLabelRequests: s32'End'
     endUpon: 
     setPositionX: 0
     setPositionY: 400000
     setDepth: 50000
     setObjectSize: 50
-    Unknown191: 160
+    setObjectSizeScaleSpeed: 160
     upon: (FRAME_STEP)
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(6)
-        Unknown191: 0
+        setObjectSizeScaleSpeed: 0
         clearUpon: (FRAME_STEP)
       endIf: 
     endUpon: 
@@ -1496,8 +1496,8 @@ beginState: s32'vky_208_ItemEff'
   linkObjectPosition: 0
   stopLinkObject: 0
   runOnObject: (PLAYER)
-  storeValue: Mem(ObjReg4), Val(0)
-  storeValue: Mem(ExGage1), Val(9999)
+    storeValue: Mem(ObjReg4), Val(0)
+    storeValue: Mem(ExGage1), Val(9999)
   endRunOnObject: 
 endState: 
 
@@ -1537,21 +1537,21 @@ beginSubroutine: s32'Func_SetCannon_STACK1'
   physicsYImpulse: 10000
   setGravity: 1000
   attackOff: 
-  Unknown109: 
-  Unknown114: 
-  Unknown129: 
+  pushVelocityX: 
+  pushVelocityY: 
+  pushGravity: 
   haltMomentum: 1
   moveToPosType: 5, 0
-  Unknown96: 
-  Unknown100: 
+  pushPositionX: 
+  pushPositionY: 
   moveToPosType: 5, 103
   modifyVar: (ADD), Mem(ActReg2), Val(1)
-  pawnAnimation: 5, s32'CannonShot_Zine', 0
+  Unknown2035: 5, s32'CannonShot_Zine', 0
   isObjectActive: (STACK2)
   if: Mem(Tmp)
-    Unknown2329: 0x0100000017000000640000000600000064000000
+    Unknown2329: 1, 23, 100, 6, 100
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
-      pawnAnimation: 6, s32'CannonShot_Zine', 0
+      Unknown2035: 6, s32'CannonShot_Zine', 0
     endIf: 
   endIf: 
   gotoLabelRequests: s32'Cannon'
@@ -1561,7 +1561,7 @@ beginSubroutine: s32'Func_SetCannon_STACK1'
     ifNot: Mem(Tmp)
       checkCurrentStateName: (PLAYER), s32'SpecialCannon_Add_Ex'
       ifNot: Mem(Tmp)
-        Unknown2347: 1599687510, 0x54414330315F53756363657373000000000000000000000000000000
+        Unknown2347: s32'VKY_TAC01_Success'
       endIf: 
     endIf: 
   endIf: 
@@ -1579,21 +1579,21 @@ beginSubroutine: s32'Func_SetCannon_STACK2'
   physicsYImpulse: 20000
   setGravity: 1000
   attackOff: 
-  Unknown109: 
-  Unknown114: 
-  Unknown129: 
+  pushVelocityX: 
+  pushVelocityY: 
+  pushGravity: 
   haltMomentum: 1
   moveToPosType: 6, 0
-  Unknown96: 
-  Unknown100: 
+  pushPositionX: 
+  pushPositionY: 
   moveToPosType: 6, 103
   modifyVar: (ADD), Mem(ActReg2), Val(1)
-  pawnAnimation: 6, s32'CannonShot_Zine', 0
+  Unknown2035: 6, s32'CannonShot_Zine', 0
   isObjectActive: (STACK1)
   if: Mem(Tmp)
-    Unknown2329: 0x0100000017000000640000000500000064000000
+    Unknown2329: 1, 23, 100, 5, 100
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
-      pawnAnimation: 5, s32'CannonShot_Zine', 0
+      Unknown2035: 5, s32'CannonShot_Zine', 0
     endIf: 
   endIf: 
   gotoLabelRequests: s32'Cannon'
@@ -1603,7 +1603,7 @@ beginSubroutine: s32'Func_SetCannon_STACK2'
     ifNot: Mem(Tmp)
       checkCurrentStateName: (PLAYER), s32'SpecialCannon_Add_Ex'
       ifNot: Mem(Tmp)
-        Unknown2347: 1599687510, 0x54414330315F53756363657373000000000000000000000000000000
+        Unknown2347: s32'VKY_TAC01_Success'
       endIf: 
     endIf: 
   endIf: 
@@ -1621,21 +1621,21 @@ beginSubroutine: s32'Func_SetCannon_STACK3'
   physicsYImpulse: -10000
   setGravity: 1000
   attackOff: 
-  Unknown109: 
-  Unknown114: 
-  Unknown129: 
+  pushVelocityX: 
+  pushVelocityY: 
+  pushGravity: 
   haltMomentum: 1
   moveToPosType: 7, 0
-  Unknown96: 
-  Unknown100: 
+  pushPositionX: 
+  pushPositionY: 
   moveToPosType: 7, 103
   modifyVar: (ADD), Mem(ActReg2), Val(1)
-  pawnAnimation: 7, s32'CannonShot_Zine', 0
+  Unknown2035: 7, s32'CannonShot_Zine', 0
   isObjectActive: (STACK4)
   if: Mem(Tmp)
-    Unknown2329: 0x0100000017000000640000000800000064000000
+    Unknown2329: 1, 23, 100, 8, 100
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
-      pawnAnimation: 8, s32'CannonShot_Zine', 0
+      Unknown2035: 8, s32'CannonShot_Zine', 0
     endIf: 
   endIf: 
   gotoLabelRequests: s32'Cannon'
@@ -1645,7 +1645,7 @@ beginSubroutine: s32'Func_SetCannon_STACK3'
     ifNot: Mem(Tmp)
       checkCurrentStateName: (PLAYER), s32'SpecialCannon_Add_Ex'
       ifNot: Mem(Tmp)
-        Unknown2347: 1599687510, 0x54414330315F53756363657373000000000000000000000000000000
+        Unknown2347: s32'VKY_TAC01_Success'
       endIf: 
     endIf: 
   endIf: 
@@ -1663,21 +1663,21 @@ beginSubroutine: s32'Func_SetCannon_STACK4'
   physicsYImpulse: -30000
   setGravity: 1000
   attackOff: 
-  Unknown109: 
-  Unknown114: 
-  Unknown129: 
+  pushVelocityX: 
+  pushVelocityY: 
+  pushGravity: 
   haltMomentum: 1
   moveToPosType: 8, 0
-  Unknown96: 
-  Unknown100: 
+  pushPositionX: 
+  pushPositionY: 
   moveToPosType: 8, 103
   modifyVar: (ADD), Mem(ActReg2), Val(1)
-  pawnAnimation: 8, s32'CannonShot_Zine', 0
+  Unknown2035: 8, s32'CannonShot_Zine', 0
   isObjectActive: (STACK3)
   if: Mem(Tmp)
-    Unknown2329: 0x0100000017000000640000000700000064000000
+    Unknown2329: 1, 23, 100, 7, 100
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
-      pawnAnimation: 7, s32'CannonShot_Zine', 0
+      Unknown2035: 7, s32'CannonShot_Zine', 0
     endIf: 
   endIf: 
   gotoLabelRequests: s32'Cannon'
@@ -1687,7 +1687,7 @@ beginSubroutine: s32'Func_SetCannon_STACK4'
     ifNot: Mem(Tmp)
       checkCurrentStateName: (PLAYER), s32'SpecialCannon_Add_Ex'
       ifNot: Mem(Tmp)
-        Unknown2347: 1599687510, 0x54414330315F53756363657373000000000000000000000000000000
+        Unknown2347: s32'VKY_TAC01_Success'
       endIf: 
     endIf: 
   endIf: 
@@ -1730,7 +1730,7 @@ beginSubroutine: s32'ShotAtk_Init'
   stopLinkObject: 3
   linkObjectZ: 3
   Unknown2327: 1
-  Unknown58: 1
+  worldOutToEliminate: 1
   callSubroutine: s32'cmnNormalShot_AtkInit'
   damage: 600
   untechAmount: 24
@@ -1739,7 +1739,7 @@ beginSubroutine: s32'ShotAtk_Init'
   damageEffect: 2, s32'vky_Item_HitEff'
   wallPushback: 0, 500
   attackFrontDirection: 1
-  Unknown988: 4
+  ignorePushbackXScaling: 4
   comboLimitScaling: 1
   enableSpecialCancel: 0
   Unknown2483: 2, 45, 2, 52
@@ -1777,13 +1777,13 @@ beginSubroutine: s32'ShotAtk_Init'
   Unknown2257: 1
   Unknown2212: 1
   Unknown2213: 0
-  upon: (ON_DESTROY)
+  upon: 45
     clearUpon: 36
     gotoLabelRequests: s32'Koware'
   endUpon: 
   checkCurrentStateName: (PLAYER), s32'NmlAtk5D'
   if: Mem(Tmp)
-    upon: (SIGNAL_A)
+    upon: 23
       callSubroutine: s32'ShotAtk_Init_Land'
       physicsXImpulse: 6000
       physicsYImpulse: 0
@@ -1807,7 +1807,7 @@ beginSubroutine: s32'ShotAtk_Init'
   endIf: 
   checkCurrentStateName: (PLAYER), s32'NmlAtkAir5D'
   if: Mem(Tmp)
-    upon: (SIGNAL_A)
+    upon: 23
       callSubroutine: s32'ShotAtk_Init_Air'
       physicsXImpulse: 10000
       physicsYImpulse: 0
@@ -1827,7 +1827,7 @@ beginSubroutine: s32'ShotAtk_Init'
   checkCurrentStateName: (PLAYER), s32'NmlAtk5D_ChainOnly'
   if: Mem(Tmp)
     storeValue: Mem(ActReg1), Val(99)
-    upon: (SIGNAL_A)
+    upon: 23
       callSubroutine: s32'ShotAtk_Init_Land'
       physicsXImpulse: 6000
       physicsYImpulse: 0
@@ -1836,7 +1836,7 @@ beginSubroutine: s32'ShotAtk_Init'
   checkCurrentStateName: (PLAYER), s32'NmlAtk5D_ChainOnly2'
   if: Mem(Tmp)
     storeValue: Mem(ActReg1), Val(99)
-    upon: (SIGNAL_A)
+    upon: 23
       callSubroutine: s32'ShotAtk_Init_Land'
       physicsXImpulse: 6000
       physicsYImpulse: 20000
@@ -1846,7 +1846,7 @@ beginSubroutine: s32'ShotAtk_Init'
   checkCurrentStateName: (PLAYER), s32'NmlAtkAir5D_ChainOnly'
   if: Mem(Tmp)
     storeValue: Mem(ActReg1), Val(99)
-    upon: (SIGNAL_A)
+    upon: 23
       callSubroutine: s32'ShotAtk_Init_Air'
       physicsXImpulse: 6000
       physicsYImpulse: 10000
@@ -1865,7 +1865,7 @@ beginSubroutine: s32'ShotAtk_Init'
   if: Mem(Tmp)
     callSubroutine: s32'SpecialCannon_Add_Init'
   endIf: 
-  upon: (SIGNAL_NAME)
+  upon: 49
     checkSignalName: s32'NoDisp'
     if: Mem(Tmp)
       Unknown2050: 0
@@ -1884,11 +1884,11 @@ beginSubroutine: s32'SetCannon'
     isObjectActive: (STACK1)
     if: Mem(Tmp)
       Unknown310: 12, 5, 2, 47, 0, 1
-      Unknown2329: 0x0300000005000000640000001700000064000000
+      Unknown2329: 3, 5, 100, 23, 100
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
-        Unknown2329: 0x0300000005000000640000001700000064000000
+        Unknown2329: 3, 5, 100, 23, 100
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(-150000)
-          Unknown2329: 0x0200000017000000640000000500000064000000
+          Unknown2329: 2, 23, 100, 5, 100
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(200000)
             clearUpon: 36
             callSubroutine: s32'Func_SetCannon_STACK1'
@@ -1901,11 +1901,11 @@ beginSubroutine: s32'SetCannon'
   isObjectActive: (STACK2)
   if: Mem(Tmp)
     Unknown310: 12, 6, 2, 47, 0, 1
-    Unknown2329: 0x0300000006000000640000001700000064000000
+    Unknown2329: 3, 6, 100, 23, 100
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
-      Unknown2329: 0x0300000006000000640000001700000064000000
+      Unknown2329: 3, 6, 100, 23, 100
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(-150000)
-        Unknown2329: 0x0200000017000000640000000600000064000000
+        Unknown2329: 2, 23, 100, 6, 100
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(200000)
           clearUpon: 36
           callSubroutine: s32'Func_SetCannon_STACK2'
@@ -1919,9 +1919,9 @@ stackObjectEx: (SELF), 7, 3, 7
 isObjectActive: (STACK3)
 if: Mem(Tmp)
   Unknown310: 12, 7, 2, 47, 0, 1
-  Unknown2329: 0x0300000007000000640000001700000064000000
+  Unknown2329: 3, 7, 100, 23, 100
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
-    Unknown2329: 0x0300000007000000640000001700000064000000
+    Unknown2329: 3, 7, 100, 23, 100
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(-150000)
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(PosY), Val(370000)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(PosY), Val(590000)
@@ -1938,9 +1938,9 @@ stackObjectEx: (SELF), 8, 3, 8
 isObjectActive: (STACK4)
 if: Mem(Tmp)
   Unknown310: 12, 8, 2, 47, 0, 1
-  Unknown2329: 0x0300000008000000640000001700000064000000
+  Unknown2329: 3, 8, 100, 23, 100
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
-    Unknown2329: 0x0300000008000000640000001700000064000000
+    Unknown2329: 3, 8, 100, 23, 100
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(-150000)
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(PosY), Val(370000)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(PosY), Val(590000)
@@ -2029,11 +2029,11 @@ beginState: s32'Item01_ShotAtk'
   hit: 
   damage: 600
   Unknown2050: 1
-  Unknown110: 
-  Unknown115: 
-  Unknown130: 
-  Unknown97: 
-  Unknown101: 
+  popVelocityX: 
+  popVelocityY: 
+  popGravity: 
+  popPositionX: 
+  popPositionY: 
   callSubroutine: s32'SetCannon'
   upon: (FRAME_STEP)
     callSubroutine: s32'Func_CanonShotNokosiEff'
@@ -2043,7 +2043,7 @@ beginState: s32'Item01_ShotAtk'
   endUpon: 
   beginLabel: s32'Koware'
   sprite: s32'null', 10
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 36
   haltMomentum: 1
   Unknown2050: 0
@@ -2066,35 +2066,35 @@ beginState: s32'Item02_ShotAtk'
       if: Mem(ActReg3)
         modifyVar: (ADD), Mem(ActReg3), Val(1)
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(2)
-          Unknown191: 25
+          setObjectSizeScaleSpeed: 25
           setLightRedColorSpeed: 10
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(12)
-          Unknown191: -25
+          setObjectSizeScaleSpeed: -25
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(22)
-          Unknown191: 25
+          setObjectSizeScaleSpeed: 25
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(27)
-          Unknown191: -25
+          setObjectSizeScaleSpeed: -25
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(32)
-          Unknown191: 25
+          setObjectSizeScaleSpeed: 25
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(37)
-          Unknown191: -25
+          setObjectSizeScaleSpeed: -25
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(42)
-          Unknown191: 50
+          setObjectSizeScaleSpeed: 50
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(47)
-          Unknown191: -50
+          setObjectSizeScaleSpeed: -50
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(52)
-          Unknown191: 100
+          setObjectSizeScaleSpeed: 100
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(57)
-          Unknown191: -100
+          setObjectSizeScaleSpeed: -100
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg3), Val(62)
           gotoLabelRequests: s32'Bakuhatu'
@@ -2174,7 +2174,7 @@ beginState: s32'Item02_ShotAtk'
   privateSE: s32'vky_34'
   Unknown2050: 0
   haltMomentum: 1
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   setObjectSize: 1000
   hit: 
   damage: 1400
@@ -2202,11 +2202,11 @@ beginState: s32'Item02_ShotAtk'
   hit: 
   Unknown1147: 0
   Unknown2050: 1
-  Unknown110: 
-  Unknown115: 
-  Unknown130: 
-  Unknown97: 
-  Unknown101: 
+  popVelocityX: 
+  popVelocityY: 
+  popGravity: 
+  popPositionX: 
+  popPositionY: 
   ifNot: Mem(ActReg3)
     storeValue: Mem(ActReg3), Val(1)
   endIf: 
@@ -2215,7 +2215,7 @@ beginState: s32'Item02_ShotAtk'
   worldCollision: 0
   beginLabel: s32'Koware'
   sprite: s32'null', 10
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 36
   haltMomentum: 1
   Unknown2050: 0
@@ -2331,11 +2331,11 @@ beginState: s32'Item03_ShotAtk'
   hit: 
   damage: 1200
   Unknown2050: 1
-  Unknown110: 
-  Unknown115: 
-  Unknown130: 
-  Unknown97: 
-  Unknown101: 
+  popVelocityX: 
+  popVelocityY: 
+  popGravity: 
+  popPositionX: 
+  popPositionY: 
   callSubroutine: s32'SetCannon'
   upon: (FRAME_STEP)
     callSubroutine: s32'Func_CanonShotNokosiEff'
@@ -2345,7 +2345,7 @@ beginState: s32'Item03_ShotAtk'
   endUpon: 
   beginLabel: s32'Koware'
   sprite: s32'null', 10
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 36
   haltMomentum: 1
   Unknown2050: 0
@@ -2439,11 +2439,11 @@ beginState: s32'Item04_ShotAtk'
   hit: 
   damage: 150
   Unknown2050: 1
-  Unknown110: 
-  Unknown115: 
-  Unknown130: 
-  Unknown97: 
-  Unknown101: 
+  popVelocityX: 
+  popVelocityY: 
+  popGravity: 
+  popPositionX: 
+  popPositionY: 
   storeValue: Mem(ActReg3), Val(0)
   callSubroutine: s32'SetCannon'
   worldCollision: 1
@@ -2467,7 +2467,7 @@ beginState: s32'Item04_ShotAtk'
   gotoLabel: s32'ShotLoop'
   beginLabel: s32'Koware'
   sprite: s32'null', 10
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 36
   haltMomentum: 1
   Unknown2050: 0
@@ -2534,11 +2534,11 @@ beginState: s32'Item05_ShotAtk'
   hit: 
   Unknown1147: 0
   Unknown2050: 1
-  Unknown110: 
-  Unknown115: 
-  Unknown130: 
-  Unknown97: 
-  Unknown101: 
+  popVelocityX: 
+  popVelocityY: 
+  popGravity: 
+  popPositionX: 
+  popPositionY: 
   callSubroutine: s32'SetCannon'
   upon: (FRAME_STEP)
     callSubroutine: s32'Func_CanonShotNokosiEff'
@@ -2548,7 +2548,7 @@ beginState: s32'Item05_ShotAtk'
   endUpon: 
   beginLabel: s32'Koware'
   sprite: s32'null', 10
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 36
   haltMomentum: 1
   Unknown2050: 0
@@ -2696,10 +2696,10 @@ beginState: s32'Item06_ShotAtk'
   hit: 
   damage: 700
   Unknown2050: 1
-  Unknown110: 
-  Unknown115: 
-  Unknown97: 
-  Unknown101: 
+  popVelocityX: 
+  popVelocityY: 
+  popPositionX: 
+  popPositionY: 
   velocityXPercent: 125
   velocityYPercent: 125
   callSubroutine: s32'SetCannon'
@@ -2727,7 +2727,7 @@ beginState: s32'Item06_ShotAtk'
   sprite: s32'null', 10
   storeValue: Mem(ActReg4), Val(0)
   clearUpon: (FRAME_STEP)
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 36
   haltMomentum: 1
   Unknown2050: 0
@@ -2755,7 +2755,7 @@ beginState: s32'DummyCeiling'
   upon: (FRAME_STEP)
     Unknown1916: -5
     storeValue: Mem(ActReg0), Mem(PosY)
-    Unknown2482: 0x020000002E0000000200000012000000
+    Unknown2482: 2, 46, 2, 18
     modifyVar: (SUB), Mem(ActReg0), Mem(ActReg1)
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(50000)
       Unknown1793: 2, 24
@@ -2786,17 +2786,17 @@ beginState: s32'Item07_ShotAtk'
       createParticle: s32'vky_ItemHealGet', (PLAYER)
       privateSE: s32'vky_31'
       runOnObject: (ENEMY)
-      modifyHP: 500
-      uiBattleText: 15
+        modifyHP: 500
+        uiBattleText: 15
       endRunOnObject: 
       deactivateObjectById: (SELF)
       storeValue: Mem(ActReg4), Val(0)
     endUpon: 
     upon: (FRAME_STEP)
       if: Mem(ActReg4)
-        Unknown2329: 0x0100000017000000640000000300000064000000
+        Unknown2329: 1, 23, 100, 3, 100
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
-          Unknown2329: 0x0200000017000000640000000300000064000000
+          Unknown2329: 2, 23, 100, 3, 100
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(220000)
             modifyHP: 500
             uiBattleText: 15
@@ -2806,16 +2806,16 @@ beginState: s32'Item07_ShotAtk'
           endIf: 
         endIf: 
         else: 
-          Unknown2329: 0x0100000017000000640000001600000064000000
+          Unknown2329: 1, 23, 100, 22, 100
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
-            Unknown2329: 0x0200000017000000640000001600000064000000
+            Unknown2329: 2, 23, 100, 22, 100
             ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(220000)
               ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg4), Val(1)
                 createParticle: s32'vky_ItemHealGet', (PLAYER)
                 privateSE: s32'vky_31'
                 runOnObject: (ENEMY)
-                modifyHP: 500
-                uiBattleText: 15
+                  modifyHP: 500
+                  uiBattleText: 15
                 endRunOnObject: 
                 deactivateObjectById: (SELF)
               endIf: 
@@ -2854,7 +2854,7 @@ beginState: s32'Item07_ShotAtk'
   setLinkObjectDestroyOnDamage: 0
   setLinkObjectDestroyOnStateChange: 0
   setObjectSize: 1500
-  Unknown131: 75
+  gravityPercent: 75
   createObject: s32'Item_HeartNokosiEff', (CENTER)
   stackObject: (STACK0), (PREVIOUS)
   callSubroutine: s32'SetCannon'
@@ -2876,17 +2876,17 @@ beginState: s32'Item07_ShotAtk'
   stackObject: (STACK0), (PREVIOUS)
   hit: 
   Unknown2050: 1
-  Unknown110: 
-  Unknown115: 
-  Unknown130: 
-  Unknown97: 
-  Unknown101: 
+  popVelocityX: 
+  popVelocityY: 
+  popGravity: 
+  popPositionX: 
+  popPositionY: 
   storeValue: Mem(ActReg3), Val(1)
   storeValue: Mem(ActReg4), Val(2)
   callSubroutine: s32'SetCannon'
   beginLabel: s32'Koware'
   sprite: s32'null', 10
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 36
   clearUpon: (FRAME_STEP)
   storeValue: Mem(ActReg4), Val(0)
@@ -2933,17 +2933,17 @@ beginState: s32'Item08_ShotAtk'
       createParticle: s32'vky_ItemHealGet', (PLAYER)
       privateSE: s32'vky_31'
       runOnObject: (ENEMY)
-      addTensionUnscaled: 0, 1000
-      uiBattleText: 16
+        addTensionUnscaled: 0, 1000
+        uiBattleText: 16
       endRunOnObject: 
       deactivateObjectById: (SELF)
       storeValue: Mem(ActReg4), Val(0)
     endUpon: 
     upon: (FRAME_STEP)
       if: Mem(ActReg4)
-        Unknown2329: 0x0100000017000000640000000300000064000000
+        Unknown2329: 1, 23, 100, 3, 100
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
-          Unknown2329: 0x0200000017000000640000000300000064000000
+          Unknown2329: 2, 23, 100, 3, 100
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(220000)
             addTensionUnscaled: 0, 1000
             uiBattleText: 16
@@ -2953,16 +2953,16 @@ beginState: s32'Item08_ShotAtk'
           endIf: 
         endIf: 
         else: 
-          Unknown2329: 0x0100000017000000640000001600000064000000
+          Unknown2329: 1, 23, 100, 22, 100
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
-            Unknown2329: 0x0200000017000000640000001600000064000000
+            Unknown2329: 2, 23, 100, 22, 100
             ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(220000)
               ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg4), Val(1)
                 createParticle: s32'vky_ItemHealGet', (PLAYER)
                 privateSE: s32'vky_31'
                 runOnObject: (ENEMY)
-                addTensionUnscaled: 0, 1000
-                uiBattleText: 16
+                  addTensionUnscaled: 0, 1000
+                  uiBattleText: 16
                 endRunOnObject: 
                 deactivateObjectById: (SELF)
               endIf: 
@@ -3000,7 +3000,7 @@ beginState: s32'Item08_ShotAtk'
   sprite: s32'vbl208_11', 10
   setLinkObjectDestroyOnDamage: 0
   setLinkObjectDestroyOnStateChange: 0
-  Unknown131: 75
+  gravityPercent: 75
   linkParticle: s32'vky_ItemHealLoop'
   createObject: s32'Item08_NksEff', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
@@ -3023,17 +3023,17 @@ beginState: s32'Item08_ShotAtk'
   stackObject: (STACK0), (PREVIOUS)
   hit: 
   Unknown2050: 1
-  Unknown110: 
-  Unknown115: 
-  Unknown130: 
-  Unknown97: 
-  Unknown101: 
+  popVelocityX: 
+  popVelocityY: 
+  popGravity: 
+  popPositionX: 
+  popPositionY: 
   storeValue: Mem(ActReg3), Val(1)
   storeValue: Mem(ActReg4), Val(2)
   callSubroutine: s32'SetCannon'
   beginLabel: s32'Koware'
   sprite: s32'null', 10
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 36
   clearUpon: (FRAME_STEP)
   storeValue: Mem(ActReg4), Val(0)
@@ -3065,7 +3065,7 @@ beginState: s32'Item09_ShotAtk'
     hitAirPushbackX: 5000
     untechAmount: 30
     enemyHitstopAddition: 0, 20, 20
-    Unknown734: 1
+    atkEnemyHitSuperArmor: 1
     upon: 5
       modifyVar: (ADD), Mem(ActReg3), Val(1)
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg3), Val(1)
@@ -3116,11 +3116,11 @@ beginState: s32'Item09_ShotAtk'
   hit: 
   damage: 1200
   Unknown2050: 1
-  Unknown110: 
-  Unknown115: 
-  Unknown130: 
-  Unknown97: 
-  Unknown101: 
+  popVelocityX: 
+  popVelocityY: 
+  popGravity: 
+  popPositionX: 
+  popPositionY: 
   storeValue: Mem(ActReg3), Val(0)
   callSubroutine: s32'SetCannon'
   upon: (FRAME_STEP)
@@ -3128,7 +3128,7 @@ beginState: s32'Item09_ShotAtk'
   endUpon: 
   beginLabel: s32'Koware'
   sprite: s32'null', 30
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   clearUpon: 36
   haltMomentum: 1
   Unknown2050: 0
@@ -3412,30 +3412,30 @@ beginState: s32'vky_233_Strike'
   setAngle: 0
   createObject: s32'vky_233_StrikeNks', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 130941
-  setPositionY: 41147
-  setDepth: 214619
-  setAngleX: 64400
-  setAngleY: 321600
-  setAngle: 189600
+    setPositionX: 130941
+    setPositionY: 41147
+    setDepth: 214619
+    setAngleX: 64400
+    setAngleY: 321600
+    setAngle: 189600
   endRunOnObject: 
   createObject: s32'vky_233_StrikeNks', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -233007
-  setPositionY: 39795
-  setDepth: 108441
-  setAngleX: 140400
-  setAngleY: 321600
-  setAngle: 353200
+    setPositionX: -233007
+    setPositionY: 39795
+    setDepth: 108441
+    setAngleX: 140400
+    setAngleY: 321600
+    setAngle: 353200
   endRunOnObject: 
   createObject: s32'vky_233_StrikeNks', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -94014
-  setPositionY: 37826
-  setDepth: 199441
-  setAngleX: 86800
-  setAngleY: 86800
-  setAngle: 303600
+    setPositionX: -94014
+    setPositionY: 37826
+    setDepth: 199441
+    setAngleX: 86800
+    setAngleY: 86800
+    setAngle: 303600
   endRunOnObject: 
   sprite: s32'null', 3
   setAngleX: 0
@@ -3454,21 +3454,21 @@ beginState: s32'vky_233_Strike'
   setAngle: 0
   createObject: s32'vky_233_StrikeNks', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 242901
-  setPositionY: 32574
-  setDepth: -89114
-  setAngleX: 92400
-  setAngleY: 240800
-  setAngle: 198400
+    setPositionX: 242901
+    setPositionY: 32574
+    setDepth: -89114
+    setAngleX: 92400
+    setAngleY: 240800
+    setAngle: 198400
   endRunOnObject: 
   createObject: s32'vky_233_StrikeNks', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 335848
-  setPositionY: 46100
-  setDepth: 129614
-  setAngleX: 172400
-  setAngleY: 35600
-  setAngle: 342800
+    setPositionX: 335848
+    setPositionY: 46100
+    setDepth: 129614
+    setAngleX: 172400
+    setAngleY: 35600
+    setAngle: 342800
   endRunOnObject: 
   sprite: s32'null', 3
   setAngleX: 0
@@ -3476,12 +3476,12 @@ beginState: s32'vky_233_Strike'
   setAngle: 0
   createObject: s32'vky_233_StrikeNks', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 121878
-  setPositionY: 50885
-  setDepth: -227586
-  setAngleX: 202400
-  setAngleY: 22000
-  setAngle: 339600
+    setPositionX: 121878
+    setPositionY: 50885
+    setDepth: -227586
+    setAngleX: 202400
+    setAngleY: 22000
+    setAngle: 339600
   endRunOnObject: 
   sprite: s32'null', 3
   setAngleX: 0
@@ -3489,12 +3489,12 @@ beginState: s32'vky_233_Strike'
   setAngle: 0
   createObject: s32'vky_233_StrikeNks', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 202400
-  setAngleY: 325200
-  setAngle: 138400
-  setPositionX: -123077
-  setPositionY: 51057
-  setDepth: -180633
+    setAngleX: 202400
+    setAngleY: 325200
+    setAngle: 138400
+    setPositionX: -123077
+    setPositionY: 51057
+    setDepth: -180633
   endRunOnObject: 
   sprite: s32'null', 3
   setAngleX: 0
@@ -3736,7 +3736,7 @@ beginState: s32'vkh301'
     upon: (BEFORE_EXIT)
       createParticle: s32'vky_vkdKill', (PLAYER)
     endUpon: 
-    upon: (SIGNAL_A)
+    upon: 23
       setLinkObjectDestroyOnStateChange: 22
       setLinkObjectDestroyOnDamage: 22
     endUpon: 
@@ -3753,7 +3753,7 @@ beginState: s32'vkd301'
     callSubroutine: s32'MeshSet_VKD'
     linkObjectZ: 3
     stopLinkObject: 3
-    upon: (SIGNAL_A)
+    upon: 23
       Unknown2050: 0
     endUpon: 
     upon: 24
@@ -3851,7 +3851,7 @@ beginState: s32'vky_301_EnshutuCamera'
       Unknown2582: 
       haikuEnd: 
     endUpon: 
-    gotoLabelUpon: (SIGNAL_A), s32'CameraEnd'
+    gotoLabelUpon: 23, s32'CameraEnd'
   endUpon: 
   sprite: s32'null', 40
   Unknown2074: 3, -65802, 171800, 114810, -487, 5808, 2366, 60, 0, 640, 0, 0, 0, 0
@@ -3861,7 +3861,7 @@ beginState: s32'vky_301_EnshutuCamera'
   ignoreFinishStop: 0
   beginLabel: s32'CameraEnd'
   sprite: s32'null', 40
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   ignoreFinishStop: 0
   Unknown2074: 3, 96906, 318734, 117967, 417, -3286, 0, 60, 0, 40, 6000, 0, 0, 0
   linkParticle: s32''
@@ -4073,7 +4073,7 @@ beginState: s32'vky_306_AtkEff'
   setDepth: -85914
   setObjectWidth: 900
   setObjectHeight: 900
-  Unknown180: 900
+  setObjectDepth: 900
   setAngleX: 0
   setAngleY: 347200
   setAngle: 0
@@ -4096,7 +4096,7 @@ beginState: s32'vky_306_AtkEff2'
   sprite: s32'null', 19
   setObjectWidth: 900
   setObjectHeight: 900
-  Unknown180: 900
+  setObjectDepth: 900
   setPositionX: 0
   setPositionY: 3569
   setDepth: -82917
@@ -4124,7 +4124,7 @@ beginState: s32'vky_306_TactDel'
   linkParticle: s32'vky_tactDel2'
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setPositionX: 141071
   setPositionY: 163616
   setDepth: 37140
@@ -4145,9 +4145,9 @@ beginState: s32'vkd307'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    gotoLabelUpon: (SIGNAL_A), s32'Loop'
+    gotoLabelUpon: 23, s32'Loop'
     gotoLabelUpon: 31, s32'End'
-    gotoLabelUpon: (SIGNAL_B), s32'Delete'
+    gotoLabelUpon: 32, s32'Delete'
   endUpon: 
   sprite: s32'vkd307_00', 2147483647
   createObject: s32'vky_307_Spawn', (PLAYER)
@@ -4226,11 +4226,11 @@ beginState: s32'vkn309'
       addPositionX: 50000
     endIf: 
     physicsXImpulse: -20000
-    gotoLabelUpon: (SIGNAL_A), s32'Catch'
+    gotoLabelUpon: 23, s32'Catch'
     gotoLabelUpon: 24, s32'CarryStart'
     gotoLabelUpon: 30, s32'CarryEnd'
     gotoLabelUpon: 31, s32'Throw'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 32, s32'End'
   endUpon: 
   sprite: s32'vkn309_00', 1
   beginLabel: s32'Sliding'
@@ -4270,19 +4270,19 @@ beginState: s32'vkn309'
     endIf: 
   endUpon: 
   runOnObject: (ENEMY)
-  addPositionY: 3000
+    addPositionY: 3000
   endRunOnObject: 
   sprite: s32'vkn309_05', 6
   runOnObject: (ENEMY)
-  addPositionY: 3000
+    addPositionY: 3000
   endRunOnObject: 
   sprite: s32'vkn309_04', 6
   runOnObject: (ENEMY)
-  addPositionY: -3000
+    addPositionY: -3000
   endRunOnObject: 
   sprite: s32'vkn309_03', 6
   runOnObject: (ENEMY)
-  addPositionY: -3000
+    addPositionY: -3000
   endRunOnObject: 
   endSprite: 
   gotoLabel: s32'Carry'
@@ -4291,7 +4291,7 @@ beginState: s32'vkn309'
   linkObjectPosition: 0
   haltMomentum: 1
   runOnObject: (ENEMY)
-  addPositionY: -3000
+    addPositionY: -3000
   endRunOnObject: 
   beginLabel: s32'Throw'
   sprite: s32'vkn309_07', 6
@@ -4347,7 +4347,7 @@ beginState: s32'vky_309_Dash2'
   linkParticle: s32'bg_GroundBurstZlink'
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setPositionX: -277388
   setPositionY: -404
   setDepth: -19982
@@ -4360,8 +4360,8 @@ beginState: s32'vky_309_EnshutuCamera'
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
     ignoreFinishStop: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'Aitata'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -4415,7 +4415,7 @@ beginState: s32'vky_CannonSpawnEff'
   sprite: s32'null', 1
   linkParticle: s32'vky_CanonSpwn'
   zLine: 0, 5
-  Unknown264: 3
+  setZOffset: 3
   Unknown1727: -120000
   sprite: s32'null', 40
   linkObjectPosition: 0
@@ -4429,7 +4429,7 @@ beginState: s32'vky_CannonSpawnEff_U'
     linkObjectZ: 2
     setObjectWidth: 700
     setObjectHeight: 700
-    Unknown180: 700
+    setObjectDepth: 700
     setPositionX: 108975
     setPositionY: 193569
     setDepth: 113189
@@ -4573,7 +4573,7 @@ beginState: s32'vky_CannonMazzleEff'
     createParticleWithArg2: s32'vky_400_SpKira', (PLAYER)
   endIf: 
   zLine: 0, 5
-  Unknown264: 3
+  setZOffset: 3
   Unknown1727: -120000
   privateSE: s32'vky_07'
 endState: 
@@ -4612,7 +4612,7 @@ beginState: s32'vky_CannonMazzleEff_U'
 endState: 
 
 beginSubroutine: s32'SpecialCannon_Samechara_Zline'
-  Unknown55: 0x20000000766B7900000000000000000000000000
+  Unknown55: 32, 7957366, 0, 0, 0
   if: Mem(ObjReg7)
     storeValue: Mem(ObjReg7), Val(0)
     ifOperation: (IS_GREATER), Mem(265), Val(-120000)
@@ -4624,7 +4624,7 @@ beginSubroutine: s32'SpecialCannon_Samechara_Zline'
       stackObjectEx: (SELF), 8, 22, 5
       isObjectActive: (STACK4)
       if: Mem(Tmp)
-        Unknown2329: 0x0100000017000000640000000800000064000000
+        Unknown2329: 1, 23, 100, 8, 100
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(280000)
           Unknown310: 12, 8, 2, 265, 0, -120000
           setDepth: -260000
@@ -4637,7 +4637,7 @@ beginSubroutine: s32'SpecialCannon_Samechara_Zline'
     stackObjectEx: (SELF), 9, 22, 6
     isObjectActive: (STACK5)
     if: Mem(Tmp)
-      Unknown2329: 0x0100000017000000640000000900000064000000
+      Unknown2329: 1, 23, 100, 9, 100
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(280000)
         Unknown310: 12, 9, 2, 265, 0, -120000
         setDepth: -260000
@@ -4653,7 +4653,7 @@ if: Mem(IsAir)
   stackObjectEx: (SELF), 10, 22, 7
   isObjectActive: (STACK6)
   if: Mem(Tmp)
-    Unknown2329: 0x0100000017000000640000000A00000064000000
+    Unknown2329: 1, 23, 100, 10, 100
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(280000)
       Unknown310: 12, 10, 2, 265, 0, -120000
       setDepth: -260000
@@ -4667,7 +4667,7 @@ endIf:
 stackObjectEx: (SELF), 11, 22, 8
 isObjectActive: (STACK7)
 if: Mem(Tmp)
-  Unknown2329: 0x0100000017000000640000000B00000064000000
+  Unknown2329: 1, 23, 100, 11, 100
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(280000)
     Unknown310: 12, 11, 2, 265, 0, -120000
     setDepth: -260000
@@ -4684,135 +4684,149 @@ endIf:
 endSubroutine: 
 beginSubroutine: s32'SpecialCannon_Init'
   callSubroutine: s32'MeshSet_cannon'
-  Unknown2006: 0x01000000
-  callSubroutine: s32'cmnSpecialShot_AtkInit'
-  damage: 600
-  untechAmount: 22
-  counterUntechAmount: 22
-  airHitEffect: (AIR_LAUNCH)
-  groundHitEffect: (AIR_LAUNCH)
-  hitAirPushbackX: 15000
+  Unknown2006: 
+endState: 
+
+callSubroutine: s32'cmnSpecialShot_AtkInit'
+damage: 600
+untechAmount: 22
+counterUntechAmount: 22
+airHitEffect: (AIR_LAUNCH)
+groundHitEffect: (AIR_LAUNCH)
+hitAirPushbackX: 15000
+hitAirPushbackY: 24000
+hitstop: 14
+enemyHitstopAddition: 0, 0, 0
+wallPushback: 0, 1200
+damageEffect: 2, s32'vky_SPHitEff'
+ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+  callSubroutine: s32'cmnSpecialAttackC_AtkInit'
+  wallBreakDamageNoUpdate: 150
   hitAirPushbackY: 24000
-  hitstop: 14
-  enemyHitstopAddition: 0, 0, 0
-  wallPushback: 0, 1200
-  damageEffect: 2, s32'vky_SPHitEff'
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    callSubroutine: s32'cmnSpecialAttackC_AtkInit'
-    Unknown957: 150
-    hitAirPushbackY: 24000
-  endIf: 
-  moveToObject: (PLAYER)
-  setPositionY: 0
-  addPositionX: 250000
-  checkCurrentStateName: (SELF), s32'SpecialCannon_CannonLow'
+endIf: 
+
+moveToObject: (PLAYER)
+setPositionY: 0
+addPositionX: 250000
+checkCurrentStateName: (SELF), s32'SpecialCannon_CannonLow'
+ifNot: Mem(Tmp)
+  checkCurrentStateName: (SELF), s32'SpecialCannon_CannonHigh'
   ifNot: Mem(Tmp)
-    checkCurrentStateName: (SELF), s32'SpecialCannon_CannonHigh'
-    ifNot: Mem(Tmp)
-      onlyHitAirborne: 1
-      ifOperation: (IS_LESSER), Mem(ActReg6), Val(2)
-        hitAirPushbackY: 16000
-      endIf: 
-      setPositionY: 480000
+    onlyHitAirborne: 1
+    ifOperation: (IS_LESSER), Mem(ActReg6), Val(2)
+      hitAirPushbackY: 16000
     endIf: 
+    setPositionY: 480000
   endIf: 
-  ifOperation: (IS_GREATER_OR_EQUAL), Mem(PosX), Val(1315000)
-    setPositionX: 1315000
-  endIf: 
-  ifOperation: (IS_LESSER_OR_EQUAL), Mem(PosX), Val(-1315000)
-    setPositionX: 1315000
-  endIf: 
-  setNoCollision: 1
-  setPushboxWidth: 250000
-  setPushboxHeight: 50000
-  pushboxHeightLow: 50000
-  Unknown256: 1
-  Unknown257: 1
-  storeValue: Mem(ActReg6), Mem(Hikitsugi0)
-  pushboxFix: 1
-  zLine: 0, 5
-  Unknown264: 3
-  setDepth: -120000
-  Unknown269: 1
-  Unknown2327: 1
-  storeValue: Mem(ActReg2), Val(0)
+endIf: 
+
+ifOperation: (IS_GREATER_OR_EQUAL), Mem(PosX), Val(1315000)
+  setPositionX: 1315000
+endIf: 
+
+ifOperation: (IS_LESSER_OR_EQUAL), Mem(PosX), Val(-1315000)
+  setPositionX: 1315000
+endIf: 
+
+setNoCollision: 1
+setPushboxWidth: 250000
+setPushboxHeight: 50000
+pushboxHeightLow: 50000
+ignorePushboxPlayer: 1
+ignorePushboxEnemy: 1
+storeValue: Mem(ActReg6), Mem(Hikitsugi0)
+pushboxFix: 1
+zLine: 0, 5
+setZOffset: 3
+setDepth: -120000
+forceShadowOff: 1
+Unknown2327: 1
+storeValue: Mem(ActReg2), Val(0)
+storeValue: Mem(ActReg3), Val(600)
+upon: 36
+  callSubroutine: s32'SpecialCannon_Samechara_Zline'
   storeValue: Mem(ActReg3), Val(600)
-  upon: 36
-    callSubroutine: s32'SpecialCannon_Samechara_Zline'
-    storeValue: Mem(ActReg3), Val(600)
-  endUpon: 
-  upon: (SIGNAL_A)
-    ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
-      Unknown1793: 5, 25
-      gotoLabelRequests: s32'Setting'
-    endIf: 
-    else: 
-      Unknown1793: 5, 24
-      gotoLabelRequests: s32'Shot1st'
-    endElse: 
-  endUpon: 
-  upon: 24
-    if: Mem(ActReg1)
-      createParticle: s32'vky_cannon_soten', (CENTER)
-    endIf: 
-    gotoLabelRequests: s32'Shot'
-  endUpon: 
-  upon: 25
-    createParticle: s32'vky_cannon_soten', (CENTER)
-    createArgHikitsukiVal: Val(0), Val(0)
-    createObjectWithArg: s32'Cannon_ShotAtk', (PLAYER)
-    gotoLabelRequests: s32'Shot'
-  endUpon: 
-  upon: 26
-    createParticle: s32'vky_cannon_soten', (CENTER)
-    createArgHikitsukiVal: Val(1), Val(0)
-    createObjectWithArg: s32'Cannon_ShotAtk', (PLAYER)
-    gotoLabelRequests: s32'Shot'
-  endUpon: 
-  upon: 27
-    createParticle: s32'vky_cannon_soten', (CENTER)
-    createArgHikitsukiVal: Val(2), Val(0)
-    createObjectWithArg: s32'Cannon_ShotAtk', (PLAYER)
-    gotoLabelRequests: s32'Shot'
-  endUpon: 
-  upon: 28
-    createParticle: s32'vky_cannon_soten', (CENTER)
-    createArgHikitsukiVal: Val(3), Val(0)
-    createObjectWithArg: s32'Cannon_ShotAtk', (PLAYER)
-    gotoLabelRequests: s32'Shot'
-  endUpon: 
-  upon: (SIGNAL_B)
-    clearUpon: (FRAME_STEP)
-    clearUpon: 24
-    Unknown2268: 0, 1750
-    exPointFReset: (PLAYER), 0, 100000
-    createParticleWithArg2: s32'vky_205_nks', (EX_POINT_F)
-    deactivateObjectById: (SELF)
-  endUpon: 
-  upon: (SIGNAL_NAME)
-    checkSignalName: s32'NoDisp'
-    if: Mem(Tmp)
-      Unknown2050: 0
-      pawnAnimation: 5, s32'NoDisp', 0
-    endIf: 
-    checkSignalName: s32'ReDisp'
-    if: Mem(Tmp)
-      Unknown2050: 1
-      pawnAnimation: 5, s32'ReDisp', 0
-    endIf: 
-    checkSignalName: s32'NotBattleDoing'
-    if: Mem(Tmp)
-      gotoLabelRequests: s32'End'
-    endIf: 
-    checkSignalName: s32'CannonShot_Zine'
-    if: Mem(Tmp)
-      Unknown55: 0x20000000766B7900000000000000000000000000
-      storeValue: Mem(ObjReg7), Val(1)
-      setDepth: -100000
-    endIf: 
-  endIf: 
 endUpon: 
 
+upon: 23
+  ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
+    Unknown1793: 5, 25
+    gotoLabelRequests: s32'Setting'
+  endIf: 
+  else: 
+    Unknown1793: 5, 24
+    gotoLabelRequests: s32'Shot1st'
+  endElse: 
+endUpon: 
+
+upon: 24
+  if: Mem(ActReg1)
+    createParticle: s32'vky_cannon_soten', (CENTER)
+  endIf: 
+  gotoLabelRequests: s32'Shot'
+endUpon: 
+
+upon: 25
+  createParticle: s32'vky_cannon_soten', (CENTER)
+  createArgHikitsukiVal: Val(0), Val(0)
+  createObjectWithArg: s32'Cannon_ShotAtk', (PLAYER)
+  gotoLabelRequests: s32'Shot'
+endUpon: 
+
+upon: 26
+  createParticle: s32'vky_cannon_soten', (CENTER)
+  createArgHikitsukiVal: Val(1), Val(0)
+  createObjectWithArg: s32'Cannon_ShotAtk', (PLAYER)
+  gotoLabelRequests: s32'Shot'
+endUpon: 
+
+upon: 27
+  createParticle: s32'vky_cannon_soten', (CENTER)
+  createArgHikitsukiVal: Val(2), Val(0)
+  createObjectWithArg: s32'Cannon_ShotAtk', (PLAYER)
+  gotoLabelRequests: s32'Shot'
+endUpon: 
+
+upon: 28
+  createParticle: s32'vky_cannon_soten', (CENTER)
+  createArgHikitsukiVal: Val(3), Val(0)
+  createObjectWithArg: s32'Cannon_ShotAtk', (PLAYER)
+  gotoLabelRequests: s32'Shot'
+endUpon: 
+
+upon: 32
+  clearUpon: (FRAME_STEP)
+  clearUpon: 24
+  Unknown2268: 0, 1750
+  exPointFReset: (PLAYER), 0, 100000
+  createParticleWithArg2: s32'vky_205_nks', (EX_POINT_F)
+  deactivateObjectById: (SELF)
+endUpon: 
+
+upon: 49
+  checkSignalName: s32'NoDisp'
+  if: Mem(Tmp)
+    Unknown2050: 0
+    Unknown2035: 5, s32'NoDisp', 0
+  endIf: 
+  checkSignalName: s32'ReDisp'
+  if: Mem(Tmp)
+    Unknown2050: 1
+    Unknown2035: 5, s32'ReDisp', 0
+  endIf: 
+  checkSignalName: s32'NotBattleDoing'
+  if: Mem(Tmp)
+    gotoLabelRequests: s32'End'
+  endIf: 
+  checkSignalName: s32'CannonShot_Zine'
+  if: Mem(Tmp)
+    Unknown55: 32, 7957366, 0, 0, 0
+    storeValue: Mem(ObjReg7), Val(1)
+    setDepth: -100000
+  endIf: 
+endIf: 
+
+endUpon: 
 upon: 35
   storeValue: Mem(ActReg1), Val(1)
   Unknown2050: 1
@@ -4864,7 +4878,7 @@ beginSubroutine: s32'SpecialCannon_Idling'
 endSubroutine: 
 
 beginSubroutine: s32'SpecialCannon_SettingInit'
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   clearUpon: 35
   pushboxFix: 0
   attackEndDelay: 
@@ -4907,7 +4921,7 @@ beginState: s32'SpecialCannon_CannonLow'
   sprite: s32'vcn400_02', 3
   beginLabel: s32'Shot1st'
   sprite: s32'vcn400_03', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   pushboxFix: 0
   ifNot: Mem(ActReg1)
     hit: 
@@ -4961,7 +4975,7 @@ beginState: s32'SpecialCannon_CannonHigh'
   sprite: s32'vcn400_12', 3
   beginLabel: s32'Shot1st'
   sprite: s32'vcn400_13', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   pushboxFix: 0
   ifNot: Mem(ActReg1)
     hit: 
@@ -5021,7 +5035,7 @@ beginState: s32'SpecialCannon_CannonAirLow'
   sprite: s32'vcn401_02', 3
   beginLabel: s32'Shot1st'
   sprite: s32'vcn401_03', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   pushboxFix: 0
   ifNot: Mem(ActReg1)
     hit: 
@@ -5045,7 +5059,7 @@ beginState: s32'SpecialCannon_CannonAirLow'
   callSubroutine: s32'SpecialCannon_Idling'
   beginLabel: s32'MoveToCannon'
   sprite: s32'keep', 10
-  Unknown2197: 0x020000003100000000000000000000000000000002000000
+  Unknown2197: 2, 49, 0, 0, 0, 2
   ifOperation: (IS_EQUAL), Mem(ActReg4), Val(0)
     spriteTimeAdd: 10
   endIf: 
@@ -5067,7 +5081,7 @@ beginState: s32'SpecialCannon_CannonAirLow'
   ifOperation: (IS_EQUAL), Mem(ActReg4), Val(2)
     spriteTimeAdd: 60
   endIf: 
-  Unknown131: -100
+  gravityPercent: -100
   endSprite: 
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
@@ -5113,7 +5127,7 @@ beginState: s32'SpecialCannon_CannonAirHigh'
   sprite: s32'vcn401_12', 3
   beginLabel: s32'Shot1st'
   sprite: s32'vcn401_13', 3
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   pushboxFix: 0
   ifNot: Mem(ActReg1)
     hit: 
@@ -5137,7 +5151,7 @@ beginState: s32'SpecialCannon_CannonAirHigh'
   callSubroutine: s32'SpecialCannon_Idling'
   beginLabel: s32'MoveToCannon'
   sprite: s32'keep', 10
-  Unknown2197: 0x020000003100000000000000000000000000000002000000
+  Unknown2197: 2, 49, 0, 0, 0, 2
   ifOperation: (IS_EQUAL), Mem(ActReg4), Val(0)
     spriteTimeAdd: 10
   endIf: 
@@ -5159,7 +5173,7 @@ beginState: s32'SpecialCannon_CannonAirHigh'
   ifOperation: (IS_EQUAL), Mem(ActReg4), Val(2)
     spriteTimeAdd: 60
   endIf: 
-  Unknown131: -100
+  gravityPercent: -100
   endSprite: 
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
@@ -5177,10 +5191,10 @@ beginState: s32'SpecialCannon_CannonBig'
     setPositionY: 0
     addPositionX: 50000
     zLine: 0, 5
-    Unknown264: 3
-    gotoLabelUpon: (SIGNAL_A), s32'PreAtk'
+    setZOffset: 3
+    gotoLabelUpon: 23, s32'PreAtk'
     gotoLabelUpon: 24, s32'Atk'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 32, s32'End'
     gotoLabelUpon: 35, s32'End'
   endUpon: 
   sprite: s32'vcn400_20', 2
@@ -5219,9 +5233,9 @@ beginState: s32'SpecialCannon_CannonAirBig'
     Unknown2327: 1
     addPositionY: 200000
     addPositionX: 200000
-    gotoLabelUpon: (SIGNAL_A), s32'PreAtk'
+    gotoLabelUpon: 23, s32'PreAtk'
     gotoLabelUpon: 24, s32'Atk'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 32, s32'End'
     gotoLabelUpon: 35, s32'End'
   endUpon: 
   sprite: s32'vcn401_20', 2
@@ -5266,39 +5280,40 @@ beginState: s32'Baloon_CannonAirLow'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    Unknown2006: 0x01000000
-    setDepth: -40000
-    gotoLabelUpon: 24, s32'Shot'
-    gotoLabelUpon: 25, s32'Setting'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
-    upon: (SIGNAL_NAME)
-      checkSignalName: s32'NoDisp'
-      if: Mem(Tmp)
-        Unknown2050: 0
-      endIf: 
-      checkSignalName: s32'ReDisp'
-      if: Mem(Tmp)
-        Unknown2050: 1
-      endIf: 
-    endUpon: 
+    Unknown2006: 
+  endState: 
+  setDepth: -40000
+  gotoLabelUpon: 24, s32'Shot'
+  gotoLabelUpon: 25, s32'Setting'
+  gotoLabelUpon: 32, s32'End'
+  upon: 49
+    checkSignalName: s32'NoDisp'
+    if: Mem(Tmp)
+      Unknown2050: 0
+    endIf: 
+    checkSignalName: s32'ReDisp'
+    if: Mem(Tmp)
+      Unknown2050: 1
+    endIf: 
   endUpon: 
-  sprite: s32'vbn401_00', 60
-  beginLabel: s32'Shot'
-  sprite: s32'vbn401_01', 3
-  sprite: s32'vbn401_02', 3
-  sprite: s32'vbn401_03', 3
-  sprite: s32'vbn401_04', 3
-  sprite: s32'vbn401_05', 3
-  sprite: s32'vbn401_06', 3
-  sprite: s32'vbn401_07', 3
-  sprite: s32'vbn401_08', 3
-  sprite: s32'vbn401_09', 3
-  beginLabel: s32'Setting'
-  sprite: s32'keep', 2147483647
-  beginLabel: s32'End'
-  sprite: s32'keep', 1
-endState: 
+endUpon: 
 
+sprite: s32'vbn401_00', 60
+beginLabel: s32'Shot'
+sprite: s32'vbn401_01', 3
+sprite: s32'vbn401_02', 3
+sprite: s32'vbn401_03', 3
+sprite: s32'vbn401_04', 3
+sprite: s32'vbn401_05', 3
+sprite: s32'vbn401_06', 3
+sprite: s32'vbn401_07', 3
+sprite: s32'vbn401_08', 3
+sprite: s32'vbn401_09', 3
+beginLabel: s32'Setting'
+sprite: s32'keep', 2147483647
+beginLabel: s32'End'
+sprite: s32'keep', 1
+endState: 
 beginState: s32'Baloon_CannonAirHigh'
   upon: (IMMEDIATE)
     callSubroutine: s32'MeshSet_baloon'
@@ -5306,39 +5321,40 @@ beginState: s32'Baloon_CannonAirHigh'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    Unknown2006: 0x01000000
-    setDepth: -40000
-    gotoLabelUpon: 24, s32'Shot'
-    gotoLabelUpon: 25, s32'Setting'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
-    upon: (SIGNAL_NAME)
-      checkSignalName: s32'NoDisp'
-      if: Mem(Tmp)
-        Unknown2050: 0
-      endIf: 
-      checkSignalName: s32'ReDisp'
-      if: Mem(Tmp)
-        Unknown2050: 1
-      endIf: 
-    endUpon: 
+    Unknown2006: 
+  endState: 
+  setDepth: -40000
+  gotoLabelUpon: 24, s32'Shot'
+  gotoLabelUpon: 25, s32'Setting'
+  gotoLabelUpon: 32, s32'End'
+  upon: 49
+    checkSignalName: s32'NoDisp'
+    if: Mem(Tmp)
+      Unknown2050: 0
+    endIf: 
+    checkSignalName: s32'ReDisp'
+    if: Mem(Tmp)
+      Unknown2050: 1
+    endIf: 
   endUpon: 
-  sprite: s32'vbn401_10', 60
-  beginLabel: s32'Shot'
-  sprite: s32'vbn401_11', 3
-  sprite: s32'vbn401_12', 3
-  sprite: s32'vbn401_13', 3
-  sprite: s32'vbn401_14', 3
-  sprite: s32'vbn401_15', 3
-  sprite: s32'vbn401_16', 3
-  sprite: s32'vbn401_17', 3
-  sprite: s32'vbn401_18', 3
-  sprite: s32'vbn401_19', 3
-  beginLabel: s32'Setting'
-  sprite: s32'keep', 2147483647
-  beginLabel: s32'End'
-  sprite: s32'keep', 1
-endState: 
+endUpon: 
 
+sprite: s32'vbn401_10', 60
+beginLabel: s32'Shot'
+sprite: s32'vbn401_11', 3
+sprite: s32'vbn401_12', 3
+sprite: s32'vbn401_13', 3
+sprite: s32'vbn401_14', 3
+sprite: s32'vbn401_15', 3
+sprite: s32'vbn401_16', 3
+sprite: s32'vbn401_17', 3
+sprite: s32'vbn401_18', 3
+sprite: s32'vbn401_19', 3
+beginLabel: s32'Setting'
+sprite: s32'keep', 2147483647
+beginLabel: s32'End'
+sprite: s32'keep', 1
+endState: 
 beginState: s32'Baloon_CannonAirBig'
   upon: (IMMEDIATE)
     callSubroutine: s32'MeshSet_baloon'
@@ -5379,7 +5395,7 @@ beginSubroutine: s32'CannonShot_Init'
   Unknown2257: 1
   Unknown2212: 0
   Unknown2213: 0
-  upon: (ON_DESTROY)
+  upon: 45
     gotoLabelRequests: s32'Koware'
   endUpon: 
   Unknown1909: 35000
@@ -5424,7 +5440,7 @@ beginState: s32'Cannon_ShotAtk'
   Unknown2257: 1
   Unknown2212: 0
   Unknown2213: 0
-  upon: (ON_DESTROY)
+  upon: 45
     gotoLabelRequests: s32'Koware'
   endUpon: 
   Unknown1909: 35000
@@ -5468,9 +5484,9 @@ beginState: s32'Cannon_ShotAtk'
     endIf: 
   endIf: 
   attackOff: 
-  Unknown109: 
-  Unknown114: 
-  Unknown129: 
+  pushVelocityX: 
+  pushVelocityY: 
+  pushGravity: 
   haltMomentum: 1
   upon: (FRAME_STEP)
     callSubroutine: s32'Func_CanonShotNokosiEff'
@@ -5481,9 +5497,9 @@ sprite: s32'vbl208_11', 6
 Unknown2050: 0
 sprite: s32'vbl208_11', 10
 Unknown2050: 1
-Unknown110: 
-Unknown115: 
-Unknown130: 
+popVelocityX: 
+popVelocityY: 
+popGravity: 
 hit: 
 beginLabel: s32'Koware'
 sprite: s32'null', 10
@@ -5500,7 +5516,7 @@ beginState: s32'CannonBig_ShotAtk'
     linkObjectZ: 3
     linkObjectCollision: 2
     linkParticle: s32'vky_400_ShotU'
-    Unknown58: 1
+    worldOutToEliminate: 1
     Unknown2327: 1
     callSubroutine: s32'cmnSpecialShot_AtkInit'
     callSubroutine: s32'cmnSpecialAttackD_AtkInit'
@@ -5515,7 +5531,7 @@ beginState: s32'CannonBig_ShotAtk'
     hitAirPushbackX: 12000
     hitAirPushbackY: 44000
     wallPushback: 0, 5000
-    Unknown746: 0, 100000
+    atkEnemyHitSuperArmorHitstop: 0, 100000
     Unknown747: 0, -10000
     objectSizePercent: 300
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(0)
@@ -5546,7 +5562,7 @@ beginState: s32'CannonBig_ShotAtk'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: (ON_DESTROY)
+    upon: 45
       gotoLabelRequests: s32'Koware'
     endUpon: 
     Unknown1909: 35000
@@ -5580,7 +5596,7 @@ beginState: s32'Item_CanonShotNokosiEff_U'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    upon: (SIGNAL_A)
+    upon: 23
       deactivateCurrentObject: 
     endUpon: 
   endUpon: 
@@ -5648,7 +5664,7 @@ beginState: s32'vky_CannonSpawnEff_Air'
     setAngle: 4000
     setObjectSize: 700
     zLine: 0, 5
-    Unknown264: 3
+    setZOffset: 3
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'vky_CanonSpwn'
@@ -5796,7 +5812,7 @@ beginState: s32'vkn403_Atk'
       Unknown2209: 1
       Unknown2210: 2
     endIf: 
-    upon: (ON_DESTROY)
+    upon: 45
       clearUpon: 37
       gotoLabelRequests: s32'Koware'
     endUpon: 
@@ -5863,8 +5879,8 @@ beginState: s32'vky_403_FireWorkEff'
     linkObjectPosition: 2
     linkObjectZ: 2
     linkParticle: s32'vky_403_FireWork'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -5955,7 +5971,7 @@ beginState: s32'vkc404_Atk'
     storeValue: Mem(PlayerVal9), Val(1)
     addPositionX: 140000
     addPositionY: 200000
-    clearUpon: (ON_DESTROY)
+    clearUpon: 45
     setEventTrigger: 13, 12
     gotoLabelUpon: 13, s32'Upper'
     gotoLabelUpon: 8, s32'Upper'
@@ -5964,7 +5980,7 @@ beginState: s32'vkc404_Atk'
       clearUpon: 13
       clearUpon: 8
       clearUpon: (HIT)
-      Unknown2329: 0x03000000030000007B000000160000007B000000
+      Unknown2329: 3, 3, 123, 22, 123
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(400000)
         Unknown1048: 1
         hitstop: 0
@@ -6004,7 +6020,7 @@ beginState: s32'vkc404_Atk'
   endUpon: 
   sprite: s32'vrc404_00ex01', 3
   hit: 
-  sendSignalToAction: s32'vkn404', (SIGNAL_A)
+  sendSignalToAction: s32'vkn404', 23
   linkParticle: s32'vky_404_Burst00'
   createObject: s32'vky_404_Nks', (PLAYER)
   physicsXImpulse: 4000
@@ -6013,7 +6029,7 @@ beginState: s32'vkc404_Atk'
   velocityXPercentEachFrame: 120
   beginLabel: s32'Loop'
   sprite: s32'vrc404_00', 3
-  sendSignalToAction: s32'vkn404', (SIGNAL_A)
+  sendSignalToAction: s32'vkn404', 23
   clearUpon: (HIT)
   sprite: s32'vrc404_01', 3
   sendSignalToAction: s32'vkn404', 24
@@ -6115,7 +6131,7 @@ beginState: s32'vkc404_Atk'
   Unknown2050: 0
   haltMomentum: 1
   upon: (HIT)
-    sendSignalToAction: s32'Firework_D', (SIGNAL_B)
+    sendSignalToAction: s32'Firework_D', 32
   endUpon: 
   endSprite: 
   sendSignalToAction: s32'Firework_D', 30
@@ -6135,7 +6151,7 @@ beginState: s32'vkn404'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    gotoLabelUpon: (SIGNAL_A), s32'vrc404_00'
+    gotoLabelUpon: 23, s32'vrc404_00'
     gotoLabelUpon: 24, s32'vrc404_01'
     gotoLabelUpon: 25, s32'vrc404_02'
   endUpon: 
@@ -6227,28 +6243,28 @@ beginState: s32'vkd405'
       stopLinkObject: 0
       attackOff: 
       haltMomentum: 1
-      sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
-      sendSignalToAction: s32'vky_406_NksEff_Kira_U', (SIGNAL_A)
+      sendSignalToAction: s32'vky_406_HeadWind', 23
+      sendSignalToAction: s32'vky_406_NksEff_Kira_U', 23
     endUpon: 
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
-      clearUpon: (SIGNAL_B)
+    upon: 23
+      clearUpon: 23
+      clearUpon: 32
       deactivateObjectByName: s32'vky_406_NksEff'
       deactivateObjectByName: s32'vky_406_NksEff_U'
-      sendSignalToAction: s32'vky_406_TrailEff', (SIGNAL_A)
-      sendSignalToAction: s32'vky_406_TrailEff_D', (SIGNAL_B)
-      sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
+      sendSignalToAction: s32'vky_406_TrailEff', 23
+      sendSignalToAction: s32'vky_406_TrailEff_D', 32
+      sendSignalToAction: s32'vky_406_HeadWind', 23
       onSpriteChange: s32'vkd406_00'
       gotoLabelRequests: s32'Lock'
     endUpon: 
-    upon: (SIGNAL_B)
-      clearUpon: (SIGNAL_A)
-      clearUpon: (SIGNAL_B)
+    upon: 32
+      clearUpon: 23
+      clearUpon: 32
       deactivateObjectByName: s32'vky_406_NksEff'
       deactivateObjectByName: s32'vky_406_NksEff_U'
-      sendSignalToAction: s32'vky_406_TrailEff', (SIGNAL_A)
-      sendSignalToAction: s32'vky_406_TrailEff_D', (SIGNAL_B)
-      sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
+      sendSignalToAction: s32'vky_406_TrailEff', 23
+      sendSignalToAction: s32'vky_406_TrailEff_D', 32
+      sendSignalToAction: s32'vky_406_HeadWind', 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6275,8 +6291,8 @@ beginState: s32'vkd405'
   stopLinkObject: 0
   attackOff: 
   haltMomentum: 1
-  sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
-  sendSignalToAction: s32'vky_406_NksEff_Kira_U', (SIGNAL_A)
+  sendSignalToAction: s32'vky_406_HeadWind', 23
+  sendSignalToAction: s32'vky_406_NksEff_Kira_U', 23
   sprite: s32'vkd405_05', 1
   Unknown2050: 0
   createParticle: s32'vky_vkdKill', (PLAYER)
@@ -6292,8 +6308,8 @@ beginState: s32'vkd405'
   stopLinkObject: 0
   attackOff: 
   haltMomentum: 1
-  sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
-  sendSignalToAction: s32'vky_406_NksEff_Kira_U', (SIGNAL_A)
+  sendSignalToAction: s32'vky_406_HeadWind', 23
+  sendSignalToAction: s32'vky_406_NksEff_Kira_U', 23
   sprite: s32'vkd406_00', 1
   Unknown2050: 0
   createParticle: s32'vky_vkdKill', (PLAYER)
@@ -6314,7 +6330,7 @@ beginState: s32'vkd406'
     endIf: 
     setPositionY: 200000
     deactivateObjectByName: s32'vkd405'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 32, s32'End'
   endUpon: 
   sprite: s32'vkd406_00', 3
   createArgHikitsukiVal: Val(0), Val(0)
@@ -6374,7 +6390,7 @@ beginState: s32'vkn406'
         gotoLabelRequests: s32'Landing_D'
       endIf: 
     endUpon: 
-    upon: (SIGNAL_B)
+    upon: 32
       linkObjectPosition: 0
       moveToObject: (ENEMY)
       setPositionY: 0
@@ -6423,8 +6439,8 @@ beginState: s32'vkd406_BokoSuka'
     moveToObject: (ENEMY)
     setPositionY: 0
     linkParticle: s32'vky_405_bokosuka'
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6443,7 +6459,7 @@ beginState: s32'vkd406_BokoSuka'
   beginLabel: s32'End'
   sprite: s32'null', 20
   createParticle: s32'vky_405_Finish', (PLAYER)
-  sendSignalToAction: s32'vkd406_BokoSuka_Icon', (SIGNAL_A)
+  sendSignalToAction: s32'vkd406_BokoSuka_Icon', 23
   setAlphaColorSpeed: -50
 endState: 
 
@@ -6453,8 +6469,8 @@ beginState: s32'vkd406_BokoSuka_Icon'
     linkObjectPosition: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectZ: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
     setPositionX: -26997
@@ -6484,8 +6500,8 @@ beginState: s32'vky_406_HeadWind'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6507,8 +6523,8 @@ beginState: s32'vky_406_TrailEff'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 2
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6537,9 +6553,9 @@ beginState: s32'vky_406_TrailEff'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   stopLinkObject: 0
-  Unknown159: -50
-  Unknown183: -50
-  sendSignalToAction: s32'vky_406_TrailRootEff', (SIGNAL_A)
+  setObjectHeightScaleSpeed: -50
+  setObjectDepthScaleSpeed: -50
+  sendSignalToAction: s32'vky_406_TrailRootEff', 23
 endState: 
 
 beginState: s32'vky_406_TrailEff_D'
@@ -6548,20 +6564,20 @@ beginState: s32'vky_406_TrailEff_D'
     stopLinkObject: 3
     linkObjectZ: 2
     addPositionX: 50000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       clearUpon: 24
       linkParticle: s32'vky_405_Trail'
       setAlphaColor: 610
       gotoLabelRequests: s32'Catch'
     endUpon: 
     upon: 24
-      clearUpon: (SIGNAL_A)
+      clearUpon: 23
       clearUpon: 24
       gotoLabelRequests: s32'Catch'
     endUpon: 
-    upon: (SIGNAL_B)
-      clearUpon: (SIGNAL_B)
+    upon: 32
+      clearUpon: 32
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6581,10 +6597,10 @@ beginState: s32'vky_406_TrailEff_D'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   stopLinkObject: 0
-  Unknown159: -50
-  Unknown183: -50
-  sendSignalToAction: s32'vky_406_TrailRootEff', (SIGNAL_A)
-  sendSignalToAction: s32'vky_406_NksEff_Kira_U', (SIGNAL_A)
+  setObjectHeightScaleSpeed: -50
+  setObjectDepthScaleSpeed: -50
+  sendSignalToAction: s32'vky_406_TrailRootEff', 23
+  sendSignalToAction: s32'vky_406_NksEff_Kira_U', 23
 endState: 
 
 beginState: s32'vky_406_TrailRootEff'
@@ -6593,8 +6609,8 @@ beginState: s32'vky_406_TrailRootEff'
     linkObjectPosition: 2
     linkObjectZ: 2
     addPositionX: 25000
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6674,7 +6690,7 @@ beginState: s32'vky_406_NksEff_Kira_U'
     setLinkObjectDestroyOnDamage: 3
     stopLinkObject: 3
     linkObjectZ: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -6685,7 +6701,7 @@ beginState: s32'vky_406_NksEff_Kira_U'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 40
-  clearUpon: (SIGNAL_A)
+  clearUpon: 23
   linkParticle: s32'vky_405_nks'
 endState: 
 
@@ -6803,9 +6819,9 @@ beginState: s32'VKD_402_Low'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 0
-    gotoLabelUpon: (ON_DESTROY), s32'End'
-    gotoLabelUpon: (SIGNAL_A), s32'Move'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 45, s32'End'
+    gotoLabelUpon: 23, s32'Move'
+    gotoLabelUpon: 32, s32'End'
     gotoLabelUpon: 35, s32'End'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
       Unknown1909: 0
@@ -6822,7 +6838,7 @@ beginState: s32'VKD_402_Low'
         endIf: 
       endUpon: 
       upon: (HIT_OR_GUARD)
-        clearUpon: (SIGNAL_B)
+        clearUpon: 32
         worldCollision: 0
         storeValue: Mem(ActReg0), Val(1)
       endUpon: 
@@ -6881,7 +6897,7 @@ beginState: s32'VKD_402_Low'
   endIf: 
   sprite: s32'vkd402_04', 6
   sprite: s32'vkd402_05', 4
-  clearUpon: (SIGNAL_B)
+  clearUpon: 32
   clearUpon: 35
   worldCollision: 1
   hit: 
@@ -6906,7 +6922,7 @@ beginState: s32'VKD_402_Low'
   endElse: 
   beginLabel: s32'End'
   sprite: s32'keep', 1
-  clearUpon: (SIGNAL_B)
+  clearUpon: 32
   clearUpon: (FRAME_STEP)
   clearUpon: 35
   clearUpon: (HIT_OR_GUARD)
@@ -6977,16 +6993,16 @@ beginState: s32'VKD_402_High'
     invulnForce: 1
     enableSuperArmor: 1
     superArmorHontaiAttack: 0
-    upon: (ON_DESTROY)
+    upon: 45
       storeValue: Mem(ActReg2), Val(1)
-      Unknown2347: 1601792886, 0x4D697373696F6E30325F737563636573730000000000000000000000
+      Unknown2347: s32'vky_Mission02_success'
       gotoLabelRequests: s32'End'
     endUpon: 
-    gotoLabelUpon: (SIGNAL_A), s32'Move'
-    gotoLabelUpon: (SIGNAL_B), s32'End'
+    gotoLabelUpon: 23, s32'Move'
+    gotoLabelUpon: 32, s32'End'
     gotoLabelUpon: 35, s32'End'
     upon: (HIT_OR_GUARD)
-      clearUpon: (SIGNAL_B)
+      clearUpon: 32
     endUpon: 
   endUpon: 
   sprite: s32'vkd402_00', 30
@@ -7076,15 +7092,15 @@ beginState: s32'VKD_402_High'
   privateSE: s32'vky_05'
   sprite: s32'vkd402_12', 6
   sprite: s32'vkd402_12', 6
-  clearUpon: (ON_DESTROY)
+  clearUpon: 45
   setGravity: 1800
   velocityYPercentEachFrame: 100
   beginLabel: s32'End'
   sprite: s32'keep', 1
   clearUpon: (FRAME_STEP)
-  clearUpon: (ON_DESTROY)
-  clearUpon: (SIGNAL_A)
-  clearUpon: (SIGNAL_B)
+  clearUpon: 45
+  clearUpon: 23
+  clearUpon: 32
   clearUpon: 35
   clearUpon: (HIT_OR_GUARD)
   haltMomentum: 1
@@ -7243,86 +7259,86 @@ beginState: s32'vkd430'
   createObject: s32'vky_430_GroundBurst', (PLAYER_LAND)
   createObject: s32'vky_430_AuraEff_Sub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 200794
-  setPositionY: 304563
-  setDepth: 176911
-  setAngleX: 0
-  setAngleY: 357200
-  setAngle: 89200
+    setPositionX: 200794
+    setPositionY: 304563
+    setDepth: 176911
+    setAngleX: 0
+    setAngleY: 357200
+    setAngle: 89200
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff_Sub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 0
-  setAngleY: 345600
-  setAngle: 90400
-  setPositionX: 215775
-  setPositionY: 132437
-  setDepth: 244457
-  setObjectSize: 800
+    setAngleX: 0
+    setAngleY: 345600
+    setAngle: 90400
+    setPositionX: 215775
+    setPositionY: 132437
+    setDepth: 244457
+    setObjectSize: 800
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff_Cross', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 47831
-  setPositionY: 364031
-  setDepth: 260517
-  setAngleX: 332000
-  setAngleY: 1200
-  setAngle: 30800
-  setObjectWidth: 1200
-  setObjectHeight: 1200
-  Unknown180: 1200
+    setPositionX: 47831
+    setPositionY: 364031
+    setDepth: 260517
+    setAngleX: 332000
+    setAngleY: 1200
+    setAngle: 30800
+    setObjectWidth: 1200
+    setObjectHeight: 1200
+    setObjectDepth: 1200
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff_Cross', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 600
-  setAngleX: 326400
-  setAngleY: 349600
-  setAngle: 140800
-  setPositionX: 85801
-  setPositionY: 145812
-  setDepth: 304098
+    setObjectSize: 600
+    setAngleX: 326400
+    setAngleY: 349600
+    setAngle: 140800
+    setPositionX: 85801
+    setPositionY: 145812
+    setDepth: 304098
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff_Cross', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 282756
-  setPositionY: 315725
-  setDepth: 240428
-  setAngleX: 350400
-  setAngleY: 322400
-  setAngle: 348400
-  setObjectWidth: 500
-  setObjectHeight: 600
-  Unknown180: 600
+    setPositionX: 282756
+    setPositionY: 315725
+    setDepth: 240428
+    setAngleX: 350400
+    setAngleY: 322400
+    setAngle: 348400
+    setObjectWidth: 500
+    setObjectHeight: 600
+    setObjectDepth: 600
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff_Cross', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 269757
-  setPositionY: 141836
-  setDepth: 280888
-  setAngleX: 334000
-  setAngleY: 334000
-  setAngle: 218000
-  setObjectSize: 450
+    setPositionX: 269757
+    setPositionY: 141836
+    setDepth: 280888
+    setAngleX: 334000
+    setAngleY: 334000
+    setAngle: 218000
+    setObjectSize: 450
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff_Cross', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 195755
-  setPositionY: 389446
-  setDepth: 249524
-  setAngleX: 336000
-  setAngleY: 329200
-  setAngle: 1600
-  setObjectSize: 500
+    setPositionX: 195755
+    setPositionY: 389446
+    setDepth: 249524
+    setAngleX: 336000
+    setAngleY: 329200
+    setAngle: 1600
+    setObjectSize: 500
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff_Cross', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 190759
-  setPositionY: 142475
-  setDepth: 289901
-  setAngleX: 185600
-  setAngleY: 178000
-  setAngle: 2000
-  setObjectSize: 300
+    setPositionX: 190759
+    setPositionY: 142475
+    setDepth: 289901
+    setAngleX: 185600
+    setAngleY: 178000
+    setAngle: 2000
+    setObjectSize: 300
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff_Wind', (PLAYER)
   sprite: s32'vkd430_16', 3
@@ -7335,57 +7351,57 @@ beginState: s32'vkd430'
   Unknown412: 30, 1, 7, 0
   createObject: s32'vky_430_AuraEff3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 288879
-  setPositionY: 183438
-  setDepth: 131049
-  setAngleX: 0
-  setAngleY: 10000
-  setAngle: 68000
+    setPositionX: 288879
+    setPositionY: 183438
+    setDepth: 131049
+    setAngleX: 0
+    setAngleY: 10000
+    setAngle: 68000
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 214953
-  setPositionY: 135779
-  setDepth: 283141
-  setAngleX: 0
-  setAngleY: 10000
-  setAngle: 71600
+    setPositionX: 214953
+    setPositionY: 135779
+    setDepth: 283141
+    setAngleX: 0
+    setAngleY: 10000
+    setAngle: 71600
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 139932
-  setPositionY: 231139
-  setDepth: 162187
-  setAngleX: 0
-  setAngleY: 10000
-  setAngle: 71600
+    setPositionX: 139932
+    setPositionY: 231139
+    setDepth: 162187
+    setAngleX: 0
+    setAngleY: 10000
+    setAngle: 71600
   endRunOnObject: 
   createObject: s32'vky_430_AuraEff3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 0
-  setAngleY: 10000
-  setAngle: 67600
-  setPositionX: 220939
-  setPositionY: 273115
-  setDepth: 278088
+    setAngleX: 0
+    setAngleY: 10000
+    setAngle: 67600
+    setPositionX: 220939
+    setPositionY: 273115
+    setDepth: 278088
   endRunOnObject: 
   createObject: s32'vky_430_Kill', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -180995
-  setPositionY: 195341
-  setDepth: 87529
-  setAngleX: 0
-  setAngleY: 54800
-  setAngle: 340800
+    setPositionX: -180995
+    setPositionY: 195341
+    setDepth: 87529
+    setAngleX: 0
+    setAngleY: 54800
+    setAngle: 340800
   endRunOnObject: 
   createObject: s32'vky_430_Kill', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -34018
-  setPositionY: 187962
-  setDepth: 188281
-  setAngleX: 0
-  setAngleY: 10000
-  setAngle: 193200
+    setPositionX: -34018
+    setPositionY: 187962
+    setDepth: 188281
+    setAngleX: 0
+    setAngleY: 10000
+    setAngle: 193200
   endRunOnObject: 
   sprite: s32'vkd430_22', 3
   sprite: s32'vkd430_23', 3
@@ -7407,12 +7423,12 @@ beginState: s32'vkd432'
     atkCameraShake: s32'ShakeTate', 3000, 0, 30, 15
     damageEffect: 4, s32''
     noFinishCamera: 1
-    Unknown864: 26
-    Unknown72: s32'vky_Ougi'
+    groundBounceXVelocityPercent: 26
+    postSubroutineBegin: s32'vky_Ougi'
     moveToObject: (ENEMY)
     setPositionY: 0
     upon: (HIT)
-      sendSignalToAction: s32'vky_Ougi', (SIGNAL_B)
+      sendSignalToAction: s32'vky_Ougi', 32
     endUpon: 
     clearUpon: 131
     upon: 131
@@ -7426,7 +7442,7 @@ beginState: s32'vkd432'
   setAngleY: 8000
   zLine: 0, 5
   runOnObject: (ENEMY)
-  zLine: 6, 5
+    zLine: 6, 5
   endRunOnObject: 
   characterSfx: s32'vky_ougi_01'
   sprite: s32'vkd432_00', 4
@@ -7448,45 +7464,45 @@ beginState: s32'vkd432'
   grabOrRelease: 
   zLine: 6, 5
   runOnObject: (ENEMY)
-  zLine: 0, 5
+    zLine: 0, 5
   endRunOnObject: 
   Unknown1727: 0
   createObject: s32'vky_430_Elight', (PLAYER)
   createObject: s32'vky_430_FireWork', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -450905
-  setPositionY: 696484
-  setDepth: -294931
+    setPositionX: -450905
+    setPositionY: 696484
+    setDepth: -294931
   endRunOnObject: 
   createObject: s32'vky_430_FireWork', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 484047
-  setPositionY: 254926
-  setDepth: -314207
+    setPositionX: 484047
+    setPositionY: 254926
+    setDepth: -314207
   endRunOnObject: 
   createObject: s32'vky_430_FireWork', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -1030854
-  setPositionY: 160747
-  setDepth: -243252
+    setPositionX: -1030854
+    setPositionY: 160747
+    setDepth: -243252
   endRunOnObject: 
   createObject: s32'vky_430_FireWork', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -210928
-  setPositionY: 99118
-  setDepth: -275997
+    setPositionX: -210928
+    setPositionY: 99118
+    setDepth: -275997
   endRunOnObject: 
   createObject: s32'vky_430_FireWork', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 249971
-  setPositionY: 753463
-  setDepth: -247454
+    setPositionX: 249971
+    setPositionY: 753463
+    setDepth: -247454
   endRunOnObject: 
   createObject: s32'vky_430_FireWork', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -1135829
-  setPositionY: 871302
-  setDepth: -241336
+    setPositionX: -1135829
+    setPositionY: 871302
+    setDepth: -241336
   endRunOnObject: 
   characterSfx: s32'vky_ougi_02'
   Unknown2858: 3000
@@ -7498,7 +7514,7 @@ beginState: s32'vkd432'
   createObject: s32'vky_WhiteIn', (PLAYER)
   sprite: s32'vkd432_07', 10
   runOnObject: (ENEMY)
-  zLine: 5, 1
+    zLine: 5, 1
   endRunOnObject: 
 endState: 
 
@@ -7527,7 +7543,7 @@ beginState: s32'vkd433'
     comboLimitScaling: 0
     atkCameraShake: s32'ShakeTate', 500, 0, 10, 0
     killType: (NOT_KILL)
-    Unknown72: s32'vky_Ougi'
+    postSubroutineBegin: s32'vky_Ougi'
     clearUpon: 131
     Unknown1113: 0x7878787878000000000000000000000000000000000000000000000000000000
     upon: (HIT)
@@ -7586,7 +7602,7 @@ beginState: s32'vkd433'
     endIf: 
     randomAddPositionY: -50000, 50000
     physicsXImpulse: 30000
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   sprite: s32'vkd433_00', 3
   grabOrRelease: 
@@ -7668,7 +7684,7 @@ beginState: s32'vky_430_AuraEff'
   linkParticle: s32'vky_430_aura'
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleX: 355600
   setAngleY: 11200
   setAngle: 13200
@@ -7726,7 +7742,7 @@ beginState: s32'vky_430_AuraEff2'
   sprite: s32'null', 3
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setPositionX: 243936
   setPositionY: 218916
   setDepth: 256711
@@ -7801,7 +7817,7 @@ beginState: s32'vky_430_AuraEff_Wind'
   ignoreFinishStop: 1
   setObjectWidth: 1300
   setObjectHeight: 1600
-  Unknown180: 1300
+  setObjectDepth: 1300
   setPositionX: 160991
   setPositionY: 235898
   setDepth: 305571
@@ -7850,8 +7866,8 @@ beginState: s32'vky_430_EnshutuCamera2'
     setLinkObjectDestroyOnDamage: 3
     ignoreSuperFreezeFromAlly: 1
     ignoreFinishStop: 1
-    upon: (SIGNAL_A)
-      clearUpon: (SIGNAL_A)
+    upon: 23
+      clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
   endUpon: 
@@ -7903,7 +7919,7 @@ beginState: s32'vky_430_BG'
   setDepth: -616727
   setObjectWidth: 3000
   setObjectHeight: 3500
-  Unknown180: 1000
+  setObjectDepth: 1000
 endState: 
 
 beginState: s32'vky_430_FireWork'
@@ -8218,11 +8234,11 @@ beginState: s32'vky_441_cs_Fog'
       gotoLabelRequests: s32'Change'
     endUpon: 
     upon: (BEFORE_EXIT)
-      Unknown2587: 1601792886, s32'MI_PP_Fog'
+      Unknown2587: s32'vky_MI_PP_Fog', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 59
-  Unknown2587: 1601792886, s32'MI_PP_Fog'
+  Unknown2587: s32'vky_MI_PP_Fog', 1
   Unknown2588: s32'vky_MI_PP_Fog', 1, 100
   Unknown2588: s32'vky_MI_PP_Fog', 2, 20
   sprite: s32'null', 101
@@ -8234,7 +8250,7 @@ beginState: s32'vky_441_cs_Fog'
   Unknown2588: s32'vky_MI_PP_Fog', 1, 80
   Unknown2588: s32'vky_MI_PP_Fog', 2, 10
   sprite: s32'null', 1
-  Unknown2587: 1601792886, s32'MI_PP_Fog'
+  Unknown2587: s32'vky_MI_PP_Fog', 0
 endState: 
 
 beginState: s32'vky_441cs_Grade'
@@ -8315,7 +8331,7 @@ beginState: s32'vky_441cs_whiteOut'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown409: 0, 1
       Unknown410: 0, 1
@@ -8468,13 +8484,13 @@ beginState: s32'vkd440_Atk'
     magnetismY: 1, 100000, 80000, 100, 0
     isAirUnblockable: 1
     damageEffect: 2, s32'vky_SPHitEff'
-    Unknown72: s32'vky_Kaihou'
+    postSubroutineBegin: s32'vky_Kaihou'
     Unknown1961: 1
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
     upon: 24
-      Unknown56: 1
+      pauseSprite: 1
     endUpon: 
     upon: 78
       clearUpon: 78
@@ -8483,7 +8499,7 @@ beginState: s32'vkd440_Atk'
       if: Mem(ActReg0)
         Unknown963: 0, -20000
         callSubroutine: s32'cmn_Kaihou_AttackRate2Init'
-        sendSignalToAction: s32'vky_Kaihou', (SIGNAL_A)
+        sendSignalToAction: s32'vky_Kaihou', 23
       endIf: 
     endUpon: 
     upon: (HIT)
@@ -8557,8 +8573,8 @@ beginState: s32'vkd440_Atk'
   sprite: s32'vkd440_02', 2
   clearUpon: (FRAME_STEP)
   linkParticle: s32'vky_440_SpeedLine2'
-  sendSignalToAction: s32'vky_440_AuraEff_Upper', (SIGNAL_A)
-  sendSignalToAction: s32'vky_440_AuraEff_Downer', (SIGNAL_A)
+  sendSignalToAction: s32'vky_440_AuraEff_Upper', 23
+  sendSignalToAction: s32'vky_440_AuraEff_Downer', 23
   createArgHikitsukiVal: Val(1), Val(0)
   createObjectWithArg: s32'vky_440_AuraEndSub', (PLAYER)
   createArgHikitsukiVal: Val(2), Val(0)
@@ -8600,12 +8616,12 @@ beginState: s32'vkd440_Atk'
       clearUpon: (HIT)
       sendSignalToAction: s32'vky_Kaihou', 25
       runOnObject: (ENEMY)
-      Unknown2050: 0
+        Unknown2050: 0
       endRunOnObject: 
     endUpon: 
     upon: 96
       runOnObject: (ENEMY)
-      Unknown2050: 1
+        Unknown2050: 1
       endRunOnObject: 
     endUpon: 
   endIf: 
@@ -8703,7 +8719,7 @@ beginState: s32'vky_440_AuraEff_Upper'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
   endUpon: 
@@ -8738,7 +8754,7 @@ beginState: s32'vky_440_AuraEff_Middle'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
   endUpon: 
@@ -8773,7 +8789,7 @@ beginState: s32'vky_440_AuraEff_Downer'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Atk'
     endUpon: 
   endUpon: 
@@ -8865,7 +8881,7 @@ beginState: s32'vky_440_TactDel'
   linkParticle: s32'vky_tactDel2'
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setPositionX: -151868
   setPositionY: 205544
   setDepth: 85016
@@ -9073,7 +9089,7 @@ beginState: s32'vky_700_1p_BG1'
     linkObjectPosition: 3
     stopLinkObject: 3
     linkObjectZ: 3
-    upon: (SIGNAL_A)
+    upon: 23
       gotoLabelRequests: s32'Move1'
     endUpon: 
     upon: 24
@@ -9421,7 +9437,7 @@ beginState: s32'vky_700_2p_FaceApp'
     linkObjectZ: 3
   endUpon: 
   sprite: s32'null', 300
-  Unknown2197: 0x020000002D00000000000000010000000000000003000000
+  Unknown2197: 2, 45, 0, 1, 0, 3
   ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
     linkParticle: s32'vky_700_AppFace'
   endIf: 
@@ -9631,7 +9647,7 @@ beginState: s32'vky_BaloonSpawnEff'
   sprite: s32'null', 60
   linkParticle: s32'vky_CanonSpwn'
   zLine: 0, 5
-  Unknown264: 3
+  setZOffset: 3
 endState: 
 
 beginState: s32'vky_RoundWin_Camera2'
@@ -9757,7 +9773,7 @@ beginState: s32'vky_442cs_whiteIn'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
-    gotoLabelUpon: (SIGNAL_A), s32'End'
+    gotoLabelUpon: 23, s32'End'
     upon: (BEFORE_EXIT)
       Unknown409: 0, 1
       Unknown410: 0, 1
@@ -9796,7 +9812,7 @@ beginState: s32'vky_442_kira'
   linkParticle: s32'vky_442_kira'
   setObjectWidth: 200
   setObjectHeight: 200
-  Unknown180: 200
+  setObjectDepth: 200
   setPositionX: -197904
   setPositionY: 110894
   setDepth: -141060

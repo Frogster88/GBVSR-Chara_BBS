@@ -79,10 +79,10 @@ beginState: s32'vir_209_MC'
     addPositionY: 40159
     setObjectWidth: 2000
     setObjectHeight: 2300
-    Unknown180: 2000
+    setObjectDepth: 2000
     setObjectWidth: 2400
     setObjectHeight: 2700
-    Unknown180: 2400
+    setObjectDepth: 2400
   endUpon: 
   sprite: s32'null', 35
   linkParticle: s32'vir_MCLoop'
@@ -94,7 +94,7 @@ beginState: s32'vir_209_MC'
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   sprite: s32'null', 25
-  Unknown191: 1
+  setObjectSizeScaleSpeed: 1
 endState: 
 
 beginState: s32'vir_209_EnshutuCamera'
@@ -209,7 +209,7 @@ beginState: s32'vir_211_ThurustRingEff'
     setAngle: 245200
     setObjectWidth: 600
     setObjectHeight: 450
-    Unknown180: 600
+    setObjectDepth: 600
   endUpon: 
   sprite: s32'null', 3
   linkParticle: s32'vir_211_ThurustRing'
@@ -579,7 +579,7 @@ beginState: s32'vir_306_BurstEff'
     endUpon: 
     setObjectWidth: 1200
     setObjectHeight: 1200
-    Unknown180: 1000
+    setObjectDepth: 1000
     setPositionX: 95000
     setPositionY: 49090
     setDepth: 22160
@@ -643,7 +643,7 @@ beginState: s32'vir_310_BurstEff'
     endUpon: 
     setObjectWidth: 1200
     setObjectHeight: 1200
-    Unknown180: 1000
+    setObjectDepth: 1000
     addPositionX: 115000
     addPositionY: -11285
     Unknown1727: 29532
@@ -739,14 +739,14 @@ beginState: s32'vir_350_Eff'
   linkParticle: s32'vir_350_VineEnd'
   createObject: s32'vir_350_groundBurst', (PLAYER_LAND)
   runOnObject: (PREVIOUS)
-  setObjectSize: 500
-  addPositionX: -90000
+    setObjectSize: 500
+    addPositionX: -90000
   endRunOnObject: 
   createObject: s32'vir_350_groundBurst', (PLAYER_LAND)
   runOnObject: (PREVIOUS)
-  setObjectSize: 500
-  addPositionX: 90000
-  flipDirection: 
+    setObjectSize: 500
+    addPositionX: 90000
+    flipDirection: 
   endRunOnObject: 
   sprite: s32'null', 30
   linkObjectPosition: 0
@@ -1238,13 +1238,13 @@ beginState: s32'AntiAir_C_Bit'
     linkObjectZ: 3
     addPositionX: -50000
     setPositionY: 550000
-    Unknown264: -10
+    setZOffset: -10
     linkPawnWithAnimation: s32'bit_00', s32''
     beginMeshSet: s32'bit_00'
       addToMeshSet: s32'bit_00'
     endMeshSet: 
     swapMeshSet: s32'bit_00'
-    Unknown289: 60
+    setMaxActionTime: 60
     upon: (FRAME_STEP)
       if: Mem(Hikitsugi0)
         Unknown2024: 0x020000001600000067000000000000000000000000000000C0F2FCFF00000000640000000000000064000000
@@ -1311,7 +1311,7 @@ beginState: s32'AntiAir_C_BitBeam'
     attackThroughArmor: 1
     damageEffect: 2, s32'VIR_SPHitEff'
     if: Mem(PlayerVal0)
-      Unknown911: 0, 1250
+      counterHitFrozenTime: 0, 1250
     endIf: 
     checkCurrentStateName: (PLAYER), s32'AntiAir_D'
     if: Mem(Tmp)
@@ -1323,7 +1323,7 @@ beginState: s32'AntiAir_C_BitBeam'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectAngle: 2
-    Unknown264: -10
+    setZOffset: -10
   endUpon: 
   sprite: s32'null', 60
   endSprite: 
@@ -1745,7 +1745,7 @@ beginState: s32'vir_406_SlashD'
     setAngle: 165600
     setObjectWidth: 900
     setObjectHeight: 800
-    Unknown180: 900
+    setObjectDepth: 900
   endUpon: 
   sprite: s32'null', 6
   linkParticle: s32'vir_406_D'
@@ -1802,7 +1802,7 @@ beginState: s32'vir_409_Bit'
     damageEffect: 2, s32'VIR_SPHitEff'
     addPositionX: -75000
     addPositionY: 100000
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'suv410_00', 8
   sprite: s32'suv410_01', 8
@@ -1867,7 +1867,7 @@ beginState: s32'vir_409_Suv'
       callSubroutine: s32'cmnSpecialAttackGauge'
     endUpon: 
     if: Mem(PlayerVal0)
-      Unknown911: 0, 1250
+      counterHitFrozenTime: 0, 1250
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
       missionName: s32'Chevalier_A'
@@ -2090,7 +2090,7 @@ beginState: s32'vir_409_Suv'
   physicsXImpulse: 15000
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg6), Val(1)
     velocityXPercentEachFrame: 95
-    Unknown2329: 0x0300000017000000640000001600000064000000
+    Unknown2329: 3, 23, 100, 22, 100
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(-100000)
       addPositionX: -100000
       velocityXPercent: 50
@@ -2193,7 +2193,7 @@ beginState: s32'vir_409_Suv_Bit'
         privateSE: s32'vir_11'
       endUpon: 
     endIf: 
-    Unknown289: 120
+    setMaxActionTime: 120
     upon: 32
       clearUpon: 45
       deactivateObjectById: (SELF)
@@ -2318,7 +2318,7 @@ beginState: s32'vir_409_Suv_Bit_Beam_Atk'
     guardEffectEconomy: 1
     clearUpon: 126
     if: Mem(PlayerVal0)
-      Unknown911: 0, 1250
+      counterHitFrozenTime: 0, 1250
     endIf: 
     ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
       attackDirectionReverse: 1
@@ -2331,7 +2331,7 @@ beginState: s32'vir_409_Suv_Bit_Beam_Atk'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(3)
     callSubroutine: s32'cmnSpecialAttackD_AtkInit'
-    Unknown72: s32'vir_409_Suv'
+    postSubroutineBegin: s32'vir_409_Suv'
     setProjectileDurability: 2
     damage: 200
     groundHitEffect: (CRUMPLE)
@@ -2376,7 +2376,7 @@ beginState: s32'vir_409_Suv_Bit_BeamLandEff'
     stopLinkObject: 2
     linkObjectAngle: 2
     linkObjectDirection: 2
-    Unknown202: 160000, 0
+    setSpeedByAngle: 160000, 0
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -2668,7 +2668,7 @@ beginState: s32'vir_431MC'
   Unknown410: -1, 2
   Unknown409: 0, 3
   sprite: s32'null', 50
-  Unknown191: 2
+  setObjectSizeScaleSpeed: 2
 endState: 
 
 beginState: s32'vir_431Bit'
@@ -2683,7 +2683,7 @@ beginState: s32'vir_431Bit'
       addToMeshSet: s32'bit_00'
     endMeshSet: 
     swapMeshSet: s32'bit_00'
-    Unknown289: 120
+    setMaxActionTime: 120
     upon: 23
       clearUpon: 23
       gotoLabelRequests: s32'End'
@@ -2736,7 +2736,7 @@ beginState: s32'vir431_BeamAtk'
       clearUpon: 23
       damage: 200
       setObjectWidth: 1000
-      Unknown151: 0
+      setObjectWidthScaleSpeed: 0
       gotoLabelRequests: s32'BigBeam'
       clearUpon: 78
     endUpon: 
@@ -2774,18 +2774,18 @@ beginState: s32'vir431_BeamAtk'
   sprite: s32'vir431_BeamAtk', 200
   hit: 
   setObjectWidth: 800
-  Unknown151: 800
+  setObjectWidthScaleSpeed: 800
   privateSE: s32'vir_14_2'
   beginLabel: s32'BigBeam'
   sprite: s32'vir431_BeamAtk', 2
   storeValue: Mem(ActReg0), Val(1)
   setObjectWidth: 3200
-  Unknown151: 200
+  setObjectWidthScaleSpeed: 200
   hit: 
   sprite: s32'vir431_BeamAtk', 1
   hit: 
   sprite: s32'vir431_BeamAtk', 1
-  Unknown151: 600
+  setObjectWidthScaleSpeed: 600
   beginLabel: s32'Loop'
   sprite: s32'vir431_BeamAtk', 2
   hit: 
@@ -2821,7 +2821,7 @@ beginState: s32'vir_431Beam'
   gotoLabel: s32'Charge'
   beginLabel: s32'Start'
   sprite: s32'null', 4
-  Unknown191: 30
+  setObjectSizeScaleSpeed: 30
   Unknown410: 20, 1
   setPositionX: 195009
   setPositionY: 326953
@@ -2833,7 +2833,7 @@ beginState: s32'vir_431Beam'
   sprite: s32'null', 20
   linkParticle: s32'vir_431_Beam'
   setObjectSize: 1000
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   Unknown409: 100, 1
   Unknown409: 0, 2
   Unknown410: 5, 2
@@ -2883,7 +2883,7 @@ beginState: s32'vir_431BeamHead'
   physicsXImpulse: 75000
   createObject: s32'vir_431Nokoshi', (PLAYER)
   createObject: s32'vir_431SpeedLine', (PLAYER)
-  Unknown191: -20
+  setObjectSizeScaleSpeed: -20
   beginLabel: s32'Start'
   sprite: s32'null', 4
   physicsXImpulse: 80000
@@ -2892,7 +2892,7 @@ beginState: s32'vir_431BeamHead'
   beginLabel: s32'Stop'
   sprite: s32'null', 120
   physicsXImpulse: 0
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   beginLabel: s32'End'
   sprite: s32'null', 25
   Unknown409: 100, 1
@@ -2955,7 +2955,7 @@ beginState: s32'vir_431Beam_Bit'
   linkParticle: s32'vir_431_BitBeamStart'
   sprite: s32'vir431_BitBeamAtk', 20
   setObjectWidth: 800
-  Unknown151: 800
+  setObjectWidthScaleSpeed: 800
   Unknown2298: 1000
   linkParticle: s32'vir_431_BitBeam'
   Unknown409: 100, 1
@@ -3175,17 +3175,17 @@ beginState: s32'vir_431_Blur'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'vir_MI_PP_441_RB', 1, 0
-      Unknown2587: 1601333622, s32'MI_PP_441_RB'
+      Unknown2587: s32'vir_MI_PP_441_RB', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1601333622, s32'MI_PP_441_RB'
+  Unknown2587: s32'vir_MI_PP_441_RB', 1
   Unknown2588: s32'vir_MI_PP_441_RB', 1, 100
   sprite: s32'null', 5
   Unknown2590: s32'vir_MI_PP_441_RB', 1, -20
   sprite: s32'null', 1
   Unknown2590: s32'vir_MI_PP_441_RB', 1, 0
-  Unknown2587: 1601333622, s32'MI_PP_441_RB'
+  Unknown2587: s32'vir_MI_PP_441_RB', 0
 endState: 
 
 beginState: s32'vir_440_SlashEff'
@@ -3363,7 +3363,7 @@ beginState: s32'vir_441_CS_prickle02_Eff'
     setDepth: 81117
     setObjectWidth: 15000
     setObjectHeight: 20000
-    Unknown180: 15000
+    setObjectDepth: 15000
     setAngleX: 15200
     setAngleY: 82800
     setAngle: 400
@@ -3499,17 +3499,17 @@ beginState: s32'vir_441_Blur'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'vir_MI_PP_441_RB', 1, 0
-      Unknown2587: 1601333622, s32'MI_PP_441_RB'
+      Unknown2587: s32'vir_MI_PP_441_RB', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1601333622, s32'MI_PP_441_RB'
+  Unknown2587: s32'vir_MI_PP_441_RB', 1
   Unknown2588: s32'vir_MI_PP_441_RB', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'vir_MI_PP_441_RB', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'vir_MI_PP_441_RB', 1, 0
-  Unknown2587: 1601333622, s32'MI_PP_441_RB'
+  Unknown2587: s32'vir_MI_PP_441_RB', 0
 endState: 
 
 beginState: s32'vir_441cs_Binet'
@@ -3879,7 +3879,7 @@ beginState: s32'vir_443_wind5'
   setDepth: -300945
   setObjectWidth: 600
   setObjectHeight: 450
-  Unknown180: 450
+  setObjectDepth: 450
   setAngleX: 228400
   setAngleY: 4000
   setAngle: 243200
@@ -3893,17 +3893,17 @@ beginState: s32'vir_443_Blur'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'vir_MI_PP_444RB', 1, 0
-      Unknown2587: 1601333622, s32'MI_PP_444RB'
+      Unknown2587: s32'vir_MI_PP_444RB', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1601333622, s32'MI_PP_444RB'
+  Unknown2587: s32'vir_MI_PP_444RB', 1
   Unknown2588: s32'vir_MI_PP_444RB', 1, 100
   sprite: s32'null', 5
   Unknown2590: s32'vir_MI_PP_444RB', 1, -20
   sprite: s32'null', 1
   Unknown2590: s32'vir_MI_PP_444RB', 1, 0
-  Unknown2587: 1601333622, s32'MI_PP_444RB'
+  Unknown2587: s32'vir_MI_PP_444RB', 0
 endState: 
 
 beginState: s32'vir_443MC_Battle'
@@ -4276,7 +4276,7 @@ beginState: s32'vir_444_SmokeEff'
   setDepth: -41871
   setObjectWidth: 2000
   setObjectHeight: 2000
-  Unknown180: 2000
+  setObjectDepth: 2000
   setAngleX: 0
   setAngleY: 282800
   setAngle: 0
@@ -4568,40 +4568,40 @@ beginState: s32'vir_444_MB'
     upon: (BEFORE_EXIT)
       if: Mem(Dir)
         Unknown2590: s32'vir_MI_PP_444MB_L', 1, 0
-        Unknown2587: 1601333622, s32'MI_PP_444MB_L'
+        Unknown2587: s32'vir_MI_PP_444MB_L', 0
       endIf: 
       else: 
         Unknown2590: s32'vir_MI_PP_444MB_R', 1, 0
-        Unknown2587: 1601333622, s32'MI_PP_444MB_R'
+        Unknown2587: s32'vir_MI_PP_444MB_R', 0
       endElse: 
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
   if: Mem(Dir)
-    Unknown2587: 1601333622, s32'MI_PP_444MB_L'
+    Unknown2587: s32'vir_MI_PP_444MB_L', 1
     Unknown2588: s32'vir_MI_PP_444MB_L', 1, 80
   endIf: 
   else: 
-    Unknown2587: 1601333622, s32'MI_PP_444MB_R'
+    Unknown2587: s32'vir_MI_PP_444MB_R', 1
     Unknown2588: s32'vir_MI_PP_444MB_R', 1, 80
   endElse: 
   sprite: s32'null', 4
   if: Mem(Dir)
-    Unknown2587: 1601333622, s32'MI_PP_444MB_L'
+    Unknown2587: s32'vir_MI_PP_444MB_L', 1
     Unknown2588: s32'vir_MI_PP_444MB_L', 1, 50
   endIf: 
   else: 
-    Unknown2587: 1601333622, s32'MI_PP_444MB_R'
+    Unknown2587: s32'vir_MI_PP_444MB_R', 1
     Unknown2588: s32'vir_MI_PP_444MB_R', 1, 50
   endElse: 
   sprite: s32'null', 1
   if: Mem(Dir)
     Unknown2590: s32'vir_MI_PP_444MB_L', 1, 0
-    Unknown2587: 1601333622, s32'MI_PP_444MB_L'
+    Unknown2587: s32'vir_MI_PP_444MB_L', 0
   endIf: 
   else: 
     Unknown2590: s32'vir_MI_PP_444MB_R', 1, 0
-    Unknown2587: 1601333622, s32'MI_PP_444MB_R'
+    Unknown2587: s32'vir_MI_PP_444MB_R', 0
   endElse: 
 endState: 
 
@@ -4658,17 +4658,17 @@ beginState: s32'vir_444_Blur'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'vir_MI_PP_444RB', 1, 0
-      Unknown2587: 1601333622, s32'MI_PP_444RB'
+      Unknown2587: s32'vir_MI_PP_444RB', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1601333622, s32'MI_PP_444RB'
+  Unknown2587: s32'vir_MI_PP_444RB', 1
   Unknown2588: s32'vir_MI_PP_444RB', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'vir_MI_PP_444RB', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'vir_MI_PP_444RB', 1, 0
-  Unknown2587: 1601333622, s32'MI_PP_444RB'
+  Unknown2587: s32'vir_MI_PP_444RB', 0
 endState: 
 
 beginState: s32'vir_444_EndParticle'
@@ -4693,7 +4693,7 @@ beginState: s32'vir_444_SlashEff'
     setDepth: 108889
     setObjectWidth: 250
     setObjectHeight: 250
-    Unknown180: 500
+    setObjectDepth: 500
     setAngleX: 0
     setAngleY: 169200
     setAngle: 356800
@@ -4724,7 +4724,7 @@ beginState: s32'vir_444MC_End'
   setDepth: 0
   setObjectWidth: 1500
   setObjectHeight: 1500
-  Unknown180: 100
+  setObjectDepth: 100
   setAngleX: 0
   setAngleY: 312000
   setAngle: 0
@@ -4771,11 +4771,11 @@ beginState: s32'vir_7002P_OverRay'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'vir_MI_PP_700OR', 1, 0
-      Unknown2587: 1601333622, s32'MI_PP_700OR'
+      Unknown2587: s32'vir_MI_PP_700OR', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 20
-  Unknown2587: 1601333622, s32'MI_PP_700OR'
+  Unknown2587: s32'vir_MI_PP_700OR', 1
   Unknown2588: s32'vir_MI_PP_700OR', 1, 0
   Unknown2590: s32'vir_MI_PP_700OR', 1, 3
   sprite: s32'null', 60
@@ -4784,7 +4784,7 @@ beginState: s32'vir_7002P_OverRay'
   Unknown2590: s32'vir_MI_PP_700OR', 1, -3
   sprite: s32'null', 1
   Unknown2590: s32'vir_MI_PP_700OR', 1, 0
-  Unknown2587: 1601333622, s32'MI_PP_700OR'
+  Unknown2587: s32'vir_MI_PP_700OR', 0
 endState: 
 
 beginState: s32'vir_7002P_Blur'
@@ -4795,17 +4795,17 @@ beginState: s32'vir_7002P_Blur'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'vir_MI_PP_7002pRB', 1, 0
-      Unknown2587: 1601333622, s32'MI_PP_7002pRB'
+      Unknown2587: s32'vir_MI_PP_7002pRB', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1601333622, s32'MI_PP_7002pRB'
+  Unknown2587: s32'vir_MI_PP_7002pRB', 1
   Unknown2588: s32'vir_MI_PP_7002pRB', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'vir_MI_PP_7002pRB', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'vir_MI_PP_7002pRB', 1, 0
-  Unknown2587: 1601333622, s32'MI_PP_7002pRB'
+  Unknown2587: s32'vir_MI_PP_7002pRB', 0
 endState: 
 
 beginState: s32'vir_444MC'
@@ -4852,7 +4852,7 @@ beginState: s32'vir_444_Fumi'
     linkObjectPosition: 2
     setObjectWidth: 250
     setObjectHeight: 250
-    Unknown180: 250
+    setObjectDepth: 250
     setAngleX: 20800
     setAngleY: 337600
     setAngle: 13200

@@ -264,7 +264,7 @@ beginState: s32'SpecialShot'
         Unknown308: 3, 2, 45
         Unknown1131: 1
         comboLimitScaling: 0
-        Unknown72: s32'SpecialShot_B'
+        postSubroutineBegin: s32'SpecialShot_B'
         storeValue: Mem(423), Val(1)
       endIf: 
     endIf: 
@@ -485,7 +485,7 @@ beginState: s32'grn440_nokosiEffMatome'
     setLinkObjectDestroyOnStateChange: 2
     addPositionX: -200000
     ignoreSuperFreezeFromAlly: 1
-    Unknown289: 110
+    setMaxActionTime: 110
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 8
@@ -507,7 +507,7 @@ beginState: s32'grn_440Eff_SmokeMatome'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 200
+    setMaxActionTime: 200
     addPositionX: 75000
     addPositionY: -250000
   endUpon: 
@@ -776,7 +776,7 @@ beginState: s32'GRN_252_Slash'
     linkObjectSize: 2
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     setAngleX: 0
     setAngleY: 354000
     setAngle: 326800
@@ -1037,7 +1037,7 @@ beginState: s32'grn_309_speed'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     gotoLabelUpon: 23, s32'end'
-    Unknown289: 240
+    setMaxActionTime: 240
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 2147483647
@@ -1066,7 +1066,7 @@ beginState: s32'GRN_350_Eff'
   setDepth: -165659
   setObjectWidth: 1750
   setObjectHeight: 1100
-  Unknown180: 1100
+  setObjectDepth: 1100
   setAngleX: 26400
   setAngleY: 20400
   setAngle: 351600
@@ -1212,7 +1212,7 @@ beginState: s32'401Eff_atkmesh'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     Unknown409: 0, 4
-    Unknown289: 200
+    setMaxActionTime: 200
     if: Mem(405)
       Unknown409: 100, 4
     endIf: 
@@ -1259,7 +1259,7 @@ beginState: s32'401Eff_atkmesh_D'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     Unknown409: 0, 4
-    Unknown289: 200
+    setMaxActionTime: 200
     if: Mem(405)
       Unknown409: 100, 4
     endIf: 
@@ -1309,7 +1309,7 @@ beginState: s32'grn400_GroundRay'
     upon: (BEFORE_EXIT)
       createParticle: s32'grn_400_GroundRay_End', (PLAYER_LAND)
     endUpon: 
-    Unknown289: 110
+    setMaxActionTime: 110
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 6
@@ -1327,7 +1327,7 @@ beginState: s32'grn400_GroundRay_D'
     upon: (BEFORE_EXIT)
       createParticle: s32'grn_400_GroundRay_End', (PLAYER_LAND)
     endUpon: 
-    Unknown289: 110
+    setMaxActionTime: 110
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 6
@@ -1394,7 +1394,7 @@ beginState: s32'402Eff_atk4'
     linkObjectSize: 2
     flipDirection: 
     linkParticle: s32'grn_402_slash02'
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 4
@@ -1443,7 +1443,7 @@ beginState: s32'GRN402_large_Eff'
     gotoLabelUpon: 28, s32'loop6'
     gotoLabelUpon: 29, s32'loop7'
     gotoLabelUpon: 30, s32'end'
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 40
   beginLabel: s32'loop1'
@@ -1504,7 +1504,7 @@ endState:
 beginState: s32'402Eff_dash_weak'
   upon: (IMMEDIATE)
     linkParticle: s32'bg_GroundBurst'
-    Unknown157: 300
+    addObjectHeight: 300
     addPositionX: 100000
   endUpon: 
   sprite: s32'null', 50
@@ -1619,7 +1619,7 @@ beginState: s32'grn405_large_Eff'
     gotoLabelUpon: 29, s32'loop7'
     gotoLabelUpon: 30, s32'loop8'
     gotoLabelUpon: 31, s32'end'
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 40
   linkParticle: s32'grn_405_slash00'
@@ -1673,7 +1673,7 @@ beginState: s32'grn406_Eff'
     linkObjectSize: 2
     gotoLabelUpon: 23, s32'loop1'
     gotoLabelUpon: 24, s32'end'
-    Unknown289: 100
+    setMaxActionTime: 100
     flipDirection: 
   endUpon: 
   sprite: s32'null', 40
@@ -1699,7 +1699,7 @@ beginState: s32'430Eff_slash_Start'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
     linkObjectSize: 2
-    Unknown289: 1000
+    setMaxActionTime: 1000
     ignoreSuperFreezeFromAlly: 1
   endUpon: 
   sprite: s32'null', 3
@@ -1765,7 +1765,7 @@ beginState: s32'430Eff_Smoke'
     linkObjectPosition: 2
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 1000
+    setMaxActionTime: 1000
     addPositionX: 75000
   endUpon: 
   beginLabel: s32'Loop'
@@ -1832,8 +1832,8 @@ beginState: s32'CS430Eff'
   sprite: s32'null', 58
   createObject: s32'CS430_slash', (PLAYER)
   sprite: s32'null', 100
-  Unknown377: 0xEB000000FF000000FA000000FF000000FF000000FF00000014000000
-  Unknown378: 0x80000000870000008300000080000000800000008000000014000000
+  overrideMulColor: 235, 255, 250, 255, 0xFF000000FF00000014000000
+  overrideLightColor: 128, 135, 131, 128, 0x800000008000000014000000
   Unknown379: 0x5E000000660000006300000080000000800000008000000014000000
 endState: 
 
@@ -1899,8 +1899,8 @@ beginState: s32'CS440Eff1'
   sprite: s32'null', 15
   createObject: s32'CS440_pbhm2', (PLAYER)
   sprite: s32'null', 35
-  Unknown377: 0xEB000000FF000000FA000000E6000000E1000000F00000000C000000
-  Unknown378: 0x8000000087000000830000009600000091000000AA0000000C000000
+  overrideMulColor: 235, 255, 250, 230, 0xE1000000F00000000C000000
+  overrideLightColor: 128, 135, 131, 150, 0x91000000AA0000000C000000
   Unknown379: 0x5E00000066000000630000004C000000420000005B0000000C000000
   sprite: s32'null', 20
   fadeOutStart: 300, 15
@@ -1909,12 +1909,12 @@ beginState: s32'CS440Eff1'
   sprite: s32'null', 25
   sprite: s32'null', 30
   createObject: s32'CS440_grn1b', (PLAYER)
-  Unknown377: 0xE6000000E1000000F0000000DC000000F0000000FF00000028000000
-  Unknown378: 0x9600000091000000AA0000007500000082000000B400000028000000
+  overrideMulColor: 230, 225, 240, 220, 0xF0000000FF00000028000000
+  overrideLightColor: 150, 145, 170, 117, 0x82000000B400000028000000
   Unknown379: 0x4C000000420000005B000000580000005C0000007200000028000000
   sprite: s32'null', 200
-  Unknown377: 0xDC000000F0000000FF000000FF000000FF000000FF00000014000000
-  Unknown378: 0x7500000082000000B400000080000000800000008000000014000000
+  overrideMulColor: 220, 240, 255, 255, 0xFF000000FF00000014000000
+  overrideLightColor: 117, 130, 180, 128, 0x800000008000000014000000
   Unknown379: 0x580000005C0000005B00000072000000800000008000000014000000
 endState: 
 
@@ -2005,17 +2005,17 @@ beginState: s32'CS440_RadialBlur'
     ignoreSuperFreezeFromAlly: 1
     upon: (BEFORE_EXIT)
       Unknown2590: s32'grn_PP_RadialBlur', 1, 0
-      Unknown2587: 1601073767, s32'PP_RadialBlur'
+      Unknown2587: s32'grn_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1601073767, s32'PP_RadialBlur'
+  Unknown2587: s32'grn_PP_RadialBlur', 1
   Unknown2588: s32'grn_PP_RadialBlur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'grn_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'grn_PP_RadialBlur', 1, 0
-  Unknown2587: 1601073767, s32'PP_RadialBlur'
+  Unknown2587: s32'grn_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'CS440_pbhm1'
@@ -2088,8 +2088,8 @@ beginState: s32'CS440Eff2'
   upon: (FRAME_STEP)
     ifOnFrame: Val(23)
       fadeOutStart: 0, 30
-      Unknown377: 0xDC000000F0000000FF000000F5000000ED000000FA0000000A000000
-      Unknown378: 0x7500000082000000B40000009A0000008C0000009A0000000A000000
+      overrideMulColor: 220, 240, 255, 245, 0xED000000FA0000000A000000
+      overrideLightColor: 117, 130, 180, 154, 0x8C0000009A0000000A000000
       Unknown379: 0x580000005C0000005B00000065000000600000006D0000000A000000
     endIf: 
     ifOnFrame: Val(33)
@@ -2099,8 +2099,8 @@ beginState: s32'CS440Eff2'
       createObject: s32'CS440_pbhm3', (PLAYER)
     endIf: 
     ifOnFrame: Val(130)
-      Unknown377: 0xF5000000ED000000FA000000DC000000F0000000FF0000000A000000
-      Unknown378: 0x9A0000008C0000009A0000008100000090000000A80000000A000000
+      overrideMulColor: 245, 237, 250, 220, 0xF0000000FF0000000A000000
+      overrideLightColor: 154, 140, 154, 129, 0x90000000A80000000A000000
       Unknown379: 0x65000000600000006D0000006300000068000000830000000A000000
     endIf: 
     ifOnFrame: Val(171)
@@ -2118,8 +2118,8 @@ beginState: s32'CS440Eff2'
     ifOnFrame: Val(367)
       deactivateObjectByName: s32'CS440_beam'
       createObject: s32'CS440_beamnear', (PLAYER)
-      Unknown377: 0xC8000000DC000000FF000000FA000000F0000000FF00000014000000
-      Unknown378: 0x750000007A00000096000000A800000090000000BE00000014000000
+      overrideMulColor: 200, 220, 255, 250, 0xF0000000FF00000014000000
+      overrideLightColor: 117, 122, 150, 168, 0x90000000BE00000014000000
       Unknown379: 0x580000007700000083000000680000005A0000008300000014000000
     endIf: 
     ifOnFrame: Val(395)
@@ -2127,8 +2127,8 @@ beginState: s32'CS440Eff2'
       deactivateObjectByName: s32'CS440_beamnear'
     endIf: 
     ifOnFrame: Val(396)
-      Unknown377: 0xFA000000F0000000FF000000FF000000FF000000FF0000000A000000
-      Unknown378: 0xA800000090000000BE0000008000000080000000800000000A000000
+      overrideMulColor: 250, 240, 255, 255, 0xFF000000FF0000000A000000
+      overrideLightColor: 168, 144, 190, 128, 0x80000000800000000A000000
       Unknown379: 0x680000005A000000830000008000000080000000800000000A000000
     endIf: 
   endUpon: 
@@ -2426,7 +2426,7 @@ beginState: s32'CS440_beam'
   setDepth: 1892646
   setObjectWidth: 2000
   setObjectHeight: 3500
-  Unknown180: 2000
+  setObjectDepth: 2000
   setAngleX: 122400
   setAngleY: 7600
   setAngle: 6000
@@ -2455,7 +2455,7 @@ beginState: s32'CS440_beamexplosion'
   setPositionY: 15393
   setDepth: -368516
   sprite: s32'null', 300
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
 endState: 
 
 beginState: s32'CS440_beamexplosionEnd'
@@ -2552,121 +2552,121 @@ beginState: s32'grn_431_ScrAnim'
   linkParticle: s32'grn_431_ScrAnim01'
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 246334
-  addPositionY: 297856
-  Unknown1727: 6475
-  setAngle: 36800
+    addPositionX: 246334
+    addPositionY: 297856
+    Unknown1727: 6475
+    setAngle: 36800
   endRunOnObject: 
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 2400
-  setAngleY: 296800
-  setAngle: 291600
-  addPositionX: 111119
-  addPositionY: 163920
-  Unknown1727: 280092
+    setAngleX: 2400
+    setAngleY: 296800
+    setAngle: 291600
+    addPositionX: 111119
+    addPositionY: 163920
+    Unknown1727: 280092
   endRunOnObject: 
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 238065
-  addPositionY: 161709
-  Unknown1727: 101291
-  setAngleX: 344800
-  setAngleY: 346800
-  setAngle: 296400
+    addPositionX: 238065
+    addPositionY: 161709
+    Unknown1727: 101291
+    setAngleX: 344800
+    setAngleY: 346800
+    setAngle: 296400
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 180218
-  addPositionY: 267459
-  Unknown1727: 111647
-  setObjectSize: 500
-  setAngleY: 320400
-  setAngle: 6800
+    addPositionX: 180218
+    addPositionY: 267459
+    Unknown1727: 111647
+    setObjectSize: 500
+    setAngleY: 320400
+    setAngle: 6800
   endRunOnObject: 
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 142416
-  addPositionY: 251875
-  Unknown1727: 212519
-  setAngleY: 314400
-  setAngle: 299200
-  setObjectSize: 250
+    addPositionX: 142416
+    addPositionY: 251875
+    Unknown1727: 212519
+    setAngleY: 314400
+    setAngle: 299200
+    setObjectSize: 250
   endRunOnObject: 
   sprite: s32'null', 4
   deactivateObjectByName: s32'grn_431_Kira'
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 159845
-  addPositionY: 258443
-  Unknown1727: 66854
-  setAngleY: 290800
-  setAngle: 358400
-  setObjectSize: 500
+    addPositionX: 159845
+    addPositionY: 258443
+    Unknown1727: 66854
+    setAngleY: 290800
+    setAngle: 358400
+    setObjectSize: 500
   endRunOnObject: 
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 127280
-  addPositionY: 291484
-  Unknown1727: 102831
-  setAngleY: 284400
-  setAngle: 5600
-  setObjectSize: 500
+    addPositionX: 127280
+    addPositionY: 291484
+    Unknown1727: 102831
+    setAngleY: 284400
+    setAngle: 5600
+    setObjectSize: 500
   endRunOnObject: 
   sprite: s32'null', 4
   sprite: s32'null', 4
   linkParticle: s32'grn_431_ScrAnim02'
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 110231
-  addPositionY: 233464
-  Unknown1727: 129474
-  setAngleX: 0
-  setAngleY: 290800
-  setAngle: 296800
-  setObjectSize: 500
+    addPositionX: 110231
+    addPositionY: 233464
+    Unknown1727: 129474
+    setAngleX: 0
+    setAngleY: 290800
+    setAngle: 296800
+    setObjectSize: 500
   endRunOnObject: 
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 150969
-  addPositionY: 293995
-  Unknown1727: 73024
-  setAngleX: 0
-  setAngleY: 284400
-  setAngle: 310000
-  setObjectSize: 500
+    addPositionX: 150969
+    addPositionY: 293995
+    Unknown1727: 73024
+    setAngleX: 0
+    setAngleY: 284400
+    setAngle: 310000
+    setObjectSize: 500
   endRunOnObject: 
   sprite: s32'null', 4
   sprite: s32'null', 4
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 174681
-  addPositionY: 261588
-  Unknown1727: 34741
-  setAngleY: 313600
-  setAngle: 296800
-  setObjectSize: 500
+    addPositionX: 174681
+    addPositionY: 261588
+    Unknown1727: 34741
+    setAngleY: 313600
+    setAngle: 296800
+    setObjectSize: 500
   endRunOnObject: 
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 36821
-  addPositionY: 266037
-  Unknown1727: 77794
-  setAngleY: 294400
-  setAngle: 310800
-  setObjectSize: 500
+    addPositionX: 36821
+    addPositionY: 266037
+    Unknown1727: 77794
+    setAngleY: 294400
+    setAngle: 310800
+    setObjectSize: 500
   endRunOnObject: 
   sprite: s32'null', 4
   deactivateObjectByName: s32'grn_431_Kira'
   createObject: s32'grn_431_Kira', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 174882
-  addPositionY: 258844
-  Unknown1727: 105941
-  setObjectSize: 250
-  setAngleY: 288400
-  setAngle: 308000
+    addPositionX: 174882
+    addPositionY: 258844
+    Unknown1727: 105941
+    setObjectSize: 250
+    setAngleY: 288400
+    setAngle: 308000
   endRunOnObject: 
   sprite: s32'null', 4
   linkParticle: s32'grn_431_ScrAnim03'
@@ -2766,24 +2766,24 @@ beginState: s32'grn_431_HandPower'
   setDepth: 111155
   createObject: s32'grn_431_SyuyakuTrail', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 16803
-  addPositionY: -29405
-  Unknown1727: 83820
-  setAngleX: 158400
-  setAngleY: 278800
-  setAngle: 226800
-  setObjectSize: 500
+    addPositionX: 16803
+    addPositionY: -29405
+    Unknown1727: 83820
+    setAngleX: 158400
+    setAngleY: 278800
+    setAngle: 226800
+    setObjectSize: 500
   endRunOnObject: 
   sprite: s32'null', 2
   createObject: s32'grn_431_SyuyakuTrail', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 194467
-  addPositionY: -10957
-  Unknown1727: -207139
-  setAngleX: 232400
-  setAngleY: 112000
-  setAngle: 103600
-  setObjectSize: 350
+    addPositionX: 194467
+    addPositionY: -10957
+    Unknown1727: -207139
+    setAngleX: 232400
+    setAngleY: 112000
+    setAngle: 103600
+    setObjectSize: 350
   endRunOnObject: 
   sprite: s32'null', 2
   setPositionX: -198719
@@ -2791,24 +2791,24 @@ beginState: s32'grn_431_HandPower'
   setDepth: 107765
   createObject: s32'grn_431_SyuyakuTrail', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 191686
-  addPositionY: -11342
-  Unknown1727: -204686
-  setAngleX: 250800
-  setAngleY: 19200
-  setAngle: 354400
-  setObjectSize: 350
+    addPositionX: 191686
+    addPositionY: -11342
+    Unknown1727: -204686
+    setAngleX: 250800
+    setAngleY: 19200
+    setAngle: 354400
+    setObjectSize: 350
   endRunOnObject: 
   sprite: s32'null', 2
   createObject: s32'grn_431_SyuyakuTrail', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 4105
-  addPositionY: 1813
-  Unknown1727: -1971
-  setAngleX: 201200
-  setAngleY: 351200
-  setAngle: 173200
-  setObjectSize: 300
+    addPositionX: 4105
+    addPositionY: 1813
+    Unknown1727: -1971
+    setAngleX: 201200
+    setAngleY: 351200
+    setAngle: 173200
+    setObjectSize: 300
   endRunOnObject: 
   sprite: s32'null', 2
   setPositionX: -215253
@@ -2816,13 +2816,13 @@ beginState: s32'grn_431_HandPower'
   setDepth: 105789
   createObject: s32'grn_431_SyuyakuTrail', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -2957
-  addPositionY: 5791
-  Unknown1727: 513
-  setAngleX: 136800
-  setAngleY: 328800
-  setAngle: 230800
-  setObjectSize: 401
+    addPositionX: -2957
+    addPositionY: 5791
+    Unknown1727: 513
+    setAngleX: 136800
+    setAngleY: 328800
+    setAngle: 230800
+    setObjectSize: 401
   endRunOnObject: 
   sprite: s32'null', 2
   sprite: s32'null', 4
@@ -2831,13 +2831,13 @@ beginState: s32'grn_431_HandPower'
   setDepth: 98736
   createObject: s32'grn_431_SyuyakuTrail', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 190164
-  addPositionY: -7579
-  Unknown1727: -222426
-  setAngleX: 77200
-  setAngleY: 223200
-  setAngle: 128800
-  setObjectSize: 402
+    addPositionX: 190164
+    addPositionY: -7579
+    Unknown1727: -222426
+    setAngleX: 77200
+    setAngleY: 223200
+    setAngle: 128800
+    setObjectSize: 402
   endRunOnObject: 
   sprite: s32'null', 4
   setPositionX: -275457

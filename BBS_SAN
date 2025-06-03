@@ -184,17 +184,85 @@ beginSubroutine: s32'RoundInit'
     cpuEstimateTagXFarPunish: 
     cpuEstimateTagNoCombo: 
   endMove: 
+  addMove: s32'NmlAtk5D_DeriveFunc'
+    moveType: (NORMAL)
+    moveStance: (STANDING)
+    moveInput: (INPUT_PRESS_U)
+    moveInput: (INPUT_DISSALOW_UP)
+    maxChainIntoSelf: 1
+    Unknown1419: s32'NmlAtk5D_DeriveFunc'
+  endMove: 
+  addMove: s32'NmlAtk5D_Derive_A'
+    moveAlias: s32'NmlAtk5D'
+    moveType: (NORMAL)
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: (INPUT_PRESS_L)
+    Unknown1431: 4
+    isFollowupMove: 1
+    maxChainIntoSelf: 1
+  endMove: 
+  addMove: s32'NmlAtk5D_Derive_B'
+    moveAlias: s32'NmlAtk5D'
+    moveType: (NORMAL)
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: (INPUT_PRESS_M)
+    Unknown1431: 3
+    isFollowupMove: 1
+    maxChainIntoSelf: 1
+  endMove: 
+  addMove: s32'NmlAtk5D_Derive_C'
+    moveAlias: s32'NmlAtk5D'
+    moveType: (NORMAL)
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: (INPUT_PRESS_H)
+    Unknown1431: 2
+    isFollowupMove: 1
+    maxChainIntoSelf: 1
+  endMove: 
   addMove: s32'NmlAtk5D_Add'
     moveAlias: s32'NmlAtk5D'
     moveType: (NORMAL)
     moveStance: (STANDING)
     moveInput: (INPUT_DISSALOW_UP)
     moveInput: (INPUT_PRESS_U)
-    Unknown1431: 1
+    Unknown1431: 10
     isFollowupMove: 1
     cpuEstimateAttackBox: 0, 0, 0, 0
     cpuEstimatePoint: 300
     cpuEstimateTagCombo: 
+  endMove: 
+  addMove: s32'NmlAtk5D_Add_Derive_A'
+    moveAlias: s32'NmlAtk5D'
+    moveType: (NORMAL)
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: (INPUT_PRESS_L)
+    Unknown1431: 14
+    isFollowupMove: 1
+    maxChainIntoSelf: 1
+  endMove: 
+  addMove: s32'NmlAtk5D_Add_Derive_B'
+    moveAlias: s32'NmlAtk5D'
+    moveType: (NORMAL)
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: (INPUT_PRESS_M)
+    Unknown1431: 13
+    isFollowupMove: 1
+    maxChainIntoSelf: 1
+  endMove: 
+  addMove: s32'NmlAtk5D_Add_Derive_C'
+    moveAlias: s32'NmlAtk5D'
+    moveType: (NORMAL)
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: (INPUT_PRESS_H)
+    Unknown1431: 12
+    isFollowupMove: 1
+    maxChainIntoSelf: 1
   endMove: 
   addMove: s32'NmlAtk2D'
     moveType: (NORMAL)
@@ -995,8 +1063,410 @@ beginSubroutine: s32'RoundInit'
     moveRecipeEMove: s32'NmlAtk5A3rd'
     moveRecipeEMove: s32'SpecialShot_B_Easy'
   endMove: 
+  addMove: s32'Punish_02_01'
+    moveRecipeStopTypeEx: 2, 0, 30
+    Unknown1507: 1
+    cpuEstimatePoint: 1
+    moveRecipeEMove: s32'SpecialKamae_B_Easy'
+    moveRecipeEMove: s32'SpecialKamae_AddC'
+  endMove: 
+  addMove: s32'NmlAtk5ANear_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk5ANear'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'NmlAtk5AFar_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk5AFar'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'NmlAtk2A_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk2A'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'NmlAtk5BNear_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk5BNear'
+    isFollowupMove: 1
+    moveInput: 160
+    maxChainIntoSelf: 1
+  endMove: 
+  addMove: s32'NmlAtk5BFar_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk5BFar'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'NmlAtk2B_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk2B'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'NmlAtk5CNear_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk5CNear'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'NmlAtk5CFar_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk5CFar'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'NmlAtk2C_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk2C'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'NmlAtk5D_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk5D'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'NmlAtk2D_SA'
+    moveType: (NORMAL)
+    moveAlias: s32'NmlAtk2D'
+    isFollowupMove: 1
+    moveInput: 160
+  endMove: 
+  addMove: s32'SpecialShot_A_SA'
+    moveAlias: s32'SpecialShot_A'
+    moveType: (SPECIAL)
+    moveSubType: 2
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+    forceDisableFlag: 1
+    Unknown1431: 1919
+    Unknown1514: 0
+    cpuEstimateAttackBox: -1109, -307, 759, 307
+    cpuEstimatePoint: 75
+    cpuEstimateTagGuard: 
+    cpuEstimateTagCombo: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
+  endMove: 
+  addMove: s32'SpecialShot_B_SA'
+    moveType: (SPECIAL)
+    moveAlias: s32'SpecialShot_B'
+    moveSubType: 3
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+    forceDisableFlag: 1
+    Unknown1431: 1919
+    cpuEstimateAttackBox: -1109, -307, 759, 307
+    cpuEstimatePoint: 75
+    cpuEstimateTagGuard: 
+    cpuEstimateTagCombo: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
+  endMove: 
+  addMove: s32'SpecialShot_C_SA'
+    moveType: (SPECIAL)
+    moveAlias: s32'SpecialShot_C'
+    moveSubType: 4
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+    forceDisableFlag: 1
+    Unknown1431: 1919
+    cpuEstimateAttackBox: -1109, -307, 759, 307
+    cpuEstimatePoint: 75
+    cpuEstimateTagGuard: 
+    cpuEstimateTagCombo: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagGamenhashi: 
+  endMove: 
+  addMove: s32'SpecialShot_D_SA'
+    moveType: (SPECIAL)
+    moveAlias: s32'SpecialShot_D'
+    moveSubType: 5
+    moveStance: (STANDING)
+    moveInput: 160
+    forceDisableFlag: 1
+    addMoveFlag: (REQUIRES_50_METER)
+    Unknown1431: 919
+    Unknown1514: 0
+    cpuEstimateAttackBox: -1109, -307, 759, 307
+    cpuEstimatePoint: 75
+    cpuEstimateTagCombo: 
+    cpuUsesResource: 
+    cpuBigDamage: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
+  endMove: 
+  addMove: s32'AntiAir_A_SA'
+    moveAlias: s32'AntiAir_A'
+    moveType: (SPECIAL)
+    moveSubType: 2
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
+    Unknown1431: 919
+    Unknown1514: 1
+    cpuEstimateAttackBox: -324, -307, 324, 307
+    cpuEstimatePoint: 50
+    cpuIsTaiku: 
+    cpuEstimateTagSukidarake: 
+  endMove: 
+  addMove: s32'AntiAir_B_SA'
+    moveAlias: s32'AntiAir_B'
+    moveType: (SPECIAL)
+    moveSubType: 3
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
+    Unknown1431: 919
+    cpuEstimateAttackBox: -324, -307, 324, 307
+    cpuEstimatePoint: 50
+    cpuIsTaiku: 
+    cpuEstimateTagInvuln: 
+    cpuEstimateTagSukidarake: 
+  endMove: 
+  addMove: s32'AntiAir_C_SA'
+    moveAlias: s32'AntiAir_C'
+    moveType: (SPECIAL)
+    moveSubType: 4
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
+    Unknown1431: 919
+    cpuEstimateAttackBox: -324, -307, 324, 307
+    cpuEstimatePoint: 50
+    cpuIsTaiku: 
+    cpuEstimateTagInvuln: 
+    cpuEstimateTagSukidarake: 
+  endMove: 
+  addMove: s32'AntiAir_D_SA'
+    moveAlias: s32'AntiAir_D'
+    moveType: (SPECIAL)
+    moveSubType: 5
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (REQUIRES_50_METER)
+    Unknown1431: 919
+    Unknown1514: 1
+    cpuEstimateAttackBox: -324, -307, 324, 307
+    cpuEstimatePoint: 50
+    cpuIsTaiku: 
+    cpuEstimateTagInvuln: 
+    cpuEstimateTagSukidarake: 
+  endMove: 
+  addMove: s32'Assault_A_SA'
+    moveAlias: s32'Assault_A'
+    moveType: (SPECIAL)
+    moveSubType: 2
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
+    Unknown1431: 919
+    Unknown1514: 2
+    cpuEstimateAttackBox: -613, -307, 263, 307
+    cpuEstimatePoint: 100
+    cpuEstimateTagCombo: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagSukidarake: 
+  endMove: 
+  addMove: s32'Assault_B_SA'
+    moveAlias: s32'Assault_B'
+    moveType: (SPECIAL)
+    moveSubType: 3
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
+    Unknown1431: 919
+    cpuEstimateAttackBox: -701, -307, 351, 307
+    cpuEstimatePoint: 100
+    cpuEstimateTagCombo: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagSukidarake: 
+  endMove: 
+  addMove: s32'Assault_C_SA'
+    moveAlias: s32'Assault_C'
+    moveType: (SPECIAL)
+    moveSubType: 4
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
+    Unknown1431: 919
+    cpuEstimateAttackBox: -701, -307, 351, 307
+    cpuEstimatePoint: 100
+    cpuEstimateTagCombo: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagSukidarake: 
+    cpuEstimateTagGamenhashi: 
+  endMove: 
+  addMove: s32'Assault_D_SA'
+    moveType: (SPECIAL)
+    moveAlias: s32'Assault_D'
+    moveSubType: 5
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (REQUIRES_50_METER)
+    Unknown1431: 919
+    Unknown1514: 2
+    cpuEstimateAttackBox: -701, -307, 351, 307
+    cpuEstimatePoint: 100
+    cpuEstimateTagCombo: 
+    cpuUsesResource: 
+    cpuBigDamage: 
+    cpuEstimateTagKugurare: 
+  endMove: 
+  addMove: s32'SpecialKamae_A_SA'
+    moveAlias: s32'SpecialKamae_A'
+    moveType: (SPECIAL)
+    moveSubType: 2
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (DOWN_SKILL_CD_FALSE)
+    forceDisableFlag: 2
+    Unknown1431: 919
+    Unknown1514: 3
+    cpuEstimateAttackBox: 0, 0, 0, 0
+    cpuEstimatePoint: 100
+    cpuEstimateTagCombo: 
+    cpuEstimateTagXMidPunish: 
+    cpuEstimateTagXFarPunish: 
+    cpuEstimateTagTobare: 
+  endMove: 
+  addMove: s32'SpecialKamae_B_SA'
+    moveAlias: s32'SpecialKamae_B'
+    moveType: (SPECIAL)
+    moveSubType: 3
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (DOWN_SKILL_CD_FALSE)
+    forceDisableFlag: 2
+    Unknown1431: 919
+    cpuEstimateAttackBox: 0, 0, 0, 0
+    cpuEstimatePoint: 100
+    cpuEstimateTagCombo: 
+    cpuEstimateTagXMidPunish: 
+    cpuEstimateTagXFarPunish: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
+  endMove: 
+  addMove: s32'SpecialKamae_C_SA'
+    moveAlias: s32'SpecialKamae_C'
+    moveType: (SPECIAL)
+    moveSubType: 4
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (DOWN_SKILL_CD_FALSE)
+    forceDisableFlag: 2
+    Unknown1431: 919
+    cpuEstimateAttackBox: -438, -307, 438, 307
+    cpuEstimatePoint: 150
+    cpuEstimateTagCombo: 
+    cpuEstimateTagKugurare: 
+  endMove: 
+  addMove: s32'SpecialKamae_D_SA'
+    moveAlias: s32'SpecialKamae_D'
+    moveType: (SPECIAL)
+    moveSubType: 5
+    moveStance: (STANDING)
+    moveInput: 160
+    forceDisableFlag: 2
+    addMoveFlag: (REQUIRES_50_METER)
+    Unknown1431: 919
+    Unknown1514: 3
+    cpuEstimateAttackBox: -1109, -307, 759, 307
+    cpuEstimatePoint: 75
+    cpuEstimateTagCombo: 
+    cpuUsesResource: 
+    cpuBigDamage: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagProjectile: 
+  endMove: 
+  addMove: s32'san_Ougi_SA'
+    moveType: (SUPER)
+    moveAlias: s32'san_Ougi'
+    moveSubType: 4
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (REQUIRES_100_METER)
+    Unknown1431: 919
+    Unknown1447: 1, 0
+    cpuEstimateAttackBox: -351, -307, 351, 307
+    cpuEstimatePoint: 50
+    cpuEstimateTagCombo: 
+    cpuUsesResource: 
+    cpuBigDamage: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagInvuln: 
+    cpuEstimateTagSukidarake: 
+  endMove: 
+  addMove: s32'san_Kaihou_SA'
+    moveType: (SUPER)
+    Unknown1511: 1
+    moveAlias: s32'san_Kaihou'
+    moveSubType: 5
+    moveStance: (STANDING)
+    moveInput: 160
+    addMoveFlag: (REQUIRES_100_METER)
+    addMoveFlag: (HEALTH_LEFT_30_TRUE)
+    Unknown1431: 919
+    Unknown1447: 1, 0
+    cpuEstimateAttackBox: -1109, -307, 759, 307
+    cpuEstimatePoint: 50
+    cpuEstimateTagCombo: 
+    cpuUsesResource: 
+    cpuBigDamage: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagInvuln: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
+  endMove: 
+  registerMove: s32'NmlAtk5ANear_SA'
+  registerMove: s32'NmlAtk5AFar_SA'
+  registerMove: s32'NmlAtk2A_SA'
+  registerMove: s32'NmlAtk5BNear_SA'
+  registerMove: s32'NmlAtk5BFar_SA'
+  registerMove: s32'NmlAtk2B_SA'
+  registerMove: s32'NmlAtk5CNear_SA'
+  registerMove: s32'NmlAtk5CFar_SA'
+  registerMove: s32'NmlAtk2C_SA'
+  registerMove: s32'NmlAtk5D_SA'
+  registerMove: s32'NmlAtk2D_SA'
+  registerMove: s32'SpecialShot_A_SA'
+  registerMove: s32'SpecialShot_B_SA'
+  registerMove: s32'SpecialShot_C_SA'
+  registerMove: s32'SpecialShot_D_SA'
+  registerMove: s32'AntiAir_A_SA'
+  registerMove: s32'AntiAir_B_SA'
+  registerMove: s32'AntiAir_C_SA'
+  registerMove: s32'AntiAir_D_SA'
+  registerMove: s32'Assault_A_SA'
+  registerMove: s32'Assault_B_SA'
+  registerMove: s32'Assault_C_SA'
+  registerMove: s32'Assault_D_SA'
+  registerMove: s32'SpecialKamae_A_SA'
+  registerMove: s32'SpecialKamae_B_SA'
+  registerMove: s32'SpecialKamae_C_SA'
+  registerMove: s32'SpecialKamae_D_SA'
+  registerMove: s32'san_Ougi_SA'
+  registerMove: s32'san_Kaihou_SA'
   callSubroutine: s32'cmn_SkillRegist'
   callSubroutine: s32'cmn_SkillRegist_Normal_Land'
+  registerMove: s32'NmlAtk5D_Derive_A'
+  registerMove: s32'NmlAtk5D_Derive_B'
+  registerMove: s32'NmlAtk5D_Derive_C'
+  registerMove: s32'NmlAtk5D_DeriveFunc'
   callSubroutine: s32'cmn_SkillRegist_Normal_Air'
   registerMove: s32'AirDash'
   registerMove: s32'AirDash_InputJ'
@@ -1007,6 +1477,9 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'SpecialKamae_AddC'
   registerMove: s32'SpecialKamae_AddD'
   registerMove: s32'NmlAtk5D_Add'
+  registerMove: s32'NmlAtk5D_Add_Derive_A'
+  registerMove: s32'NmlAtk5D_Add_Derive_B'
+  registerMove: s32'NmlAtk5D_Add_Derive_C'
   registerMove: s32'Assault_Add'
   registerMove: s32'SpecialKamae_A'
   registerMove: s32'SpecialKamae_B'
@@ -1052,6 +1525,7 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'san_Ougi_Easy'
   registerMove: s32'san_Kaihou_Easy'
   registerMove: s32'san_Mission02_01'
+  registerMove: s32'Punish_02_01'
   setDamageSprite: 0, s32'san050_00'
   setDamageSprite: 1, s32'san050_01'
   setDamageSprite: 2, s32'san050_02'
@@ -1328,6 +1802,11 @@ beginSubroutine: s32'RoundInit'
   vsCharaMouthTable: s16'VS_SAN', s16'vSAN_APR_01_b', s32'c1r26c2r71c30r42c2r13c1r91c30r1c', s32'46r88c1r7c1r19c9r12c2r24c62r27c1', s32'r17c14', s32''
   vsCharaMouthTable: s16'VS_SAN', s16'vSAN_APR_01_c', s32'c48', s32'', s32'', s32''
   vsCharaMouthTable: s16'VS_SAN', s16'vSAN_WIN_00', s32'c1r15c11r7c2r14c13r28c2r34c13', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_RNT', s16'vSAN_APR_00_a', s32'c1r31c2r8c2r8c2r6c34r13c1r4c45r4', s32'5c3r36c4r48c7r34c69r113c12', s32'', s32''
+  vsCharaMouthTable: s16'VS_RNT', s16'vSAN_APR_01_a', s32'c2r12c1r1c1r3c28', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_RNT', s16'vSAN_APR_01_b', s32'c1r16c2r17c57r15c1r41c2r50c5r9c1', s32'r24c1r19c3r1c75r9c1r6c1r32c1r19c', s32'1r32c1r16c1r17c19', s32''
+  vsCharaMouthTable: s16'VS_RNT', s16'vSAN_APR_01_c', s32'c1r13c10', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_RNT', s16'vSAN_WIN_00', s32'c1r28c54r52c8r14c1r17c2r9c22', s32'', s32'', s32''
   linkPawn: s32''
   beginMeshSet: s32'high'
     addToMeshSet: s32'Body'
@@ -1615,6 +2094,73 @@ beginSubroutine: s32'Element_Init_Water'
 endSubroutine: 
 
 beginSubroutine: s32'OnFrameStep'
+  if: Mem(437)
+    checkCurrentStateName: (SELF), s32'NmlAtk2A'
+    if: Mem(Tmp)
+      checkLastStateName: s32'NmlAtk2A'
+      if: Mem(Tmp)
+        upon: 135
+          Unknown1631: s32'Assault_C_SA'
+        endUpon: 
+        upon: 136
+          Unknown1631: s32'Assault_A_SA'
+        endUpon: 
+      endIf: 
+    endIf: 
+    checkCurrentStateName: (SELF), s32'NmlAtk5A3rd'
+    if: Mem(Tmp)
+      upon: 135
+        Unknown1631: s32'SpecialShot_C_SA'
+        Unknown1631: s32'SpecialShot_D_SA'
+        Unknown1631: s32'Assault_C_SA'
+        Unknown1631: s32'Assault_D_SA'
+        Unknown1631: s32'san_Ougi_SA'
+        Unknown1631: s32'san_Kaihou_SA'
+      endUpon: 
+      upon: 136
+        Unknown1631: s32'Assault_A_SA'
+      endUpon: 
+    endIf: 
+    checkCurrentStateName: (SELF), s32'NmlAtk5AFar'
+    if: Mem(Tmp)
+      upon: 135
+        Unknown1631: s32'SpecialShot_D_SA'
+        Unknown1631: s32'Assault_C_SA'
+        Unknown1631: s32'Assault_D_SA'
+        Unknown1631: s32'san_Ougi_SA'
+        Unknown1631: s32'san_Kaihou_SA'
+      endUpon: 
+      upon: 136
+        Unknown1631: s32'Assault_A_SA'
+      endUpon: 
+    endIf: 
+    checkCurrentStateName: (SELF), s32'NmlAtk5BFar'
+    if: Mem(Tmp)
+      upon: 135
+        Unknown1631: s32'SpecialKamae_D_SA'
+        Unknown1631: s32'Assault_C_SA'
+        Unknown1631: s32'Assault_D_SA'
+        Unknown1631: s32'san_Ougi_SA'
+        Unknown1631: s32'san_Kaihou_SA'
+      endUpon: 
+      upon: 136
+        Unknown1631: s32'Assault_A_SA'
+      endUpon: 
+    endIf: 
+    checkCurrentStateName: (SELF), s32'NmlAtk5CFar'
+    if: Mem(Tmp)
+      upon: 135
+        Unknown1631: s32'SpecialKamae_D_SA'
+        Unknown1631: s32'Assault_C_SA'
+        Unknown1631: s32'Assault_D_SA'
+        Unknown1631: s32'san_Ougi_SA'
+        Unknown1631: s32'san_Kaihou_SA'
+      endUpon: 
+      upon: 136
+        Unknown1631: s32'Assault_A_SA'
+      endUpon: 
+    endIf: 
+  endIf: 
   callSubroutine: s32'cmnTest'
   if: Mem(PlayerVal0)
     if: Mem(ObjReg1)
@@ -1696,19 +2242,19 @@ endIf:
 
 if: Mem(386)
   ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(0)
-    Unknown2347: 1701869908, 0x5F44656661756C740000000000000000000000000000000000000000
+    Unknown2347: s32'Type_Default'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(1)
-    Unknown2347: 1701869908, 0x5F466972650000000000000000000000000000000000000000000000
+    Unknown2347: s32'Type_Fire'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(4)
-    Unknown2347: 1701869908, 0x5F576174657200000000000000000000000000000000000000000000
+    Unknown2347: s32'Type_Water'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(3)
-    Unknown2347: 1701869908, 0x5F456172746800000000000000000000000000000000000000000000
+    Unknown2347: s32'Type_Earth'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(2)
-    Unknown2347: 1701869908, 0x5F57696E640000000000000000000000000000000000000000000000
+    Unknown2347: s32'Type_Wind'
   endIf: 
 endIf: 
 
@@ -1718,6 +2264,7 @@ beginSubroutine: s32'OnDie'
 endSubroutine: 
 
 beginSubroutine: s32'OnActionBegin'
+  callSubroutine: s32'cmn_FN_OnActionBegin'
   checkSomething: 3, 3
   if: Mem(Tmp)
     Unknown1924: 0, 1
@@ -1806,6 +2353,10 @@ beginSubroutine: s32'OnDamage'
     callSubroutine: s32'AbilityCoolDown_4'
     callSubroutine: s32'AbilityCoolDown_2'
   endIf: 
+endSubroutine: 
+
+beginSubroutine: s32'OnLanding'
+  callSubroutine: s32'cmn_FN_OnLanding'
 endSubroutine: 
 
 beginSubroutine: s32'AbilityCoolDown_N_DAMAGE'
@@ -2006,8 +2557,8 @@ beginSubroutine: s32'VKY441csDamage'
 endSubroutine: 
 
 beginSubroutine: s32'StandBy_Photo'
-  Unknown96: 
-  Unknown100: 
+  pushPositionX: 
+  pushPositionY: 
   Unknown1728: 
   setPositionX: -259309
   setPositionY: -35383
@@ -2017,12 +2568,12 @@ beginSubroutine: s32'StandBy_Photo'
   setAngle: 0
   stackObjectEx: (SELF), 11, 22, 11
   runOnObject: (STACK7)
-  addPositionX: 228071
-  addPositionY: 373088
-  Unknown1727: -38258
-  setAngleX: 34000
-  setAngleY: 14000
-  setAngle: 2000
+    addPositionX: 228071
+    addPositionY: 373088
+    Unknown1727: -38258
+    setAngleX: 34000
+    setAngleY: 14000
+    setAngle: 2000
   endRunOnObject: 
 endSubroutine: 
 
@@ -2035,15 +2586,15 @@ beginSubroutine: s32'StandBy_Photo2'
   setAngle: 0
   stackObjectEx: (SELF), 11, 22, 11
   runOnObject: (STACK7)
-  setPositionX: 0
-  setPositionY: 0
-  setDepth: 0
-  addPositionX: 190475
-  addPositionY: 406497
-  Unknown1727: -91747
-  setAngleX: 28000
-  setAngleY: 346000
-  setAngle: 0
+    setPositionX: 0
+    setPositionY: 0
+    setDepth: 0
+    addPositionX: 190475
+    addPositionY: 406497
+    Unknown1727: -91747
+    setAngleX: 28000
+    setAngleY: 346000
+    setAngle: 0
   endRunOnObject: 
 endSubroutine: 
 
@@ -2584,7 +3135,7 @@ beginState: s32'entry_2p01'
     ifOnFrame: Val(545)
       Unknown2193: 1
       voiceLine: s16'vSAN_APR_01_b'
-      Unknown2238: 0x70726576000000000000000000000000000000000000000000000000000000001E000080
+      Unknown2238: s32'prev', -2147483618
       storeValue: Mem(ActReg0), Val(1)
     endIf: 
     if: Mem(ActReg0)
@@ -2607,7 +3158,7 @@ beginState: s32'entry_2p01'
           ifOnFrame: Val(36)
             Unknown2193: 0
             voiceLine: s16'vSAN_APR_01_c'
-            Unknown2238: 0x70726576000000000000000000000000000000000000000000000000000000001E000080
+            Unknown2238: s32'prev', -2147483618
           endIf: 
           ifOnFrame: Val(79)
             Unknown1793: 22, 32
@@ -2645,7 +3196,7 @@ beginState: s32'entry_1p03'
     ifOnFrame: Val(111)
       Unknown2193: 1
       voiceLine: s16'vSAN_APR_00_a'
-      Unknown2238: 0x70726576000000000000000000000000000000000000000000000000000000001E000080
+      Unknown2238: s32'prev', -2147483618
       storeValue: Mem(ActReg0), Val(1)
     endIf: 
     if: Mem(ActReg0)
@@ -2655,12 +3206,12 @@ beginState: s32'entry_1p03'
         upon: (FRAME_STEP)
           ifOnFrame: Val(1)
             playAnimation: s32'san700cs_1p_05', 0
-            Unknown2084: 0x73616E37303063735F31705F63616D30350000000000000000000000000000000000000000000000000000000100000000000000FFFFFFFF
+            Unknown2084: s32'san700cs_1p_cam05', 0, 0, 0, 1, 0, -1
             Unknown1793: 22, 32
             hideAllButSelf: 0
           endIf: 
           ifOnFrame: Val(24)
-            Unknown2584: 0xD007000000000000030000009CED0200010000000000000005000000
+            Unknown2584: 2000, 0, 3, 191900, 1, 0, 5
           endIf: 
           ifOnFrame: Val(25)
             characterSfx: s32'san_entry_1P_00'
@@ -2714,7 +3265,7 @@ beginState: s32'entry_1p03'
             Unknown2583: 4500, 0, 3, 208200, 1, 0
           endIf: 
           ifOnFrame: Val(212)
-            Unknown666: 
+            staticSoundAllClear: 
           endIf: 
           ifOnFrame: Val(227)
             gotoLabelRequests: s32'end'
@@ -2727,7 +3278,7 @@ beginState: s32'entry_1p03'
   exitState: 
   beginLabel: s32'end'
   sprite: s32'san000_00', 1
-  Unknown205: 0, 0
+  setStartupPos: 0, 0
   Unknown1703: 
   exitState: 
 endState: 
@@ -2749,7 +3300,7 @@ beginState: s32'entry_2p03'
   beginLabel: s32'end'
   sprite: s32'san000_00', 1
   faceLeft: 
-  Unknown205: 0, 0
+  setStartupPos: 0, 0
   Unknown1703: 
   exitState: 
 endState: 
@@ -2783,7 +3334,7 @@ beginState: s32'CmnActRoundWin'
   sprite: s32'san600_09', 4
   sprite: s32'san600_10', 12
   smartRandomVoiceLine: s16'vSAN_WIN_00', 100, s16'', 0, s16'', 0, s16'', 0
-  Unknown1697: 0x5F6D6F75746832000000000000000000
+  Unknown1697: s16'_mouth2'
   sprite: s32'san600_11', 5
   sprite: s32'san600_12', 5
   sprite: s32'san600_13', 5
@@ -2798,7 +3349,7 @@ beginState: s32'CmnActRoundWin'
   createObject: s32'san_RoundWin_Camera2', (PLAYER)
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   cmnSfx: s32'SE_BTL_SwingWeaponLognM'
   sprite: s32'san601_01', 4
@@ -2860,13 +3411,13 @@ beginState: s32'CmnActMatchWin'
     ifOnFrame: Val(217)
       Unknown2193: 0
       smartRandomVoiceLine: s16'vSAN_WINR_00_a', 100, s16'', 0, s16'', 0, s16'', 0
-      Unknown2238: 0x70726576000000000000000000000000000000000000000000000000000000001E000080
+      Unknown2238: s32'prev', -2147483618
     endIf: 
     if: Mem(ActReg1)
       ifOnFrame: Val(217)
         Unknown2193: 0
         smartRandomVoiceLine: s16'vSAN_WINR_00_a', 100, s16'', 0, s16'', 0, s16'', 0
-        Unknown2238: 0x70726576000000000000000000000000000000000000000000000000000000001E000080
+        Unknown2238: s32'prev', -2147483618
         storeValue: Mem(ActReg0), Val(1)
       endIf: 
       if: Mem(ActReg0)
@@ -2899,12 +3450,12 @@ beginState: s32'CmnActMatchWin'
         characterSfx: s32'san_win_02'
       endIf: 
       ifOnFrame: Val(670)
-        Unknown2584: 0x941100000000000003000000B0AD0100A08601001027000050000000
+        Unknown2584: 4500, 0, 3, 110000, 100000, 10000, 80
       endIf: 
       ifOnFrame: Val(613)
         Unknown2193: 0
         voiceLine: s16'vSAN_WINR_00_b'
-        Unknown2238: 0x70726576000000000000000000000000000000000000000000000000000000001E000080
+        Unknown2238: s32'prev', -2147483618
         storeValue: Mem(ActReg0), Val(1)
       endIf: 
       ifOnFrame: Val(765)
@@ -2935,7 +3486,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
     ifOnFrame: Val(0)
       setMotionBlurAmount: 0
       Unknown2521: 0
-      Unknown430: 600, 600, 600
+      setDiffusionThreshold: 600, 600, 600
       Unknown427: 0
       Unknown2858: 5000
       Unknown2859: 100
@@ -2949,7 +3500,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
     ifOnFrame: Val(22)
       Unknown2193: 0
       voiceLine: s16'vSAN_WINRK_00_a'
-      Unknown2238: 0x70726576000000000000000000000000000000000000000000000000000000001E000080
+      Unknown2238: s32'prev', -2147483618
     endIf: 
     ifOnFrame: Val(96)
       Unknown2583: 8000, 0, 3, 60500, 1, 0
@@ -2960,7 +3511,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
     ifOnFrame: Val(170)
       Unknown2193: 1
       voiceLine: s16'vSAN_WINRK_00_b'
-      Unknown2238: 0x70726576000000000000000000000000000000000000000000000000000000001E000080
+      Unknown2238: s32'prev', -2147483618
       storeValue: Mem(ActReg0), Val(1)
     endIf: 
     if: Mem(ActReg0)
@@ -3008,12 +3559,12 @@ endState:
 
 beginState: s32'CmnActResultWin'
   sprite: s32'keep', 2147483647
-  Unknown2089: 0x28A6FFFF288E03007042E4FF000000000000000000000000
+  Unknown2089: -23000, 233000, -1818000, 0, 0, 0
 endState: 
 
 beginState: s32'CmnActResultWinKaihouOugi'
   sprite: s32'keep', 2147483647
-  Unknown2089: 0x28A6FFFF288E03007042E4FF000000000000000000000000
+  Unknown2089: -23000, 233000, -1818000, 0, 0, 0
 endState: 
 
 beginState: s32'CmnActResultLose'
@@ -3154,40 +3705,40 @@ beginState: s32'GC_Attack'
   sprite: s32'san350_10', 3
   createObject: s32'san_350_SordDell', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -47957
-  setPositionY: 23661
-  setDepth: 58045
-  setAngleX: 44000
-  setAngleY: 13600
-  setAngle: 44400
+    setPositionX: -47957
+    setPositionY: 23661
+    setDepth: 58045
+    setAngleX: 44000
+    setAngleY: 13600
+    setAngle: 44400
   endRunOnObject: 
   createObject: s32'san_350_SordDell', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 61007
-  setPositionY: 31614
-  setDepth: 56407
-  setAngleX: 358000
-  setAngleY: 51200
-  setAngle: 293600
-  setObjectSize: 1000
+    setPositionX: 61007
+    setPositionY: 31614
+    setDepth: 56407
+    setAngleX: 358000
+    setAngleY: 51200
+    setAngle: 293600
+    setObjectSize: 1000
   endRunOnObject: 
   createObject: s32'san_350_SordDell', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -116955
-  setPositionY: 82916
-  setDepth: -157535
-  setAngleX: 334800
-  setAngleY: 0
-  setAngle: 31200
+    setPositionX: -116955
+    setPositionY: 82916
+    setDepth: -157535
+    setAngleX: 334800
+    setAngleY: 0
+    setAngle: 31200
   endRunOnObject: 
   createObject: s32'san_350_SordDell', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 32000
-  setPositionY: 92988
-  setDepth: -205179
-  setAngleX: 342400
-  setAngleY: 0
-  setAngle: 321200
+    setPositionX: 32000
+    setPositionY: 92988
+    setDepth: -205179
+    setAngleX: 342400
+    setAngleY: 0
+    setAngle: 321200
   endRunOnObject: 
   sprite: s32'san350_11', 3
   sprite: s32'san350_12', 3
@@ -3255,11 +3806,23 @@ beginState: s32'CancelDash'
   sprite: s32'san306_17', 2
 endState: 
 
+beginSubroutine: s32'NmlAtk5D_Chain'
+  checkSomething: 23, 1
+  if: Mem(Tmp)
+    addGatlingOption: s32'NmlAtk5D'
+  endIf: 
+  checkSomething: 23, 2
+  if: Mem(Tmp)
+    addGatlingOption: s32'NmlAtk5D_Add'
+  endIf: 
+  addGatlingOption: s32'NmlAtk5D_DeriveFunc'
+endSubroutine: 
+
 beginState: s32'NmlAtk5ANear'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnAtk5ANear_AtkInit'
     addGatlingOption: s32'NmlAtk5A2nd'
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
     addWhiffCancelOption: s32'NmlAtk5ANear'
     addWhiffCancelOption: s32'NmlAtk5AFar'
     addWhiffCancelOption: s32'NmlAtk2A'
@@ -3284,7 +3847,7 @@ beginState: s32'NmlAtk5A2nd'
     addGatlingOption: s32'NmlAtk5A3rd'
     addGatlingOption: s32'NmlAtk5A3rd_B'
     addGatlingOption: s32'NmlAtk5A3rd_C'
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
   endUpon: 
   sprite: s32'san202_00', 2
   sprite: s32'san202_01', 3
@@ -3313,7 +3876,7 @@ beginState: s32'NmlAtk5A3rd'
     callSubroutine: s32'cmnAtk5A3rd_AtkInit'
     hitEffectSlash: 1
     atkAngle: 345
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
   endUpon: 
   sprite: s32'san203_00', 2
   sprite: s32'san203_01', 3
@@ -3419,7 +3982,7 @@ beginState: s32'NmlAtk5AFar'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnAtk5AFar_AtkInit'
     guardSoundEffect: s32'SE_BTL_GuardBlowS'
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
   endUpon: 
   sprite: s32'san201_00', 2
   sprite: s32'san201_01', 3
@@ -3443,7 +4006,7 @@ beginState: s32'NmlAtk2A'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnAtk2A_AtkInit'
     guardSoundEffect: s32'SE_BTL_GuardBlowS'
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
     addWhiffCancelOption: s32'NmlAtk5ANear'
     addWhiffCancelOption: s32'NmlAtk5AFar'
     addWhiffCancelOption: s32'NmlAtk2A'
@@ -3473,7 +4036,7 @@ beginState: s32'NmlAtk5BNear'
     hitEffectSlash: 1
     atkAngle: 280
     addGatlingOption: s32'NmlAtk5A2nd'
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
   endUpon: 
   sprite: s32'san204_00', 3
   sprite: s32'san204_01', 2
@@ -3498,7 +4061,7 @@ beginState: s32'NmlAtk5BFar'
     callSubroutine: s32'cmnAtk5BFar_AtkInit'
     hitEffectSlash: 1
     atkAngle: 10
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
   endUpon: 
   sprite: s32'san205_00', 2
   sprite: s32'san205_01', 3
@@ -3528,7 +4091,7 @@ beginState: s32'NmlAtk2B'
     callSubroutine: s32'cmnAtk2B_AtkInit'
     hitEffectSlash: 1
     atkAngle: 350
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
   endUpon: 
   sprite: s32'san231_00', 2
   sprite: s32'san231_01', 2
@@ -3559,7 +4122,7 @@ beginState: s32'NmlAtk5CNear'
     hitEffectSlash: 1
     atkAngle: 250
     addGatlingOption: s32'NmlAtk5A2nd'
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
   endUpon: 
   sprite: s32'san206_00', 2
   createObjectWithArg: s32'ssw206', (PLAYER)
@@ -3593,7 +4156,7 @@ beginState: s32'NmlAtk5CFar'
     callSubroutine: s32'cmnAtk5CFar_AtkInit'
     hitEffectSlash: 1
     atkAngle: 5
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
   endUpon: 
   sprite: s32'san207_00', 3
   createObjectWithArg: s32'ssw207', (PLAYER)
@@ -3627,7 +4190,7 @@ beginState: s32'NmlAtk2C'
     callSubroutine: s32'cmnAtk2C_AtkInit'
     hitEffectSlash: 1
     atkAngle: 85
-    addGatlingOption: s32'NmlAtk5D'
+    callSubroutine: s32'NmlAtk5D_Chain'
   endUpon: 
   sprite: s32'san232_00', 3
   sprite: s32'san232_01', 3
@@ -3652,6 +4215,21 @@ beginState: s32'NmlAtk2C'
   sprite: s32'san232_13', 2
 endState: 
 
+beginSubroutine: s32'NmlAtk5D_DeriveFunc'
+  checkSomething: 23, 1
+  if: Mem(Tmp)
+    addGatlingOption: s32'NmlAtk5D_Derive_A'
+    addGatlingOption: s32'NmlAtk5D_Derive_B'
+    addGatlingOption: s32'NmlAtk5D_Derive_C'
+  endIf: 
+  checkSomething: 23, 2
+  if: Mem(Tmp)
+    addGatlingOption: s32'NmlAtk5D_Add_Derive_A'
+    addGatlingOption: s32'NmlAtk5D_Add_Derive_B'
+    addGatlingOption: s32'NmlAtk5D_Add_Derive_C'
+  endIf: 
+endSubroutine: 
+
 beginState: s32'NmlAtk5D'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnNormalAtkLv3_Land_AtkInit'
@@ -3661,8 +4239,70 @@ beginState: s32'NmlAtk5D'
     enemyHitstopAddition: 6, 0, 0
     enableSpecialCancel: 0
     attackIgnoreCaution: 1
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(402), Val(10)
+      storeValue: Mem(ActReg1), Val(1)
+    endIf: 
+    ifNot: Mem(IsNamaDashiSkill)
+      modifyVarAfterOperation: (MOD), Mem(402), Val(10), Mem(ActReg2)
+      if: Mem(ActReg2)
+        ifOperation: (IS_EQUAL), Mem(ActReg2), Val(4)
+          storeValue: Mem(ActReg0), Val(4)
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(ActReg2), Val(3)
+          storeValue: Mem(ActReg0), Val(3)
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(ActReg2), Val(2)
+          storeValue: Mem(ActReg0), Val(2)
+        endIf: 
+      endIf: 
+      else: 
+        upon: (FRAME_STEP)
+          if: Mem(IsEnemysCutScene)
+            Unknown2197: 2, 45, 0, 1, 0, 4
+          endIf: 
+          else: 
+            checkInput: (INPUT_PRESS_L)
+            if: Mem(Tmp)
+              storeValue: Mem(ActReg0), Val(4)
+            endIf: 
+            checkInput: (INPUT_HOLD_L)
+            if: Mem(Tmp)
+              storeValue: Mem(ActReg0), Val(4)
+            endIf: 
+            checkInput: 3
+            if: Mem(Tmp)
+              storeValue: Mem(ActReg0), Val(4)
+            endIf: 
+            checkInput: (INPUT_PRESS_M)
+            if: Mem(Tmp)
+              storeValue: Mem(ActReg0), Val(3)
+            endIf: 
+            checkInput: (INPUT_HOLD_M)
+            if: Mem(Tmp)
+              storeValue: Mem(ActReg0), Val(3)
+            endIf: 
+            checkInput: 9
+            if: Mem(Tmp)
+              storeValue: Mem(ActReg0), Val(3)
+            endIf: 
+            checkInput: (INPUT_PRESS_H)
+            if: Mem(Tmp)
+              storeValue: Mem(ActReg0), Val(2)
+            endIf: 
+            checkInput: (INPUT_HOLD_H)
+            if: Mem(Tmp)
+              storeValue: Mem(ActReg0), Val(2)
+            endIf: 
+            checkInput: 15
+            if: Mem(Tmp)
+              storeValue: Mem(ActReg0), Val(2)
+            endIf: 
+          endElse: 
+        endUpon: 
+      endElse: 
+    endIf: 
   endUpon: 
-  gotoLabelIf: s32'Hasei', Mem(402)
+  gotoLabelIf: s32'Hasei', Mem(ActReg1)
   sprite: s32'san208_00', 2
   sprite: s32'san208_01', 2
   sprite: s32'san208_02', 3
@@ -3670,7 +4310,7 @@ beginState: s32'NmlAtk5D'
   sprite: s32'san208_03', 3
   beginLabel: s32'Hasei'
   sprite: s32'san208_04', 2
-  if: Mem(402)
+  if: Mem(ActReg1)
     storeValue: Mem(Dir), Mem(ObjReg2)
     smartRandomVoiceLine: s16'vSAN_ATKAby_00', 100, s16'', 0, s16'', 0, s16'', 0
     createObject: s32'san_403_AssaltEffEnd', (PLAYER)
@@ -3688,37 +4328,51 @@ beginState: s32'NmlAtk5D'
       endIf: 
     endIf: 
   endUpon: 
-  upon: (FRAME_STEP)
-    if: Mem(IsEnemysCutScene)
-      Unknown2197: 0x020000002D00000000000000010000000000000004000000
-    endIf: 
-    else: 
-      checkInput: (INPUT_PRESS_L)
-      if: Mem(Tmp)
-        storeValue: Mem(ActReg0), Val(4)
+  if: Mem(IsNamaDashiSkill)
+    upon: (FRAME_STEP)
+      if: Mem(IsEnemysCutScene)
+        Unknown2197: 2, 45, 0, 1, 0, 4
       endIf: 
-      checkInput: (INPUT_HOLD_L)
-      if: Mem(Tmp)
-        storeValue: Mem(ActReg0), Val(4)
-      endIf: 
-      checkInput: (INPUT_PRESS_M)
-      if: Mem(Tmp)
-        storeValue: Mem(ActReg0), Val(3)
-      endIf: 
-      checkInput: (INPUT_HOLD_M)
-      if: Mem(Tmp)
-        storeValue: Mem(ActReg0), Val(3)
-      endIf: 
-      checkInput: (INPUT_PRESS_H)
-      if: Mem(Tmp)
-        storeValue: Mem(ActReg0), Val(2)
-      endIf: 
-      checkInput: (INPUT_HOLD_H)
-      if: Mem(Tmp)
-        storeValue: Mem(ActReg0), Val(2)
-      endIf: 
-    endElse: 
-  endUpon: 
+      else: 
+        checkInput: (INPUT_PRESS_L)
+        if: Mem(Tmp)
+          storeValue: Mem(ActReg0), Val(4)
+        endIf: 
+        checkInput: (INPUT_HOLD_L)
+        if: Mem(Tmp)
+          storeValue: Mem(ActReg0), Val(4)
+        endIf: 
+        checkInput: 3
+        if: Mem(Tmp)
+          storeValue: Mem(ActReg0), Val(4)
+        endIf: 
+        checkInput: (INPUT_PRESS_M)
+        if: Mem(Tmp)
+          storeValue: Mem(ActReg0), Val(3)
+        endIf: 
+        checkInput: (INPUT_HOLD_M)
+        if: Mem(Tmp)
+          storeValue: Mem(ActReg0), Val(3)
+        endIf: 
+        checkInput: 9
+        if: Mem(Tmp)
+          storeValue: Mem(ActReg0), Val(3)
+        endIf: 
+        checkInput: (INPUT_PRESS_H)
+        if: Mem(Tmp)
+          storeValue: Mem(ActReg0), Val(2)
+        endIf: 
+        checkInput: (INPUT_HOLD_H)
+        if: Mem(Tmp)
+          storeValue: Mem(ActReg0), Val(2)
+        endIf: 
+        checkInput: 15
+        if: Mem(Tmp)
+          storeValue: Mem(ActReg0), Val(2)
+        endIf: 
+      endElse: 
+    endUpon: 
+  endIf: 
   endSprite: 
   clearUpon: (FRAME_STEP)
   ifNot: Mem(ActReg0)
@@ -3749,12 +4403,12 @@ beginState: s32'NmlAtk5D'
   ifOperation: (IS_EQUAL), Mem(ActReg0), Val(4)
     callSubroutine: s32'Element_Init_Water'
   endIf: 
-  if: Mem(402)
+  if: Mem(ActReg1)
     haltMomentum: 1
   endIf: 
   sprite: s32'san208_10', 1
   sprite: s32'san208_10', 2
-  ifNot: Mem(402)
+  ifNot: Mem(ActReg1)
   endIf: 
   sprite: s32'san208_11', 1
   sprite: s32'san208_11', 2
@@ -3763,7 +4417,7 @@ beginState: s32'NmlAtk5D'
   sprite: s32'san208_13', 3
   sprite: s32'san208_14', 3
   sprite: s32'san208_15', 3
-  ifNot: Mem(402)
+  ifNot: Mem(ActReg1)
     callSubroutine: s32'cmnNandemoCancel'
   endIf: 
   sprite: s32'san208_16', 3
@@ -3917,40 +4571,40 @@ beginState: s32'GuardCrash'
   sprite: s32'san350_10', 3
   createObject: s32'san_350_SordDell', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -47957
-  setPositionY: 23661
-  setDepth: 58045
-  setAngleX: 44000
-  setAngleY: 13600
-  setAngle: 44400
+    setPositionX: -47957
+    setPositionY: 23661
+    setDepth: 58045
+    setAngleX: 44000
+    setAngleY: 13600
+    setAngle: 44400
   endRunOnObject: 
   createObject: s32'san_350_SordDell', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 61007
-  setPositionY: 31614
-  setDepth: 56407
-  setAngleX: 358000
-  setAngleY: 51200
-  setAngle: 293600
-  setObjectSize: 1000
+    setPositionX: 61007
+    setPositionY: 31614
+    setDepth: 56407
+    setAngleX: 358000
+    setAngleY: 51200
+    setAngle: 293600
+    setObjectSize: 1000
   endRunOnObject: 
   createObject: s32'san_350_SordDell', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -116955
-  setPositionY: 82916
-  setDepth: -157535
-  setAngleX: 334800
-  setAngleY: 0
-  setAngle: 31200
+    setPositionX: -116955
+    setPositionY: 82916
+    setDepth: -157535
+    setAngleX: 334800
+    setAngleY: 0
+    setAngle: 31200
   endRunOnObject: 
   createObject: s32'san_350_SordDell', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 32000
-  setPositionY: 92988
-  setDepth: -205179
-  setAngleX: 342400
-  setAngleY: 0
-  setAngle: 321200
+    setPositionX: 32000
+    setPositionY: 92988
+    setDepth: -205179
+    setAngleX: 342400
+    setAngleY: 0
+    setAngle: 321200
   endRunOnObject: 
   sprite: s32'san350_11', 3
   sprite: s32'san350_12', 3
@@ -4192,7 +4846,7 @@ beginState: s32'ThrowExe'
   sprite: s32'san301_00', 3
   createObject: s32'san_301_EnshutuCamera', (PLAYER)
   Unknown1675: 
-  Unknown544: 
+  backThrowDirection: 
   createParticle: s32'cmn_nage', (EX_POINT_F)
   smartRandomVoiceLine: s16'vSAN_THWOK_00', 100, s16'vSAN_THWOK_01', 100, s16'', 0, s16'', 0
   sprite: s32'san301_01', 3
@@ -4356,7 +5010,7 @@ beginState: s32'AirThrowExe'
   Unknown538: 23
   exPointFReset: (PLAYER), 140000, 1
   Unknown540: 130, 100, 0
-  Unknown110: 
+  popVelocityX: 
   physicsYImpulse: 45000
   velocityYPercentEachFrame: 80
   velocityXPercentEachFrame: 96
@@ -4364,7 +5018,7 @@ beginState: s32'AirThrowExe'
   sprite: s32'san303_00', 3
   Unknown1675: 
   zLine: 0, 5
-  Unknown544: 
+  backThrowDirection: 
   Unknown538: 24
   exPointFReset: (PLAYER), 140000, 0
   Unknown540: 130, 100, 0
@@ -4380,7 +5034,7 @@ beginState: s32'AirThrowExe'
   hit: 
   sprite: s32'san303_04', 3
   attackEndDelay: 
-  Unknown110: 
+  popVelocityX: 
   ifOperation: (IS_GREATER), Mem(SpeedX), Val(10000)
     storeValue: Mem(SpeedX), Val(10000)
   endIf: 
@@ -4949,7 +5603,7 @@ beginState: s32'AntiAir_D'
   sprite: s32'san402_03', 3
   sprite: s32'san402_04', 3
   sprite: s32'san402_05', 3
-  Unknown109: 
+  pushVelocityX: 
   haltMomentum: 1
   sprite: s32'san402_06', 3
   hit: 
@@ -4996,7 +5650,7 @@ beginState: s32'AntiAir_D'
   callSubroutine: s32'cmnExSkill_ColorEnd_L'
   sprite: s32'san402_11', 3
   sprite: s32'san402_12', 3
-  Unknown110: 
+  popVelocityX: 
   resetGravity: 
   sendSignalToAction: s32'san_402_Slash', 23
   sprite: s32'san401_11', 3
@@ -5027,7 +5681,7 @@ beginSubroutine: s32'Assault_Chain'
     storeValue: Mem(ObjReg2), Mem(Dir)
     upon: 8
       clearUpon: 8
-      addGatlingOption: s32'NmlAtk5D_Add'
+      callSubroutine: s32'NmlAtk5D_Chain'
     endUpon: 
   endIf: 
   ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal0), Val(1)
@@ -5327,7 +5981,7 @@ beginState: s32'Assault_D'
       if: Mem(BattleDoing)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(400000)
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(300000)
-            Unknown2329: 0x03000000030000007B000000160000007B000000
+            Unknown2329: 3, 3, 123, 22, 123
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(-50000)
               storeValue: Mem(ActReg0), Val(1)
               hitstop: 3
@@ -5381,7 +6035,7 @@ beginState: s32'Assault_D'
     if: Mem(BattleDoing)
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(400000)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(300000)
-          Unknown2329: 0x03000000030000007B000000160000007B000000
+          Unknown2329: 3, 3, 123, 22, 123
           ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(-50000)
             grabOrRelease: 
             callSubroutine: s32'Assault_Lock'
@@ -5464,13 +6118,13 @@ beginState: s32'Assault_Add'
     checkLastStateName: s32'Assault_A'
     if: Mem(Tmp)
       storeValue: Mem(ActReg1), Val(0)
-      Unknown72: s32'Assault_A'
+      postSubroutineBegin: s32'Assault_A'
       attackVoiceLine: 2, -1
     endIf: 
     checkLastStateName: s32'Assault_B'
     if: Mem(Tmp)
       storeValue: Mem(ActReg1), Val(1)
-      Unknown72: s32'Assault_B'
+      postSubroutineBegin: s32'Assault_B'
       voiceLine: s16'vSAN_ATKS_09'
     endIf: 
     checkLastStateName: s32'Assault_C'
@@ -5479,7 +6133,7 @@ beginState: s32'Assault_Add'
       createObject: s32'cmn_EXSkillJizokuEff', (CENTER)
       callSubroutine: s32'cmnExSkill_Color'
       storeValue: Mem(ActReg0), Val(1)
-      Unknown72: s32'Assault_C'
+      postSubroutineBegin: s32'Assault_C'
       voiceLine: s16'vSAN_ATKS_10'
     endIf: 
     checkLastStateName: s32'Assault_D'
@@ -5494,7 +6148,7 @@ beginState: s32'Assault_Add'
         storeValue: Mem(ObjReg3), Val(0)
       endIf: 
       storeValue: Mem(PlayerVal9), Val(1)
-      Unknown72: s32'Assault_D'
+      postSubroutineBegin: s32'Assault_D'
       voiceLine: s16'vSAN_ATKS_11'
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg1), Val(3)
@@ -5725,8 +6379,10 @@ beginSubroutine: s32'SpecialKamae_Init'
         storeValue: Mem(ObjReg4), Mem(GTmpReg5)
       endIf: 
       ifNot: Mem(BattleDoing)
-        clearUpon: (FRAME_STEP)
-        gotoLabelRequests: s32'End'
+        if: Mem(ActReg1)
+          clearUpon: (FRAME_STEP)
+          gotoLabelRequests: s32'End'
+        endIf: 
       endIf: 
     endUpon: 
   endIf: 
@@ -5790,6 +6446,7 @@ beginState: s32'SpecialKamae_B'
   sprite: s32'san405_05', 2
   sprite: s32'san405_06', 3
   enableWhiffCancel: 1
+  storeValue: Mem(ActReg1), Val(1)
   sprite: s32'san405_07', 3
   sprite: s32'san405_08', 3
   sprite: s32'san405_09', 3
@@ -5809,6 +6466,7 @@ beginState: s32'SpecialKamae_B'
   sprite: s32'san405_14', 3
   attackEndDelay: 
   enableWhiffCancel: 0
+  clearUpon: (FRAME_STEP)
   sprite: s32'san405_15', 3
   sprite: s32'san405_16', 3
   sprite: s32'san405_17', 3
@@ -5854,6 +6512,7 @@ beginState: s32'SpecialKamae_C'
   sprite: s32'san406_07', 3
   sprite: s32'san405_06', 3
   enableWhiffCancel: 1
+  storeValue: Mem(ActReg1), Val(1)
   sprite: s32'san405_07', 3
   sprite: s32'san405_08', 3
   sprite: s32'san405_09', 3
@@ -5873,6 +6532,7 @@ beginState: s32'SpecialKamae_C'
   sprite: s32'san405_14', 3
   attackEndDelay: 
   enableWhiffCancel: 0
+  clearUpon: (FRAME_STEP)
   callSubroutine: s32'cmnExSkill_ColorEnd_S'
   sprite: s32'san405_15', 3
   sprite: s32'san405_16', 3
@@ -5894,7 +6554,7 @@ beginState: s32'SpecialKamae_D'
     hitEffectSlash: 1
     damageEffect: 2, s32'san_407U_SPHitEff_Slash'
     Unknown1131: 1
-    Unknown72: s32'san_406_SlashShotMatome'
+    postSubroutineBegin: s32'san_406_SlashShotMatome'
     storeValue: Mem(PlayerVal9), Val(1)
     upon: 23
       clearUpon: 23
@@ -6137,7 +6797,7 @@ beginState: s32'SpecialKamae_AddC'
   velocityXPercentEachFrame: 95
   createObject: s32'san_407_NokosiEff', (PLAYER)
   upon: (FRAME_STEP)
-    Unknown2329: 0x03000000170000007B000000160000007B000000
+    Unknown2329: 3, 23, 123, 22, 123
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(1)
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyPushDistance), Val(150000)
         gotoLabelRequests: s32'Attack'
@@ -6201,7 +6861,7 @@ beginState: s32'SpecialKamae_AddD'
       if: Mem(BattleDoing)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(400000)
           ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(300000)
-            Unknown2329: 0x03000000030000007B000000160000007B000000
+            Unknown2329: 3, 3, 123, 22, 123
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(-50000)
               storeValue: Mem(ActReg1), Val(1)
               damage: 0
@@ -6233,7 +6893,7 @@ beginState: s32'SpecialKamae_AddD'
         onlyHitGrounded: 0
         armorBreak: 1
         attackLockAction: s32'SpecialKamae_AddD_Exe'
-        Unknown987: 1
+        ignorePushbackYScaling: 1
       endIf: 
     endUpon: 
   endUpon: 
@@ -6554,9 +7214,9 @@ beginState: s32'san_Ougi'
   sprite: s32'san430_26', 3
   timeSlow: 120
   runOnObject: (ENEMY)
-  velocityXPercentEachFrame: 90
-  velocityYPercentEachFrame: 90
-  Unknown131: 0
+    velocityXPercentEachFrame: 90
+    velocityYPercentEachFrame: 90
+    gravityPercent: 0
   endRunOnObject: 
   sprite: s32'san430_27', 3
   sprite: s32'san430_28', 3
@@ -6594,7 +7254,7 @@ beginState: s32'san_Ougi'
   Unknown412: 100, 2, 6, 0
   Unknown413: 0, 2, 6, 0
   runOnObject: (ENEMY)
-  playAnimation: s32'xxx_san430cs', 0
+    playAnimation: s32'xxx_san430cs', 0
   endRunOnObject: 
   timeSlow: 0
   upon: (FRAME_STEP)
@@ -6607,7 +7267,7 @@ beginState: s32'san_Ougi'
       Unknown2870: 545
       displayGlare: 1, 1000, 800
       setMotionBlurAmount: 0
-      Unknown430: 0, 1200, 2500
+      setDiffusionThreshold: 0, 1200, 2500
       setColor: -388178724
       createObject: s32'san_430_BG', (PLAYER)
     endIf: 
@@ -6641,33 +7301,33 @@ beginState: s32'san_Ougi'
       grabOrRelease: 
       createObject: s32'san_430_SlashFire', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -21070
-      setPositionY: 143246
-      setDepth: 1853864
-      setAngleX: 169600
-      setAngleY: 236000
-      setAngle: 234800
+        setPositionX: -21070
+        setPositionY: 143246
+        setDepth: 1853864
+        setAngleX: 169600
+        setAngleY: 236000
+        setAngle: 234800
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(179)
       grabOrRelease: 
       createObject: s32'san_430_SlashEarth', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 117942
-      setPositionY: 244273
-      setDepth: 1925384
-      setAngleX: 28000
-      setAngleY: 18000
-      setAngle: 27200
+        setPositionX: 117942
+        setPositionY: 244273
+        setDepth: 1925384
+        setAngleX: 28000
+        setAngleY: 18000
+        setAngle: 27200
       endRunOnObject: 
       createObject: s32'san_430_SlashWater', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 51897
-      setPositionY: 212145
-      setDepth: 1656722
-      setAngleX: 200400
-      setAngleY: 0
-      setAngle: 331200
+        setPositionX: 51897
+        setPositionY: 212145
+        setDepth: 1656722
+        setAngleX: 200400
+        setAngleY: 0
+        setAngle: 331200
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(187)
@@ -6675,12 +7335,12 @@ beginState: s32'san_Ougi'
       createObject: s32'san_430_WhiteOut2', (PLAYER)
       createObject: s32'san_430_SlashWind', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -58199
-      setPositionY: 136800
-      setDepth: 1668431
-      setAngleX: 157600
-      setAngleY: 292400
-      setAngle: 351600
+        setPositionX: -58199
+        setPositionY: 136800
+        setDepth: 1668431
+        setAngleX: 157600
+        setAngleY: 292400
+        setAngle: 351600
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(199)
@@ -6689,7 +7349,7 @@ beginState: s32'san_Ougi'
       setLightAlpha: 1
       hideUI: 0
       Unknown2008: 0
-      Unknown430: 900, 1000, 1000
+      setDiffusionThreshold: 900, 1000, 1000
     endIf: 
     ifOnFrame: Val(218)
       voiceLine: s16'vSAN_ATKO_00_c'
@@ -6744,10 +7404,10 @@ beginState: s32'san_Ougi'
     cameraTargetSelf: 0
   endIf: 
   runOnObject: (ENEMY)
-  moveToObject: (ENEMY)
-  addPositionX: 400000
-  setPositionY: 1000000
-  Unknown2050: 1
+    moveToObject: (ENEMY)
+    addPositionX: 400000
+    setPositionY: 1000000
+    Unknown2050: 1
   endRunOnObject: 
   callSubroutine: s32'cmnLock_End_AtkInit'
   damageSprite: 30
@@ -6755,7 +7415,7 @@ beginState: s32'san_Ougi'
   hitAirPushbackY: -15000
   attackFrontDirection: 1
   Unknown1048: 1
-  Unknown864: 62
+  groundBounceXVelocityPercent: 62
   haltMomentum: 1
   Unknown2601: 0
   setPositionY: 0
@@ -6865,7 +7525,7 @@ beginState: s32'san_Kaihou'
           Unknown2583: 3300, 0, 3, 142300, 1, 0
           setMotionBlurAmount: 0
           Unknown427: 0
-          Unknown430: 600, 600, 600
+          setDiffusionThreshold: 600, 600, 600
           setColor: -388178724
           createObject: s32'san_440_cs_Fether', (PLAYER)
           createObject: s32'san_440_cs_BG', (PLAYER)
@@ -6883,30 +7543,30 @@ beginState: s32'san_Kaihou'
           createObject: s32'san_440_cs_BG2', (PLAYER)
           createObject: s32'san_440_cs_Fether3', (PLAYER)
           runOnObject: (PREVIOUS)
-          setPositionX: -22369
-          setPositionY: 354109
-          setDepth: 120958
-          setAngleX: 0
-          setAngleY: 0
-          setAngle: 19600
+            setPositionX: -22369
+            setPositionY: 354109
+            setDepth: 120958
+            setAngleX: 0
+            setAngleY: 0
+            setAngle: 19600
           endRunOnObject: 
           createObject: s32'san_440_cs_Fether3', (PLAYER)
           runOnObject: (PREVIOUS)
-          setPositionX: 65577
-          setPositionY: 367559
-          setDepth: -61771
-          setAngleX: 0
-          setAngleY: 248800
-          setAngle: 143200
+            setPositionX: 65577
+            setPositionY: 367559
+            setDepth: -61771
+            setAngleX: 0
+            setAngleY: 248800
+            setAngle: 143200
           endRunOnObject: 
           createObject: s32'san_440_cs_Fether3', (PLAYER)
           runOnObject: (PREVIOUS)
-          setPositionX: 51686
-          setPositionY: 345678
-          setDepth: -18770
-          setAngleX: 0
-          setAngleY: 64000
-          setAngle: 176000
+            setPositionX: 51686
+            setPositionY: 345678
+            setDepth: -18770
+            setAngleX: 0
+            setAngleY: 64000
+            setAngle: 176000
           endRunOnObject: 
           createObject: s32'san_440_cs_Fether3', (PLAYER)
           runOnObject: (PREVIOUS)
@@ -6971,7 +7631,7 @@ beginState: s32'san_Kaihou'
           Unknown2870: 545
           Unknown2583: 3300, 0, 3, 142300, 1, 0
           setMotionBlurAmount: 0
-          Unknown430: 600, 600, 600
+          setDiffusionThreshold: 600, 600, 600
           setColor: -388178724
           createObject: s32'san_440_cs_Fether', (PLAYER)
           createObject: s32'san_440_cs_BG', (PLAYER)
@@ -7129,7 +7789,7 @@ beginState: s32'san_Kaihou'
   playAnimation: s32'san441cs', 0
   playCameraAnimation: s32'san441cs', 23, 0, 0
   runOnObject: (ENEMY)
-  playAnimation: s32'xxx_san441cs', 0
+    playAnimation: s32'xxx_san441cs', 0
   endRunOnObject: 
   upon: (FRAME_STEP)
     ifOnFrame: Val(0)
@@ -7140,7 +7800,7 @@ beginState: s32'san_Kaihou'
       Unknown2870: 545
       displayGlare: 1, 1000, 800
       setMotionBlurAmount: 0
-      Unknown430: 600, 600, 600
+      setDiffusionThreshold: 600, 600, 600
       setColor: -388178724
       deactivateObjectByName: s32'san_440_EnshutuCamera'
       fadeOutStart: 0, 0
@@ -7154,7 +7814,7 @@ beginState: s32'san_Kaihou'
       characterSfx: s32'san_kaihou_01'
     endIf: 
     ifOnFrame: Val(19)
-      Unknown430: 6000, 5000, 0
+      setDiffusionThreshold: 600, 500, 0
       Unknown2582: 
       deactivateObjectByName: s32'san_441_BG'
       createObject: s32'san_441_BG2', (PLAYER)
@@ -7175,7 +7835,7 @@ beginState: s32'san_Kaihou'
     endIf: 
     ifOnFrame: Val(175)
       createObject: s32'san_441_ScrFlash', (PLAYER)
-      Unknown430: 6000, 5000, 0
+      setDiffusionThreshold: 600, 500, 0
       Unknown2858: 0
     endIf: 
     ifOnFrame: Val(195)
@@ -7270,7 +7930,7 @@ beginState: s32'san_Kaihou'
       createObject: s32'san_441_BG2', (PLAYER)
       createObject: s32'san_441_BIGMC2', (PLAYER)
       runOnObject: (ENEMY)
-      Unknown2050: 0
+        Unknown2050: 0
       endRunOnObject: 
       characterSfx: s32'san_kaihou_02'
     endIf: 
@@ -7292,7 +7952,7 @@ beginState: s32'san_Kaihou'
   wallPushback: 0, 0
   cameraTargetSelf: 1
   runOnObject: (ENEMY)
-  Unknown2050: 1
+    Unknown2050: 1
   endRunOnObject: 
   createParticle: s32'san_441_EndParticle', (PLAYER_LAND)
   deactivateObjectByName: s32'san_441_BG2'
@@ -7343,7 +8003,7 @@ beginState: s32'RoundStart_Run'
   sprite: s32'san034_08', 3
   sprite: s32'san034_09', 3
   physicsXImpulse: 0
-  Unknown205: 0, 0
+  setStartupPos: 0, 0
   sprite: s32'keep', 3
   jumpToState: s32'CmnActStand'
 endState: 
@@ -7385,7 +8045,7 @@ beginState: s32'RoundStart_Jump'
   beginLabel: s32'end'
   sprite: s32'san000_00', 1
   setInertia: 0
-  Unknown205: 0, 0
+  setStartupPos: 0, 0
   jumpToState: s32'CmnActStand'
 endState: 
 
@@ -7414,7 +8074,7 @@ beginState: s32'RoundStart_Fall'
   sprite: s32'san000_00', 1
   Unknown374: 1
   setInertia: 0
-  Unknown205: 0, 0
+  setStartupPos: 0, 0
   jumpToState: s32'CmnActStand'
 endState: 
 
@@ -7951,7 +8611,7 @@ beginState: s32'CmnActUkemi'
   sprite: s32'xxx061_05', 3
   sprite: s32'xxx061_06', 3
   sprite: s32'xxx061_06', 1
-  Unknown276: 1
+  setCommonActionMark: 1
   beginLabel: s32'Loop'
   sprite: s32'xxx024_03', 3
   ifPlayerCharacter: s16'vir'
@@ -8220,7 +8880,7 @@ beginState: s32'CmnActHajikareStand'
   voiceLine: s16'vxxx_GRDB_00'
   if: Mem(386)
     if: Mem(IsEnemysCutScene)
-      Unknown2347: 1634300500, 0x6C537563636573735F3274616B750000000000000000000000000000
+      Unknown2347: s32'TrialSuccess_2taku'
     endIf: 
   endIf: 
   beginLabel: s32'_Loop'
@@ -8356,7 +9016,7 @@ beginState: s32'CmnActLockReject'
   callSubroutine: s32'cmnActLockRejectInit'
   if: Mem(386)
     if: Mem(IsEnemysCutScene)
-      Unknown2347: 1634300500, 0x6C537563636573735F3274616B750000000000000000000000000000
+      Unknown2347: s32'TrialSuccess_2taku'
     endIf: 
   endIf: 
   sprite: s32'xxx080_00', 13

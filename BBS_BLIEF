@@ -201,17 +201,17 @@ beginState: s32'BLI_253_ShockRing_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-      Unknown2587: 1600744546, s32'PP_RadialBlur'
+      Unknown2587: s32'bli_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 1
   sprite: s32'null', 10
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 1
   Unknown2588: s32'bli_PP_RadialBlur', 1, 100
   Unknown2590: s32'bli_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'BLI_301_WeaponFlash'
@@ -391,7 +391,7 @@ beginState: s32'bli_Apple'
   upon: 45
     randomAddVelocityX: -10000, 10000
     physicsYImpulse: 15000
-    Unknown118: -2500, 2500
+    randomAddVelocityY: -2500, 2500
     setGravity: 1000
     Unknown214: -15000
     gotoLabelRequests: s32'Start'
@@ -970,9 +970,9 @@ beginState: s32'bli_400_Goetia'
       createObject: s32'bli_400_GoetiaGround', (PLAYER)
       stackObject: (STACK1), (PREVIOUS)
       runOnObject: (STACK1)
-      addPositionX: -81891
-      addPositionY: -268630
-      Unknown1727: -151859
+        addPositionX: -81891
+        addPositionY: -268630
+        Unknown1727: -151859
       endRunOnObject: 
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg5), Val(1)
@@ -981,7 +981,7 @@ beginState: s32'bli_400_Goetia'
       Unknown1727: 202358
       setObjectWidth: 900
       setObjectHeight: 1000
-      Unknown180: 1000
+      setObjectDepth: 1000
       createObject: s32'bli_400_Goetia_nokosi_B', (PLAYER)
       stackObject: (STACK0), (PREVIOUS)
     endElse: 
@@ -1167,7 +1167,7 @@ beginState: s32'bli_400_GoetiaStart_B'
     setAngle: 26565
     setObjectWidth: 900
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 60
   createObject: s32'bli_400_ShotStartParticle_B', (PLAYER)
@@ -1218,7 +1218,7 @@ beginState: s32'bli_400_SPkiraEff'
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
     linkObjectPosition: 2
-    Unknown289: 200
+    setMaxActionTime: 200
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 3
@@ -1266,7 +1266,7 @@ beginSubroutine: s32'bli_400_GoetiaAdd_Init'
     callSubroutine: s32'cmnSpecialAttackD_AtkInit'
   endIf: 
   callSubroutine: s32'cmnSkillInputCheck_Hasei'
-  Unknown2482: 0x020000002F000000020000002F000000
+  Unknown2482: 2, 47, 2, 47
   if: Mem(ActReg2)
     comboLimitScaling: 0
   endIf: 
@@ -1518,7 +1518,7 @@ beginState: s32'bli_400_GoetiaDeathScytheC'
     setAngleY: 90000
     setObjectSize: 1100
     Unknown2294: 909
-    Unknown2482: 0x02000000320000000200000032000000
+    Unknown2482: 2, 50, 2, 50
     ifOperation: (IS_EQUAL), Mem(ActReg5), Val(0)
       physicsXImpulse: 20000
       velocityXPercentEachFrame: 90
@@ -1604,13 +1604,13 @@ beginState: s32'bli_400_GoetiaDeathScytheD'
     killType: (NOT_KILL)
     hitEffectSlash: 1
     guardEffectEconomy: 1
-    Unknown72: s32'bli_400_Goetia'
+    postSubroutineBegin: s32'bli_400_Goetia'
     storeValue: Mem(PlayerVal9), Val(1)
     storeValue: Mem(ActReg1), Val(14)
     addMoveForceDisableFlag: 1
     enemyHitstopAddition: -4, 0, 0
     wallPushback: 0, 1500
-    Unknown746: 0, 15000
+    atkEnemyHitSuperArmorHitstop: 0, 15000
     Unknown747: 0, 6000
     worldCollision: 1
     upon: 8
@@ -1666,7 +1666,7 @@ beginState: s32'bli_400_GoetiaDeathScytheD'
       recoveryState: 
       storeValue: Mem(ActReg1), Val(0)
       setAngleY: 90000
-      Unknown191: 0
+      setObjectSizeScaleSpeed: 0
       gotoLabelRequests: s32'End'
     endUpon: 
     deactivateObjectByName: s32'bli_400_ShotStartParticle_B'
@@ -1676,7 +1676,7 @@ beginState: s32'bli_400_GoetiaDeathScytheD'
   sprite: s32'keep', 10
   sprite: s32'null', 3
   setAngleY: 90000
-  Unknown191: 25
+  setObjectSizeScaleSpeed: 25
   moveToObject: (ENEMY)
   addPositionY: 267174
   addPositionX: 50000
@@ -1695,7 +1695,7 @@ beginState: s32'bli_400_GoetiaDeathScytheD'
   sprite: s32'null', 12
   endSprite: 
   physicsXImpulse: 10000
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   beginLabel: s32'Loop'
   sprite: s32'bli400_ShotAtkAdd', 2
   modifyVar: (ADD), Mem(ActReg1), Val(-1)
@@ -1712,7 +1712,7 @@ beginState: s32'bli_400_GoetiaDeathScytheD'
   hitstop: 0
   killType: (NORMAL)
   atkCameraShake: s32'ShakeYoko', 500, 0, 5, 0
-  Unknown746: 0, 5000
+  atkEnemyHitSuperArmorHitstop: 0, 5000
   Unknown747: 0, 15000
   enemyHitstopAddition: 0, 0, 0
   beginLabel: s32'End'
@@ -2197,7 +2197,7 @@ beginState: s32'bli_408_FirePillar_GroundEff'
     setLinkObjectDestroyOnDamage: 3
     linkObjectZ: 2
     linkParticle: s32'bli_408_GroundShock'
-    Unknown194: -150, 150
+    randomAddObjectSize: -150, 150
   endUpon: 
   sprite: s32'null', 30
 endState: 
@@ -2576,7 +2576,7 @@ beginState: s32'bli_430_AssultEff'
     stopLinkObject: 2
     linkObjectPosition: 2
     linkParticle: s32'bli_430_Asslut'
-    Unknown289: 60
+    setMaxActionTime: 60
     addPositionX: 194997
     addPositionY: 268132
     Unknown1727: -43369
@@ -2690,39 +2690,39 @@ beginState: s32'BLI_431CS'
       ifOnFrame: Val(91)
         createObject: s32'BLI_431CS_Spark', (PLAYER)
         runOnObject: (PREVIOUS)
-        setPositionX: -117958
-        setPositionY: 512876
-        setDepth: 414899
-        setAngleX: 327200
-        setAngleY: 132400
-        setAngle: 351200
+          setPositionX: -117958
+          setPositionY: 512876
+          setDepth: 414899
+          setAngleX: 327200
+          setAngleY: 132400
+          setAngle: 351200
         endRunOnObject: 
         createObject: s32'BLI_431CS_Spark', (PLAYER)
         runOnObject: (PREVIOUS)
-        setPositionX: 111960
-        setPositionY: 481565
-        setDepth: 414644
-        setAngleX: 187200
-        setAngleY: 65600
-        setAngle: 1600
+          setPositionX: 111960
+          setPositionY: 481565
+          setDepth: 414644
+          setAngleX: 187200
+          setAngleY: 65600
+          setAngle: 1600
         endRunOnObject: 
         createObject: s32'BLI_431CS_Spark', (PLAYER)
         runOnObject: (PREVIOUS)
-        setAngleX: 327200
-        setAngleY: 121600
-        setAngle: 317600
-        setPositionX: -86977
-        setPositionY: 329264
-        setDepth: 471690
+          setAngleX: 327200
+          setAngleY: 121600
+          setAngle: 317600
+          setPositionX: -86977
+          setPositionY: 329264
+          setDepth: 471690
         endRunOnObject: 
         createObject: s32'BLI_431CS_Spark', (PLAYER)
         runOnObject: (PREVIOUS)
-        setPositionX: 56983
-        setPositionY: 312830
-        setDepth: 524171
-        setAngleX: 347200
-        setAngleY: 67600
-        setAngle: 315200
+          setPositionX: 56983
+          setPositionY: 312830
+          setDepth: 524171
+          setAngleX: 347200
+          setAngleY: 67600
+          setAngle: 315200
         endRunOnObject: 
       endIf: 
       ifOnFrame: Val(139)
@@ -2751,32 +2751,32 @@ beginState: s32'BLI_430_ShockRing_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-      Unknown2587: 1600744546, s32'PP_RadialBlur'
+      Unknown2587: s32'bli_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 20
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 1
   Unknown2588: s32'bli_PP_RadialBlur', 1, 100
   Unknown2590: s32'bli_PP_RadialBlur', 1, -5
   sprite: s32'null', 1
   Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'BLI_430_ShockRing_Blur2'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-      Unknown2587: 1600744546, s32'PP_RadialBlur'
+      Unknown2587: s32'bli_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 1
   Unknown2588: s32'bli_PP_RadialBlur', 1, 100
   Unknown2590: s32'bli_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'BLI_431CS_Thunder'
@@ -3066,14 +3066,14 @@ beginState: s32'bli_440_cs_EyeRay'
   sprite: s32'null', 4
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setPositionX: 54252
   setPositionY: 395776
   setDepth: -2350
   sprite: s32'null', 4
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: 55710
   setPositionY: 415171
   setDepth: -6961
@@ -3192,7 +3192,7 @@ beginState: s32'BLI_440_cs_SpeedLine'
   setAngle: 354600
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 4
   sprite: s32'null', 4
   sprite: s32'null', 4
@@ -3242,15 +3242,15 @@ beginState: s32'BLI_440_Blur'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-      Unknown2587: 1600744546, s32'PP_RadialBlur'
+      Unknown2587: s32'bli_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 1
   Unknown2588: s32'bli_PP_RadialBlur', 1, 100
   sprite: s32'null', 1
   Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'BLI_441CS_BG'
@@ -3439,7 +3439,7 @@ beginState: s32'bli_441_Laser'
   setAngle: 322000
   setObjectWidth: 2500
   setObjectHeight: 2000
-  Unknown180: 2000
+  setObjectDepth: 2000
   sprite: s32'null', 4
   sprite: s32'null', 4
   setPositionX: -2219222
@@ -3451,7 +3451,7 @@ beginState: s32'bli_441_Laser'
   sprite: s32'null', 100
   setObjectWidth: 4000
   setObjectHeight: 2500
-  Unknown180: 2500
+  setObjectDepth: 2500
   setPositionX: -2846905
   setPositionY: 671161
   setDepth: -59292
@@ -3471,7 +3471,7 @@ beginState: s32'bli_441_Laser2'
   sprite: s32'null', 300
   setObjectWidth: 4000
   setObjectHeight: 2500
-  Unknown180: 2500
+  setObjectDepth: 2500
   setPositionX: -2846905
   setPositionY: 671161
   setDepth: -59292
@@ -3484,17 +3484,17 @@ beginState: s32'BLI_441_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-      Unknown2587: 1600744546, s32'PP_RadialBlur'
+      Unknown2587: s32'bli_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 1
   Unknown2588: s32'bli_PP_RadialBlur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'bli_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'BLI_441_BeamWhiteOut'
@@ -3536,7 +3536,7 @@ beginState: s32'BLI_441_Mcicle'
     setDepth: -2227609
     setObjectWidth: 10000
     setObjectHeight: 10000
-    Unknown180: 10000
+    setObjectDepth: 10000
     setAngleX: 350000
     setAngleY: 1200
     setAngle: 15200
@@ -3566,7 +3566,7 @@ beginState: s32'BLI_441_Mcicle2'
     Unknown1727: 163554
     setObjectWidth: 1500
     setObjectHeight: 1500
-    Unknown180: 1500
+    setObjectDepth: 1500
     setAngleX: 327600
     setAngleY: 73200
     setAngle: 175200
@@ -3616,7 +3616,7 @@ beginState: s32'BLI_441_FinalBom'
   createObject: s32'BLI_441_Blur', (PLAYER)
   sprite: s32'null', 100
   setObjectSize: 400
-  Unknown191: 2
+  setObjectSizeScaleSpeed: 2
 endState: 
 
 beginState: s32'BLI_441_GroundBurst'
@@ -3633,7 +3633,7 @@ beginState: s32'BLI_441_GroundBurst'
     setAngle: 357200
     setObjectWidth: 2000
     setObjectHeight: 2000
-    Unknown180: 2000
+    setObjectDepth: 2000
   endUpon: 
   sprite: s32'null', 300
   linkParticle: s32'bli_441_groundBurst'
@@ -3715,7 +3715,7 @@ beginState: s32'BLI_441_SkyFlash'
     linkObjectPosition: 2
     setObjectWidth: 3000
     setObjectHeight: 3000
-    Unknown180: 3000
+    setObjectDepth: 3000
     addPositionX: 3344569
     addPositionY: 3366237
     Unknown1727: 309681
@@ -3947,17 +3947,17 @@ beginState: s32'BLI_442_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-      Unknown2587: 1600744546, s32'PP_RadialBlur'
+      Unknown2587: s32'bli_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 1
   Unknown2588: s32'bli_PP_RadialBlur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'bli_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'bli_PP_RadialBlur', 1, 0
-  Unknown2587: 1600744546, s32'PP_RadialBlur'
+  Unknown2587: s32'bli_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'BLI_442_GroundBurst'

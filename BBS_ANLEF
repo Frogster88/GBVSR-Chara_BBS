@@ -167,8 +167,8 @@ beginState: s32'anl301_sheep'
   sprite: s32'anh301_00', 3
   createObject: s32'ANL_HitujiSpawn', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionY: -3706
-  Unknown1727: 84915
+    addPositionY: -3706
+    Unknown1727: 84915
   endRunOnObject: 
   Unknown412: 100, 1, 0, 0
   Unknown413: -3, 1, 0, 0
@@ -190,9 +190,9 @@ beginState: s32'anl301_sheep'
   Unknown412: 100, 1, 0, 0
   createObject: s32'ANL_HitujiEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 14002
-  addPositionY: 100000
-  Unknown1727: 84915
+    addPositionX: 14002
+    addPositionY: 100000
+    Unknown1727: 84915
   endRunOnObject: 
 endState: 
 
@@ -363,7 +363,7 @@ beginState: s32'anl_306_FallEff'
   sprite: s32'null', 30
   setObjectWidth: 450
   setObjectHeight: 600
-  Unknown180: 700
+  setObjectDepth: 700
   setPositionX: 48975
   setPositionY: 141458
   setDepth: -7851
@@ -467,7 +467,7 @@ beginState: s32'anl_306_FallEff4'
   setAngle: 339600
   setObjectWidth: 225
   setObjectHeight: 400
-  Unknown180: 255
+  setObjectDepth: 255
   beginLabel: s32'End'
   sprite: s32'null', 30
   setPositionX: 7053
@@ -539,9 +539,9 @@ beginState: s32'anl307_sheep'
   sprite: s32'anh307_01', 12
   createObject: s32'ANL_HitujiSpawn', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 62002
-  addPositionY: 61287
-  Unknown1727: 86711
+    addPositionX: 62002
+    addPositionY: 61287
+    Unknown1727: 86711
   endRunOnObject: 
   sprite: s32'anh307_02', 3
   sprite: s32'anh307_03', 6
@@ -562,10 +562,10 @@ beginState: s32'anl307_sheep'
   sprite: s32'anh307_14', 3
   createObject: s32'ANL_HitujiEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 700
-  addPositionX: 100000
-  addPositionY: 93467
-  Unknown1727: 148851
+    setObjectSize: 700
+    addPositionX: 100000
+    addPositionY: 93467
+    Unknown1727: 148851
   endRunOnObject: 
 endState: 
 
@@ -732,16 +732,16 @@ beginState: s32'ANL_350_Strike'
   linkParticle: s32'anl_350_Strike02'
   createObject: s32'ANL_350_StrikeNokosi', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 84919
-  addPositionY: 411061
-  Unknown1727: 52964
-  setAngleY: 353600
+    addPositionX: 84919
+    addPositionY: 411061
+    Unknown1727: 52964
+    setAngleY: 353600
   endRunOnObject: 
   createObject: s32'ANL_350_StrikeNokosi', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -54034
-  addPositionY: 130876
-  Unknown1727: 166824
+    addPositionX: -54034
+    addPositionY: 130876
+    Unknown1727: 166824
   endRunOnObject: 
   sprite: s32'null', 20
   linkObjectPosition: 0
@@ -816,11 +816,11 @@ beginState: s32'sheep_die'
     endUpon: 
     setObjectSize: 950
     ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
-      Unknown264: -15
+      setZOffset: -15
       setObjectSize: 900
     endIf: 
     ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(2)
-      Unknown264: -30
+      setZOffset: -30
       setObjectSize: 1200
     endIf: 
     Unknown412: 0, 1, 0, 0
@@ -847,7 +847,7 @@ beginState: s32'sheep_die'
   physicsXImpulse: -10000
   randomAddVelocityX: -10000, -1000
   velocityXPercentEachFrame: 97
-  Unknown118: 15000, 25000
+  randomAddVelocityY: 15000, 25000
   setGravity: 1000
 endState: 
 
@@ -961,21 +961,21 @@ beginState: s32'anl400_Shot'
       ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
         addPositionX: -100000
         setObjectSize: 950
-        Unknown264: -15
+        setZOffset: -15
       endIf: 
       ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(2)
         addPositionX: -250000
         setObjectSize: 1250
-        Unknown264: -30
+        setZOffset: -30
       endIf: 
     endIf: 
   endUpon: 
   sprite: s32'anh400_00', 30
   createObject: s32'ANL_HitujiSpawn', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -28971
-  addPositionY: 66034
-  Unknown1727: -1465
+    addPositionX: -28971
+    addPositionY: 66034
+    Unknown1727: -1465
   endRunOnObject: 
   Unknown412: 100, 1, 0, 0
   Unknown413: -3, 1, 0, 0
@@ -1061,7 +1061,7 @@ beginState: s32'anl400_Shot'
   ifNot: Mem(ActReg0)
     createObject: s32'ANL_HitujiEnd', (PLAYER)
     runOnObject: (PREVIOUS)
-    addPositionY: 100000
+      addPositionY: 100000
     endRunOnObject: 
   endIf: 
   sprite: s32'null', 10
@@ -1171,7 +1171,7 @@ beginState: s32'anl_400_SPEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 300
+    setMaxActionTime: 300
     setPositionY: 125000
   endUpon: 
   sprite: s32'null', 1
@@ -1269,7 +1269,7 @@ beginState: s32'anl_402_MagicCircle'
   linkParticle: s32'anl_402_MagicCircle'
   beginLabel: s32'loop'
   sprite: s32'null', 3
-  Unknown211: 700000
+  setRawPositionXInBattle: 700000
   gotoLabel: s32'loop'
   beginLabel: s32'End'
   sprite: s32'null', 3
@@ -1415,8 +1415,8 @@ beginState: s32'Assault_sheep'
   setSpriteTime: 3, Mem(ActReg1)
   createObject: s32'ANL_HitujiSpawn', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 50000
-  addPositionY: 100000
+    addPositionX: 50000
+    addPositionY: 100000
   endRunOnObject: 
   Unknown412: 100, 1, 0, 0
   endSprite: 
@@ -1507,7 +1507,7 @@ beginState: s32'Assault_sheep'
   sprite: s32'anh403_17', 3
   createObject: s32'ANL_HitujiEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionY: 100000
+    addPositionY: 100000
   endRunOnObject: 
   deactivateObjectByName: s32'anl_403_Wind'
   exitState: 
@@ -1522,7 +1522,7 @@ beginState: s32'Assault_sheep'
   sendSignalToAction: s32'anl_403_Wind', 23
   createObject: s32'ANL_HitujiEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionY: 100000
+    addPositionY: 100000
   endRunOnObject: 
   deactivateObjectByName: s32'anl_403_Wind'
 endState: 
@@ -1670,7 +1670,7 @@ beginState: s32'Assault_Cancel_sheep'
       comboLimitScaling: 0
       enemyHitstopAddition: 6, 0, 2
       wallPushback: 0, 400
-      Unknown72: s32'Assault_D'
+      postSubroutineBegin: s32'Assault_D'
     endIf: 
     callSubroutine: s32'cmnSkillInputCheck_Hasei'
     ifOperation: (IS_LESSER), Mem(ActReg6), Val(3)
@@ -1749,7 +1749,7 @@ beginState: s32'Assault_Cancel_sheep'
       storeValue: Mem(PlayerVal1), Val(0)
       createObject: s32'ANL_HitujiEnd', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionY: 100000
+        addPositionY: 100000
       endRunOnObject: 
       deactivateObjectByName: s32'anl_404_Wind'
       deactivateObjectById: (SELF)
@@ -1770,7 +1770,7 @@ beginState: s32'Assault_Cancel_sheep'
       storeValue: Mem(PlayerVal1), Val(0)
       createObject: s32'ANL_HitujiEnd', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionY: 100000
+        addPositionY: 100000
       endRunOnObject: 
       deactivateObjectByName: s32'anl_404_Wind'
       deactivateObjectById: (SELF)
@@ -1829,7 +1829,7 @@ ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
   onSpriteChange: s32'anh404_01ex'
 endIf: 
 
-Unknown909: 0, 0
+atkFrozen: 0, 0
 sprite: s32'anh404_02', 2
 ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
   onSpriteChange: s32'anh404_02ex'
@@ -1985,8 +1985,8 @@ beginState: s32'SpecialJump_sheep'
   sprite: s32'anh405_08', 2
   createObject: s32'ANL_HitujiEnd', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionY: 100000
-  setObjectSize: 700
+    addPositionY: 100000
+    setObjectSize: 700
   endRunOnObject: 
   sprite: s32'anh405_09', 2
 endState: 
@@ -2085,28 +2085,28 @@ beginState: s32'anl430_sheep'
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(0)
       addPositionX: 100000
       addPositionY: 100000
-      Unknown169: 15000, 75000
+      randomAddAngle: 15000, 75000
     endIf: 
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(1)
       addPositionX: -100000
       addPositionY: 100000
       flipDirection: 
-      Unknown169: 15000, 75000
+      randomAddAngle: 15000, 75000
     endIf: 
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(2)
       addPositionX: -100000
       addPositionY: -100000
       flipDirection: 
-      Unknown169: 285000, 345000
+      randomAddAngle: 285000, 345000
     endIf: 
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(3)
       addPositionX: 100000
       addPositionY: -100000
-      Unknown169: 285000, 345000
+      randomAddAngle: 285000, 345000
     endIf: 
-    Unknown102: -50000, 50000
+    randomAddPositionX: -50000, 50000
     randomAddPositionY: -50000, 50000
-    Unknown202: 20000, 0
+    setSpeedByAngle: 20000, 0
   endUpon: 
   sprite: s32'anh430_00', 7
   privateSE: s32'anl_ougi_00'
@@ -2259,7 +2259,7 @@ beginState: s32'anl_430cs_RotateEff'
     setLinkObjectDestroyOnDamage: 3
     setObjectWidth: 700
     setObjectHeight: 700
-    Unknown180: 700
+    setObjectDepth: 700
     addPositionX: -138017
     addPositionY: 265330
     Unknown1727: -12432
@@ -2409,12 +2409,12 @@ endState:
 beginState: s32'anl440_sheep'
   upon: (IMMEDIATE)
     callSubroutine: s32'ANH_SINGLE'
-    Unknown102: -100000, 0
+    randomAddPositionX: -100000, 0
     setPositionY: 50000
     randomAddPositionY: 0, 50000
     physicsXImpulse: 45000
-    Unknown118: 0, 25000
-    Unknown133: 1000, 2500
+    randomAddVelocityY: 0, 25000
+    randomAddGravity: 1000, 2500
     upon: (FRAME_STEP)
       setAngleBySpeed: 0
     endUpon: 
@@ -2438,7 +2438,7 @@ beginState: s32'anl440_sheep'
     upon: 5
       velocityYPercent: -150
     endUpon: 
-    Unknown58: 1
+    worldOutToEliminate: 1
   endUpon: 
   sprite: s32'anh430_00', 30
 endState: 
@@ -2777,17 +2777,17 @@ beginState: s32'anl_441_Blur'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'anl_PP_RadialBlur', 1, 0
-      Unknown2587: 1600941665, s32'PP_RadialBlur'
+      Unknown2587: s32'anl_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1600941665, s32'PP_RadialBlur'
+  Unknown2587: s32'anl_PP_RadialBlur', 1
   Unknown2588: s32'anl_PP_RadialBlur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'anl_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'anl_PP_RadialBlur', 1, 0
-  Unknown2587: 1600941665, s32'PP_RadialBlur'
+  Unknown2587: s32'anl_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'anl_441_BigRay'
@@ -3718,9 +3718,9 @@ beginState: s32'anl610_sheep'
   sprite: s32'anh610_07', 6
   createObject: s32'ANL_HitujiSpawn', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -134973
-  addPositionY: 106129
-  Unknown1727: 22500
+    addPositionX: -134973
+    addPositionY: 106129
+    Unknown1727: 22500
   endRunOnObject: 
   Unknown412: 100, 1, 0, 0
   Unknown413: -4, 1, 0, 0
@@ -3809,9 +3809,9 @@ beginState: s32'anl_800cs_Fubuki'
   setObjectSize: 1975
   sprite: s32'null', 30
   setObjectSize: 2000
-  Unknown191: 1
+  setObjectSizeScaleSpeed: 1
   sprite: s32'null', 2147483647
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'anl_800cs_Twinkle'

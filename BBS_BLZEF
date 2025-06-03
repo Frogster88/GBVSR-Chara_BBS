@@ -430,7 +430,7 @@ beginState: s32'blz_232_WingEnd'
   setAngle: 5600
   setObjectWidth: 600
   setObjectHeight: 650
-  Unknown180: 100
+  setObjectDepth: 100
   sprite: s32'null', 15
   linkObjectPosition: 0
 endState: 
@@ -445,7 +445,7 @@ beginState: s32'blz_232_WingEnd2'
   linkParticle: s32'blz_WingEnd'
   setObjectWidth: 650
   setObjectHeight: 700
-  Unknown180: 100
+  setObjectDepth: 100
   setAngleX: 15600
   setAngleY: 204800
   setAngle: 341600
@@ -472,7 +472,7 @@ beginState: s32'blz_232_WingEnd3'
   setAngle: 343600
   setObjectWidth: 600
   setObjectHeight: 650
-  Unknown180: 100
+  setObjectDepth: 100
   sprite: s32'null', 15
   linkObjectPosition: 0
 endState: 
@@ -493,7 +493,7 @@ beginState: s32'blz_232_WingEnd4'
   setAngle: 336800
   setObjectWidth: 700
   setObjectHeight: 600
-  Unknown180: 100
+  setObjectDepth: 100
   sprite: s32'null', 15
   linkObjectPosition: 0
 endState: 
@@ -542,7 +542,7 @@ beginState: s32'blz_233_WingEnd'
   setAngle: 128000
   setObjectWidth: 500
   setObjectHeight: 700
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 15
   linkObjectPosition: 0
 endState: 
@@ -563,7 +563,7 @@ beginState: s32'blz_233_WingEnd2'
   setAngle: 128000
   setObjectWidth: 400
   setObjectHeight: 600
-  Unknown180: 400
+  setObjectDepth: 400
   sprite: s32'null', 15
   linkObjectPosition: 0
 endState: 
@@ -584,7 +584,7 @@ beginState: s32'blz_233_WingEnd3'
   setAngle: 28000
   setObjectWidth: 400
   setObjectHeight: 700
-  Unknown180: 400
+  setObjectDepth: 400
   sprite: s32'null', 15
   linkObjectPosition: 0
 endState: 
@@ -605,7 +605,7 @@ beginState: s32'blz_233_WingEnd4'
   setAngle: 44000
   setObjectWidth: 400
   setObjectHeight: 650
-  Unknown180: 400
+  setObjectDepth: 400
   sprite: s32'null', 15
   linkObjectPosition: 0
 endState: 
@@ -645,8 +645,8 @@ beginState: s32'blz_301_WingEnd'
   setAngle: 41200
   setObjectWidth: 600
   setObjectHeight: 700
-  Unknown180: 700
-  Unknown191: 6
+  setObjectDepth: 700
+  setObjectSizeScaleSpeed: 6
   sprite: s32'null', 15
   linkObjectPosition: 0
 endState: 
@@ -667,7 +667,7 @@ beginState: s32'blz_301_WingEnd2'
   setAngle: 36400
   setObjectWidth: 600
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
   sprite: s32'null', 15
   linkObjectPosition: 0
 endState: 
@@ -1353,16 +1353,17 @@ beginState: s32'blz_401'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
       missionName: s32'SpecialShot_ShotB'
       untechAmount: 30
+      hitstop: 9
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-      Unknown72: s32'blz_400_Dagger_Root'
+      postSubroutineBegin: s32'blz_400_Dagger_Root'
       missionName: s32'SpecialShot_ShotC'
       damage: 600
       storeValue: Mem(ActReg0), Val(1)
       groundHitEffect: (AIR_FACE_UP)
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-      Unknown72: s32'SpecialShot_D'
+      postSubroutineBegin: s32'SpecialShot_D'
       missionName: s32'SpecialShot_ShotD'
       damage: 1500
       wallPushback: 0, 700
@@ -1371,266 +1372,349 @@ beginState: s32'blz_401'
       storeValue: Mem(ActReg0), Val(2)
       groundHitEffect: (AIR_FACE_UP)
       setLinkObjectDestroyOnStateChange: 3
-    endIf: 
-    upon: (HIT_OR_GUARD)
-      velocityXPercent: 70
-      modifyVar: (ADD), Mem(ActReg7), Val(1)
-      ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg7), Val(2)
-        damage: 100
-      endIf: 
-      ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        if: Mem(PlayerVal0)
-          storeValue: Mem(PlayerVal0), Val(0)
-          comboLimitScaling: 0
-          Unknown1131: 1
+      upon: (HIT)
+        ifNot: Mem(ObjReg1)
+          storeValueFromObject: (SELF), Mem(ActReg1), (PLAYER), Mem(ActReg0)
+          if: Mem(ActReg1)
+            Unknown310: 11, 22, 2, 18, 0, 166726
+            storeValue: Mem(ObjReg1), Val(1)
+          endIf: 
         endIf: 
       endIf: 
-      ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-        storeValue: Mem(ObjReg0), Val(1)
-      endIf: 
-    endUpon: 
-    upon: 12
-      if: Mem(ObjReg0)
-        storeValue: Mem(ObjReg0), Val(0)
-        checkScreenCollision: 1
+      if: Mem(ObjReg1)
+        Unknown310: 11, 22, 2, 18, 0, 234726
+        magnetismY: 1, 234726, 380000, 100, 0
       endIf: 
       else: 
-        checkScreenCollision: 0
+        clearUpon: (HIT)
+        magnetismY: 0, 0, 0, 0, 0
       endElse: 
-    endUpon: 
-    initializeDestroy: 
-    numberOfHits: 2
-    destroyOnDamageCollision: 1
-    Unknown2207: 1
-    Unknown2208: 1
-    Unknown2209: 1
-    Unknown2210: 1
-    Unknown2257: 1
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-      Unknown2210: 99
-    endIf: 
-    upon: 45
-      clearUpon: 24
-      clearUpon: 25
-      haltMomentum: 1
-      gotoLabelRequests: s32'Koware'
-    endUpon: 
-    setEventTrigger: 13, 120
-    upon: 13
-      gotoLabelRequests: s32'Koware'
-    endUpon: 
-    addMoveForceDisableFlag: 1
-    upon: 23
-      clearUpon: 23
-      sendSignalToAction: s32'blz_401_Dagger_Root', 23
-      gotoLabelRequests: s32'Shot'
-    endUpon: 
-    upon: 24
-      clearUpon: 24
-      clearUpon: 25
-      storeValue: Mem(ActReg2), Val(1)
-      numberOfHits: 3
-      sendSignalToAction: s32'blz_401_Dagger_Root', 24
-      gotoLabelRequests: s32'Shot'
-    endUpon: 
-    upon: 25
-      clearUpon: 24
-      clearUpon: 25
-      storeValue: Mem(ActReg2), Val(2)
-      numberOfHits: 5
-      sendSignalToAction: s32'blz_401_Dagger_Root', 27
-      ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-        Unknown1131: 1
-        comboLimitScaling: 0
-        Unknown72: s32'SpecialShot_D'
-      endIf: 
-      gotoLabelRequests: s32'Shot'
-    endUpon: 
-    upon: 26
-      clearUpon: 26
-      sendSignalToAction: s32'blz_401_Dagger_Root', 27
-      storeValueFromObject: (SELF), Mem(ActReg1), (PLAYER), Mem(ActReg1)
-      if: Mem(ActReg1)
-        Unknown1131: 1
-      endIf: 
-      gotoLabelRequests: s32'Shot'
-    endUpon: 
-    setLinkObjectDestroyOnDamage: 3
-    linkObjectPosition: 2
-  endUpon: 
-  sprite: s32'BLZ401_Bullet', 1
-  setPositionX: 180000
-  setPositionY: 300000
-  ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg0), Val(1)
-    privateSE: s32'blz_05'
-  endIf: 
-  gotoIfOperation: s32'TypeB', (IS_EQUAL), Mem(ActReg0), Val(0)
-  gotoIfOperation: s32'TypeC', (IS_EQUAL), Mem(ActReg0), Val(1)
-  gotoIfOperation: s32'TypeD', (IS_EQUAL), Mem(ActReg0), Val(2)
-  beginLabel: s32'TypeB'
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -80000
-  addPositionY: -240000
-  endRunOnObject: 
-  privateSE: s32'blz_05'
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -20000
-  addPositionY: -160000
-  endRunOnObject: 
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -50000
-  addPositionY: -80000
-  endRunOnObject: 
-  privateSE: s32'blz_05_VolDOWN'
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  createObject: s32'blz_400_Light', (PLAYER)
-  addPositionX: -10000
-  addPositionY: 0
-  endRunOnObject: 
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionY: 80000
-  endRunOnObject: 
-  privateSE: s32'blz_05_VolDOWN'
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -90000
-  addPositionY: 160000
-  endRunOnObject: 
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -40000
-  addPositionY: 240000
-  endRunOnObject: 
-  privateSE: s32'blz_05_VolDOWN'
-  endSprite: 
-  gotoLabel: s32'End'
-  beginLabel: s32'TypeC'
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -80000
-  addPositionY: -240000
-  endRunOnObject: 
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -20000
-  addPositionY: -160000
-  endRunOnObject: 
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -50000
-  addPositionY: -80000
-  endRunOnObject: 
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  createObject: s32'blz_400_Light', (PLAYER)
-  addPositionX: -10000
-  addPositionY: 0
-  endRunOnObject: 
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionY: 80000
-  endRunOnObject: 
-  privateSE: s32'blz_05_VolDOWN'
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -90000
-  addPositionY: 160000
-  endRunOnObject: 
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -40000
-  addPositionY: 240000
-  endRunOnObject: 
-  privateSE: s32'blz_05_VolDOWN'
-  endSprite: 
-  gotoLabel: s32'End'
-  beginLabel: s32'TypeD'
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -80000
-  addPositionY: -240000
-  endRunOnObject: 
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -20000
-  addPositionY: -160000
-  endRunOnObject: 
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -50000
-  addPositionY: -80000
-  endRunOnObject: 
-  sprite: s32'BLZ401_Bullet', 1
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  createObject: s32'blz_400_Light', (PLAYER)
-  addPositionX: -10000
-  addPositionY: 0
-  endRunOnObject: 
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionY: 80000
-  endRunOnObject: 
-  privateSE: s32'blz_05_VolDOWN'
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -90000
-  addPositionY: 160000
-  endRunOnObject: 
-  createObject: s32'blz_401_Dagger_Root', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: -40000
-  addPositionY: 240000
-  endRunOnObject: 
-  privateSE: s32'blz_05_VolDOWN'
-  endSprite: 
-  gotoLabel: s32'End'
-  beginLabel: s32'End'
-  sprite: s32'BLZ401_Bullet', 120
-  exitState: 
-  beginLabel: s32'Shot'
-  sprite: s32'BLZ401_BulletStart', 2
-  setLinkObjectDestroyOnStateChange: 0
-  upon: (FRAME_STEP)
-    ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(60)
-      clearUpon: (FRAME_STEP)
-      gotoLabelRequests: s32'Koware'
     endIf: 
   endUpon: 
-  sprite: s32'BLZ401_BulletStart', 1
-  linkObjectPosition: 0
-  setLinkObjectDestroyOnDamage: 0
-  Unknown2212: 0
-  Unknown2213: 0
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    physicsXImpulse: 43000
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    physicsXImpulse: 51000
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-    physicsXImpulse: 70000
-    Unknown310: 9, 3, 2, 48, 0, 1
-    storeValue: Mem(PlayerVal9), Val(1)
-  endIf: 
 endIf: 
 
+upon: (HIT_OR_GUARD)
+  velocityXPercent: 70
+  modifyVar: (ADD), Mem(ActReg7), Val(1)
+  ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg7), Val(2)
+    damage: 100
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+    ifOperation: (IS_EQUAL), Mem(ActReg2), Val(1)
+      hitstop: 8
+    endIf: 
+    ifOperation: (IS_EQUAL), Mem(ActReg2), Val(2)
+      hitstop: 7
+      ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg7), Val(5)
+        hitstop: 8
+      endIf: 
+    endIf: 
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+    if: Mem(PlayerVal0)
+      storeValue: Mem(PlayerVal0), Val(0)
+      comboLimitScaling: 0
+      Unknown1131: 1
+    endIf: 
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+    storeValue: Mem(ObjReg0), Val(1)
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg7), Val(5)
+      magnetismY: 0, 0, 0, 0, 0
+    endIf: 
+  endIf: 
+endUpon: 
+
+upon: 12
+  if: Mem(ObjReg0)
+    storeValue: Mem(ObjReg0), Val(0)
+    checkScreenCollision: 1
+  endIf: 
+  else: 
+    checkScreenCollision: 0
+  endElse: 
+endUpon: 
+
+initializeDestroy: 
+numberOfHits: 2
+destroyOnDamageCollision: 1
+Unknown2207: 1
+Unknown2208: 1
+Unknown2209: 1
+Unknown2210: 1
+Unknown2257: 1
+ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+  Unknown2210: 99
+endIf: 
+
+upon: 45
+  clearUpon: 24
+  clearUpon: 25
+  haltMomentum: 1
+  gotoLabelRequests: s32'Koware'
+endUpon: 
+
+setEventTrigger: 13, 120
+upon: 13
+  gotoLabelRequests: s32'Koware'
+endUpon: 
+
+addMoveForceDisableFlag: 1
+upon: 23
+  clearUpon: 23
+  sendSignalToAction: s32'blz_401_Dagger_Root', 23
+  gotoLabelRequests: s32'Shot'
+endUpon: 
+
+upon: 24
+  clearUpon: 24
+  clearUpon: 25
+  storeValue: Mem(ActReg2), Val(1)
+  numberOfHits: 3
+  sendSignalToAction: s32'blz_401_Dagger_Root', 24
+  gotoLabelRequests: s32'Shot'
+endUpon: 
+
+upon: 25
+  clearUpon: 24
+  clearUpon: 25
+  storeValue: Mem(ActReg2), Val(2)
+  numberOfHits: 5
+  sendSignalToAction: s32'blz_401_Dagger_Root', 27
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+    Unknown1131: 1
+    comboLimitScaling: 0
+    postSubroutineBegin: s32'SpecialShot_D'
+  endIf: 
+  gotoLabelRequests: s32'Shot'
+endUpon: 
+
+upon: 26
+  clearUpon: 26
+  sendSignalToAction: s32'blz_401_Dagger_Root', 27
+  storeValueFromObject: (SELF), Mem(ActReg1), (PLAYER), Mem(ActReg1)
+  if: Mem(ActReg1)
+    Unknown1131: 1
+  endIf: 
+  gotoLabelRequests: s32'Shot'
+endUpon: 
+
+setLinkObjectDestroyOnDamage: 3
+linkObjectPosition: 2
+upon: 37
+  ifNot: Mem(ObjReg1)
+    pushVelocityX: 
+  endIf: 
+  velocityXPercent: 0
+  storeValue: Mem(ObjReg1), Val(1)
+endUpon: 
+
+endUpon: 
+sprite: s32'BLZ401_Bullet', 1
+setPositionX: 180000
+setPositionY: 300000
+ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg0), Val(1)
+  privateSE: s32'blz_05'
+endIf: 
+
+gotoIfOperation: s32'TypeB', (IS_EQUAL), Mem(ActReg0), Val(0)
+gotoIfOperation: s32'TypeC', (IS_EQUAL), Mem(ActReg0), Val(1)
+gotoIfOperation: s32'TypeD', (IS_EQUAL), Mem(ActReg0), Val(2)
+beginLabel: s32'TypeB'
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -80000
+  addPositionY: -240000
+endRunOnObject: 
+
+privateSE: s32'blz_05'
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -20000
+  addPositionY: -160000
+endRunOnObject: 
+
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -50000
+  addPositionY: -80000
+endRunOnObject: 
+
+privateSE: s32'blz_05_VolDOWN'
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  createObject: s32'blz_400_Light', (PLAYER)
+  addPositionX: -10000
+  addPositionY: 0
+endRunOnObject: 
+
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionY: 80000
+endRunOnObject: 
+
+privateSE: s32'blz_05_VolDOWN'
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -90000
+  addPositionY: 160000
+endRunOnObject: 
+
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -40000
+  addPositionY: 240000
+endRunOnObject: 
+
+privateSE: s32'blz_05_VolDOWN'
+endSprite: 
+gotoLabel: s32'End'
+beginLabel: s32'TypeC'
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -80000
+  addPositionY: -240000
+endRunOnObject: 
+
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -20000
+  addPositionY: -160000
+endRunOnObject: 
+
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -50000
+  addPositionY: -80000
+endRunOnObject: 
+
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  createObject: s32'blz_400_Light', (PLAYER)
+  addPositionX: -10000
+  addPositionY: 0
+endRunOnObject: 
+
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionY: 80000
+endRunOnObject: 
+
+privateSE: s32'blz_05_VolDOWN'
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -90000
+  addPositionY: 160000
+endRunOnObject: 
+
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -40000
+  addPositionY: 240000
+endRunOnObject: 
+
+privateSE: s32'blz_05_VolDOWN'
+endSprite: 
+gotoLabel: s32'End'
+beginLabel: s32'TypeD'
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -80000
+  addPositionY: -240000
+endRunOnObject: 
+
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -20000
+  addPositionY: -160000
+endRunOnObject: 
+
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -50000
+  addPositionY: -80000
+endRunOnObject: 
+
+sprite: s32'BLZ401_Bullet', 1
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  createObject: s32'blz_400_Light', (PLAYER)
+  addPositionX: -10000
+  addPositionY: 0
+endRunOnObject: 
+
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionY: 80000
+endRunOnObject: 
+
+privateSE: s32'blz_05_VolDOWN'
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -90000
+  addPositionY: 160000
+endRunOnObject: 
+
+createObject: s32'blz_401_Dagger_Root', (PLAYER)
+runOnObject: (PREVIOUS)
+  addPositionX: -40000
+  addPositionY: 240000
+endRunOnObject: 
+
+privateSE: s32'blz_05_VolDOWN'
+endSprite: 
+gotoLabel: s32'End'
+beginLabel: s32'End'
+sprite: s32'BLZ401_Bullet', 120
+exitState: 
+beginLabel: s32'Shot'
+sprite: s32'BLZ401_BulletStart', 2
+setLinkObjectDestroyOnStateChange: 0
+upon: (FRAME_STEP)
+  ifOperation: (IS_GREATER_OR_EQUAL), Mem(ObjReg1), Val(2)
+    storeValue: Mem(ObjReg1), Val(0)
+    popVelocityX: 
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ObjReg1), Val(1)
+    modifyVar: (ADD), Mem(ObjReg1), Val(1)
+  endIf: 
+  ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(60)
+    clearUpon: (FRAME_STEP)
+    gotoLabelRequests: s32'Koware'
+  endIf: 
+endUpon: 
+
+sprite: s32'BLZ401_BulletStart', 1
+linkObjectPosition: 0
+setLinkObjectDestroyOnDamage: 0
+Unknown2212: 0
+Unknown2213: 0
+ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+  physicsXImpulse: 51000
+endIf: 
+
+ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+  physicsXImpulse: 51000
+endIf: 
+
+ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+  physicsXImpulse: 70000
+  Unknown310: 9, 3, 2, 48, 0, 1
+  storeValue: Mem(PlayerVal9), Val(1)
+endIf: 
+
+endIf: 
 ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(1)
   groundHitEffect: (AIR_FACE_UP)
 endIf: 
@@ -1684,7 +1768,7 @@ beginState: s32'blz_401_Dagger_Root'
     addPositionY: 60000
     Unknown1727: 90000
     setObjectSize: 800
-    Unknown289: 200
+    setMaxActionTime: 200
     upon: 23
       gotoLabelRequests: s32'AT'
       clearUpon: 23
@@ -1784,12 +1868,12 @@ beginState: s32'blz_402_Barrier'
     endUpon: 
   endUpon: 
   sprite: s32'null', 5
-  Unknown191: 60
+  setObjectSizeScaleSpeed: 60
   linkParticle: s32'blz_402_Barrier_Loop'
   requestShake: 0, 10000
   createObject: s32'blz_402_Shield_Normal', (PLAYER)
   sprite: s32'null', 300
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   beginLabel: s32'End'
   sprite: s32'null', 3
   setLightRedColorSpeed: -66
@@ -1810,7 +1894,7 @@ beginState: s32'blz_402_Shield_Normal'
       gotoLabelRequests: s32'End'
       clearUpon: 23
     endUpon: 
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 2147483647
   setAngleX: 0
@@ -2314,7 +2398,7 @@ beginState: s32'blz_404_Boss_Slash'
   setAngle: 0
   setObjectWidth: 1500
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
   createObject: s32'blz_404_SlashPlusB_Eff', (PLAYER)
   sprite: s32'BLZ404_SlashA', 2
   setObjectWidth: 2000
@@ -2451,7 +2535,7 @@ beginState: s32'blz_406_BlackHole'
   sprite: s32'null', 20
   createObject: s32'blz_406_BlackHole_Screw', (PLAYER)
   runOnObject: (PREVIOUS)
-  addObjectSize: 150
+    addObjectSize: 150
   endRunOnObject: 
   gotoLabel: s32'SuctionLoop'
   beginLabel: s32'End'
@@ -2511,7 +2595,7 @@ beginState: s32'blz_406_BlackHole_Screw'
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'blz_408_Screw'
-  Unknown191: -5
+  setObjectSizeScaleSpeed: -5
 endState: 
 
 beginState: s32'blz_406_WingEnter'
@@ -2626,13 +2710,13 @@ beginState: s32'blz_421_Barrier_Eff'
     endUpon: 
   endUpon: 
   sprite: s32'null', 5
-  Unknown191: 60
+  setObjectSizeScaleSpeed: 60
   linkParticle: s32'blz_402_Barrier_Loop'
   requestShake: 0, 10000
   createObject: s32'blz_421_Shield', (PLAYER)
   privateSE: s32'blz_09_2'
   sprite: s32'null', 300
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   beginLabel: s32'End'
   sprite: s32'null', 3
   setLightRedColorSpeed: -66
@@ -2754,7 +2838,7 @@ beginState: s32'blz_430'
   sprite: s32'null', 20
   createObject: s32'blz_430_Screw', (PLAYER)
   runOnObject: (PREVIOUS)
-  addObjectSize: 150
+    addObjectSize: 150
   endRunOnObject: 
   endSprite: 
   gotoLabel: s32'Suction'
@@ -2769,14 +2853,14 @@ beginState: s32'blz_430_Screw'
     stopLinkObject: 2
     setObjectWidth: 800
     setObjectHeight: 640
-    Unknown180: 800
+    setObjectDepth: 800
     setAngleX: 2400
     setAngleY: 310000
     setAngle: 300000
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'blz_408_Screw'
-  Unknown191: -5
+  setObjectSizeScaleSpeed: -5
 endState: 
 
 beginState: s32'blz_430_2'
@@ -2832,9 +2916,9 @@ beginState: s32'blz_430_Drill'
     linkObjectAngle: 2
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
-    Unknown289: 120
+    setMaxActionTime: 120
     setObjectSize: 1100
-    Unknown202: 55000, 0
+    setSpeedByAngle: 55000, 0
     setLightRedColor: 100
     setLightRedColorSpeed: 69
     setEventTrigger: 13, 20
@@ -2887,7 +2971,7 @@ beginState: s32'blz_430_Drill_Atk'
   upon: (IMMEDIATE)
     linkObjectAngle: 2
     linkObjectPosition: 2
-    Unknown289: 200
+    setMaxActionTime: 200
     callSubroutine: s32'cmnOugiShot_AtkInit'
     callSubroutine: s32'cmnHACT_BlowOff'
     damage: 3500
@@ -2901,11 +2985,11 @@ beginState: s32'blz_430_Drill_Atk'
     wallBounceCount: 1
     wallBounceXVelocityPercent: 20
     wallBounceWaitTime: 6
-    Unknown864: 18
+    groundBounceXVelocityPercent: 18
     atkCameraShake: s32'ShakeYoko', 3000, 0, 15, 0
     pushbackOnBlockX: 20
     hitstop: 20
-    Unknown58: 1
+    worldOutToEliminate: 1
     addMoveForceDisableFlag: 2
     Unknown310: 12, 3, 2, 48, 0, 1
     Unknown1131: 1
@@ -2916,7 +3000,7 @@ beginState: s32'blz_430_Drill_Atk'
       callSubroutine: s32'cmnOugi_Maai_ON_ATTACK'
       if: Mem(ActReg0)
         runOnObject: (PLAYER)
-        Unknown2290: 40
+          Unknown2290: 40
         endRunOnObject: 
         hitstop: 40
         attackHitPositionType: 1, 100000, -250000
@@ -3010,7 +3094,7 @@ beginState: s32'blz_430_WindRing01'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectAngle: 2
     addPositionX: -150000
-    Unknown102: 20000, -20000
+    randomAddPositionX: 20000, -20000
     randomAddPositionY: 20000, -20000
     createObject: s32'blz_430_Nokosi', (PLAYER)
     upon: 23
@@ -3035,7 +3119,7 @@ beginState: s32'blz_430_WindRing02'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     linkObjectAngle: 2
-    Unknown102: 20000, -20000
+    randomAddPositionX: 20000, -20000
     randomAddPositionY: 20000, -20000
     createObject: s32'blz_430_Nokosi', (PLAYER)
     upon: 23
@@ -3076,51 +3160,51 @@ beginState: s32'blz_430_CS'
     ifOnFrame: Val(11)
       createObject: s32'blz_430_CS_Aura01', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 124979
-      setPositionY: 106053
-      setDepth: -32799
-      setAngleX: 28000
-      setAngleY: 254000
-      setAngle: 354000
+        setPositionX: 124979
+        setPositionY: 106053
+        setDepth: -32799
+        setAngleX: 28000
+        setAngleY: 254000
+        setAngle: 354000
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura01', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 49990
-      setPositionY: 54366
-      setDepth: -161058
-      setAngleX: 336000
-      setAngleY: 32000
-      setAngle: 0
+        setPositionX: 49990
+        setPositionY: 54366
+        setDepth: -161058
+        setAngleX: 336000
+        setAngleY: 32000
+        setAngle: 0
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura02', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -125002
-      setPositionY: 30071
-      setDepth: -26778
-      setObjectWidth: 1400
-      setObjectHeight: 1000
-      Unknown180: 1000
-      setAngleX: 298000
-      setAngleY: 338000
-      setAngle: 0
+        setPositionX: -125002
+        setPositionY: 30071
+        setDepth: -26778
+        setObjectWidth: 1400
+        setObjectHeight: 1000
+        setObjectDepth: 1000
+        setAngleX: 298000
+        setAngleY: 338000
+        setAngle: 0
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura02', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 89975
-      setPositionY: 320217
-      setDepth: 192519
-      setAngleX: 160000
-      setAngleY: 204000
-      setAngle: 188000
+        setPositionX: 89975
+        setPositionY: 320217
+        setDepth: 192519
+        setAngleX: 160000
+        setAngleY: 204000
+        setAngle: 188000
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura01', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -105067
-      setPositionY: 225407
-      setDepth: 193439
-      setAngleX: 330000
-      setAngleY: 356000
-      setAngle: 19600
+        setPositionX: -105067
+        setPositionY: 225407
+        setDepth: 193439
+        setAngleX: 330000
+        setAngleY: 356000
+        setAngle: 19600
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura03', (PLAYER)
       createObject: s32'blz_430_CS_Scr', (PLAYER)
@@ -3259,15 +3343,15 @@ beginState: s32'blz_431_CS'
     ifOnFrame: Val(0)
       createObject: s32'blz_431_CS_Sphere', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -107978
-      setPositionY: 459938
-      setDepth: 193907
+        setPositionX: -107978
+        setPositionY: 459938
+        setDepth: 193907
       endRunOnObject: 
       createObject: s32'blz_431_CS_Sphere', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 86164
-      setPositionY: 513680
-      setDepth: -109843
+        setPositionX: 86164
+        setPositionY: 513680
+        setDepth: -109843
       endRunOnObject: 
     endIf: 
   endUpon: 
@@ -3354,10 +3438,10 @@ beginState: s32'blz_431_Sphere'
   setLightRedColorSpeed: 300
   setLightGreenColorSpeed: 180
   setLightBlueColorSpeed: 15
-  Unknown191: -70
+  setObjectSizeScaleSpeed: -70
   sprite: s32'null', 30
   linkParticle: s32''
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   setObjectSize: 900
   setLightRedColorSpeed: 0
   setLightGreenColorSpeed: 0
@@ -3462,32 +3546,32 @@ beginState: s32'blz_432'
   createObject: s32'blz_431_Blackholl01', (PLAYER)
   sprite: s32'null', 1
   runOnObject: (ENEMY)
-  setColor: -4144960
+    setColor: -4144960
   endRunOnObject: 
   sprite: s32'null', 1
   runOnObject: (ENEMY)
-  setColor: -6250336
+    setColor: -6250336
   endRunOnObject: 
   sprite: s32'null', 1
   runOnObject: (ENEMY)
-  setColor: -8355712
+    setColor: -8355712
   endRunOnObject: 
   sprite: s32'null', 1
   runOnObject: (ENEMY)
-  setColor: -10461088
+    setColor: -10461088
   endRunOnObject: 
   sprite: s32'null', 1
   runOnObject: (ENEMY)
-  setColor: -12566464
+    setColor: -12566464
   endRunOnObject: 
   sprite: s32'null', 1
   runOnObject: (ENEMY)
-  setColor: -14671840
+    setColor: -14671840
   endRunOnObject: 
   sprite: s32'null', 12
   runOnObject: (ENEMY)
-  setColor: -1
-  Unknown2050: 0
+    setColor: -1
+    Unknown2050: 0
   endRunOnObject: 
   sprite: s32'null', 60
   sendSignalToAction: s32'blz_432_Sphere', 23
@@ -3521,10 +3605,10 @@ beginState: s32'blz_432_Sphere'
   setLightGreenColorSpeed: 180
   setLightBlueColorSpeed: 15
   sprite: s32'null', 10
-  Unknown191: -70
+  setObjectSizeScaleSpeed: -70
   sprite: s32'null', 30
   linkParticle: s32''
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   setObjectSize: 900
   setLightRedColorSpeed: 0
   setLightGreenColorSpeed: 0
@@ -3561,51 +3645,51 @@ beginState: s32'blz_432_CS'
     ifOnFrame: Val(11)
       createObject: s32'blz_430_CS_Aura01', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 124979
-      setPositionY: 106053
-      setDepth: -32799
-      setAngleX: 28000
-      setAngleY: 254000
-      setAngle: 354000
+        setPositionX: 124979
+        setPositionY: 106053
+        setDepth: -32799
+        setAngleX: 28000
+        setAngleY: 254000
+        setAngle: 354000
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura01', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 49990
-      setPositionY: 54366
-      setDepth: -161058
-      setAngleX: 336000
-      setAngleY: 32000
-      setAngle: 0
+        setPositionX: 49990
+        setPositionY: 54366
+        setDepth: -161058
+        setAngleX: 336000
+        setAngleY: 32000
+        setAngle: 0
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura02', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -125002
-      setPositionY: 30071
-      setDepth: -26778
-      setObjectWidth: 1400
-      setObjectHeight: 1000
-      Unknown180: 1000
-      setAngleX: 298000
-      setAngleY: 338000
-      setAngle: 0
+        setPositionX: -125002
+        setPositionY: 30071
+        setDepth: -26778
+        setObjectWidth: 1400
+        setObjectHeight: 1000
+        setObjectDepth: 1000
+        setAngleX: 298000
+        setAngleY: 338000
+        setAngle: 0
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura02', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 89975
-      setPositionY: 320217
-      setDepth: 192519
-      setAngleX: 160000
-      setAngleY: 204000
-      setAngle: 188000
+        setPositionX: 89975
+        setPositionY: 320217
+        setDepth: 192519
+        setAngleX: 160000
+        setAngleY: 204000
+        setAngle: 188000
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura01', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -105067
-      setPositionY: 225407
-      setDepth: 193439
-      setAngleX: 330000
-      setAngleY: 356000
-      setAngle: 19600
+        setPositionX: -105067
+        setPositionY: 225407
+        setDepth: 193439
+        setAngleX: 330000
+        setAngleY: 356000
+        setAngle: 19600
       endRunOnObject: 
       createObject: s32'blz_430_CS_Aura03', (PLAYER)
       createObject: s32'blz_430_CS_Scr', (PLAYER)
@@ -4398,42 +4482,42 @@ beginState: s32'blz_440'
   createObject: s32'blz_440_Spike01', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
   runOnObject: (PREVIOUS)
-  addPositionX: -250000
-  Unknown1727: 10000
-  setAngleY: 5000
-  addObjectSize: -100
+    addPositionX: -250000
+    Unknown1727: 10000
+    setAngleY: 5000
+    addObjectSize: -100
   endRunOnObject: 
   createObject: s32'blz_440_Spike02', (PLAYER)
   stackObject: (STACK1), (PREVIOUS)
   runOnObject: (PREVIOUS)
-  addPositionX: -490000
-  Unknown1727: 0
-  setAngleY: -15000
-  addObjectSize: -170
+    addPositionX: -490000
+    Unknown1727: 0
+    setAngleY: -15000
+    addObjectSize: -170
   endRunOnObject: 
   createObject: s32'blz_440_Spike01', (PLAYER)
   stackObject: (STACK2), (PREVIOUS)
   runOnObject: (PREVIOUS)
-  addPositionX: -730000
-  Unknown1727: 10000
-  setAngleY: 0
-  addObjectSize: -100
+    addPositionX: -730000
+    Unknown1727: 10000
+    setAngleY: 0
+    addObjectSize: -100
   endRunOnObject: 
   createObject: s32'blz_440_Spike02', (PLAYER)
   stackObject: (STACK3), (PREVIOUS)
   runOnObject: (PREVIOUS)
-  addPositionX: -970000
-  Unknown1727: 30000
-  setAngleY: -10000
-  addObjectSize: -150
+    addPositionX: -970000
+    Unknown1727: 30000
+    setAngleY: -10000
+    addObjectSize: -150
   endRunOnObject: 
   createObject: s32'blz_440_Spike01', (PLAYER)
   stackObject: (STACK4), (PREVIOUS)
   runOnObject: (PREVIOUS)
-  addPositionX: -1210000
-  Unknown1727: 0
-  setAngleY: 0
-  addObjectSize: -180
+    addPositionX: -1210000
+    Unknown1727: 0
+    setAngleY: 0
+    addObjectSize: -180
   endRunOnObject: 
   sprite: s32'null', 6
   Unknown1793: 4, 23
@@ -4567,13 +4651,13 @@ beginState: s32'blz_440_KaihouDmy'
   createArgHikitsukiVal: Val(1), Val(0)
   createObjectWithArg: s32'blz_440_KaihouShot', (PLAYER)
   runOnObject: (PREVIOUS)
-  Unknown2294: 1040
+    Unknown2294: 1040
   endRunOnObject: 
   sprite: s32'null', 6
   addPositionX: 250000
   createObject: s32'blz_440_KaihouShot', (PLAYER)
   runOnObject: (PREVIOUS)
-  Unknown2294: 1030
+    Unknown2294: 1030
   endRunOnObject: 
   Unknown1793: 1, 23
   sprite: s32'null', 6
@@ -4584,7 +4668,7 @@ beginState: s32'blz_440_KaihouDmy'
   addPositionX: 250000
   createObject: s32'blz_440_KaihouShot', (PLAYER)
   runOnObject: (PREVIOUS)
-  Unknown2294: 930
+    Unknown2294: 930
   endRunOnObject: 
   Unknown1793: 1, 23
   sprite: s32'null', 6
@@ -4607,7 +4691,7 @@ beginState: s32'blz_440_KaihouShot'
   groundHitEffect: (AIR_FACE_UP)
   hitAirPushbackX: 40000
   hitAirPushbackY: 15000
-  Unknown746: 0, 30000
+  atkEnemyHitSuperArmorHitstop: 0, 30000
   hitstop: 0
   enemyHitstopAddition: 0, 0, 0
   wallPushback: 0, 3000
@@ -4643,14 +4727,14 @@ endElse:
 endIf: 
 upon: 86
   runOnObject: (PARENT)
-  modifyVar: (ADD), Mem(ActReg2), Val(1)
+    modifyVar: (ADD), Mem(ActReg2), Val(1)
   endRunOnObject: 
 endUpon: 
 
 upon: (HIT_OR_GUARD)
   clearUpon: (HIT_OR_GUARD)
   runOnObject: (PARENT)
-  modifyVar: (ADD), Mem(ActReg1), Val(1)
+    modifyVar: (ADD), Mem(ActReg1), Val(1)
   endRunOnObject: 
 endUpon: 
 
@@ -4707,7 +4791,7 @@ beginState: s32'blz_440_KaihouParticleDmy'
     worldCollision: 1
   endUpon: 
   sprite: s32'null', 60
-  Unknown44: 2, 0, 50
+  operation1: 2, 0, 50
   if: Mem(Tmp)
     linkParticle: s32'blz_440_spike01_end'
   endIf: 
@@ -4728,16 +4812,16 @@ beginState: s32'blz_440_Eye'
   setPositionX: 74925
   setPositionY: 273500
   setDepth: 80000
-  Unknown191: 100
+  setObjectSizeScaleSpeed: 100
   setObjectSize: 700
   sprite: s32'null', 54
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   setObjectSize: 1000
   sprite: s32'null', 3
   setPositionX: 74925
   setPositionY: 254000
   setDepth: 83000
-  Unknown191: -150
+  setObjectSizeScaleSpeed: -150
 endState: 
 
 beginState: s32'blz_440_BG'
@@ -5506,61 +5590,61 @@ beginState: s32'blz_441_CS'
       createObject: s32'blz_441_CS_Glare', (PLAYER)
       createObject: s32'blz_441_CS_Thunder', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -1528420
-      setPositionY: 1425137
-      setDepth: 756013
-      setAngleX: 32000
-      setAngleY: 44800
-      setAngle: 158000
-      setObjectSize: 3000
+        setPositionX: -1528420
+        setPositionY: 1425137
+        setDepth: 756013
+        setAngleX: 32000
+        setAngleY: 44800
+        setAngle: 158000
+        setObjectSize: 3000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(175)
       createObject: s32'blz_441_CS_Thunder', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -778089
-      setPositionY: 1926319
-      setDepth: -410977
-      setObjectSize: 4000
-      setAngleX: 32000
-      setAngleY: 286800
-      setAngle: 200000
+        setPositionX: -778089
+        setPositionY: 1926319
+        setDepth: -410977
+        setObjectSize: 4000
+        setAngleX: 32000
+        setAngleY: 286800
+        setAngle: 200000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(179)
       createObject: s32'blz_441_CS_Thunder', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -1348211
-      setPositionY: 2122336
-      setDepth: -638946
-      setObjectSize: 5000
-      setAngleX: 4000
-      setAngleY: 28800
-      setAngle: 168400
+        setPositionX: -1348211
+        setPositionY: 2122336
+        setDepth: -638946
+        setObjectSize: 5000
+        setAngleX: 4000
+        setAngleY: 28800
+        setAngle: 168400
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(203)
       createObject: s32'blz_441_CS_Thunder', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -1295891
-      addPositionY: 1685728
-      Unknown1727: 660958
-      setObjectSize: 4000
-      setAngleX: 16000
-      setAngleY: 20800
-      setAngle: 203200
+        addPositionX: -1295891
+        addPositionY: 1685728
+        Unknown1727: 660958
+        setObjectSize: 4000
+        setAngleX: 16000
+        setAngleY: 20800
+        setAngle: 203200
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(211)
       createObject: s32'blz_441_CS_Thunder', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -1635066
-      setPositionY: 1740035
-      setDepth: 219433
-      setObjectSize: 3000
-      setAngleX: 358000
-      setAngleY: 18800
-      setAngle: 134800
+        setPositionX: -1635066
+        setPositionY: 1740035
+        setDepth: 219433
+        setObjectSize: 3000
+        setAngleX: 358000
+        setAngleY: 18800
+        setAngle: 134800
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(315)
@@ -5637,7 +5721,7 @@ beginState: s32'blz_441_JumpBake'
   setDepth: 10787
   setObjectWidth: 900
   setObjectHeight: 1700
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 352800
   setAngleY: 0
   setAngle: 354000
@@ -5654,7 +5738,7 @@ beginState: s32'blz_441_JumpBake'
   setDepth: 111302
   setObjectWidth: 1000
   setObjectHeight: 1500
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 356000
   setAngleY: 0
   setAngle: 354000
@@ -5739,7 +5823,7 @@ beginState: s32'blz_441_CS_BG'
   setDepth: 15833259
   setObjectWidth: 100
   setObjectHeight: 100
-  Unknown180: 50
+  setObjectDepth: 50
   setAngleX: 0
   setAngleY: 0
   setAngle: 0
@@ -5787,16 +5871,16 @@ beginState: s32'blz_441_CS_Sphere'
   sprite: s32'null', 8
   sprite: s32'null', 8
   createObject: s32'blz_441_CS_Twist', (PLAYER)
-  Unknown191: -800
+  setObjectSizeScaleSpeed: -800
   physicsYImpulse: -105000
   upon: (FRAME_STEP)
-    Unknown193: 93
+    objectSizeScaleSpeedPercent: 93
     velocityYPercent: 91
   endUpon: 
   sprite: s32'null', 12
   linkParticle: s32'blz_441_CS_archenemy_compress01'
   clearUpon: (FRAME_STEP)
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   physicsYImpulse: 0
   setObjectSize: 330
   sprite: s32'null', 4
@@ -5994,20 +6078,20 @@ beginState: s32'blz_441_CS_Bomb'
   createObject: s32'blz_441_CS_Bomb_Ring', (PLAYER)
   createObject: s32'blz_441_CS_ScrWind', (PLAYER)
   createObject: s32'blz_441_CS_ScrWhiteAnim', (PLAYER)
-  Unknown191: 2000
+  setObjectSizeScaleSpeed: 2000
   setObjectSize: 10000
   sprite: s32'null', 2
   setObjectSize: 14000
-  Unknown191: 5000
+  setObjectSizeScaleSpeed: 5000
   sprite: s32'null', 2
   setObjectSize: 25000
-  Unknown191: 1000
+  setObjectSizeScaleSpeed: 1000
   sprite: s32'null', 2
   setObjectSize: 90000
   sprite: s32'null', 2
   setObjectSize: 95000
   sprite: s32'null', 2
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   sprite: s32'null', 2
   sprite: s32'null', 2
   sprite: s32'null', 2
@@ -6040,7 +6124,7 @@ beginState: s32'blz_441_CS_Croud01'
   setDepth: 5785671
   setObjectWidth: 7500
   setObjectHeight: 7500
-  Unknown180: 7500
+  setObjectDepth: 7500
   setAngleX: 72000
   setAngleY: 42000
   setAngle: 356000
@@ -6051,7 +6135,7 @@ beginState: s32'blz_441_CS_Croud01'
   setDepth: 1878504
   setObjectWidth: 6500
   setObjectHeight: 5000
-  Unknown180: 9000
+  setObjectDepth: 9000
   setAngleX: 72000
   setAngleY: 42000
   setAngle: 350000
@@ -6061,7 +6145,7 @@ beginState: s32'blz_441_CS_Croud01'
   setDepth: 2411375
   setObjectWidth: 6500
   setObjectHeight: 5000
-  Unknown180: 9000
+  setObjectDepth: 9000
   setAngleX: 72000
   setAngleY: 42000
   setAngle: 342000
@@ -6081,7 +6165,7 @@ beginState: s32'blz_441_CS_Croud02'
   Unknown1727: -359050
   setObjectWidth: 10000
   setObjectHeight: 7000
-  Unknown180: 10000
+  setObjectDepth: 10000
   setAngleX: 60000
   setAngleY: 336000
   setAngle: 2400
@@ -6092,7 +6176,7 @@ beginState: s32'blz_441_CS_Croud02'
   setDepth: -11420058
   setObjectWidth: 13000
   setObjectHeight: 7000
-  Unknown180: 10000
+  setObjectDepth: 10000
   setAngleX: 40000
   setAngleY: 336000
   setAngle: 2400
@@ -6102,7 +6186,7 @@ beginState: s32'blz_441_CS_Croud02'
   setDepth: -11678156
   setObjectWidth: 13000
   setObjectHeight: 5000
-  Unknown180: 10000
+  setObjectDepth: 10000
   setAngleX: 60000
   setAngleY: 336000
   setAngle: 3600
@@ -6122,7 +6206,7 @@ beginState: s32'blz_441_CS_Croud03'
   setDepth: -7088601
   setObjectWidth: 10000
   setObjectHeight: 7000
-  Unknown180: 10000
+  setObjectDepth: 10000
   setAngleX: 50000
   setAngleY: 20000
   setAngle: 2400
@@ -6133,7 +6217,7 @@ beginState: s32'blz_441_CS_Croud03'
   setDepth: -6670282
   setObjectWidth: 15000
   setObjectHeight: 7000
-  Unknown180: 10000
+  setObjectDepth: 10000
   setAngleX: 50000
   setAngleY: 20000
   setAngle: 2400
@@ -6143,7 +6227,7 @@ beginState: s32'blz_441_CS_Croud03'
   setDepth: -2327635
   setObjectWidth: 15000
   setObjectHeight: 5000
-  Unknown180: 10000
+  setObjectDepth: 10000
 endState: 
 
 beginState: s32'blz_441_CS_Croud04'
@@ -6160,7 +6244,7 @@ beginState: s32'blz_441_CS_Croud04'
   setDepth: -5595725
   setObjectWidth: 5000
   setObjectHeight: 3000
-  Unknown180: 5000
+  setObjectDepth: 5000
   setAngleX: 0
   setAngleY: 298000
   setAngle: 357600
@@ -6180,7 +6264,7 @@ beginState: s32'blz_441_CS_Croud05'
   setDepth: -11959479
   setObjectWidth: 10000
   setObjectHeight: 4000
-  Unknown180: 5000
+  setObjectDepth: 5000
   setAngleX: 122000
   setAngleY: 142000
   setAngle: 180000
@@ -6205,7 +6289,7 @@ beginState: s32'blz_441_CS_Croud06'
   setDepth: 6540853
   setObjectWidth: 5000
   setObjectHeight: 4000
-  Unknown180: 5000
+  setObjectDepth: 5000
   setAngleX: 50000
   setAngleY: 42000
   setAngle: 348400
@@ -6229,7 +6313,7 @@ beginState: s32'blz_441_CS_Croud_NoDOF01'
   setDepth: 12281246
   setObjectWidth: 4000
   setObjectHeight: 2400
-  Unknown180: 4000
+  setObjectDepth: 4000
   setAngleX: 348000
   setAngleY: 180000
   setAngle: 341600
@@ -6268,7 +6352,7 @@ beginState: s32'blz_441_CS_Croud_NoDOF02'
   setDepth: 12290234
   setObjectWidth: 4000
   setObjectHeight: 2400
-  Unknown180: 4000
+  setObjectDepth: 4000
   setAngleX: 348000
   setAngleY: 180000
   setAngle: 0
@@ -6306,17 +6390,17 @@ beginState: s32'blz_441_CS_Bloom'
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'blz_441_CS_bloom'
-  Unknown191: 500
+  setObjectSizeScaleSpeed: 500
   setObjectSize: 5000
   sprite: s32'null', 2
   setObjectSize: 10000
   sprite: s32'null', 2
-  Unknown191: 1000
+  setObjectSizeScaleSpeed: 1000
   sprite: s32'null', 2
   setObjectSize: 20000
   sprite: s32'null', 2
   sprite: s32'null', 120
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'blz_441_CS_Bomb_Ring'
@@ -6332,10 +6416,10 @@ beginState: s32'blz_441_CS_Bomb_Ring'
   endUpon: 
   sprite: s32'null', 6
   setObjectSize: 20000
-  Unknown192: 5000
+  addObjectSizeScaleSpeed: 5000
   sprite: s32'null', 100
   linkObjectSize: 2
-  Unknown192: 0
+  addObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'blz_441_CS_WhiteOut'
@@ -6383,7 +6467,7 @@ beginState: s32'blz_KaihouFinish_Camera'
     cameraTargetSelf: 1
     checkScreenCollision: 0
     setLinkObjectDestroyOnStateChange: 3
-    Unknown289: 600
+    setMaxActionTime: 600
   endUpon: 
   sprite: s32'null', 2147483647
   upon: (FRAME_STEP)
@@ -6415,63 +6499,63 @@ beginState: s32'blz_442_CS'
       createObject: s32'blz_442_CS_Aura', (PLAYER)
       createObject: s32'blz_442_CS_Screw01', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 79205
-      setPositionY: 524366
-      setDepth: -2029659
-      setObjectWidth: 1300
-      setObjectHeight: 1300
-      Unknown180: 1300
-      setAngleX: 800
-      setAngleY: 165600
-      setAngle: 344000
+        setPositionX: 79205
+        setPositionY: 524366
+        setDepth: -2029659
+        setObjectWidth: 1300
+        setObjectHeight: 1300
+        setObjectDepth: 1300
+        setAngleX: 800
+        setAngleY: 165600
+        setAngle: 344000
       endRunOnObject: 
       createObject: s32'blz_442_CS_Screw01', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: -136256
-      setPositionY: 467219
-      setDepth: -1774403
-      setObjectWidth: 2000
-      setObjectHeight: 2000
-      Unknown180: 2000
-      setAngleX: 11600
-      setAngleY: 137600
-      setAngle: 339600
+        setPositionX: -136256
+        setPositionY: 467219
+        setDepth: -1774403
+        setObjectWidth: 2000
+        setObjectHeight: 2000
+        setObjectDepth: 2000
+        setAngleX: 11600
+        setAngleY: 137600
+        setAngle: 339600
       endRunOnObject: 
       createObject: s32'blz_442_CS_Screw01', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 28113
-      setPositionY: 745832
-      setDepth: -1903363
-      setObjectWidth: 1300
-      setObjectHeight: 1000
-      Unknown180: 1300
-      setAngleX: 16800
-      setAngleY: 11200
-      setAngle: 6000
+        setPositionX: 28113
+        setPositionY: 745832
+        setDepth: -1903363
+        setObjectWidth: 1300
+        setObjectHeight: 1000
+        setObjectDepth: 1300
+        setAngleX: 16800
+        setAngleY: 11200
+        setAngle: 6000
       endRunOnObject: 
       createObject: s32'blz_442_CS_Screw03', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 125680
-      setPositionY: 489364
-      setDepth: -1865106
-      setObjectWidth: 700
-      setObjectHeight: 700
-      Unknown180: 700
-      setAngleX: 354400
-      setAngleY: 201200
-      setAngle: 346800
+        setPositionX: 125680
+        setPositionY: 489364
+        setDepth: -1865106
+        setObjectWidth: 700
+        setObjectHeight: 700
+        setObjectDepth: 700
+        setAngleX: 354400
+        setAngleY: 201200
+        setAngle: 346800
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(284)
       createObject: s32'blz_442_CS_Eye', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 330
-      addPositionX: 126350
-      addPositionY: 773410
-      Unknown1727: -1693734
-      setAngleX: 400
-      setAngleY: 169600
-      setAngle: 4800
+        setObjectSize: 330
+        addPositionX: 126350
+        addPositionY: 773410
+        Unknown1727: -1693734
+        setAngleX: 400
+        setAngleY: 169600
+        setAngle: 4800
       endRunOnObject: 
     endIf: 
   endUpon: 
@@ -6637,7 +6721,7 @@ beginState: s32'blz_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184

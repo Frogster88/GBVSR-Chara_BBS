@@ -25,7 +25,7 @@ beginState: s32'SRZ_001_bg_dashbrake01'
     addPositionX: -215000
     setObjectWidth: 700
     setObjectHeight: 800
-    Unknown180: 750
+    setObjectDepth: 750
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'bg_dashbrake'
@@ -42,7 +42,7 @@ beginState: s32'SRZ_001_bg_dashbrake02'
     addPositionX: 16000
     setObjectWidth: 680
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'bg_dashbrake'
@@ -282,7 +282,7 @@ beginState: s32'SRZ_253_StrikeEff01'
   setAngle: 56000
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 900
+  setObjectDepth: 900
 endState: 
 
 beginState: s32'SRZ_253_StrikeEff02'
@@ -476,7 +476,7 @@ beginState: s32'SRZ_350_strike'
     setAngle: 6400
     setObjectWidth: 2500
     setObjectHeight: 1800
-    Unknown180: 1800
+    setObjectDepth: 1800
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'srz_350_strike'
@@ -637,7 +637,7 @@ beginState: s32'SRZ_400_Burst'
   linkParticle: s32'srz_400_BurstStart'
   createObject: s32'SRZ_400_Rock', (PLAYER)
   runOnObject: (PREVIOUS)
-  addObjectSize: 160
+    addObjectSize: 160
   endRunOnObject: 
   privateSE: s32'srz_05_2'
   sprite: s32'SRZ_430Col_hundoshi', 6
@@ -702,7 +702,7 @@ beginState: s32'SRZ_400_Burst_Renzoku'
   linkParticle: s32'srz_400_BurstStart'
   createObject: s32'SRZ_400_Rock', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 800
+    setObjectSize: 800
   endRunOnObject: 
   sprite: s32'SRZ_430TestCol', 4
   linkParticle: s32'srz_400_BurstAtk'
@@ -831,14 +831,14 @@ beginState: s32'SRZ_401_ChopEff'
   setAngle: 346000
   setObjectWidth: 2000
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
   sprite: s32'null', 30
   setPositionX: -77938
   setPositionY: 572125
   setDepth: 147660
   setObjectWidth: 2000
   setObjectHeight: 2000
-  Unknown180: 1700
+  setObjectDepth: 1700
   setAngleX: 184400
   setAngleY: 320800
   setAngle: 31200
@@ -989,7 +989,7 @@ beginState: s32'SRZ_403_Strike'
   setDepth: 120000
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleX: 36800
   setAngleY: 317600
   setAngle: 356800
@@ -1013,7 +1013,7 @@ beginState: s32'SRZ_403_Strike'
   setAngle: 800
   setObjectWidth: 1000
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
   createObject: s32'SRZ_403_Wind', (PLAYER)
   if: Mem(405)
     createParticle: s32'srz_403_SPkira', (PLAYER)
@@ -1033,7 +1033,7 @@ beginState: s32'SRZ_403_Wind'
     setAngle: 800
     setObjectWidth: 1000
     setObjectHeight: 700
-    Unknown180: 700
+    setObjectDepth: 700
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'srz_403_Wind'
@@ -1044,7 +1044,7 @@ beginState: s32'SRZ_403_Dash'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 6
@@ -1085,7 +1085,7 @@ beginState: s32'SRZ_403_Strike_SP'
   setDepth: 120000
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleX: 36800
   setAngleY: 317600
   setAngle: 356800
@@ -1109,7 +1109,7 @@ beginState: s32'SRZ_403_Strike_SP'
   setAngle: 800
   setObjectWidth: 1200
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   createObject: s32'SRZ_403_Wind_SP', (PLAYER)
   if: Mem(405)
     createParticle: s32'srz_403_SPkira', (PLAYER)
@@ -1123,7 +1123,7 @@ beginState: s32'SRZ_403_Dash_SP'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 6
@@ -1143,7 +1143,7 @@ beginState: s32'SRZ_403_Wind_SP'
     setAngle: 800
     setObjectWidth: 1300
     setObjectHeight: 1200
-    Unknown180: 1200
+    setObjectDepth: 1200
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'srz_403_Wind'
@@ -1200,7 +1200,7 @@ beginState: s32'SRZ_405_Trail'
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'srz_405_trail_loop'
     flipDirection: 
-    Unknown289: 300
+    setMaxActionTime: 300
     upon: 23
       gotoLabelRequests: s32'End'
       clearUpon: 23
@@ -1520,7 +1520,7 @@ beginState: s32'SRZ_430CS_HandAura'
   setDepth: 86962
   setObjectWidth: 400
   setObjectHeight: 600
-  Unknown180: 400
+  setObjectDepth: 400
   setAngleX: 235200
   setAngleY: 25200
   setAngle: 220800
@@ -1624,7 +1624,7 @@ beginState: s32'SRZ_430CS_Dragon'
     setAngle: 353600
     setObjectWidth: 1000
     setObjectHeight: 1000
-    Unknown180: 900
+    setObjectDepth: 900
   endUpon: 
   sprite: s32'null', 120
   linkParticle: s32'srz_430_CSDragon'
@@ -1737,7 +1737,7 @@ beginState: s32'SRZ_430CS_FistRay'
     addPositionX: -28138
     addPositionY: 285501
     Unknown1727: 147752
-    Unknown191: 10
+    setObjectSizeScaleSpeed: 10
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'srz_430_CSFistRay'
@@ -1816,7 +1816,7 @@ beginState: s32'SRZ_440CS_NasalBreath'
   linkParticle: s32'srz_440_CSNasalBreath'
   setObjectWidth: 75
   setObjectHeight: 120
-  Unknown180: 100
+  setObjectDepth: 100
   setPositionX: -16213
   setPositionY: 323199
   setDepth: 112116
@@ -1826,7 +1826,7 @@ beginState: s32'SRZ_440CS_NasalBreath'
   sprite: s32'null', 4
   setObjectWidth: 50
   setObjectHeight: 100
-  Unknown180: 100
+  setObjectDepth: 100
   setPositionX: -12197
   setPositionY: 355092
   setDepth: 63719
@@ -1846,7 +1846,7 @@ beginState: s32'SRZ_440CS_NasalBreath2'
   linkParticle: s32'srz_440_CSNasalBreath'
   setObjectWidth: 60
   setObjectHeight: 60
-  Unknown180: 100
+  setObjectDepth: 100
   setPositionX: -14381
   setPositionY: 335423
   setDepth: 90383
@@ -1856,7 +1856,7 @@ beginState: s32'SRZ_440CS_NasalBreath2'
   sprite: s32'null', 4
   setObjectWidth: 30
   setObjectHeight: 40
-  Unknown180: 100
+  setObjectDepth: 100
   setPositionX: -6281
   setPositionY: 385176
   setDepth: 13289
@@ -1909,7 +1909,7 @@ beginState: s32'SRZ_440CS_EnagyLine2'
   sprite: s32'null', 4
   setObjectWidth: 150
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setPositionX: 13766
   setPositionY: 180461
   setDepth: 156289
@@ -1950,9 +1950,9 @@ beginState: s32'SRZ_440CS_EnagyLine3'
   setAngle: 342000
   setObjectWidth: 500
   setObjectHeight: 700
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 60
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   setObjectSize: 1000
   setPositionX: -22844
   setPositionY: 120966
@@ -1994,9 +1994,9 @@ beginState: s32'SRZ_440CS_EnagyLine4'
   setAngle: 8400
   setObjectWidth: 500
   setObjectHeight: 700
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 60
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   setPositionX: -31010
   setPositionY: 162155
   setDepth: -11593
@@ -2017,7 +2017,7 @@ beginState: s32'SRZ_440CS_EnagyLine5'
   linkParticle: s32'srz_440_CSAura04'
   setObjectWidth: 700
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
   setAngleX: 4400
   setAngleY: 247200
   setAngle: 247600
@@ -2032,7 +2032,7 @@ beginState: s32'SRZ_440CS_EnagyLine5'
   setAngleY: 192800
   setAngle: 313200
   sprite: s32'null', 60
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   setPositionX: -86641
   setPositionY: 159348
   setDepth: -101201
@@ -2108,7 +2108,7 @@ beginState: s32'SRZ_440CS_HandLine'
   linkParticle: s32'srz_440_CSLine'
   setObjectWidth: 100
   setObjectHeight: 200
-  Unknown180: 250
+  setObjectDepth: 250
   setPositionX: -15919
   setPositionY: 188529
   setDepth: 143566
@@ -2134,7 +2134,7 @@ beginState: s32'SRZ_440CS_HandLine2'
   setAngle: 0
   setObjectWidth: 100
   setObjectHeight: 200
-  Unknown180: 250
+  setObjectDepth: 250
 endState: 
 
 beginState: s32'SRZ_440CS_HandLine3'
@@ -2151,7 +2151,7 @@ beginState: s32'SRZ_440CS_HandLine3'
   setDepth: 127549
   setObjectWidth: 100
   setObjectHeight: 200
-  Unknown180: 250
+  setObjectDepth: 250
   setAngleX: 0
   setAngleY: 339600
   setAngle: 359200
@@ -2240,7 +2240,7 @@ beginState: s32'SRZ_440CS_GroundAura'
     setDepth: 19552
     setObjectWidth: 1000
     setObjectHeight: 1000
-    Unknown180: 1500
+    setObjectDepth: 1500
   endUpon: 
   sprite: s32'null', 6
   linkParticle: s32'srz_440_CSGroundAura'
@@ -2284,12 +2284,12 @@ beginState: s32'SRZ_441_Font01'
     setAngle: 341200
     setObjectWidth: 100
     setObjectHeight: 85
-    Unknown180: 90
+    setObjectDepth: 90
   endIf: 
   else: 
     setObjectWidth: 100
     setObjectHeight: 85
-    Unknown180: 90
+    setObjectDepth: 90
     setPositionX: 134749
     setPositionY: 410615
     setDepth: 140154
@@ -2316,7 +2316,7 @@ beginState: s32'SRZ_441_Font02'
     setDepth: 80995
     setObjectWidth: 120
     setObjectHeight: 90
-    Unknown180: 90
+    setObjectDepth: 90
     setAngleX: 330800
     setAngleY: 350000
     setAngle: 335600
@@ -2327,7 +2327,7 @@ beginState: s32'SRZ_441_Font02'
     setDepth: 144789
     setObjectWidth: 120
     setObjectHeight: 90
-    Unknown180: 90
+    setObjectDepth: 90
     setAngleX: 333200
     setAngleY: 236800
     setAngle: 335600
@@ -2472,7 +2472,7 @@ beginState: s32'SRZ_441_StrikeScrew'
     addPositionX: 186002
     addPositionY: 287694
     Unknown1727: 27231
-    Unknown180: 800
+    setObjectDepth: 800
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'srz_440_Screw01'
@@ -2492,7 +2492,7 @@ beginState: s32'SRZ_441_StrikeScrew2'
     addPositionX: 186002
     addPositionY: 287694
     Unknown1727: 27231
-    Unknown180: 800
+    setObjectDepth: 800
   endUpon: 
   sprite: s32'null', 20
   linkParticle: s32'srz_440_Screw02'
@@ -2627,7 +2627,7 @@ beginState: s32'SRZ_441_CSEnagy02'
     setDepth: -132120
     setObjectWidth: 550
     setObjectHeight: 500
-    Unknown180: 500
+    setObjectDepth: 500
     setAngleX: 332400
     setAngleY: 91200
     setAngle: 4800
@@ -2695,7 +2695,7 @@ beginState: s32'SRZ_441_CSImpact'
     Unknown1727: -1390086
     setObjectWidth: 2400
     setObjectHeight: 2300
-    Unknown180: 2300
+    setObjectDepth: 2300
     setAngleX: 73600
     setAngleY: 90000
     setAngle: 0
@@ -2777,7 +2777,7 @@ beginState: s32'SRZ_441_CSFinalCrack'
   setAngle: 0
   setObjectWidth: 500
   setObjectHeight: 750
-  Unknown180: 500
+  setObjectDepth: 500
 endState: 
 
 beginState: s32'SRZ_441_CSFinalCrack2'
@@ -2795,7 +2795,7 @@ beginState: s32'SRZ_441_CSFinalCrack2'
   setAngleY: 57600
   setObjectWidth: 300
   setObjectHeight: 800
-  Unknown180: 300
+  setObjectDepth: 300
 endState: 
 
 beginState: s32'SRZ_441_CSWhiteOut'
@@ -2872,7 +2872,7 @@ beginState: s32'SRZ_442_GroundCrack'
     stopLinkObject: 2
     setObjectWidth: 300
     setObjectHeight: 500
-    Unknown180: 300
+    setObjectDepth: 300
     setPositionX: 150982
     setPositionY: 99
     setDepth: 149830
@@ -2890,7 +2890,7 @@ beginState: s32'SRZ_442_GroundCrack'
   setDepth: 276714
   setObjectWidth: 900
   setObjectHeight: 350
-  Unknown180: 900
+  setObjectDepth: 900
   setAngleX: 0
   setAngleY: 228400
   setAngle: 0
@@ -2910,7 +2910,7 @@ beginState: s32'SRZ_442_GroundCrack2'
     setAngle: 0
     setObjectWidth: 300
     setObjectHeight: 500
-    Unknown180: 300
+    setObjectDepth: 300
   endUpon: 
   sprite: s32'null', 2147483647
   linkParticle: s32'srz_442_CSRock'
@@ -2964,7 +2964,7 @@ beginState: s32'SRZ_7002P_lenzFrea'
     setLinkObjectDestroyOnDamage: 3
     setObjectWidth: 100
     setObjectHeight: 100
-    Unknown180: 100
+    setObjectDepth: 100
     setPositionX: 729044
     setPositionY: 162056
     setDepth: -31991

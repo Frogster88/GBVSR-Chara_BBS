@@ -253,8 +253,8 @@ endState:
 
 beginState: s32'san_232_SordThrust'
   upon: (IMMEDIATE)
-    setLinkObjectDestroyOnDamage: 2
-    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
@@ -264,7 +264,7 @@ beginState: s32'san_232_SordThrust'
   setLightRedColor: 1250
   setLightBlueColor: 2000
   setObjectHeight: 800
-  Unknown180: 1200
+  setObjectDepth: 1200
   setObjectHeight: 1200
   setAlphaColor: 1500
   addPositionY: 300000
@@ -291,8 +291,8 @@ endState:
 
 beginState: s32'san_232_GroundHoleEff'
   upon: (IMMEDIATE)
-    setLinkObjectDestroyOnDamage: 2
-    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
     linkObjectZ: 2
   endUpon: 
   sprite: s32'null', 25
@@ -317,7 +317,7 @@ beginState: s32'san_233_Thrust'
   setDepth: 23819
   setObjectWidth: 800
   setObjectHeight: 650
-  Unknown180: 650
+  setObjectDepth: 650
   setAngleX: 70800
   setAngleY: 350000
   setAngle: 336400
@@ -561,8 +561,8 @@ endState:
 
 beginState: s32'san_253_SordThrust'
   upon: (IMMEDIATE)
-    setLinkObjectDestroyOnDamage: 2
-    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
@@ -570,7 +570,7 @@ beginState: s32'san_253_SordThrust'
   sprite: s32'null', 15
   linkParticle: s32'cmn_thrust'
   setObjectHeight: 800
-  Unknown180: 1600
+  setObjectDepth: 1600
   setObjectHeight: 1600
   setAlphaColor: 1500
   setPositionX: 218901
@@ -613,27 +613,27 @@ beginState: s32'san_301_Slash'
   setObjectSize: 1650
   createObject: s32'san_301_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 34993
-  setPositionY: 203125
-  setDepth: -136252
+    setPositionX: 34993
+    setPositionY: 203125
+    setDepth: -136252
   endRunOnObject: 
   createObject: s32'san_301_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -204959
-  setPositionY: 190900
-  setDepth: -16676
+    setPositionX: -204959
+    setPositionY: 190900
+    setDepth: -16676
   endRunOnObject: 
   createObject: s32'san_301_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -95988
-  setPositionY: -241614
-  setDepth: 169632
+    setPositionX: -95988
+    setPositionY: -241614
+    setDepth: 169632
   endRunOnObject: 
   createObject: s32'san_301_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -170993
-  setPositionY: 40959
-  setDepth: 1763
+    setPositionX: -170993
+    setPositionY: 40959
+    setDepth: 1763
   endRunOnObject: 
 endState: 
 
@@ -690,7 +690,7 @@ beginState: s32'san_303_Strike'
   linkParticle: s32'san_303_Strike'
   setObjectWidth: 1300
   setObjectHeight: 1000
-  Unknown180: 1300
+  setObjectDepth: 1300
   setPositionX: -32971
   setPositionY: 176622
   setDepth: 103789
@@ -785,33 +785,33 @@ beginState: s32'san_306_Slash'
   setDepth: 73774
   setObjectWidth: 1300
   setObjectHeight: 1000
-  Unknown180: 1500
+  setObjectDepth: 1500
   setAngleX: 80400
   setAngleY: 210800
   setAngle: 348400
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 80000
-  setPositionY: 235914
-  setDepth: 95537
+    setPositionX: 80000
+    setPositionY: 235914
+    setDepth: 95537
   endRunOnObject: 
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 190985
-  setPositionY: 108983
-  setDepth: 102244
+    setPositionX: 190985
+    setPositionY: 108983
+    setDepth: 102244
   endRunOnObject: 
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 228951
-  setPositionY: -19162
-  setDepth: 101695
+    setPositionX: 228951
+    setPositionY: -19162
+    setDepth: 101695
   endRunOnObject: 
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 200906
-  setPositionY: -154763
-  setDepth: 87096
+    setPositionX: 200906
+    setPositionY: -154763
+    setDepth: 87096
   endRunOnObject: 
 endState: 
 
@@ -836,7 +836,7 @@ beginSubroutine: s32'400Shot_Init'
   setLinkObjectDestroyOnStateChange: 3
   linkObjectPosition: 3
   linkObjectZ: 3
-  Unknown289: 300
+  setMaxActionTime: 300
   callSubroutine: s32'cmnSpecialShot_AtkInit'
   Unknown1085: 1
   initializeDestroy: 
@@ -1158,7 +1158,7 @@ beginState: s32'san_400_LightLoopEff'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    Unknown289: 300
+    setMaxActionTime: 300
     upon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
@@ -1662,7 +1662,7 @@ beginState: s32'san_400_ShotEarth_Matome'
           blockstunAmount: 14
           hitAirPushbackY: 25000
         endIf: 
-        Unknown2329: 0x0300000003000000640000001600000064000000
+        Unknown2329: 3, 3, 100, 22, 100
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(400000)
           wallPushback: 0, 500
         endIf: 
@@ -1707,7 +1707,7 @@ beginState: s32'san_400_ShotEarth_Matome'
           blockstunAmount: 12
           hitAirPushbackY: 25000
         endIf: 
-        Unknown2329: 0x0300000003000000640000001600000064000000
+        Unknown2329: 3, 3, 100, 22, 100
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(500000)
           wallPushback: 0, 500
         endIf: 
@@ -2125,7 +2125,7 @@ beginState: s32'san_400_ShotWater_Atk'
     endUpon: 
     Unknown1727: 11118
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-      Unknown2329: 0x03000000170000007B000000160000007B000000
+      Unknown2329: 3, 23, 123, 22, 123
       storeValue: Mem(ActReg1), Mem(Tmp)
       ifOperation: (IS_GREATER), Mem(ActReg1), Val(250000)
         addPositionX: 250000
@@ -2192,7 +2192,7 @@ beginState: s32'san_400_ShotWaterEff'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     linkObjectZ: 2
-    Unknown289: 600
+    setMaxActionTime: 600
     stopLinkObject: 2
     upon: 23
       gotoLabelRequests: s32'Size'
@@ -2275,7 +2275,7 @@ beginState: s32'san_400_WaterSlash'
   linkParticle: s32'san_400_WaterSlash02'
   setObjectWidth: 1100
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: -88779
   setPositionY: 50375
   setDepth: -3124
@@ -2285,7 +2285,7 @@ beginState: s32'san_400_WaterSlash'
   sprite: s32'null', 30
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: -70793
   setPositionY: 88307
   setDepth: -1436
@@ -2399,31 +2399,31 @@ beginState: s32'san_401_SlashEff'
   setAngle: 142800
   setObjectWidth: 1400
   setObjectHeight: 1000
-  Unknown180: 1400
+  setObjectDepth: 1400
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   createObject: s32'san_401_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 54989
-  setPositionY: -212844
-  setDepth: 194118
+    setPositionX: 54989
+    setPositionY: -212844
+    setDepth: 194118
   endRunOnObject: 
   createObject: s32'san_401_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 216937
-  setPositionY: -44303
-  setDepth: 116415
+    setPositionX: 216937
+    setPositionY: -44303
+    setDepth: 116415
   endRunOnObject: 
   createObject: s32'san_401_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 96000
-  setPositionY: 180364
-  setDepth: -8928
+    setPositionX: 96000
+    setPositionY: 180364
+    setDepth: -8928
   endRunOnObject: 
   createObject: s32'san_401_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -208887
-  setPositionY: 77608
-  setDepth: 166732
+    setPositionX: -208887
+    setPositionY: 77608
+    setDepth: 166732
   endRunOnObject: 
   beginLabel: s32'Next'
   sprite: s32'null', 3
@@ -2497,8 +2497,8 @@ endState:
 
 beginState: s32'san_401_SlashSub'
   upon: (IMMEDIATE)
-    setLinkObjectDestroyOnDamage: 2
-    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
@@ -2992,7 +2992,7 @@ beginState: s32'san_406_SlashShotMatome'
     endElse: 
   endUpon: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-    Unknown2329: 0x03000000170000007B000000160000007B000000
+    Unknown2329: 3, 23, 123, 22, 123
     storeValue: Mem(ActReg0), Mem(Tmp)
     ifOperation: (IS_GREATER), Mem(ActReg0), Val(800000)
       addPositionX: 800000
@@ -3009,7 +3009,7 @@ beginState: s32'san_406_SlashShotMatome'
   endIf: 
   else: 
     ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(0)
-      Unknown2329: 0x03000000170000007B000000160000007B000000
+      Unknown2329: 3, 23, 123, 22, 123
       storeValue: Mem(ActReg0), Mem(Tmp)
       ifOperation: (IS_GREATER), Mem(ActReg0), Val(550000)
         addPositionX: 550000
@@ -3025,7 +3025,7 @@ beginState: s32'san_406_SlashShotMatome'
       setPositionY: 250000
     endIf: 
     ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
-      Unknown2329: 0x03000000170000007B000000160000007B000000
+      Unknown2329: 3, 23, 123, 22, 123
       storeValue: Mem(ActReg0), Mem(Tmp)
       ifOperation: (IS_GREATER), Mem(ActReg0), Val(800000)
         addPositionX: 800000
@@ -3373,64 +3373,64 @@ beginState: s32'san_406_SlashShotMatome_D'
   hit: 
   createObject: s32'san_406_SlashShot_D', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 49200
-  setAngleY: 54000
-  setAngle: 44400
+    setAngleX: 49200
+    setAngleY: 54000
+    setAngle: 44400
   endRunOnObject: 
   sprite: s32'iaishot_atk', 3
   createObject: s32'san_406_SlashShot_D', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 49200
-  setAngleY: 213200
-  setAngle: 38400
+    setAngleX: 49200
+    setAngleY: 213200
+    setAngle: 38400
   endRunOnObject: 
   sprite: s32'iaishot_atk', 3
   damageEffect: 2, s32'san_406_HitEff_Slash2'
   hit: 
   createObject: s32'san_406_SlashShot_D', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 120800
-  setAngleY: 124400
-  setAngle: 244000
+    setAngleX: 120800
+    setAngleY: 124400
+    setAngle: 244000
   endRunOnObject: 
   sprite: s32'iaishot_atk', 3
   createObject: s32'san_406_SlashShot_D', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 120800
-  setAngleY: 204800
-  setAngle: 335600
+    setAngleX: 120800
+    setAngleY: 204800
+    setAngle: 335600
   endRunOnObject: 
   sprite: s32'iaishot_atk', 3
   damageEffect: 2, s32'san_406_HitEff_Slash3'
   hit: 
   createObject: s32'san_406_SlashShot_D', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 49200
-  setAngleY: 54000
-  setAngle: 44400
+    setAngleX: 49200
+    setAngleY: 54000
+    setAngle: 44400
   endRunOnObject: 
   sprite: s32'iaishot_atk', 3
   createObject: s32'san_406_SlashShot_D', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 49200
-  setAngleY: 213200
-  setAngle: 38400
+    setAngleX: 49200
+    setAngleY: 213200
+    setAngle: 38400
   endRunOnObject: 
   sprite: s32'iaishot_atk', 3
   damageEffect: 2, s32'san_406_HitEff_Slash4'
   hit: 
   createObject: s32'san_406_SlashShot_D', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 120800
-  setAngleY: 124400
-  setAngle: 244000
+    setAngleX: 120800
+    setAngleY: 124400
+    setAngle: 244000
   endRunOnObject: 
   sprite: s32'iaishot_atk', 3
   createObject: s32'san_406_SlashShot_D', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleX: 120800
-  setAngleY: 204800
-  setAngle: 335600
+    setAngleX: 120800
+    setAngleY: 204800
+    setAngle: 335600
   endRunOnObject: 
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
@@ -3502,7 +3502,7 @@ beginState: s32'san_406_AtkEff'
   linkParticle: s32'san_406_Slash'
   setObjectWidth: 1400
   setObjectHeight: 1400
-  Unknown180: 1400
+  setObjectDepth: 1400
   setPositionX: 136052
   setPositionY: 253916
   setDepth: 149147
@@ -3530,21 +3530,21 @@ beginState: s32'san_407_Slash'
   setObjectSize: 1650
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -184947
-  setPositionY: -113101
-  setDepth: 180389
+    setPositionX: -184947
+    setPositionY: -113101
+    setDepth: 180389
   endRunOnObject: 
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 110969
-  setPositionY: -65549
-  setDepth: 237520
+    setPositionX: 110969
+    setPositionY: -65549
+    setDepth: 237520
   endRunOnObject: 
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 10014
-  setPositionY: 106810
-  setDepth: 49884
+    setPositionX: 10014
+    setPositionY: 106810
+    setDepth: 49884
   endRunOnObject: 
 endState: 
 
@@ -3766,27 +3766,27 @@ beginState: s32'san_430_SlashEff'
   setObjectSize: 2500
   createObject: s32'san_430_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 109994
-  setPositionY: 218813
-  setDepth: 463169
+    setPositionX: 109994
+    setPositionY: 218813
+    setDepth: 463169
   endRunOnObject: 
   createObject: s32'san_430_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 325007
-  setPositionY: 192304
-  setDepth: 257017
+    setPositionX: 325007
+    setPositionY: 192304
+    setDepth: 257017
   endRunOnObject: 
   createObject: s32'san_430_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 493922
-  setPositionY: 52228
-  setDepth: -89378
+    setPositionX: 493922
+    setPositionY: 52228
+    setDepth: -89378
   endRunOnObject: 
   createObject: s32'san_430_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 187943
-  setPositionY: -67359
-  setDepth: -58200
+    setPositionX: 187943
+    setPositionY: -67359
+    setDepth: -58200
   endRunOnObject: 
 endState: 
 
@@ -3802,7 +3802,7 @@ beginState: s32'san_430_SlashEff2'
   linkParticle: s32'san_430_Slash02'
   setObjectWidth: 1600
   setObjectHeight: 1500
-  Unknown180: 1600
+  setObjectDepth: 1600
   setPositionX: 42629
   setPositionY: 247132
   setDepth: 44795
@@ -3811,9 +3811,9 @@ beginState: s32'san_430_SlashEff2'
   setAngle: 342400
   createObject: s32'san_430_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -192996
-  setPositionY: 8482
-  setDepth: 199335
+    setPositionX: -192996
+    setPositionY: 8482
+    setDepth: 199335
   endRunOnObject: 
 endState: 
 
@@ -3894,7 +3894,7 @@ beginState: s32'san_430_WinkDell02'
   linkParticle: s32'san_430_wingDell02'
   setObjectWidth: 1100
   setObjectHeight: 1100
-  Unknown180: 1100
+  setObjectDepth: 1100
   setPositionX: 20983
   setPositionY: 224380
   setDepth: 42796
@@ -4146,9 +4146,11 @@ beginState: s32'san_440_Beam'
   hit: 
   upon: 36
     ifOperation: (MOD_EQUALS_0), Mem(ActionTime), Val(10)
-      createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
-      cameraShake: s32'ShakeTate', 1000, 0, 10, 0
-      privateSE: s32'san_09_2'
+      ifNot: Mem(295)
+        createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+        cameraShake: s32'ShakeTate', 1000, 0, 10, 0
+        privateSE: s32'san_09_2'
+      endIf: 
     endIf: 
   endUpon: 
   sprite: s32'ultimateshot_atk2', 3
@@ -4220,7 +4222,7 @@ beginState: s32'san_440_WinkDell'
   setAngle: 318000
   setObjectWidth: 1100
   setObjectHeight: 1100
-  Unknown180: 1100
+  setObjectDepth: 1100
   sprite: s32'null', 120
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -4237,7 +4239,7 @@ beginState: s32'san_440_Slash'
     linkParticle: s32'san_440_Slash'
     setObjectWidth: 2100
     setObjectHeight: 2100
-    Unknown180: 2300
+    setObjectDepth: 2300
     setPositionX: 34038
     setPositionY: 330721
     setDepth: -125774
@@ -4249,27 +4251,27 @@ beginState: s32'san_440_Slash'
   createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 254966
-  setPositionY: -90107
-  setDepth: 341543
+    setPositionX: 254966
+    setPositionY: -90107
+    setDepth: 341543
   endRunOnObject: 
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 309954
-  setPositionY: 233061
-  setDepth: 275575
+    setPositionX: 309954
+    setPositionY: 233061
+    setDepth: 275575
   endRunOnObject: 
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -259932
-  setPositionY: 188106
-  setDepth: 273613
+    setPositionX: -259932
+    setPositionY: 188106
+    setDepth: 273613
   endRunOnObject: 
   createObject: s32'san_306_SlashSub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -304903
-  setPositionY: -179780
-  setDepth: 217521
+    setPositionX: -304903
+    setPositionY: -179780
+    setDepth: 217521
   endRunOnObject: 
 endState: 
 
@@ -4359,7 +4361,7 @@ beginState: s32'san_440_cs_BG'
   setDepth: -120336
   setObjectWidth: 1000
   setObjectHeight: 300
-  Unknown180: 1000
+  setObjectDepth: 1000
 endState: 
 
 beginState: s32'san_440_cs_BG2'
@@ -4982,7 +4984,7 @@ beginState: s32'san_441_BIGMC'
     setDepth: -234549
     setObjectWidth: 1000
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
     setAngleY: 176800
   endUpon: 
   sprite: s32'null', 120
@@ -5019,7 +5021,7 @@ beginState: s32'san_441_BeamEff'
     linkObjectZ: 2
     setObjectWidth: 10000
     setObjectHeight: 10000
-    Unknown180: 10000
+    setObjectDepth: 10000
     setAngleY: 90000
     setPositionX: -40249
     setPositionY: -153764
@@ -5037,7 +5039,7 @@ beginState: s32'san_441_BeamEff2'
     linkObjectZ: 2
     setObjectWidth: 10000
     setObjectHeight: 10000
-    Unknown180: 10000
+    setObjectDepth: 10000
     setPositionX: 0
     setPositionY: -20557
     setDepth: 93242
@@ -5265,7 +5267,7 @@ beginState: s32'san_700_WingDell3'
   linkParticle: s32'san_700_wingdel2'
   setObjectWidth: 600
   setObjectHeight: 600
-  Unknown180: 600
+  setObjectDepth: 600
   setPositionX: -326618
   setPositionY: 314993
   setDepth: 179567
@@ -5493,14 +5495,14 @@ beginState: s32'san_601_WingAural'
   linkParticle: s32'san_601_wingStart01'
   setObjectWidth: 2600
   setObjectHeight: 2600
-  Unknown180: 2600
+  setObjectDepth: 2600
   setPositionX: 999
   setPositionY: 317316
   setDepth: 67898
   setAngleX: 0
   setAngleY: 178800
   setAngle: 0
-  Unknown191: 5
+  setObjectSizeScaleSpeed: 5
   sprite: s32'null', 6
   linkParticle: s32'san_601_wingStart02'
   sprite: s32'null', 6

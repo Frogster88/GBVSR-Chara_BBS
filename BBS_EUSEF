@@ -295,7 +295,7 @@ beginState: s32'eus_251_thrustEff'
   setAngle: 4500
   setObjectWidth: 800
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
 endState: 
 
 beginState: s32'eus_253_shockRingEff'
@@ -947,7 +947,7 @@ beginState: s32'eus_400_Shot_A'
     callSubroutine: s32'cmnSpecialShot_AtkInit'
     hitAirPushbackX: 16000
     groundHitEffect: (AIR_FACE_UP)
-    Unknown734: 1
+    atkEnemyHitSuperArmor: 1
     damageEffect: 2, s32'EUS_SPHitEff'
     Unknown2349: 23
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
@@ -1090,7 +1090,7 @@ beginState: s32'eus_400_Shot_BEX'
     hitstop: 12
     enemyHitstopAddition: 6, 0, 2
     wallBounceWaitTime: 4
-    Unknown734: 1
+    atkEnemyHitSuperArmor: 1
     damageEffect: 2, s32'EUS_SPHitEff_Long'
     Unknown2349: 23
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
@@ -1442,7 +1442,7 @@ beginState: s32'eus_401_ball_loopEff'
     hitstop: 9
     Unknown1085: 1
     damageEffect: 2, s32'EUS_SPHitEff'
-    Unknown734: 1
+    atkEnemyHitSuperArmor: 1
     Unknown2349: 23
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
       missionName: s32'AntiAirShot_ShotA'
@@ -1641,14 +1641,14 @@ beginState: s32'eus_401_ball_loopEff'
   beginLabel: s32'2ndAtk'
   sprite: s32'401_ShotAtk', 1
   hit: 
-  Unknown109: 
-  Unknown114: 
+  pushVelocityX: 
+  pushVelocityY: 
   haltMomentum: 1
   objectSizePercent: 200
   Unknown2294: 500
   endSprite: 
-  Unknown110: 
-  Unknown115: 
+  popVelocityX: 
+  popVelocityY: 
   setObjectSize: 650
   Unknown2294: 1000
   gotoLabel: s32'Bound_Loop'
@@ -1674,12 +1674,12 @@ beginState: s32'eus_410_ball_loopEff'
     damage: 800
     groundHitEffect: (AIR_FACE_UP)
     hitAirPushbackX: 10000
-    Unknown746: 0, 6000
+    atkEnemyHitSuperArmorHitstop: 0, 6000
     Unknown747: 0, 24000
     hitstop: 12
     guardEffectEconomy: 1
     damageEffect: 2, s32'EUS_SPHitEff'
-    Unknown734: 1
+    atkEnemyHitSuperArmor: 1
     Unknown2349: 23
     createObject: s32'eus_401_Ceiling', (PLAYER)
     upon: 23
@@ -1845,7 +1845,7 @@ beginState: s32'eus_401_Ceiling'
   upon: (FRAME_STEP)
     Unknown1916: 0
     storeValue: Mem(ActReg0), Mem(PosY)
-    Unknown2482: 0x020000002E0000000200000012000000
+    Unknown2482: 2, 46, 2, 18
     modifyVar: (SUB), Mem(ActReg0), Mem(ActReg1)
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(50000)
       clearUpon: (FRAME_STEP)
@@ -2015,16 +2015,16 @@ beginSubroutine: s32'eus402_Bomb_Init'
     clearUpon: 93
     gotoLabelRequests: s32'Koware'
   endUpon: 
-  Unknown289: 300
+  setMaxActionTime: 300
   addMoveForceDisableFlag: 4
-  Unknown253: -1000
+  setZVal: -1000
   addPositionX: 189505
   addPositionY: 245770
   Unknown1727: 14824
   setAngleX: 0
   setAngleY: 0
   setAngle: 330000
-  Unknown170: -7000, -10000
+  randomAddAngleSpeed: -7000, -10000
   Unknown1909: 20000
   upon: 5
     haltMomentum: 1
@@ -2078,7 +2078,7 @@ beginSubroutine: s32'eus402_Bomb_bakuhatsuAtk'
   hitAirPushbackX: 10000
   hitstop: 6
   damageEffect: 4, s32''
-  Unknown734: 1
+  atkEnemyHitSuperArmor: 1
   Unknown1113: 0x7878787878787878787878000000000000000000000000000000000000000000
   clearUpon: 37
   clearUpon: 54
@@ -2453,7 +2453,7 @@ beginState: s32'eus402_BombD_Atk'
   endIf: 
   velocityXPercent: 100
   velocityYPercent: -90
-  Unknown131: 100
+  gravityPercent: 100
   beginLabel: s32'Koware'
   sprite: s32'null', 30
   clearUpon: (HIT_OR_GUARD)
@@ -2476,7 +2476,7 @@ beginState: s32'eus402_BombD_AtkEff'
     addPositionX: 50000
     addPositionY: 50000
     upon: (FRAME_STEP)
-      Unknown102: -15000, 15000
+      randomAddPositionX: -15000, 15000
       randomAddPositionY: -15000, 15000
     endUpon: 
   endUpon: 
@@ -2519,7 +2519,7 @@ beginState: s32'eus402_BombC_Set_Atk'
     comboLimitScaling: 0
     isAirUnblockable: 1
     attackFrontDirection: 1
-    Unknown734: 1
+    atkEnemyHitSuperArmor: 1
     damageEffect: 4, s32''
     missionName: s32'SetBomb'
     initializeDestroy: 
@@ -2607,7 +2607,7 @@ beginState: s32'eus402_BombC_Set_Atk'
     endUpon: 
     upon: (FRAME_STEP)
       if: Mem(386)
-        Unknown2347: 1651339074, 0x5F53657474696E670000000000000000000000000000000000000000
+        Unknown2347: s32'Bomb_Setting'
       endIf: 
       modifyVar: (ADD), Mem(ActReg2), Val(1)
       ifOperation: (IS_EQUAL), Mem(ActReg2), Val(196)
@@ -2720,7 +2720,7 @@ clearUpon: 30
 clearUpon: 31
 clearUpon: 32
 stopLinkObject: 3
-Unknown375: 0
+disableDisplay2D: 0
 haltMomentum: 1
 deactivateObjectByName: s32'eus402_EXCharge'
 sprite: s32'bakuhatsuAtk', 6
@@ -2851,7 +2851,7 @@ beginState: s32'eus_403_Dash'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
-    Unknown289: 60
+    setMaxActionTime: 60
     setPositionX: -80000
   endUpon: 
   beginLabel: s32'Loop'
@@ -2866,7 +2866,7 @@ beginState: s32'eus_403_GroundBurst01'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 10
@@ -3052,7 +3052,7 @@ beginState: s32'eus_407HitEff_Fast'
     setAngleX: 74000
     setAngleY: 345600
     setAngle: 359600
-    Unknown194: -100, 100
+    randomAddObjectSize: -100, 100
   endUpon: 
   sprite: s32'null', 15
   linkParticle: s32'cmn_hit_sp_NonVector_fast'
@@ -3067,7 +3067,7 @@ beginState: s32'eus_407HitEff'
     setAngleX: 74000
     setAngleY: 345600
     setAngle: 359600
-    Unknown194: -100, 100
+    randomAddObjectSize: -100, 100
   endUpon: 
   sprite: s32'null', 15
   linkParticle: s32'cmn_hit_sp_NonVector'
@@ -3159,7 +3159,7 @@ beginState: s32'eus_408_Shot_Matome'
       gotoLabelRequests: s32'Koware'
     endUpon: 
     setObjectWidth: 1500
-    Unknown151: 150
+    setObjectWidthScaleSpeed: 150
     addPositionX: 50000
     addPositionY: 131974
   endUpon: 
@@ -3301,10 +3301,10 @@ beginState: s32'eus_409_Shot'
     damage: 500
     hitAirPushbackX: 18000
     hitAirPushbackY: 10000
-    Unknown734: 1
+    atkEnemyHitSuperArmor: 1
     damageEffect: 2, s32'EUS_SPHitEff'
     disableHitstopForSelf: 1
-    Unknown72: s32'SpecialShot_D'
+    postSubroutineBegin: s32'SpecialShot_D'
     Unknown2349: 23
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(30)
       hitAirPushbackY: 12000
@@ -3435,9 +3435,9 @@ beginState: s32'eus_409_Shot_3rd'
     hitAirPushbackX: 30000
     hitAirPushbackY: 15000
     hitstop: 2
-    Unknown734: 1
+    atkEnemyHitSuperArmor: 1
     damageEffect: 2, s32'EUS_SPHitEff'
-    Unknown72: s32'SpecialShot_D'
+    postSubroutineBegin: s32'SpecialShot_D'
     if: Mem(PlayerVal2)
       if: Mem(440)
         Unknown1019: 1
@@ -3629,7 +3629,7 @@ beginState: s32'eus_430_cs_01_Eff'
     linkObjectPosition: 2
     setObjectWidth: 300
     setObjectHeight: 300
-    Unknown180: 300
+    setObjectDepth: 300
   endUpon: 
   sprite: s32'null', 4
   linkParticle: s32'eus_430_cs_ray'
@@ -3658,7 +3658,7 @@ beginState: s32'eus_430_cs_02_Eff'
     linkObjectPosition: 2
     setObjectWidth: 500
     setObjectHeight: 500
-    Unknown180: 500
+    setObjectDepth: 500
   endUpon: 
   sprite: s32'null', 4
   linkParticle: s32'eus_430_cs_ray2'
@@ -3811,7 +3811,7 @@ beginState: s32'eus_430Hit01Eff'
     setAngleX: 74000
     setAngleY: 345600
     setAngle: 359600
-    Unknown194: -100, 100
+    randomAddObjectSize: -100, 100
   endUpon: 
   sprite: s32'null', 15
   linkParticle: s32'cmn_hit_sp_NonVector'
@@ -3887,7 +3887,7 @@ beginState: s32'eus_430_ryuhaiEff'
     Unknown1727: 78889
     setObjectWidth: 4500
     setObjectHeight: 4500
-    Unknown180: 4000
+    setObjectDepth: 4000
     setAngle: 331600
     upon: 23
       clearUpon: 23
@@ -3914,7 +3914,7 @@ beginState: s32'eus_430_ChargeEff'
   endUpon: 
   sprite: s32'null', 300
   linkParticle: s32'eus_430_StandbyCharge'
-  Unknown191: 30
+  setObjectSizeScaleSpeed: 30
 endState: 
 
 beginState: s32'eus_430_JumpEff'
@@ -4195,7 +4195,7 @@ beginState: s32'eus_440_cs_eye_Eff'
   setPositionY: 366314
   setDepth: 43628
   setObjectWidth: 24
-  Unknown180: 26
+  setObjectDepth: 26
   setAngleX: 322000
   setAngleY: 324000
   setAngle: 187200
@@ -4205,7 +4205,7 @@ beginState: s32'eus_440_cs_eye_Eff'
   setPositionY: 364858
   setDepth: 48018
   setObjectWidth: 18
-  Unknown180: 23
+  setObjectDepth: 23
   setAngleX: 322000
   setAngleY: 324000
   setAngle: 187200
@@ -4238,7 +4238,7 @@ beginState: s32'eus_440_cs_eye_Eff'
   setDepth: 42830
   setObjectWidth: 16
   setObjectHeight: 30
-  Unknown180: 20
+  setObjectDepth: 20
   sprite: s32'null', 1
   linkParticle: s32''
   sprite: s32'null', 3
@@ -4250,7 +4250,7 @@ beginState: s32'eus_440_cs_eye_Eff'
   linkParticle: s32'eus_440_cs_05'
   setObjectWidth: 13
   setObjectHeight: 30
-  Unknown180: 18
+  setObjectDepth: 18
   setPositionX: 99798
   setPositionY: 368911
   setDepth: 38531
@@ -4265,7 +4265,7 @@ beginState: s32'eus_440_cs_eye_Eff'
   setDepth: 27106
   setObjectWidth: 15
   setObjectHeight: 30
-  Unknown180: 18
+  setObjectDepth: 18
   sprite: s32'null', 1
   linkParticle: s32''
   sprite: s32'null', 3
@@ -4275,7 +4275,7 @@ beginState: s32'eus_440_cs_eye_Eff'
   setDepth: 29072
   setObjectWidth: 13
   setObjectHeight: 30
-  Unknown180: 15
+  setObjectDepth: 15
   sprite: s32'null', 1
   linkParticle: s32''
   sprite: s32'null', 3
@@ -4371,7 +4371,7 @@ beginState: s32'eus_441_GamenBreak'
   setPositionX: -54586
   setPositionY: 223491
   setDepth: -58655
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
 endState: 
 
 beginState: s32'eus_441_GunRay'
@@ -4684,7 +4684,7 @@ beginState: s32'eus_441_ShotLight'
   sprite: s32'null', 4
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setPositionX: 462072
   setPositionY: 161725
   setDepth: 287039
@@ -4697,7 +4697,7 @@ beginState: s32'eus_441_ShotLight'
   setPositionY: 361705
   setDepth: 300695
   sprite: s32'null', 28
-  Unknown191: -2
+  setObjectSizeScaleSpeed: -2
 endState: 
 
 beginState: s32'eus_441_BigSpark'
@@ -4733,7 +4733,7 @@ beginState: s32'eus_441_ElcShock'
   sprite: s32'null', 120
   setObjectWidth: 850
   setObjectHeight: 850
-  Unknown180: 850
+  setObjectDepth: 850
   addPositionX: 4278511
   addPositionY: 1337402
   Unknown1727: -1089449
@@ -4780,27 +4780,27 @@ beginState: s32'eus_441_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'eus_PP_RadialBlur', 1, 0
-      Unknown2587: 1601402213, s32'PP_RadialBlur'
+      Unknown2587: s32'eus_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1601402213, s32'PP_RadialBlur'
+  Unknown2587: s32'eus_PP_RadialBlur', 1
   Unknown2588: s32'eus_PP_RadialBlur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'eus_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'eus_PP_RadialBlur', 1, 0
-  Unknown2587: 1601402213, s32'PP_RadialBlur'
+  Unknown2587: s32'eus_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'eus_441_Color'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
-      Unknown2587: 1601402213, s32'PP_GrearFilter'
+      Unknown2587: s32'eus_PP_GrearFilter', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 600
-  Unknown2587: 1601402213, s32'PP_GrearFilter'
+  Unknown2587: s32'eus_PP_GrearFilter', 1
 endState: 
 
 beginState: s32'eus_441_GRNEFF'
@@ -5022,7 +5022,7 @@ beginState: s32'WON_eus601'
       addToMeshSet: s32'WON'
     endMeshSet: 
     swapMeshSet: s32'WON'
-    Unknown289: 300
+    setMaxActionTime: 300
     addPositionX: -1250000
     Unknown1727: -210000
     physicsXImpulse: 18000
@@ -5106,7 +5106,7 @@ beginState: s32'eus_700_cs_2p_Speed'
   setAngle: 38400
   setObjectWidth: 100
   setObjectHeight: 100
-  Unknown180: 100
+  setObjectDepth: 100
   addPositionX: 684734
   addPositionY: 222505
   Unknown1727: 252660
@@ -5154,7 +5154,7 @@ beginState: s32'eus_700_cs_2p_Speed2'
     setLinkObjectDestroyOnDamage: 3
     setObjectWidth: 500
     setObjectHeight: 350
-    Unknown180: 1000
+    setObjectDepth: 1000
     setPositionX: 826364
     setPositionY: 392851
     setDepth: 147956

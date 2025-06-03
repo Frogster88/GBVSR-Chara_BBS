@@ -24,7 +24,7 @@ beginState: s32'YUE_207_bg_dashbrake01'
     addPositionX: -95000
     setObjectWidth: 800
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'bg_dashbrake'
@@ -41,7 +41,7 @@ beginState: s32'YUE_207_bg_dashbrake02'
     addPositionX: -150000
     setObjectWidth: 800
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'bg_dashbrake'
@@ -404,27 +404,27 @@ beginState: s32'yue_350_FoxEff'
   sprite: s32'null', 1
   createObject: s32'yue_350_Fox', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 260000
-  Unknown1727: 50000
+    addPositionX: 260000
+    Unknown1727: 50000
   endRunOnObject: 
   createObject: s32'yue_350_Fox', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -260000
-  setAngleY: 334000
-  flipDirection: 
+    setPositionX: -260000
+    setAngleY: 334000
+    flipDirection: 
   endRunOnObject: 
   sprite: s32'null', 75
   createObject: s32'yue_350_FoxAura', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 260000
-  setPositionY: 0
-  setDepth: 50000
+    addPositionX: 260000
+    setPositionY: 0
+    setDepth: 50000
   endRunOnObject: 
   createObject: s32'yue_350_FoxAura', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -260000
-  setAngleY: 334000
-  flipDirection: 
+    setPositionX: -260000
+    setAngleY: 334000
+    flipDirection: 
   endRunOnObject: 
   linkObjectPosition: 0
 endState: 
@@ -731,9 +731,9 @@ beginState: s32'yue_400_FireThrust++'
     Unknown1727: 792
     createObject: s32'yue_400_FireThrust_SubFire', (PLAYER)
     runOnObject: (PREVIOUS)
-    setPositionX: 75984
-    setPositionY: 223848
-    setDepth: 30789
+      setPositionX: 75984
+      setPositionY: 223848
+      setDepth: 30789
     endRunOnObject: 
     upon: 23
       clearUpon: 23
@@ -802,7 +802,7 @@ beginState: s32'yue_400_FireThrust_SubFire'
   setAlphaColor: 700
   beginLabel: s32'Thurust'
   sprite: s32'null', 5
-  Unknown191: 50
+  setObjectSizeScaleSpeed: 50
   sprite: s32'null', 15
   setAlphaColorSpeed: -20
   sprite: s32'null', 1
@@ -1011,7 +1011,7 @@ beginState: s32'yue_404_RotateSlash'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 20
-  Unknown191: 30
+  setObjectSizeScaleSpeed: 30
   stopLinkObject: 0
   Unknown212: -5000
   Unknown409: 100, 2
@@ -1078,7 +1078,7 @@ beginState: s32'yue_404_RotateSlashSub'
   endUpon: 
   sprite: s32'null', 45
   linkParticle: s32'yue_404_nokoshi'
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   Unknown409: 100, 2
   Unknown409: 20, 3
   Unknown410: 3, 3
@@ -1105,7 +1105,7 @@ beginState: s32'yue_404_RotateSlashSub_SP'
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'yue_404_nokoshiSP'
-  Unknown191: 20
+  setObjectSizeScaleSpeed: 20
   sprite: s32'null', 20
   stopLinkObject: 0
 endState: 
@@ -1126,7 +1126,7 @@ beginState: s32'yue_404_RotateSlashSub2'
   endUpon: 
   sprite: s32'null', 45
   linkParticle: s32'yue_404_nokoshi'
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   Unknown409: 100, 2
   Unknown409: 20, 3
   Unknown410: 3, 3
@@ -1149,7 +1149,7 @@ beginState: s32'yue_404_RotateSlashSub3'
   endUpon: 
   sprite: s32'null', 45
   linkParticle: s32'yue_404_nokoshi'
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   Unknown409: 100, 2
   Unknown409: 20, 3
   Unknown410: 3, 3
@@ -1196,7 +1196,7 @@ beginState: s32'yue_404_Slash_SP'
   setAngle: 21200
   setObjectWidth: 750
   setObjectHeight: 600
-  Unknown180: 600
+  setObjectDepth: 600
   sprite: s32'null', 45
   setLinkObjectDestroyOnStateChange: 0
   stopLinkObject: 0
@@ -1364,7 +1364,7 @@ beginState: s32'yue_430_RotateSlash'
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'null', 10
-  Unknown191: 15
+  setObjectSizeScaleSpeed: 15
   stopLinkObject: 0
   Unknown212: -5000
   Unknown409: 100, 2
@@ -1502,7 +1502,7 @@ beginState: s32'yue_430_cs_Fire'
   setAngle: 15600
   setObjectWidth: 450
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   sprite: s32'null', 4
   linkParticle: s32'yue_430_cs_Fire02'
   setPositionX: -132647
@@ -1513,7 +1513,7 @@ beginState: s32'yue_430_cs_Fire'
   setAngle: 13200
   setObjectWidth: 800
   setObjectHeight: 500
-  Unknown180: 300
+  setObjectDepth: 300
   sprite: s32'null', 4
   linkParticle: s32''
   sprite: s32'null', 4
@@ -1524,7 +1524,7 @@ beginState: s32'yue_430_cs_Fire'
   setDepth: -9684
   setObjectWidth: 850
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
   setAngleX: 200800
   setAngleY: 348400
   setAngle: 190000
@@ -1535,7 +1535,7 @@ beginState: s32'yue_430_cs_Fire'
   setDepth: -87046
   setObjectWidth: 650
   setObjectHeight: 400
-  Unknown180: 400
+  setObjectDepth: 400
   setAngleX: 20000
   setAngleY: 205600
   setAngle: 9200
@@ -1546,7 +1546,7 @@ beginState: s32'yue_430_cs_Fire'
   setDepth: -57515
   setObjectWidth: 500
   setObjectHeight: 400
-  Unknown180: 400
+  setObjectDepth: 400
   setAngleX: 20000
   setAngleY: 197200
   setAngle: 8000
@@ -1557,7 +1557,7 @@ beginState: s32'yue_430_cs_Fire'
   setDepth: -58015
   setObjectWidth: 700
   setObjectHeight: 400
-  Unknown180: 400
+  setObjectDepth: 400
   setAngleX: 6000
   setAngleY: 215200
   setAngle: 5200
@@ -1578,7 +1578,7 @@ beginState: s32'yue_430_cs_Fire2'
   setDepth: 60762
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setAngleY: 324000
   setAngle: 162000
   sprite: s32'null', 4
@@ -1590,7 +1590,7 @@ beginState: s32'yue_430_cs_Fire2'
   setAngle: 162000
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   sprite: s32'null', 4
   linkParticle: s32'yue_430_cs_Fire09'
   setPositionX: -118314
@@ -1598,7 +1598,7 @@ beginState: s32'yue_430_cs_Fire2'
   setDepth: 67073
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setAngleY: 324000
   setAngle: 169600
   sprite: s32'null', 4
@@ -1608,7 +1608,7 @@ beginState: s32'yue_430_cs_Fire2'
   setDepth: 68364
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setAngleY: 324000
   setAngle: 218000
 endState: 
@@ -1628,7 +1628,7 @@ beginState: s32'yue_430_cs_Fire3'
   setDepth: -57594
   setObjectWidth: 500
   setObjectHeight: 300
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 32000
   setAngleY: 55600
   setAngle: 169200
@@ -1642,7 +1642,7 @@ beginState: s32'yue_430_cs_Fire3'
   setAngle: 175200
   setObjectWidth: 500
   setObjectHeight: 350
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 4
   linkParticle: s32'yue_430_cs_Fire07'
   setPositionX: -13071
@@ -1650,7 +1650,7 @@ beginState: s32'yue_430_cs_Fire3'
   setDepth: -21416
   setObjectWidth: 400
   setObjectHeight: 300
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 52400
   setAngleY: 50800
   setAngle: 170000
@@ -1661,7 +1661,7 @@ beginState: s32'yue_430_cs_Fire3'
   setDepth: 7627
   setObjectWidth: 400
   setObjectHeight: 200
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 36800
   setAngleY: 44800
   setAngle: 170400
@@ -1672,7 +1672,7 @@ beginState: s32'yue_430_cs_Fire3'
   setDepth: -11405
   setObjectWidth: 400
   setObjectHeight: 200
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 36800
   setAngleY: 48800
   setAngle: 170400
@@ -1683,7 +1683,7 @@ beginState: s32'yue_430_cs_Fire3'
   setDepth: 94758
   setObjectWidth: 400
   setObjectHeight: 200
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 326800
   setAngleY: 340800
   setAngle: 18400
@@ -1770,7 +1770,7 @@ beginState: s32'yue_440_SuikomiObj'
     addPositionY: 100000
     Unknown2246: 600000, 100
     runOnObject: (ENEMY)
-    Unknown2254: 80
+      Unknown2254: 80
     endRunOnObject: 
     gotoLabelUpon: 23, s32'End'
   endUpon: 
@@ -1920,7 +1920,7 @@ beginState: s32'yue_440_Slash'
     setAngle: 356000
     setObjectWidth: 950
     setObjectHeight: 1300
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'yue_440_slash01'
@@ -1975,7 +1975,7 @@ beginState: s32'yue_440_cs_Fire01'
   setDepth: -18409
   setObjectWidth: 600
   setObjectHeight: 250
-  Unknown180: 700
+  setObjectDepth: 700
   setAngleX: 20800
   setAngleY: 230000
   setAngle: 52400
@@ -1986,7 +1986,7 @@ beginState: s32'yue_440_cs_Fire01'
   setDepth: -21165
   setObjectWidth: 600
   setObjectHeight: 300
-  Unknown180: 700
+  setObjectDepth: 700
   setAngleX: 7200
   setAngleY: 201600
   setAngle: 35600
@@ -2007,7 +2007,7 @@ beginState: s32'yue_440_cs_Fire02'
   setDepth: 72782
   setObjectWidth: 300
   setObjectHeight: 150
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 0
   setAngleY: 357600
   setAngle: 37200
@@ -2017,7 +2017,7 @@ beginState: s32'yue_440_cs_Fire02'
   setDepth: 55817
   setObjectWidth: 300
   setObjectHeight: 150
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 0
   setAngleY: 357600
   setAngle: 32000
@@ -2028,7 +2028,7 @@ beginState: s32'yue_440_cs_Fire02'
   setDepth: 56666
   setObjectWidth: 300
   setObjectHeight: 150
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 0
   setAngleY: 357600
   setAngle: 57600
@@ -2039,7 +2039,7 @@ beginState: s32'yue_440_cs_Fire02'
   setDepth: 50650
   setObjectWidth: 300
   setObjectHeight: 150
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 0
   setAngleY: 357600
   setAngle: 58400
@@ -2050,7 +2050,7 @@ beginState: s32'yue_440_cs_Fire02'
   setDepth: 50650
   setObjectWidth: 300
   setObjectHeight: 150
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 0
   setAngleY: 357600
   setAngle: 58400
@@ -2061,7 +2061,7 @@ beginState: s32'yue_440_cs_Fire02'
   setDepth: 50650
   setObjectWidth: 300
   setObjectHeight: 150
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 0
   setAngleY: 357600
   setAngle: 58400
@@ -2072,7 +2072,7 @@ beginState: s32'yue_440_cs_Fire02'
   setDepth: 50650
   setObjectWidth: 300
   setObjectHeight: 150
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 0
   setAngleY: 357600
   setAngle: 58400
@@ -2103,7 +2103,7 @@ beginState: s32'yue_440_cs_Fire03'
   setDepth: 109318
   setObjectWidth: 300
   setObjectHeight: 150
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 19600
   setAngleY: 26400
   setAngle: 13200
@@ -2114,7 +2114,7 @@ beginState: s32'yue_440_cs_Fire03'
   setDepth: 105090
   setObjectWidth: 300
   setObjectHeight: 150
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 19600
   setAngleY: 33200
   setAngle: 10800
@@ -2125,7 +2125,7 @@ beginState: s32'yue_440_cs_Fire03'
   setDepth: 69738
   setObjectWidth: 300
   setObjectHeight: 200
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 52400
   setAngleY: 14000
   setAngle: 17200
@@ -2139,7 +2139,7 @@ beginState: s32'yue_440_cs_Fire03'
   setAngle: 22000
   setObjectWidth: 300
   setObjectHeight: 200
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 4
   linkParticle: s32'yue_430_cs_Fire07'
   setPositionX: 66115
@@ -2150,7 +2150,7 @@ beginState: s32'yue_440_cs_Fire03'
   setAngle: 22000
   setObjectWidth: 300
   setObjectHeight: 200
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 4
   linkParticle: s32'yue_430_cs_Fire07'
   setPositionX: 65215
@@ -2161,7 +2161,7 @@ beginState: s32'yue_440_cs_Fire03'
   setAngle: 22000
   setObjectWidth: 300
   setObjectHeight: 200
-  Unknown180: 500
+  setObjectDepth: 500
 endState: 
 
 beginState: s32'yue_440_cs_MainEff'
@@ -2271,11 +2271,11 @@ beginState: s32'yue_441_PPOverRay'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'yue_PP_441_OverRay', 1, 0
-      Unknown2587: 1600484729, s32'PP_441_OverRay'
+      Unknown2587: s32'yue_PP_441_OverRay', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 2
-  Unknown2587: 1600484729, s32'PP_441_OverRay'
+  Unknown2587: s32'yue_PP_441_OverRay', 1
   Unknown2588: s32'yue_PP_441_OverRay', 1, 10
   sprite: s32'null', 2
   Unknown2588: s32'yue_PP_441_OverRay', 1, 20
@@ -2294,7 +2294,7 @@ beginState: s32'yue_441_GroundFog'
     linkObjectPosition: 2
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     addPositionX: -6993
     addPositionY: -54828
     Unknown1727: -397661
@@ -2330,7 +2330,7 @@ beginState: s32'yue_441_SkyRay2'
     Unknown1727: 105716
     setObjectWidth: 100
     setObjectHeight: 50
-    Unknown180: 50
+    setObjectDepth: 50
   endUpon: 
   sprite: s32'null', 600
   linkParticle: s32'yue_441_SkyRay'
@@ -2349,7 +2349,7 @@ beginState: s32'yue_441_FireScrew_Front'
   setDepth: 332321
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 350
+  setObjectDepth: 350
   setAngleX: 290000
   setAngleY: 40800
   setAngle: 319200
@@ -2362,7 +2362,7 @@ beginState: s32'yue_441_FireScrew_Front'
   setAngle: 327600
   setObjectWidth: 500
   setObjectHeight: 600
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 4
   setPositionX: -125930
   setPositionY: 345973
@@ -2393,7 +2393,7 @@ beginState: s32'yue_441_FireScrew_Front2'
   setDepth: 303055
   setObjectWidth: 180
   setObjectHeight: 100
-  Unknown180: 100
+  setObjectDepth: 100
   setAngleX: 353200
   setAngleY: 358400
   setAngle: 345200
@@ -2406,7 +2406,7 @@ beginState: s32'yue_441_FireScrew'
     linkObjectPosition: 2
     setObjectWidth: 2000
     setObjectHeight: 1500
-    Unknown180: 2000
+    setObjectDepth: 2000
     addPositionX: 96002
     addPositionY: 386025
     Unknown1727: 10553
@@ -2439,12 +2439,12 @@ beginState: s32'yue_441_Moon'
   sprite: s32'null', 10
   createObject: s32'yue_441_RotateFire', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 650
+    setObjectSize: 650
   endRunOnObject: 
   sprite: s32'null', 600
   createObject: s32'yue_441_RotateFire', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 400
+    setObjectSize: 400
   endRunOnObject: 
   beginLabel: s32'End'
   sprite: s32'null', 600
@@ -2502,23 +2502,23 @@ beginState: s32'YUE_441_ShockRing_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'yue_PP_RadialBlur', 1, 0
-      Unknown2587: 1600484729, s32'PP_RadialBlur'
+      Unknown2587: s32'yue_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
-  Unknown2587: 1600484729, s32'PP_RadialBlur'
+  Unknown2587: s32'yue_PP_RadialBlur', 1
   Unknown2588: s32'yue_PP_RadialBlur', 1, 100
   Unknown2590: s32'yue_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'yue_PP_RadialBlur', 1, 0
-  Unknown2587: 1600484729, s32'PP_RadialBlur'
+  Unknown2587: s32'yue_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'SOC_VoiceTest'
   sprite: s32'null', 100
   sprite: s32'null', 1
   if: Mem(BattleDoing)
-    Unknown600: 1
+    optionVoicePriority: 1
     voiceLine: s16'vYUE_ATKK_00_e'
   endIf: 
 endState: 

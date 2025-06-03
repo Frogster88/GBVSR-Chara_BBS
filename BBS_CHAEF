@@ -76,7 +76,7 @@ beginState: s32'CHA_205_Slash01'
   setAngle: 10000
   setObjectWidth: 900
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
 endState: 
 
 beginState: s32'CHA_223_Slash01'
@@ -92,7 +92,7 @@ beginState: s32'CHA_223_Slash01'
     setAngleY: 10000
     setObjectWidth: 900
     setObjectHeight: 900
-    Unknown180: 900
+    setObjectDepth: 900
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'cmn_thrust'
@@ -112,7 +112,7 @@ beginState: s32'CHA_224_Slash'
     setAngle: 290000
     setObjectWidth: 900
     setObjectHeight: 1100
-    Unknown180: 1100
+    setObjectDepth: 1100
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'cmn_thrust'
@@ -165,7 +165,7 @@ beginState: s32'CHA_250_Slash01'
   setAngle: 345200
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
 endState: 
 
 beginState: s32'CHA_253_Slash'
@@ -717,7 +717,7 @@ beginState: s32'CHA_401_TornadoEff'
     setLinkObjectDestroyOnDamage: 3
     linkParticle: s32'cha_401_tornado_Loop'
     gotoLabelUpon: 23, s32'End'
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 3
@@ -749,7 +749,7 @@ beginState: s32'CHA_401_SlashEff'
       createObject: s32'CHA_401_GroundBurst', (PLAYER)
       createObject: s32'CHA_401_GroundBurst2', (PLAYER)
     endUpon: 
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 3
   linkParticle: s32'cha_401_slash01'
@@ -968,7 +968,7 @@ beginState: s32'CHA_402_GroundBurst'
   setDepth: 194805
   setObjectWidth: 500
   setObjectHeight: 350
-  Unknown180: 100
+  setObjectDepth: 100
   physicsXImpulse: -2500
   sprite: s32'null', 3
   setPositionX: 17490
@@ -994,7 +994,7 @@ beginState: s32'CHA_402_GroundBurst2'
   Unknown1727: 104895
   setObjectWidth: 700
   setObjectHeight: 700
-  Unknown180: 1500
+  setObjectDepth: 1500
   sprite: s32'null', 30
   linkObjectPosition: 0
   setLinkObjectDestroyOnStateChange: 0
@@ -1248,31 +1248,31 @@ beginState: s32'CHA_407_subslashMatome'
   sprite: s32'null', 6
   createObject: s32'CHA_407_subslash', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -34993
-  setPositionY: 149850
-  setAngleX: 16000
-  setAngleY: 4000
-  setAngle: 28000
+    setPositionX: -34993
+    setPositionY: 149850
+    setAngleX: 16000
+    setAngleY: 4000
+    setAngle: 28000
   endRunOnObject: 
   sprite: s32'null', 6
   createObject: s32'CHA_407_subslash', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 700
-  setPositionX: 69986
-  setPositionY: 163328
-  setAngleX: 10000
-  setAngleY: 356000
-  setAngle: 352000
+    setObjectSize: 700
+    setPositionX: 69986
+    setPositionY: 163328
+    setAngleX: 10000
+    setAngleY: 356000
+    setAngle: 352000
   endRunOnObject: 
   sprite: s32'null', 6
   createObject: s32'CHA_407_subslash', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 800
-  setPositionX: 14997
-  setPositionY: 178294
-  setAngleX: 334000
-  setAngleY: 70000
-  setAngle: 330000
+    setObjectSize: 800
+    setPositionX: 14997
+    setPositionY: 178294
+    setAngleX: 334000
+    setAngleY: 70000
+    setAngle: 330000
   endRunOnObject: 
   gotoLabel: s32'Loop'
 endState: 
@@ -1372,43 +1372,43 @@ beginState: s32'cha_409_Eff'
   createObject: s32'cha_409_Burst', (PLAYER)
   createObject: s32'cha_409_SubSlash', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 500
-  addPositionX: -60000
-  addPositionY: 62000
-  Unknown1727: 20000
-  setAngleX: 2000
-  setAngleY: 20000
-  setAngle: 64000
+    setObjectSize: 500
+    addPositionX: -60000
+    addPositionY: 62000
+    Unknown1727: 20000
+    setAngleX: 2000
+    setAngleY: 20000
+    setAngle: 64000
   endRunOnObject: 
   createObject: s32'cha_409_SubSlash', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 800
-  addPositionX: 0
-  addPositionY: 132000
-  Unknown1727: 9500
-  setAngleX: 0
-  setAngleY: 12000
-  setAngle: 24000
+    setObjectSize: 800
+    addPositionX: 0
+    addPositionY: 132000
+    Unknown1727: 9500
+    setAngleX: 0
+    setAngleY: 12000
+    setAngle: 24000
   endRunOnObject: 
   createObject: s32'cha_409_SubSlash', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 600
-  addPositionX: 50000
-  addPositionY: 90000
-  Unknown1727: 12500
-  setAngleX: -25000
-  setAngleY: 345000
-  setAngle: 320000
+    setObjectSize: 600
+    addPositionX: 50000
+    addPositionY: 90000
+    Unknown1727: 12500
+    setAngleX: -25000
+    setAngleY: 345000
+    setAngle: 320000
   endRunOnObject: 
   createObject: s32'cha_409_SubSlash', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 400
-  addPositionX: 110000
-  addPositionY: 85000
-  Unknown1727: 39000
-  setAngleX: 40000
-  setAngleY: 320000
-  setAngle: 295000
+    setObjectSize: 400
+    addPositionX: 110000
+    addPositionY: 85000
+    Unknown1727: 39000
+    setAngleX: 40000
+    setAngleY: 320000
+    setAngle: 295000
   endRunOnObject: 
 endState: 
 
@@ -1978,49 +1978,49 @@ beginState: s32'CHA_441_CSEffMatome'
     ifOnFrame: Val(90)
       createObject: s32'CHA_441_Wind2', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -34267
-      addPositionY: 108321
-      Unknown1727: 125150
-      setAngleX: 16000
-      setAngleY: 252000
-      setAngle: 221200
-      setObjectSize: 200
-      setObjectHeight: 300
+        addPositionX: -34267
+        addPositionY: 108321
+        Unknown1727: 125150
+        setAngleX: 16000
+        setAngleY: 252000
+        setAngle: 221200
+        setObjectSize: 200
+        setObjectHeight: 300
       endRunOnObject: 
       createObject: s32'CHA_441_Wind2', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -26116
-      addPositionY: 145746
-      Unknown1727: 107813
-      setAngleX: 16000
-      setAngleY: 252000
-      setAngle: 227600
-      setObjectSize: 200
-      setObjectHeight: 300
+        addPositionX: -26116
+        addPositionY: 145746
+        Unknown1727: 107813
+        setAngleX: 16000
+        setAngleY: 252000
+        setAngle: 227600
+        setObjectSize: 200
+        setObjectHeight: 300
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(119)
       deactivateObjectByName: s32'CHA_441_Wind2'
       createObject: s32'CHA_441_GroundShock', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -59199
-      addPositionY: -24924
-      Unknown1727: -5504
-      setAngleX: 0
-      setAngleY: 312000
-      setAngle: 355200
-      setObjectSize: 1000
+        addPositionX: -59199
+        addPositionY: -24924
+        Unknown1727: -5504
+        setAngleX: 0
+        setAngleY: 312000
+        setAngle: 355200
+        setObjectSize: 1000
       endRunOnObject: 
       createObject: s32'CHA_441_GroundShock', (PLAYER)
       runOnObject: (PREVIOUS)
-      flipDirection: 
-      setObjectSize: 1400
-      addPositionX: -52556
-      addPositionY: -26645
-      Unknown1727: -222844
-      setAngleX: 0
-      setAngleY: 168000
-      setAngle: 0
+        flipDirection: 
+        setObjectSize: 1400
+        addPositionX: -52556
+        addPositionY: -26645
+        Unknown1727: -222844
+        setAngleX: 0
+        setAngleY: 168000
+        setAngle: 0
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(114)
@@ -2029,56 +2029,56 @@ beginState: s32'CHA_441_CSEffMatome'
     ifOnFrame: Val(131)
       createObject: s32'CHA_441_GroundShock', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -59199
-      addPositionY: -24924
-      Unknown1727: -5504
-      setAngleX: 0
-      setAngleY: 312000
-      setAngle: 355200
-      setObjectSize: 1400
+        addPositionX: -59199
+        addPositionY: -24924
+        Unknown1727: -5504
+        setAngleX: 0
+        setAngleY: 312000
+        setAngle: 355200
+        setObjectSize: 1400
       endRunOnObject: 
       createObject: s32'CHA_441_GroundShock', (PLAYER)
       runOnObject: (PREVIOUS)
-      flipDirection: 
-      setObjectSize: 1800
-      addPositionX: -52556
-      addPositionY: -26645
-      Unknown1727: -222844
-      setAngleX: 0
-      setAngleY: 168000
-      setAngle: 0
+        flipDirection: 
+        setObjectSize: 1800
+        addPositionX: -52556
+        addPositionY: -26645
+        Unknown1727: -222844
+        setAngleX: 0
+        setAngleY: 168000
+        setAngle: 0
       endRunOnObject: 
       createObject: s32'CHA_441_GroundBurst', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 457253
-      setDepth: -144332
-      setAngleX: 0
-      setAngleY: 260000
-      setAngle: 0
+        setPositionX: 457253
+        setDepth: -144332
+        setAngleX: 0
+        setAngleY: 260000
+        setAngle: 0
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(139)
       createObject: s32'CHA_441_GroundShock', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -512271
-      addPositionY: -33341
-      Unknown1727: -32436
-      setAngleX: 0
-      setAngleY: 334000
-      setAngle: 355600
-      setObjectSize: 2000
+        addPositionX: -512271
+        addPositionY: -33341
+        Unknown1727: -32436
+        setAngleX: 0
+        setAngleY: 334000
+        setAngle: 355600
+        setObjectSize: 2000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(155)
       createObject: s32'CHA_441_GroundBurst', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 1184421
-      setPositionY: -25936
-      setDepth: -5368
-      setAngleX: 0
-      setAngleY: 260000
-      setAngle: 0
-      Unknown191: 15
+        setPositionX: 1184421
+        setPositionY: -25936
+        setDepth: -5368
+        setAngleX: 0
+        setAngleY: 260000
+        setAngle: 0
+        setObjectSizeScaleSpeed: 15
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(195)
@@ -2094,41 +2094,41 @@ beginState: s32'CHA_441_CSEffMatome'
       createObject: s32'CHA_441_Bomb', (PLAYER)
       createObject: s32'CHA_441_Wind', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 178851
-      setPositionY: 280911
-      setDepth: -123603
-      setAngleX: 16000
-      setAngleY: 284800
-      setAngle: 4000
+        setPositionX: 178851
+        setPositionY: 280911
+        setDepth: -123603
+        setAngleX: 16000
+        setAngleY: 284800
+        setAngle: 4000
       endRunOnObject: 
       createObject: s32'CHA_441_Wind', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 268388
-      setPositionY: 286555
-      setDepth: -93502
-      setAngleX: 354000
-      setAngleY: 270400
-      setAngle: 3600
+        setPositionX: 268388
+        setPositionY: 286555
+        setDepth: -93502
+        setAngleX: 354000
+        setAngleY: 270400
+        setAngle: 3600
       endRunOnObject: 
       createObject: s32'CHA_441_Wind', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 107885
-      setPositionY: 533737
-      setDepth: -2188542
-      setAngleX: 32000
-      setAngleY: 316400
-      setAngle: 327200
-      setObjectSize: 6000
+        setPositionX: 107885
+        setPositionY: 533737
+        setDepth: -2188542
+        setAngleX: 32000
+        setAngleY: 316400
+        setAngle: 327200
+        setObjectSize: 6000
       endRunOnObject: 
       createObject: s32'CHA_441_Wind', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 2060441
-      setPositionY: 913767
-      setDepth: -4669566
-      setAngleX: 170000
-      setAngleY: 210400
-      setAngle: 297600
-      setObjectSize: 6000
+        setPositionX: 2060441
+        setPositionY: 913767
+        setDepth: -4669566
+        setAngleX: 170000
+        setAngleY: 210400
+        setAngle: 297600
+        setObjectSize: 6000
       endRunOnObject: 
     endIf: 
   endUpon: 
@@ -2323,9 +2323,9 @@ beginState: s32'CHA_441_BombStart'
   sprite: s32'null', 50
   setObjectSize: 1
   sprite: s32'null', 30
-  Unknown191: 55
+  setObjectSizeScaleSpeed: 55
   sprite: s32'null', 200
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'CHA_441_Bomb'
@@ -2396,13 +2396,13 @@ beginState: s32'CHA_700_1P_CSEffMatome'
     ifOnFrame: Val(55)
       createObject: s32'CHA_700_Kira', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -221718
-      addPositionY: 161472
-      Unknown1727: -20730
-      setAngleX: 0
-      setAngleY: 312000
-      setAngle: 7600
-      setObjectSize: 700
+        addPositionX: -221718
+        addPositionY: 161472
+        Unknown1727: -20730
+        setAngleX: 0
+        setAngleY: 312000
+        setAngle: 7600
+        setObjectSize: 700
       endRunOnObject: 
     endIf: 
   endUpon: 
@@ -2430,33 +2430,33 @@ beginState: s32'CHA_700_2P_CSEffMatome'
     ifOnFrame: Val(145)
       createObject: s32'CHA_700_WhiteBG', (PLAYER)
       runOnObject: (PREVIOUS)
-      setObjectSize: 7000
-      addPositionX: 1155344
-      addPositionY: 216034
-      Unknown1727: -52822
+        setObjectSize: 7000
+        addPositionX: 1155344
+        addPositionY: 216034
+        Unknown1727: -52822
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(317)
       createObject: s32'CHA_700_Bikkuri', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: 790975
-      addPositionY: 269860
-      Unknown1727: 10753
-      setObjectSize: 150
-      setAngleY: 246000
-      setAngle: 338000
+        addPositionX: 790975
+        addPositionY: 269860
+        Unknown1727: 10753
+        setObjectSize: 150
+        setAngleY: 246000
+        setAngle: 338000
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(360)
       createObject: s32'CHA_700_Ase', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: 770578
-      addPositionY: 257579
-      Unknown1727: -34858
-      setAngleX: 0
-      setAngleY: 268000
-      setAngle: 12000
-      setObjectSize: 110
+        addPositionX: 770578
+        addPositionY: 257579
+        Unknown1727: -34858
+        setAngleX: 0
+        setAngleY: 268000
+        setAngle: 12000
+        setObjectSize: 110
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(393)
@@ -2526,28 +2526,28 @@ beginState: s32'CHA_800_WinCutInEff'
     ifOnFrame: Val(399)
       createObject: s32'CHA_800_Speed', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 44351
-      setPositionY: 699711
-      setDepth: 288486
-      setAngle: 344000
-      setObjectSize: 250
+        setPositionX: 44351
+        setPositionY: 699711
+        setDepth: 288486
+        setAngle: 344000
+        setObjectSize: 250
       endRunOnObject: 
       createObject: s32'CHA_800_Speed', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 54166
-      setPositionY: 693139
-      setDepth: 290047
-      setAngle: 344000
-      setObjectSize: 200
+        setPositionX: 54166
+        setPositionY: 693139
+        setDepth: 290047
+        setAngle: 344000
+        setObjectSize: 200
       endRunOnObject: 
     endIf: 
     ifOnFrame: Val(415)
       createObject: s32'CHA_800_Speed', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 36054
-      setPositionY: 655708
-      setDepth: 358202
-      setAngle: 10000
+        setPositionX: 36054
+        setPositionY: 655708
+        setDepth: 358202
+        setAngle: 10000
       endRunOnObject: 
     endIf: 
   endUpon: 

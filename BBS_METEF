@@ -195,7 +195,7 @@ beginState: s32'met_206_slash'
     setDepth: 46831
     setObjectWidth: 600
     setObjectHeight: 1200
-    Unknown180: 1000
+    setObjectDepth: 1000
     setAngleX: 0
     setAngleY: 324000
     setAngle: 0
@@ -277,7 +277,7 @@ beginState: s32'met_207_start'
   upon: (IMMEDIATE)
     linkObjectPosition: 2
     linkParticle: s32'met_207_startptc'
-    Unknown289: 100
+    setMaxActionTime: 100
   endUpon: 
   sprite: s32'null', 2
   setPositionX: 134973
@@ -335,7 +335,7 @@ beginState: s32'met_232_loop'
     untechAmount: 30
     comboLimitScaling: 3
     enemyHitstopAddition: 0, 0, 11
-    Unknown988: 2
+    ignorePushbackXScaling: 2
     upon: 8
       sendSignalToAction: s32'NmlAtk2C', 24
       sendSignalToAction: s32'NmlAtk3C', 24
@@ -394,7 +394,7 @@ beginState: s32'met_207_nokosi'
   upon: (IMMEDIATE)
     stopLinkObject: 2
     linkObjectPosition: 2
-    Unknown289: 50
+    setMaxActionTime: 50
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 3
@@ -509,7 +509,7 @@ beginState: s32'met_233_Ground'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
     setPositionY: 0
-    Unknown289: 120
+    setMaxActionTime: 120
     gotoLabelUpon: 23, s32'End'
   endUpon: 
   beginLabel: s32'loop'
@@ -528,7 +528,7 @@ beginState: s32'met_233_speed'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
     gotoLabelUpon: 23, s32'end'
-    Unknown289: 240
+    setMaxActionTime: 240
     setPositionX: 42957
     setPositionY: -6981
     setDepth: -116454
@@ -624,7 +624,7 @@ beginState: s32'met_303_Eff'
     addPositionX: 130000
     addPositionY: 250000
     Unknown1727: 180000
-    Unknown289: 150
+    setMaxActionTime: 150
     specialAttack: 
     callSubroutine: s32'cmnAirThrowExeInit'
     airHitEffect: (AIR_LAUNCH)
@@ -637,14 +637,14 @@ beginState: s32'met_303_Eff'
     upon: (HIT_OR_GUARD)
       clearUpon: (BEFORE_EXIT)
       runOnObject: (ENEMY)
-      Unknown2050: 1
-      haltMomentum: 1
+        Unknown2050: 1
+        haltMomentum: 1
       endRunOnObject: 
     endUpon: 
     upon: (BEFORE_EXIT)
       runOnObject: (ENEMY)
-      Unknown2050: 1
-      haltMomentum: 1
+        Unknown2050: 1
+        haltMomentum: 1
       endRunOnObject: 
     endUpon: 
     worldCollision: 1
@@ -656,8 +656,8 @@ beginState: s32'met_303_Eff'
           gotoLabelRequests: s32'End'
         endIf: 
         runOnObject: (ENEMY)
-        physicsXImpulse: -40000
-        physicsYImpulse: -40000
+          physicsXImpulse: -40000
+          physicsYImpulse: -40000
         endRunOnObject: 
       endIf: 
       ifOnFrame: Val(120)
@@ -685,7 +685,7 @@ beginState: s32'met_303_Eff'
   addPositionX: -50000
   addPositionY: 80000
   runOnObject: (ENEMY)
-  Unknown2050: 0
+    Unknown2050: 0
   endRunOnObject: 
   sprite: s32'null', 4
   createArgAngle: 0, -45000
@@ -899,7 +899,7 @@ beginState: s32'met_400_SPkiraEff'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
-    Unknown289: 200
+    setMaxActionTime: 200
     upon: 23
       clearUpon: 23
       gotoLabelRequests: s32'End'
@@ -1065,7 +1065,7 @@ beginSubroutine: s32'ShotEff_Init'
       wallBounceInCornerOnly: 0
     endUpon: 
     Unknown310: 12, 3, 2, 45, 0, 1
-    Unknown912: 0, 500
+    counterHitSoftKnockdown: 0, 500
   endIf: 
   groundHitEffect: (AIR_FACE_UP)
   hitstop: 10
@@ -1170,15 +1170,15 @@ beginState: s32'met_400_ShotEff'
       endUpon: 
       createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionY: 50000
-      addPositionX: -50000
-      setObjectSize: 750
+        addPositionY: 50000
+        addPositionX: -50000
+        setObjectSize: 750
       endRunOnObject: 
       createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionY: -50000
-      addPositionX: -100000
-      setObjectSize: 850
+        addPositionY: -50000
+        addPositionX: -100000
+        setObjectSize: 850
       endRunOnObject: 
       createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
     endIf: 
@@ -1379,15 +1379,15 @@ beginState: s32'met_401_ShotEff'
       endUpon: 
       createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionY: 50000
-      addPositionX: -50000
-      setObjectSize: 750
+        addPositionY: 50000
+        addPositionX: -50000
+        setObjectSize: 750
       endRunOnObject: 
       createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionY: -50000
-      addPositionX: -100000
-      setObjectSize: 850
+        addPositionY: -50000
+        addPositionX: -100000
+        setObjectSize: 850
       endRunOnObject: 
       createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
     endIf: 
@@ -1551,12 +1551,12 @@ beginState: s32'met_402_ShotEff'
   deactivateObjectByName: s32'met_402_ShotEff_charge'
   createObject: s32'met_402_Impact', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 28971
-  addPositionY: -17432
-  Unknown1727: 10258
-  setObjectWidth: 800
-  setObjectHeight: 1800
-  setAngle: 40800
+    addPositionX: 28971
+    addPositionY: -17432
+    Unknown1727: 10258
+    setObjectWidth: 800
+    setObjectHeight: 1800
+    setAngle: 40800
   endRunOnObject: 
   linkParticle: s32'met_400_ShotLoop'
   createObject: s32'met_ShotSub', (PLAYER)
@@ -1582,7 +1582,7 @@ beginState: s32'met_402_ShotEff'
     physicsXImpulse: 77375
     physicsYImpulse: 37500
     setAngle: 30000
-    Unknown2482: 0x02000000300000000200000014000000
+    Unknown2482: 2, 48, 2, 20
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg3), Val(400000)
       addPositionX: -50000
       setAngle: 60000
@@ -1733,12 +1733,12 @@ beginState: s32'met_402_ShotEff_D'
   deactivateObjectByName: s32'met_402_ShotEff_charge'
   createObject: s32'met_402_ImpactD', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -91908
-  addPositionY: -65707
-  Unknown1727: -52874
-  setAngleX: 324400
-  setAngleY: 299600
-  setAngle: 6000
+    addPositionX: -91908
+    addPositionY: -65707
+    Unknown1727: -52874
+    setAngleX: 324400
+    setAngleY: 299600
+    setAngle: 6000
   endRunOnObject: 
   linkParticle: s32'met_400_ShotLoop'
   createObject: s32'met_ShotSub', (PLAYER)
@@ -1747,7 +1747,7 @@ beginState: s32'met_402_ShotEff_D'
   addPositionX: 170000
   addPositionY: 430000
   setAngle: 30000
-  Unknown2482: 0x02000000310000000200000014000000
+  Unknown2482: 2, 49, 2, 20
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg4), Val(400000)
     addPositionX: -50000
     setAngle: 60000
@@ -1819,7 +1819,7 @@ beginState: s32'met_402_ShotEff_D_Lock'
     dontAddComboCount: 1
     Unknown1048: 0
     nextHitActionName: s32'met_400_ShotEff_405Lock'
-    Unknown72: s32'met_402_ShotEff_D'
+    postSubroutineBegin: s32'met_402_ShotEff_D'
     storeValue: Mem(PlayerVal9), Val(1)
     Unknown1727: -150000
     upon: 23
@@ -1923,7 +1923,7 @@ beginState: s32'met_402_Allow'
     tensionGainOnConnect: 10
     damageEffect: 4, s32''
     guardEffectEconomy: 1
-    Unknown72: s32'met_402_ShotEff'
+    postSubroutineBegin: s32'met_402_ShotEff'
     clearUpon: 126
     Unknown310: 9, 2, 2, 49, 0, 1
     callSubroutine: s32'cmnSkillInput_109DamageRate'
@@ -1943,7 +1943,7 @@ beginState: s32'met_402_Allow'
   endIf: 
   upon: 90
     clearUpon: 90
-    Unknown2482: 0x020000002F000000020000002F000000
+    Unknown2482: 2, 47, 2, 47
     if: Mem(ActReg2)
       comboLimitScaling: 0
       Unknown1131: 1
@@ -2000,7 +2000,7 @@ clearUpon: (TOUCH_GROUND)
 recoveryState: 
 haltMomentum: 1
 linkParticle: s32'met_402_arrow_end'
-Unknown169: -90000, 90000
+randomAddAngle: -90000, 90000
 requestShake: 1250, 1250
 endState: 
 beginState: s32'met_403_ShotEff'
@@ -2062,20 +2062,20 @@ beginState: s32'met_403_ShotEff'
         worldCollision: 1
         createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
         runOnObject: (PREVIOUS)
-        addPositionY: 50000
-        addPositionX: 25000
-        setObjectSize: 800
+          addPositionY: 50000
+          addPositionX: 25000
+          setObjectSize: 800
         endRunOnObject: 
         createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
         runOnObject: (PREVIOUS)
-        addPositionY: 50000
-        addPositionX: -100000
-        setObjectSize: 850
+          addPositionY: 50000
+          addPositionX: -100000
+          setObjectSize: 850
         endRunOnObject: 
         createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
         runOnObject: (PREVIOUS)
-        addPositionY: -60000
-        addPositionX: 20000
+          addPositionY: -60000
+          addPositionX: 20000
         endRunOnObject: 
       endIf: 
       else: 
@@ -2088,20 +2088,20 @@ beginState: s32'met_403_ShotEff'
         missionName: s32'AirShotD2'
         createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
         runOnObject: (PREVIOUS)
-        addPositionY: 75000
-        addPositionX: -25000
-        setObjectSize: 850
+          addPositionY: 75000
+          addPositionX: -25000
+          setObjectSize: 850
         endRunOnObject: 
         createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
         runOnObject: (PREVIOUS)
-        addPositionY: 0
-        addPositionX: -100000
-        setObjectSize: 800
+          addPositionY: 0
+          addPositionX: -100000
+          setObjectSize: 800
         endRunOnObject: 
         createObject: s32'met_400_ShotD_Arrow_Eff2', (PLAYER)
         runOnObject: (PREVIOUS)
-        addPositionY: -50000
-        addPositionX: 100000
+          addPositionY: -50000
+          addPositionX: 100000
         endRunOnObject: 
       endElse: 
     endIf: 
@@ -2350,7 +2350,7 @@ beginState: s32'met_400_ShotEff_405Lock'
     doubleSlashEffectBugFix: 1
     Unknown1131: 1
     dontAddComboCount: 1
-    Unknown72: s32'met_402_ShotEff_D'
+    postSubroutineBegin: s32'met_402_ShotEff_D'
     storeValue: Mem(PlayerVal9), Val(1)
     setEventTrigger: 13, 60
     upon: 13
@@ -2521,7 +2521,7 @@ beginState: s32'met_404_Eff'
       Unknown2212: 0
       Unknown2213: 0
       addMoveForceDisableFlag: 4
-      Unknown2347: 1651339074, 0x5374616E644279000000000000000000000000000000000000000000
+      Unknown2347: s32'BombStandBy'
       gotoLabelRequests: s32'BombStandBy'
     endUpon: 
     upon: 24
@@ -2541,7 +2541,7 @@ beginState: s32'met_404_Eff'
       Unknown2212: 0
       Unknown2213: 0
       addMoveForceDisableFlag: 4
-      Unknown2347: 1651339074, 0x5374616E644279000000000000000000000000000000000000000000
+      Unknown2347: s32'BombStandBy'
       gotoLabelRequests: s32'BombStandBy'
     endUpon: 
     upon: (BEFORE_EXIT)
@@ -2553,74 +2553,77 @@ beginState: s32'met_404_Eff'
     endUpon: 
     addPositionX: 110000
     addPositionY: 290000
-  endUpon: 
-  beginLabel: s32'ButterflyMove'
-  sprite: s32'MET_404_Bomb1', 1
-  linkParticle: s32'met_404_Butterfly01_loop'
-  deactivateObjectByName: s32'met_404_Butterfly01_charge'
-  zLine: 5, 5
-  Unknown264: -10
-  beginLabel: s32'ButterflyMoveLoop'
-  sprite: s32'MET_404_Bomb1', 4
-  createParticle: s32'met_404_Butterfly01_nokosi', (PLAYER)
-  gotoLabel: s32'ButterflyMoveLoop'
-  beginLabel: s32'End'
-  sprite: s32'null', 10
-  Unknown2348: 0
-  clearUpon: 23
-  clearUpon: 24
-  clearUpon: 13
-  clearUpon: 45
-  haltMomentum: 1
-  setObjectSize: 700
-  setAngleX: 9600
-  setAngleY: 330400
-  setAngle: 174400
-  linkParticle: s32'met_404_Butterfly_End'
-  if: Mem(386)
-    ifNot: Mem(IsEnemysCutScene)
-      missionMissName: s32'MET_TAC01_Miss'
-    endIf: 
-  endIf: 
-  endSprite: 
-  exitState: 
-  beginLabel: s32'BombStandBy'
-  sprite: s32'null', 5
-  linkParticle: s32'met_404_Butterfly02_loop'
-  Unknown1924: 2, 1
-  sprite: s32'null', 10
-  haltMomentum: 1
-  beginLabel: s32'BombLoop'
-  sprite: s32'MET_404_Bomb2', 5
-  hit: 
-  linkParticle: s32'met_404_BombStart'
-  requestShake: 10000, 10000
-  privateSE: s32'met_10'
-  sprite: s32'MET_404_Bomb3', 5
-  hit: 
-  damageEffect: 2, s32'MET_SPHitEff'
-  linkParticle: s32'met_404_BombLoop'
-  sprite: s32'MET_404_Bomb4', 5
-  hit: 
-  damageEffect: 2, s32'MET_SPHitEff'
-  sprite: s32'MET_404_Bomb4', 5
-  hit: 
-  damageEffect: 2, s32'MET_SPHitEff'
-  sprite: s32'MET_404_Bomb4', 5
-  hit: 
-  damageEffect: 2, s32'MET_SPHitEff'
-  linkParticle: s32'met_404_BombEnd'
-  beginLabel: s32'BombEnd'
-  sprite: s32'null', 13
-  Unknown2348: 0
-  recoveryState: 
-  ignoreSuperFreeze: 1
-  ignoreFinishStop: 1
-  setLinkObjectDestroyOnDamage: 0
-  setLinkObjectDestroyOnStateChange: 0
-  stopLinkObject: 0
-endState: 
+    Unknown480: 
+  endState: 
+endUpon: 
 
+beginLabel: s32'ButterflyMove'
+sprite: s32'MET_404_Bomb1', 1
+linkParticle: s32'met_404_Butterfly01_loop'
+deactivateObjectByName: s32'met_404_Butterfly01_charge'
+zLine: 5, 5
+setZOffset: -10
+beginLabel: s32'ButterflyMoveLoop'
+sprite: s32'MET_404_Bomb1', 4
+createParticle: s32'met_404_Butterfly01_nokosi', (PLAYER)
+gotoLabel: s32'ButterflyMoveLoop'
+beginLabel: s32'End'
+sprite: s32'null', 10
+Unknown2348: 0
+clearUpon: 23
+clearUpon: 24
+clearUpon: 13
+clearUpon: 45
+haltMomentum: 1
+setObjectSize: 700
+setAngleX: 9600
+setAngleY: 330400
+setAngle: 174400
+linkParticle: s32'met_404_Butterfly_End'
+if: Mem(386)
+  ifNot: Mem(IsEnemysCutScene)
+    missionMissName: s32'MET_TAC01_Miss'
+  endIf: 
+endIf: 
+
+endSprite: 
+exitState: 
+beginLabel: s32'BombStandBy'
+sprite: s32'null', 5
+linkParticle: s32'met_404_Butterfly02_loop'
+Unknown1924: 2, 1
+sprite: s32'null', 10
+haltMomentum: 1
+beginLabel: s32'BombLoop'
+sprite: s32'MET_404_Bomb2', 5
+hit: 
+linkParticle: s32'met_404_BombStart'
+requestShake: 10000, 10000
+privateSE: s32'met_10'
+sprite: s32'MET_404_Bomb3', 5
+hit: 
+damageEffect: 2, s32'MET_SPHitEff'
+linkParticle: s32'met_404_BombLoop'
+sprite: s32'MET_404_Bomb4', 5
+hit: 
+damageEffect: 2, s32'MET_SPHitEff'
+sprite: s32'MET_404_Bomb4', 5
+hit: 
+damageEffect: 2, s32'MET_SPHitEff'
+sprite: s32'MET_404_Bomb4', 5
+hit: 
+damageEffect: 2, s32'MET_SPHitEff'
+linkParticle: s32'met_404_BombEnd'
+beginLabel: s32'BombEnd'
+sprite: s32'null', 13
+Unknown2348: 0
+recoveryState: 
+ignoreSuperFreeze: 1
+ignoreFinishStop: 1
+setLinkObjectDestroyOnDamage: 0
+setLinkObjectDestroyOnStateChange: 0
+stopLinkObject: 0
+endState: 
 beginState: s32'met_404_Butterfly01_charge'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnDamage: 3
@@ -2801,98 +2804,104 @@ beginState: s32'met_404_D_Eff'
     addPositionX: 110000
     addPositionY: 290000
     physicsXImpulse: 8000
-  endUpon: 
-  sprite: s32'MET_404_Bomb1', 1
-  linkParticle: s32'met_404_Butterfly01EX_loop'
-  deactivateObjectByName: s32'met_404_Butterfly01_charge'
-  zLine: 5, 5
-  beginLabel: s32'ButterflyMoveLoop'
-  sprite: s32'MET_404_Bomb1', 4
-  createParticle: s32'met_404_Butterfly01_nokosi', (PLAYER)
-  gotoLabel: s32'ButterflyMoveLoop'
-  beginLabel: s32'Bomb'
-  sprite: s32'MET_404_Bomb1', 10
-  haltMomentum: 1
-  storeValue: Mem(ActReg0), Val(0)
-  Unknown2020: 
-  clearUpon: 45
-  callSubroutine: s32'Nagurare_Signal2'
-  sprite: s32'MET_404_BombD', 10
-  hit: 
-  createObject: s32'met_404_Bomb', (PLAYER)
-  stackObject: (STACK0), (PREVIOUS)
-  linkParticle: s32''
-  cameraShake: s32'ShakeTate', 1000, 0, 15, 30
-  sprite: s32'MET_404_BombD', 10
-  hit: 
-  sprite: s32'MET_404_BombD', 10
-  hit: 
-  sprite: s32'MET_404_BombD', 20
-  recoveryState: 
-  endSprite: 
-  gotoLabel: s32'ButterflyMoveRestart'
-  beginLabel: s32'Bomb_ShotC'
-  sprite: s32'keep', 10
-  clearUpon: 45
-  sprite: s32'MET_404_Bomb1', 10
-  haltMomentum: 1
-  storeValue: Mem(ActReg0), Val(0)
-  Unknown2020: 
-  callSubroutine: s32'Nagurare_Signal2'
-  sprite: s32'MET_404_BombD', 10
-  hit: 
-  createObject: s32'met_404_Bomb', (PLAYER)
-  stackObject: (STACK0), (PREVIOUS)
-  linkParticle: s32''
-  cameraShake: s32'ShakeTate', 1000, 0, 15, 30
-  sprite: s32'MET_404_BombD', 10
-  hit: 
-  sprite: s32'MET_404_BombD', 10
-  hit: 
-  sprite: s32'MET_404_BombD', 20
-  recoveryState: 
-  endSprite: 
-  beginLabel: s32'ButterflyMoveRestart'
-  sprite: s32'MET_404_Bomb1', 5
-  sendSignalToAction: s32'met_404_Bomb', 23
-  sprite: s32'MET_404_Bomb1', 15
-  linkParticle: s32'met_404_Butterfly01EX_loop'
-  ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg3), Val(0)
-    gotoLabelRequests: s32'End'
-  endIf: 
-  endSprite: 
-  ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(1)
-    modifyVar: (ADD), Mem(ActReg3), Val(-1)
-    gotoLabel: s32'Bomb'
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(2)
-    modifyVar: (ADD), Mem(ActReg3), Val(-1)
-    gotoLabel: s32'Bomb_ShotC'
-  endIf: 
-  sprite: s32'MET_404_Bomb1', 1
-  faceOpponent: 
-  physicsXImpulse: 5000
-  velocityXPercentEachFrame: 105
-  if: Mem(ActReg3)
-    storeValue: Mem(ActReg0), Val(1)
-  endIf: 
-  callSubroutine: s32'Nagurare_Signal'
-  gotoLabel: s32'ButterflyMoveLoop'
-  beginLabel: s32'End'
-  sprite: s32'null', 10
-  clearUpon: 23
-  clearUpon: 24
-  clearUpon: (FRAME_STEP)
-  clearUpon: 45
-  sendSignalToAction: s32'met_404_Bomb', 23
-  haltMomentum: 1
-  setObjectSize: 700
-  setAngleX: 9600
-  setAngleY: 330400
-  setAngle: 174400
-  linkParticle: s32'met_404_Butterfly_End'
-endState: 
+    Unknown480: 
+  endState: 
+endUpon: 
 
+sprite: s32'MET_404_Bomb1', 1
+linkParticle: s32'met_404_Butterfly01EX_loop'
+deactivateObjectByName: s32'met_404_Butterfly01_charge'
+zLine: 5, 5
+beginLabel: s32'ButterflyMoveLoop'
+sprite: s32'MET_404_Bomb1', 4
+createParticle: s32'met_404_Butterfly01_nokosi', (PLAYER)
+gotoLabel: s32'ButterflyMoveLoop'
+beginLabel: s32'Bomb'
+sprite: s32'MET_404_Bomb1', 10
+haltMomentum: 1
+storeValue: Mem(ActReg0), Val(0)
+Unknown2020: 
+clearUpon: 45
+callSubroutine: s32'Nagurare_Signal2'
+sprite: s32'MET_404_BombD', 10
+hit: 
+createObject: s32'met_404_Bomb', (PLAYER)
+stackObject: (STACK0), (PREVIOUS)
+linkParticle: s32''
+cameraShake: s32'ShakeTate', 1000, 0, 15, 30
+sprite: s32'MET_404_BombD', 10
+hit: 
+sprite: s32'MET_404_BombD', 10
+hit: 
+sprite: s32'MET_404_BombD', 20
+recoveryState: 
+endSprite: 
+gotoLabel: s32'ButterflyMoveRestart'
+beginLabel: s32'Bomb_ShotC'
+sprite: s32'keep', 10
+clearUpon: 45
+sprite: s32'MET_404_Bomb1', 10
+haltMomentum: 1
+storeValue: Mem(ActReg0), Val(0)
+Unknown2020: 
+callSubroutine: s32'Nagurare_Signal2'
+sprite: s32'MET_404_BombD', 10
+hit: 
+createObject: s32'met_404_Bomb', (PLAYER)
+stackObject: (STACK0), (PREVIOUS)
+linkParticle: s32''
+cameraShake: s32'ShakeTate', 1000, 0, 15, 30
+sprite: s32'MET_404_BombD', 10
+hit: 
+sprite: s32'MET_404_BombD', 10
+hit: 
+sprite: s32'MET_404_BombD', 20
+recoveryState: 
+endSprite: 
+beginLabel: s32'ButterflyMoveRestart'
+sprite: s32'MET_404_Bomb1', 5
+sendSignalToAction: s32'met_404_Bomb', 23
+sprite: s32'MET_404_Bomb1', 15
+linkParticle: s32'met_404_Butterfly01EX_loop'
+ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg3), Val(0)
+  gotoLabelRequests: s32'End'
+endIf: 
+
+endSprite: 
+ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(1)
+  modifyVar: (ADD), Mem(ActReg3), Val(-1)
+  gotoLabel: s32'Bomb'
+endIf: 
+
+ifOperation: (IS_EQUAL), Mem(ObjReg0), Val(2)
+  modifyVar: (ADD), Mem(ActReg3), Val(-1)
+  gotoLabel: s32'Bomb_ShotC'
+endIf: 
+
+sprite: s32'MET_404_Bomb1', 1
+faceOpponent: 
+physicsXImpulse: 5000
+velocityXPercentEachFrame: 105
+if: Mem(ActReg3)
+  storeValue: Mem(ActReg0), Val(1)
+endIf: 
+
+callSubroutine: s32'Nagurare_Signal'
+gotoLabel: s32'ButterflyMoveLoop'
+beginLabel: s32'End'
+sprite: s32'null', 10
+clearUpon: 23
+clearUpon: 24
+clearUpon: (FRAME_STEP)
+clearUpon: 45
+sendSignalToAction: s32'met_404_Bomb', 23
+haltMomentum: 1
+setObjectSize: 700
+setAngleX: 9600
+setAngleY: 330400
+setAngle: 174400
+linkParticle: s32'met_404_Butterfly_End'
+endState: 
 beginState: s32'met_404_Bomb'
   upon: (IMMEDIATE)
     setLinkObjectDestroyOnStateChange: 2
@@ -2978,7 +2987,7 @@ beginState: s32'met_430_met_slash2'
   linkParticle: s32'met_430_met_slash05'
   sprite: s32'null', 15
   linkParticle: s32'met_430_met_slash06'
-  Unknown191: 15
+  setObjectSizeScaleSpeed: 15
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
   stopLinkObject: 0
@@ -3118,32 +3127,32 @@ beginState: s32'met_430_FireTair'
   sprite: s32'null', 4
   createObject: s32'met_430_FireTair_Nokosi', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -286622
-  addPositionY: 135914
-  Unknown1727: -297627
+    addPositionX: -286622
+    addPositionY: 135914
+    Unknown1727: -297627
   endRunOnObject: 
   createObject: s32'met_430_FireTair_Nokosi', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 343183
-  addPositionY: 739912
-  Unknown1727: -830517
+    addPositionX: 343183
+    addPositionY: 739912
+    Unknown1727: -830517
   endRunOnObject: 
-  sprite: s32'null', 4
-  sprite: s32'null', 4
-  createObject: s32'met_430_FireTair_Nokosi', (PLAYER)
-  runOnObject: (PREVIOUS)
-  addPositionX: 1271416
-  addPositionY: 2994810
-  Unknown1727: -1984724
-  endRunOnObject: 
-  sprite: s32'null', 4
   sprite: s32'null', 4
   sprite: s32'null', 4
   createObject: s32'met_430_FireTair_Nokosi', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 184506
-  addPositionY: 6513063
-  Unknown1727: -3926178
+    addPositionX: 1271416
+    addPositionY: 2994810
+    Unknown1727: -1984724
+  endRunOnObject: 
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  sprite: s32'null', 4
+  createObject: s32'met_430_FireTair_Nokosi', (PLAYER)
+  runOnObject: (PREVIOUS)
+    addPositionX: 184506
+    addPositionY: 6513063
+    Unknown1727: -3926178
   endRunOnObject: 
   sprite: s32'null', 4
   sprite: s32'null', 4
@@ -3343,12 +3352,12 @@ beginState: s32'met_430_Arrow'
   setAngle: 315200
   createObject: s32'met_430_Arrow_Nokosi', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 367769
-  addPositionY: -383189
-  Unknown1727: -62333
-  setAngleX: 68000
-  setAngleY: 122000
-  setAngle: 326800
+    addPositionX: 367769
+    addPositionY: -383189
+    Unknown1727: -62333
+    setAngleX: 68000
+    setAngleY: 122000
+    setAngle: 326800
   endRunOnObject: 
   sprite: s32'null', 4
   setPositionX: 579598
@@ -3364,7 +3373,7 @@ beginState: s32'met_430_Arrow'
   setDepth: 880435
   sprite: s32'null', 300
   linkParticle: s32'met_430cs_Bomb01'
-  Unknown191: 50
+  setObjectSizeScaleSpeed: 50
   setObjectSize: 4000
   setPositionX: 19824
   setPositionY: 1633617
@@ -3386,7 +3395,7 @@ beginState: s32'met_430_BombFly'
     linkParticle: s32'met_430cs_BombFly'
   endUpon: 
   sprite: s32'null', 60
-  Unknown191: 50
+  setObjectSizeScaleSpeed: 50
   setObjectSize: 3000
   setPositionX: -63628
   setPositionY: 77497
@@ -3406,7 +3415,7 @@ beginState: s32'met_430_BombFly2'
     linkParticle: s32'met_430cs_BombFly'
   endUpon: 
   sprite: s32'null', 60
-  Unknown191: 50
+  setObjectSizeScaleSpeed: 50
   setObjectSize: 3000
   setPositionX: -188450
   setPositionY: 105757
@@ -3505,7 +3514,7 @@ beginState: s32'met_440_ButterFly'
     addPositionY: 290000
     setAngleY: 30000
     gotoLabelUpon: 23, s32'End'
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 2147483647
   beginLabel: s32'End'
@@ -3592,7 +3601,7 @@ endState:
 
 beginState: s32'met_440_AllowTrail_1'
   upon: (IMMEDIATE)
-    Unknown289: 60
+    setMaxActionTime: 60
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -3613,7 +3622,7 @@ endState:
 
 beginState: s32'met_440_AllowTrail_2'
   upon: (IMMEDIATE)
-    Unknown289: 60
+    setMaxActionTime: 60
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -3633,7 +3642,7 @@ endState:
 
 beginState: s32'met_440_AllowTrail_3'
   upon: (IMMEDIATE)
-    Unknown289: 60
+    setMaxActionTime: 60
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -3653,7 +3662,7 @@ endState:
 
 beginState: s32'met_440_AllowTrail_4'
   upon: (IMMEDIATE)
-    Unknown289: 60
+    setMaxActionTime: 60
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -3673,7 +3682,7 @@ endState:
 
 beginState: s32'met_440_AllowTrail_5'
   upon: (IMMEDIATE)
-    Unknown289: 60
+    setMaxActionTime: 60
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -3693,7 +3702,7 @@ endState:
 
 beginState: s32'met_440_AllowTrail_6'
   upon: (IMMEDIATE)
-    Unknown289: 60
+    setMaxActionTime: 60
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -3713,7 +3722,7 @@ endState:
 
 beginState: s32'met_440_AllowTrail_7'
   upon: (IMMEDIATE)
-    Unknown289: 60
+    setMaxActionTime: 60
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -3733,7 +3742,7 @@ endState:
 
 beginState: s32'met_440_AllowTrail_8'
   upon: (IMMEDIATE)
-    Unknown289: 60
+    setMaxActionTime: 60
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -3753,7 +3762,7 @@ endState:
 
 beginState: s32'met_440_AllowTrail_9'
   upon: (IMMEDIATE)
-    Unknown289: 60
+    setMaxActionTime: 60
     initializeDestroy: 
     Unknown2212: 1
     Unknown2213: 1
@@ -3807,7 +3816,7 @@ beginState: s32'met_440_MultipleBeam2_ATK'
       endIf: 
     endUpon: 
     upon: (FRAME_STEP)
-      Unknown2482: 0x020000002F000000020000000E000000
+      Unknown2482: 2, 47, 2, 14
       ifOperation: (IS_LESSER), Mem(ActReg1), Val(10)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg2), Val(250000)
           ifOperation: (IS_EQUAL), Mem(ActionTime), Val(37)
@@ -3840,13 +3849,13 @@ beginState: s32'met_440_MultipleBeam2_ATK'
       clearUpon: 13
       linkObjectPosition: 0
       gotoLabelRequests: s32'Hit'
-      Unknown151: 0
+      setObjectWidthScaleSpeed: 0
       setObjectWidth: 1000
       haltMomentum: 1
       moveToPosType: 22, 104
       addPositionX: -70000
       setPositionY: 300000
-      Unknown289: 43
+      setMaxActionTime: 43
     endUpon: 
     initializeDestroy: 
     Unknown2207: 1
@@ -3865,7 +3874,7 @@ beginState: s32'met_440_MultipleBeam2_ATK'
       clearUpon: 13
       gotoLabelRequests: s32'End'
     endUpon: 
-    Unknown289: 33
+    setMaxActionTime: 33
     upon: 23
       recoveryState: 
     endUpon: 
@@ -3879,13 +3888,13 @@ beginState: s32'met_440_MultipleBeam2_ATK'
   hit: 
   sprite: s32'MET_Beam', 3
   hit: 
-  Unknown152: 240
+  addObjectWidthScaleSpeed: 240
   endSprite: 
   clearUpon: 78
   beginLabel: s32'Loop'
   sprite: s32'MET_Beam', 3
   hit: 
-  Unknown152: 240
+  addObjectWidthScaleSpeed: 240
   gotoLabel: s32'Loop'
   beginLabel: s32'End'
   sprite: s32'MET_Beam', 3
@@ -3913,7 +3922,7 @@ endState:
 beginSubroutine: s32'met_440_BeamFunc'
   disableHitstopForSelf: 1
   projectileHitstopClash: 1
-  Unknown58: 1
+  worldOutToEliminate: 1
   linkParticle: s32'met_440_Shot_multiple'
   setObjectSize: 700
   damageEffect: 4, s32'cmn_hit_s'
@@ -4269,7 +4278,7 @@ beginState: s32'met_440_Allow'
     nextHitActionName: s32'Met_Kaihou'
   endIf: 
   Unknown2349: 23
-  Unknown58: 1
+  worldOutToEliminate: 1
   upon: (HIT)
     clearUpon: (HIT)
     cameraShake: s32'ShakeYoko', 800, 0, 27, 10
@@ -4392,7 +4401,7 @@ beginState: s32'met_440_cs_loop'
   setAngle: 250800
   setObjectWidth: 70
   setObjectHeight: 70
-  Unknown180: 70
+  setObjectDepth: 70
   sprite: s32'null', 4
   addPositionX: 3500
   addPositionY: 4000
@@ -4402,7 +4411,7 @@ beginState: s32'met_440_cs_loop'
   setAngle: 250800
   setObjectWidth: 70
   setObjectHeight: 70
-  Unknown180: 70
+  setObjectDepth: 70
 endState: 
 
 beginState: s32'met_440_cs_scranim_01'
@@ -4435,7 +4444,7 @@ beginState: s32'met_440_cs_end'
   Unknown1727: 239488
   setObjectWidth: 42
   setObjectHeight: 120
-  Unknown180: 100
+  setObjectDepth: 100
   setAngleX: 0
   setAngleY: 0
   setAngle: 306000
@@ -4445,7 +4454,7 @@ beginState: s32'met_440_cs_end'
   Unknown1727: -15000
   setObjectWidth: 50
   setObjectHeight: 160
-  Unknown180: 100
+  setObjectDepth: 100
   setAngleX: 0
   setAngleY: 0
   setAngle: 306000
@@ -4463,7 +4472,7 @@ beginState: s32'met_440_cs_Back'
   Unknown1727: 22170
   setObjectWidth: 140
   setObjectHeight: 150
-  Unknown180: 150
+  setObjectDepth: 150
   setAngleX: 0
   setAngleY: 0
   setAngle: 0
@@ -4473,7 +4482,7 @@ beginState: s32'met_440_cs_Back'
   Unknown1727: 1500
   setObjectWidth: 168
   setObjectHeight: 180
-  Unknown180: 180
+  setObjectDepth: 180
   setAngleX: 0
   setAngleY: 0
   setAngle: 3200
@@ -4483,7 +4492,7 @@ beginState: s32'met_440_cs_Back'
   Unknown1727: 90000
   setObjectWidth: 127
   setObjectHeight: 136
-  Unknown180: 136
+  setObjectDepth: 136
   setAngleX: 0
   setAngleY: 0
   setAngle: 3200
@@ -4503,7 +4512,7 @@ beginState: s32'met_440_cs_ray'
   setDepth: 187995
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 4
   setPositionX: 68090
   setPositionY: 296441
@@ -4515,7 +4524,7 @@ beginState: s32'met_440_cs_ray'
   sprite: s32'null', 5
   setObjectWidth: 1500
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
   setPositionX: 263942
   setPositionY: 316122
   setDepth: 223157
@@ -4541,14 +4550,14 @@ beginState: s32'met_440_ButterFly2'
     setAngle: 0
     setObjectWidth: 1000
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
     gotoLabelUpon: 23, s32'End'
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 2147483647
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   beginLabel: s32'End'
   sprite: s32'null', 50
   linkParticle: s32'met_440_Butterfly_End'
@@ -4736,7 +4745,7 @@ beginState: s32'met_441_ArrowRay'
   sprite: s32'null', 4
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setAngle: 358800
   setPositionX: -10989
   setPositionY: 1807603
@@ -4834,7 +4843,7 @@ beginState: s32'met_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -4867,7 +4876,7 @@ beginState: s32'met_880_wind'
     flipDirection: 
     setObjectWidth: 500
     setObjectHeight: 500
-    Unknown180: 500
+    setObjectDepth: 500
     addPositionX: -392555
     addPositionY: 155981
     Unknown1727: 189869
@@ -4964,7 +4973,7 @@ beginState: s32'met_700cs_Wind'
     setAngle: 347200
     setObjectWidth: 700
     setObjectHeight: 700
-    Unknown180: 700
+    setObjectDepth: 700
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'met_700_Wind'
@@ -4980,7 +4989,7 @@ beginState: s32'met_700cs_Bloom'
   linkParticle: s32'met_700_HandBloom'
   setObjectWidth: 100
   setObjectHeight: 100
-  Unknown180: 100
+  setObjectDepth: 100
   setPositionX: -266896
   setPositionY: 345256
   setDepth: 201821
@@ -5012,7 +5021,7 @@ beginState: s32'met_700cs_Bloom'
   sprite: s32'null', 8
   setObjectWidth: 200
   setObjectHeight: 200
-  Unknown180: 200
+  setObjectDepth: 200
   setPositionX: -347523
   setPositionY: 443830
   setDepth: -18501
@@ -5070,7 +5079,7 @@ beginState: s32'met_700cs_AllowEnter'
     linkObjectPosition: 2
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     setAngleX: 0
     setAngleY: 37600
     setAngle: 337200
@@ -5090,7 +5099,7 @@ beginState: s32'met_700cs_Kiss'
     linkParticle: s32'met_700_Kiss'
     setObjectWidth: 250
     setObjectHeight: 250
-    Unknown180: 250
+    setObjectDepth: 250
   endUpon: 
   sprite: s32'null', 4
   setPositionX: -304214
@@ -5139,7 +5148,7 @@ beginState: s32'met_800_wind'
   setAngle: 26400
   setObjectWidth: 1500
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
 endState: 
 
 beginState: s32'met_800_Kiss'

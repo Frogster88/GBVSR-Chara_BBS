@@ -336,7 +336,7 @@ beginState: s32'gef_350_slashEff'
     flipDirection: 
     setObjectWidth: 900
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
     setPositionY: -688
     setDepth: 15984
     setAngleX: 2800
@@ -408,8 +408,8 @@ beginState: s32'gef_Drain_Exe'
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(Hikitsugi1), Val(0)
     storeValue: Mem(ActReg1), Val(0)
   endIf: 
-  Unknown2482: 0x02000000310000000200000031000000
-  Unknown2482: 0x02000000320000000200000032000000
+  Unknown2482: 2, 49, 2, 49
+  Unknown2482: 2, 50, 2, 50
   if: Mem(ActReg1)
     ifOperation: (IS_EQUAL), Mem(ActReg4), Val(0)
       storeValue: Mem(ActReg7), Val(200)
@@ -652,7 +652,7 @@ beginState: s32'gef_Drain_Exe'
       debugLogForScript: s32'', 2, 52
       storeValueFromObject: (SELF), Mem(EnvR24), (SELF), Mem(ActReg7)
       runOnObject: (PLAYER)
-      modifyVar: (ADD), Mem(ExGage0), Mem(EnvR24)
+        modifyVar: (ADD), Mem(ExGage0), Mem(EnvR24)
       endRunOnObject: 
     endIf: 
     storeValueFromObject: (SELF), Mem(ActReg3), (PLAYER), Mem(HitPoint)
@@ -670,7 +670,7 @@ beginState: s32'gef_DrainTrail'
     ignoreSlowdown: 1
     ignoreFinishStop: 1
     setAngle: 165000
-    Unknown202: 30000, -45000
+    setSpeedByAngle: 30000, -45000
     randomAddVelocityX: -15000, -15000
     storeValue: Mem(ActReg0), Val(9)
     findState: s32'gef_BloodTrail01', 4, 2, 45
@@ -721,7 +721,7 @@ beginState: s32'gef_DrainTrail'
       clearUpon: 36
       gotoLabelRequests: s32'end'
     endIf: 
-    Unknown2329: 0x0000000017000000770000000300000067000000
+    Unknown2329: 0, 23, 119, 3, 103
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(300000)
       clearUpon: 36
       gotoLabelRequests: s32'end'
@@ -827,7 +827,7 @@ beginState: s32'gef_400_ShotEff'
     wallBounceCount: 1
     wallBounceXVelocityPercent: 25
     wallBounceInCornerOnly: 1
-    Unknown72: s32'SpecialShot_D'
+    postSubroutineBegin: s32'SpecialShot_D'
     physicsXImpulse: 40000
     storeValue: Mem(ActReg0), Val(1)
   endIf: 
@@ -970,9 +970,9 @@ if: Mem(ActReg2)
   createObject: s32'gef_400_ShotEff_VisualD', (PLAYER)
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
     runOnObject: (PREVIOUS)
-    objectSizePercent: 85
+      objectSizePercent: 85
     endRunOnObject: 
-    Unknown158: 85
+    objectHeightPercent: 85
   endIf: 
 endIf: 
 
@@ -980,9 +980,9 @@ else:
   createObject: s32'gef_400_ShotEff_VisualB', (PLAYER)
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
     runOnObject: (PREVIOUS)
-    objectSizePercent: 85
+      objectSizePercent: 85
     endRunOnObject: 
-    Unknown158: 85
+    objectHeightPercent: 85
   endIf: 
 endElse: 
 
@@ -2970,7 +2970,7 @@ beginState: s32'gef_440cs_Aura2'
   setDepth: -24254
   setObjectWidth: 700
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
 endState: 
 
 beginState: s32'gef_441cs_Kaiso'
@@ -3008,7 +3008,7 @@ beginState: s32'gef_441cs_Dash'
   linkParticle: s32'gef_441cs_Dash'
   setObjectWidth: 1500
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
   setAngleX: 0
   setAngleY: 11200
   setAngle: 0
@@ -3106,7 +3106,7 @@ beginState: s32'gef_441cs_HensinAuraEnd'
   linkParticle: s32'gef_441cs_AuraEnd'
   setObjectWidth: 1200
   setObjectHeight: 1200
-  Unknown180: 1200
+  setObjectDepth: 1200
   setAngleX: 346800
   setAngleY: 138000
   setAngle: 6400
@@ -3119,12 +3119,12 @@ beginState: s32'gef_441cs_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'gef_PP_RadialBlur', 1, 0
-      Unknown2587: 1600546151, s32'PP_RadialBlur'
+      Unknown2587: s32'gef_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
   linkParticle: s32'gef_441cs_RedFilter'
-  Unknown2587: 1600546151, s32'PP_RadialBlur'
+  Unknown2587: s32'gef_PP_RadialBlur', 1
   Unknown2588: s32'gef_PP_RadialBlur', 1, 50
   sprite: s32'null', 4
   Unknown2588: s32'gef_PP_RadialBlur', 1, 100
@@ -3136,7 +3136,7 @@ beginState: s32'gef_441cs_Blur'
   Unknown2590: s32'gef_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'gef_PP_RadialBlur', 1, 0
-  Unknown2587: 1600546151, s32'PP_RadialBlur'
+  Unknown2587: s32'gef_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'gef_441cs_Burst'
@@ -3232,7 +3232,7 @@ beginState: s32'gef_700_Smoke'
   setDepth: 76330
   setObjectWidth: 200
   setObjectHeight: 200
-  Unknown180: 200
+  setObjectDepth: 200
   setAngleX: 0
   setAngleY: 237600
   setAngle: 12400
@@ -3252,7 +3252,7 @@ beginState: s32'gef_700_Smoke2'
   setDepth: 117678
   setObjectWidth: 200
   setObjectHeight: 200
-  Unknown180: 200
+  setObjectDepth: 200
   setAngleX: 357600
   setAngleY: 68000
   setAngle: 356800

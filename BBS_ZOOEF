@@ -21,6 +21,7 @@ beginSubroutine: s32'DYR_Start'
   worldCollision: 0
   invulnForce: 1
   ignoreSuperFreezeFromAlly: 1
+  pushboxCollisionSameSide: 0
 endSubroutine: 
 
 beginSubroutine: s32'DYR_End'
@@ -175,7 +176,7 @@ beginState: s32'zoo_231_Slash'
     setAngleY: 356000
     setObjectWidth: 850
     setObjectHeight: 950
-    Unknown180: 950
+    setObjectDepth: 950
   endUpon: 
   sprite: s32'null', 40
 endState: 
@@ -272,7 +273,7 @@ beginState: s32'zoo_301_Throw'
   linkParticle: s32'zoo_301_slash02'
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setPositionX: 152000
   setPositionY: 330042
   setDepth: 170512
@@ -282,7 +283,7 @@ beginState: s32'zoo_301_Throw'
   sprite: s32'null', 40
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: 256939
   setPositionY: 425595
   setDepth: 42589
@@ -310,7 +311,7 @@ beginState: s32'zoo_301_ring'
   linkParticle: s32'zoo_301_ring02'
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: 67968
   setPositionY: 316725
   setDepth: 34836
@@ -368,7 +369,7 @@ beginState: s32'zoo_302'
   setDepth: 130085
   setObjectWidth: 900
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   sprite: s32'null', 10
   sprite: s32'null', 25
   linkObjectPosition: 0
@@ -394,7 +395,7 @@ beginState: s32'zoo_302_ring'
   linkParticle: s32'zoo_301_ring02'
   setObjectWidth: 1200
   setObjectHeight: 900
-  Unknown180: 900
+  setObjectDepth: 900
   setPositionX: 93686
   setPositionY: 266404
   setDepth: 178819
@@ -435,7 +436,7 @@ beginState: s32'zoo_309_warp'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    Unknown289: 52
+    setMaxActionTime: 52
     setPositionY: 304695
     setDepth: 13298
   endUpon: 
@@ -451,7 +452,7 @@ beginState: s32'zoo_309_warp_end'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    Unknown289: 50
+    setMaxActionTime: 50
     setPositionX: 9990
     setPositionY: -314965
     setDepth: 1526
@@ -468,7 +469,7 @@ beginState: s32'zoo_309_WeaponWarpEnd'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    Unknown289: 50
+    setMaxActionTime: 50
   endUpon: 
   sprite: s32'null', 3
   linkParticle: s32'zoo_309_WeaponSpeed'
@@ -564,7 +565,7 @@ beginState: s32'ZOO_208_Burst'
   setDepth: 30924
   setObjectWidth: 1654
   setObjectHeight: 1259
-  Unknown180: 1259
+  setObjectDepth: 1259
   setAngleX: 359600
   setAngleY: 24000
   setAngle: 296400
@@ -577,7 +578,7 @@ beginState: s32'ZOO_208_Burst'
   setDepth: 30924
   setObjectWidth: 1654
   setObjectHeight: 1259
-  Unknown180: 1259
+  setObjectDepth: 1259
   setAngleX: 359600
   setAngleY: 24000
   setAngle: 296400
@@ -595,7 +596,7 @@ beginState: s32'ZOO_208_nokosi'
     setDepth: 203716
     setObjectWidth: 1654
     setObjectHeight: 1259
-    Unknown180: 1259
+    setObjectDepth: 1259
     setAngleX: 8000
     setAngleY: 24000
     setAngle: 296400
@@ -887,7 +888,7 @@ beginState: s32'Zoo_SpEff_RandAngle3'
   upon: (IMMEDIATE)
     ignoreFinishStop: 1
     ignoreSuperFreeze: 1
-    Unknown169: -12500, 12500
+    randomAddAngle: -12500, 12500
     linkParticle: s32'zoo_430_HitThunder'
   endUpon: 
   sprite: s32'null', 16
@@ -912,7 +913,7 @@ beginSubroutine: s32'Thunder_Init'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
-      Unknown72: s32'Thunder_A'
+      postSubroutineBegin: s32'Thunder_A'
       missionName: s32'ThunderFast_A'
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
@@ -921,7 +922,7 @@ beginSubroutine: s32'Thunder_Init'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
-      Unknown72: s32'Thunder_B'
+      postSubroutineBegin: s32'Thunder_B'
       missionName: s32'ThunderFast_B'
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
@@ -930,7 +931,7 @@ beginSubroutine: s32'Thunder_Init'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
-      Unknown72: s32'Thunder_C'
+      postSubroutineBegin: s32'Thunder_C'
       missionName: s32'ThunderFast_C'
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
@@ -1824,7 +1825,7 @@ beginState: s32'ZOO_400_Thunder_D'
     damageEffect: 2, s32'ZOO_SPHitEff'
     guardEffectEconomy: 1
     wallPushback: 0, 1500
-    Unknown72: s32'Thunder_D'
+    postSubroutineBegin: s32'Thunder_D'
     if: Mem(Hikitsugi1)
       groundHitEffect: (CRUMPLE)
       airHitEffect: (AIR_LAUNCH)
@@ -1844,7 +1845,7 @@ beginState: s32'ZOO_400_Thunder_D'
     upon: (HIT_OR_GUARD)
       storeValue: Mem(PlayerVal1), Val(1)
       ifNot: Mem(Hikitsugi1)
-        Unknown2329: 0x0300000017000000640000001600000064000000
+        Unknown2329: 3, 23, 100, 22, 100
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(-1)
           hitAirPushbackX: 60000
           wallPushback: 0, 5000
@@ -2054,7 +2055,7 @@ beginState: s32'ZOO_401_Jump_loopEff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 30
+    setMaxActionTime: 30
     upon: 23
       clearUpon: 23
       gotoLabelRequests: s32'End'
@@ -2075,7 +2076,7 @@ beginState: s32'ZOO_401_Jump_loop2Eff'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 60
+    setMaxActionTime: 60
     upon: 23
       clearUpon: 23
       gotoLabelRequests: s32'End'
@@ -2120,7 +2121,7 @@ beginState: s32'ZOO_401_NonVectorSpEff'
   upon: (IMMEDIATE)
     ignoreSuperFreeze: 1
     ignoreFinishStop: 1
-    Unknown169: -90000, 90000
+    randomAddAngle: -90000, 90000
     setObjectSize: 1200
   endUpon: 
   sprite: s32'null', 15
@@ -2144,7 +2145,7 @@ beginState: s32'ZOO_402_EnchantEff'
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'zoo_402_Enchant'
-  Unknown191: 30
+  setObjectSizeScaleSpeed: 30
 endState: 
 
 beginState: s32'ZOO_402_SpinSlash'
@@ -2680,7 +2681,7 @@ beginState: s32'ZOO_406_ImpactEff'
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
     setObjectSize: 800
-    Unknown180: 1200
+    setObjectDepth: 1200
     addPositionX: -7992
     addPositionY: 5642
     Unknown1727: 55289
@@ -2742,7 +2743,7 @@ beginSubroutine: s32'LYR_SignalReceive'
   clearUpon: 25
   clearUpon: (FRAME_STEP)
   storeValue: Mem(PlayerVal3), Val(1)
-  Unknown264: -10
+  setZOffset: -10
   upon: 35
     clearUpon: 35
     jumpToState: s32'LYR_Stagger'
@@ -2753,7 +2754,7 @@ beginState: s32'LYR_407_Wait'
   upon: (IMMEDIATE)
     playerActionInitializeByCategory: 16, 0
     callSubroutine: s32'LYR_Start'
-    Unknown264: 16
+    setZOffset: 16
     worldCollision: 1
     ignoreSuperFreezeFromAlly: 0
     addMoveForceDisableFlag: 1
@@ -3087,7 +3088,7 @@ beginState: s32'LYR_Stagger'
   upon: (IMMEDIATE)
     playerActionInitializeByCategory: 16, 0
     callSubroutine: s32'LYR_Start'
-    Unknown264: -10
+    setZOffset: -10
     hideByCutscene: 1
     storeValue: Mem(PlayerVal2), Val(1)
     storeValue: Mem(PlayerVal3), Val(1)
@@ -3118,10 +3119,10 @@ beginState: s32'DCharge_Eff'
       moveToObject: (PARENT)
       addPositionY: 260000
       if: Mem(Dir)
-        Unknown95: 40000
+        addRawPositionX: 40000
       endIf: 
       else: 
-        Unknown95: -40000
+        addRawPositionX: -40000
       endElse: 
     endUpon: 
   endUpon: 
@@ -3162,7 +3163,7 @@ endSubroutine:
 
 beginSubroutine: s32'LYR_408_Assault_Init'
   callSubroutine: s32'LYR_Start'
-  Unknown264: -10
+  setZOffset: -10
   worldCollision: 1
   ignoreSuperFreezeFromAlly: 0
   hideByCutscene: 1
@@ -3417,7 +3418,7 @@ beginState: s32'zoo_408_Ring'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 120
+    setMaxActionTime: 120
     addPositionX: -32987
     addPositionY: 261862
     Unknown1727: 227033
@@ -3433,7 +3434,7 @@ endState:
 
 beginSubroutine: s32'LYR_409_Shot_Init'
   callSubroutine: s32'LYR_Start'
-  Unknown264: -10
+  setZOffset: -10
   worldCollision: 1
   ignoreSuperFreezeFromAlly: 0
   hideByCutscene: 1
@@ -3491,16 +3492,18 @@ beginState: s32'LYR_409_Shot'
   setNoCollision: 1
   setPushboxWidth: 50000
   setPushboxHeight: 225000
+  pushboxCollisionSameSide: 1
   haltMomentum: 1
   clearUpon: (FRAME_STEP)
   createObjectWithArg: s32'ZOO_409_Breath', (PLAYER)
   runOnObject: (PREVIOUS)
-  Unknown264: -10
-  addPositionX: -130000
-  addPositionY: -70000
+    setZOffset: -10
+    addPositionX: -130000
+    addPositionY: -70000
   endRunOnObject: 
   sprite: s32'lyr409_05', 2
   setNoCollision: 0
+  pushboxCollisionSameSide: 0
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(ExGage0), Val(500)
     storeValue: Mem(EnvR22), Val(1)
   endIf: 
@@ -3528,7 +3531,7 @@ endState:
 
 beginSubroutine: s32'LYR_Warp_Before'
   faceOpponent: 
-  Unknown2329: 0x03000000030000007B000000170000007B000000
+  Unknown2329: 3, 3, 123, 23, 123
   storeValue: Mem(ActReg1), Mem(Tmp)
   ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(1650000)
     storeValue: Mem(ActReg2), Val(1)
@@ -3605,16 +3608,18 @@ beginState: s32'LYR_409_Shot_ReAction'
   setNoCollision: 1
   setPushboxWidth: 50000
   setPushboxHeight: 225000
+  pushboxCollisionSameSide: 1
   haltMomentum: 1
   clearUpon: (FRAME_STEP)
   createObjectWithArg: s32'ZOO_409_Breath', (PLAYER)
   runOnObject: (PREVIOUS)
-  Unknown264: -10
-  addPositionX: -130000
-  addPositionY: -70000
+    setZOffset: -10
+    addPositionX: -130000
+    addPositionY: -70000
   endRunOnObject: 
   sprite: s32'lyr409_05', 2
   setNoCollision: 0
+  pushboxCollisionSameSide: 0
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(ExGage0), Val(500)
     storeValue: Mem(EnvR22), Val(1)
   endIf: 
@@ -3782,7 +3787,7 @@ beginState: s32'ZOO_409_FirePillar'
     wallPushback: 0, 0
     setProjectileDurability: 2
     isAirUnblockable: 0
-    Unknown733: 1
+    atkRedutionAttributeEffect: 1
     damageEffect: 4, s32'cmn_hit_l_Multiple'
     guardEffectEconomy: 1
     missionName: s32'ZOO_Breath'
@@ -3838,7 +3843,7 @@ endState:
 
 beginSubroutine: s32'LYR_410_SweepSlide_Init'
   callSubroutine: s32'LYR_Start'
-  Unknown264: -10
+  setZOffset: -10
   worldCollision: 1
   ignoreSuperFreezeFromAlly: 0
   hideByCutscene: 1
@@ -3890,9 +3895,9 @@ beginState: s32'LYR_410_SweepSlide'
   createObjectWithArg: s32'ZOO_410_Beam', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
   runOnObject: (STACK0)
-  Unknown264: -10
-  addPositionX: -120000
-  addPositionY: -90000
+    setZOffset: -10
+    addPositionX: -120000
+    addPositionY: -90000
   endRunOnObject: 
   sprite: s32'lyr410_06', 3
   sprite: s32'lyr410_07', 3
@@ -3909,23 +3914,23 @@ beginState: s32'LYR_410_SweepSlide'
   sprite: s32'lyr410_11', 2
   sprite: s32'lyr410_12', 2
   runOnObject: (STACK0)
-  addPositionX: -15000
-  addPositionY: 30000
+    addPositionX: -15000
+    addPositionY: 30000
   endRunOnObject: 
   sprite: s32'lyr410_13', 3
   runOnObject: (STACK0)
-  addPositionX: -15000
-  addPositionY: 50000
+    addPositionX: -15000
+    addPositionY: 50000
   endRunOnObject: 
   sprite: s32'lyr410_14', 3
   runOnObject: (STACK0)
-  addPositionX: -30000
-  addPositionY: 40000
+    addPositionX: -30000
+    addPositionY: 40000
   endRunOnObject: 
   sprite: s32'lyr410_15', 3
   runOnObject: (STACK0)
-  addPositionX: -10000
-  addPositionY: 20000
+    addPositionX: -10000
+    addPositionY: 20000
   endRunOnObject: 
   sprite: s32'lyr410_16', 3
   sprite: s32'lyr410_17', 3
@@ -3968,9 +3973,9 @@ beginState: s32'LYR_410_SweepSlide_ReAction'
   createObjectWithArg: s32'ZOO_410_Beam', (PLAYER)
   stackObject: (STACK0), (PREVIOUS)
   runOnObject: (STACK0)
-  Unknown264: -10
-  addPositionX: -120000
-  addPositionY: -90000
+    setZOffset: -10
+    addPositionX: -120000
+    addPositionY: -90000
   endRunOnObject: 
   sprite: s32'lyr410_06', 3
   sprite: s32'lyr410_07', 3
@@ -3987,23 +3992,23 @@ beginState: s32'LYR_410_SweepSlide_ReAction'
   sprite: s32'lyr410_11', 2
   sprite: s32'lyr410_12', 2
   runOnObject: (STACK0)
-  addPositionX: -15000
-  addPositionY: 30000
+    addPositionX: -15000
+    addPositionY: 30000
   endRunOnObject: 
   sprite: s32'lyr410_13', 3
   runOnObject: (STACK0)
-  addPositionX: -15000
-  addPositionY: 50000
+    addPositionX: -15000
+    addPositionY: 50000
   endRunOnObject: 
   sprite: s32'lyr410_14', 3
   runOnObject: (STACK0)
-  addPositionX: -30000
-  addPositionY: 40000
+    addPositionX: -30000
+    addPositionY: 40000
   endRunOnObject: 
   sprite: s32'lyr410_15', 3
   runOnObject: (STACK0)
-  addPositionX: -10000
-  addPositionY: 20000
+    addPositionX: -10000
+    addPositionY: 20000
   endRunOnObject: 
   sprite: s32'lyr410_16', 3
   sprite: s32'lyr410_17', 3
@@ -4292,7 +4297,7 @@ beginState: s32'ZOO_410_HitEff'
     sendSignalToAction: s32'ZOO_410_BeamKira', 23
   endIf: 
   physicsYImpulse: 3500
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'ZOO_410_Beam_Straight'
@@ -4394,7 +4399,7 @@ beginState: s32'ZOO_410_HitEff_Straight'
   sprite: s32'null', 25
   linkParticle: s32'zoo_410_HitEnd'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
-  Unknown191: -40
+  setObjectSizeScaleSpeed: -40
 endState: 
 
 beginState: s32'GND_407_Assalt'
@@ -4430,7 +4435,7 @@ beginState: s32'GND_407_Assalt'
     upon: 37
       gotoLabelRequests: s32'Sousai'
       sendSignalToAction: s32'zoo_gnd962_Speed', 23
-      Unknown55: 0x200000007A6F6F00000000000000000000000000
+      Unknown55: 32, 7303034, 0, 0, 0
       checkCurrentStateName: (ENEMY), s32'SpecialShot_D'
       if: Mem(Tmp)
         Unknown266: 3, 32
@@ -4442,22 +4447,22 @@ beginState: s32'GND_407_Assalt'
   endUpon: 
   createObject: s32'zoo_gnd962_SpawnEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 92939
-  setPositionY: 396203
-  setDepth: 72321
+    setPositionX: 92939
+    setPositionY: 396203
+    setDepth: 72321
   endRunOnObject: 
   createObject: s32'zoo_gnd962_SpawnEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -255951
-  setPositionY: 284295
-  setDepth: -23672
+    setPositionX: -255951
+    setPositionY: 284295
+    setDepth: -23672
   endRunOnObject: 
   createObject: s32'zoo_gnd962_SpawnEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 110858
-  setPositionY: 138047
-  setDepth: 24925
-  setObjectSize: 800
+    setPositionX: 110858
+    setPositionY: 138047
+    setDepth: 24925
+    setObjectSize: 800
   endRunOnObject: 
   Unknown412: 100, 1, 0, 0
   upon: (FRAME_STEP)
@@ -4467,10 +4472,10 @@ beginState: s32'GND_407_Assalt'
     ifOperation: (IS_EQUAL), Mem(ActionTime), Val(6)
       createObject: s32'zoo_gnd962_SpawnEff', (PLAYER)
       runOnObject: (PREVIOUS)
-      setPositionX: 378914
-      setPositionY: 232369
-      setDepth: 42177
-      setObjectSize: 800
+        setPositionX: 378914
+        setPositionY: 232369
+        setDepth: 42177
+        setObjectSize: 800
       endRunOnObject: 
       Unknown412: 50, 1, 0, 0
     endIf: 
@@ -4508,22 +4513,25 @@ velocityXPercent: 500
 velocityXPercentEachFrame: 103
 createObject: s32'zoo_gnd962_Speed', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: 330905
-setPositionY: 530700
-setDepth: -27923
+  setPositionX: 330905
+  setPositionY: 530700
+  setDepth: -27923
 endRunOnObject: 
+
 createObject: s32'zoo_gnd962_Speed', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: 148979
-setPositionY: 374869
-setDepth: 102475
+  setPositionX: 148979
+  setPositionY: 374869
+  setDepth: 102475
 endRunOnObject: 
+
 createObject: s32'zoo_gnd962_Speed', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: 325930
-setPositionY: 183421
-setDepth: 154132
+  setPositionX: 325930
+  setPositionY: 183421
+  setDepth: 154132
 endRunOnObject: 
+
 sprite: s32'gnd962_16', 3
 sprite: s32'gnd962_17', 3
 sprite: s32'gnd962_18', 3
@@ -4547,34 +4555,39 @@ sprite: s32'gnd962_26', 3
 Unknown412: 25, 1, 0, 0
 createObject: s32'zoo_gnd962_EndEff', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: 104943
-setPositionY: 517010
-setDepth: -12525
+  setPositionX: 104943
+  setPositionY: 517010
+  setDepth: -12525
 endRunOnObject: 
+
 createObject: s32'zoo_gnd962_EndEff', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: -174989
-setPositionY: 425068
-setDepth: -84584
+  setPositionX: -174989
+  setPositionY: 425068
+  setDepth: -84584
 endRunOnObject: 
+
 createObject: s32'zoo_gnd962_EndEff', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: 232947
-setPositionY: 431497
-setDepth: -231437
+  setPositionX: 232947
+  setPositionY: 431497
+  setDepth: -231437
 endRunOnObject: 
+
 createObject: s32'zoo_gnd962_EndEff', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: -423924
-setPositionY: 193118
-setDepth: -227841
+  setPositionX: -423924
+  setPositionY: 193118
+  setDepth: -227841
 endRunOnObject: 
+
 createObject: s32'zoo_gnd962_EndEff', (PLAYER)
 runOnObject: (PREVIOUS)
-setPositionX: 32016
-setPositionY: 186747
-setDepth: -12939
+  setPositionX: 32016
+  setPositionY: 186747
+  setDepth: -12939
 endRunOnObject: 
+
 beginLabel: s32'End'
 sprite: s32'gnd962_27', 3
 clearUpon: 32
@@ -4645,7 +4658,7 @@ beginState: s32'zoo_gnd962_KillEff'
     setDepth: 125837
     setObjectWidth: 2200
     setObjectHeight: 2000
-    Unknown180: 2000
+    setObjectDepth: 2000
     setAngleX: 0
     setAngleY: 358400
     setAngle: 0
@@ -4669,7 +4682,7 @@ beginState: s32'zoo_gnd962_Speed'
       clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 4
@@ -4707,7 +4720,7 @@ beginState: s32'zoo_430_Burst_loop'
     setDepth: -64837
     setObjectWidth: 1300
     setObjectHeight: 1000
-    Unknown180: 1200
+    setObjectDepth: 1200
   endUpon: 
   sprite: s32'null', 2
   sprite: s32'null', 2
@@ -4728,7 +4741,7 @@ beginState: s32'zoo_430_zoo_WarpUp'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    Unknown289: 50
+    setMaxActionTime: 50
   endUpon: 
   sprite: s32'null', 50
   linkParticle: s32'zoo_WarpUp'
@@ -4742,7 +4755,7 @@ beginState: s32'zoo_430_zoo_WarpDown'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    Unknown289: 50
+    setMaxActionTime: 50
     setPositionY: -514745
     setDepth: -11118
   endUpon: 
@@ -4757,7 +4770,7 @@ beginState: s32'zoo_430_zoo_ring'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'zoo_430_Burst_ring'
@@ -4766,7 +4779,7 @@ beginState: s32'zoo_430_zoo_ring'
   setDepth: -51195
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 600
+  setObjectDepth: 600
 endState: 
 
 beginState: s32'ZOO_430_DashSmoke1'
@@ -4776,7 +4789,7 @@ beginState: s32'ZOO_430_DashSmoke1'
     stopLinkObject: 2
     linkObjectPosition: 2
     setPositionX: -154969
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 1
   createParticle: s32'bg_GroundBurstZlink', (PLAYER)
@@ -4789,7 +4802,7 @@ beginState: s32'ZOO_430_DashSmoke2'
     stopLinkObject: 2
     linkObjectPosition: 2
     setPositionX: 218953
-    Unknown289: 30
+    setMaxActionTime: 30
     flipDirection: 
   endUpon: 
   sprite: s32'null', 1
@@ -4802,7 +4815,7 @@ beginState: s32'ZOO_430_Beam'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    Unknown264: 10
+    setZOffset: 10
     setPositionX: -17051
     setPositionY: 450000
     setAngle: 160000
@@ -4814,14 +4827,14 @@ beginState: s32'ZOO_430_Beam'
   sprite: s32'null', 10
   linkParticle: s32'zoo_430_BeamLoop'
   setObjectSize: 500
-  Unknown191: 50
+  setObjectSizeScaleSpeed: 50
   physicsXImpulse: 150000
   physicsYImpulse: -45000
   beginLabel: s32'Jizoku'
   sprite: s32'null', 1
   createObject: s32'ZOO_430_FlyingStones', (PLAYER)
   createObject: s32'ZOO_430_Smokes', (PLAYER)
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   physicsXImpulse: 0
   physicsYImpulse: 0
   beginLabel: s32'Loop'
@@ -4867,29 +4880,29 @@ beginState: s32'ZOO_430_Smokes'
   createObject: s32'ZOO_430_GburstObj', (PLAYER)
   createObject: s32'ZOO_430_SmokeObj', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 1700
+    setObjectSize: 1700
   endRunOnObject: 
   sprite: s32'null', 5
   exPointFReset: (PLAYER), -400000, 0
   createObject: s32'ZOO_430_GburstObj', (EX_POINT_F)
   runOnObject: (PREVIOUS)
-  setObjectSize: 1200
+    setObjectSize: 1200
   endRunOnObject: 
   exPointFReset: (PLAYER), -400000, 0
   createObject: s32'ZOO_430_SmokeObj', (EX_POINT_F)
   runOnObject: (PREVIOUS)
-  setObjectSize: 1700
+    setObjectSize: 1700
   endRunOnObject: 
   sprite: s32'null', 5
   exPointFReset: (PLAYER), -800000, 0
   createObject: s32'ZOO_430_GburstObj', (EX_POINT_F)
   runOnObject: (PREVIOUS)
-  setObjectSize: 1300
+    setObjectSize: 1300
   endRunOnObject: 
   exPointFReset: (PLAYER), -800000, 0
   createObject: s32'ZOO_430_SmokeObj', (EX_POINT_F)
   runOnObject: (PREVIOUS)
-  setObjectSize: 1800
+    setObjectSize: 1800
   endRunOnObject: 
   gotoLabel: s32'Loop'
 endState: 
@@ -4965,7 +4978,7 @@ beginState: s32'ZOO_430CS_Twinkle'
   sprite: s32'null', 7
   linkParticle: s32'zoo_430_Twinkle'
   setObjectSize: 200
-  Unknown191: 100
+  setObjectSizeScaleSpeed: 100
   setPositionX: 255456
   setPositionY: 328317
   setDepth: -42143
@@ -4973,7 +4986,7 @@ beginState: s32'ZOO_430CS_Twinkle'
   setAngleY: 58400
   setAngle: 322000
   sprite: s32'null', 20
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'ZOO_430CS_Twinkle2'
@@ -5246,7 +5259,7 @@ beginState: s32'ZOO_440_BullAttack_Speed'
       clearUpon: 23
       gotoLabelRequests: s32'End'
     endUpon: 
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 4
@@ -5264,7 +5277,7 @@ beginState: s32'ZOO_400_DashSmoke'
     stopLinkObject: 2
     linkObjectPosition: 2
     setPositionX: 139972
-    Unknown289: 100
+    setMaxActionTime: 100
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 6
@@ -5438,7 +5451,7 @@ beginState: s32'ZOO_440CS_Tornado'
   setDepth: -483889
   setObjectWidth: 4000
   setObjectHeight: 4500
-  Unknown180: 2500
+  setObjectDepth: 2500
   sceneAddColor: 8, 8, 16
   sceneMulColor: 240, 240, 255
   sceneLightColor: 117, 130, 180
@@ -5450,7 +5463,7 @@ beginState: s32'ZOO_440CS_Tornado'
   setDepth: -36339
   setObjectWidth: 1500
   setObjectHeight: 600
-  Unknown180: 1500
+  setObjectDepth: 1500
   sceneAddColor: 16, 10, 4
   sceneMulColor: 200, 180, 128
   sceneLightColor: 200, 200, 180
@@ -5459,9 +5472,9 @@ beginState: s32'ZOO_440CS_Tornado'
   sprite: s32'null', 120
   setObjectWidth: 1200
   setObjectHeight: 1500
-  Unknown180: 1200
-  Unknown151: 30
-  Unknown183: 30
+  setObjectDepth: 1200
+  setObjectWidthScaleSpeed: 30
+  setObjectDepthScaleSpeed: 30
   resetSceneColor: 
 endState: 
 
@@ -5676,7 +5689,7 @@ beginState: s32'GND_zoo442cs'
   endUpon: 
   sprite: s32'null', 340
   playAnimation: s32'zoo442cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ZOO_441CS_BG'
@@ -5721,7 +5734,7 @@ beginState: s32'ZOO_441CS_BG'
   sprite: s32'null', 180
   setObjectWidth: 15000
   setObjectHeight: 30000
-  Unknown180: 10000
+  setObjectDepth: 10000
   setAngleX: 358400
   setAngleY: 181200
   setAngle: 2000
@@ -5896,7 +5909,7 @@ beginState: s32'ZOO_441CS_SpeedLine2'
   sprite: s32'null', 12
   linkParticle: s32'zoo_441_centerline2'
   sprite: s32'null', 30
-  Unknown191: 80
+  setObjectSizeScaleSpeed: 80
 endState: 
 
 beginState: s32'ZOO_441CS_SpeedLine3'
@@ -5912,7 +5925,7 @@ beginState: s32'ZOO_441CS_SpeedLine3'
   endUpon: 
   sprite: s32'null', 120
   linkParticle: s32'zoo_441_centerline2'
-  Unknown191: 1
+  setObjectSizeScaleSpeed: 1
 endState: 
 
 beginState: s32'ZOO_441CS_GodRay01'
@@ -6074,7 +6087,7 @@ beginState: s32'ZOO_441CS_Ryuhai2'
   setDepth: -167454
   setObjectWidth: 1500
   setObjectHeight: 2000
-  Unknown180: 2000
+  setObjectDepth: 2000
   setAngleX: 352800
   setAngleY: 90800
   setAngle: 306000
@@ -6116,7 +6129,7 @@ beginState: s32'ZOO_441CS_Screw2'
     linkObjectPosition: 2
     setObjectWidth: 1500
     setObjectHeight: 1000
-    Unknown180: 1400
+    setObjectDepth: 1400
     setAngleX: 36800
     setAngleY: 343200
     addPositionX: -299721
@@ -6297,9 +6310,9 @@ beginState: s32'ZOO_442CS_BG'
   setObjectSize: 20000
   createObject: s32'ZOO_442CS_GodRay', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -224968
-  addPositionY: 10219776
-  Unknown1727: -14203032
+    addPositionX: -224968
+    addPositionY: 10219776
+    Unknown1727: -14203032
   endRunOnObject: 
 endState: 
 
@@ -6396,7 +6409,7 @@ beginState: s32'zoo_600_DashSmoke1'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    Unknown289: 74
+    setMaxActionTime: 74
     setPositionX: -109978
   endUpon: 
   sprite: s32'null', 54
@@ -6410,7 +6423,7 @@ beginState: s32'zoo_600_DashSmoke2'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 3
     stopLinkObject: 2
-    Unknown289: 74
+    setMaxActionTime: 74
     setPositionX: 64987
     flipDirection: 
   endUpon: 
@@ -6448,7 +6461,7 @@ beginState: s32'zoo_700_WarpDown'
     setAngleY: 262000
     setObjectWidth: 300
     setObjectHeight: 300
-    Unknown180: 300
+    setObjectDepth: 300
     setPositionX: 1358037
     setPositionY: 360896
     setDepth: 143891
@@ -6482,7 +6495,7 @@ beginState: s32'zoo_700_SlashRay'
   linkParticle: s32'zoo_700_SlashRay'
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setPositionX: 294582
   setPositionY: 217595
   setDepth: 163234
@@ -6511,7 +6524,7 @@ beginState: s32'ZOO_700CS_WhiteIn'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    Unknown289: 50
+    setMaxActionTime: 50
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'cmn_FadeOut'
@@ -6528,7 +6541,7 @@ beginState: s32'ZOO_800CS_WhiteOut'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 2
-    Unknown289: 50
+    setMaxActionTime: 50
   endUpon: 
   sprite: s32'null', 50
   linkParticle: s32'cmn_FadeOut'

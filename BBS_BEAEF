@@ -14,7 +14,7 @@ beginState: s32'bea_301_SlashEff'
   linkParticle: s32'bea_401_slash2'
   setObjectWidth: 1200
   setObjectHeight: 1000
-  Unknown180: 1400
+  setObjectDepth: 1400
   setPositionX: -5035
   setPositionY: 294972
   setDepth: 6874
@@ -174,7 +174,7 @@ beginState: s32'bea_209_SlashEff'
   linkParticle: s32'bea_209_slash'
   setObjectWidth: 1800
   setObjectHeight: 1400
-  Unknown180: 1400
+  setObjectDepth: 1400
   setPositionX: -60899
   setPositionY: 225180
   setDepth: 23808
@@ -219,7 +219,7 @@ beginState: s32'bea_253_StrikeEff'
   setAngle: 46400
   setObjectWidth: 1750
   setObjectHeight: 1200
-  Unknown180: 1800
+  setObjectDepth: 1800
 endState: 
 
 beginState: s32'bea_306_SlashEff'
@@ -235,7 +235,7 @@ beginState: s32'bea_306_SlashEff'
   linkParticle: s32'bea_401_slash'
   setObjectWidth: 1300
   setObjectHeight: 1300
-  Unknown180: 1300
+  setObjectDepth: 1300
   setPositionX: -74965
   setPositionY: 155239
   setDepth: -72310
@@ -270,7 +270,7 @@ beginState: s32'bea_350_SlashEff'
   setAngle: 356400
   setObjectWidth: 1200
   setObjectHeight: 1200
-  Unknown180: 1200
+  setObjectDepth: 1200
   sprite: s32'null', 30
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -294,14 +294,14 @@ beginState: s32'bea_400_Shot'
       if: Mem(Hikitsugi1)
         Unknown1131: 1
         comboLimitScaling: 0
-        Unknown72: s32'SpecialShot_A'
+        postSubroutineBegin: s32'SpecialShot_A'
       endIf: 
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
       if: Mem(Hikitsugi1)
         Unknown1131: 1
         comboLimitScaling: 0
-        Unknown72: s32'SpecialShot_B'
+        postSubroutineBegin: s32'SpecialShot_B'
       endIf: 
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
@@ -310,7 +310,7 @@ beginState: s32'bea_400_Shot'
       if: Mem(Hikitsugi1)
         Unknown1131: 1
         comboLimitScaling: 0
-        Unknown72: s32'SpecialShot_C'
+        postSubroutineBegin: s32'SpecialShot_C'
       endIf: 
       clearUpon: 126
       upon: 126
@@ -335,7 +335,7 @@ beginState: s32'bea_400_Shot'
       if: Mem(Hikitsugi1)
         Unknown1131: 1
         comboLimitScaling: 0
-        Unknown72: s32'SpecialShot_D'
+        postSubroutineBegin: s32'SpecialShot_D'
       endIf: 
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal2), Val(1)
         storeValue: Mem(PlayerVal9), Val(1)
@@ -472,7 +472,7 @@ beginState: s32'bea_400_Shot'
           modifyVar: (ADD), Mem(ActReg1), Val(1)
           ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(3)
             clearUpon: (HIT)
-            hitAirPushbackX: 20000
+            hitAirPushbackX: 19000
             enemyHitstopAddition: 0, 0, 0
           endIf: 
         endElse: 
@@ -564,7 +564,7 @@ beginState: s32'bea_400_SlashEff'
   setDepth: -143773
   setObjectWidth: 750
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleX: 51200
   setAngleY: 336000
   setAngle: 343200
@@ -602,7 +602,7 @@ beginState: s32'bea_401_SlashEff'
   setAngle: 18400
   setObjectWidth: 1200
   setObjectHeight: 1000
-  Unknown180: 1400
+  setObjectDepth: 1400
   sprite: s32'null', 25
   sprite: s32'null', 1
   exitState: 
@@ -615,7 +615,7 @@ beginState: s32'bea_401_SlashEff'
   setDepth: -13616
   setObjectWidth: 1350
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 5600
   setAngleY: 236400
   setAngle: 19600
@@ -769,7 +769,7 @@ beginState: s32'bea_404_UpperEff'
   sprite: s32'null', 5
   clearUpon: 23
   setAlphaColorSpeed: -200
-  Unknown191: -50
+  setObjectSizeScaleSpeed: -50
 endState: 
 
 beginState: s32'bea_404_KickFire'
@@ -830,11 +830,11 @@ beginState: s32'bea_404_LandingFireEff'
     damageEffect: 2, s32'bea_SPHitEff_Long'
     storeValue: Mem(423), Val(1)
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-      Unknown72: s32'Assault_B'
+      postSubroutineBegin: s32'Assault_B'
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
       untechAmount: 60
-      Unknown72: s32'Assault_C'
+      postSubroutineBegin: s32'Assault_C'
       Unknown310: 9, 3, 2, 46, 0, 0
       attackRange: 1000000, -100000, -1, -1
     endIf: 
@@ -899,10 +899,10 @@ beginState: s32'bea_404_LandingFireEff_D'
     comboLimitScaling: 0
   endIf: 
   Unknown2483: 2, 421, 2, 421
-  Unknown72: s32'Assault_D'
+  postSubroutineBegin: s32'Assault_D'
   upon: (HIT_OR_GUARD)
     clearUpon: (HIT_OR_GUARD)
-    Unknown2329: 0x03000000030000007B000000160000007B000000
+    Unknown2329: 3, 3, 123, 22, 123
     ifOperation: (IS_LESSER), Mem(Tmp), Val(0)
       attackFrontDirection: 2
     endIf: 
@@ -955,7 +955,7 @@ beginState: s32'bea_405_SlashEff'
   setAngle: 226400
   setObjectWidth: 1400
   setObjectHeight: 1000
-  Unknown180: 1800
+  setObjectDepth: 1800
   sprite: s32'null', 26
   setLinkObjectDestroyOnStateChange: 0
   linkObjectPosition: 0
@@ -1017,7 +1017,7 @@ beginState: s32'bea_430_SlashEff'
   setAngle: 352400
   setObjectWidth: 1500
   setObjectHeight: 1200
-  Unknown180: 1200
+  setObjectDepth: 1200
   sprite: s32'null', 10
   linkParticle: s32'bea_430_slash02'
   sendSignalToAction: s32'bea_430_SlashEff_Sub', 23
@@ -1026,7 +1026,7 @@ beginState: s32'bea_430_SlashEff'
   setDepth: -32456
   setObjectWidth: 3000
   setObjectHeight: 1500
-  Unknown180: 1500
+  setObjectDepth: 1500
   setAngleX: 37200
   setAngleY: 344800
   setAngle: 355600
@@ -1062,7 +1062,7 @@ beginState: s32'bea_430_SlashEff_Sub'
   setDepth: 89870
   setObjectWidth: 1800
   setObjectHeight: 1200
-  Unknown180: 1200
+  setObjectDepth: 1200
   createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
   beginLabel: s32'Loop'
   sprite: s32'null', 600
@@ -1070,7 +1070,7 @@ beginState: s32'bea_430_SlashEff_Sub'
   linkParticle: s32'bea_430_SubLoop'
   setObjectWidth: 2500
   setObjectHeight: 1750
-  Unknown180: 1750
+  setObjectDepth: 1750
   setPositionX: 33103
   setPositionY: -12346
   setDepth: 59513
@@ -1322,7 +1322,7 @@ beginState: s32'bea_430cs_SpeedLine'
   linkParticle: s32'bea_430_speed'
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setPositionX: 5024
   setPositionY: 232552
   setDepth: 46084
@@ -1365,25 +1365,25 @@ beginState: s32'BEA_430cs_PPGridge'
     linkObjectZ: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'bea_PP_ColorGridge', 1, 0
-      Unknown2587: 1600218466, s32'PP_ColorGridge'
+      Unknown2587: s32'bea_PP_ColorGridge', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 36
   sprite: s32'null', 4
-  Unknown2587: 1600218466, s32'PP_ColorGridge'
+  Unknown2587: s32'bea_PP_ColorGridge', 1
   Unknown2588: s32'bea_PP_ColorGridge', 1, 50
   sprite: s32'null', 20
   Unknown2590: s32'bea_PP_ColorGridge', 1, -3
   sprite: s32'null', 1
   Unknown2590: s32'bea_PP_ColorGridge', 1, 0
-  Unknown2587: 1600218466, s32'PP_ColorGridge'
+  Unknown2587: s32'bea_PP_ColorGridge', 0
 endState: 
 
 beginState: s32'bea_440_Shot'
   upon: (IMMEDIATE)
     linkObjectZ: 3
     linkParticle: s32'bea_440_ShotLoop'
-    Unknown289: 300
+    setMaxActionTime: 300
     callSubroutine: s32'cmnKaihouShot_AtkInit'
     damage: 4000
     groundHitEffect: (AIR_STRONG)
@@ -1478,7 +1478,7 @@ beginState: s32'bea_440_SlashEff'
   setAngle: 329200
   setObjectWidth: 900
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
 endState: 
 
 beginState: s32'bea_440_WeaponEnd'
@@ -1726,23 +1726,23 @@ beginState: s32'bea_440_WindEff_Matome'
   sprite: s32'null', 8
   createObject: s32'bea_440_WindEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 400
-  setAngleX: 354400
-  setAngleY: 92000
-  setAngle: 10800
-  setPositionX: 329582
-  setPositionY: 483810
-  setDepth: -25611
+    setObjectSize: 400
+    setAngleX: 354400
+    setAngleY: 92000
+    setAngle: 10800
+    setPositionX: 329582
+    setPositionY: 483810
+    setDepth: -25611
   endRunOnObject: 
   createObject: s32'bea_440_WindEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 400
-  setPositionX: 297466
-  setPositionY: 490411
-  setDepth: 32028
-  setAngleX: 25200
-  setAngleY: 81200
-  setAngle: 96400
+    setObjectSize: 400
+    setPositionX: 297466
+    setPositionY: 490411
+    setDepth: 32028
+    setAngleX: 25200
+    setAngleY: 81200
+    setAngle: 96400
   endRunOnObject: 
   createObject: s32'bea_440_WindEff2', (PLAYER)
 endState: 
@@ -1764,17 +1764,17 @@ beginState: s32'BEA_440cs_PPGridge'
     linkObjectZ: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'bea_PP_ColorGridge', 1, 0
-      Unknown2587: 1600218466, s32'PP_ColorGridge'
+      Unknown2587: s32'bea_PP_ColorGridge', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 20
-  Unknown2587: 1600218466, s32'PP_ColorGridge'
+  Unknown2587: s32'bea_PP_ColorGridge', 1
   Unknown2588: s32'bea_PP_ColorGridge', 1, 0
   Unknown2590: s32'bea_PP_ColorGridge', 1, 1
   sprite: s32'null', 20
   Unknown2590: s32'bea_PP_ColorGridge', 1, 0
   sprite: s32'null', 1
-  Unknown2587: 1600218466, s32'PP_ColorGridge'
+  Unknown2587: s32'bea_PP_ColorGridge', 0
 endState: 
 
 beginState: s32'bea441cs_MNP'
@@ -1827,7 +1827,7 @@ beginState: s32'bea_441_BG'
   linkParticle: s32'bea_441_BG3'
   setObjectWidth: 3500
   setObjectHeight: 3500
-  Unknown180: 3500
+  setObjectDepth: 3500
   setAngleX: 0
   setAngleY: 166800
   setAngle: 0
@@ -1905,7 +1905,7 @@ beginState: s32'bea_441_ShashEff'
   setAngle: 323600
   setObjectWidth: 2500
   setObjectHeight: 2500
-  Unknown180: 2500
+  setObjectDepth: 2500
   setPositionX: -1760865
   setPositionY: 301761
   setDepth: 37217
@@ -2008,7 +2008,7 @@ beginState: s32'bea_441_GroundRayEff'
   setDepth: 429467
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setAngleX: 0
   setAngleY: 21200
   setAngle: 0
@@ -2059,7 +2059,7 @@ beginState: s32'bea_441_SordMin'
   linkParticle: s32'bea_441_Sord03'
   setObjectWidth: 800
   setObjectHeight: 2000
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleX: 184800
   setAngleY: 0
   setAngle: 347600
@@ -2076,12 +2076,12 @@ beginState: s32'bea_441_SordMin'
   setAngle: 180000
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   beginLabel: s32'Move2'
   sprite: s32'null', 4
   setObjectWidth: 700
   setObjectHeight: 1000
-  Unknown180: 700
+  setObjectDepth: 700
   setAngleX: 357200
   setAngleY: 0
   setAngle: 118000
@@ -2103,7 +2103,7 @@ beginState: s32'bea_441_SordMin'
   setDepth: 63230
   setObjectWidth: 800
   setObjectHeight: 500
-  Unknown180: 800
+  setObjectDepth: 800
   setAngleX: 2000
   setAngleY: 4000
   setAngle: 132800
@@ -2137,7 +2137,7 @@ beginState: s32'bea_441_SordMin'
   setAngle: 76800
   setObjectWidth: 1250
   setObjectHeight: 500
-  Unknown180: 1250
+  setObjectDepth: 1250
 endState: 
 
 beginState: s32'bea_441_BustUpStones'
@@ -2152,7 +2152,7 @@ beginState: s32'bea_441_BustUpStones'
   linkParticle: s32'bea_441_BustUpStones'
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setPositionX: -2136923
   setPositionY: 261341
   setDepth: -83360
@@ -2195,7 +2195,7 @@ beginState: s32'bea_441_BakeSpeed'
   linkParticle: s32'bea_441_bakespeed'
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setPositionX: -1853540
   setPositionY: 330453
   setDepth: -287
@@ -2291,7 +2291,7 @@ beginState: s32'bea_442_BG'
   sprite: s32'null', 124
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   setPositionX: 77912
   setPositionY: -27647
   setDepth: -109229
@@ -2367,7 +2367,7 @@ beginState: s32'bea_600_EnshutuCamera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -2405,7 +2405,7 @@ beginState: s32'bea_601_EnshutuCamera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -2433,7 +2433,7 @@ beginState: s32'bea_601_KiraEff'
     setPositionX: -103992
     setPositionY: 226500
     setDepth: 84926
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   sprite: s32'null', 60
   linkParticle: s32'bea_601_Kira'
@@ -2450,7 +2450,7 @@ beginState: s32'bea_610_SweatEff'
     setPositionY: 362485
     setDepth: 41818
     setAngle: 348400
-    Unknown289: 12
+    setMaxActionTime: 12
   endUpon: 
   sprite: s32'null', 4
   linkParticle: s32'bea_610_Sweat2'
@@ -2508,7 +2508,7 @@ beginState: s32'bea_700_SlashEff'
   linkParticle: s32'bea_700cs_Slash'
   setObjectWidth: 1550
   setObjectHeight: 1000
-  Unknown180: 1100
+  setObjectDepth: 1100
   setPositionX: -265159
   setPositionY: 544548
   setDepth: -167
@@ -2740,7 +2740,7 @@ beginState: s32'bea_700_SlashNokosi2'
   Unknown1727: 11699
   setObjectWidth: 200
   setObjectHeight: 200
-  Unknown180: 200
+  setObjectDepth: 200
   setAngleX: 0
   setAngleY: 249600
   setAngle: 0
@@ -2758,7 +2758,7 @@ beginState: s32'bea_700_SordAura'
   linkParticle: s32'bea_700_SordAuraLoop'
   setObjectWidth: 50
   setObjectHeight: 50
-  Unknown180: 50
+  setObjectDepth: 50
   setPositionX: 1058884
   setPositionY: 176475
   setDepth: 411035
@@ -2820,7 +2820,7 @@ beginState: s32'bea_700_AuraLoop_Sub'
   linkParticle: s32'bea_700_AuraLoopSub'
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setPositionX: 957010
   setPositionY: 124020
   setDepth: 473091
@@ -2888,26 +2888,26 @@ beginState: s32'bea_800cs_cuteEff'
   setPositionY: 473103
   setDepth: 279925
   sprite: s32'null', 4
-  Unknown191: 10
+  setObjectSizeScaleSpeed: 10
   setPositionX: -31890
   setPositionY: 471252
   setDepth: 281807
   physicsXImpulse: 200
   Unknown1731: 450
   sprite: s32'null', 4
-  Unknown191: 7
+  setObjectSizeScaleSpeed: 7
   physicsXImpulse: 150
   Unknown1731: 350
   sprite: s32'null', 4
-  Unknown191: 3
+  setObjectSizeScaleSpeed: 3
   physicsXImpulse: 100
   Unknown1731: 250
   sprite: s32'null', 4
-  Unknown191: 2
+  setObjectSizeScaleSpeed: 2
   physicsXImpulse: 0
   Unknown1731: 0
   sprite: s32'null', 300
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
 endState: 
 
 beginState: s32'bea_800cs_SpeedEff'
@@ -2922,7 +2922,7 @@ beginState: s32'bea_800cs_SpeedEff'
     setDepth: 273752
     setObjectWidth: 160
     setObjectHeight: 160
-    Unknown180: 160
+    setObjectDepth: 160
     setAngleX: 297200
     setAngleY: 26000
     setAngle: 1600
@@ -3037,7 +3037,7 @@ beginState: s32'bea_ClockEff'
         deactivateObjectById: (SELF)
         upon: (BEFORE_EXIT)
           runOnObject: (ENEMY)
-          setLightColor: -16777216
+            setLightColor: -16777216
           endRunOnObject: 
         endUpon: 
       endIf: 
@@ -3064,7 +3064,7 @@ endState:
 
 beginSubroutine: s32'Clock_EnemyColor'
   runOnObject: (ENEMY)
-  setLightColor: -8380161
+    setLightColor: -8380161
   endRunOnObject: 
 endSubroutine: 
 
@@ -3126,7 +3126,7 @@ beginState: s32'bea_ClockEffSub'
   linkParticle: s32'bea_Clock2End'
   sprite: s32'null', 5
   runOnObject: (ENEMY)
-  setLightColor: -16777216
+    setLightColor: -16777216
   endRunOnObject: 
 endState: 
 

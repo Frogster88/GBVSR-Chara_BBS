@@ -66,7 +66,7 @@ beginState: s32'van_205Eff'
   sprite: s32'null', 15
   setObjectWidth: 1300
   setObjectHeight: 1200
-  Unknown180: 1200
+  setObjectDepth: 1200
   setPositionX: 487908
   setPositionY: 221110
   setDepth: 65000
@@ -191,7 +191,7 @@ beginState: s32'van_233_StrikeEff'
   setAngle: 7200
   setObjectWidth: 1300
   setObjectHeight: 1300
-  Unknown180: 1300
+  setObjectDepth: 1300
   sprite: s32'null', 12
   setPositionX: -27105
   setPositionY: 108682
@@ -309,7 +309,7 @@ beginState: s32'van_350_AxeSpinEff'
     addPositionX: -180000
     addPositionY: 265000
     Unknown1727: 200000
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   beginLabel: s32'Rotate'
   sprite: s32'null', 2
@@ -529,7 +529,7 @@ beginState: s32'van_400_GroundBurstEff'
       gotoLabelRequests: s32'End'
     endUpon: 
     addPositionX: -80000
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 10
@@ -739,7 +739,7 @@ setPositionY: 115365
 setDepth: -480884
 setObjectWidth: 3000
 setObjectHeight: 2000
-Unknown180: 3000
+setObjectDepth: 3000
 setAngleX: 18000
 setAngleY: 276400
 setAngle: 329600
@@ -758,7 +758,7 @@ beginState: s32'van_402_KurumadaEff'
     setAngle: 341600
     setObjectWidth: 2700
     setObjectHeight: 2000
-    Unknown180: 3300
+    setObjectDepth: 3300
   endUpon: 
   sprite: s32'null', 90
   linkParticle: s32'van_402_Kurumada_End1'
@@ -844,7 +844,7 @@ beginState: s32'van_403_Eff'
     stopLinkObject: 3
     linkObjectZ: 3
     flipDirection: 
-    setPositionX: 1938
+    setPositionX: -118062
     setPositionY: -16791
     setDepth: 41292
     setAngleX: 342800
@@ -862,7 +862,7 @@ beginState: s32'van_403_CrackEff'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 3
     linkObjectZ: 3
-    addPositionX: -335980
+    addPositionX: -215980
     addPositionY: 1781
     Unknown1727: 30858
   endUpon: 
@@ -892,7 +892,7 @@ beginState: s32'van_404_UEff'
     setDepth: -52790
     setObjectWidth: 1000
     setObjectHeight: 650
-    Unknown180: 1000
+    setObjectDepth: 1000
     setAngleX: 310400
     setAngleY: 5200
     setAngle: 353600
@@ -1063,13 +1063,17 @@ upon: (FRAME_STEP)
   ifOperation: (IS_EQUAL), Mem(ActionTime), Val(90)
     velocityXPercentEachFrame: 85
   endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActionTime), Val(180)
+    haltMomentum: 1
+  endIf: 
 endUpon: 
 
 addPositionX: 280000
-setPositionY: 0
+setPositionY: 1
 Unknown1727: 85000
 setAngleY: 308400
 zLine: 5, 5
+Unknown2294: 1250
 gotoLabelUpon: 32, s32'Koware'
 upon: 24
   clearUpon: 24
@@ -1084,7 +1088,7 @@ upon: 25
 endUpon: 
 
 upon: 36
-  Unknown55: 0x2000000076616E00000000000000000000000000
+  Unknown55: 32, 7233910, 0, 0, 0
   if: Mem(PlayerVal1)
     Unknown310: 9, 22, 2, 4, 0, 1
     Unknown266: 3, 32
@@ -1099,12 +1103,21 @@ upon: 36
 endIf: 
 
 endIf: 
+setAlphaColor: 1000
+Unknown2329: 3, 3, 123, 23, 123
+storeValue: Mem(ObjReg1), Mem(Tmp)
+ifOperation: (IS_GREATER_OR_EQUAL), Mem(ObjReg1), Val(-50000)
+  ifOperation: (IS_LESSER_OR_EQUAL), Mem(ObjReg1), Val(140000)
+    setAlphaColor: 900
+  endIf: 
+endIf: 
+
 endUpon: 
 endSubroutine: 
 beginState: s32'van_406_ShieldEff'
   upon: (IMMEDIATE)
     callSubroutine: s32'406_ShieldEff_Init'
-    storeValue: Mem(ActReg1), Val(180)
+    storeValue: Mem(ActReg1), Val(210)
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(0)
       physicsXImpulse: 3000
     endIf: 
@@ -1172,6 +1185,7 @@ beginState: s32'van_406_ShieldEff2'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
     linkObjectPosition: 2
+    linkObjectSize: 2
     callSubroutine: s32'cmnMuteki'
     invulnForce: 0
     Unknown1821: 1
@@ -1190,6 +1204,7 @@ beginState: s32'van_406_ShieldEff_AntiShot'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
     linkObjectPosition: 2
+    linkObjectSize: 2
     invulnForce: 0
     Unknown2022: 1
     initializeDestroy: 
@@ -1443,7 +1458,7 @@ beginState: s32'van_430_FlareEff'
     linkParticle: s32'van_430_Flare00'
     setObjectWidth: 700
     setObjectHeight: 700
-    Unknown180: 700
+    setObjectDepth: 700
   endUpon: 
   sprite: s32'null', 20
   addPositionX: -130050
@@ -1488,8 +1503,8 @@ beginState: s32'van_430_Burst01Eff'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 3
-    Unknown194: 200, -200
-    Unknown289: 48
+    randomAddObjectSize: 200, -200
+    setMaxActionTime: 48
   endUpon: 
   sprite: s32'null', 3
   sprite: s32'null', 48
@@ -1500,12 +1515,12 @@ beginState: s32'van_430_BurstPillarEff'
   upon: (IMMEDIATE)
     linkObjectPosition: 2
     linkObjectZ: 3
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   sprite: s32'null', 3
   sprite: s32'null', 50
   setAngle: 343800
-  Unknown180: 850
+  setObjectDepth: 850
   linkParticle: s32'van_430_LightPillar00'
 endState: 
 
@@ -1513,13 +1528,13 @@ beginState: s32'van_430_BurstPillarMiniEff'
   upon: (IMMEDIATE)
     linkObjectPosition: 2
     linkObjectZ: 3
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   sprite: s32'null', 3
   sprite: s32'null', 50
   setAngle: 343800
   setObjectWidth: 800
-  Unknown180: 600
+  setObjectDepth: 600
   linkParticle: s32'van_430_LightPillar00'
 endState: 
 
@@ -1865,7 +1880,7 @@ beginState: s32'van_441cs_GougeEff'
     setDepth: 535478
     setObjectWidth: 1300
     setObjectHeight: 700
-    Unknown180: 700
+    setObjectDepth: 700
     setAngleX: 0
     setAngleY: 323200
     setAngle: 0
@@ -1891,7 +1906,7 @@ beginState: s32'van_441cs_WindEff'
   setAngle: 13600
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   sprite: s32'null', 8
   setPositionX: 246854
   setPositionY: 500714
@@ -1922,7 +1937,7 @@ beginState: s32'van_441cs_WindEff'
   setAngle: 310000
   setObjectWidth: 700
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
   sprite: s32'null', 4
   setPositionX: -232650
   setPositionY: 71139
@@ -2054,7 +2069,7 @@ beginState: s32'van_441cs_slashEff'
   setAngle: 99600
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   sprite: s32'null', 8
   setPositionX: 245722
   setPositionY: 386398
@@ -2085,7 +2100,7 @@ beginState: s32'van_441cs_slashEff'
   setAngle: 328400
   setObjectWidth: 700
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
   sprite: s32'null', 4
   setPositionX: -253268
   setPositionY: 129483
@@ -2203,7 +2218,7 @@ beginState: s32'van_441cs_SlashEnd3Eff'
     setAngle: 65200
     setObjectWidth: 300
     setObjectHeight: 300
-    Unknown180: 300
+    setObjectDepth: 300
   endUpon: 
   sprite: s32'null', 4
   linkParticle: s32'van_441cs_slashEnd3'
@@ -2287,21 +2302,21 @@ beginState: s32'van_441cs_Blur'
     upon: (BEFORE_EXIT)
       if: Mem(Dir)
         Unknown2590: s32'van_PP_441RB1P', 1, 0
-        Unknown2587: 1601069430, s32'PP_441RB1P'
+        Unknown2587: s32'van_PP_441RB1P', 0
       endIf: 
       else: 
         Unknown2590: s32'van_PP_441RB2P', 1, 0
-        Unknown2587: 1601069430, s32'PP_441RB2P'
+        Unknown2587: s32'van_PP_441RB2P', 0
       endElse: 
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
   if: Mem(Dir)
-    Unknown2587: 1601069430, s32'PP_441RB1P'
+    Unknown2587: s32'van_PP_441RB1P', 1
     Unknown2588: s32'van_PP_441RB1P', 1, 100
   endIf: 
   else: 
-    Unknown2587: 1601069430, s32'PP_441RB2P'
+    Unknown2587: s32'van_PP_441RB2P', 1
     Unknown2588: s32'van_PP_441RB2P', 1, 100
   endElse: 
   sprite: s32'null', 4
@@ -2319,8 +2334,8 @@ beginState: s32'van_441cs_Blur'
     Unknown2588: s32'van_PP_441RB2P', 1, 25
   endElse: 
   sprite: s32'null', 1
-  Unknown2587: 1601069430, s32'PP_441RB1P'
-  Unknown2587: 1601069430, s32'PP_441RB2P'
+  Unknown2587: s32'van_PP_441RB1P', 0
+  Unknown2587: s32'van_PP_441RB2P', 0
 endState: 
 
 beginState: s32'van_441cs_RyuhaiEff'
@@ -2469,7 +2484,7 @@ beginState: s32'van_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -2611,7 +2626,7 @@ beginState: s32'van_700cs2P_WeaponSmoke'
   setDepth: 161729
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setAngleX: 0
   setAngleY: 183200
   setAngle: 0
@@ -2631,7 +2646,7 @@ beginState: s32'van_700cs2P_WeaponSmokeSub'
   setDepth: 51343
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setAngleX: 350400
   setAngleY: 170400
   setAngle: 0
@@ -2649,7 +2664,7 @@ beginState: s32'van_800cs_LightEFF'
   linkParticle: s32'van_800cs_Light00'
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setPositionX: -798670
   setPositionY: 642945
   setDepth: -33931

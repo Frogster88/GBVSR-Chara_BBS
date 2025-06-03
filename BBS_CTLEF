@@ -52,7 +52,7 @@ beginState: s32'ARE_ctl442cs'
   endUpon: 
   sprite: s32'null', 216
   playAnimation: s32'ctl442cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ARE_ctl442cs_result'
@@ -401,7 +401,7 @@ beginState: s32'250Eff'
     setLinkObjectDestroyOnDamage: 3
     setObjectWidth: 800
     setObjectHeight: 800
-    Unknown180: 800
+    setObjectDepth: 800
     setPositionX: 19996
     setPositionY: 100298
     setDepth: 224576
@@ -421,7 +421,7 @@ beginState: s32'251Eff'
     setLinkObjectDestroyOnDamage: 3
     setObjectWidth: 1000
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
     setAngleX: 232000
     setAngleY: 26000
     setAngle: 354000
@@ -550,7 +550,7 @@ beginState: s32'CTL_309_iceatk'
     linkParticle: s32'ctl_309_iceatk'
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 80
+    setMaxActionTime: 80
     addPositionX: -6993
     addPositionY: 0
     Unknown1727: -160440
@@ -565,7 +565,7 @@ beginState: s32'CTL_309_SlashEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
-    Unknown289: 90
+    setMaxActionTime: 90
   endUpon: 
   sprite: s32'null', 2
   linkParticle: s32'ctl_309_waterslash01'
@@ -588,7 +588,7 @@ beginState: s32'CTL_309_Splash01'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'ctl_309_splash01'
@@ -600,7 +600,7 @@ beginState: s32'CTL_309_Splash02'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'ctl_309_splash02'
@@ -611,7 +611,7 @@ beginState: s32'CTL_309_Splash03'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'ctl_309_splash03'
@@ -741,7 +741,6 @@ endState:
 
 beginState: s32'CTL_400_D'
   upon: (IMMEDIATE)
-    setLinkObjectDestroyOnDamage: 3
     linkObjectPosition: 3
     linkObjectZ: 3
     callSubroutine: s32'cmnSpecialShot_AtkInit'
@@ -770,7 +769,7 @@ beginState: s32'CTL_400_D'
       gotoLabelRequests: s32'Hit'
     endUpon: 
     upon: (HIT)
-      Unknown2329: 0x03000000030000007B000000160000007B000000
+      Unknown2329: 3, 3, 123, 22, 123
       ifOperation: (IS_LESSER), Mem(Tmp), Val(0)
         sendSignalToAction: s32'SpecialShot_D', 24
       endIf: 
@@ -780,7 +779,7 @@ beginState: s32'CTL_400_D'
     destroyOnDamageCollision: 1
     Unknown2209: 1
     Unknown2257: 1
-    Unknown2212: 0
+    Unknown2212: 1
     Unknown2213: 0
     upon: 45
       clearUpon: 37
@@ -807,33 +806,33 @@ beginState: s32'CTL_400_D'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   createObject: s32'CTL_400_D_Sub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -7988
-  setPositionY: -78237
-  setDepth: 50678
+    setPositionX: -7988
+    setPositionY: -78237
+    setDepth: 50678
   endRunOnObject: 
   sprite: s32'SpecialShot_D_2nd', 1
   Unknown1950: 0x63746C5F3430305F443200000000000000000000000000000000000000000000
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   createObject: s32'CTL_400_D_Sub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 230905
-  setPositionY: 65271
-  setDepth: 41914
+    setPositionX: 230905
+    setPositionY: 65271
+    setDepth: 41914
   endRunOnObject: 
   sprite: s32'SpecialShot_D_3rd', 1
   Unknown1950: 0x63746C5F3430305F443300000000000000000000000000000000000000000000
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   createObject: s32'CTL_400_D_Sub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 463788
-  setPositionY: -124547
-  setDepth: 56737
+    setPositionX: 463788
+    setPositionY: -124547
+    setDepth: 56737
   endRunOnObject: 
   createObject: s32'CTL_400_D_Sub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 692819
-  setPositionY: 57094
-  setDepth: 46565
+    setPositionX: 692819
+    setPositionY: 57094
+    setDepth: 46565
   endRunOnObject: 
   sprite: s32'SpecialShot_D_4th', 6
   upon: 37
@@ -846,9 +845,9 @@ beginState: s32'CTL_400_D'
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
   createObject: s32'CTL_400_D_Sub', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: 975720
-  setPositionY: -64341
-  setDepth: 54271
+    setPositionX: 975720
+    setPositionY: -64341
+    setDepth: 54271
   endRunOnObject: 
   sprite: s32'null', 60
   sprite: s32'null', 1
@@ -872,6 +871,7 @@ beginState: s32'CTL_400_D'
   endElse: 
   Unknown1923: 0
   Unknown1950: 0x63746C5F3430305F443500000000000000000000000000000000000000000000
+  setLinkObjectDestroyOnDamage: 3
   callSubroutine: s32'cmnWeaponLvMaxColorInit'
 endState: 
 
@@ -960,9 +960,9 @@ beginState: s32'ctl400_are'
   setLightBlueColor: 500
   createObject: s32'ctl_areWarpEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -10989
-  Unknown1727: 18036
-  setObjectSize: 700
+    addPositionX: -10989
+    Unknown1727: 18036
+    setObjectSize: 700
   endRunOnObject: 
   privateSE: s32'ctl_09_2'
   sprite: s32'are400_17', 4
@@ -1006,7 +1006,7 @@ beginState: s32'CTL401_Slash01'
       sendSignalToAction: s32'401Eff_slash_bloom', 26
       sendSignalToAction: s32'401Eff_slash_bloom2', 26
     endUpon: 
-    Unknown289: 180
+    setMaxActionTime: 180
   endUpon: 
   sprite: s32'null', 15
   beginLabel: s32'Loop01'
@@ -1217,9 +1217,9 @@ beginState: s32'ctl405_are'
   linkObjectPosition: 0
   createObject: s32'ctl_areWarpEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -10989
-  Unknown1727: 18036
-  setObjectSize: 700
+    addPositionX: -10989
+    Unknown1727: 18036
+    setObjectSize: 700
   endRunOnObject: 
   privateSE: s32'ctl_09_2'
   setLightRedColor: 500
@@ -1317,7 +1317,7 @@ beginState: s32'402Eff_slash_bloom'
   setObjectSize: 900
   sprite: s32'null', 3
   linkParticle: s32'ctl_cs440_slash_bloom_end'
-  Unknown191: -100
+  setObjectSizeScaleSpeed: -100
 endState: 
 
 beginState: s32'402Eff_Shield'
@@ -1331,7 +1331,7 @@ beginState: s32'402Eff_Shield'
     upon: 23
       clearUpon: 23
       addPositionX: 90000
-      Unknown191: 0
+      setObjectSizeScaleSpeed: 0
     endUpon: 
     upon: 32
       clearUpon: 32
@@ -1345,10 +1345,10 @@ beginState: s32'402Eff_Shield'
   setAngleY: 800
   setAngleY: 2800
   setObjectSize: 500
-  Unknown191: 50
+  setObjectSizeScaleSpeed: 50
   beginLabel: s32'End'
   sprite: s32'null', 5
-  Unknown191: 50
+  setObjectSizeScaleSpeed: 50
   setAlphaColorSpeed: -200
 endState: 
 
@@ -1398,7 +1398,7 @@ beginState: s32'403Eff_slash_bloom'
   setObjectSize: 1200
   sprite: s32'null', 3
   linkParticle: s32'ctl_cs440_slash_bloom_end'
-  Unknown191: -100
+  setObjectSizeScaleSpeed: -100
 endState: 
 
 beginState: s32'ctl402_are'
@@ -1416,7 +1416,7 @@ beginState: s32'ctl402_are'
     setLinkObjectDestroyOnStateChange: 3
     setLinkObjectDestroyOnDamage: 3
     zLine: 0, 5
-    Unknown264: 5
+    setZOffset: 5
     addPositionX: 20000
     gotoLabelUpon: 23, s32'Attack1st'
     gotoLabelUpon: 24, s32'PreAttack2nd'
@@ -1425,9 +1425,9 @@ beginState: s32'ctl402_are'
     upon: (BEFORE_EXIT)
       createObject: s32'ctl_areWarpEff', (PLAYER)
       runOnObject: (PREVIOUS)
-      addPositionX: -10989
-      Unknown1727: 18036
-      setObjectSize: 700
+        addPositionX: -10989
+        Unknown1727: 18036
+        setObjectSize: 700
       endRunOnObject: 
       privateSE: s32'ctl_09_2'
     endUpon: 
@@ -1506,9 +1506,9 @@ beginState: s32'ctl402_are'
   setLightBlueColor: 500
   createObject: s32'ctl_areWarpEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -10989
-  Unknown1727: 18036
-  setObjectSize: 700
+    addPositionX: -10989
+    Unknown1727: 18036
+    setObjectSize: 700
   endRunOnObject: 
   privateSE: s32'ctl_09_2'
   sprite: s32'are413_19', 3
@@ -1695,7 +1695,7 @@ beginState: s32'430csEff'
         sendSignalToAction: s32'430csEff_BG', 24
       endIf: 
       ifOnFrame: Val(143)
-        Unknown378: 0x6400000064000000B40000008200000082000000A000000014000000
+        overrideLightColor: 100, 100, 180, 130, 0x82000000A000000014000000
         Unknown379: 0x69000000690000009600000078000000780000009100000014000000
       endIf: 
       ifOnFrame: Val(159)
@@ -1723,33 +1723,33 @@ beginState: s32'430csEff'
         deactivateObjectByName: s32'430csEff_scr03'
         createObject: s32'430csEff_sword', (PLAYER)
         runOnObject: (PREVIOUS)
-        addPositionX: 19610
-        addPositionY: 663027
-        Unknown1727: -35522
-        setAngleX: 48000
-        setAngleY: 89600
-        setAngle: 351600
-        setObjectSize: 700
+          addPositionX: 19610
+          addPositionY: 663027
+          Unknown1727: -35522
+          setAngleX: 48000
+          setAngleY: 89600
+          setAngle: 351600
+          setObjectSize: 700
         endRunOnObject: 
         createObject: s32'430csEff_sword', (PLAYER)
         runOnObject: (PREVIOUS)
-        addPositionX: 174053
-        addPositionY: 629085
-        Unknown1727: 8148
-        setAngleX: 322400
-        setAngleY: 28800
-        setAngle: 158000
-        setObjectSize: 600
+          addPositionX: 174053
+          addPositionY: 629085
+          Unknown1727: 8148
+          setAngleX: 322400
+          setAngleY: 28800
+          setAngle: 158000
+          setObjectSize: 600
         endRunOnObject: 
         createObject: s32'430csEff_sword', (PLAYER)
         runOnObject: (PREVIOUS)
-        addPositionX: -24436
-        addPositionY: 788826
-        Unknown1727: -113623
-        setAngleX: 307600
-        setAngleY: 109200
-        setAngle: 174400
-        setObjectSize: 700
+          addPositionX: -24436
+          addPositionY: 788826
+          Unknown1727: -113623
+          setAngleX: 307600
+          setAngleY: 109200
+          setAngle: 174400
+          setObjectSize: 700
         endRunOnObject: 
       endIf: 
     endUpon: 
@@ -1838,7 +1838,7 @@ beginState: s32'430csEff_swordaura'
     Unknown1727: 38
     setObjectWidth: 500
     setObjectHeight: 500
-    Unknown180: 500
+    setObjectDepth: 500
     setAngleX: 30000
     setAngleY: 90000
     setAngle: 180000
@@ -1858,13 +1858,13 @@ beginState: s32'430csEff_speedline'
     setAngle: 345200
     setObjectWidth: 200
     setObjectHeight: 200
-    Unknown180: 200
+    setObjectDepth: 200
   endUpon: 
   sprite: s32'null', 10
   sprite: s32'null', 460
   setObjectWidth: 100
   setObjectHeight: 100
-  Unknown180: 100
+  setObjectDepth: 100
 endState: 
 
 beginState: s32'430csEff_scr03'
@@ -2066,7 +2066,7 @@ beginState: s32'440Eff_slash_bloom'
   setPositionX: -89031
   setPositionY: 238193
   setDepth: 344674
-  Unknown193: 30
+  objectSizeScaleSpeedPercent: 30
 endState: 
 
 beginState: s32'ctl_440_CS1stEff'
@@ -2302,7 +2302,7 @@ beginState: s32'ctl_440_Charge'
   setDepth: 194511
   setObjectWidth: 400
   setObjectHeight: 400
-  Unknown180: 400
+  setObjectDepth: 400
   setAngleX: 192000
   setAngleY: 256400
   setAngle: 31600
@@ -2433,12 +2433,12 @@ beginState: s32'ctl_440_Slash2'
   setAngle: 270800
   setObjectWidth: 1000
   setObjectHeight: 2000
-  Unknown180: 1000
+  setObjectDepth: 1000
   sprite: s32'null', 20
   linkParticle: s32'ctl_441CS_Slash03'
   setObjectWidth: 1000
   setObjectHeight: 1500
-  Unknown180: 1000
+  setObjectDepth: 1000
 endState: 
 
 beginState: s32'ctl_440_Slash3'
@@ -2459,12 +2459,12 @@ beginState: s32'ctl_440_Slash3'
   setAngle: 356000
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   sprite: s32'null', 4
   linkParticle: s32'ctl_441CS_Slash03'
   setObjectWidth: 1000
   setObjectHeight: 250
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: -695292
   setPositionY: 804247
   setDepth: -1119575
@@ -2485,7 +2485,7 @@ beginState: s32'ctl_440_Hit'
   linkParticle: s32'ctl_441CS_hit'
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   addPositionX: -129002
   addPositionY: 240033
   Unknown1727: -214335
@@ -2519,7 +2519,7 @@ beginState: s32'ctl_440_Hit2'
   linkParticle: s32'ctl_441CS_hit2'
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setPositionX: -2618
   setPositionY: 337176
   setDepth: -78957
@@ -2640,7 +2640,7 @@ beginState: s32'ctl_440_Bomb'
   setAngleY: 329600
   setAngle: 4000
   setObjectSize: 500
-  Unknown191: 2
+  setObjectSizeScaleSpeed: 2
 endState: 
 
 beginState: s32'ctl_440_WhiteIn'
@@ -2674,7 +2674,7 @@ beginState: s32'ctl_442_GroundBurst'
   setAngle: 0
   setObjectWidth: 700
   setObjectHeight: 700
-  Unknown180: 50
+  setObjectDepth: 50
   sprite: s32'null', 60
   setPositionX: 72114
   setPositionY: 45060
@@ -2710,7 +2710,7 @@ beginState: s32'ctl_442_GroundBurst3'
   sprite: s32'null', 60
   setObjectWidth: 2000
   setObjectHeight: 1600
-  Unknown180: 2000
+  setObjectDepth: 2000
   setPositionX: -691367
   setPositionY: 26966
   setDepth: -144387
@@ -2735,7 +2735,7 @@ beginState: s32'ctl_442_GroundBurst4'
   setAngle: 0
   setObjectWidth: 2100
   setObjectHeight: 2100
-  Unknown180: 2100
+  setObjectDepth: 2100
 endState: 
 
 beginState: s32'ctl_442_EnterAres'

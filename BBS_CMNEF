@@ -411,7 +411,7 @@ beginSubroutine: s32'cmn_SkillInit'
     addMoveFlag: (BRAVEPOINTS_TRUE)
     moveNotSame: 1
     forceDisableFlag: 134217728
-    Unknown964: 1
+    forcedComboScaleCount: 1
     cpuEstimateAttackBox: -295, -400, 590, 400
     cpuEstimatePoint: 50
     cpuEstimateLevelLimit: 20
@@ -1252,12 +1252,12 @@ beginSubroutine: s32'cmnNormalAtkLv5_Land_AtkInit'
 endSubroutine: 
 
 beginSubroutine: s32'cmnAtk_AirGuardVectorDown'
-  Unknown746: 0, 1000
+  atkEnemyHitSuperArmorHitstop: 0, 1000
   Unknown747: 0, 7000
 endSubroutine: 
 
 beginSubroutine: s32'cmnAtk_AirGuardVectorUp'
-  Unknown746: 0, 16000
+  atkEnemyHitSuperArmorHitstop: 0, 16000
   Unknown747: 0, 20000
 endSubroutine: 
 
@@ -1267,12 +1267,37 @@ beginSubroutine: s32'cmnAtk_AirAtk_RisingMid'
     if: Mem(Tmp)
       Unknown310: 9, 22, 2, 31, 0, 1
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(SpeedY), Val(1)
-        Unknown956: 2
+        counterWallBreakLimitTime: 2
       endIf: 
     endIf: 
   endIf: 
 endUpon: 
 
+checkLastStateName: s32'CmnActJump'
+ifNot: Mem(Tmp)
+  checkLastStateName: s32'CmnActAirGuardLoop'
+endIf: 
+
+ifNot: Mem(Tmp)
+  checkLastStateName: s32'CmnActAirGuardEnd'
+endIf: 
+
+if: Mem(Tmp)
+  upon: 116
+    ifNot: Mem(417)
+      Unknown310: 9, 22, 2, 31, 0, 1
+      ifOperation: (IS_GREATER_OR_EQUAL), Mem(SpeedY), Val(1)
+        whiffCrouch: 1
+      endIf: 
+      else: 
+        clearUpon: 116
+        whiffCrouch: 0
+      endElse: 
+    endIf: 
+  endIf: 
+endUpon: 
+
+endIf: 
 endSubroutine: 
 beginSubroutine: s32'cmnNormalAtkLv1_Air_AtkInit'
   if: Mem(EnvR26)
@@ -1658,6 +1683,9 @@ beginSubroutine: s32'cmnAtk5ANear_AtkInit'
         storeValue: Mem(418), Val(2)
       endIf: 
       ifPlayerCharacter: s16'vky'
+        storeValue: Mem(418), Val(2)
+      endIf: 
+      ifPlayerCharacter: s16'rnt'
         storeValue: Mem(418), Val(2)
       endIf: 
       ifOperation: (IS_EQUAL), Mem(418), Val(2)
@@ -2368,8 +2396,10 @@ beginSubroutine: s32'cmnAtkDash6A_ByChara'
     storeValue: Mem(418), Val(2)
   endIf: 
   ifPlayerCharacter: s16'vrs'
-    storeValue: Mem(SpeedX), Mem(ObjReg0)
-    addVelocityX: 30000
+    addVelocityX: -3000
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(20)
+      setInertia: 30000
+    endIf: 
   endIf: 
   ifPlayerCharacter: s16'vky'
     addVelocityX: 2000
@@ -2378,6 +2408,9 @@ beginSubroutine: s32'cmnAtkDash6A_ByChara'
   ifPlayerCharacter: s16'san'
     addVelocityX: 11000
     storeValue: Mem(418), Val(2)
+  endIf: 
+  ifPlayerCharacter: s16'rnt'
+    addVelocityX: 5000
   endIf: 
 endSubroutine: 
 
@@ -2402,7 +2435,7 @@ beginSubroutine: s32'cmnAtkDash6A_AtkInit'
   attackFrontDirection: 0
   isAirUnblockable: 1
   clashLevel: 1
-  Unknown956: 1
+  counterWallBreakLimitTime: 1
   airHitEffect: (AIR_FACE_UP)
   hitAirPushbackX: 20000
   hitAirPushbackY: 17000
@@ -2442,13 +2475,21 @@ beginSubroutine: s32'cmnAtkDash6A_AtkInit'
           endIf: 
         endIf: 
         else: 
-          ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(20)
-            addWhiffCancelOption: s32'NmlAtk5BNear'
-            enableWhiffCancel: 1
-            ifPlayerCharacter: s16'nrm'
-              callSubroutine: s32'ChangeKamae_Init'
+          ifPlayerCharacter: s16'rnt'
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(19)
+              addWhiffCancelOption: s32'NmlAtk5BNear'
+              enableWhiffCancel: 1
             endIf: 
           endIf: 
+          else: 
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(20)
+              addWhiffCancelOption: s32'NmlAtk5BNear'
+              enableWhiffCancel: 1
+              ifPlayerCharacter: s16'nrm'
+                callSubroutine: s32'ChangeKamae_Init'
+              endIf: 
+            endIf: 
+          endElse: 
         endElse: 
       endElse: 
     endIf: 
@@ -2486,7 +2527,7 @@ beginSubroutine: s32'cmnAtkDash6A_AtkInit'
         exPointFReset: (PLAYER), -175000, 0
       endIf: 
       ifOperation: (IS_LESSER_OR_EQUAL), Mem(418), Val(9)
-        Unknown662: 130, 1, 0
+        dashStopEffect: 130, 1, 0
       endIf: 
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActionTime), Val(17)
@@ -2649,6 +2690,10 @@ beginSubroutine: s32'cmnAtkDash6BLow_AtkInit'
         velocityXPercentEachFrame: 90
       endIf: 
       ifPlayerCharacter: s16'san'
+        physicsXImpulse: 40000
+        velocityXPercentEachFrame: 90
+      endIf: 
+      ifPlayerCharacter: s16'rnt'
         physicsXImpulse: 40000
         velocityXPercentEachFrame: 90
       endIf: 
@@ -3073,7 +3118,7 @@ upon: 116
           upon: 132
             clearUpon: 132
             runOnObject: (ENEMY)
-            setPositionY: 100000
+              setPositionY: 100000
             endRunOnObject: 
           endUpon: 
         endIf: 
@@ -3082,6 +3127,7 @@ upon: 116
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(20)
       attackEndDelay: 
       deactivateObjectByName: s32'cmn_GCAttack_Collision'
+      linkObjectCollision: 0
     endIf: 
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(28)
       clearUpon: 116
@@ -3108,7 +3154,7 @@ upon: 116
           upon: 132
             clearUpon: 132
             runOnObject: (ENEMY)
-            setPositionY: 100000
+              setPositionY: 100000
             endRunOnObject: 
           endUpon: 
         endIf: 
@@ -3117,6 +3163,7 @@ upon: 116
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(13)
       attackEndDelay: 
       deactivateObjectByName: s32'cmn_GCAttack_Collision'
+      linkObjectCollision: 0
     endIf: 
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(21)
       clearUpon: 116
@@ -3149,17 +3196,21 @@ beginSubroutine: s32'cmnSkillInputCheck'
       storeValue: Mem(GTmpReg5), Val(1)
     endIf: 
   endIf: 
-  upon: 119
-    storeValue: Mem(GTmpReg5), Val(0)
-  endUpon: 
+  if: Mem(MOMEnemyNormal)
+    upon: 119
+      storeValue: Mem(GTmpReg5), Val(0)
+    endUpon: 
+  endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'cmnSkillInputCheck_Hasei'
   if: Mem(GTmpReg5)
     callSubroutine: s32'cmnSkillInput_109DamageRate'
-    upon: 119
-      storeValue: Mem(GTmpReg5), Val(0)
-    endUpon: 
+    if: Mem(MOMEnemyNormal)
+      upon: 119
+        storeValue: Mem(GTmpReg5), Val(0)
+      endUpon: 
+    endIf: 
   endIf: 
 endSubroutine: 
 
@@ -3244,7 +3295,7 @@ beginSubroutine: s32'cmnSpecialAttackD_Init'
 endSubroutine: 
 
 beginSubroutine: s32'cmnCoolDown_DamageRate'
-  Unknown912: 0, 500
+  counterHitSoftKnockdown: 0, 500
 endSubroutine: 
 
 beginSubroutine: s32'cmnSpecialAttackD_AtkInit'
@@ -3257,8 +3308,8 @@ beginSubroutine: s32'cmnSpecialAttackD_AtkInit'
   minimumDamagePercent: 40
   chipDamagePercent: 50
   Unknown2327: 1
-  Unknown883: 1
-  Unknown956: 1
+  counterHitWallBounceDownOnly: 1
+  counterWallBreakLimitTime: 1
   upon: 129
     clearUpon: 129
     clearUpon: 130
@@ -3306,14 +3357,14 @@ beginSubroutine: s32'cmnBravelyPoint0_AtkInit'
   upon: 129
     debugLogForScript: s32'', 0, 0
     runOnObject: (PLAYER)
-    attackRateHit: 200, 10, 1
+      attackRateHit: 200, 10, 1
     endRunOnObject: 
     minimumDamagePercent: 200
   endUpon: 
   upon: 114
     debugLogForScript: s32'', 0, 1
     runOnObject: (PLAYER)
-    attackRateHit: 100, 10, 1
+      attackRateHit: 100, 10, 1
     endRunOnObject: 
   endUpon: 
 endIf: 
@@ -3331,7 +3382,7 @@ beginSubroutine: s32'cmnOugiAtk_AtkInit'
   isAirUnblockable: 1
   groundTech: 0
   addTension: 0
-  Unknown956: 2
+  counterWallBreakLimitTime: 2
   ifNot: Mem(377)
     ifNot: Mem(375)
       ifNot: Mem(374)
@@ -3551,15 +3602,15 @@ beginSubroutine: s32'cmnOugi_LockCSInit'
     fadeOutStart: 0, 0
   endUpon: 
   runOnObject: (ENEMY)
-  setNoCollision: 0
-  worldCollision: 0
-  checkScreenCollision: 0
-  moveToObject: (ENEMY)
-  storeValueFromObject: (SELF), Mem(Dir), (ENEMY), Mem(Dir)
-  haltMomentum: 1
-  suikomare: 0
-  swapMeshSet: s32'high'
-  callSubroutine: s32'MeshSet_YarareCS'
+    setNoCollision: 0
+    worldCollision: 0
+    checkScreenCollision: 0
+    moveToObject: (ENEMY)
+    storeValueFromObject: (SELF), Mem(Dir), (ENEMY), Mem(Dir)
+    haltMomentum: 1
+    suikomare: 0
+    swapMeshSet: s32'high'
+    callSubroutine: s32'MeshSet_YarareCS'
   endRunOnObject: 
 endSubroutine: 
 
@@ -3595,7 +3646,7 @@ beginSubroutine: s32'cmnKaihouAtk_AtkInit'
   isAirUnblockable: 1
   groundTech: 0
   addTension: 0
-  Unknown956: 2
+  counterWallBreakLimitTime: 2
   ifNot: Mem(377)
     ifNot: Mem(375)
       ifNot: Mem(374)
@@ -3799,15 +3850,15 @@ beginSubroutine: s32'cmnKaihou_LockCSInit'
     Unknown2301: 1
   endUpon: 
   runOnObject: (ENEMY)
-  setNoCollision: 0
-  worldCollision: 0
-  checkScreenCollision: 0
-  moveToObject: (ENEMY)
-  storeValueFromObject: (SELF), Mem(Dir), (ENEMY), Mem(Dir)
-  haltMomentum: 1
-  suikomare: 0
-  swapMeshSet: s32'high'
-  callSubroutine: s32'MeshSet_YarareCS'
+    setNoCollision: 0
+    worldCollision: 0
+    checkScreenCollision: 0
+    moveToObject: (ENEMY)
+    storeValueFromObject: (SELF), Mem(Dir), (ENEMY), Mem(Dir)
+    haltMomentum: 1
+    suikomare: 0
+    swapMeshSet: s32'high'
+    callSubroutine: s32'MeshSet_YarareCS'
   endRunOnObject: 
 endSubroutine: 
 
@@ -3854,8 +3905,8 @@ beginSubroutine: s32'cmnAtkResetInit'
   hitEffectElectricDark: 0
   hitEffectBeamClash: 0
   disablePunish: 0
-  Unknown733: 0
-  Unknown734: 0
+  atkRedutionAttributeEffect: 0
+  atkEnemyHitSuperArmor: 0
   damageToRecovery: 0
   Unknown731: 0
   atkCameraShake: s32'', 0, 0, 0, 0
@@ -4134,7 +4185,7 @@ beginSubroutine: s32'cmnOugiShot_AtkInit'
   attackFrontDirection: 0
   isAirUnblockable: 0
   groundTech: 0
-  Unknown956: 2
+  counterWallBreakLimitTime: 2
   ifNot: Mem(377)
     ifNot: Mem(375)
       ifNot: Mem(374)
@@ -4176,7 +4227,7 @@ beginSubroutine: s32'cmnKaihouShot_AtkInit'
   attackFrontDirection: 0
   isAirUnblockable: 0
   groundTech: 0
-  Unknown956: 2
+  counterWallBreakLimitTime: 2
   ifNot: Mem(377)
     ifNot: Mem(375)
       ifNot: Mem(374)
@@ -4230,7 +4281,7 @@ endSubroutine:
 
 beginSubroutine: s32'cmn_AtkIgnoreExMuteki'
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistance), Val(400000)
-    Unknown909: 0, 1
+    atkFrozen: 0, 1
   endIf: 
 endSubroutine: 
 
@@ -4770,8 +4821,9 @@ Unknown958: 0, -10000
 Unknown1690: 35
 whiffCancelOptionBufferTime: s32'CancelDash', 55
 runOnObject: (DEFENDER)
-Unknown1783: 0
+  Unknown1783: 0
 endRunOnObject: 
+
 storeValue: Mem(417), Val(60)
 storeValue: Mem(419), Val(1)
 endIf: 
@@ -4783,7 +4835,7 @@ else:
   displayHitSparks: 0
   guardEffect: 4, s32'cmn_guard_sp_kezure2'
   runOnObject: (DEFENDER)
-  damageToWhiteFlash: 1
+    damageToWhiteFlash: 1
   endRunOnObject: 
 endElse: 
 
@@ -4805,7 +4857,7 @@ upon: 116
       if: Mem(ActReg0)
         timeSlow: 20
         runOnObject: (ENEMY)
-        timeSlow: 20
+          timeSlow: 20
         endRunOnObject: 
       endIf: 
     endIf: 
@@ -4832,7 +4884,7 @@ upon: 116
       if: Mem(ActReg0)
         timeSlow: 20
         runOnObject: (ENEMY)
-        timeSlow: 20
+          timeSlow: 20
         endRunOnObject: 
       endIf: 
     endIf: 
@@ -4857,8 +4909,8 @@ upon: 118
       modifyVar: (ADD), Mem(417), Val(-1)
       ifOperation: (IS_EQUAL), Mem(417), Val(0)
         runOnObject: (DEFENDER)
-        Unknown1784: 
-        setInertia: -43500
+          Unknown1784: 
+          setInertia: -43500
         endRunOnObject: 
       endIf: 
     endIf: 
@@ -4904,8 +4956,8 @@ beginSubroutine: s32'cmn_CancelDashInit'
   hitAirPushbackY: -55000
   hitGravity: 0
   guardEffect: 4, s32'cmn_guard_sp'
-  Unknown954: 5
-  Unknown72: s32'GuardCrash'
+  counterWallBlowoffType: 5
+  postSubroutineBegin: s32'GuardCrash'
   enableInvalidCombo: 20
   Unknown313: 300
   Unknown2300: 1
@@ -4932,27 +4984,27 @@ beginSubroutine: s32'cmn_CancelDashInit'
       Unknown310: 12, 22, 2, 18, 0, 1
       if: Mem(417)
         runOnObject: (ENEMY)
-        moveToObject: (ENEMY)
-        if: Mem(Dir)
-          addPositionX: -100000
-        endIf: 
-        else: 
-          addPositionX: 100000
-        endElse: 
-        setPositionY: 290000
+          moveToObject: (ENEMY)
+          if: Mem(Dir)
+            addPositionX: -100000
+          endIf: 
+          else: 
+            addPositionX: 100000
+          endElse: 
+          setPositionY: 290000
         endRunOnObject: 
       endIf: 
     endIf: 
   endIf: 
   Unknown310: 12, 22, 2, 31, 0, 1
   runOnObject: (ENEMY)
-  moveToPosType: 22, 104
-  if: Mem(Dir)
-    addPositionX: -130000
-  endIf: 
-  else: 
-    addPositionX: 130000
-  endElse: 
+    moveToPosType: 22, 104
+    if: Mem(Dir)
+      addPositionX: -130000
+    endIf: 
+    else: 
+      addPositionX: 130000
+    endElse: 
   endRunOnObject: 
 endIf: 
 
@@ -4966,7 +5018,7 @@ clearUpon: 118
 setPushboxHeight: -1
 pushboxHeightLow: -1
 Unknown310: 9, 22, 2, 416, 0, 1
-Unknown954: 2
+counterWallBlowoffType: 2
 endIf: 
 endUpon: 
 gotoLabelUpon: 115, s32'Landing'
@@ -4990,14 +5042,15 @@ upon: 118
   Unknown310: 9, 22, 2, 30, 0, 1
   setPushboxHeight: 300000
   runOnObject: (ENEMY)
-  pushboxHeightLow: 50000
+    pushboxHeightLow: 50000
   endRunOnObject: 
 endIf: 
 
 Unknown310: 12, 22, 2, 18, 0, 250000
 runOnObject: (ENEMY)
-velocityYPercent: 80
+  velocityYPercent: 80
 endRunOnObject: 
+
 endIf: 
 endUpon: 
 upon: 116
@@ -5017,7 +5070,7 @@ upon: 116
     velocityXPercentEachFrame: 105
     Unknown310: 12, 22, 2, 31, 0, 1
     runOnObject: (ENEMY)
-    haltMomentum: 1
+      haltMomentum: 1
     endRunOnObject: 
   endIf: 
 endIf: 
@@ -5063,6 +5116,27 @@ endSubroutine:
 
 beginSubroutine: s32'cmn_FN_OnDamage'
   storeValue: Mem(GTmpReg5), Val(0)
+endSubroutine: 
+
+beginSubroutine: s32'cmn_FN_OnActionBegin'
+  checkCurrentStateName: (PLAYER), s32'CmnActJumpLanding'
+  if: Mem(Tmp)
+    storeValue: Mem(GTmpReg5), Val(0)
+  endIf: 
+  checkCurrentStateName: (PLAYER), s32'CmnActLandingStiff'
+  if: Mem(Tmp)
+    storeValue: Mem(GTmpReg5), Val(0)
+  endIf: 
+endSubroutine: 
+
+beginSubroutine: s32'cmn_FN_OnLanding'
+  checkSomething: 23, 3
+  ifNot: Mem(Tmp)
+    checkSomething: 23, 2
+    ifNot: Mem(Tmp)
+      storeValue: Mem(GTmpReg5), Val(0)
+    endIf: 
+  endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'cmnShotCounterUkeru'
@@ -5133,7 +5207,7 @@ upon: 33
       createObject: s32'cmn_GCEff_Evasivemove', (CENTER)
       zLine: 6, 5
       runOnObject: (ENEMY)
-      zLine: 0, 5
+        zLine: 0, 5
       endRunOnObject: 
       createObject: s32'cmn_GCYokeCamera', (PLAYER)
       onSpriteChange: s32'xxx304_05'
@@ -5442,7 +5516,7 @@ endSubroutine:
 
 beginState: s32'cmn_spwind'
   upon: (IMMEDIATE)
-    Unknown70: s32'cmn_spwind'
+    deactivateObjectByNameAll: s32'cmn_spwind'
     ignoreSuperFreeze: 1
     linkParticle: s32'bg_spwind'
     setPositionX: 0
@@ -5598,12 +5672,12 @@ beginState: s32'cmn_AkebonoFinish'
     Unknown2863: 
     Unknown310: 9, 40, 2, 60, 0, 1
     runOnObject: 40
-    Unknown2050: 1
+      Unknown2050: 1
     endRunOnObject: 
   endIf: 
   Unknown310: 9, 39, 2, 60, 0, 1
   runOnObject: (DAMAGE_EFFECT)
-  Unknown2050: 1
+    Unknown2050: 1
   endRunOnObject: 
 endIf: 
 
@@ -5622,13 +5696,15 @@ Unknown2863:
 Unknown2873: 1500, 100, 5000, 5000, 0, 10
 Unknown310: 9, 40, 2, 60, 0, 1
 runOnObject: 40
-Unknown2050: 0
+  Unknown2050: 0
 endRunOnObject: 
+
 endIf: 
 Unknown310: 9, 39, 2, 60, 0, 1
 runOnObject: (DAMAGE_EFFECT)
-Unknown2050: 0
+  Unknown2050: 0
 endRunOnObject: 
+
 endIf: 
 sprite: s32'null', 29
 Unknown2874: 20
@@ -5670,12 +5746,12 @@ beginState: s32'cmn_AkebonoFinish_LinkAngle'
     fadeOut: 1
     Unknown310: 9, 40, 2, 60, 0, 1
     runOnObject: 40
-    Unknown2050: 1
+      Unknown2050: 1
     endRunOnObject: 
   endIf: 
   Unknown310: 9, 39, 2, 60, 0, 1
   runOnObject: (DAMAGE_EFFECT)
-  Unknown2050: 1
+    Unknown2050: 1
   endRunOnObject: 
 endIf: 
 
@@ -5692,13 +5768,15 @@ createObject: s32'cmn_AkebonoFinish_Ground_LinkAn', (PLAYER)
 fadeOutStart: 0, 0
 Unknown310: 9, 40, 2, 60, 0, 1
 runOnObject: 40
-Unknown2050: 0
+  Unknown2050: 0
 endRunOnObject: 
+
 endIf: 
 Unknown310: 9, 39, 2, 60, 0, 1
 runOnObject: (DAMAGE_EFFECT)
-Unknown2050: 0
+  Unknown2050: 0
 endRunOnObject: 
+
 endIf: 
 endState: 
 beginState: s32'cmn_AkebonoFinish_Ground_LinkAn'
@@ -5746,7 +5824,7 @@ beginState: s32'cmn_FinishCamera_Low'
   Unknown409: 50, 2
   Unknown409: 100, 3
   runOnObject: (ENEMY)
-  createParticle: s32'cmn_FinishHit', (DAMAGE)
+    createParticle: s32'cmn_FinishHit', (DAMAGE)
   endRunOnObject: 
   createObject: s32'cmn_RadialBlur', (PLAYER)
   sprite: s32'null', 10
@@ -5786,7 +5864,7 @@ beginState: s32'cmn_FinishCamera_Middle'
   Unknown409: 100, 3
   createObject: s32'cmn_RadialBlur', (PLAYER)
   runOnObject: (ENEMY)
-  createParticle: s32'cmn_FinishHit', (DAMAGE)
+    createParticle: s32'cmn_FinishHit', (DAMAGE)
   endRunOnObject: 
   sprite: s32'null', 10
   Unknown2074: 3, -50489, 361902, 122598, -894, 2453, 1005, 0, 10, 0, 0, 0, 0, 1
@@ -5824,7 +5902,7 @@ beginState: s32'cmn_FinishCamera_High'
   Unknown409: 50, 2
   Unknown409: 100, 3
   runOnObject: (ENEMY)
-  createParticle: s32'cmn_FinishHit', (DAMAGE)
+    createParticle: s32'cmn_FinishHit', (DAMAGE)
   endRunOnObject: 
   createObject: s32'cmn_RadialBlur', (PLAYER)
   sprite: s32'null', 10
@@ -5863,7 +5941,7 @@ beginState: s32'cmn_FinishCamera_Unique'
   Unknown409: 50, 2
   Unknown409: 100, 3
   runOnObject: (ENEMY)
-  createParticle: s32'cmn_FinishHit', (DAMAGE)
+    createParticle: s32'cmn_FinishHit', (DAMAGE)
   endRunOnObject: 
   createObject: s32'cmn_RadialBlur', (PLAYER)
   sprite: s32'null', 10
@@ -5902,7 +5980,7 @@ beginState: s32'cmn_FinishCamera_Ability'
   Unknown409: 50, 2
   Unknown409: 100, 3
   runOnObject: (ENEMY)
-  createParticle: s32'cmn_FinishHit', (DAMAGE)
+    createParticle: s32'cmn_FinishHit', (DAMAGE)
   endRunOnObject: 
   createObject: s32'cmn_RadialBlur', (PLAYER)
   sprite: s32'null', 5
@@ -5979,7 +6057,7 @@ beginState: s32'cmn_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -6013,7 +6091,7 @@ beginState: s32'cmn_RoundWin_Camera2'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -6989,17 +7067,17 @@ beginState: s32'cmn_PP_GardClashEff'
     ignoreFinishStop: 1
     upon: (BEFORE_EXIT)
       Unknown2590: s32'cmn_PP_CounterEffect', 1, 0
-      Unknown2587: 1601072483, s32'PP_CounterEffect'
+      Unknown2587: s32'cmn_PP_CounterEffect', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 20
-  Unknown2587: 1601072483, s32'PP_CounterEffect'
+  Unknown2587: s32'cmn_PP_CounterEffect', 1
   Unknown2588: s32'cmn_PP_CounterEffect', 1, 100
   sprite: s32'null', 20
   Unknown2590: s32'cmn_PP_CounterEffect', 1, -5
   sprite: s32'null', 1
   Unknown2590: s32'cmn_PP_CounterEffect', 1, 0
-  Unknown2587: 1601072483, s32'PP_CounterEffect'
+  Unknown2587: s32'cmn_PP_CounterEffect', 0
 endState: 
 
 beginState: s32'cmn_PP_CounterHitEff'
@@ -7010,17 +7088,17 @@ beginState: s32'cmn_PP_CounterHitEff'
     ignoreFinishStop: 1
     upon: (BEFORE_EXIT)
       Unknown2590: s32'cmn_PP_CounterEffect2', 1, 0
-      Unknown2587: 1601072483, s32'PP_CounterEffect2'
+      Unknown2587: s32'cmn_PP_CounterEffect2', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 5
-  Unknown2587: 1601072483, s32'PP_CounterEffect2'
+  Unknown2587: s32'cmn_PP_CounterEffect2', 1
   Unknown2588: s32'cmn_PP_CounterEffect2', 1, 100
   sprite: s32'null', 20
   Unknown2590: s32'cmn_PP_CounterEffect2', 1, -5
   sprite: s32'null', 1
   Unknown2590: s32'cmn_PP_CounterEffect2', 1, 0
-  Unknown2587: 1601072483, s32'PP_CounterEffect2'
+  Unknown2587: s32'cmn_PP_CounterEffect2', 0
 endState: 
 
 beginState: s32'cmn_RadialBlur'
@@ -7031,17 +7109,17 @@ beginState: s32'cmn_RadialBlur'
     ignoreFinishStop: 1
     upon: (BEFORE_EXIT)
       Unknown2590: s32'cmn_PP_RadialBlur', 1, 0
-      Unknown2587: 1601072483, s32'PP_RadialBlur'
+      Unknown2587: s32'cmn_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
-  Unknown2587: 1601072483, s32'PP_RadialBlur'
+  Unknown2587: s32'cmn_PP_RadialBlur', 1
   Unknown2588: s32'cmn_PP_RadialBlur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'cmn_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'cmn_PP_RadialBlur', 1, 0
-  Unknown2587: 1601072483, s32'PP_RadialBlur'
+  Unknown2587: s32'cmn_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'cmn_NMS_EnshutuCamera'

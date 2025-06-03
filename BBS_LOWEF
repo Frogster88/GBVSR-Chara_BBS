@@ -46,7 +46,7 @@ beginState: s32'Food'
     if: Mem(IsTrainingMode)
       getTrainingItemVal: s32'ETMI_UniGauge_LOW_Shiimee', 2, 61
       ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(0)
-        Unknown2197: 0x020000002D00000000000000010000000000000064000000
+        Unknown2197: 2, 45, 0, 1, 0, 100
       endIf: 
       ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(1)
         storeValue: Mem(ActReg0), Val(60)
@@ -65,7 +65,7 @@ beginState: s32'Food'
       endIf: 
     endIf: 
     else: 
-      Unknown2197: 0x020000002D00000000000000010000000000000064000000
+      Unknown2197: 2, 45, 0, 1, 0, 100
     endElse: 
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(30)
       linkPawnWithAnimation: s32'Salad_low', s32''
@@ -122,7 +122,7 @@ beginState: s32'Food'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
-    Unknown264: -10
+    setZOffset: -10
     Unknown1727: 70000
   endUpon: 
   sprite: s32'null', 21
@@ -241,7 +241,7 @@ beginSubroutine: s32'ctp_Init'
     jumpToState: s32'Ctp_koware'
   endUpon: 
   addMoveForceDisableFlag: 1
-  Unknown264: -10
+  setZOffset: -10
   setNoCollision: 1
   setPushboxWidth: 50000
   setPushboxHeight: 200000
@@ -306,7 +306,7 @@ beginState: s32'Ctp_404'
   setLightGreenColor: 0
   setLightBlueColor: 0
   sprite: s32'ctp404_00', 3
-  Unknown600: 3
+  optionVoicePriority: 3
   smartRandomVoiceLine: s16'vLOW_ATKS_11', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'ctp404_01', 3
   physicsXImpulse: 30000
@@ -390,7 +390,7 @@ beginState: s32'Ctp_405'
   setLightGreenColor: 0
   setLightBlueColor: 0
   sprite: s32'ctp405_00', 2
-  Unknown600: 3
+  optionVoicePriority: 3
   smartRandomVoiceLine: s16'vLOW_ATKS_12', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'ctp405_01', 2
   sprite: s32'ctp405_02', 2
@@ -469,7 +469,7 @@ beginState: s32'Ctp_406'
   setLightRedColor: 0
   setLightGreenColor: 0
   setLightBlueColor: 0
-  Unknown600: 3
+  optionVoicePriority: 3
   smartRandomVoiceLine: s16'vLOW_ATKS_13', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'ctp406_01', 3
   sprite: s32'ctp406_02', 3
@@ -714,7 +714,7 @@ beginState: s32'Ctp_407'
   setLightBlueColor: 0
   sprite: s32'ctp407_00', 2
   invulnForce: 1
-  Unknown600: 3
+  optionVoicePriority: 3
   smartRandomVoiceLine: s16'vLOW_ATKS_104', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'ctp407_01', 2
   privateSE: s32'low_09'
@@ -824,7 +824,7 @@ beginState: s32'Ctp_koware'
   upon: (IMMEDIATE)
     linkPawnWithAnimation: s32'ctp', s32''
     addMoveForceDisableFlag: 1
-    Unknown264: -10
+    setZOffset: -10
     setNoCollision: 0
     attackIgnoreCaution: 1
     checkScreenCollision: 1
@@ -937,7 +937,7 @@ beginState: s32'Ctp_koware'
   createParticleWithArg2: s32'low_End_bomb', (PLAYER)
   privateSE: s32'low_20'
   linkPawnWithAnimation: s32'', s32''
-  Unknown375: 1
+  disableDisplay2D: 1
 endState: 
 
 beginState: s32'els301'
@@ -1377,11 +1377,11 @@ beginState: s32'els401'
   Unknown2172: 0, 100
   commonSE: s32'SE_BTL_MetalArmorLight'
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    Unknown600: 2
+    optionVoicePriority: 2
     voiceLine: s16'vLOW_ATKS_07_b'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    Unknown600: 2
+    optionVoicePriority: 2
     voiceLine: s16'vLOW_ATKS_09_b'
   endIf: 
   sprite: s32'els401_08', 4
@@ -1579,11 +1579,11 @@ beginState: s32'tom402'
   commonSE: s32'SE_BTL_MetalArmorLight'
   privateSE: s32'low_07'
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    Unknown600: 1
+    optionVoicePriority: 1
     voiceLine: s16'vLOW_ATKS_08_b'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    Unknown600: 1
+    optionVoicePriority: 1
     voiceLine: s16'vLOW_ATKS_09_c'
   endIf: 
   if: Mem(405)
@@ -1746,7 +1746,7 @@ beginState: s32'els414'
     linkObjectPosition: 2
     stopLinkObject: 2
     linkObjectZ: 2
-    Unknown600: 2
+    optionVoicePriority: 2
     voiceLine: s16'vLOW_ATKS_103_c'
   endUpon: 
   beginLabel: s32'loop'
@@ -1913,7 +1913,7 @@ beginState: s32'tom414'
       addPositionX: 100000
     endIf: 
     velocityXPercentEachFrame: 105
-    Unknown600: 1
+    optionVoicePriority: 1
     voiceLine: s16'vLOW_ATKS_103_b'
     if: Mem(405)
       createObject: s32'low_414_SPEff', (PLAYER)
@@ -2042,7 +2042,7 @@ beginState: s32'tom_430cs'
     playAnimation: s32'low430cs', 1
   endUpon: 
   sprite: s32'null', 131
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els_430cs'
@@ -2064,7 +2064,7 @@ beginState: s32'els_430cs'
     playAnimation: s32'low430cs', 1
   endUpon: 
   sprite: s32'null', 131
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tomKBSN_DamageEnd'
@@ -2098,7 +2098,7 @@ beginState: s32'tomKBSN_DamageEnd'
   physicsXImpulse: 0
   sprite: s32'tom402_19', 2
   sprite: s32'tom402_20', 6
-  Unknown56: 1
+  pauseSprite: 1
   endSprite: 
 endState: 
 
@@ -2128,7 +2128,7 @@ beginState: s32'elsKBSN_DamageEnd'
   sprite: s32'els437_10', 3
   sprite: s32'els437_11', 12
   sprite: s32'els401_16', 6
-  Unknown56: 1
+  pauseSprite: 1
   endSprite: 
 endState: 
 
@@ -2146,7 +2146,7 @@ beginState: s32'tom430_start'
   sprite: s32'tom439_01', 4
   sprite: s32'tom439_02', 3
   sprite: s32'tom439_03', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els430_start'
@@ -2163,7 +2163,7 @@ beginState: s32'els430_start'
   sprite: s32'els439_01', 4
   sprite: s32'els439_02', 3
   sprite: s32'els439_03', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom430_End'
@@ -2292,7 +2292,7 @@ beginState: s32'tom438_turn'
   sprite: s32'tom438_01', 2
   sprite: s32'tom438_02', 2
   sprite: s32'tom438_03', 2
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els438_turn'
@@ -2304,7 +2304,7 @@ beginState: s32'els438_turn'
   sprite: s32'els438_01', 2
   sprite: s32'els438_02', 2
   sprite: s32'els438_03', 2
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom431_front'
@@ -2382,7 +2382,7 @@ beginState: s32'tom432_sake'
   sprite: s32'tom432_07', 3
   sprite: s32'tom432_08', 3
   sprite: s32'tom432_09', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els432_sake'
@@ -2400,7 +2400,7 @@ beginState: s32'els432_sake'
   sprite: s32'els432_07', 3
   sprite: s32'els432_08', 3
   sprite: s32'els432_09', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom433_A'
@@ -2421,7 +2421,7 @@ beginState: s32'tom433_A'
   sprite: s32'tom433_10', 2
   sprite: s32'tom433_11', 2
   sprite: s32'tom433_12', 2
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els433_A'
@@ -2442,7 +2442,7 @@ beginState: s32'els433_A'
   sprite: s32'els433_10', 2
   sprite: s32'els433_11', 2
   sprite: s32'els433_12', 2
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom434_B'
@@ -2460,7 +2460,7 @@ beginState: s32'tom434_B'
   sprite: s32'tom434_07', 3
   sprite: s32'tom434_08', 3
   sprite: s32'tom434_09', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els434_B'
@@ -2478,7 +2478,7 @@ beginState: s32'els434_B'
   sprite: s32'els434_07', 3
   sprite: s32'els434_08', 3
   sprite: s32'els434_09', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom435_C'
@@ -2497,7 +2497,7 @@ beginState: s32'tom435_C'
   sprite: s32'tom435_08', 3
   sprite: s32'tom435_09', 3
   sprite: s32'tom435_10', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els435_C'
@@ -2516,7 +2516,7 @@ beginState: s32'els435_C'
   sprite: s32'els435_08', 3
   sprite: s32'els435_09', 3
   sprite: s32'els435_10', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom436_D'
@@ -2542,7 +2542,7 @@ beginState: s32'tom436_D'
   sprite: s32'tom436_14', 2
   sprite: s32'tom436_15', 2
   sprite: s32'tom436_16', 2
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els436_D'
@@ -2568,7 +2568,7 @@ beginState: s32'els436_D'
   sprite: s32'els436_14', 2
   sprite: s32'els436_15', 2
   sprite: s32'els436_16', 2
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom437_236D'
@@ -2623,7 +2623,7 @@ beginState: s32'tom437_236D'
   endSprite: 
   modifyVar: (ADD), Mem(ActReg0), Val(1)
   gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(2)
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els437_236D'
@@ -2675,7 +2675,7 @@ beginState: s32'els437_236D'
   endSprite: 
   modifyVar: (ADD), Mem(ActReg0), Val(1)
   gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(2)
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom_700cs_1P01'
@@ -2736,7 +2736,7 @@ beginState: s32'tom_700cs_1P03'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low700cs_1p_03', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els_700cs_1P03'
@@ -2757,7 +2757,7 @@ beginState: s32'els_700cs_1P03'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low700cs_1p_03', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom_700cs_2P'
@@ -2780,7 +2780,7 @@ beginState: s32'tom_700cs_2P'
   playAnimation: s32'low700cs_2p_01', 1
   sprite: s32'null', 474
   playAnimation: s32'low700cs_2p_02', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els_700cs_2P'
@@ -2803,7 +2803,7 @@ beginState: s32'els_700cs_2P'
   playAnimation: s32'low700cs_2p_01', 1
   sprite: s32'null', 474
   playAnimation: s32'low700cs_2p_02', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom_800cs'
@@ -2824,7 +2824,7 @@ beginState: s32'tom_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els_800cs'
@@ -2845,7 +2845,7 @@ beginState: s32'els_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Coffe_800cs'
@@ -2854,7 +2854,7 @@ beginState: s32'Coffe_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Coffe_800cs_2'
@@ -2863,7 +2863,7 @@ beginState: s32'Coffe_800cs_2'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low803cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Drink_800cs'
@@ -2872,7 +2872,7 @@ beginState: s32'Drink_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Drink_800cs_2'
@@ -2881,7 +2881,7 @@ beginState: s32'Drink_800cs_2'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low803cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Parfait_800cs'
@@ -2890,7 +2890,7 @@ beginState: s32'Parfait_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Parfait_800cs_2'
@@ -2899,7 +2899,7 @@ beginState: s32'Parfait_800cs_2'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low803cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Corn_800cs'
@@ -2908,7 +2908,7 @@ beginState: s32'Corn_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Corn_800cs_2'
@@ -2917,7 +2917,7 @@ beginState: s32'Corn_800cs_2'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low803cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Salad_800cs'
@@ -2926,7 +2926,7 @@ beginState: s32'Salad_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Salad_800cs_2'
@@ -2935,7 +2935,7 @@ beginState: s32'Salad_800cs_2'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low803cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Spaghetti_800cs'
@@ -2944,7 +2944,7 @@ beginState: s32'Spaghetti_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Spaghetti_800cs_2'
@@ -2953,7 +2953,7 @@ beginState: s32'Spaghetti_800cs_2'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low803cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Cutlery_800cs'
@@ -2962,7 +2962,7 @@ beginState: s32'Cutlery_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Cutlery_800cs_2'
@@ -2971,7 +2971,7 @@ beginState: s32'Cutlery_800cs_2'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low803cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Menu_800cs'
@@ -2980,7 +2980,7 @@ beginState: s32'Menu_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Menu_800cs_2'
@@ -2989,7 +2989,7 @@ beginState: s32'Menu_800cs_2'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low803cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Taruzake_800cs'
@@ -2998,7 +2998,7 @@ beginState: s32'Taruzake_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Bar_800cs'
@@ -3011,7 +3011,7 @@ beginState: s32'Bar_800cs'
   endUpon: 
   sprite: s32'null', 2147483647
   playAnimation: s32'low801cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ygd_440cs'
@@ -3032,7 +3032,7 @@ beginState: s32'ygd_440cs'
     playAnimation: s32'low440cs', 1
   endUpon: 
   sprite: s32'null', 272
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom_440cs'
@@ -3080,7 +3080,7 @@ beginState: s32'ygd440_Kouchoku'
   sprite: s32'ygd449_01', 6
   sprite: s32'ygd449_02', 6
   sprite: s32'ygd449_03', 6
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ygd440_Stund'
@@ -3120,7 +3120,7 @@ beginState: s32'ygd448_Stundturn'
   sprite: s32'ygd448_01', 2
   sprite: s32'ygd448_02', 2
   sprite: s32'ygd448_03', 2
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ygd441_Front'
@@ -3175,7 +3175,7 @@ beginState: s32'ygd440_Damage'
   sprite: s32'ygd443_01', 6
   sprite: s32'ygd443_02', 6
   sprite: s32'ygd443_03', 6
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ygd444'
@@ -3206,7 +3206,7 @@ beginState: s32'ygd444'
   sprite: s32'ygd444_10', 4
   sprite: s32'ygd444_11', 4
   sprite: s32'ygd444_12', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ygd445'
@@ -3254,7 +3254,7 @@ beginState: s32'ygd445'
   sprite: s32'ygd445_09', 3
   sprite: s32'ygd445_11', 4
   sprite: s32'ygd445_12', 4
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ygd446'
@@ -3279,7 +3279,7 @@ beginState: s32'ygd446'
   sprite: s32'ygd446_13', 2
   sprite: s32'ygd446_14', 5
   sprite: s32'ygd446_15', 4
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ygd447'
@@ -3317,7 +3317,7 @@ beginState: s32'ygd447'
   sprite: s32'ygd447_17', 3
   sprite: s32'ygd447_18', 5
   sprite: s32'ygd447_19', 4
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ygd453'
@@ -3384,7 +3384,7 @@ beginState: s32'ygd453'
   sprite: s32'ygd453_16', 3
   sprite: s32'ygd453_17', 3
   sprite: s32'ygd453_18', 3
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'ygd440_End'
@@ -3420,7 +3420,7 @@ beginState: s32'low_443_flash'
     linkParticle: s32'low_443_flash1'
     ignoreSuperFreezeFromAlly: 1
     ignoreFinishStop: 1
-    Unknown289: 300
+    setMaxActionTime: 300
     gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 10
@@ -3485,7 +3485,7 @@ beginState: s32'ygd_441cs'
   playAnimation: s32'low443cs', 1
   sprite: s32'null', 100
   Unknown2050: 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom_441cs'
@@ -3510,7 +3510,7 @@ beginState: s32'tom_441cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'els_441cs'
@@ -3535,7 +3535,7 @@ beginState: s32'els_441cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 1
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'vee_442cs'
@@ -3552,7 +3552,7 @@ beginState: s32'vee_442cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Bar_442cs'
@@ -3567,7 +3567,7 @@ beginState: s32'Bar_442cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Corn_442cs'
@@ -3578,7 +3578,7 @@ beginState: s32'Corn_442cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Spaghetti_442cs'
@@ -3589,7 +3589,7 @@ beginState: s32'Spaghetti_442cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Salad_442cs'
@@ -3600,7 +3600,7 @@ beginState: s32'Salad_442cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Cutlery_442cs'
@@ -3611,7 +3611,7 @@ beginState: s32'Cutlery_442cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Menu_442cs'
@@ -3622,7 +3622,7 @@ beginState: s32'Menu_442cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'Taruzake_442cs'
@@ -3633,7 +3633,7 @@ beginState: s32'Taruzake_442cs'
   playAnimation: s32'low442cs', 1
   sprite: s32'null', 132
   playAnimation: s32'low443cs', 0
-  Unknown56: 1
+  pauseSprite: 1
 endState: 
 
 beginState: s32'tom600'
@@ -3847,7 +3847,7 @@ beginState: s32'low_001_Eff1'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     flipDirection: 
   endUpon: 
   sprite: s32'null', 4
@@ -3860,7 +3860,7 @@ beginState: s32'low_001_Eff1'
   setAngle: 354000
   setObjectWidth: 700
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
 endState: 
 
 beginState: s32'low_001_Eff2'
@@ -3869,7 +3869,7 @@ beginState: s32'low_001_Eff2'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     flipDirection: 
   endUpon: 
   sprite: s32'null', 4
@@ -3882,7 +3882,7 @@ beginState: s32'low_001_Eff2'
   setAngle: 354000
   setObjectWidth: 700
   setObjectHeight: 700
-  Unknown180: 700
+  setObjectDepth: 700
 endState: 
 
 beginState: s32'low_202_Eff'
@@ -3891,7 +3891,7 @@ beginState: s32'low_202_Eff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     flipDirection: 
   endUpon: 
   sprite: s32'null', 3
@@ -3906,7 +3906,7 @@ beginState: s32'LOW_203_StrikeEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 30
@@ -3923,7 +3923,7 @@ beginState: s32'LOW_204_SlashEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 90
+    setMaxActionTime: 90
     gotoLabelUpon: 23, s32'loop'
     gotoLabelUpon: 24, s32'end'
   endUpon: 
@@ -3958,7 +3958,7 @@ beginState: s32'low_205_slash'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     flipDirection: 
   endUpon: 
   sprite: s32'null', 30
@@ -3971,7 +3971,7 @@ beginState: s32'low_205_slash'
   setAngle: 8000
   setObjectWidth: 480
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
 endState: 
 
 beginState: s32'low_208_flash'
@@ -3981,8 +3981,8 @@ beginState: s32'low_208_flash'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown264: -10
-    Unknown289: 300
+    setZOffset: -10
+    setMaxActionTime: 300
     setPositionX: -104979
     setPositionY: 364417
     setDepth: 20909
@@ -3999,8 +3999,8 @@ beginState: s32'low_208_Ability'
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
     gotoLabelUpon: 23, s32'end'
-    Unknown264: 10
-    Unknown289: 300
+    setZOffset: 10
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 38
   linkParticle: s32'low_208_loop'
@@ -4017,8 +4017,8 @@ beginState: s32'low_208_Ability_yellow'
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
     gotoLabelUpon: 23, s32'end'
-    Unknown264: 10
-    Unknown289: 300
+    setZOffset: 10
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 38
   linkParticle: s32'low_208_loop_yellow'
@@ -4031,9 +4031,9 @@ beginState: s32'low_208_aura'
   upon: (IMMEDIATE)
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown264: -10
+    setZOffset: -10
     flipDirection: 
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'low_208_aura'
@@ -4043,9 +4043,9 @@ beginState: s32'low_208_aura_yellow'
   upon: (IMMEDIATE)
     stopLinkObject: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown264: -10
+    setZOffset: -10
     flipDirection: 
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'low_208_aura_yellow'
@@ -4059,7 +4059,7 @@ beginState: s32'low_221_Ground'
     setLinkObjectDestroyOnDamage: 2
     linkObjectZ: 2
     setPositionX: -80000
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 7
@@ -4125,7 +4125,7 @@ beginState: s32'LOW_233_StrikeEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 90
+    setMaxActionTime: 90
     gotoLabelUpon: 23, s32'loop'
     gotoLabelUpon: 24, s32'end'
   endUpon: 
@@ -4147,42 +4147,42 @@ beginState: s32'LOW_250_StrikeEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 90
+    setMaxActionTime: 90
   endUpon: 
   sprite: s32'null', 30
   createObject: s32'LOW_250_line01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 262560
-  addPositionY: 360682
-  Unknown1727: 24561
-  setAngle: 90000
+    addPositionX: 262560
+    addPositionY: 360682
+    Unknown1727: 24561
+    setAngle: 90000
   endRunOnObject: 
   createObject: s32'LOW_250_line01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 271631
-  addPositionY: 313124
-  Unknown1727: 24604
-  setObjectWidth: 1000
-  Unknown180: 600
-  setAngle: 90000
+    addPositionX: 271631
+    addPositionY: 313124
+    Unknown1727: 24604
+    setObjectWidth: 1000
+    setObjectDepth: 600
+    setAngle: 90000
   endRunOnObject: 
   createObject: s32'LOW_250_line01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 184115
-  addPositionY: 324307
-  Unknown1727: 24260
-  setObjectWidth: 1000
-  Unknown180: 1000
-  setAngle: 90000
+    addPositionX: 184115
+    addPositionY: 324307
+    Unknown1727: 24260
+    setObjectWidth: 1000
+    setObjectDepth: 1000
+    setAngle: 90000
   endRunOnObject: 
   createObject: s32'LOW_250_line01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 130169
-  addPositionY: 291340
-  Unknown1727: 24776
-  setObjectWidth: 1000
-  Unknown180: 1200
-  setAngle: 90000
+    addPositionX: 130169
+    addPositionY: 291340
+    Unknown1727: 24776
+    setObjectWidth: 1000
+    setObjectDepth: 1200
+    setAngle: 90000
   endRunOnObject: 
 endState: 
 
@@ -4193,7 +4193,7 @@ beginState: s32'LOW_250_line01'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
   endUpon: 
   sprite: s32'null', 60
 endState: 
@@ -4203,7 +4203,7 @@ beginState: s32'low_253_ase'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 240
+    setMaxActionTime: 240
     addPositionX: -98901
     addPositionY: 387612
     Unknown1727: 16927
@@ -4244,8 +4244,8 @@ beginState: s32'LOW_301_shock01Eff'
   createObject: s32'LOW_301_bg01', (PLAYER)
   createObject: s32'LOW_301_bg01', (PLAYER)
   runOnObject: (PREVIOUS)
-  flipDirection: 
-  addPositionX: -300000
+    flipDirection: 
+    addPositionX: -300000
   endRunOnObject: 
 endState: 
 
@@ -4295,7 +4295,7 @@ beginState: s32'low_303_Eff'
     linkObjectZ: 3
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 300
+    setMaxActionTime: 300
     flipDirection: 
     gotoLabelUpon: 23, s32'loop'
     gotoLabelUpon: 24, s32'end'
@@ -4385,7 +4385,7 @@ beginState: s32'TOM_309_TOMspeedEff'
     ignoreSuperFreezeFromAlly: 1
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 100
+    setMaxActionTime: 100
     addPositionX: 0
     addPositionY: 2398
     Unknown1727: -54945
@@ -4405,7 +4405,7 @@ beginState: s32'ELS_309_ELSspeedEff'
     ignoreSuperFreezeFromAlly: 1
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 100
+    setMaxActionTime: 100
     gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 300
@@ -4421,7 +4421,7 @@ beginState: s32'CTP_309_Eff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 100
+    setMaxActionTime: 100
     gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 300
@@ -4436,7 +4436,7 @@ beginState: s32'LOW_309_shock01Eff'
     ignoreSuperFreezeFromAlly: 1
     setObjectSize: 1500
     Unknown1727: 50000
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   sprite: s32'null', 120
   moveToObject: (ENEMY)
@@ -4445,8 +4445,8 @@ beginState: s32'LOW_309_shock01Eff'
   createObject: s32'LOW_309_bg01', (PLAYER)
   createObject: s32'LOW_309_bg01', (PLAYER)
   runOnObject: (PREVIOUS)
-  flipDirection: 
-  addPositionX: -300000
+    flipDirection: 
+    addPositionX: -300000
   endRunOnObject: 
 endState: 
 
@@ -4454,7 +4454,7 @@ beginState: s32'LOW_309_bg01'
   upon: (IMMEDIATE)
     linkObjectZ: 3
     ignoreSuperFreezeFromAlly: 1
-    Unknown289: 90
+    setMaxActionTime: 90
     addPositionX: -100000
   endUpon: 
   sprite: s32'null', 90
@@ -4501,8 +4501,8 @@ beginState: s32'low_350_SlashEff'
   createObject: s32'low_350_twinkle', (PLAYER_LAND)
   createObject: s32'low_350_groundBurst', (PLAYER_LAND)
   runOnObject: (PREVIOUS)
-  setObjectSize: 800
-  addPositionX: -80000
+    setObjectSize: 800
+    addPositionX: -80000
   endRunOnObject: 
   sprite: s32'null', 3
   linkParticle: s32'low_350_Slash01'
@@ -4601,9 +4601,9 @@ beginState: s32'low_401_speed'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
-    Unknown264: 10
+    setZOffset: 10
     gotoLabelUpon: 23, s32'end'
-    Unknown289: 240
+    setMaxActionTime: 240
   endUpon: 
   sprite: s32'null', 1
   beginLabel: s32'loop'
@@ -4620,7 +4620,7 @@ beginState: s32'low_400_flash'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 240
+    setMaxActionTime: 240
     setPositionX: 144971
     setPositionY: 240613
     setDepth: 105587
@@ -4637,9 +4637,9 @@ beginState: s32'low_401_Ground'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
     linkObjectZ: 2
-    Unknown264: 10
+    setZOffset: 10
     setPositionY: 0
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   sprite: s32'null', 1
   privateSE: s32'low_17'
@@ -4656,9 +4656,9 @@ beginState: s32'low_401_Ground2'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
-    Unknown264: 10
+    setZOffset: 10
     setPositionY: 0
-    Unknown289: 120
+    setMaxActionTime: 120
   endUpon: 
   sprite: s32'null', 1
   Unknown2268: 0, 600
@@ -4676,7 +4676,7 @@ beginState: s32'low_401_SPEff'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
-    Unknown289: 300
+    setMaxActionTime: 300
     setPositionY: 220000
     createObject: s32'low_401_SPkiraEff', (PLAYER)
     gotoLabelUpon: 23, s32'dawn'
@@ -4698,7 +4698,7 @@ beginState: s32'low_401_SPkiraEff'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
-    Unknown289: 300
+    setMaxActionTime: 300
   endUpon: 
   beginLabel: s32'loop'
   sprite: s32'null', 12
@@ -4711,7 +4711,7 @@ beginState: s32'low_401_SPZanzouEff'
     linkObjectZ: 2
     setLinkObjectDestroyOnDamage: 3
     stopLinkObject: 2
-    Unknown289: 300
+    setMaxActionTime: 300
     setPositionY: 220000
     linkParticle: s32'low_401_SPZanzou'
     gotoLabelUpon: 23, s32'end'
@@ -4729,7 +4729,7 @@ beginState: s32'low_402_SPEff'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
-    Unknown289: 300
+    setMaxActionTime: 300
     setPositionY: 220000
     createObject: s32'low_401_SPkiraEff', (PLAYER)
     gotoLabelUpon: 23, s32'dawn'
@@ -4761,7 +4761,7 @@ beginState: s32'low_402_SPZanzouEff'
     setLinkObjectDestroyOnDamage: 3
     setLinkObjectDestroyOnStateChange: 2
     stopLinkObject: 2
-    Unknown289: 300
+    setMaxActionTime: 300
     setPositionY: 220000
     linkParticle: s32'low_402_SPZanzou'
     gotoLabelUpon: 23, s32'end'
@@ -4789,7 +4789,7 @@ beginState: s32'low_414_SpinEff'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
-    Unknown289: 300
+    setMaxActionTime: 300
     flipDirection: 
   endUpon: 
   beginLabel: s32'loop'
@@ -4809,7 +4809,7 @@ beginState: s32'low_414_SmokeEff'
     setLinkObjectDestroyOnStateChange: 2
     linkObjectPosition: 2
     stopLinkObject: 2
-    Unknown289: 300
+    setMaxActionTime: 300
     setPositionX: 70000
   endUpon: 
   beginLabel: s32'loop'
@@ -4821,10 +4821,10 @@ endState:
 beginState: s32'low_403_Eff'
   upon: (IMMEDIATE)
     linkObjectPosition: 2
-    Unknown289: 240
+    setMaxActionTime: 240
     setObjectWidth: 500
     setObjectHeight: 500
-    Unknown180: 500
+    setObjectDepth: 500
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(140000)
       addPositionX: 80000
     endIf: 
@@ -4854,7 +4854,7 @@ beginState: s32'low_403_manpu'
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 240
+    setMaxActionTime: 240
   endUpon: 
   sprite: s32'null', 30
   linkParticle: s32'low_403_manpu'
@@ -4863,7 +4863,7 @@ endState:
 beginState: s32'low_405_Catapila'
   upon: (IMMEDIATE)
     stopLinkObject: 2
-    Unknown264: -15
+    setZOffset: -15
     upon: 23
       spriteTimeAdd: 1
     endUpon: 
@@ -4871,15 +4871,15 @@ beginState: s32'low_405_Catapila'
   sprite: s32'null', 5
   createObject: s32'low_405_Beam', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 18
-  addPositionY: 829
-  Unknown264: -15
+    addPositionX: 18
+    addPositionY: 829
+    setZOffset: -15
   endRunOnObject: 
   createObject: s32'low_405_Beam', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 20022
-  addPositionY: 5829
-  Unknown264: -15
+    addPositionX: 20022
+    addPositionY: 5829
+    setZOffset: -15
   endRunOnObject: 
   sprite: s32'null', 10
   exPointFReset: (PLAYER), 55000, 40000
@@ -4904,7 +4904,7 @@ beginState: s32'low_405_Beam'
     gotoLabelUpon: 25, s32'Shot1'
     gotoLabelUpon: 26, s32'Shot2'
     gotoLabelUpon: 27, s32'Shot3'
-    Unknown264: -15
+    setZOffset: -15
   endUpon: 
   sprite: s32'null', 100
   createObject: s32'low_405_Eye', (PLAYER)
@@ -4939,7 +4939,7 @@ beginState: s32'low_405_Eye'
     setLinkObjectDestroyOnDamage: 3
     gotoLabelUpon: 23, s32'AtkLoop'
     gotoLabelUpon: 24, s32'End'
-    Unknown264: -15
+    setZOffset: -15
   endUpon: 
   sprite: s32'null', 100
   linkParticle: s32'low_405_beam_EyeStart'
@@ -5087,7 +5087,7 @@ beginState: s32'low_406_Catapila'
   addPositionX: 50000
   velocityXPercentEachFrame: 110
   setObjectSize: 1200
-  Unknown264: -15
+  setZOffset: -15
   ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(0)
     physicsYImpulse: 24000
     setGravity: 1800
@@ -5100,7 +5100,7 @@ beginState: s32'low_406_Catapila'
     upon: 13
       linkParticle: s32'low_406_Missile'
       clearUpon: 13
-      Unknown161: 20
+      objectHeightScaleSpeedPercent: 20
       setGravity: 0
       setAngle: 0
       setAngleY: 30000
@@ -5130,7 +5130,7 @@ beginState: s32'low_406_Catapila'
     upon: 13
       linkParticle: s32'low_406_Missile'
       clearUpon: 13
-      Unknown161: 20
+      objectHeightScaleSpeedPercent: 20
       setGravity: 0
       setAngle: 0
       setAngleY: -30000
@@ -5161,7 +5161,7 @@ beginState: s32'low_406_Catapila'
     upon: 13
       linkParticle: s32'low_406_Missile1'
       clearUpon: 13
-      Unknown161: 20
+      objectHeightScaleSpeedPercent: 20
       setGravity: 0
       setAngle: 0
       setAngleY: 10000
@@ -5192,7 +5192,7 @@ beginState: s32'low_406_Catapila'
     upon: 13
       linkParticle: s32'low_406_Missile1'
       clearUpon: 13
-      Unknown161: 20
+      objectHeightScaleSpeedPercent: 20
       setGravity: 0
       setAngle: 0
       setAngleY: -18000
@@ -5229,8 +5229,8 @@ privateSE: s32'low_13'
 endState: 
 beginState: s32'low_406_op_bom1'
   upon: (IMMEDIATE)
-    Unknown264: -15
-    Unknown289: 240
+    setZOffset: -15
+    setMaxActionTime: 240
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 2
@@ -5239,7 +5239,7 @@ beginState: s32'low_406_op_bom1'
     setDepth: -1090
     setObjectWidth: 1200
     setObjectHeight: 1200
-    Unknown180: 1200
+    setObjectDepth: 1200
   endUpon: 
   sprite: s32'null', 100
   linkParticle: s32'low_406_bom1'
@@ -5247,7 +5247,7 @@ endState:
 
 beginState: s32'low_406_trail'
   upon: (IMMEDIATE)
-    Unknown264: -15
+    setZOffset: -15
     linkObjectPosition: 2
     setLinkObjectDestroyOnStateChange: 2
   endUpon: 
@@ -5296,7 +5296,7 @@ beginState: s32'low_407_Wind1Eff'
   linkParticle: s32'low_407_wind00'
   createObject: s32'low_407_speedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  setDepth: 30000
+    setDepth: 30000
   endRunOnObject: 
 endState: 
 
@@ -5314,7 +5314,7 @@ beginState: s32'low_407_Wind2Eff'
   linkParticle: s32'low_407_wind01'
   createObject: s32'low_407_speedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  setDepth: 30000
+    setDepth: 30000
   endRunOnObject: 
 endState: 
 
@@ -5485,7 +5485,7 @@ beginState: s32'low_410_atemi'
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
     flipDirection: 
-    Unknown289: 240
+    setMaxActionTime: 240
   endUpon: 
   sprite: s32'null', 1
   linkParticle: s32'low_410_slash01'
@@ -5539,29 +5539,29 @@ beginState: s32'LOW_430_SpeedLineMatome'
   sprite: s32'null', 4
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: -35819
-  addPositionY: 404876
-  Unknown1727: -99225
-  setAngleX: 344800
-  setAngle: 343200
+    addPositionX: -35819
+    addPositionY: 404876
+    Unknown1727: -99225
+    setAngleX: 344800
+    setAngle: 343200
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 223260
-  addPositionY: 348803
-  Unknown1727: 49177
-  setAngleX: 347600
-  setAngleY: 27200
-  setAngle: 18800
+    addPositionX: 223260
+    addPositionY: 348803
+    Unknown1727: 49177
+    setAngleX: 347600
+    setAngleY: 27200
+    setAngle: 18800
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 2735
-  addPositionY: 291854
-  Unknown1727: 80620
-  setAngleX: 316400
-  setAngleY: 27200
-  setAngle: 352800
+    addPositionX: 2735
+    addPositionY: 291854
+    Unknown1727: 80620
+    setAngleX: 316400
+    setAngleY: 27200
+    setAngle: 352800
   endRunOnObject: 
 endState: 
 
@@ -5576,57 +5576,57 @@ beginState: s32'LOW_430_SpeedLineMatome2'
   sprite: s32'null', 4
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 340728
-  addPositionY: 793363
-  Unknown1727: -227710
-  setObjectWidth: 2000
-  setObjectHeight: 3000
-  setAngleX: 2000
-  setAngleY: 332800
+    addPositionX: 340728
+    addPositionY: 793363
+    Unknown1727: -227710
+    setObjectWidth: 2000
+    setObjectHeight: 3000
+    setAngleX: 2000
+    setAngleY: 332800
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 5342
-  addPositionY: 645915
-  Unknown1727: -284908
-  setObjectWidth: 2000
-  setObjectHeight: 3000
-  setAngleX: 2000
-  setAngleY: 332800
-  setAngleY: 332800
+    addPositionX: 5342
+    addPositionY: 645915
+    Unknown1727: -284908
+    setObjectWidth: 2000
+    setObjectHeight: 3000
+    setAngleX: 2000
+    setAngleY: 332800
+    setAngleY: 332800
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 218089
-  addPositionY: 917936
-  Unknown1727: -362533
-  setObjectWidth: 2000
-  setObjectHeight: 3000
-  setAngleX: 2000
-  setAngleY: 332800
-  setAngle: 359200
+    addPositionX: 218089
+    addPositionY: 917936
+    Unknown1727: -362533
+    setObjectWidth: 2000
+    setObjectHeight: 3000
+    setAngleX: 2000
+    setAngleY: 332800
+    setAngle: 359200
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 105627
-  addPositionY: 1162245
-  Unknown1727: -322746
-  setObjectWidth: 2000
-  setObjectHeight: 2500
-  setAngleX: 2000
-  setAngleY: 332800
-  setAngle: 359200
+    addPositionX: 105627
+    addPositionY: 1162245
+    Unknown1727: -322746
+    setObjectWidth: 2000
+    setObjectHeight: 2500
+    setAngleX: 2000
+    setAngleY: 332800
+    setAngle: 359200
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 283686
-  addPositionY: 1098252
-  Unknown1727: -261447
-  setObjectWidth: 2000
-  setObjectHeight: 2500
-  setAngleX: 2000
-  setAngleY: 332800
-  setAngle: 359200
+    addPositionX: 283686
+    addPositionY: 1098252
+    Unknown1727: -261447
+    setObjectWidth: 2000
+    setObjectHeight: 2500
+    setAngleX: 2000
+    setAngleY: 332800
+    setAngle: 359200
   endRunOnObject: 
 endState: 
 
@@ -5644,56 +5644,56 @@ beginState: s32'LOW_430_SpeedLineMatome3'
   sprite: s32'null', 4
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 480580
-  addPositionY: 671077
-  Unknown1727: -315064
-  setObjectWidth: 2000
-  setObjectHeight: 3000
-  setAngleX: 2000
-  setAngleY: 352800
+    addPositionX: 480580
+    addPositionY: 671077
+    Unknown1727: -315064
+    setObjectWidth: 2000
+    setObjectHeight: 3000
+    setAngleX: 2000
+    setAngleY: 352800
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 14276
-  addPositionY: 502638
-  Unknown1727: -340498
-  setObjectWidth: 2000
-  setObjectHeight: 3000
-  setAngleX: 2000
-  setAngleY: 332800
-  setAngleY: 332800
+    addPositionX: 14276
+    addPositionY: 502638
+    Unknown1727: -340498
+    setObjectWidth: 2000
+    setObjectHeight: 3000
+    setAngleX: 2000
+    setAngleY: 332800
+    setAngleY: 332800
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 218089
-  addPositionY: 917936
-  Unknown1727: -362533
-  setObjectWidth: 2000
-  setObjectHeight: 3000
-  setAngleX: 2000
-  setAngleY: 332800
-  setAngle: 359200
+    addPositionX: 218089
+    addPositionY: 917936
+    Unknown1727: -362533
+    setObjectWidth: 2000
+    setObjectHeight: 3000
+    setAngleX: 2000
+    setAngleY: 332800
+    setAngle: 359200
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 65626
-  addPositionY: 525064
-  Unknown1727: -116610
-  setObjectHeight: 1500
-  setAngleX: 2000
-  setAngleY: 400
-  setAngle: 358800
+    addPositionX: 65626
+    addPositionY: 525064
+    Unknown1727: -116610
+    setObjectHeight: 1500
+    setAngleX: 2000
+    setAngleY: 400
+    setAngle: 358800
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 145796
-  addPositionY: 491706
-  Unknown1727: -103452
-  setObjectWidth: 2000
-  setObjectHeight: 2500
-  setAngleX: 2000
-  setAngleY: 332800
-  setAngle: 359200
+    addPositionX: 145796
+    addPositionY: 491706
+    Unknown1727: -103452
+    setObjectWidth: 2000
+    setObjectHeight: 2500
+    setAngleX: 2000
+    setAngleY: 332800
+    setAngle: 359200
   endRunOnObject: 
 endState: 
 
@@ -5711,37 +5711,37 @@ beginState: s32'LOW_430_SpeedLineMatome4'
   sprite: s32'null', 8
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 170826
-  addPositionY: 986701
-  Unknown1727: -59330
-  setAngleX: 2000
-  setAngleY: 352800
-  setAngle: 4000
-  setObjectWidth: 100
-  setObjectHeight: 250
+    addPositionX: 170826
+    addPositionY: 986701
+    Unknown1727: -59330
+    setAngleX: 2000
+    setAngleY: 352800
+    setAngle: 4000
+    setObjectWidth: 100
+    setObjectHeight: 250
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 185388
-  addPositionY: 974224
-  Unknown1727: -70217
-  setObjectWidth: 100
-  setObjectHeight: 250
-  Unknown180: 1000
-  setAngleX: 2000
-  setAngleY: 332800
-  setAngleY: 332800
+    addPositionX: 185388
+    addPositionY: 974224
+    Unknown1727: -70217
+    setObjectWidth: 100
+    setObjectHeight: 250
+    setObjectDepth: 1000
+    setAngleX: 2000
+    setAngleY: 332800
+    setAngleY: 332800
   endRunOnObject: 
   createObject: s32'LOW_430_SpeedLine2', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 198994
-  addPositionY: 960929
-  Unknown1727: -81410
-  setObjectWidth: 250
-  setObjectHeight: 500
-  Unknown180: 1000
-  setAngleY: 332800
-  setAngle: 359200
+    addPositionX: 198994
+    addPositionY: 960929
+    Unknown1727: -81410
+    setObjectWidth: 250
+    setObjectHeight: 500
+    setObjectDepth: 1000
+    setAngleY: 332800
+    setAngle: 359200
   endRunOnObject: 
 endState: 
 
@@ -5777,7 +5777,7 @@ beginState: s32'low_430cs_BG_ryuhai'
   setDepth: -323444
   setObjectWidth: 4000
   setObjectHeight: 4000
-  Unknown180: 4000
+  setObjectDepth: 4000
   setAngleX: 2000
   setAngleY: 30000
   setAngle: 0
@@ -5789,7 +5789,7 @@ beginState: s32'low_430cs_BG_ryuhai'
   setDepth: -442076
   setObjectWidth: 3000
   setObjectHeight: 3000
-  Unknown180: 3000
+  setObjectDepth: 3000
   setAngleX: 324000
   setAngleY: 16000
   setAngle: 354000
@@ -5801,7 +5801,7 @@ beginState: s32'low_430cs_BG_ryuhai'
   setDepth: -651161
   setObjectWidth: 5000
   setObjectHeight: 5000
-  Unknown180: 5000
+  setObjectDepth: 5000
   setAngleX: 5000
   setAngleY: 40000
   setAngle: 0
@@ -5813,7 +5813,7 @@ beginState: s32'low_430cs_BG_ryuhai'
   setDepth: -307076
   setObjectWidth: 4000
   setObjectHeight: 4000
-  Unknown180: 4000
+  setObjectDepth: 4000
   setAngleX: 2000
   setAngleY: 40000
   setAngle: 0
@@ -5825,7 +5825,7 @@ beginState: s32'low_430cs_BG_ryuhai'
   setDepth: -362876
   setObjectWidth: 5000
   setObjectHeight: 5000
-  Unknown180: 5000
+  setObjectDepth: 5000
   setAngleX: 350000
   setAngleY: 32000
   setAngle: 0
@@ -5837,7 +5837,7 @@ beginState: s32'low_430cs_BG_ryuhai'
   setDepth: -931357
   setObjectWidth: 5000
   setObjectHeight: 5000
-  Unknown180: 5000
+  setObjectDepth: 5000
   setAngleX: 4000
   setAngleY: 24000
   setAngle: 356000
@@ -5926,42 +5926,42 @@ beginState: s32'low_430cs_BG_glare'
   setDepth: -92727
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   sprite: s32'null', 4
   setPositionX: 0
   setPositionY: 123276
   setDepth: -80994
   setObjectWidth: 1000
   setObjectHeight: 750
-  Unknown180: 600
+  setObjectDepth: 600
   sprite: s32'null', 4
   setPositionX: 0
   setPositionY: 123276
   setDepth: -80994
   setObjectWidth: 1000
   setObjectHeight: 750
-  Unknown180: 600
+  setObjectDepth: 600
   sprite: s32'null', 4
   setPositionX: 0
   setPositionY: 123276
   setDepth: -80994
   setObjectWidth: 1000
   setObjectHeight: 750
-  Unknown180: 600
+  setObjectDepth: 600
   sprite: s32'null', 4
   setPositionX: 19996
   setPositionY: 118640
   setDepth: -72620
   setObjectWidth: 800
   setObjectHeight: 750
-  Unknown180: 600
+  setObjectDepth: 600
   sprite: s32'null', 8
   setPositionX: 0
   setPositionY: 158635
   setDepth: -93833
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
 endState: 
 
 beginState: s32'low_430cs_BG_speed'
@@ -6087,7 +6087,7 @@ beginState: s32'LOW_434_Fireworks_R_Eff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 90
+    setMaxActionTime: 90
     linkParticle: s32'low_434_fireworks01_Loop'
   endUpon: 
   sprite: s32'null', 6
@@ -6139,7 +6139,7 @@ beginState: s32'LOW_434_Fireworks_L_Eff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 90
+    setMaxActionTime: 90
     linkParticle: s32'low_434_fireworks01_Loop'
   endUpon: 
   sprite: s32'null', 3
@@ -6190,7 +6190,7 @@ beginState: s32'LOW_434_Knife_R_Eff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     flipDirection: 
   endUpon: 
   sprite: s32'null', 3
@@ -6208,7 +6208,7 @@ beginState: s32'LOW_434_Knife_L_Eff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 60
+    setMaxActionTime: 60
     flipDirection: 
   endUpon: 
   sprite: s32'null', 3
@@ -6284,7 +6284,7 @@ beginState: s32'LOW_437_AtkEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 90
+    setMaxActionTime: 90
     gotoLabelUpon: 23, s32'end'
   endUpon: 
   sprite: s32'null', 90
@@ -6303,7 +6303,7 @@ beginState: s32'LOW_437_SmokeEff'
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
     setLinkObjectDestroyOnDamage: 3
-    Unknown289: 160
+    setMaxActionTime: 160
     gotoLabelUpon: 23, s32'end'
     addPositionX: 150000
   endUpon: 
@@ -6394,7 +6394,7 @@ beginState: s32'LOW_440_Light2'
   setDepth: -313219
   setObjectWidth: 2500
   setObjectHeight: 2500
-  Unknown180: 2500
+  setObjectDepth: 2500
 endState: 
 
 beginState: s32'LOW_440_CSBG'
@@ -6553,7 +6553,7 @@ beginState: s32'LOW_444_Eff'
   ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(2)
     addPositionX: 1300000
   endIf: 
-  Unknown2329: 0x0300000017000000640000001600000064000000
+  Unknown2329: 3, 23, 100, 22, 100
   storeValue: Mem(ActReg0), Mem(Tmp)
   ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(0)
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg0), Val(-400000)
@@ -6566,28 +6566,28 @@ beginState: s32'LOW_444_Eff'
   createArgHikitsukiVal: Val(1), Val(0)
   createObjectWithArg: s32'LOW_444_LandPillarEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleY: 10000
-  setObjectSize: 870
-  privateSE: s32'low_51'
+    setAngleY: 10000
+    setObjectSize: 870
+    privateSE: s32'low_51'
   endRunOnObject: 
   createParticle: s32'bg_GroundBurst', (PLAYER)
   sprite: s32'null', 9
   addPositionX: 250000
   createObject: s32'LOW_444_LandPillarEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleY: 15000
-  setObjectSize: 880
-  flipDirection: 
-  privateSE: s32'low_51'
+    setAngleY: 15000
+    setObjectSize: 880
+    flipDirection: 
+    privateSE: s32'low_51'
   endRunOnObject: 
   createParticle: s32'bg_GroundBurst', (PLAYER)
   sprite: s32'null', 9
   addPositionX: 250000
   createObject: s32'LOW_444_LandPillarEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngleY: -15000
-  setObjectSize: 900
-  privateSE: s32'low_51'
+    setAngleY: -15000
+    setObjectSize: 900
+    privateSE: s32'low_51'
   endRunOnObject: 
   createParticle: s32'bg_GroundBurst', (PLAYER)
   Unknown2272: 1
@@ -6726,7 +6726,7 @@ beginState: s32'LOW_YGD_445_Eff'
       gotoLabelRequests: s32'Koware'
       cameraShake: s32'ShakeYoko', 3000, 0, 20, 0
     endUpon: 
-    Unknown289: 300
+    setMaxActionTime: 300
     upon: 24
       gotoLabelRequests: s32'Shot'
     endUpon: 
@@ -6752,7 +6752,7 @@ beginState: s32'LOW_YGD_445_Eff'
   hit: 
   createParticle: s32'low_445_YGD_ShotSub', (PLAYER)
   linkObjectPosition: 0
-  Unknown2482: 0x020000002D000000020000002D000000
+  Unknown2482: 2, 45, 2, 45
   ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
     Unknown2019: 0x020000001600000064000000000000000000000000000000A086010000000000B88800000000000010270000
   endIf: 
@@ -6775,7 +6775,7 @@ beginState: s32'LOW_YGD_445_Eff'
   recoveryState: 
   haltMomentum: 1
   requestShake: 25000, 25000
-  Unknown192: 0
+  addObjectSizeScaleSpeed: 0
   privateSE: s32'low_58'
 endState: 
 
@@ -6851,12 +6851,12 @@ beginState: s32'LOW_YGD_446_Eff'
   setLightRedColorSpeed: -50
   setLightGreenColorSpeed: -50
   setLightBlueColorSpeed: -50
-  Unknown159: -40
-  Unknown183: 15
+  setObjectHeightScaleSpeed: -40
+  setObjectDepthScaleSpeed: 15
   sprite: s32'null', 5
   fadeInStart: 15
-  Unknown159: 0
-  Unknown183: 5
+  setObjectHeightScaleSpeed: 0
+  setObjectDepthScaleSpeed: 5
 endState: 
 
 beginState: s32'LOW_YGD_446_Sign'
@@ -6947,10 +6947,10 @@ beginState: s32'LOW_447_Eff'
   createObject: s32'LOW_447_CircleEff', (PLAYER)
   privateSE: s32'low_56'
   runOnObject: (PREVIOUS)
-  addPositionY: 880000
-  setAngle: 180000
-  flipDirection: 
-  velocityYPercent: -100
+    addPositionY: 880000
+    setAngle: 180000
+    flipDirection: 
+    velocityYPercent: -100
   endRunOnObject: 
   sprite: s32'null', 27
   createObject: s32'LOW_447_ThunderEff', (PLAYER)
@@ -6987,10 +6987,10 @@ beginState: s32'Vacuum'
   Unknown2246: 1500000, 100
   upon: (FRAME_STEP)
     runOnObject: 32
-    Unknown2253: 0
+      Unknown2253: 0
     endRunOnObject: 
     runOnObject: 33
-    Unknown2253: 0
+      Unknown2253: 0
     endRunOnObject: 
   endUpon: 
   upon: 23
@@ -7054,12 +7054,12 @@ beginState: s32'LOW_447_CircleEff'
   beginLabel: s32'End'
   sprite: s32'null', 24
   linkParticle: s32'low_447_CircleEnd'
-  Unknown151: 20
-  Unknown159: 40
+  setObjectWidthScaleSpeed: 20
+  setObjectHeightScaleSpeed: 40
   velocityYPercent: -300000
   upon: (FRAME_STEP)
     velocityYPercent: 95
-    Unknown193: 90
+    objectSizeScaleSpeedPercent: 90
   endUpon: 
   exitState: 
   beginLabel: s32'Miss'
@@ -7076,7 +7076,7 @@ beginState: s32'LOW_447_ThunderEff'
     linkParticle: s32'low_447_thunder'
     setPositionY: 20000
     setObjectSize: 1125
-    Unknown289: 200
+    setMaxActionTime: 200
     upon: 23
       clearUpon: 23
       linkParticle: s32'low_447_thunderEnd'
@@ -7176,9 +7176,9 @@ beginState: s32'LOW_447_SphereEff'
     upon: 96
       createObject: s32'cmn_AkebonoFinish', (ENEMY_HEART)
     endUpon: 
-    Unknown289: 200
+    setMaxActionTime: 200
     upon: (FRAME_STEP)
-      Unknown193: 96
+      objectSizeScaleSpeedPercent: 96
     endUpon: 
     upon: 23
       clearUpon: 23
@@ -7188,7 +7188,7 @@ beginState: s32'LOW_447_SphereEff'
     linkObjectPosition: 2
     stopLinkObject: 2
     setObjectSize: 1000
-    Unknown191: 100
+    setObjectSizeScaleSpeed: 100
     setPositionY: 450000
   endUpon: 
   sprite: s32'YGD_Luminox', 4
@@ -7205,7 +7205,7 @@ beginState: s32'LOW_447_SphereEff'
   linkParticle: s32'low_447_SphereEnd'
   upon: (FRAME_STEP)
     clearUpon: (FRAME_STEP)
-    Unknown193: 0
+    objectSizeScaleSpeedPercent: 0
   endUpon: 
   addObjectSize: 500
   hit: 
@@ -7260,9 +7260,9 @@ beginState: s32'LOW_447_FlareEff'
     setPositionY: 450000
     setDepth: 5000
     setObjectSize: 0
-    Unknown191: 65
+    setObjectSizeScaleSpeed: 65
     upon: (FRAME_STEP)
-      Unknown193: 95
+      objectSizeScaleSpeedPercent: 95
     endUpon: 
     upon: 35
       clearUpon: 35
@@ -7272,11 +7272,11 @@ beginState: s32'LOW_447_FlareEff'
   sprite: s32'null', 30
   sprite: s32'null', 200
   clearUpon: (FRAME_STEP)
-  Unknown191: 7
+  setObjectSizeScaleSpeed: 7
   exitState: 
   beginLabel: s32'Miss'
   sprite: s32'null', 16
-  Unknown191: 0
+  setObjectSizeScaleSpeed: 0
   clearUpon: (FRAME_STEP)
   upon: (FRAME_STEP)
     objectSizePercent: 80
@@ -7294,10 +7294,10 @@ beginState: s32'LOW_447_Eff_Test'
   createObject: s32'LOW_447_CircleEff', (PLAYER)
   privateSE: s32'low_56'
   runOnObject: (PREVIOUS)
-  addPositionY: 880000
-  setAngle: 180000
-  flipDirection: 
-  velocityYPercent: -100
+    addPositionY: 880000
+    setAngle: 180000
+    flipDirection: 
+    velocityYPercent: -100
   endRunOnObject: 
   sprite: s32'null', 27
   createObject: s32'LOW_447_ThunderEff', (PLAYER)
@@ -7307,7 +7307,7 @@ beginState: s32'LOW_447_Eff_Test'
   sprite: s32'null', 18
   createObject: s32'LOW_447_SphereEff', (PLAYER)
   runOnObject: (PREVIOUS)
-  attackEndDelay: 
+    attackEndDelay: 
   endRunOnObject: 
   createObject: s32'LOW_447_RayEff', (PLAYER)
   createObject: s32'LOW_447_FlareEff', (PLAYER)
@@ -7341,7 +7341,7 @@ beginState: s32'Low_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -7376,7 +7376,7 @@ beginState: s32'Low_RoundWin_Camera2'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -7405,13 +7405,13 @@ beginState: s32'low_700_manpuBG'
   sprite: s32'null', 2147483647
   createObject: s32'low_700_manpu01', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 1000
-  setPositionX: -696983
-  setPositionY: 605029
-  setDepth: -24995
-  setAngleX: 26000
-  setAngleY: 268000
-  setAngle: 0
+    setObjectSize: 1000
+    setPositionX: -696983
+    setPositionY: 605029
+    setDepth: -24995
+    setAngleX: 26000
+    setAngleY: 268000
+    setAngle: 0
   endRunOnObject: 
 endState: 
 
@@ -7437,47 +7437,47 @@ beginState: s32'low_700_TwinkleBG'
   sprite: s32'null', 2147483647
   createObject: s32'low_700_CharaBG', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 500
-  addPositionX: 1614678
-  addPositionY: 443209
-  Unknown1727: -13963
+    setObjectSize: 500
+    addPositionX: 1614678
+    addPositionY: 443209
+    Unknown1727: -13963
   endRunOnObject: 
   createObject: s32'low_700_CharaBG', (PLAYER)
   runOnObject: (PREVIOUS)
-  setObjectSize: 800
-  addPositionX: 1531349
-  addPositionY: 246868
-  Unknown1727: -18375
+    setObjectSize: 800
+    addPositionX: 1531349
+    addPositionY: 246868
+    Unknown1727: -18375
   endRunOnObject: 
   createObject: s32'low_700_Twinkle01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 2013571
-  addPositionY: 396844
-  Unknown1727: -607593
+    addPositionX: 2013571
+    addPositionY: 396844
+    Unknown1727: -607593
   endRunOnObject: 
   createObject: s32'low_700_Twinkle01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 2747750
-  addPositionY: 996896
-  Unknown1727: 564034
+    addPositionX: 2747750
+    addPositionY: 996896
+    Unknown1727: 564034
   endRunOnObject: 
   createObject: s32'low_700_Twinkle01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 2324576
-  addPositionY: 732405
-  Unknown1727: 557524
+    addPositionX: 2324576
+    addPositionY: 732405
+    Unknown1727: 557524
   endRunOnObject: 
   createObject: s32'low_700_Twinkle01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 2733405
-  addPositionY: 638988
-  Unknown1727: -1039926
+    addPositionX: 2733405
+    addPositionY: 638988
+    Unknown1727: -1039926
   endRunOnObject: 
   createObject: s32'low_700_Twinkle01', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 2177645
-  addPositionY: 780618
-  Unknown1727: -182524
+    addPositionX: 2177645
+    addPositionY: 780618
+    Unknown1727: -182524
   endRunOnObject: 
   fadeOutStart: 0, 1
 endState: 
@@ -7677,7 +7677,7 @@ beginState: s32'tom402_Debug'
     endMeshSet: 
     swapMeshSet: s32'tom'
     specialAttack: 
-    Unknown264: 10
+    setZOffset: 10
     Unknown1909: 0
     attackIgnoreCaution: 1
     initializeDestroy: 
@@ -7816,7 +7816,7 @@ beginState: s32'low_800_SpeedLine'
   linkParticle: s32'low_800_cs_syutyu01'
   setObjectWidth: 1400
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: 515277
   setPositionY: 302076
   setDepth: 121917

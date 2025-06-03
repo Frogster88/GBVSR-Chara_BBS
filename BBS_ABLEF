@@ -491,17 +491,17 @@ beginState: s32'ABL_253_ShockRing_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-      Unknown2587: 1600938593, s32'PP_RadialBlur'
+      Unknown2587: s32'abl_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 1
   sprite: s32'null', 10
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 1
   Unknown2588: s32'abl_PP_RadialBlur', 1, 100
   Unknown2590: s32'abl_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'ABL_253_StrikeEff'
@@ -792,7 +792,7 @@ beginState: s32'abl_Apple'
   upon: 45
     randomAddVelocityX: -10000, 10000
     physicsYImpulse: 15000
-    Unknown118: -2500, 2500
+    randomAddVelocityY: -2500, 2500
     setGravity: 1000
     Unknown214: -15000
     gotoLabelRequests: s32'Start'
@@ -1196,7 +1196,7 @@ beginState: s32'abl_401_Strike'
     Unknown1727: 47169
     setObjectWidth: 1300
     setObjectHeight: 1100
-    Unknown180: 800
+    setObjectDepth: 800
     setAngleY: 39200
   endUpon: 
   sprite: s32'null', 1
@@ -1294,7 +1294,7 @@ beginState: s32'abl_401_StrikeEX'
     Unknown1727: 47169
     setObjectWidth: 1300
     setObjectHeight: 1100
-    Unknown180: 800
+    setObjectDepth: 800
     setAngleY: 39200
   endUpon: 
   sprite: s32'null', 2
@@ -2210,8 +2210,8 @@ beginState: s32'abl_400_Goetia2'
       physicsYImpulse: 4750
       setAngleBySpeed: 0
     endIf: 
-    Unknown109: 
-    Unknown114: 
+    pushVelocityX: 
+    pushVelocityY: 
     haltMomentum: 1
   endUpon: 
   sprite: s32'null', 6
@@ -2231,8 +2231,8 @@ beginState: s32'abl_400_Goetia2'
   setLinkObjectDestroyOnDamage: 0
   linkParticle: s32'abl_400_ShotBLoop'
   hit: 
-  Unknown110: 
-  Unknown115: 
+  popVelocityX: 
+  popVelocityY: 
   velocityXPercent: 300
   velocityYPercent: 300
   velocityXPercentEachFrame: 108
@@ -2330,7 +2330,7 @@ beginState: s32'abl_400_GoetiaStart_B'
     setAngle: 26565
     setObjectWidth: 900
     setObjectHeight: 1000
-    Unknown180: 1000
+    setObjectDepth: 1000
   endUpon: 
   sprite: s32'null', 60
   createObject: s32'abl_400_ShotStartParticle_B', (PLAYER)
@@ -2381,7 +2381,7 @@ beginState: s32'abl_403_wingSpawnEff'
     setAngle: 298400
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 20
@@ -2402,7 +2402,7 @@ beginState: s32'abl_403_wingSpawnEff2'
     setAngle: 350000
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 20
@@ -2423,7 +2423,7 @@ beginState: s32'abl_403_wingSpawnEff_Hide'
     setAngle: 306000
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   beginLabel: s32'Loop'
   sprite: s32'null', 20
@@ -2443,7 +2443,7 @@ beginState: s32'abl_403_wingEndEff_DAMAGE'
     setAngle: 309600
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 5
   sprite: s32'null', 25
@@ -2508,7 +2508,7 @@ beginState: s32'abl_403_EXGroundAtk'
     setLinkObjectDestroyOnDamage: 3
     stopLinkObject: 2
     linkParticle: s32'abl_403_AtkJump'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 5
   sprite: s32'null', 25
@@ -2527,7 +2527,7 @@ beginState: s32'abl_403_wingEndEff'
     setAngle: 309600
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 5
   sprite: s32'null', 25
@@ -2613,7 +2613,7 @@ beginState: s32'abl_404_wingEndEff_DAMAGE'
     setAngle: 327600
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 5
   sprite: s32'null', 25
@@ -2683,7 +2683,7 @@ beginState: s32'abl_404_wingEndEff'
     setAngle: 327600
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 5
   sprite: s32'null', 25
@@ -2907,7 +2907,7 @@ beginState: s32'abl_405_wingEndEff_DAMAGE'
     setAngle: 327600
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 5
   sprite: s32'null', 25
@@ -2977,7 +2977,7 @@ beginState: s32'abl_405_wingEndEff'
     setAngle: 327600
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 5
   sprite: s32'null', 25
@@ -3168,7 +3168,7 @@ beginState: s32'abl_406_FinalStrikeEff'
     setAngle: 354400
     setObjectWidth: 1200
     setObjectHeight: 1200
-    Unknown180: 1200
+    setObjectDepth: 1200
   endUpon: 
   sprite: s32'null', 10
   linkParticle: s32'abl_440_Strike01'
@@ -3202,7 +3202,7 @@ beginState: s32'abl_AddWarpKickEff'
     setAngle: 354400
     setObjectWidth: 1200
     setObjectHeight: 1200
-    Unknown180: 1200
+    setObjectDepth: 1200
   endUpon: 
   sprite: s32'null', 6
   linkParticle: s32'abl_440_Strike01'
@@ -3241,16 +3241,16 @@ beginState: s32'ABL_406_Blur'
     ignoreSuperFreeze: 1
     upon: (BEFORE_EXIT)
       Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-      Unknown2587: 1600938593, s32'PP_RadialBlur'
+      Unknown2587: s32'abl_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 1
   Unknown2588: s32'abl_PP_RadialBlur', 1, 100
   Unknown2590: s32'abl_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'abl_406_wingEndEff_DAMAGE'
@@ -3264,7 +3264,7 @@ beginState: s32'abl_406_wingEndEff_DAMAGE'
     setAngle: 327600
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 5
   sprite: s32'null', 25
@@ -3334,7 +3334,7 @@ beginState: s32'abl_406_wingEndEff'
     setAngle: 327600
     setObjectSize: 2000
     linkParticle: s32'abl_403_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 5
   sprite: s32'null', 25
@@ -3630,7 +3630,7 @@ beginState: s32'ABL_400_Rocks_Child'
   upon: (IMMEDIATE)
     stopLinkObject: 2
     setObjectSize: 900
-    Unknown194: 100, -100
+    randomAddObjectSize: 100, -100
     addPositionX: 100000
   endUpon: 
   sprite: s32'null', 10
@@ -4059,7 +4059,7 @@ beginState: s32'abl_407_Beam'
   hit: 
   sprite: s32'abl407_Beam_Player', 2
   setAngleSpeed: 4400
-  Unknown168: 110
+  angleSpeedPercent: 110
   sprite: s32'abl407_Beam_Player', 3
   if: Mem(ActReg7)
     createObject: s32'abl_407_Beam_Add', (PLAYER)
@@ -4191,11 +4191,11 @@ beginState: s32'abl_407_BeamEffSlide'
   sprite: s32'null', 11
   Unknown409: 40, 1
   setAngleSpeed: 4400
-  Unknown168: 105
+  angleSpeedPercent: 105
   beginLabel: s32'End'
   sprite: s32'null', 10
   setAngleSpeed: 0
-  Unknown168: 100
+  angleSpeedPercent: 100
   sendSignalToAction: s32'abl_407_BeamLoot', 23
   linkObjectPosition: 0
   stopLinkObject: 0
@@ -4506,7 +4506,7 @@ beginState: s32'abl_408_FirePillar_GroundEff'
     setLinkObjectDestroyOnDamage: 3
     linkObjectZ: 2
     linkParticle: s32'abl_408_GroundShock'
-    Unknown194: -150, 150
+    randomAddObjectSize: -150, 150
   endUpon: 
   sprite: s32'null', 30
 endState: 
@@ -4825,7 +4825,7 @@ beginState: s32'abl_430_AssultEff'
     stopLinkObject: 2
     linkObjectPosition: 2
     linkParticle: s32'abl_430_Asslut'
-    Unknown289: 60
+    setMaxActionTime: 60
     addPositionX: 194997
     addPositionY: 268132
     Unknown1727: -43369
@@ -5010,10 +5010,10 @@ beginState: s32'abl_432_JumpEff'
   sprite: s32'null', 60
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 614877
-  addPositionY: 621705
-  Unknown1727: -156511
-  setAngle: 1400
+    addPositionX: 614877
+    addPositionY: 621705
+    Unknown1727: -156511
+    setAngle: 1400
   endRunOnObject: 
 endState: 
 
@@ -5055,103 +5055,103 @@ beginState: s32'abl_432_TrailMatome'
   sprite: s32'null', 20
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 45000
+    setAngle: 45000
   endRunOnObject: 
   sprite: s32'null', 20
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: -45000
+    setAngle: -45000
   endRunOnObject: 
   sprite: s32'null', 15
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: -13000
+    setAngle: -13000
   endRunOnObject: 
   sprite: s32'null', 15
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 95000
+    setAngle: 95000
   endRunOnObject: 
   sprite: s32'null', 7
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 12500
+    setAngle: 12500
   endRunOnObject: 
   sprite: s32'null', 7
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 45000
+    setAngle: 45000
   endRunOnObject: 
   sprite: s32'null', 7
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: -45000
+    setAngle: -45000
   endRunOnObject: 
   sprite: s32'null', 7
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: -13000
+    setAngle: -13000
   endRunOnObject: 
   sprite: s32'null', 5
   createObject: s32'abl_432_Trail', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 95000
+    setAngle: 95000
   endRunOnObject: 
   sprite: s32'null', 5
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 12500
+    setAngle: 12500
   endRunOnObject: 
   sprite: s32'null', 5
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: -12500
+    setAngle: -12500
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: -25000
+    setAngle: -25000
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 25000
+    setAngle: 25000
   endRunOnObject: 
   sprite: s32'null', 4
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 64800
+    setAngle: 64800
   endRunOnObject: 
   sprite: s32'null', 1
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 358200
+    setAngle: 358200
   endRunOnObject: 
   sprite: s32'null', 1
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 295400
+    setAngle: 295400
   endRunOnObject: 
   sprite: s32'null', 1
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 95000
+    setAngle: 95000
   endRunOnObject: 
   createObject: s32'abl_432_Wipe', (PLAYER)
   sprite: s32'null', 1
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 12500
+    setAngle: 12500
   endRunOnObject: 
   sprite: s32'null', 1
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: 45000
+    setAngle: 45000
   endRunOnObject: 
   sprite: s32'null', 30
   createObject: s32'abl_432_Trail3', (PLAYER)
   runOnObject: (PREVIOUS)
-  setAngle: -45000
+    setAngle: -45000
   endRunOnObject: 
   sprite: s32'null', 60
 endState: 
@@ -5199,39 +5199,39 @@ beginState: s32'ABL_431CS'
       ifOnFrame: Val(91)
         createObject: s32'ABL_431CS_Spark', (PLAYER)
         runOnObject: (PREVIOUS)
-        setPositionX: -117958
-        setPositionY: 512876
-        setDepth: 414899
-        setAngleX: 327200
-        setAngleY: 132400
-        setAngle: 351200
+          setPositionX: -117958
+          setPositionY: 512876
+          setDepth: 414899
+          setAngleX: 327200
+          setAngleY: 132400
+          setAngle: 351200
         endRunOnObject: 
         createObject: s32'ABL_431CS_Spark', (PLAYER)
         runOnObject: (PREVIOUS)
-        setPositionX: 111960
-        setPositionY: 481565
-        setDepth: 414644
-        setAngleX: 187200
-        setAngleY: 65600
-        setAngle: 1600
+          setPositionX: 111960
+          setPositionY: 481565
+          setDepth: 414644
+          setAngleX: 187200
+          setAngleY: 65600
+          setAngle: 1600
         endRunOnObject: 
         createObject: s32'ABL_431CS_Spark', (PLAYER)
         runOnObject: (PREVIOUS)
-        setAngleX: 327200
-        setAngleY: 121600
-        setAngle: 317600
-        setPositionX: -86977
-        setPositionY: 329264
-        setDepth: 471690
+          setAngleX: 327200
+          setAngleY: 121600
+          setAngle: 317600
+          setPositionX: -86977
+          setPositionY: 329264
+          setDepth: 471690
         endRunOnObject: 
         createObject: s32'ABL_431CS_Spark', (PLAYER)
         runOnObject: (PREVIOUS)
-        setPositionX: 56983
-        setPositionY: 312830
-        setDepth: 524171
-        setAngleX: 347200
-        setAngleY: 67600
-        setAngle: 315200
+          setPositionX: 56983
+          setPositionY: 312830
+          setDepth: 524171
+          setAngleX: 347200
+          setAngleY: 67600
+          setAngle: 315200
         endRunOnObject: 
       endIf: 
       ifOnFrame: Val(139)
@@ -5260,32 +5260,32 @@ beginState: s32'ABL_430_ShockRing_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-      Unknown2587: 1600938593, s32'PP_RadialBlur'
+      Unknown2587: s32'abl_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 20
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 1
   Unknown2588: s32'abl_PP_RadialBlur', 1, 100
   Unknown2590: s32'abl_PP_RadialBlur', 1, -5
   sprite: s32'null', 1
   Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'ABL_430_ShockRing_Blur2'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-      Unknown2587: 1600938593, s32'PP_RadialBlur'
+      Unknown2587: s32'abl_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 1
   Unknown2588: s32'abl_PP_RadialBlur', 1, 100
   Unknown2590: s32'abl_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'ABL_431CS_Thunder'
@@ -5572,11 +5572,11 @@ beginState: s32'abl_432_cs_OverRay'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'abl_MI_PP_432_OverRay', 1, 0
-      Unknown2587: 1600938593, s32'MI_PP_432_OverRay'
+      Unknown2587: s32'abl_MI_PP_432_OverRay', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1600938593, s32'MI_PP_432_OverRay'
+  Unknown2587: s32'abl_MI_PP_432_OverRay', 1
   Unknown2588: s32'abl_MI_PP_432_OverRay', 1, 10
   sprite: s32'null', 4
   Unknown2588: s32'abl_MI_PP_432_OverRay', 1, 100
@@ -5591,7 +5591,7 @@ beginState: s32'abl_432_cs_OverRay'
   sprite: s32'null', 2
   Unknown2588: s32'abl_MI_PP_432_OverRay', 1, 50
   sprite: s32'null', 1
-  Unknown2587: 1600938593, s32'MI_PP_432_OverRay'
+  Unknown2587: s32'abl_MI_PP_432_OverRay', 0
 endState: 
 
 beginState: s32'abl_432_SwordSmoke1'
@@ -5717,31 +5717,31 @@ beginState: s32'ABL_432_MB'
     upon: (BEFORE_EXIT)
       if: Mem(Dir)
         Unknown2590: s32'abl_MI_PP_432MB_R', 1, 0
-        Unknown2587: 1600938593, s32'MI_PP_432MB_R'
+        Unknown2587: s32'abl_MI_PP_432MB_R', 0
       endIf: 
       else: 
         Unknown2590: s32'abl_MI_PP_432MB', 1, 0
-        Unknown2587: 1600938593, s32'MI_PP_432MB'
+        Unknown2587: s32'abl_MI_PP_432MB', 0
       endElse: 
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
   if: Mem(Dir)
-    Unknown2587: 1600938593, s32'MI_PP_432MB_R'
+    Unknown2587: s32'abl_MI_PP_432MB_R', 1
     Unknown2588: s32'abl_MI_PP_432MB_R', 1, 100
   endIf: 
   else: 
-    Unknown2587: 1600938593, s32'MI_PP_432MB'
+    Unknown2587: s32'abl_MI_PP_432MB', 1
     Unknown2588: s32'abl_MI_PP_432MB', 1, 100
   endElse: 
   sprite: s32'null', 1
   if: Mem(Dir)
     Unknown2590: s32'abl_MI_PP_432MB_R', 1, 0
-    Unknown2587: 1600938593, s32'MI_PP_432MB_R'
+    Unknown2587: s32'abl_MI_PP_432MB_R', 0
   endIf: 
   else: 
     Unknown2590: s32'abl_MI_PP_432MB', 1, 0
-    Unknown2587: 1600938593, s32'MI_PP_432MB'
+    Unknown2587: s32'abl_MI_PP_432MB', 0
   endElse: 
 endState: 
 
@@ -5937,26 +5937,26 @@ beginState: s32'abl_440_GroundCrack'
   cameraShake: s32'ShakeTate', 5000, 0, 30, 30
   createObject: s32'abl_440_Burst', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 414917
+    addPositionX: 414917
   endRunOnObject: 
   privateSE: s32'abl_24_2'
   createObject: s32'abl_440_Burst', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 160000
-  setObjectSize: 400
+    addPositionX: 160000
+    setObjectSize: 400
   endRunOnObject: 
   sprite: s32'null', 2
   createObject: s32'abl_440_Burst', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 829834
-  setObjectSize: 800
+    addPositionX: 829834
+    setObjectSize: 800
   endRunOnObject: 
   sprite: s32'null', 5
   createObject: s32'abl_440_Burst', (PLAYER)
   runOnObject: (PREVIOUS)
-  addPositionX: 1050000
-  setObjectSize: 600
-  addPositionX: 70000
+    addPositionX: 1050000
+    setObjectSize: 600
+    addPositionX: 70000
   endRunOnObject: 
   stopLinkObject: 2
   privateSE: s32'abl_24_2'
@@ -6092,14 +6092,14 @@ beginState: s32'abl_440_cs_EyeRay'
   sprite: s32'null', 4
   setObjectWidth: 250
   setObjectHeight: 250
-  Unknown180: 250
+  setObjectDepth: 250
   setPositionX: 54252
   setPositionY: 395776
   setDepth: -2350
   sprite: s32'null', 4
   setObjectWidth: 1000
   setObjectHeight: 1000
-  Unknown180: 1000
+  setObjectDepth: 1000
   setPositionX: 55710
   setPositionY: 415171
   setDepth: -6961
@@ -6218,7 +6218,7 @@ beginState: s32'ABL_440_cs_SpeedLine'
   setAngle: 354600
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   sprite: s32'null', 4
   sprite: s32'null', 4
   sprite: s32'null', 4
@@ -6268,15 +6268,15 @@ beginState: s32'ABL_440_Blur'
     setLinkObjectDestroyOnDamage: 3
     upon: (BEFORE_EXIT)
       Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-      Unknown2587: 1600938593, s32'PP_RadialBlur'
+      Unknown2587: s32'abl_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 4
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 1
   Unknown2588: s32'abl_PP_RadialBlur', 1, 100
   sprite: s32'null', 1
   Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'ABL_441CS_BG'
@@ -6465,7 +6465,7 @@ beginState: s32'abl_441_Laser'
   setAngle: 322000
   setObjectWidth: 2500
   setObjectHeight: 2000
-  Unknown180: 2000
+  setObjectDepth: 2000
   sprite: s32'null', 4
   sprite: s32'null', 4
   setPositionX: -2219222
@@ -6477,7 +6477,7 @@ beginState: s32'abl_441_Laser'
   sprite: s32'null', 100
   setObjectWidth: 4000
   setObjectHeight: 2500
-  Unknown180: 2500
+  setObjectDepth: 2500
   setPositionX: -2846905
   setPositionY: 671161
   setDepth: -59292
@@ -6497,7 +6497,7 @@ beginState: s32'abl_441_Laser2'
   sprite: s32'null', 300
   setObjectWidth: 4000
   setObjectHeight: 2500
-  Unknown180: 2500
+  setObjectDepth: 2500
   setPositionX: -2846905
   setPositionY: 671161
   setDepth: -59292
@@ -6510,17 +6510,17 @@ beginState: s32'ABL_441_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-      Unknown2587: 1600938593, s32'PP_RadialBlur'
+      Unknown2587: s32'abl_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 1
   Unknown2588: s32'abl_PP_RadialBlur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'abl_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'ABL_441_BeamWhiteOut'
@@ -6562,7 +6562,7 @@ beginState: s32'ABL_441_Mcicle'
     setDepth: -2227609
     setObjectWidth: 10000
     setObjectHeight: 10000
-    Unknown180: 10000
+    setObjectDepth: 10000
     setAngleX: 350000
     setAngleY: 1200
     setAngle: 15200
@@ -6592,7 +6592,7 @@ beginState: s32'ABL_441_Mcicle2'
     Unknown1727: 163554
     setObjectWidth: 1500
     setObjectHeight: 1500
-    Unknown180: 1500
+    setObjectDepth: 1500
     setAngleX: 327600
     setAngleY: 73200
     setAngle: 175200
@@ -6642,7 +6642,7 @@ beginState: s32'ABL_441_FinalBom'
   createObject: s32'ABL_441_Blur', (PLAYER)
   sprite: s32'null', 100
   setObjectSize: 400
-  Unknown191: 2
+  setObjectSizeScaleSpeed: 2
 endState: 
 
 beginState: s32'ABL_441_GroundBurst'
@@ -6659,7 +6659,7 @@ beginState: s32'ABL_441_GroundBurst'
     setAngle: 357200
     setObjectWidth: 2000
     setObjectHeight: 2000
-    Unknown180: 2000
+    setObjectDepth: 2000
   endUpon: 
   sprite: s32'null', 300
   linkParticle: s32'abl_441_groundBurst'
@@ -6741,7 +6741,7 @@ beginState: s32'ABL_441_SkyFlash'
     linkObjectPosition: 2
     setObjectWidth: 3000
     setObjectHeight: 3000
-    Unknown180: 3000
+    setObjectDepth: 3000
     addPositionX: 3344569
     addPositionY: 3366237
     Unknown1727: 309681
@@ -6973,17 +6973,17 @@ beginState: s32'ABL_442_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-      Unknown2587: 1600938593, s32'PP_RadialBlur'
+      Unknown2587: s32'abl_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 8
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 1
   Unknown2588: s32'abl_PP_RadialBlur', 1, 100
   sprite: s32'null', 10
   Unknown2590: s32'abl_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'ABL_442_GroundBurst'
@@ -7021,7 +7021,7 @@ beginState: s32'abl_443_cs_HandAura1'
   setAngle: 342800
   setObjectWidth: 300
   setObjectHeight: 300
-  Unknown180: 300
+  setObjectDepth: 300
   linkParticle: s32'abl_443_HandAura1'
   sprite: s32'null', 4
   sprite: s32'null', 4
@@ -7062,7 +7062,7 @@ beginState: s32'abl_443_cs_HandAura2'
   setDepth: 448606
   setObjectWidth: 180
   setObjectHeight: 240
-  Unknown180: 200
+  setObjectDepth: 200
   setAngleX: 332800
   setAngleY: 142000
   linkParticle: s32'abl_443_HandAura2'
@@ -7153,7 +7153,7 @@ beginState: s32'abl_443_cs_BodyAura1'
   linkParticle: s32'abl_443_BodyAura1'
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setPositionX: -114975
   setPositionY: 195662
   setDepth: 200439
@@ -7216,7 +7216,7 @@ beginState: s32'abl_443_cs_BodyAura1_sub'
   linkParticle: s32'abl_443_BodyAura1_sub'
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setPositionX: -1469
   setPositionY: 185653
   setDepth: 426584
@@ -7261,7 +7261,7 @@ beginState: s32'abl_443_cs_vignette'
     setDepth: 363368
     setObjectWidth: 500
     setObjectHeight: 500
-    Unknown180: 500
+    setObjectDepth: 500
     setAngleX: 6000
     setAngleY: 330800
     setAngle: 5600
@@ -7284,7 +7284,7 @@ beginState: s32'abl_443_cs_Thunder'
     setAngle: 351200
     setObjectWidth: 100
     setObjectHeight: 100
-    Unknown180: 100
+    setObjectDepth: 100
   endUpon: 
   sprite: s32'null', 10
   sprite: s32'null', 2
@@ -7705,7 +7705,7 @@ beginState: s32'abl_444_Sword016'
     setDepth: -1064462
     setObjectWidth: 1500
     setObjectHeight: 1500
-    Unknown180: 1500
+    setObjectDepth: 1500
     setAngleX: 37600
     setAngleY: 248400
     setAngle: 225600
@@ -7727,7 +7727,7 @@ beginState: s32'abl_444_Sword017'
     setDepth: -2089940
     setObjectWidth: 1500
     setObjectHeight: 1500
-    Unknown180: 1500
+    setObjectDepth: 1500
     setAngleX: 286400
     setAngleY: 338000
     setAngle: 180800
@@ -7813,16 +7813,16 @@ beginState: s32'ABL_444_SphereBreak_Blur'
   upon: (IMMEDIATE)
     upon: (BEFORE_EXIT)
       Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-      Unknown2587: 1600938593, s32'PP_RadialBlur'
+      Unknown2587: s32'abl_PP_RadialBlur', 0
     endUpon: 
   endUpon: 
   sprite: s32'null', 10
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 1
   Unknown2588: s32'abl_PP_RadialBlur', 1, 100
   Unknown2590: s32'abl_PP_RadialBlur', 1, -10
   sprite: s32'null', 1
   Unknown2590: s32'abl_PP_RadialBlur', 1, 0
-  Unknown2587: 1600938593, s32'PP_RadialBlur'
+  Unknown2587: s32'abl_PP_RadialBlur', 0
 endState: 
 
 beginState: s32'abl_600_wingSpawnEffA'
@@ -7837,7 +7837,7 @@ beginState: s32'abl_600_wingSpawnEffA'
     setAngle: 322400
     setObjectSize: 2000
     linkParticle: s32'abl_600_WingSpawn'
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 30
   Unknown2268: 0, 2000
@@ -7857,7 +7857,7 @@ beginState: s32'abl_600_wingSpawnEffB'
     setAngleY: 400
     setAngle: 354400
     setObjectSize: 2000
-    Unknown289: 30
+    setMaxActionTime: 30
   endUpon: 
   sprite: s32'null', 30
   Unknown2268: 0, 2000
@@ -7881,7 +7881,7 @@ beginState: s32'abl_RoundWin_Camera'
   Unknown2873: 3000, 100, 5000, 5000, 0, 10
   Unknown374: 0
   runOnObject: (ENEMY)
-  Unknown374: 0
+    Unknown374: 0
   endRunOnObject: 
   linkParticle: s32'cmn_Binet'
   setColor: -402653184
@@ -8083,7 +8083,7 @@ beginState: s32'abl_700_cs_Screwanim'
     setAngle: 40400
     setObjectWidth: 150
     setObjectHeight: 150
-    Unknown180: 150
+    setObjectDepth: 150
   endUpon: 
   sprite: s32'null', 55
   linkParticle: s32'abl_700_cs_Screwanim'
@@ -8119,7 +8119,7 @@ beginState: s32'abl_700_cs_Burst2'
   setDepth: 665
   setObjectWidth: 500
   setObjectHeight: 500
-  Unknown180: 500
+  setObjectDepth: 500
   setAngleX: 359600
   setAngleY: 125200
 endState: 
@@ -8133,7 +8133,7 @@ beginState: s32'abl_700_cs_2p_Orb1'
     setDepth: 3662
     setObjectWidth: 900
     setObjectHeight: 900
-    Unknown180: 900
+    setObjectDepth: 900
   endUpon: 
   sprite: s32'null', 144
   linkParticle: s32'abl_700_VersusCore'
@@ -8148,7 +8148,7 @@ beginState: s32'abl_700_cs_2p_Orb2'
     setDepth: 283535
     setObjectWidth: 300
     setObjectHeight: 300
-    Unknown180: 300
+    setObjectDepth: 300
     setAngleY: 90000
     upon: 23
       gotoLabelRequests: s32'End'
@@ -8200,7 +8200,7 @@ beginState: s32'abl_700_cs_2p_Burst'
   linkParticle: s32'abl_700_Aura2p'
   setObjectWidth: 800
   setObjectHeight: 800
-  Unknown180: 800
+  setObjectDepth: 800
   setPositionX: 1142594
   setPositionY: 15800
   setDepth: 356880
@@ -8215,36 +8215,36 @@ beginState: s32'abl_700_cs_2p_Burst'
   setDepth: 296704
   createObject: s32'abl_700_cs_2p_Thunder', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -319834
-  setPositionY: 11538
-  setDepth: -28817
-  setAngleX: 8000
-  setAngleY: 35200
-  setAngle: 58000
+    setPositionX: -319834
+    setPositionY: 11538
+    setDepth: -28817
+    setAngleX: 8000
+    setAngleY: 35200
+    setAngle: 58000
   endRunOnObject: 
   createObject: s32'abl_700_cs_2p_Thunder', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -319301
-  setPositionY: 11538
-  setDepth: 182120
-  setAngleX: 8000
-  setAngleY: 354400
-  setAngle: 56000
+    setPositionX: -319301
+    setPositionY: 11538
+    setDepth: 182120
+    setAngleX: 8000
+    setAngleY: 354400
+    setAngle: 56000
   endRunOnObject: 
   createObject: s32'abl_700_cs_2p_GroundBurst', (PLAYER)
   runOnObject: (PREVIOUS)
-  setPositionX: -260648
-  setPositionY: -1126
-  setDepth: -165067
-  setAngleY: 92000
+    setPositionX: -260648
+    setPositionY: -1126
+    setDepth: -165067
+    setAngleY: 92000
   endRunOnObject: 
   createObject: s32'abl_700_cs_2p_GroundBurst', (PLAYER)
   runOnObject: (PREVIOUS)
-  flipDirection: 
-  setPositionX: 271921
-  setPositionY: 468
-  setDepth: 255274
-  setAngleY: 274000
+    flipDirection: 
+    setPositionX: 271921
+    setPositionY: 468
+    setDepth: 255274
+    setAngleY: 274000
   endRunOnObject: 
 endState: 
 
@@ -8282,7 +8282,7 @@ beginState: s32'abl_700_cs_2p_Screwanim'
     setAngle: 266000
     setObjectWidth: 150
     setObjectHeight: 150
-    Unknown180: 150
+    setObjectDepth: 150
   endUpon: 
   sprite: s32'null', 55
   linkParticle: s32'abl_700_cs_Screwanim'
@@ -8374,7 +8374,7 @@ beginState: s32'abl_800_cs_Burst'
     setLinkObjectDestroyOnDamage: 3
     setObjectWidth: 100
     setObjectHeight: 100
-    Unknown180: 100
+    setObjectDepth: 100
     setPositionX: 10010
     setPositionY: 504667
     setDepth: 250226
@@ -8395,7 +8395,7 @@ beginState: s32'abl_445_Thunder'
   sprite: s32'null', 45
   setObjectWidth: 400
   setObjectHeight: 400
-  Unknown180: 400
+  setObjectDepth: 400
   setPositionX: 4036
   setPositionY: 253252
   setDepth: 453077
@@ -8418,7 +8418,7 @@ beginState: s32'abl_445_Ray'
   setAngleY: 124000
   setObjectWidth: 100
   setObjectHeight: 100
-  Unknown180: 100
+  setObjectDepth: 100
   sprite: s32'null', 4
   setPositionX: 111769
   setPositionY: 325457
@@ -8446,7 +8446,7 @@ beginState: s32'abl_445_Ray'
   setDepth: 505469
   setObjectWidth: 100
   setObjectHeight: 100
-  Unknown180: 100
+  setObjectDepth: 100
   setAngleY: 133200
   sprite: s32'null', 4
   setPositionX: 63533
