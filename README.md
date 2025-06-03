@@ -26,6 +26,7 @@ Character ID's:
 - NIE = Nier
 - NRM = Narmaya
 - PER = Percival
+- RNT = Galleon (Season 2 DLC)
 - SAN = Sandalphon (Season 2 DLC)
 - SIS = Seox
 - SRZ = Soriz
@@ -39,3 +40,7 @@ Character ID's:
 - YUE = Yuel
 - ZET = Zeta
 - ZOO = Zooey
+
+Technical IDs:
+- CMN = Common
+- EGN = Engine
