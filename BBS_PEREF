@@ -1174,7 +1174,7 @@ beginState: s32'per_401_SpecialShot_D_TM'
     wallPushbackOnHit: 0, 900
     hitEffectIce: 1
     damageEffect: 2, s32'PER_SPHitEff'
-    enemyHitstopAddition: 12, 12, 12
+    enemyHitstopAddition: 8, 12, 12
     Unknown1961: 1
     upon: (HIT_OR_GUARD)
       clearUpon: 45
@@ -1265,12 +1265,27 @@ beginState: s32'per_401_SpecialShot_D_TM'
       endIf: 
     endElse: 
   endUpon: 
-  sprite: s32'SpecialShot_D', 6
+  sprite: s32'SpecialShot_D', 1
   hit: 
   privateSE: s32'per_05'
   privateSE: s32'per_03'
   Unknown2212: 1
-  sprite: s32'SpecialShot_D2', 3
+  sprite: s32'SpecialShot_D', 1
+  enemyHitstopAddition: 7, 12, 12
+  sprite: s32'SpecialShot_D', 1
+  enemyHitstopAddition: 6, 12, 12
+  sprite: s32'SpecialShot_D', 1
+  enemyHitstopAddition: 5, 12, 12
+  sprite: s32'SpecialShot_D', 1
+  enemyHitstopAddition: 4, 12, 12
+  sprite: s32'SpecialShot_D', 1
+  enemyHitstopAddition: 3, 12, 12
+  sprite: s32'SpecialShot_D2', 1
+  enemyHitstopAddition: 2, 12, 12
+  sprite: s32'SpecialShot_D2', 1
+  enemyHitstopAddition: 1, 12, 12
+  sprite: s32'SpecialShot_D2', 1
+  enemyHitstopAddition: 0, 12, 12
   sprite: s32'SpecialShot_D3', 11
   hit: 
   Unknown1961: 0
@@ -4495,6 +4510,29 @@ beginState: s32'per800_SordRay'
   setAngleX: 212000
   setAngleY: 143600
   setAngle: 3600
+endState: 
+
+beginState: s32'per_ComboHosei'
+  upon: (IMMEDIATE)
+    ignoreSuperFreezeFromAlly: 1
+    normalAttack: 
+    Unknown478: 3
+    damage: 0
+    tensionGainOnConnect: 0
+    armorBreak: 1
+    comboLimitScaling: 0
+    prorationTadan: 1
+    attackThroughArmor: 1
+    onlyHitPlayer: 1
+    displayHitSparks: 1
+    doubleSlashEffectBugFix: 1
+    whiffIfCombo: 1
+    dontAddComboCount: 1
+  endUpon: 
+  sprite: s32'null', 2
+  grabOrRelease: 
+  sprite: s32'null', 2
+  grabOrRelease: 
 endState: 
 
 beginState: s32'DUMMYDUMMY'

@@ -3406,7 +3406,7 @@ beginState: s32'ABL_400_Rocks'
     guardEffectEconomy: 1
     damageEffect: 4, s32'cmn_hit_s'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-      damage: 800
+      damage: 900
       wallPushback: 0, 2100
     endIf: 
     clearUpon: 126
@@ -3458,7 +3458,8 @@ beginState: s32'ABL_400_Rocks'
   endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg7), Val(5)
     storeValue: Mem(ObjReg0), Val(0)
-    hitAirPushbackY: 18000
+    hitAirPushbackY: 19000
+    groundHitEffect: (AIR_FACE_UP)
     guardEffectEconomy: 0
     Unknown1793: 3, 24
   endIf: 
@@ -3479,7 +3480,7 @@ upon: (HIT_OR_GUARD)
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
     modifyVar: (ADD), Mem(ActReg1), Val(1)
     ifOperation: (IS_EQUAL), Mem(ActReg1), Val(2)
-      damage: 100
+      damage: 150
       ifNot: Mem(ObjReg3)
         wallPushback: 0, 1200
       endIf: 

@@ -1897,7 +1897,8 @@ beginState: s32'vir_409_Suv'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
       damage: 500
       groundHitEffect: (WALL_STICK)
-      hitstunAmount: 41
+      crouchHitstunAddition: 0
+      hitstunAmount: 42
       enemyHitstopAddition: 3, 3, 3
       hitAirPushbackY: 17000
       wallPushback: 0, 1050
@@ -1972,29 +1973,31 @@ beginState: s32'vir_409_Suv'
     endUpon: 
     addMoveForceDisableFlag: 1
     upon: (BEFORE_EXIT)
-      ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        Unknown1921: 2, 20
-      endIf: 
-      ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        Unknown1921: 2, 20
-      endIf: 
-      ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        Unknown1921: 2, 420
-        if: Mem(ActReg3)
-          Unknown1921: 2, 390
+      if: Mem(289)
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+          Unknown1921: 2, 20
         endIf: 
-      endIf: 
-      ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-        if: Mem(417)
-          modifyVar2: (ADD), Val(180), Mem(289)
-          storeValue: Mem(289), Mem(Tmp)
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+          Unknown1921: 2, 20
         endIf: 
-        else: 
-          Unknown1921: 2, 180
-        endElse: 
-        sendSignalToAction: s32'SpecialChevalier_D', 32
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+          Unknown1921: 2, 420
+          if: Mem(ActReg3)
+            Unknown1921: 2, 390
+          endIf: 
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+          if: Mem(417)
+            modifyVar2: (ADD), Val(180), Mem(289)
+            storeValue: Mem(289), Mem(Tmp)
+          endIf: 
+          else: 
+            Unknown1921: 2, 180
+          endElse: 
+          sendSignalToAction: s32'SpecialChevalier_D', 32
+        endIf: 
+        Unknown1923: 2
       endIf: 
-      Unknown1923: 2
     endUpon: 
     addMoveForceDisableFlag: 1
   endUpon: 

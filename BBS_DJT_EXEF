@@ -480,6 +480,37 @@ beginState: s32'DJT_208_strike_Lv4'
   Unknown1727: -30765
 endState: 
 
+beginState: s32'djt451_SuikomiObj'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 3
+    setLinkObjectDestroyOnStateChange: 2
+    linkObjectPosition: 2
+    addPositionX: 150000
+    addPositionY: 200000
+    Unknown2246: 350000, 100
+    upon: (FRAME_STEP)
+      isObjectActive: (ENEMY)
+      if: Mem(Tmp)
+        Unknown308: 22, 2, 24
+        Unknown2247: 0, 0, 100
+        runOnObject: (ENEMY)
+          Unknown2253: 0
+        endRunOnObject: 
+      endIf: 
+      else: 
+        storeValue: Mem(Tmp), Val(0)
+        deactivateObjectById: (SELF)
+      endElse: 
+    endIf: 
+  endUpon: 
+  upon: (BEFORE_EXIT)
+    Unknown2246: 0, 0
+    Unknown2247: 0, 0, 0
+  endUpon: 
+endUpon: 
+
+sprite: s32'null', 10
+endState: 
 beginState: s32'DJT_LvUpEff_Lv0'
   upon: (IMMEDIATE)
     linkObjectZ: 3
@@ -1004,12 +1035,14 @@ beginState: s32'400Eff_aura'
     linkObjectPosition: 2
     stopLinkObject: 2
     setLinkObjectDestroyOnStateChange: 2
+    gotoLabelUpon: 32, s32'End'
   endUpon: 
-  sprite: s32'null', 10
+  sprite: s32'null', 60
   linkParticle: s32'djt_400_charge'
   setPositionX: 69986
   setPositionY: 224567
   setDepth: 63735
+  beginLabel: s32'End'
   sprite: s32'null', 3
   linkParticle: s32'djt_400_charge2'
   setPositionX: 59988
@@ -1097,7 +1130,7 @@ beginState: s32'djt401_nokosiEffD'
     setLinkObjectDestroyOnStateChange: 2
     setMaxActionTime: 200
   endUpon: 
-  sprite: s32'null', 8
+  sprite: s32'null', 2
   beginLabel: s32'loop'
   sprite: s32'null', 12
   if: Mem(405)
@@ -1164,7 +1197,7 @@ endState:
 
 beginState: s32'Charge_SpecialShot_EndEx'
   upon: (IMMEDIATE)
-    setObjectSize: 1300
+    setObjectSize: 1000
     linkParticle: s32'djt_401_LShotExEnd'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
   endUpon: 
@@ -1300,6 +1333,253 @@ beginState: s32'SpecialShot'
   endIf: 
 endState: 
 
+beginSubroutine: s32'ExShot_Init'
+  callSubroutine: s32'cmnSpecialShot_AtkInit'
+  hitAirPushbackX: 18000
+  damageEffect: 2, s32'DJT_SPHitEff3'
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+    physicsXImpulse: 20000
+    checkCurrentStateName: (SELF), s32'Charge_SpecialShotEx'
+    if: Mem(Tmp)
+      addValToDamage: 0, 100
+      groundHitEffect: (AIR_FACE_UP)
+      hitAirPushbackX: 13000
+      hitAirPushbackY: 22000
+      untechAmount: 30
+      counterHitWallBounceCount: 1
+      wallBounceInCornerOnly: 1
+      wallBounceXVelocityPercent: 10
+      blockstunAmount: 18
+      hitstop: 12
+    endIf: 
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+    physicsXImpulse: 29000
+    checkCurrentStateName: (SELF), s32'Charge_SpecialShotEx'
+    if: Mem(Tmp)
+      addValToDamage: 0, 100
+      groundHitEffect: (AIR_FACE_UP)
+      hitAirPushbackX: 13000
+      hitAirPushbackY: 22000
+      untechAmount: 30
+      counterHitWallBounceCount: 1
+      wallBounceInCornerOnly: 1
+      wallBounceXVelocityPercent: 10
+      blockstunAmount: 18
+      hitstop: 12
+    endIf: 
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+    hitAirPushbackX: 13000
+    hitAirPushbackY: 16000
+    upon: 8
+      ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
+        hitAirPushbackX: 13000
+        hitAirPushbackY: 20000
+        hitstop: 5
+        checkCurrentStateName: (SELF), s32'Charge_SpecialShotEx'
+        if: Mem(Tmp)
+          addValToDamage: 0, 100
+          groundHitEffect: (AIR_FACE_UP)
+          blockstunAmount: 20
+        endIf: 
+      endIf: 
+    endUpon: 
+    physicsXImpulse: 29000
+  endIf: 
+  initializeDestroy: 
+  numberOfHits: 1
+  destroyOnDamageCollision: 1
+  Unknown2207: 1
+  Unknown2208: 1
+  Unknown2209: 1
+  Unknown2210: 1
+  Unknown2257: 1
+  Unknown2212: 0
+  Unknown2213: 0
+  upon: 45
+    clearUpon: 37
+    clearUpon: 93
+    gotoLabelRequests: s32'Koware'
+  endUpon: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+    numberOfHits: 3
+  endIf: 
+  addMoveForceDisableFlag: 1
+  upon: (FRAME_STEP)
+    modifyVar: (ADD), Mem(ActReg1), Val(1)
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(81)
+      clearUpon: (FRAME_STEP)
+      clearUpon: 45
+      clearUpon: 37
+      attackOff: 
+      gotoLabelRequests: s32'Koware'
+    endIf: 
+  endUpon: 
+  upon: 37
+    modifyVar: (ADD), Mem(ActReg1), Val(-1)
+    gotoLabelRequests: s32'Sousai'
+  endUpon: 
+endSubroutine: 
+
+beginState: s32'SpecialShotEx'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'ExShot_Init'
+    createObject: s32'400Eff_atkmesh', (PLAYER)
+    createObject: s32'djt400_GroundRay', (PLAYER_LAND)
+  endUpon: 
+  sprite: s32'SpecialShot_1st', 1
+  hit: 
+  sprite: s32'SpecialShot_1st', 1
+  hit: 
+  beginLabel: s32'Sousai'
+  sprite: s32'SpecialShot_1st', 1
+  hit: 
+  beginLabel: s32'Loop'
+  sprite: s32'SpecialShot', 1
+  hit: 
+  gotoLabel: s32'Loop'
+  beginLabel: s32'Koware'
+  sprite: s32'null', 5
+  clearUpon: (FRAME_STEP)
+  clearUpon: 13
+  clearUpon: 45
+  recoveryState: 
+  haltMomentum: 1
+  createObjectWithArg: s32'koware_Dummy', (PLAYER)
+  Unknown2050: 0
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+    Unknown1921: 0, 20
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+    Unknown1921: 0, 20
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+    Unknown1921: 0, 420
+  endIf: 
+  Unknown1923: 0
+  if: Mem(386)
+    if: Mem(IsEnemysCutScene)
+      Unknown2347: s32'ShotDodge'
+    endIf: 
+  endIf: 
+endState: 
+
+beginState: s32'Charge_SpecialShotEx'
+  upon: (IMMEDIATE)
+    callSubroutine: s32'ExShot_Init'
+    Unknown2210: 0
+    ifOperation: (IS_NOT_EQUAL), Mem(ActReg6), Val(2)
+      upon: 93
+        clearUpon: 93
+        modifyVar: (ADD), Mem(ActReg1), Val(-1)
+        Unknown2210: 1
+        gotoLabelRequests: s32'Sousai'
+      endUpon: 
+    endIf: 
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+      pushbackXOnHit: 60
+      numberOfHits: 3
+      upon: 93
+        modifyVar: (ADD), Mem(ActReg1), Val(-1)
+        modifyVar: (ADD), Mem(ActReg2), Val(1)
+        ifOperation: (IS_EQUAL), Mem(ActReg2), Val(1)
+          numberOfHits: 2
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(ActReg2), Val(2)
+          numberOfHits: 1
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(ActReg2), Val(3)
+          clearUpon: 93
+          numberOfHits: 1
+          Unknown2210: 1
+          gotoLabelRequests: s32'Sousai'
+        endIf: 
+      endUpon: 
+    endIf: 
+    clearUpon: 37
+    upon: 37
+      modifyVar: (ADD), Mem(ActReg1), Val(-1)
+      gotoLabelRequests: s32'Loop_Hit'
+    endUpon: 
+    linkParticle: s32'djt_401_LShotLoop'
+    callSubroutine: s32'cmnWeaponLvMaxColorInit'
+    createObject: s32'djt401_nokosiEff', (PLAYER)
+    createObject: s32'djt400_GroundRay', (PLAYER_LAND)
+  endUpon: 
+  sprite: s32'Charge_Attack', 1
+  hit: 
+  sprite: s32'Charge_Attack', 1
+  hit: 
+  sprite: s32'Charge_Attack', 1
+  hit: 
+  beginLabel: s32'Loop'
+  sprite: s32'Charge_SpecialShot', 1
+  hit: 
+  gotoLabel: s32'Loop'
+  beginLabel: s32'Loop_Hit'
+  sprite: s32'Charge_SpecialShot_Hit', 1
+  hit: 
+  gotoLabel: s32'Loop'
+  beginLabel: s32'Sousai'
+  sprite: s32'SpecialShot_1st', 1
+  hit: 
+  linkParticle: s32'djt_400_atkmesh'
+  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+  hit: 
+  damage: 800
+  groundHitEffect: (NORMAL_UPPER)
+  untechAmount: 18
+  hitstunAmount: 18
+  blockstunAmount: 14
+  hitstop: 10
+  hitAirPushbackX: 18000
+  hitAirPushbackY: 17000
+  pushbackOnBlockX: 70
+  pushbackXOnHit: 125
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+    untechAmount: 60
+  endIf: 
+  haltMomentum: 1
+  physicsXImpulse: 5000
+  addAcceleration: 450
+  beginLabel: s32'Loop_Sousai'
+  sprite: s32'SpecialShot', 1
+  hit: 
+  gotoLabel: s32'Loop_Sousai'
+  beginLabel: s32'Koware'
+  sprite: s32'null', 5
+  clearUpon: (FRAME_STEP)
+  clearUpon: 13
+  clearUpon: 45
+  recoveryState: 
+  haltMomentum: 1
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+    Unknown1921: 0, 20
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+    Unknown1921: 0, 20
+  endIf: 
+  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+    Unknown1921: 0, 420
+  endIf: 
+  Unknown1923: 0
+  if: Mem(386)
+    if: Mem(IsEnemysCutScene)
+      Unknown2347: s32'ShotDodge'
+    endIf: 
+  endIf: 
+  sprite: s32'null', 5
+  Unknown2050: 0
+  createObject: s32'Charge_SpecialShot_End', (PLAYER)
+  sprite: s32'null', 5
+  deactivateObjectById: (SELF)
+endState: 
+
 beginState: s32'Charge_Attack'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnSpecialShot_AtkInit'
@@ -1393,95 +1673,27 @@ endState:
 beginState: s32'Charge_SpecialShot'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnSpecialShot_AtkInit'
-    untechAmount: 22
-    hitAirPushbackX: 15000
-    hitAirPushbackY: 20000
-    groundHitEffect: (AIR_LAUNCH)
-    airHitEffect: (AIR_LAUNCH)
-    counterHitWallBounceCount: 1
+    callSubroutine: s32'cmnSpecialAttackD_AtkInit'
+    groundHitEffect: (AIR_STRONG)
+    airHitEffect: (AIR_STRONG)
+    groundCounterHitEffect: (AIR_STRONG)
+    hitAirPushbackY: 15000
+    hitAirPushbackX: 32000
+    hitstop: 10
+    wallBounceCount: 1
     wallBounceInCornerOnly: 1
-    wallBounceXVelocityPercent: 10
-    wallPushback: 0, 500
-    damageEffect: 2, s32'DJT_SPHitEff3'
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-      missionName: s32'Charge_SpecialShot_A'
-      addValToDamage: 0, 100
-      physicsXImpulse: 24000
-    endIf: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-      missionName: s32'Charge_SpecialShot_B'
-      addValToDamage: 0, 100
-      physicsXImpulse: 10000
-      worldCollision: 1
-      velocityXPercentEachFrame: 95
-    endIf: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-      postSubroutineBegin: s32'Charge_Attack'
-      missionName: s32'Charge_SpecialShot_C'
-      callSubroutine: s32'cmnSpecialAttackC_AtkInit'
-      hitAirPushbackX: 4000
-      hitAirPushbackY: 10000
-      wallPushback: 0, 450
-      wallPushbackOnHit: 0, 216
-      physicsXImpulse: 18000
-      upon: 8
-        ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
-          damage: 500
-          hitAirPushbackX: 15000
-          hitAirPushbackY: 20000
-          wallBounceCount: 1
-        endIf: 
-        modifyVar: (ADD), Mem(ActReg1), Val(-10)
-      endUpon: 
-      upon: 90
-        gotoLabelRequests: s32'Loop_Hit'
-      endUpon: 
-      if: Mem(PlayerVal0)
-        storeValue: Mem(PlayerVal0), Val(0)
-        Unknown1131: 1
-        comboLimitScaling: 0
-      endIf: 
-    endIf: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-      missionName: s32'Charge_SpecialShot_D'
-      callSubroutine: s32'cmnSpecialAttackD_AtkInit'
-      damage: 600
-      groundHitEffect: (AIR_STRONG)
-      airHitEffect: (AIR_STRONG)
-      hitAirPushbackX: 40000
-      hitAirPushbackY: 16000
-      wallPushback: 0, 1200
-      hitstop: 6
-      enemyHitstopAddition: 8, 4, 4
-      counterHitWallBounceCount: 1
-      wallBounceInCornerOnly: 1
-      wallBounceXVelocityPercent: 30
-      Unknown1085: 1
-      worldCollision: 1
-      physicsXImpulse: 60000
-      velocityXPercentEachFrame: 85
-      upon: 8
-        addVelocityX: 5000
-        modifyVar: (ADD), Mem(ActReg1), Val(-2)
-        modifyVar: (ADD), Mem(ActReg7), Val(1)
-        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg7), Val(2)
-          damage: 700
-        endIf: 
-      endUpon: 
-      upon: (HIT)
-        storeValue: Mem(ActReg1), Val(10)
-      endUpon: 
-      upon: 99
-        enemyHitstopAddition: 8, 8, 8
-      endUpon: 
-    endIf: 
+    wallBounceXVelocityPercent: 0
+    atkCameraShake: s32'ShakeYoko', 1000, 0, 10, 0
+    missionName: s32'Charge_SpecialShot_D'
+    physicsXImpulse: 36000
+    velocityXPercentEachFrame: 102
     initializeDestroy: 
     numberOfHits: 1
     destroyOnDamageCollision: 1
     Unknown2207: 1
     Unknown2208: 1
     Unknown2209: 1
-    Unknown2210: 0
+    Unknown2210: 1
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
@@ -1493,174 +1705,24 @@ beginState: s32'Charge_SpecialShot'
     upon: 13
       Unknown2203: 23
     endUpon: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-      linkParticle: s32'djt_401_LShotLoop'
-      callSubroutine: s32'cmnWeaponLvMaxColorInit'
-      createObject: s32'djt401_nokosiEff', (PLAYER)
-      createObject: s32'djt400_GroundRay', (PLAYER_LAND)
-      upon: 93
-        clearUpon: 93
-        Unknown2210: 1
-        gotoLabelRequests: s32'Sousai'
-      endUpon: 
-    endIf: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-      setEventTrigger: 13, 15
-      linkParticle: s32'djt_401_LShotLoop'
-      callSubroutine: s32'cmnWeaponLvMaxColorInit'
-      createObject: s32'djt401_nokosiEff', (PLAYER)
-      createObject: s32'djt400_GroundRay', (PLAYER_LAND)
-      upon: 93
-        clearUpon: 93
-        Unknown2210: 1
-        clearUpon: 13
-        velocityXPercentEachFrame: 100
-        worldCollision: 0
-        gotoLabelRequests: s32'Sousai'
-        upon: (FRAME_STEP)
-          modifyVar: (ADD), Mem(ActReg1), Val(1)
-          ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(81)
-            clearUpon: (FRAME_STEP)
-            clearUpon: 45
-            clearUpon: 37
-            attackOff: 
-            gotoLabelRequests: s32'Koware'
-          endIf: 
-        endUpon: 
-      endUpon: 
-    endIf: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-      clearUpon: 13
-      linkParticle: s32'djt_401_LShotLoop'
-      callSubroutine: s32'cmnWeaponLvMaxColorInit'
-      createObject: s32'djt401_nokosiEff', (PLAYER)
-      createObject: s32'djt400_GroundRay', (PLAYER_LAND)
-      upon: (FRAME_STEP)
-        modifyVar: (ADD), Mem(ActReg1), Val(1)
-        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(81)
-          clearUpon: (FRAME_STEP)
-          clearUpon: 45
-          clearUpon: 37
-          attackOff: 
-          gotoLabelRequests: s32'Koware'
-        endIf: 
-      endUpon: 
-      numberOfHits: 3
-      upon: 93
-        modifyVar: (ADD), Mem(ActReg2), Val(1)
-        ifOperation: (IS_EQUAL), Mem(ActReg2), Val(1)
-          numberOfHits: 2
-        endIf: 
-        ifOperation: (IS_EQUAL), Mem(ActReg2), Val(2)
-          numberOfHits: 1
-        endIf: 
-        ifOperation: (IS_EQUAL), Mem(ActReg2), Val(3)
-          clearUpon: 93
-          numberOfHits: 1
-          Unknown2210: 1
-          gotoLabelRequests: s32'Sousai'
-        endIf: 
-      endUpon: 
-    endIf: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-      setObjectSize: 1300
-      initializeDestroy: 
-      numberOfHits: 3
-      destroyOnDamageCollision: 1
-      Unknown2210: 3
-      Unknown2257: 1
-      Unknown2212: 0
-      Unknown2213: 0
-      clearUpon: 93
-      linkParticle: s32'djt_401_LShotLoopEx'
-      callSubroutine: s32'cmnWeaponLvMaxColorInit'
-      createObject: s32'djt401_nokosiEffD', (PLAYER)
-      createObject: s32'djt400_GroundRayD', (PLAYER_LAND)
-      clearUpon: 13
-      upon: (FRAME_STEP)
-        modifyVar: (ADD), Mem(ActReg1), Val(1)
-        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(15)
-          clearUpon: (FRAME_STEP)
-          clearUpon: 45
-          clearUpon: 37
-          attackOff: 
-          gotoLabelRequests: s32'Koware'
-        endIf: 
-        ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
-          clearUpon: (FRAME_STEP)
-          clearUpon: 45
-          clearUpon: 37
-          attackOff: 
-          gotoLabelRequests: s32'Koware'
-        endIf: 
-      endUpon: 
-    endIf: 
+    setObjectSize: 1000
+    Unknown2294: 800
+    linkParticle: s32'djt_401_ShotLoopEx'
+    callSubroutine: s32'cmnWeaponLvMaxColorInit'
+    createObject: s32'djt401_nokosiEffD', (PLAYER)
+    createObject: s32'djt400_GroundRayD', (PLAYER_LAND)
     addMoveForceDisableFlag: 1
-    upon: 37
-      gotoLabelRequests: s32'Loop_Hit'
-    endUpon: 
   endUpon: 
-  sprite: s32'Charge_Attack', 1
+  sprite: s32'SpecialShot_1st', 1
   hit: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
-  sprite: s32'Charge_Attack', 1
+  sprite: s32'SpecialShot_1st', 1
   hit: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
-  sprite: s32'Charge_Attack', 1
+  sprite: s32'SpecialShot_1st', 1
   hit: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
   beginLabel: s32'Loop'
-  sprite: s32'Charge_SpecialShot', 1
-  hit: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
-  gotoLabel: s32'Loop'
-  beginLabel: s32'Loop_Hit'
-  sprite: s32'Charge_SpecialShot_Hit', 1
-  hit: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-    onSpriteChange: s32'Charge_SpecialShotD'
-  endIf: 
-  gotoLabel: s32'Loop'
-  beginLabel: s32'Sousai'
-  sprite: s32'SpecialShot', 1
-  linkParticle: s32'djt_400_atkmesh'
-  callSubroutine: s32'cmnWeaponLvMaxColorInit'
-  hit: 
-  damage: 800
-  groundHitEffect: (NORMAL_UPPER)
-  pushbackOnBlockX: 70
-  pushbackXOnHit: 125
-  untechAmount: 18
-  haltMomentum: 1
-  physicsXImpulse: 5000
-  addAcceleration: 450
-  beginLabel: s32'Loop_Sousai'
   sprite: s32'SpecialShot', 1
   hit: 
-  gotoLabel: s32'Loop_Sousai'
+  gotoLabel: s32'Loop'
   beginLabel: s32'Koware'
   sprite: s32'null', 5
   clearUpon: (FRAME_STEP)
@@ -1668,15 +1730,6 @@ beginState: s32'Charge_SpecialShot'
   clearUpon: 45
   recoveryState: 
   haltMomentum: 1
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    Unknown1921: 0, 20
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    Unknown1921: 0, 20
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    Unknown1921: 0, 420
-  endIf: 
   ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
     if: Mem(417)
       modifyVar2: (ADD), Val(180), Mem(287)
@@ -1685,7 +1738,6 @@ beginState: s32'Charge_SpecialShot'
     else: 
       Unknown1921: 0, 180
     endElse: 
-    sendSignalToAction: s32'SpecialShot_D', 32
   endIf: 
   Unknown1923: 0
   if: Mem(386)
@@ -2653,6 +2705,54 @@ beginState: s32'DJT_408_BuffAura'
   Unknown2268: 0, 600
   createParticleWithArg2: s32'djt_208_BuffAura', (PLAYER)
   gotoLabel: s32'Loop'
+endState: 
+
+beginState: s32'DJT_408_TEN01_Test'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+    linkObjectZ: 3
+    linkPawnWithAnimation: s32'tenseiki_nokosi', s32''
+    beginMeshSet: s32'tenseiki_nokosi'
+      addToMeshSet: s32'tenseiki_nokosi'
+    endMeshSet: 
+    swapMeshSet: s32'tenseiki_nokosi'
+    setObjectSize: 1800
+  endUpon: 
+  sprite: s32'ten409_07', 2
+  setPositionX: 74993
+  setPositionY: 133815
+  setDepth: 167985
+  setAngleX: 18000
+  setAngleY: 14000
+  setAngle: 100000
+  Unknown412: 100, 2, 10, 0
+  sprite: s32'ten409_07', 2
+  createObject: s32'DJT_408_TEN01_Slash', (PLAYER)
+  setPositionX: 67868
+  setPositionY: 320767
+  setDepth: 127007
+  setAngleX: 54000
+  setAngleY: 190400
+  setAngle: 54400
+  sprite: s32'ten409_07', 2
+  setPositionX: 53882
+  setPositionY: 320380
+  setDepth: 135998
+  setAngleX: 58800
+  setAngleY: 190400
+  setAngle: 16800
+  sprite: s32'ten409_07', 20
+  Unknown412: 75, 2, 10, 0
+  Unknown413: -1, 2, 10, 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+  sprite: s32'ten409_07', 1
+  Unknown413: 0, 2, 10, 0
+  Unknown412: 0, 2, 10, 0
 endState: 
 
 beginState: s32'DJT_408_TEN01'
@@ -6525,6 +6625,363 @@ beginState: s32'djt_KaihouFinish_Camera'
     addPositionX: 300000
     setPositionY: 0
   endUpon: 
+endState: 
+
+beginState: s32'DJT_450_Charge'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    upon: 23
+      clearUpon: 23
+      gotoLabelRequests: s32'End'
+    endUpon: 
+  endUpon: 
+  beginLabel: s32'Loop'
+  sprite: s32'null', 10
+  createObject: s32'DJT_450_Charge_Loop', (PLAYER)
+  gotoLabel: s32'Loop'
+  beginLabel: s32'End'
+  sprite: s32'null', 25
+  linkParticle: s32'djtEX_450_ChargeEnd'
+  setObjectSize: 800
+endState: 
+
+beginState: s32'DJT_450_Charge_Loop'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 3
+    stopLinkObject: 3
+  endUpon: 
+  sprite: s32'null', 20
+  linkParticle: s32'djtEX_450_ChargeLoop'
+endState: 
+
+beginState: s32'DJT_430EX_Thrust'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setPositionX: 358913
+    setPositionY: 203600
+    setDepth: 36901
+    setAngleX: 0
+    setAngleY: 8000
+    setAngle: 0
+    setObjectWidth: 1000
+    setObjectHeight: 1000
+    setObjectDepth: 1000
+  endUpon: 
+  sprite: s32'null', 25
+  linkParticle: s32'djtEX_430_thrust'
+endState: 
+
+beginState: s32'DJT_430EX_Thrust2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    upon: 23
+      clearUpon: 23
+      gotoLabelRequests: s32'Move'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 100
+  linkParticle: s32'djtEX_430_thrustStart'
+  setObjectWidth: 500
+  setObjectHeight: 500
+  setObjectDepth: 500
+  setAngleX: 0
+  setAngleY: 358800
+  setAngle: 0
+  setPositionX: 221830
+  setPositionY: 204029
+  setDepth: 72951
+  beginLabel: s32'Move'
+  sprite: s32'null', 25
+  linkParticle: s32'djtEX_430_thrust'
+  setPositionX: 358913
+  setPositionY: 203600
+  setDepth: 36901
+  setAngleX: 0
+  setAngleY: 8000
+  setAngle: 0
+  setObjectWidth: 1000
+  setObjectHeight: 1000
+  setObjectDepth: 1000
+endState: 
+
+beginState: s32'DJT_430EX_ThrustEX'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setPositionX: 358913
+    setPositionY: 203600
+    setDepth: 36901
+    setAngleX: 0
+    setAngleY: 8000
+    setAngle: 0
+    setObjectWidth: 1000
+    setObjectHeight: 1000
+    setObjectDepth: 1000
+  endUpon: 
+  sprite: s32'null', 25
+  linkParticle: s32'djtEX_430_thrustEx'
+endState: 
+
+beginState: s32'DJT_430EX_Thrust2EX'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    upon: 23
+      clearUpon: 23
+      gotoLabelRequests: s32'Move'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 100
+  linkParticle: s32'djtEX_430_thrustStartEx'
+  setObjectWidth: 500
+  setObjectHeight: 500
+  setObjectDepth: 500
+  setAngleX: 0
+  setAngleY: 358800
+  setAngle: 0
+  setPositionX: 221830
+  setPositionY: 204029
+  setDepth: 72951
+  beginLabel: s32'Move'
+  sprite: s32'null', 25
+  linkParticle: s32'djtEX_430_thrustEx'
+  setPositionX: 358913
+  setPositionY: 203600
+  setDepth: 36901
+  setAngleX: 0
+  setAngleY: 8000
+  setAngle: 0
+  setObjectWidth: 1000
+  setObjectHeight: 1000
+  setObjectDepth: 1000
+endState: 
+
+beginState: s32'DJT430Ex_EnshutuCamera'
+  upon: (IMMEDIATE)
+    linkObjectPosition: 3
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreezeFromAlly: 1
+    upon: 23
+      clearUpon: 23
+      gotoLabelRequests: s32'Move'
+    endUpon: 
+    upon: 24
+      clearUpon: 24
+      gotoLabelRequests: s32'Move2'
+    endUpon: 
+    upon: (BEFORE_EXIT)
+      Unknown2582: 
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 120
+  Unknown2074: 3, 238055, 411621, 119745, -855, -4261, 0, 60, 10, 120, 0, 0, 0, 0
+  Unknown2875: 5
+  beginLabel: s32'Move'
+  sprite: s32'null', 25
+  Unknown2074: 3, 29761, 377210, 83607, -498, -158, 0, 60, 10, 0, 15, 0, 1, 0
+  sprite: s32'null', 15
+  Unknown2876: 15
+endState: 
+
+beginState: s32'DJT_451EX_Strike'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    upon: 23
+      clearUpon: 23
+      gotoLabelRequests: s32'Landing'
+    endUpon: 
+  endUpon: 
+  beginLabel: s32'Atk'
+  sprite: s32'null', 100
+  linkParticle: s32'djtEX_451_StrikeLoop'
+  setObjectWidth: 1100
+  setObjectHeight: 700
+  setObjectDepth: 1100
+  setPositionX: 105914
+  setPositionY: 152999
+  setDepth: 117809
+  setAngleX: 355200
+  setAngleY: 228000
+  setAngle: 5600
+  beginLabel: s32'Landing'
+  sprite: s32'null', 30
+  linkParticle: s32'djtEX_451_Strike'
+  setObjectWidth: 900
+  setObjectHeight: 900
+  setObjectDepth: 900
+  setAngleX: 0
+  setAngleY: 201200
+  setAngle: 0
+  setPositionX: 125894
+  setPositionY: 59410
+  setDepth: 60683
+endState: 
+
+beginState: s32'DJT_451EX_StrikeD'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    setObjectSize: 750
+    upon: 23
+      clearUpon: 23
+      gotoLabelRequests: s32'Landing'
+    endUpon: 
+  endUpon: 
+  beginLabel: s32'Atk'
+  sprite: s32'null', 100
+  linkParticle: s32'djtEX_451_StrikeU'
+  setPositionX: 21978
+  setPositionY: 171733
+  setDepth: 9481
+  setAngleX: 23600
+  setAngleY: 0
+  setAngle: 344400
+  beginLabel: s32'Landing'
+  sprite: s32'null', 1
+  linkParticle: s32''
+endState: 
+
+beginState: s32'DJT_430_BodyAuraEx'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    linkObjectZ: 3
+    stopLinkObject: 2
+    setPositionX: -17982
+    setPositionY: 2527
+    setDepth: -57942
+    setAngleX: 0
+    setAngleY: 343200
+    setAngle: 0
+    upon: 23
+      clearUpon: 23
+      gotoLabelRequests: s32'Assult'
+    endUpon: 
+  endUpon: 
+  sprite: s32'null', 4
+  linkParticle: s32'djt_430_BodyAuraStart'
+  sprite: s32'null', 120
+  linkParticle: s32'djt_430_BodyAura'
+  beginLabel: s32'Assult'
+  sprite: s32'null', 30
+  linkParticle: s32'djtEX_430_BodyAuraEnd'
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'ten_430EX_Tenseiki'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 3
+    setLinkObjectDestroyOnDamage: 3
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    linkPawnWithAnimation: s32'tenseiki', s32''
+    beginMeshSet: s32'tenseiki'
+      addToMeshSet: s32'tenseiki'
+    endMeshSet: 
+    setNoCollision: 0
+    checkScreenCollision: 0
+    worldCollision: 0
+    invulnForce: 1
+    ignoreSuperFreezeFromAlly: 1
+    upon: 23
+      clearUpon: 23
+      gotoLabelRequests: s32'End'
+    endUpon: 
+    upon: (BEFORE_EXIT)
+      Unknown412: 0, 1, 9, 0
+      Unknown413: 0, 1, 10, 0
+    endUpon: 
+  endUpon: 
+  sprite: s32'ten430_06', 6
+  sprite: s32'ten430_07', 3
+  swapMeshSet: s32'tenseiki'
+  Unknown412: 0, 2, 9, 0
+  Unknown413: 2, 2, 9, 0
+  sprite: s32'ten430_08', 3
+  sprite: s32'ten430_09', 3
+  sprite: s32'ten430_10', 10
+  sprite: s32'ten430_10', 40
+  Unknown412: 100, 2, 9, 0
+  Unknown413: 0, 2, 9, 0
+  beginLabel: s32'End'
+  sprite: s32'null', 20
+  Unknown2050: 0
+  createObject: s32'ten_430_End', (PLAYER)
+  Unknown412: 100, 2, 10, 0
+  setLinkObjectDestroyOnStateChange: 0
+  linkObjectPosition: 0
+  stopLinkObject: 0
+endState: 
+
+beginState: s32'DJT_430EX_Slash'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnDamage: 2
+    linkObjectPosition: 2
+    stopLinkObject: 2
+    flipDirection: 
+    setObjectSize: 1500
+    setPositionX: -59956
+    setPositionY: 198082
+    setDepth: 70698
+    setAngleX: 18800
+    setAngleY: 11200
+    setAngle: 348800
+  endUpon: 
+  sprite: s32'null', 20
+  linkParticle: s32'djtEX_430_Slash01'
+endState: 
+
+beginState: s32'djt_431_HitEff'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreeze: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 7
+  linkParticle: s32'djt_430_HitEff2'
+  setAngleX: 350800
+  setAngleY: 90400
+  setAngle: 18400
+endState: 
+
+beginState: s32'djt_431_HitEff2'
+  upon: (IMMEDIATE)
+    setLinkObjectDestroyOnStateChange: 2
+    setLinkObjectDestroyOnDamage: 3
+    ignoreSuperFreeze: 1
+    ignoreFinishStop: 1
+  endUpon: 
+  sprite: s32'null', 15
+  linkParticle: s32'djt_430_HitEff2'
+  createParticle: s32'djt_430_HitEff3', (PLAYER)
+  setAngleX: 350800
+  setAngleY: 90400
+  setAngle: 18400
 endState: 
 
 beginState: s32'DUMMYDUMMY'

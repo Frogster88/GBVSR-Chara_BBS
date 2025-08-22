@@ -1949,6 +1949,11 @@ beginState: s32'met_402_Allow'
       Unknown1131: 1
     endIf: 
     Unknown1793: 2, 23
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+      if: Mem(414)
+        hitstop: 18
+      endIf: 
+    endIf: 
   endUpon: 
   initializeDestroy: 
   destroyOnDamageCollision: 1
@@ -2273,7 +2278,7 @@ beginState: s32'met_405_EnshutuCamera'
   Unknown2074: 3, -197782, 394133, 66972, 1609, 6362, -2002, 60, 10, 0, 4800, 0, 0, 0
   sprite: s32'null', 40
   Unknown2074: 3, -201561, 399539, 65946, 1609, 6362, -2002, 60, 40, 0, 0, 0, 0, 0
-  sprite: s32'null', 25
+  sprite: s32'null', 15
   Unknown2074: 3, -201561, 399539, 65946, 1609, 6362, -2002, 60, 0, 0, 25, 0, 0, 0
   Unknown2586: 15
   sprite: s32'null', 1
@@ -2331,7 +2336,6 @@ beginState: s32'met_405_FinalBomb'
   linkParticle: s32'met_405_Impact'
   setAngleY: 337600
   setAngle: 9600
-  cameraShake: s32'ShakeTate', 2000, 0, 15, 0
   privateSE: s32'met_10_2'
 endState: 
 
@@ -2341,8 +2345,8 @@ beginState: s32'met_400_ShotEff_405Lock'
     callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
     callSubroutine: s32'cmnSpecialAttackD_AtkInit'
     damage: 0
-    hitAirPushbackX: 16000
-    hitAirPushbackY: 20000
+    hitAirPushbackX: 0
+    hitAirPushbackY: 0
     hitstop: 20
     damageEffect: 4, s32''
     attackThroughArmor: 1
@@ -2381,9 +2385,11 @@ beginState: s32'met_400_ShotEff_405Lock'
   createObject: s32'met_405_FinalBomb', (PLAYER)
   hit: 
   damage: 1000
-  hitstop: 16
+  hitstop: 28
+  airHitEffect: (AIR_LAUNCH)
   doubleSlashEffectBugFix: 0
   dontAddComboCount: 0
+  atkCameraShake: s32'ShakeTate', 2000, 0, 15, 0
   sprite: s32'null', 1
   recoveryState: 
   sprite: s32'null', 10
@@ -2788,7 +2794,7 @@ beginState: s32'met_404_D_Eff'
         endIf: 
       endIf: 
       modifyVar: (ADD), Mem(ActReg4), Val(1)
-      ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg4), Val(300)
+      ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg4), Val(240)
         clearUpon: (FRAME_STEP)
         storeValue: Mem(ActReg0), Val(0)
         Unknown2020: 

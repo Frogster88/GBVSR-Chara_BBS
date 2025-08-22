@@ -2196,6 +2196,10 @@ beginState: s32'FAS_441_Ring'
   if: Mem(Tmp)
     playAnimation: s32'fas441cs_rnt', 1
   endIf: 
+  ifOpponentCharacterMain: s16'skn'
+  if: Mem(Tmp)
+    playAnimation: s32'fas446cs_skn', 1
+  endIf: 
   sprite: s32'null', 447
   Unknown2050: 1
   endSprite: 

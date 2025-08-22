@@ -97,6 +97,13 @@ beginState: s32'SpecialShot'
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
       createObject: s32'lan401_Loop', (PLAYER)
+      worldCollision: 1
+      upon: (FRAME_STEP)
+        ifOperation: (IS_GREATER), Mem(OnIdlingTime), Val(5)
+          clearUpon: (FRAME_STEP)
+          worldCollision: 0
+        endIf: 
+      endUpon: 
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
       createObject: s32'lan401_Loop', (PLAYER)

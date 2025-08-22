@@ -1671,7 +1671,7 @@ beginState: s32'eus_410_ball_loopEff'
     callSubroutine: s32'cmnSpecialAttackD_AtkInit'
     missionName: s32'AntiAirShot_ShotD'
     setProjectileDurability: 2
-    damage: 800
+    damage: 1600
     groundHitEffect: (AIR_FACE_UP)
     hitAirPushbackX: 10000
     atkEnemyHitSuperArmorHitstop: 0, 6000
@@ -1780,6 +1780,7 @@ beginState: s32'eus_410_ball_loopEff'
       if: Mem(PlayerVal1)
         comboLimitScaling: 0
         Unknown1131: 1
+        damage: 400
       endIf: 
       modifyVar: (ADD), Mem(PlayerVal1), Val(1)
       ifOperation: (IS_NOT_EQUAL), Mem(ActReg6), Val(300)

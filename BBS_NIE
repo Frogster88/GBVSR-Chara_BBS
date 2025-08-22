@@ -54,7 +54,7 @@ beginSubroutine: s32'RoundInit'
   privateFlag: 0
   cpuWeakenRate: 100
   Unknown1296: 150000
-  Unknown1297: 100
+  Unknown1297: 20
   Unknown1922: 0, 9, 4
   Unknown1922: 1, 4, 5
   Unknown1922: 2, 8, 1
@@ -66,6 +66,8 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_DISSALOW_UP)
     addMoveFlag: (L_CLOSE_RANGE_TRUE)
     maxChainIntoSelf: 2
+    cpuEstimateAttackBox: -200, -219, 289, 219
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
     cpuEstimateTagXNearPunish: 
@@ -76,9 +78,10 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_PRESS_L)
     moveInput: (INPUT_DISSALOW_UP)
     addMoveFlag: (L_CLOSE_RANGE_FALSE)
+    cpuEstimateAttackBox: -289, -219, 289, 219
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXMidPunish: 
     cpuEstimateTagKugurare: 
   endMove: 
   addMove: s32'NmlAtk2A'
@@ -88,10 +91,11 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_ANY_DOWN)
     moveShareChain: s32'NmlAtk5ANear'
     maxChainIntoSelf: 2
+    cpuEstimateAttackBox: -228, -1, 228, 0
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
     cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
     cpuEstimateTagTobare: 
   endMove: 
   addMove: s32'NmlAtk5BNear'
@@ -101,9 +105,10 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_DISSALOW_UP)
     addMoveFlag: (M_CLOSE_RANGE_TRUE)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -235, -263, 360, 263
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
   endMove: 
   addMove: s32'NmlAtk5BFar'
     moveType: (NORMAL)
@@ -112,9 +117,10 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_DISSALOW_UP)
     addMoveFlag: (M_CLOSE_RANGE_FALSE)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -333, -263, 44, 263
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXMidPunish: 
     cpuEstimateTagKugurare: 
   endMove: 
   addMove: s32'NmlAtk2B'
@@ -123,10 +129,10 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_PRESS_M)
     moveInput: (INPUT_ANY_DOWN)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -307, -1, 307, 0
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
     cpuIsLow: 
     cpuEstimateTagTobare: 
   endMove: 
@@ -137,9 +143,11 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_DISSALOW_UP)
     addMoveFlag: (H_CLOSE_RANGE_TRUE)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -261, -307, 412, 307
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    cpuBigDamage: 
   endMove: 
   addMove: s32'NmlAtk5CFar'
     moveType: (NORMAL)
@@ -148,9 +156,10 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_DISSALOW_UP)
     addMoveFlag: (H_CLOSE_RANGE_FALSE)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -438, -307, 149, 307
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXMidPunish: 
     cpuEstimateTagKugurare: 
   endMove: 
   addMove: s32'NmlAtk2C'
@@ -159,9 +168,10 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_PRESS_H)
     moveInput: (INPUT_ANY_DOWN)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -281, -351, 281, 342
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
     cpuIsTaiku: 
   endMove: 
   addMove: s32'NmlAtk5D'
@@ -170,8 +180,11 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_PRESS_U)
     moveInput: (INPUT_DISSALOW_UP)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -237, -307, 237, 307
+    cpuEstimatePoint: 25
+    cpuEstimateTagGuard: 
+    cpuEstimateTagCombo: 
     cpuEstimateTagKugurare: 
-    cpuEstimateTagNoAirCombo: 
   endMove: 
   addMove: s32'NmlAtk2D'
     moveType: (NORMAL)
@@ -179,10 +192,10 @@ beginSubroutine: s32'RoundInit'
     moveInput: (INPUT_PRESS_U)
     moveInput: (INPUT_ANY_DOWN)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -351, -219, 88, 219
+    cpuEstimatePoint: 75
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
     cpuIsLow: 
     cpuEstimateTagTobare: 
   endMove: 
@@ -191,9 +204,10 @@ beginSubroutine: s32'RoundInit'
     moveStance: (JUMPING)
     moveInput: (INPUT_PRESS_L)
     maxChainIntoSelf: 3
+    cpuEstimateAttackBox: -219, -176, 219, 263
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
     cpuIsOverhead: 
     cpuEstimateTagKugurare: 
     cpuEstimateTagTobi: 
@@ -203,9 +217,10 @@ beginSubroutine: s32'RoundInit'
     moveStance: (JUMPING)
     moveInput: (INPUT_PRESS_M)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -219, -176, 307, 438
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
     cpuIsOverhead: 
     cpuEstimateTagKugurare: 
     cpuEstimateTagTobi: 
@@ -215,9 +230,10 @@ beginSubroutine: s32'RoundInit'
     moveStance: (JUMPING)
     moveInput: (INPUT_PRESS_H)
     maxChainIntoSelf: 1
+    cpuEstimateAttackBox: -228, -176, 228, 438
+    cpuEstimatePoint: 200
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
     cpuIsOverhead: 
     cpuEstimateTagKugurare: 
     cpuEstimateTagTobi: 
@@ -227,11 +243,7 @@ beginSubroutine: s32'RoundInit'
     moveStance: (JUMPING)
     moveInput: (INPUT_PRESS_U)
     maxChainIntoSelf: 1
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagTobi: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'NmlAtkAir4D'
     moveType: (NORMAL)
@@ -242,11 +254,7 @@ beginSubroutine: s32'RoundInit'
     moveShareChain: s32'NmlAtkAir5D'
     maxChainIntoSelf: 1
     Unknown1431: 4
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagTobi: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'NmlAtkAir6D'
     moveType: (NORMAL)
@@ -257,11 +265,7 @@ beginSubroutine: s32'RoundInit'
     moveShareChain: s32'NmlAtkAir5D'
     maxChainIntoSelf: 1
     Unknown1431: 6
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagTobi: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
+    usableByCPU: 0
   endMove: 
   moveRewriteMode: 1
   addMove: s32'GuardCrash'
@@ -281,9 +285,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialMultiAttack_B'
     moveType: (SPECIAL)
@@ -297,10 +299,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagNoCombo: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialMultiAttack_C'
     moveType: (SPECIAL)
@@ -314,9 +313,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialMultiAttack_D'
     moveType: (SPECIAL)
@@ -332,10 +329,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_50_METER)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuUsesResource: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialMultiAttack_A_Chain'
     moveType: (SPECIAL)
@@ -346,9 +340,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_236A'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialMultiAttack_B_Chain'
     moveType: (SPECIAL)
@@ -359,9 +351,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_236B'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialMultiAttack_C_Chain'
     moveType: (SPECIAL)
@@ -372,9 +362,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_236C'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialMultiAttack_A2'
     moveType: (SPECIAL)
@@ -487,9 +475,12 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
     Unknown1514: 0
+    cpuEstimateAttackBox: -351, -219, 351, 219
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'SpecialMultiAttack_B_Easy'
     moveType: (SPECIAL)
@@ -506,10 +497,12 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: 57
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    cpuEstimateAttackBox: -351, -219, 351, 219
+    cpuEstimatePoint: 50
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
     cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
   endMove: 
   addMove: s32'SpecialMultiAttack_C_Easy'
     moveType: (SPECIAL)
@@ -526,9 +519,13 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: 57
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
+    cpuEstimateAttackBox: -351, -219, 351, 219
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    cpuBigDamage: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'SpecialMultiAttack_D_Easy'
     moveType: (SPECIAL)
@@ -548,10 +545,12 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_50_METER)
     Unknown1431: 919
     Unknown1514: 0
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    cpuEstimateAttackBox: -351, -219, 351, 219
+    cpuEstimatePoint: 50
     cpuUsesResource: 
+    cpuBigDamage: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'SpecialMultiAttack_A_Easy_Chain'
     moveType: (SPECIAL)
@@ -565,9 +564,10 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_236A'
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    cpuEstimateTagProjectile: 
   endMove: 
   addMove: s32'SpecialMultiAttack_B_Easy_Chain'
     moveType: (SPECIAL)
@@ -581,9 +581,12 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_236B'
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
   endMove: 
   addMove: s32'SpecialMultiAttack_C_Easy_Chain'
     moveType: (SPECIAL)
@@ -597,9 +600,10 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_236C'
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
+    cpuEstimateTagProjectile: 
   endMove: 
   addMove: s32'AntiAir_A'
     moveType: (SPECIAL)
@@ -613,10 +617,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'AntiAir_B'
     moveType: (SPECIAL)
@@ -630,10 +631,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'AntiAir_C'
     moveType: (SPECIAL)
@@ -647,10 +645,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'AntiAir_D'
     moveType: (SPECIAL)
@@ -666,11 +661,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_50_METER)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuUsesResource: 
-    cpuEstimateTagInvuln: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'AntiAir_A_Chain'
     moveType: (SPECIAL)
@@ -681,11 +672,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_623A'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'AntiAir_B_Chain'
     moveType: (SPECIAL)
@@ -696,11 +683,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_623B'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'AntiAir_C_Chain'
     moveType: (SPECIAL)
@@ -711,11 +694,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_623C'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'AntiAir_A_Easy'
     moveAlias: s32'AntiAir_A'
@@ -731,10 +710,13 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
     Unknown1514: 1
+    cpuEstimateAttackBox: -351, -307, 351, 307
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'AntiAir_B_Easy'
     moveAlias: s32'AntiAir_B'
@@ -749,10 +731,13 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: 57
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    cpuEstimateAttackBox: -351, -307, 351, 307
+    cpuEstimatePoint: 50
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
   endMove: 
   addMove: s32'AntiAir_C_Easy'
     moveAlias: s32'AntiAir_C'
@@ -767,10 +752,14 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: 57
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
+    cpuEstimateAttackBox: -351, -307, 351, 307
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    cpuBigDamage: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'AntiAir_D_Easy'
     moveAlias: s32'AntiAir_D'
@@ -788,11 +777,14 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_50_METER)
     Unknown1431: 919
     Unknown1514: 1
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
+    cpuEstimateAttackBox: -351, -307, 351, 307
+    cpuEstimatePoint: 50
     cpuUsesResource: 
+    cpuBigDamage: 
+    cpuEstimateTagKugurare: 
     cpuEstimateTagInvuln: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'AntiAir_A_Easy_Chain'
     moveType: (SPECIAL)
@@ -804,11 +796,11 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_623A'
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagProjectile: 
   endMove: 
   addMove: s32'AntiAir_B_Easy_Chain'
     moveType: (SPECIAL)
@@ -820,11 +812,13 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_623B'
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
   endMove: 
   addMove: s32'AntiAir_C_Easy_Chain'
     moveType: (SPECIAL)
@@ -836,11 +830,11 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_623C'
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagProjectile: 
   endMove: 
   addMove: s32'Assault_A'
     moveType: (SPECIAL)
@@ -854,12 +848,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'Assault_B'
     moveType: (SPECIAL)
@@ -873,12 +862,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'Assault_C'
     moveType: (SPECIAL)
@@ -892,13 +876,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'Assault_D'
     moveType: (SPECIAL)
@@ -914,14 +892,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_50_METER)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuUsesResource: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'Assault_A_Chain'
     moveType: (SPECIAL)
@@ -932,12 +903,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_214A'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'Assault_B_Chain'
     moveType: (SPECIAL)
@@ -948,12 +914,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_214B'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'Assault_C_Chain'
     moveType: (SPECIAL)
@@ -964,13 +925,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_214C'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'Assault_A_Easy'
     moveAlias: s32'Assault_A'
@@ -986,12 +941,14 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
     Unknown1514: 3
+    cpuEstimateAttackBox: -701, -219, 438, 219
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
     cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
     cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'Assault_B_Easy'
     moveAlias: s32'Assault_B'
@@ -1006,12 +963,14 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: 57
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
+    cpuEstimateAttackBox: -876, -219, 613, 219
+    cpuEstimatePoint: 50
     cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
     cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
   endMove: 
   addMove: s32'Assault_C_Easy'
     moveAlias: s32'Assault_C'
@@ -1026,13 +985,15 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: 57
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
+    cpuEstimateAttackBox: -701, -219, 438, 219
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
+    cpuBigDamage: 
     cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
     cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'Assault_D_Easy'
     moveAlias: s32'Assault_D'
@@ -1050,14 +1011,14 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_50_METER)
     Unknown1431: 919
     Unknown1514: 3
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
+    cpuEstimateAttackBox: -876, -219, 613, 219
+    cpuEstimatePoint: 50
     cpuUsesResource: 
+    cpuBigDamage: 
     cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
     cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'Assault_A_Easy_Chain'
     moveType: (SPECIAL)
@@ -1069,11 +1030,11 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_214A'
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
     cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
     cpuEstimateTagProjectile: 
   endMove: 
   addMove: s32'Assault_B_Easy_Chain'
@@ -1086,12 +1047,14 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_214B'
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
     cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
     cpuEstimateTagProjectile: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
   endMove: 
   addMove: s32'Assault_C_Easy_Chain'
     moveType: (SPECIAL)
@@ -1103,12 +1066,11 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_214C'
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
     cpuEstimateTagKugurare: 
+    cpuEstimateTagTobare: 
     cpuEstimateTagProjectile: 
   endMove: 
   addMove: s32'SpecialAttack_A'
@@ -1126,10 +1088,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialAttack_B'
     moveType: (SPECIAL)
@@ -1146,10 +1105,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialAttack_C'
     moveType: (SPECIAL)
@@ -1166,10 +1122,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialAttack_D'
     moveType: (SPECIAL)
@@ -1188,11 +1141,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_50_METER)
     Unknown1513: 1
     Unknown1431: 109
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuUsesResource: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialAttack_A_Chain'
     moveType: (SPECIAL)
@@ -1206,10 +1155,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_22A'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialAttack_B_Chain'
     moveType: (SPECIAL)
@@ -1223,10 +1169,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_22B'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialAttack_C_Chain'
     moveType: (SPECIAL)
@@ -1240,10 +1183,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_22C'
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SpecialAttack_A_Easy'
     moveAlias: s32'SpecialAttack_A'
@@ -1259,10 +1199,13 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
     Unknown1514: 2
+    cpuEstimateAttackBox: -526, -219, 351, 219
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'SpecialAttack_B_Easy'
     moveAlias: s32'SpecialAttack_B'
@@ -1277,10 +1220,13 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: 57
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    cpuEstimateAttackBox: -526, -219, 351, 219
+    cpuEstimatePoint: 50
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
   endMove: 
   addMove: s32'SpecialAttack_C_Easy'
     moveAlias: s32'SpecialAttack_C'
@@ -1295,10 +1241,14 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: 57
     addMoveFlag: (VARIABLE_297_FALSE)
     Unknown1431: 919
+    cpuEstimateAttackBox: -526, -219, 351, 219
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    cpuBigDamage: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'SpecialAttack_D_Easy'
     moveAlias: s32'SpecialAttack_D'
@@ -1316,11 +1266,13 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_50_METER)
     Unknown1431: 919
     Unknown1514: 2
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    cpuEstimateAttackBox: -526, -219, 351, 219
+    cpuEstimatePoint: 50
     cpuUsesResource: 
+    cpuBigDamage: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagSukidarake: 
   endMove: 
   addMove: s32'SpecialAttack_A_Easy_Chain'
     moveType: (SPECIAL)
@@ -1332,10 +1284,13 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_22A'
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
   endMove: 
   addMove: s32'SpecialAttack_B_Easy_Chain'
     moveType: (SPECIAL)
@@ -1347,10 +1302,11 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_22B'
+    cpuEstimatePoint: 100
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
   endMove: 
   addMove: s32'SpecialAttack_C_Easy_Chain'
     moveType: (SPECIAL)
@@ -1362,10 +1318,11 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (VARIABLE_1_TRUE)
     isFollowupMove: 1
     Unknown1419: s32'Input_22C'
+    cpuEstimatePoint: 150
     cpuEstimateTagGuard: 
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagProjectile: 
   endMove: 
   addMove: s32'nie_Ougi'
     moveType: (SUPER)
@@ -1379,13 +1336,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_100_METER)
     Unknown1431: 109
     Unknown1447: 1, 1
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'nie_Ougi_Tec'
     moveType: (SUPER)
@@ -1400,13 +1351,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_100_METER)
     Unknown1431: 109
     Unknown1447: 1, 2
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'nie_Ougi_Easy'
     moveType: (SUPER)
@@ -1423,9 +1368,8 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_100_METER)
     Unknown1431: 919
     Unknown1447: 1, 0
+    cpuEstimateAttackBox: -351, -307, 351, 307
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
     cpuUsesResource: 
     cpuBigDamage: 
     cpuEstimateTagInvuln: 
@@ -1482,13 +1426,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (HEALTH_LEFT_30_TRUE)
     Unknown1431: 109
     Unknown1447: 1, 1
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'nie_Kaihou_Tec'
     moveType: (SUPER)
@@ -1505,13 +1443,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (HEALTH_LEFT_30_TRUE)
     Unknown1431: 109
     Unknown1447: 1, 2
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'nie_Kaihou_Easy'
     moveType: (SUPER)
@@ -1530,9 +1462,8 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (HEALTH_LEFT_30_TRUE)
     Unknown1431: 919
     Unknown1447: 1, 0
+    cpuEstimateAttackBox: -351, -307, 351, 307
     cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
     cpuUsesResource: 
     cpuBigDamage: 
     cpuEstimateTagInvuln: 
@@ -1602,457 +1533,6 @@ beginSubroutine: s32'RoundInit'
     moveRecipeEKey: 0, 20
     moveRecipeEKey: 256, 20
   endMove: 
-  addMove: s32'NmlAtk5ANear_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5ANear'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5AFar_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5AFar'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2A_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2A'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5BNear_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5BNear'
-    isFollowupMove: 1
-    moveInput: 160
-    maxChainIntoSelf: 1
-  endMove: 
-  addMove: s32'NmlAtk5BFar_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5BFar'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2B_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2B'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5CNear_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5CNear'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5CFar_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5CFar'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2C_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2C'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5D_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5D'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2D_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2D'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'SpecialMultiAttack_A_SA'
-    moveAlias: s32'SpecialMultiAttack_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    Unknown1514: 0
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-  endMove: 
-  addMove: s32'SpecialMultiAttack_B_SA'
-    moveType: (SPECIAL)
-    moveAlias: s32'SpecialMultiAttack_B'
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagNoCombo: 
-  endMove: 
-  addMove: s32'SpecialMultiAttack_C_SA'
-    moveType: (SPECIAL)
-    moveAlias: s32'SpecialMultiAttack_C'
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-  endMove: 
-  addMove: s32'SpecialMultiAttack_D_SA'
-    moveType: (SPECIAL)
-    moveAlias: s32'SpecialMultiAttack_D'
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: (VARIABLE_2_FALSE)
-    addMoveFlag: 56
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 0
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuUsesResource: 
-  endMove: 
-  addMove: s32'AntiAir_A_SA'
-    moveAlias: s32'AntiAir_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    Unknown1514: 1
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
-  endMove: 
-  addMove: s32'AntiAir_B_SA'
-    moveAlias: s32'AntiAir_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
-  endMove: 
-  addMove: s32'AntiAir_C_SA'
-    moveAlias: s32'AntiAir_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuEstimateTagInvuln: 
-  endMove: 
-  addMove: s32'AntiAir_D_SA'
-    moveAlias: s32'AntiAir_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: (VARIABLE_2_FALSE)
-    addMoveFlag: 56
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 1
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsTaiku: 
-    cpuUsesResource: 
-    cpuEstimateTagInvuln: 
-  endMove: 
-  addMove: s32'Assault_A_SA'
-    moveAlias: s32'Assault_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    Unknown1514: 3
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'Assault_B_SA'
-    moveAlias: s32'Assault_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'Assault_C_SA'
-    moveAlias: s32'Assault_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'Assault_D_SA'
-    moveAlias: s32'Assault_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: (VARIABLE_2_FALSE)
-    addMoveFlag: 56
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 3
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuEstimateTagXFarPunish: 
-    cpuUsesResource: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'SpecialAttack_A_SA'
-    moveAlias: s32'SpecialAttack_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (DOWN_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    Unknown1514: 2
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-  endMove: 
-  addMove: s32'SpecialAttack_B_SA'
-    moveAlias: s32'SpecialAttack_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (DOWN_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-  endMove: 
-  addMove: s32'SpecialAttack_C_SA'
-    moveAlias: s32'SpecialAttack_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (DOWN_SKILL_CD_FALSE)
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    Unknown1431: 919
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-  endMove: 
-  addMove: s32'SpecialAttack_D_SA'
-    moveAlias: s32'SpecialAttack_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: (VARIABLE_2_FALSE)
-    addMoveFlag: 56
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 2
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuEstimateTagXMidPunish: 
-    cpuUsesResource: 
-  endMove: 
-  addMove: s32'nie_Ougi_SA'
-    moveType: (SUPER)
-    moveAlias: s32'nie_Ougi'
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    addMoveFlag: (REQUIRES_100_METER)
-    Unknown1431: 919
-    Unknown1447: 1, 0
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
-  endMove: 
-  addMove: s32'nie_Ougi_Buff_SA'
-    moveType: (SUPER)
-    moveAlias: s32'nie_Ougi_Buff'
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_100_METER)
-    Unknown1431: 919
-    Unknown1447: 1, 6
-    usableByCPU: 0
-  endMove: 
-  addMove: s32'nie_Kaihou_SA'
-    moveType: (SUPER)
-    Unknown1511: 1
-    moveAlias: s32'nie_Kaihou'
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (VARIABLE_1_TRUE)
-    addMoveFlag: 55
-    addMoveFlag: 57
-    addMoveFlag: (VARIABLE_297_FALSE)
-    addMoveFlag: (REQUIRES_100_METER)
-    addMoveFlag: (HEALTH_LEFT_30_TRUE)
-    Unknown1431: 919
-    Unknown1447: 1, 0
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXNearPunish: 
-    cpuIsTaiku: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
-  endMove: 
-  registerMove: s32'NmlAtk5ANear_SA'
-  registerMove: s32'NmlAtk5AFar_SA'
-  registerMove: s32'NmlAtk2A_SA'
-  registerMove: s32'NmlAtk5BNear_SA'
-  registerMove: s32'NmlAtk5BFar_SA'
-  registerMove: s32'NmlAtk2B_SA'
-  registerMove: s32'NmlAtk5CNear_SA'
-  registerMove: s32'NmlAtk5CFar_SA'
-  registerMove: s32'NmlAtk2C_SA'
-  registerMove: s32'NmlAtk5D_SA'
-  registerMove: s32'NmlAtk2D_SA'
-  registerMove: s32'SpecialMultiAttack_A_SA'
-  registerMove: s32'SpecialMultiAttack_B_SA'
-  registerMove: s32'SpecialMultiAttack_C_SA'
-  registerMove: s32'SpecialMultiAttack_D_SA'
-  registerMove: s32'AntiAir_A_SA'
-  registerMove: s32'AntiAir_B_SA'
-  registerMove: s32'AntiAir_C_SA'
-  registerMove: s32'AntiAir_D_SA'
-  registerMove: s32'Assault_A_SA'
-  registerMove: s32'Assault_B_SA'
-  registerMove: s32'Assault_C_SA'
-  registerMove: s32'Assault_D_SA'
-  registerMove: s32'SpecialAttack_A_SA'
-  registerMove: s32'SpecialAttack_B_SA'
-  registerMove: s32'SpecialAttack_C_SA'
-  registerMove: s32'SpecialAttack_D_SA'
-  registerMove: s32'nie_Ougi_SA'
-  registerMove: s32'nie_Ougi_Buff_SA'
-  registerMove: s32'nie_Kaihou_SA'
   callSubroutine: s32'cmn_SkillRegist'
   callSubroutine: s32'cmn_SkillRegist_Normal_Land'
   callSubroutine: s32'cmn_SkillRegist_Normal_Air'
@@ -2381,6 +1861,10 @@ beginSubroutine: s32'RoundInit'
   vsCharaMouthTable: s16'VS_RNT', s16'vNIE_APR_00_b', s32'c2r30c12', s32'', s32'', s32''
   vsCharaMouthTable: s16'VS_RNT', s16'vNIE_APR_01_a', s32'c1r49c3r35c1r8c1r8c5r43c9r9c1r1c', s32'37r6c3r12c4r7c1r32c38r8c3r35c26r', s32'38c16', s32''
   vsCharaMouthTable: s16'VS_RNT', s16'vNIE_APR_01_b', s32'c2r23c11r14c10', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vNIE_APR_00_a', s32'c1r29c1r8c5r30c13r4c49r6c3r10c2r', s32'5c2r13c3r6c2r19c34r15c9r18c5r12c', s32'12', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vNIE_APR_00_b', s32'c1r31c16', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vNIE_APR_01_a', s32'c2r6c4r11c3r6c2r15c6r7c1r14c44r7', s32'2c4r11c1r6c4r14c15', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vNIE_APR_01_b', s32'c2r18c73r35c2r10c12', s32'', s32'', s32''
   linkPawn: s32''
   beginMeshSet: s32'high'
     addToMeshSet: s32'Body'
@@ -2544,72 +2028,6 @@ beginSubroutine: s32'RoundInit'
 endSubroutine: 
 
 beginSubroutine: s32'OnFrameStep'
-  if: Mem(437)
-    checkCurrentStateName: (SELF), s32'NmlAtk2A'
-    if: Mem(Tmp)
-      checkLastStateName: s32'NmlAtk2A'
-      if: Mem(Tmp)
-        upon: 135
-          Unknown1631: s32'AntiAir_C_SA'
-        endUpon: 
-        upon: 136
-          Unknown1631: s32'SpecialMultiAttack_A_SA'
-        endUpon: 
-      endIf: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5A3rd'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'SpecialAttack_C_SA'
-        Unknown1631: s32'SpecialAttack_D_SA'
-        Unknown1631: s32'SpecialMultiAttack_C_SA'
-        Unknown1631: s32'SpecialMultiAttack_D_SA'
-        Unknown1631: s32'nie_Ougi_SA'
-        Unknown1631: s32'nie_Kaihou_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'SpecialMultiAttack_A_SA'
-      endUpon: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5AFar'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'Assault_C_SA'
-        Unknown1631: s32'Assault_D_SA'
-        Unknown1631: s32'SpecialAttack_D_SA'
-        Unknown1631: s32'nie_Kaihou_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'SpecialMultiAttack_A_SA'
-      endUpon: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5BFar'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'SpecialAttack_C_SA'
-        Unknown1631: s32'SpecialAttack_D_SA'
-        Unknown1631: s32'Assault_C_SA'
-        Unknown1631: s32'Assault_D_SA'
-        Unknown1631: s32'nie_Kaihou_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'Assault_A_SA'
-      endUpon: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5CFar'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'SpecialAttack_C_SA'
-        Unknown1631: s32'SpecialAttack_D_SA'
-        Unknown1631: s32'Assault_C_SA'
-        Unknown1631: s32'Assault_D_SA'
-        Unknown1631: s32'nie_Kaihou_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'Assault_A_SA'
-      endUpon: 
-    endIf: 
-  endIf: 
   callSubroutine: s32'cmnTest'
   if: Mem(IsTrainingMode)
     if: Mem(BattleDoing)

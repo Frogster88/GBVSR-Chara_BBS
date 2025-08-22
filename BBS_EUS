@@ -54,7 +54,7 @@ beginSubroutine: s32'RoundInit'
   privateFlag: 0
   cpuWeakenRate: 100
   Unknown1296: 500000
-  Unknown1297: 100
+  Unknown1297: 20
   Unknown1922: 0, 2, 4
   Unknown1922: 1, 0, 5
   Unknown1922: 2, 1, 1
@@ -1084,394 +1084,6 @@ beginSubroutine: s32'RoundInit'
     moveRecipeEKey: 4, 30
     moveRecipeEMove: s32'Assault_HaseiB'
   endMove: 
-  addMove: s32'NmlAtk5ANear_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5ANear'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5AFar_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5AFar'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2A_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2A'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5BNear_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5BNear'
-    isFollowupMove: 1
-    moveInput: 160
-    maxChainIntoSelf: 1
-  endMove: 
-  addMove: s32'NmlAtk5BFar_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5BFar'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2B_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2B'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5CNear_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5CNear'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5CFar_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5CFar'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2C_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2C'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5D_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5D'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2D_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2D'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'SpecialShot_A_SA'
-    moveAlias: s32'SpecialShot_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
-    Unknown1431: 1919
-    Unknown1514: 1
-    cpuEstimateAttackBox: -1109, -307, 759, 307
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'SpecialShot_B_SA'
-    moveType: (SPECIAL)
-    moveAlias: s32'SpecialShot_B'
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
-    Unknown1431: 1919
-    cpuEstimateAttackBox: -1109, -307, 759, 307
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'SpecialShot_C_SA'
-    moveType: (SPECIAL)
-    moveAlias: s32'SpecialShot_C'
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
-    Unknown1431: 1919
-    cpuEstimateAttackBox: -1109, -307, 759, 307
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagProjectile: 
-    cpuEstimateTagGamenhashi: 
-  endMove: 
-  addMove: s32'SpecialShot_D_SA'
-    moveType: (SPECIAL)
-    moveAlias: s32'SpecialShot_D'
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 1
-    cpuEstimateAttackBox: -1109, -307, 759, 307
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagXFarPunish: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'AntiAir_A_SA'
-    moveAlias: s32'AntiAir_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    forceDisableFlag: 2
-    Unknown1431: 1919
-    Unknown1514: 0
-    cpuEstimateAttackBox: -1109, -307, 759, 307
-    cpuEstimatePoint: 100
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'AntiAir_B_SA'
-    moveAlias: s32'AntiAir_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    forceDisableFlag: 2
-    Unknown1431: 1919
-    cpuEstimateAttackBox: -1109, -307, 759, 307
-    cpuEstimatePoint: 100
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'AntiAir_C_SA'
-    moveAlias: s32'AntiAir_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    forceDisableFlag: 2
-    Unknown1431: 1919
-    cpuEstimateAttackBox: -1109, -307, 759, 307
-    cpuEstimatePoint: 100
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagProjectile: 
-    cpuEstimateTagGamenhashi: 
-  endMove: 
-  addMove: s32'AntiAir_D_SA'
-    moveAlias: s32'AntiAir_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    forceDisableFlag: 2
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 0
-    cpuEstimateAttackBox: -1109, -307, 759, 307
-    cpuEstimatePoint: 100
-    cpuEstimateTagXFarPunish: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'Assault_A_SA'
-    moveAlias: s32'Assault_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-    Unknown1431: 919
-    Unknown1514: 3
-    cpuEstimateAttackBox: -570, -219, 307, 219
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-  endMove: 
-  addMove: s32'Assault_B_SA'
-    moveAlias: s32'Assault_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -570, -219, 307, 219
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagKugurare: 
-  endMove: 
-  addMove: s32'Assault_C_SA'
-    moveAlias: s32'Assault_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -570, -219, 307, 219
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagGamenhashi: 
-  endMove: 
-  addMove: s32'Assault_D_SA'
-    moveAlias: s32'Assault_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 3
-    cpuEstimateAttackBox: -263, -351, 263, 351
-    cpuEstimatePoint: 50
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagSukidarake: 
-  endMove: 
-  addMove: s32'SpecialBomb_A_SA'
-    moveAlias: s32'SpecialBomb_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (DOWN_SKILL_CD_FALSE)
-    forceDisableFlag: 4
-    Unknown1431: 1919
-    Unknown1514: 2
-    cpuEstimateAttackBox: -701, -307, 351, 307
-    cpuEstimatePoint: 75
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'SpecialBomb_B_SA'
-    moveAlias: s32'SpecialBomb_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (DOWN_SKILL_CD_FALSE)
-    forceDisableFlag: 4
-    Unknown1431: 1919
-    cpuEstimateAttackBox: -1109, -307, 759, 307
-    cpuEstimatePoint: 75
-    cpuEstimateTagXFarPunish: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'SpecialBomb_C_SA'
-    moveAlias: s32'SpecialBomb_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (DOWN_SKILL_CD_FALSE)
-    forceDisableFlag: 4
-    Unknown1431: 1919
-    cpuEstimateAttackBox: -351, -307, 351, 307
-    cpuEstimatePoint: 75
-    cpuEstimateTagTobare: 
-    cpuEstimateTagProjectile: 
-    cpuEstimateTagGamenhashi: 
-  endMove: 
-  addMove: s32'SpecialBomb_D_SA'
-    moveAlias: s32'SpecialBomb_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    forceDisableFlag: 4
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 2
-    cpuEstimateAttackBox: -648, -307, 298, 307
-    cpuEstimatePoint: 75
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagProjectile: 
-  endMove: 
-  addMove: s32'eus_Ougi_SA'
-    moveType: (SUPER)
-    moveAlias: s32'eus_Ougi'
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_100_METER)
-    Unknown1431: 919
-    Unknown1447: 1, 0
-    cpuEstimateAttackBox: -351, -307, 351, 307
-    cpuEstimatePoint: 50
-    cpuEstimateTagCombo: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
-  endMove: 
-  addMove: s32'eus_Kaihou_SA'
-    moveType: (SUPER)
-    Unknown1511: 1
-    moveAlias: s32'eus_Kaihou'
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_100_METER)
-    addMoveFlag: (HEALTH_LEFT_30_TRUE)
-    Unknown1431: 919
-    Unknown1447: 1, 0
-    cpuEstimateAttackBox: -351, -307, 351, 307
-    cpuEstimatePoint: 50
-    cpuEstimateTagCombo: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagProjectile: 
-    cpuEstimateTagSukidarake: 
-  endMove: 
-  registerMove: s32'NmlAtk5ANear_SA'
-  registerMove: s32'NmlAtk5AFar_SA'
-  registerMove: s32'NmlAtk2A_SA'
-  registerMove: s32'NmlAtk5BNear_SA'
-  registerMove: s32'NmlAtk5BFar_SA'
-  registerMove: s32'NmlAtk2B_SA'
-  registerMove: s32'NmlAtk5CNear_SA'
-  registerMove: s32'NmlAtk5CFar_SA'
-  registerMove: s32'NmlAtk2C_SA'
-  registerMove: s32'NmlAtk5D_SA'
-  registerMove: s32'NmlAtk2D_SA'
-  registerMove: s32'SpecialShot_A_SA'
-  registerMove: s32'SpecialShot_B_SA'
-  registerMove: s32'SpecialShot_C_SA'
-  registerMove: s32'SpecialShot_D_SA'
-  registerMove: s32'AntiAir_A_SA'
-  registerMove: s32'AntiAir_B_SA'
-  registerMove: s32'AntiAir_C_SA'
-  registerMove: s32'AntiAir_D_SA'
-  registerMove: s32'Assault_A_SA'
-  registerMove: s32'Assault_B_SA'
-  registerMove: s32'Assault_C_SA'
-  registerMove: s32'Assault_D_SA'
-  registerMove: s32'SpecialBomb_A_SA'
-  registerMove: s32'SpecialBomb_B_SA'
-  registerMove: s32'SpecialBomb_C_SA'
-  registerMove: s32'SpecialBomb_D_SA'
-  registerMove: s32'eus_Ougi_SA'
-  registerMove: s32'eus_Kaihou_SA'
   callSubroutine: s32'cmn_SkillRegist'
   callSubroutine: s32'cmn_SkillRegist_Normal_Land'
   registerMove: s32'NmlAtk5CFar_Add'
@@ -1773,6 +1385,10 @@ beginSubroutine: s32'RoundInit'
   vsCharaMouthTable: s16'VS_RNT', s16'vEUS_APR_01_a', s32'c2r84c1r25c1r14c47r64c1r42c19', s32'', s32'', s32''
   vsCharaMouthTable: s16'VS_RNT', s16'vEUS_WIN_00', s32'c1r76c15', s32'', s32'', s32''
   vsCharaMouthTable: s16'VS_RNT', s16'vEUS_WIN_01', s32'c176', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vEUS_APR_00_a', s32'c2r106c4r11c1r48c12', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vEUS_APR_00_b', s32'c2r15c2r71c2r30c14', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vEUS_APR_01_a', s32'c2r17c2r64c51r10c2r13c2r24c1r56c', s32'12', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vEUS_WIN_00', s32'c1r76c15', s32'', s32'', s32''
   mouthTable2: s16'vEUS_APR_00_a', s32'c1r40c2r55c22', s32'', s32'', s32''
   mouthTable2: s16'vEUS_APR_00_b', s32'c1r34c2r22c13', s32'', s32'', s32''
   vsCharaMouthTable2: s16'121', s16'VS_BLZ', s16'vEUS_APR_00_a', s32'c1r9c2r24c1r7c2r9c1r51c21', s32'', s32'', s32''
@@ -1954,73 +1570,6 @@ beginSubroutine: s32'SetMatParamSpeed10_5F_Strike'
 endSubroutine: 
 
 beginSubroutine: s32'OnFrameStep'
-  if: Mem(437)
-    checkCurrentStateName: (SELF), s32'NmlAtk2A'
-    if: Mem(Tmp)
-      checkLastStateName: s32'NmlAtk2A'
-      if: Mem(Tmp)
-        upon: 135
-          Unknown1631: s32'AntiAir_C_SA'
-        endUpon: 
-        upon: 136
-          Unknown1631: s32'SpecialShot_A_SA'
-        endUpon: 
-      endIf: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5A3rd'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'SpecialShot_C_SA'
-        Unknown1631: s32'SpecialShot_D_SA'
-        Unknown1631: s32'AntiAir_C_SA'
-        Unknown1631: s32'Assault_D_SA'
-        Unknown1631: s32'eus_Ougi_SA'
-        Unknown1631: s32'eus_Kaihou_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'SpecialShot_A_SA'
-      endUpon: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5AFar'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'SpecialShot_C_SA'
-        Unknown1631: s32'SpecialShot_D_SA'
-        Unknown1631: s32'Assault_C_SA'
-        Unknown1631: s32'eus_Ougi_SA'
-        Unknown1631: s32'eus_Kaihou_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'SpecialShot_A_SA'
-      endUpon: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5BFar'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'SpecialShot_C_SA'
-        Unknown1631: s32'SpecialShot_D_SA'
-        Unknown1631: s32'Assault_C_SA'
-        Unknown1631: s32'eus_Ougi_SA'
-        Unknown1631: s32'eus_Kaihou_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'SpecialShot_A_SA'
-      endUpon: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5CFar'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'SpecialShot_C_SA'
-        Unknown1631: s32'SpecialShot_D_SA'
-        Unknown1631: s32'Assault_C_SA'
-        Unknown1631: s32'eus_Ougi_SA'
-        Unknown1631: s32'eus_Kaihou_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'SpecialShot_A_SA'
-      endUpon: 
-    endIf: 
-  endIf: 
   callSubroutine: s32'cmnTest'
   checkSomething: 3, 3
   if: Mem(Tmp)
@@ -4455,7 +4004,7 @@ endState:
 beginState: s32'NmlAtkDash6C'
   upon: (IMMEDIATE)
     callSubroutine: s32'cmnAtkDash6C_AtkInit'
-    hitAirPushbackX: 14000
+    hitAirPushbackX: 10000
     counterhitAirPushbackX: 10000
     hitAirPushbackY: 30000
     wallPushback: 0, 1000
@@ -4475,7 +4024,7 @@ beginState: s32'NmlAtkDash6C'
   haltMomentum: 1
   physicsXImpulse: 8000
   sprite: s32'eus222_02', 4
-  physicsXImpulse: 30000
+  physicsXImpulse: 38000
   characterSfx: s32'eus_08_2'
   smartRandomVoiceLine: s16'vEUS_ATKDash_00', 100, s16'', 0, s16'', 0, s16'', 0
   sprite: s32'eus222_03', 5
@@ -5662,6 +5211,18 @@ beginSubroutine: s32'Assault_Init'
       if: Mem(Tmp)
         storeValue: Mem(ActReg0), Val(1)
       endIf: 
+      checkInput: (INPUT_PRESS_G)
+      if: Mem(Tmp)
+        storeValue: Mem(ActReg0), Val(1)
+      endIf: 
+      checkInput: 139
+      if: Mem(Tmp)
+        storeValue: Mem(ActReg0), Val(1)
+      endIf: 
+      checkInput: 142
+      if: Mem(Tmp)
+        storeValue: Mem(ActReg0), Val(1)
+      endIf: 
     endIf: 
     if: Mem(ActReg1)
       if: Mem(ActReg0)
@@ -5812,6 +5373,8 @@ beginState: s32'Assault_C'
     damage: 500
     pushbackOnBlockX: 50
     hitEffectFire: 1
+    groundHitEffect: (AIR_FACE_UP)
+    enemyHitstopAddition: 0, 0, 0
     callSubroutine: s32'Assault_Init'
     callSubroutine: s32'cmnSpecialAttackC_Init'
   endUpon: 
@@ -6112,6 +5675,8 @@ beginState: s32'Assault_HaseiA'
     callSubroutine: s32'cmnHACT_Back'
     damage: 700
     hitAirPushbackX: 20000
+    counterhitAirPushbackX: 15000
+    groundCounterHitEffect: (AIR_FACE_UP)
     damageEffect: 4, s32''
     clashLevel: 3
     pushbackOnBlockX: 50
@@ -6170,6 +5735,7 @@ beginState: s32'Assault_HaseiB'
     damage: 800
     groundHitEffect: (AIR_FACE_DOWN)
     hitAirPushbackX: 15000
+    hitAirPushbackY: 17000
     guardType: (LOW)
     atkAngle: -10
     damageEffect: 2, s32'EUS_Angle10_HitEff'
@@ -6182,8 +5748,8 @@ beginState: s32'Assault_HaseiB'
     endIf: 
     if: Mem(ActReg0)
       damage: 900
-      hitAirPushbackX: 18500
-      hitAirPushbackY: 22000
+      hitAirPushbackX: 22000
+      hitAirPushbackY: 16000
       clashLevel: 2
     endIf: 
   endUpon: 
@@ -6219,6 +5785,7 @@ beginState: s32'Assault_HaseiB'
   setCrouch: 0
   sprite: s32'eus406_11', 2
   sprite: s32'eus406_12', 2
+  callSubroutine: s32'cmnNandemoCancel'
 endState: 
 
 beginState: s32'Assault_HaseiC'
@@ -6508,7 +6075,7 @@ beginState: s32'SpecialBomb_C'
   sprite: s32'eus402_13', 3
   sprite: s32'eus402_14', 3
   sprite: s32'eus402_15', 3
-  sprite: s32'eus402_16', 3
+  sprite: s32'eus402_16', 2
 endState: 
 
 beginState: s32'SpecialBomb_D'

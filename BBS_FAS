@@ -55,7 +55,7 @@ beginSubroutine: s32'RoundInit'
   privateFlag: 0
   cpuWeakenRate: 100
   Unknown1296: 300000
-  Unknown1297: 150
+  Unknown1297: 30
   Unknown1922: 0, 11, 4
   Unknown1922: 1, 8, 5
   Unknown1922: 2, 12, 1
@@ -583,14 +583,7 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
     Unknown1431: 919
     Unknown1514: 0
-    cpuEstimateAttackBox: -333, 0, 333, 0
-    cpuEstimatePoint: 50
-    cpuIsThrow: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SubLove_B_Easy'
     moveAlias: s32'SubLove_B'
@@ -603,14 +596,7 @@ beginSubroutine: s32'RoundInit'
     moveInput: 153
     addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
     Unknown1431: 919
-    cpuEstimateAttackBox: -246, 0, 246, 0
-    cpuEstimatePoint: 50
-    cpuIsThrow: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SubLove_C_Easy'
     moveAlias: s32'SubLove_C'
@@ -623,14 +609,7 @@ beginSubroutine: s32'RoundInit'
     moveInput: 154
     addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
     Unknown1431: 919
-    cpuEstimateAttackBox: -246, 0, 246, 0
-    cpuEstimatePoint: 50
-    cpuIsThrow: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
+    usableByCPU: 0
   endMove: 
   addMove: s32'SubLove_D_Easy'
     moveAlias: s32'SubLove_D'
@@ -644,8 +623,91 @@ beginSubroutine: s32'RoundInit'
     addMoveFlag: (REQUIRES_50_METER)
     Unknown1431: 919
     Unknown1514: 0
+    usableByCPU: 0
+  endMove: 
+  addMove: s32'SubLove_A_Cpu'
+    moveAlias: s32'SubLove_A'
+    moveType: (SPECIAL)
+    moveSubType: 2
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: 62
+    moveInput: 53
+    moveInput: (INPUT_PRESS_S)
+    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+    Unknown1431: 919
+    Unknown1514: 0
+    disableCancelsIntoMove: 1
+    usableByPlayer: 0
     cpuEstimateAttackBox: -246, 0, 246, 0
     cpuEstimatePoint: 50
+    cpuIsThrow: 
+    cpuBigDamage: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagSukidarake: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
+  endMove: 
+  addMove: s32'SubLove_B_Cpu'
+    moveAlias: s32'SubLove_B'
+    moveType: (SPECIAL)
+    moveSubType: 3
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: 62
+    moveInput: 53
+    moveInput: 153
+    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+    Unknown1431: 919
+    disableCancelsIntoMove: 1
+    usableByPlayer: 0
+    cpuEstimateAttackBox: -246, 0, 246, 0
+    cpuEstimatePoint: 50
+    cpuIsThrow: 
+    cpuBigDamage: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagSukidarake: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
+  endMove: 
+  addMove: s32'SubLove_C_Cpu'
+    moveAlias: s32'SubLove_C'
+    moveType: (SPECIAL)
+    moveSubType: 4
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: 62
+    moveInput: 53
+    moveInput: 154
+    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+    Unknown1431: 919
+    disableCancelsIntoMove: 1
+    usableByPlayer: 0
+    cpuEstimateAttackBox: -246, 0, 246, 0
+    cpuEstimatePoint: 100
+    cpuIsThrow: 
+    cpuBigDamage: 
+    cpuEstimateTagTobare: 
+    cpuEstimateTagSukidarake: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
+  endMove: 
+  addMove: s32'SubLove_D_Cpu'
+    moveAlias: s32'SubLove_D'
+    moveType: (SPECIAL)
+    moveSubType: 5
+    moveStance: (STANDING)
+    moveInput: (INPUT_DISSALOW_UP)
+    moveInput: 62
+    moveInput: 53
+    moveInput: 155
+    addMoveFlag: (REQUIRES_50_METER)
+    Unknown1431: 919
+    Unknown1514: 0
+    disableCancelsIntoMove: 1
+    usableByPlayer: 0
+    cpuEstimateAttackBox: -246, 0, 246, 0
+    cpuEstimatePoint: 100
     cpuIsThrow: 
     cpuUsesResource: 
     cpuBigDamage: 
@@ -1185,486 +1247,6 @@ beginSubroutine: s32'RoundInit'
     moveRecipeEMove: s32'NmlAtk2B'
     moveRecipeEMove: s32'Lariat_C_Easy'
   endMove: 
-  addMove: s32'NmlAtk5ANear_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5ANear'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5AFar_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5AFar'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2A_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2A'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5BNear_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5BNear'
-    isFollowupMove: 1
-    moveInput: 160
-    maxChainIntoSelf: 1
-  endMove: 
-  addMove: s32'NmlAtk5BFar_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5BFar'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2B_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2B'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5CNear_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5CNear'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5CFar_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5CFar'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2C_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2C'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk5D_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk5D'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'NmlAtk2D_SA'
-    moveType: (NORMAL)
-    moveAlias: s32'NmlAtk2D'
-    isFollowupMove: 1
-    moveInput: 160
-  endMove: 
-  addMove: s32'Lariat_A_SA'
-    moveAlias: s32'Lariat_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-    Unknown1431: 919
-    Unknown1514: 3
-    cpuEstimateAttackBox: -570, -219, 351, 219
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsLow: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagFromDash: 
-  endMove: 
-  addMove: s32'Lariat_B_SA'
-    moveAlias: s32'Lariat_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -745, -219, 526, 219
-    cpuEstimatePoint: 100
-    cpuIsLow: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagFromDash: 
-    cpuEstimateTagNoAirCombo: 
-  endMove: 
-  addMove: s32'Lariat_C_SA'
-    moveAlias: s32'Lariat_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -745, -219, 526, 219
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuIsLow: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagFromDash: 
-  endMove: 
-  addMove: s32'Lariat_D_SA'
-    moveAlias: s32'Lariat_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 3
-    cpuEstimateAttackBox: -832, -219, 613, 219
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-    cpuIsLow: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagFromDash: 
-  endMove: 
-  addMove: s32'LoveHeadbad_A_SA'
-    moveAlias: s32'LoveHeadbad_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
-    Unknown1431: 919
-    Unknown1514: 1
-    cpuEstimateAttackBox: -395, -219, 395, 219
-    cpuEstimatePoint: 150
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagProjectileInvuln: 
-  endMove: 
-  addMove: s32'LoveHeadbad_B_SA'
-    moveAlias: s32'LoveHeadbad_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -395, -219, 395, 219
-    cpuEstimatePoint: 100
-    cpuEstimateTagGuard: 
-  endMove: 
-  addMove: s32'LoveHeadbad_C_SA'
-    moveAlias: s32'LoveHeadbad_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (FORWARD_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -395, -219, 395, 219
-    cpuEstimatePoint: 200
-    cpuEstimateTagGuard: 
-    cpuEstimateTagCombo: 
-    cpuEstimateTagProjectileInvuln: 
-  endMove: 
-  addMove: s32'LoveHeadbad_D_SA'
-    moveAlias: s32'LoveHeadbad_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 1
-    cpuEstimateAttackBox: -263, -219, 263, 219
-    cpuEstimatePoint: 50
-    cpuIsThrow: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
-  endMove: 
-  addMove: s32'SubLove_A_SA'
-    moveAlias: s32'SubLove_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    Unknown1431: 919
-    Unknown1514: 0
-    cpuEstimateAttackBox: -333, 0, 333, 0
-    cpuEstimatePoint: 50
-    cpuIsThrow: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
-  endMove: 
-  addMove: s32'SubLove_B_SA'
-    moveAlias: s32'SubLove_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -246, 0, 246, 0
-    cpuEstimatePoint: 50
-    cpuIsThrow: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
-  endMove: 
-  addMove: s32'SubLove_C_SA'
-    moveAlias: s32'SubLove_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -246, 0, 246, 0
-    cpuEstimatePoint: 50
-    cpuIsThrow: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
-  endMove: 
-  addMove: s32'SubLove_D_SA'
-    moveAlias: s32'SubLove_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 0
-    cpuEstimateAttackBox: -246, 0, 246, 0
-    cpuEstimatePoint: 50
-    cpuIsThrow: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagSukidarake: 
-  endMove: 
-  addMove: s32'AirSubLove_A_SA'
-    moveAlias: s32'AirSubLove_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (JUMPING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    minimumHeightRequirement: 130000
-    Unknown1431: 919
-    Unknown1514: 0
-    cpuEstimateAttackBox: -219, -219, 219, 263
-    cpuEstimatePoint: 50
-    cpuEstimateTagKunage: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-  endMove: 
-  addMove: s32'AirSubLove_B_SA'
-    moveAlias: s32'AirSubLove_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (JUMPING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    minimumHeightRequirement: 130000
-    Unknown1431: 919
-    cpuEstimateAttackBox: -219, -219, 219, 263
-    cpuEstimatePoint: 50
-    cpuEstimateTagKunage: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-  endMove: 
-  addMove: s32'AirSubLove_C_SA'
-    moveAlias: s32'AirSubLove_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (JUMPING)
-    moveInput: 160
-    addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
-    minimumHeightRequirement: 130000
-    Unknown1431: 919
-    cpuEstimateAttackBox: -219, -219, 219, 263
-    cpuEstimatePoint: 50
-    cpuEstimateTagKunage: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-  endMove: 
-  addMove: s32'AirSubLove_D_SA'
-    moveAlias: s32'AirSubLove_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (JUMPING)
-    moveInput: 160
-    minimumHeightRequirement: 130000
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 0
-    cpuEstimateAttackBox: -219, -219, 219, 263
-    cpuEstimatePoint: 50
-    cpuEstimateTagKunage: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-  endMove: 
-  addMove: s32'AntiAir_A_SA'
-    moveAlias: s32'AntiAir_A'
-    moveType: (SPECIAL)
-    moveSubType: 2
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (DOWN_SKILL_CD_FALSE)
-    Unknown1431: 919
-    Unknown1514: 2
-    cpuEstimateAttackBox: -351, -307, 351, 307
-    cpuEstimatePoint: 50
-    cpuIsTaiku: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagNoCombo: 
-  endMove: 
-  addMove: s32'AntiAir_B_SA'
-    moveAlias: s32'AntiAir_B'
-    moveType: (SPECIAL)
-    moveSubType: 3
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (DOWN_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -351, -307, 351, 307
-    cpuEstimatePoint: 50
-    cpuIsTaiku: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagNoCombo: 
-  endMove: 
-  addMove: s32'AntiAir_C_SA'
-    moveAlias: s32'AntiAir_C'
-    moveType: (SPECIAL)
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (DOWN_SKILL_CD_FALSE)
-    Unknown1431: 919
-    cpuEstimateAttackBox: -351, -307, 351, 307
-    cpuEstimatePoint: 50
-    cpuIsTaiku: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagNoCombo: 
-  endMove: 
-  addMove: s32'AntiAir_D_SA'
-    moveAlias: s32'AntiAir_D'
-    moveType: (SPECIAL)
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_50_METER)
-    Unknown1431: 919
-    Unknown1514: 2
-    cpuEstimateAttackBox: -351, -307, 351, 307
-    cpuEstimatePoint: 50
-    cpuIsTaiku: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagNoCombo: 
-  endMove: 
-  addMove: s32'LoveMaxB_SA'
-    moveType: (SUPER)
-    moveAlias: s32'LoveMaxB'
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_100_METER)
-    Unknown1431: 919
-    Unknown1447: 1, 0
-    cpuEstimateAttackBox: -351, -307, 351, 307
-    cpuEstimatePoint: 50
-    cpuEstimateTagCombo: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagKugurare: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
-  endMove: 
-  addMove: s32'LoveMaxB_Throw_SA'
-    moveType: (SUPER)
-    moveAlias: s32'LoveMaxB_Throw'
-    moveSubType: 4
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_100_METER)
-    Unknown1431: 919
-    Unknown1447: 1, 6
-    cpuEstimateAttackBox: -246, 0, 246, 0
-    cpuEstimatePoint: 50
-    cpuIsThrow: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
-    cpuEstimateTagNoCombo: 
-    cpuEstimateTagNoAirCombo: 
-  endMove: 
-  addMove: s32'Fas_Kaihou_SA'
-    moveType: (SUPER)
-    Unknown1511: 1
-    moveAlias: s32'Fas_Kaihou'
-    moveSubType: 5
-    moveStance: (STANDING)
-    moveInput: 160
-    addMoveFlag: (REQUIRES_100_METER)
-    addMoveFlag: (HEALTH_LEFT_30_TRUE)
-    Unknown1431: 919
-    Unknown1447: 1, 0
-    cpuEstimateAttackBox: -333, 0, 333, 0
-    cpuEstimatePoint: 50
-    cpuEstimateTagCombo: 
-    cpuIsThrow: 
-    cpuUsesResource: 
-    cpuBigDamage: 
-    cpuEstimateTagTobare: 
-    cpuEstimateTagInvuln: 
-    cpuEstimateTagSukidarake: 
-  endMove: 
-  registerMove: s32'NmlAtk5ANear_SA'
-  registerMove: s32'NmlAtk5AFar_SA'
-  registerMove: s32'NmlAtk2A_SA'
-  registerMove: s32'NmlAtk5BNear_SA'
-  registerMove: s32'NmlAtk5BFar_SA'
-  registerMove: s32'NmlAtk2B_SA'
-  registerMove: s32'NmlAtk5CNear_SA'
-  registerMove: s32'NmlAtk5CFar_SA'
-  registerMove: s32'NmlAtk2C_SA'
-  registerMove: s32'NmlAtk5D_SA'
-  registerMove: s32'NmlAtk2D_SA'
-  registerMove: s32'Lariat_A_SA'
-  registerMove: s32'Lariat_B_SA'
-  registerMove: s32'Lariat_C_SA'
-  registerMove: s32'Lariat_D_SA'
-  registerMove: s32'LoveHeadbad_A_SA'
-  registerMove: s32'LoveHeadbad_B_SA'
-  registerMove: s32'LoveHeadbad_C_SA'
-  registerMove: s32'LoveHeadbad_D_SA'
-  registerMove: s32'SubLove_A_SA'
-  registerMove: s32'SubLove_B_SA'
-  registerMove: s32'SubLove_C_SA'
-  registerMove: s32'SubLove_D_SA'
-  registerMove: s32'AirSubLove_A_SA'
-  registerMove: s32'AirSubLove_B_SA'
-  registerMove: s32'AirSubLove_C_SA'
-  registerMove: s32'AirSubLove_D_SA'
-  registerMove: s32'AntiAir_A_SA'
-  registerMove: s32'AntiAir_B_SA'
-  registerMove: s32'AntiAir_C_SA'
-  registerMove: s32'AntiAir_D_SA'
-  registerMove: s32'LoveMaxB_SA'
-  registerMove: s32'LoveMaxB_Throw_SA'
-  registerMove: s32'Fas_Kaihou_SA'
   callSubroutine: s32'cmn_SkillRegist'
   callSubroutine: s32'cmn_SkillRegist_Normal_Land'
   callSubroutine: s32'cmn_SkillRegist_Normal_Air'
@@ -1726,6 +1308,10 @@ beginSubroutine: s32'RoundInit'
   registerMove: s32'Fas_Kaihou_Easy'
   registerMove: s32'2AThrow'
   registerMove: s32'Combo'
+  registerMove: s32'SubLove_A_Cpu'
+  registerMove: s32'SubLove_B_Cpu'
+  registerMove: s32'SubLove_C_Cpu'
+  registerMove: s32'SubLove_D_Cpu'
   registerMove: s32'MissionFAS_01_01'
   registerMove: s32'MissionFAS_01_02'
   registerMove: s32'MissionFAS_01_03'
@@ -2092,6 +1678,13 @@ beginSubroutine: s32'RoundInit'
   vsCharaMouthTable: s16'VS_RNT', s16'vFAS_APR_01_b', s32'c1r38c3r11c25r7c7r11c2r11c2r47c1', s32'5', s32'', s32''
   vsCharaMouthTable: s16'VS_RNT', s16'vFAS_APR_01_c', s32'c1r10c1r43c1r48c12', s32'', s32'', s32''
   vsCharaMouthTable: s16'VS_RNT', s16'vFAS_WIN_00', s32'c1r36c1r30c29r38c7', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vFAS_APR_00_a', s32'c3r35c14', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vFAS_APR_00_b', s32'c3r29c1r30c2r21c1r6c2r19c1r9c1r3', s32'5c8r6c18r8c10r13c3r46c12', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vFAS_APR_00_c', s32'c5r16c4r19c5r42c21r55c13', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vFAS_APR_01_a', s32'c7r36c1r20c1r12c1r6c2r19c4r60c23', s32'r42c2r28c20', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vFAS_APR_01_b', s32'c2r23c7r11c58r68c11', s32'', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vFAS_APR_01_c', s32'c3r14c2r41c1r13c1r7c1r13c1r7c2r2', s32'2c20r25c4r29c4r51c11', s32'', s32''
+  vsCharaMouthTable: s16'VS_SKN', s16'vFAS_WIN_00', s32'c7r53c26r1c2r48c2r7c14', s32'', s32'', s32''
   mouthTable2: s16'vFAS_APR_00_a', s32'c1r20c19', s32'', s32'', s32''
   mouthTable2: s16'vFAS_APR_00_b', s32'r17c6r34c5r7c4r87c1r36c15', s32'', s32'', s32''
   mouthTable2: s16'vFAS_APR_00_c', s32'c1r82c23r10c2r32c14', s32'', s32'', s32''
@@ -2219,65 +1812,6 @@ beginSubroutine: s32'RoundInit'
 endSubroutine: 
 
 beginSubroutine: s32'OnFrameStep'
-  if: Mem(437)
-    checkCurrentStateName: (SELF), s32'NmlAtk2A'
-    if: Mem(Tmp)
-      checkLastStateName: s32'NmlAtk2A'
-      if: Mem(Tmp)
-        upon: 135
-          Unknown1631: s32'LoveHeadbad_C_SA'
-        endUpon: 
-        upon: 136
-          Unknown1631: s32'LoveHeadbad_A_SA'
-        endUpon: 
-      endIf: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5A3rd'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'Lariat_C_SA'
-        Unknown1631: s32'Lariat_D_SA'
-        Unknown1631: s32'LoveHeadbad_C_SA'
-        Unknown1631: s32'SubLove_D_SA'
-        Unknown1631: s32'LoveMaxB_SA'
-        Unknown1631: s32'Fas_Kaihou_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'LoveHeadbad_A_SA'
-      endUpon: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5AFar'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'Lariat_D_SA'
-        Unknown1631: s32'LoveMaxB_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'LoveHeadbad_A_SA'
-      endUpon: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5BFar'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'Lariat_D_SA'
-        Unknown1631: s32'LoveMaxB_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'LoveHeadbad_A_SA'
-      endUpon: 
-    endIf: 
-    checkCurrentStateName: (SELF), s32'NmlAtk5CFar'
-    if: Mem(Tmp)
-      upon: 135
-        Unknown1631: s32'LoveHeadbad_C_SA'
-        Unknown1631: s32'Lariat_D_SA'
-        Unknown1631: s32'LoveMaxB_SA'
-      endUpon: 
-      upon: 136
-        Unknown1631: s32'LoveHeadbad_A_SA'
-      endUpon: 
-    endIf: 
-  endIf: 
   callSubroutine: s32'cmnTest'
 endSubroutine: 
 
@@ -7325,6 +6859,11 @@ beginState: s32'AntiAirExe'
     exPointFReset: (PLAYER), 20000, 370000
     Unknown540: 130, 100, 0
   endIf: 
+  ifOpponentCharacterMain: s16'skn'
+  if: Mem(Tmp)
+    exPointFReset: (PLAYER), 0, 300000
+    Unknown540: 130, 100, 0
+  endIf: 
   sprite: s32'fas409_05', 3
   exPointFReset: (PLAYER), -30000, 500000
   Unknown540: 130, 100, 0
@@ -7392,6 +6931,11 @@ beginState: s32'AntiAirExe'
   ifOpponentCharacterMain: s16'san'
   if: Mem(Tmp)
     exPointFReset: (PLAYER), 0, 460000
+    Unknown540: 130, 100, 0
+  endIf: 
+  ifOpponentCharacterMain: s16'skn'
+  if: Mem(Tmp)
+    exPointFReset: (PLAYER), -20000, 380000
     Unknown540: 130, 100, 0
   endIf: 
   sprite: s32'fas409_06', 7
@@ -7463,6 +7007,11 @@ beginState: s32'AntiAirExe'
     exPointFReset: (PLAYER), 0, 460000
     Unknown540: 130, 100, 0
   endIf: 
+  ifOpponentCharacterMain: s16'skn'
+  if: Mem(Tmp)
+    exPointFReset: (PLAYER), -20000, 380000
+    Unknown540: 130, 100, 0
+  endIf: 
   sprite: s32'fas409_07', 4
   exPointFReset: (PLAYER), -80000, 470000
   Unknown540: 130, 100, 0
@@ -7527,6 +7076,11 @@ beginState: s32'AntiAirExe'
     exPointFReset: (PLAYER), -60000, 470000
     Unknown540: 130, 100, 0
   endIf: 
+  ifOpponentCharacterMain: s16'skn'
+  if: Mem(Tmp)
+    exPointFReset: (PLAYER), -50000, 360000
+    Unknown540: 130, 100, 0
+  endIf: 
   sprite: s32'fas409_08', 5
   exPointFReset: (PLAYER), -180000, 400000
   Unknown540: 130, 100, 0
@@ -7588,6 +7142,11 @@ beginState: s32'AntiAirExe'
   ifOpponentCharacterMain: s16'san'
   if: Mem(Tmp)
     exPointFReset: (PLAYER), -140000, 400000
+    Unknown540: 130, 100, 0
+  endIf: 
+  ifOpponentCharacterMain: s16'skn'
+  if: Mem(Tmp)
+    exPointFReset: (PLAYER), -140000, 300000
     Unknown540: 130, 100, 0
   endIf: 
   sprite: s32'fas409_09', 6
@@ -8561,6 +8120,10 @@ beginState: s32'Fas_KaihouExe'
   ifOpponentCharacterMain: s16'uno'
   if: Mem(Tmp)
     playAnimation: s32'fas444cs', 0
+  endIf: 
+  ifOpponentCharacterMain: s16'skn'
+  if: Mem(Tmp)
+    playAnimation: s32'fas446cs', 0
   endIf: 
   playCameraAnimation: s32'fas441cs', 23, 0, 0
   runOnObject: (ENEMY)

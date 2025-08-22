@@ -600,15 +600,22 @@ sprite: s32'knc280_03', 4
 sprite: s32'knc280_04', 2147483647
 beginLabel: s32'Landing'
 sprite: s32'knc280_04', 20
-clearUpon: 23
 clearUpon: (TOUCH_GROUND)
+physicsXImpulse: 500
+physicsYImpulse: 32000
+setGravity: 1500
+sprite: s32'keep', 4
+Unknown2050: 0
+clearUpon: 23
 setLinkObjectDestroyOnStateChange: 0
 setLinkObjectDestroyOnDamage: 0
-velocityYPercent: -20
-velocityXPercent: 10
-sprite: s32'keep', 4
-haltMomentum: 1
-Unknown2050: 0
+upon: (FRAME_STEP)
+  ifOperation: (IS_LESSER_OR_EQUAL), Mem(PosY), Val(0)
+    clearUpon: (FRAME_STEP)
+    haltMomentum: 1
+  endIf: 
+endUpon: 
+
 sprite: s32'keep', 4
 Unknown2050: 1
 sprite: s32'keep', 2
@@ -1259,6 +1266,10 @@ endSubroutine:
 beginState: s32'pod404'
   upon: (IMMEDIATE)
     callSubroutine: s32'pod_Ability_Init'
+    upon: 23
+      clearUpon: 23
+      storeValue: Mem(ActReg0), Val(1)
+    endUpon: 
   endUpon: 
   sprite: s32'keep', 1
   createObject: s32'twb_400_PodGlitch', (PLAYER)
@@ -1280,9 +1291,9 @@ beginState: s32'pod404'
   sprite: s32'pod404_04', 3
   sprite: s32'pod404_05', 3
   sprite: s32'pod404_06', 3
-  sprite: s32'pod404_04', 3
-  sprite: s32'pod404_05', 3
-  sprite: s32'pod404_06', 3
+  endSprite: 
+  gotoLabelIf: s32'Hit', Mem(ActReg0)
+  beginLabel: s32'End'
   sprite: s32'pod404_07', 3
   deactivateObjectByName: s32'pod_404_AtkMatome'
   sendSignalToAction: s32'twb_404_MGStart', 23
@@ -1292,6 +1303,11 @@ beginState: s32'pod404'
   endSprite: 
   sprite: s32'keep', 2147483647
   jumpToState: s32'pod_Wait'
+  beginLabel: s32'Hit'
+  sprite: s32'pod404_04', 3
+  sprite: s32'pod404_05', 3
+  sprite: s32'pod404_06', 3
+  gotoLabel: s32'End'
 endState: 
 
 beginState: s32'pod_404_AtkMatome'
@@ -1321,6 +1337,11 @@ beginState: s32'pod_404_AtkMatome'
     Unknown1085: 1
     upon: (HIT_OR_GUARD)
       createObject: s32'twb_404_GatlingShellEnd', (ATTACK)
+      ifNot: Mem(ActReg0)
+        storeValue: Mem(ActReg0), Val(1)
+        Unknown1793: 2, 23
+        Unknown1793: 3, 23
+      endIf: 
     endUpon: 
     upon: (FRAME_STEP)
       ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(26)

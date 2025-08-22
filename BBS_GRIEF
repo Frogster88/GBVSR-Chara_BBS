@@ -1118,7 +1118,6 @@ beginSubroutine: s32'SpecialShotAdd_Matome'
     storeValue: Mem(ActReg4), Val(60)
     addMoveForceDisableFlag: 4
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-      modifyVar: (ADD), Mem(ActReg4), Val(60)
     endIf: 
   endIf: 
   checkSignalName: s32'gri_SpecialShot_8'
@@ -1459,6 +1458,7 @@ beginState: s32'gri_Booster'
     upon: 45
       clearUpon: 45
       clearUpon: 23
+      clearUpon: 30
       clearUpon: 31
       clearUpon: 32
       gotoLabelRequests: s32'End'
@@ -1488,6 +1488,7 @@ beginState: s32'gri_Booster'
     upon: 31
       clearUpon: 45
       clearUpon: 23
+      clearUpon: 30
       clearUpon: 31
       clearUpon: 32
       gotoLabelRequests: s32'OugiBuffEnd'
@@ -1495,9 +1496,18 @@ beginState: s32'gri_Booster'
     upon: 32
       clearUpon: 45
       clearUpon: 23
+      clearUpon: 30
       clearUpon: 31
       clearUpon: 32
       storeValue: Mem(ActReg6), Val(1)
+    endUpon: 
+    upon: 30
+      clearUpon: 45
+      clearUpon: 23
+      clearUpon: 30
+      clearUpon: 31
+      clearUpon: 32
+      gotoLabelRequests: s32'YarareEnd'
     endUpon: 
     upon: 49
       checkSignalName: s32'HikitsugiVal0_0â1'
@@ -1680,6 +1690,13 @@ deactivateObjectById: (STACK1)
 exitState: 
 beginLabel: s32'BattleDoingEnd'
 sprite: s32'null', 20
+sprite: s32'null', 30
+createObject: s32'gri_Booster2_test', (PLAYER)
+storeValue: Mem(ActReg0), Val(1)
+storeValue: Mem(ActReg1), Val(1)
+deactivateObjectById: (STACK1)
+exitState: 
+beginLabel: s32'YarareEnd'
 sprite: s32'null', 30
 createObject: s32'gri_Booster2_test', (PLAYER)
 storeValue: Mem(ActReg0), Val(1)

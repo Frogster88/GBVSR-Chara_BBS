@@ -412,8 +412,8 @@ beginSubroutine: s32'cmn_SkillInit'
     moveNotSame: 1
     forceDisableFlag: 134217728
     forcedComboScaleCount: 1
-    cpuEstimateAttackBox: -295, -400, 590, 400
-    cpuEstimatePoint: 50
+    cpuEstimateAttackBox: -215, -400, 210, 400
+    cpuEstimatePoint: 20
     cpuEstimateLevelLimit: 20
     cpuEstimateTagGuard: 
     cpuIsThrow: 
@@ -464,11 +464,56 @@ beginSubroutine: s32'cmn_SkillInit'
     cpuEstimateTagNoCombo: 
     cpuEstimateTagNoAirCombo: 
   endMove: 
+  addMove: s32'CPUSetPlay_FJump1'
+    moveRecipeStopTypeEx: 2, 0, 30
+    usableByPlayer: 0
+    cpuEstimatePoint: 30
+    cpuEstimateLevelLimit: 20
+    cpuEstimateTagXMidPunish: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagTobi: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
+    moveRecipeEMove: s32'CmnFJump'
+    moveRecipeEKey: 4, 25
+  endMove: 
+  addMove: s32'CPUSetPlay_FJump2'
+    moveRecipeStopTypeEx: 2, 0, 30
+    usableByPlayer: 0
+    cpuEstimatePoint: 30
+    cpuEstimateLevelLimit: 20
+    cpuEstimateTagXMidPunish: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagTobi: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
+    moveRecipeEMove: s32'CmnFJump'
+    moveRecipeEKey: 4, 35
+    moveRecipeEMove: s32'NmlAtkAir5C'
+  endMove: 
+  addMove: s32'CPUSetPlay_FJump3'
+    moveRecipeStopTypeEx: 2, 0, 30
+    usableByPlayer: 0
+    cpuEstimatePoint: 30
+    cpuEstimateLevelLimit: 20
+    cpuEstimateTagXFarPunish: 
+    cpuEstimateTagKugurare: 
+    cpuEstimateTagTobi: 
+    cpuEstimateTagNoCombo: 
+    cpuEstimateTagNoAirCombo: 
+    moveRecipeEMove: s32'CmnFDash'
+    moveRecipeEKey: 8, 10
+    moveRecipeEMove: s32'CmnFJump'
+    moveRecipeEKey: 4, 25
+  endMove: 
 endSubroutine: 
 
 beginSubroutine: s32'cmn_SkillRegist'
   registerMove: s32'CmnNeutral'
   registerMove: s32'CmnStandForce'
+  registerMove: s32'CPUSetPlay_FJump1'
+  registerMove: s32'CPUSetPlay_FJump2'
+  registerMove: s32'CPUSetPlay_FJump3'
   registerMove: s32'CmnFWalk'
   registerMove: s32'CmnFDash'
   registerMove: s32'FDash_J'
@@ -2768,9 +2813,9 @@ beginSubroutine: s32'cmnAtkDash6C_AtkInit'
   attackLevel: 4
   attackType: 1
   damage: 1200
-  hitstunAmount: 36
-  counterHitstunAmount: 36
-  crouchHitstunAddition: 1
+  hitstunAmount: 37
+  counterHitstunAmount: 37
+  crouchHitstunAddition: 0
   untechAmount: 60
   airBlockstunAddition: 5
   wallPushback: 0, 1500
@@ -3523,6 +3568,38 @@ endElse:
 endElse: 
 endIf: 
 endIf: 
+ifPlayerCharacter: s16'skn'
+  storeValue: Mem(ActReg0), Val(0)
+  Unknown310: 12, 3, 2, 104, 0, 0
+  if: Mem(IsEnableNormalAttack)
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDiffY), Val(1)
+      Unknown310: 13, 11, 2, 106, 0, 320000
+      storeValue: Mem(ActReg0), Val(1)
+    endIf: 
+  endIf: 
+  else: 
+    Unknown310: 13, 11, 2, 106, 0, 270000
+    storeValue: Mem(ActReg0), Val(1)
+  endIf: 
+endElse: 
+
+endIf: 
+else: 
+  ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDiffY), Val(1)
+    Unknown310: 13, 11, 2, 106, 0, 430000
+    storeValue: Mem(ActReg0), Val(1)
+  endIf: 
+endIf: 
+
+else: 
+  Unknown310: 13, 11, 2, 106, 0, 380000
+  storeValue: Mem(ActReg0), Val(1)
+endIf: 
+
+endElse: 
+endElse: 
+endIf: 
+endIf: 
 if: Mem(ActReg0)
   invulnForce: 1
   attackThroughArmor: 1
@@ -3757,6 +3834,38 @@ endElse:
 endIf: 
 endIf: 
 ifPlayerCharacter: s16'vrs'
+  storeValue: Mem(ActReg0), Val(0)
+  Unknown310: 12, 3, 2, 104, 0, 0
+  if: Mem(IsEnableNormalAttack)
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDiffY), Val(1)
+      Unknown310: 13, 11, 2, 106, 0, 360000
+      storeValue: Mem(ActReg0), Val(1)
+    endIf: 
+  endIf: 
+  else: 
+    Unknown310: 13, 11, 2, 106, 0, 310000
+    storeValue: Mem(ActReg0), Val(1)
+  endIf: 
+endElse: 
+
+endIf: 
+else: 
+  ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDiffY), Val(1)
+    Unknown310: 13, 11, 2, 106, 0, 470000
+    storeValue: Mem(ActReg0), Val(1)
+  endIf: 
+endIf: 
+
+else: 
+  Unknown310: 13, 11, 2, 106, 0, 420000
+  storeValue: Mem(ActReg0), Val(1)
+endIf: 
+
+endElse: 
+endElse: 
+endIf: 
+endIf: 
+ifPlayerCharacter: s16'skn'
   storeValue: Mem(ActReg0), Val(0)
   Unknown310: 12, 3, 2, 104, 0, 0
   if: Mem(IsEnableNormalAttack)
