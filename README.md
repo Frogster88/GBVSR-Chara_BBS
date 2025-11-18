@@ -5,6 +5,7 @@ EX Characters are internally saved under the folder titled `(CharaID) EX`, but t
 Character frame data and such will be in the file `BBS_(CharaID)`, while effects and other things to make the character work are in `BBS_(CharaID)EF`.
 
 Character IDs:
+- `AAG` = Meg
 - `ABL` = Avatar Belial
 - `ANL` = Anila
 - `BEA` = Beatrix (Season 1 DLC)
