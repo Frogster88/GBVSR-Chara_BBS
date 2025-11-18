@@ -1,3142 +1,3142 @@
 beginState: s32'dmy'
-  sprite: s32'null', 1
+    sprite: s32'null', 1
 endState: 
 
 beginSubroutine: s32'ARE_Start'
-  linkPawnWithAnimation: s32'ARE', s32''
-  beginMeshSet: s32'ARE'
-    addToMeshSet: s32'toge'
-    addToMeshSet: s32'are'
-    addToMeshSet: s32'shield'
-  endMeshSet: 
-  swapMeshSet: s32'ARE'
-  setNoCollision: 0
-  checkScreenCollision: 0
-  worldCollision: 0
-  invulnForce: 1
-  ignoreSuperFreezeFromAlly: 1
+    linkPawnWithAnimation: s32'ARE', s32''
+    beginMeshSet: s32'ARE'
+        addToMeshSet: s32'toge'
+        addToMeshSet: s32'are'
+        addToMeshSet: s32'shield'
+    endMeshSet: 
+    swapMeshSet: s32'ARE'
+    setNoCollision: 0
+    checkScreenCollision: 0
+    worldCollision: 0
+    invulnForce: 1
+    ignoreSuperFreezeFromAlly: 1
 endSubroutine: 
 
 beginSubroutine: s32'ARE_End'
-  linkPawnWithAnimation: s32'', s32''
-  deactivateCurrentObject: 
+    linkPawnWithAnimation: s32'', s32''
+    deactivateCurrentObject: 
 endSubroutine: 
 
 beginState: s32'ARE_ctl440cs'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ARE_Start'
-  endUpon: 
-  sprite: s32'null', 115
-  playAnimation: s32'ctl440cs', 1
-  sprite: s32'null', 1
-  callSubroutine: s32'ARE_End'
-  endSprite: 
-  exitState: 
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ARE_Start'
+    endUpon: 
+    sprite: s32'null', 115
+    playAnimation: s32'ctl440cs', 1
+    sprite: s32'null', 1
+    callSubroutine: s32'ARE_End'
+    endSprite: 
+    exitState: 
 endState: 
 
 beginState: s32'ARE_ctl441cs'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ARE_Start'
-  endUpon: 
-  sprite: s32'null', 563
-  playAnimation: s32'ctl441cs', 1
-  sprite: s32'null', 1
-  callSubroutine: s32'ARE_End'
-  endSprite: 
-  exitState: 
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ARE_Start'
+    endUpon: 
+    sprite: s32'null', 563
+    playAnimation: s32'ctl441cs', 1
+    sprite: s32'null', 1
+    callSubroutine: s32'ARE_End'
+    endSprite: 
+    exitState: 
 endState: 
 
 beginState: s32'ARE_ctl442cs'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ARE_Start'
-  endUpon: 
-  sprite: s32'null', 216
-  playAnimation: s32'ctl442cs', 1
-  pauseSprite: 1
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ARE_Start'
+    endUpon: 
+    sprite: s32'null', 216
+    playAnimation: s32'ctl442cs', 1
+    pauseSprite: 1
 endState: 
 
 beginState: s32'ARE_ctl442cs_result'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ARE_Start'
-  endUpon: 
-  sprite: s32'null', 2147483647
-  playAnimation: s32'ctl442cs', 200
-  endSprite: 
-  exitState: 
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ARE_Start'
+    endUpon: 
+    sprite: s32'null', 2147483647
+    playAnimation: s32'ctl442cs', 200
+    endSprite: 
+    exitState: 
 endState: 
 
 beginState: s32'SpecialShot'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'cmnSpecialShot_AtkInit'
-    hitAirPushbackX: 18000
-    hitstop: 6
-    hitEffectSpecial: 1
-    damageEffect: 2, s32'ctl_SPHitEff'
-    upon: (HIT)
-      commonSE: s32'SE_BTL_HitIce_1'
-      ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        gotoLabelRequests: s32'Hit'
-      endIf: 
-    endUpon: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-      physicsXImpulse: 24000
-      hitstop: 8
-    endIf: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-      physicsXImpulse: 45000
-      hitstop: 8
-      wallPushback: 0, 1300
-    endIf: 
-    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-      groundHitEffect: (AIR_FACE_UP)
-      hitAirPushbackX: 12000
-      physicsXImpulse: 32000
-      upon: 8
-        ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
-          groundHitEffect: (NORMAL_UPPER)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'cmnSpecialShot_AtkInit'
+        hitAirPushbackX: 18000
+        hitstop: 6
+        hitEffectSpecial: 1
+        damageEffect: 2, s32'ctl_SPHitEff'
+        upon: (HIT)
+            commonSE: s32'SE_BTL_HitIce_1'
+            ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+                gotoLabelRequests: s32'Hit'
+            endIf: 
+        endUpon: 
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+            physicsXImpulse: 24000
+            hitstop: 8
         endIf: 
-      endUpon: 
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+            physicsXImpulse: 45000
+            hitstop: 8
+            wallPushback: 0, 1300
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+            groundHitEffect: (AIR_FACE_UP)
+            hitAirPushbackX: 12000
+            physicsXImpulse: 32000
+            upon: 8
+                ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
+                    groundHitEffect: (NORMAL_UPPER)
+                endIf: 
+            endUpon: 
+        endIf: 
+        initializeDestroy: 
+        numberOfHits: 1
+        destroyOnDamageCollision: 1
+        Unknown2207: 1
+        Unknown2208: 1
+        Unknown2209: 1
+        Unknown2210: 1
+        Unknown2257: 1
+        Unknown2212: 0
+        Unknown2213: 0
+        upon: 45
+            clearUpon: (HIT)
+            clearUpon: 37
+            gotoLabelRequests: s32'Koware'
+        endUpon: 
+        setEventTrigger: 13, 78
+        upon: 13
+            Unknown2203: 23
+        endUpon: 
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+            numberOfHits: 3
+        endIf: 
+        addMoveForceDisableFlag: 1
+        upon: 37
+            gotoLabelRequests: s32'Hit'
+        endUpon: 
+        setObjectWidth: 1000
+    endUpon: 
+    sprite: s32'SpecialShot_1st', 1
+    privateSE: s32'ctl_11'
+    hit: 
+    linkParticle: s32'ctl_400_sword_loop'
+    Unknown409: 0, 4
+    if: Mem(405)
+        Unknown409: 100, 4
     endIf: 
-    initializeDestroy: 
-    numberOfHits: 1
-    destroyOnDamageCollision: 1
-    Unknown2207: 1
-    Unknown2208: 1
-    Unknown2209: 1
-    Unknown2210: 1
-    Unknown2257: 1
-    Unknown2212: 0
-    Unknown2213: 0
-    upon: 45
-      clearUpon: (HIT)
-      clearUpon: 37
-      gotoLabelRequests: s32'Koware'
-    endUpon: 
-    setEventTrigger: 13, 78
-    upon: 13
-      Unknown2203: 23
-    endUpon: 
+    createObject: s32'ctl400_Ground', (PLAYER_LAND)
+    createObject: s32'ctl400_nokosiEff', (PLAYER)
+    sprite: s32'SpecialShot_1st', 1
+    hit: 
+    beginLabel: s32'Hit'
+    sprite: s32'SpecialShot_1st', 1
+    hit: 
+    beginLabel: s32'Loop'
+    sprite: s32'SpecialShot', 1
+    hit: 
+    gotoLabel: s32'Loop'
+    beginLabel: s32'Koware'
+    sprite: s32'null', 10
+    clearUpon: 13
+    clearUpon: 45
+    haltMomentum: 1
+    deactivateObjectByName: s32'ctl400_nokosiEff'
+    deactivateObjectByName: s32'ctl400_Ground'
+    createObjectWithArg: s32'koware_Dummy', (PLAYER)
+    Unknown2050: 0
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+        Unknown1921: 0, 10
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+        Unknown1921: 0, 10
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-      numberOfHits: 3
+        Unknown1921: 0, 420
     endIf: 
-    addMoveForceDisableFlag: 1
-    upon: 37
-      gotoLabelRequests: s32'Hit'
-    endUpon: 
-    setObjectWidth: 1000
-  endUpon: 
-  sprite: s32'SpecialShot_1st', 1
-  privateSE: s32'ctl_11'
-  hit: 
-  linkParticle: s32'ctl_400_sword_loop'
-  Unknown409: 0, 4
-  if: Mem(405)
-    Unknown409: 100, 4
-  endIf: 
-  createObject: s32'ctl400_Ground', (PLAYER_LAND)
-  createObject: s32'ctl400_nokosiEff', (PLAYER)
-  sprite: s32'SpecialShot_1st', 1
-  hit: 
-  beginLabel: s32'Hit'
-  sprite: s32'SpecialShot_1st', 1
-  hit: 
-  beginLabel: s32'Loop'
-  sprite: s32'SpecialShot', 1
-  hit: 
-  gotoLabel: s32'Loop'
-  beginLabel: s32'Koware'
-  sprite: s32'null', 10
-  clearUpon: 13
-  clearUpon: 45
-  haltMomentum: 1
-  deactivateObjectByName: s32'ctl400_nokosiEff'
-  deactivateObjectByName: s32'ctl400_Ground'
-  createObjectWithArg: s32'koware_Dummy', (PLAYER)
-  Unknown2050: 0
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-    Unknown1921: 0, 10
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-    Unknown1921: 0, 10
-  endIf: 
-  ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-    Unknown1921: 0, 420
-  endIf: 
-  Unknown1923: 0
+    Unknown1923: 0
 endState: 
 
 beginState: s32'ctl400_nokosiEff'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    linkObjectDirection: 2
-    setLinkObjectDestroyOnDamage: 2
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  beginLabel: s32'loop'
-  sprite: s32'null', 4
-  if: Mem(405)
-    createParticle: s32'ctl_400_nokosi_SP', (PLAYER)
-  endIf: 
-  else: 
-    Unknown409: 100, 4
-    createParticle: s32'ctl_400_nokosi', (PLAYER)
-  endElse: 
-  gotoLabel: s32'loop'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        linkObjectDirection: 2
+        setLinkObjectDestroyOnDamage: 2
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    beginLabel: s32'loop'
+    sprite: s32'null', 4
+    if: Mem(405)
+        createParticle: s32'ctl_400_nokosi_SP', (PLAYER)
+    endIf: 
+    else: 
+        Unknown409: 100, 4
+        createParticle: s32'ctl_400_nokosi', (PLAYER)
+    endElse: 
+    gotoLabel: s32'loop'
 endState: 
 
 beginState: s32'koware_Dummy'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_400_sword_end'
-  endUpon: 
-  sprite: s32'SpecialShot', 60
-  endSprite: 
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_400_sword_end'
+    endUpon: 
+    sprite: s32'SpecialShot', 60
+    endSprite: 
 endState: 
 
 beginState: s32'ctl400_Ground'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_400_ground_loop'
-    linkObjectPosition: 2
-    upon: (BEFORE_EXIT)
-      createParticle: s32'ctl_400_ground_end', (PLAYER_LAND)
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_400_ground_loop'
+        linkObjectPosition: 2
+        upon: (BEFORE_EXIT)
+            createParticle: s32'ctl_400_ground_end', (PLAYER_LAND)
+        endUpon: 
     endUpon: 
-  endUpon: 
-  sprite: s32'null', 120
+    sprite: s32'null', 120
 endState: 
 
 beginState: s32'205Eff'
-  upon: (IMMEDIATE)
-    linkParticle: s32'cmn_thrust'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    setPositionX: 504899
-    setPositionY: 262337
-    setDepth: 66499
-    setAngleX: 0
-    setAngleY: 2000
-    setAngle: 358000
-  endUpon: 
-  sprite: s32'null', 40
+    upon: (IMMEDIATE)
+        linkParticle: s32'cmn_thrust'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        setPositionX: 504899
+        setPositionY: 262337
+        setDepth: 66499
+        setAngleX: 0
+        setAngleY: 2000
+        setAngle: 358000
+    endUpon: 
+    sprite: s32'null', 40
 endState: 
 
 beginState: s32'208Eff_shield_loop'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_208_shield_loop'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 40
-  privateSE: s32'ctl_08'
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_208_shield_loop'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 40
+    privateSE: s32'ctl_08'
 endState: 
 
 beginState: s32'208Eff_shield_end'
-  upon: (IMMEDIATE)
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 15
-  linkParticle: s32'ctl_208_shield_end'
-  ignoreFinishStop: 1
-  sprite: s32'null', 25
-  ignoreFinishStop: 0
+    upon: (IMMEDIATE)
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 15
+    linkParticle: s32'ctl_208_shield_end'
+    ignoreFinishStop: 1
+    sprite: s32'null', 25
+    ignoreFinishStop: 0
 endState: 
 
 beginState: s32'CTL208_Slash01'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 2
-  endUpon: 
-  sprite: s32'null', 2
-  linkParticle: s32'ctl_208_slash01'
-  createObject: s32'CTL208_splash01', (PLAYER)
-  sprite: s32'null', 2
-  linkParticle: s32'ctl_208_slash02'
-  createObject: s32'CTL208_splash02', (PLAYER)
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_208_slash03'
-  createObject: s32'CTL208_splash03', (PLAYER)
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 2
+    endUpon: 
+    sprite: s32'null', 2
+    linkParticle: s32'ctl_208_slash01'
+    createObject: s32'CTL208_splash01', (PLAYER)
+    sprite: s32'null', 2
+    linkParticle: s32'ctl_208_slash02'
+    createObject: s32'CTL208_splash02', (PLAYER)
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_208_slash03'
+    createObject: s32'CTL208_splash03', (PLAYER)
 endState: 
 
 beginState: s32'CTL208_Slash01_2'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 2
-  endUpon: 
-  sprite: s32'null', 2
-  linkParticle: s32'ctl_208_slash02'
-  createObject: s32'CTL208_splash02', (PLAYER)
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_208_slash03'
-  createObject: s32'CTL208_splash03', (PLAYER)
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 2
+    endUpon: 
+    sprite: s32'null', 2
+    linkParticle: s32'ctl_208_slash02'
+    createObject: s32'CTL208_splash02', (PLAYER)
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_208_slash03'
+    createObject: s32'CTL208_splash03', (PLAYER)
 endState: 
 
 beginState: s32'CTL208_splash01'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_208_splash01'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_208_splash01'
 endState: 
 
 beginState: s32'CTL208_splash02'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_208_splash02'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_208_splash02'
 endState: 
 
 beginState: s32'CTL208_splash03'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_208_splash03'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_208_splash03'
 endState: 
 
 beginState: s32'CTL224_Eff'
-  upon: (IMMEDIATE)
-    linkParticle: s32'cmn_thrust'
-    linkObjectPosition: 3
-    setLinkObjectDestroyOnStateChange: 3
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  setPositionX: 414917
-  setPositionY: 51076
-  setDepth: 22282
-  setAngle: 322400
+    upon: (IMMEDIATE)
+        linkParticle: s32'cmn_thrust'
+        linkObjectPosition: 3
+        setLinkObjectDestroyOnStateChange: 3
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    setPositionX: 414917
+    setPositionY: 51076
+    setDepth: 22282
+    setAngle: 322400
 endState: 
 
 beginState: s32'CTL233_Slash01'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 2
-  endUpon: 
-  sprite: s32'null', 2
-  linkParticle: s32'ctl_233_slash01'
-  createObject: s32'CTL233_Splash01', (PLAYER)
-  sprite: s32'null', 3
-  createObject: s32'CTL233_Splash02', (PLAYER)
-  linkParticle: s32'ctl_233_slash02'
-  setPositionX: -4995
-  setPositionY: 10291
-  setDepth: -6563
-  sprite: s32'null', 3
-  createObject: s32'CTL233_Splash03', (PLAYER)
-  linkParticle: s32'ctl_233_slash03'
-  setPositionX: 0
-  setPositionY: 8991
-  setDepth: 390
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_233_slash04'
-  setPositionX: 4995
-  setPositionY: 3996
-  setDepth: 172
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 2
+    endUpon: 
+    sprite: s32'null', 2
+    linkParticle: s32'ctl_233_slash01'
+    createObject: s32'CTL233_Splash01', (PLAYER)
+    sprite: s32'null', 3
+    createObject: s32'CTL233_Splash02', (PLAYER)
+    linkParticle: s32'ctl_233_slash02'
+    setPositionX: -4995
+    setPositionY: 10291
+    setDepth: -6563
+    sprite: s32'null', 3
+    createObject: s32'CTL233_Splash03', (PLAYER)
+    linkParticle: s32'ctl_233_slash03'
+    setPositionX: 0
+    setPositionY: 8991
+    setDepth: 390
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_233_slash04'
+    setPositionX: 4995
+    setPositionY: 3996
+    setDepth: 172
 endState: 
 
 beginState: s32'CTL233_Splash01'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_233_splash01'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_233_splash01'
 endState: 
 
 beginState: s32'CTL233_Splash02'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_233_splash02'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_233_splash02'
 endState: 
 
 beginState: s32'CTL233_Splash03'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_233_splash03'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_233_splash03'
 endState: 
 
 beginState: s32'CTL233_Splash04'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_233_splash04'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_233_splash04'
 endState: 
 
 beginState: s32'250Eff'
-  upon: (IMMEDIATE)
-    linkParticle: s32'cmn_thrust'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    setObjectWidth: 800
-    setObjectHeight: 800
-    setObjectDepth: 800
-    setPositionX: 19996
-    setPositionY: 100298
-    setDepth: 224576
-    setAngleX: 56000
-    setAngleY: 74000
-    setAngle: 302000
-  endUpon: 
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        linkParticle: s32'cmn_thrust'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        setObjectWidth: 800
+        setObjectHeight: 800
+        setObjectDepth: 800
+        setPositionX: 19996
+        setPositionY: 100298
+        setDepth: 224576
+        setAngleX: 56000
+        setAngleY: 74000
+        setAngle: 302000
+    endUpon: 
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'251Eff'
-  upon: (IMMEDIATE)
-    linkParticle: s32'cmn_thrust'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    setObjectWidth: 1000
-    setObjectHeight: 1000
-    setObjectDepth: 1000
-    setAngleX: 232000
-    setAngleY: 26000
-    setAngle: 354000
-    setPositionX: 419916
-    setPositionY: 246025
-    setDepth: 210918
-  endUpon: 
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        linkParticle: s32'cmn_thrust'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        setObjectWidth: 1000
+        setObjectHeight: 1000
+        setObjectDepth: 1000
+        setAngleX: 232000
+        setAngleY: 26000
+        setAngle: 354000
+        setPositionX: 419916
+        setPositionY: 246025
+        setDepth: 210918
+    endUpon: 
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'CTL253_Slash01'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 2
-  endUpon: 
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_253_slash01'
-  createObject: s32'CTL253_Splash01', (PLAYER)
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_253_slash02'
-  createObject: s32'CTL253_Splash02', (PLAYER)
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_253_slash03'
-  createObject: s32'CTL253_Splash03', (PLAYER)
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 2
+    endUpon: 
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_253_slash01'
+    createObject: s32'CTL253_Splash01', (PLAYER)
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_253_slash02'
+    createObject: s32'CTL253_Splash02', (PLAYER)
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_253_slash03'
+    createObject: s32'CTL253_Splash03', (PLAYER)
 endState: 
 
 beginState: s32'CTL253_Splash01'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_253_splash01'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_253_splash01'
 endState: 
 
 beginState: s32'CTL253_Splash02'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_253_splash02'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_253_splash02'
 endState: 
 
 beginState: s32'CTL253_Splash03'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_253_splash03'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_253_splash03'
 endState: 
 
 beginState: s32'301Eff_handcharge'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_301_handcharge'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    addPositionX: 99980
-    addPositionY: 251456
-    Unknown1727: 201146
-  endUpon: 
-  sprite: s32'null', 80
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_301_handcharge'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        addPositionX: 99980
+        addPositionY: 251456
+        Unknown1727: 201146
+    endUpon: 
+    sprite: s32'null', 80
 endState: 
 
 beginState: s32'301Eff'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_301_slash'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 40
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_301_slash'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 40
 endState: 
 
 beginState: s32'301Eff_frozen'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_301_icefrozen'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    addPositionX: 142535
-    Unknown1727: -160440
-    setAngleY: 26000
-    checkCurrentStateName: (PLAYER), s32'BackThrowExe'
-    if: Mem(Tmp)
-      linkObjectPosition: 0
-    endIf: 
-  endUpon: 
-  sprite: s32'null', 60
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_301_icefrozen'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        addPositionX: 142535
+        Unknown1727: -160440
+        setAngleY: 26000
+        checkCurrentStateName: (PLAYER), s32'BackThrowExe'
+        if: Mem(Tmp)
+            linkObjectPosition: 0
+        endIf: 
+    endUpon: 
+    sprite: s32'null', 60
 endState: 
 
 beginState: s32'301Eff_iceatk'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_301_iceatk'
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    addPositionX: 142535
-    Unknown1727: -160440
-    setAngleY: 26000
-    setAngle: 357200
-  endUpon: 
-  sprite: s32'null', 80
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_301_iceatk'
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        addPositionX: 142535
+        Unknown1727: -160440
+        setAngleY: 26000
+        setAngle: 357200
+    endUpon: 
+    sprite: s32'null', 80
 endState: 
 
 beginState: s32'303Eff'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_303_waterslash'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 40
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_303_waterslash'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 40
 endState: 
 
 beginState: s32'CTL_309_iceatk'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_309_iceatk'
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setMaxActionTime: 80
-    addPositionX: -6993
-    addPositionY: 0
-    Unknown1727: -160440
-    setAngleY: 26000
-  endUpon: 
-  sprite: s32'null', 80
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_309_iceatk'
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setMaxActionTime: 80
+        addPositionX: -6993
+        addPositionY: 0
+        Unknown1727: -160440
+        setAngleY: 26000
+    endUpon: 
+    sprite: s32'null', 80
 endState: 
 
 beginState: s32'CTL_309_SlashEff'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 2
-    setMaxActionTime: 90
-  endUpon: 
-  sprite: s32'null', 2
-  linkParticle: s32'ctl_309_waterslash01'
-  createObject: s32'CTL_309_Splash01', (PLAYER)
-  sprite: s32'null', 2
-  linkParticle: s32'ctl_309_waterslash02'
-  createObject: s32'CTL_309_Splash02', (PLAYER)
-  sprite: s32'null', 2
-  linkParticle: s32'ctl_309_waterslash03'
-  createObject: s32'CTL_309_Splash03', (PLAYER)
-  sprite: s32'null', 2
-  linkParticle: s32'ctl_309_waterslash04'
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_309_waterslash05'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 2
+        setMaxActionTime: 90
+    endUpon: 
+    sprite: s32'null', 2
+    linkParticle: s32'ctl_309_waterslash01'
+    createObject: s32'CTL_309_Splash01', (PLAYER)
+    sprite: s32'null', 2
+    linkParticle: s32'ctl_309_waterslash02'
+    createObject: s32'CTL_309_Splash02', (PLAYER)
+    sprite: s32'null', 2
+    linkParticle: s32'ctl_309_waterslash03'
+    createObject: s32'CTL_309_Splash03', (PLAYER)
+    sprite: s32'null', 2
+    linkParticle: s32'ctl_309_waterslash04'
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_309_waterslash05'
 endState: 
 
 beginState: s32'CTL_309_Splash01'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    setMaxActionTime: 30
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_309_splash01'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        setMaxActionTime: 30
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_309_splash01'
 endState: 
 
 beginState: s32'CTL_309_Splash02'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    setMaxActionTime: 30
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_309_splash02'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        setMaxActionTime: 30
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_309_splash02'
 endState: 
 
 beginState: s32'CTL_309_Splash03'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    setMaxActionTime: 30
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_309_splash03'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        setMaxActionTime: 30
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_309_splash03'
 endState: 
 
 beginState: s32'Hard_ATK_Eff'
-  upon: (IMMEDIATE)
-    linkParticle: s32'cmn_hard_atk'
-    setLinkObjectDestroyOnStateChange: 3
-    setLinkObjectDestroyOnDamage: 3
-    setObjectSize: 2000
-    addPositionX: 84983
-    addPositionY: 261029
-    Unknown1727: 96469
-  endUpon: 
-  sprite: s32'null', 40
+    upon: (IMMEDIATE)
+        linkParticle: s32'cmn_hard_atk'
+        setLinkObjectDestroyOnStateChange: 3
+        setLinkObjectDestroyOnDamage: 3
+        setObjectSize: 2000
+        addPositionX: 84983
+        addPositionY: 261029
+        Unknown1727: 96469
+    endUpon: 
+    sprite: s32'null', 40
 endState: 
 
 beginState: s32'306Eff'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 2
-    upon: 23
-      gotoLabelRequests: s32'Landing'
-      clearUpon: 23
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 2
+        upon: 23
+            gotoLabelRequests: s32'Landing'
+            clearUpon: 23
+        endUpon: 
     endUpon: 
-  endUpon: 
-  sprite: s32'null', 20
-  linkParticle: s32'ctl_306_fall'
-  setPositionX: 95988
-  setPositionY: 26166
-  setDepth: 88221
-  beginLabel: s32'Landing'
-  sprite: s32'null', 9
-  linkParticle: s32'ctl_306_landing'
-  setPositionX: 95984
-  setPositionY: 4286
-  setDepth: 85259
-  sprite: s32'null', 6
-  linkObjectPosition: 0
-  sprite: s32'null', 25
-  setLinkObjectDestroyOnStateChange: 0
+    sprite: s32'null', 20
+    linkParticle: s32'ctl_306_fall'
+    setPositionX: 95988
+    setPositionY: 26166
+    setDepth: 88221
+    beginLabel: s32'Landing'
+    sprite: s32'null', 9
+    linkParticle: s32'ctl_306_landing'
+    setPositionX: 95984
+    setPositionY: 4286
+    setDepth: 85259
+    sprite: s32'null', 6
+    linkObjectPosition: 0
+    sprite: s32'null', 25
+    setLinkObjectDestroyOnStateChange: 0
 endState: 
 
 beginState: s32'ctl_350_weapons'
-  upon: (IMMEDIATE)
-    linkObjectZ: 3
-    setLinkObjectDestroyOnStateChange: 3
-    setLinkObjectDestroyOnDamage: 3
-    linkObjectPosition: 3
-    linkParticle: s32'ctl_350_weapons'
-  endUpon: 
-  sprite: s32'null', 5
-  ignoreSuperFreezeFromAlly: 1
-  ignoreFinishStop: 1
-  setPositionX: 70010
-  setPositionY: 236153
-  setDepth: -21713
-  setAngleY: 10800
-  sprite: s32'null', 5
-  ignoreSuperFreezeFromAlly: 0
-  ignoreFinishStop: 0
-  stopLinkObject: 3
-  sprite: s32'null', 60
-  setLinkObjectDestroyOnStateChange: 0
-  linkObjectPosition: 0
-  stopLinkObject: 0
-  linkParticle: s32'ctl_350_weapons_end'
+    upon: (IMMEDIATE)
+        linkObjectZ: 3
+        setLinkObjectDestroyOnStateChange: 3
+        setLinkObjectDestroyOnDamage: 3
+        linkObjectPosition: 3
+        linkParticle: s32'ctl_350_weapons'
+    endUpon: 
+    sprite: s32'null', 5
+    ignoreSuperFreezeFromAlly: 1
+    ignoreFinishStop: 1
+    setPositionX: 70010
+    setPositionY: 236153
+    setDepth: -21713
+    setAngleY: 10800
+    sprite: s32'null', 5
+    ignoreSuperFreezeFromAlly: 0
+    ignoreFinishStop: 0
+    stopLinkObject: 3
+    sprite: s32'null', 60
+    setLinkObjectDestroyOnStateChange: 0
+    linkObjectPosition: 0
+    stopLinkObject: 0
+    linkParticle: s32'ctl_350_weapons_end'
 endState: 
 
 beginState: s32'400Eff_sword_start'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setPositionX: 254949
-    setPositionY: 266612
-    setDepth: 17586
-    linkParticle: s32'ctl_400_sword_start'
-    Unknown409: 0, 4
-    if: Mem(405)
-      Unknown409: 100, 4
-    endIf: 
-  endUpon: 
-  sprite: s32'null', 1
-  sprite: s32'null', 30
-  linkObjectPosition: 0
-  stopLinkObject: 0
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setPositionX: 254949
+        setPositionY: 266612
+        setDepth: 17586
+        linkParticle: s32'ctl_400_sword_start'
+        Unknown409: 0, 4
+        if: Mem(405)
+            Unknown409: 100, 4
+        endIf: 
+    endUpon: 
+    sprite: s32'null', 1
+    sprite: s32'null', 30
+    linkObjectPosition: 0
+    stopLinkObject: 0
 endState: 
 
 beginState: s32'400Eff_sword_loop'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_400_sword_loop'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 50
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_400_sword_loop'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 50
 endState: 
 
 beginState: s32'400Eff_sword_end'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_400_sword_end'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    ignoreSuperFreeze: 1
-  endUpon: 
-  sprite: s32'null', 50
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_400_sword_end'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        ignoreSuperFreeze: 1
+    endUpon: 
+    sprite: s32'null', 50
 endState: 
 
 beginState: s32'400Eff_dashsmoke'
-  upon: (IMMEDIATE)
-    linkParticle: s32'bg_GroundBurstZlink'
-  endUpon: 
-  sprite: s32'null', 50
+    upon: (IMMEDIATE)
+        linkParticle: s32'bg_GroundBurstZlink'
+    endUpon: 
+    sprite: s32'null', 50
 endState: 
 
 beginState: s32'ctl_400_LandNokosi'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_400_LandNokosi'
-    addPositionX: 500000
-  endUpon: 
-  sprite: s32'null', 60
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_400_LandNokosi'
+        addPositionX: 500000
+    endUpon: 
+    sprite: s32'null', 60
 endState: 
 
 beginState: s32'CTL_400_D'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 3
-    linkObjectZ: 3
-    callSubroutine: s32'cmnSpecialShot_AtkInit'
-    callSubroutine: s32'cmnSpecialAtkLv5_AtkInit'
-    callSubroutine: s32'cmnSpecialAttackD_AtkInit'
-    damage: 2000
-    groundHitEffect: (CRUMPLE)
-    airHitEffect: (AIR_STRONG)
-    hitAirPushbackX: 55000
-    hitAirPushbackY: 2000
-    hitGravity: 200
-    wallPushback: 0, 2000
-    hitstop: 24
-    enemyHitstopAddition: 1, 7, 7
-    hitEffectFire: 1
-    damageEffect: 2, s32'ctl_SPHitEff_Long'
-    atkAngle: 2
-    atkCameraShake: s32'ShakeYoko', 1000, 0, 15, 0
-    disableHitstopForSelf: 1
-    isAirUnblockable: 0
-    wallBounceCount: 1
-    wallBounceXVelocityPercent: 25
-    wallBounceWaitTime: 5
-    upon: 8
-      sendSignalToAction: s32'SpecialShot_D', 23
-      gotoLabelRequests: s32'Hit'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 3
+        linkObjectZ: 3
+        callSubroutine: s32'cmnSpecialShot_AtkInit'
+        callSubroutine: s32'cmnSpecialAtkLv5_AtkInit'
+        callSubroutine: s32'cmnSpecialAttackD_AtkInit'
+        damage: 2000
+        groundHitEffect: (CRUMPLE)
+        airHitEffect: (AIR_STRONG)
+        hitAirPushbackX: 55000
+        hitAirPushbackY: 2000
+        hitGravity: 200
+        wallPushback: 0, 2000
+        hitstop: 24
+        enemyHitstopAddition: 1, 7, 7
+        hitEffectFire: 1
+        damageEffect: 2, s32'ctl_SPHitEff_Long'
+        atkAngle: 2
+        atkCameraShake: s32'ShakeYoko', 1000, 0, 15, 0
+        disableHitstopForSelf: 1
+        isAirUnblockable: 0
+        wallBounceCount: 1
+        wallBounceXVelocityPercent: 25
+        wallBounceWaitTime: 5
+        upon: 8
+            sendSignalToAction: s32'SpecialShot_D', 23
+            gotoLabelRequests: s32'Hit'
+        endUpon: 
+        upon: (HIT)
+            Unknown2329: 3, 3, 123, 22, 123
+            ifOperation: (IS_LESSER), Mem(Tmp), Val(0)
+                sendSignalToAction: s32'SpecialShot_D', 24
+            endIf: 
+        endUpon: 
+        initializeDestroy: 
+        numberOfHits: 1
+        destroyOnDamageCollision: 1
+        Unknown2209: 1
+        Unknown2257: 1
+        Unknown2212: 1
+        Unknown2213: 0
+        upon: 45
+            clearUpon: 37
+            clearUpon: 45
+            clearUpon: 32
+            gotoLabelRequests: s32'End'
+        endUpon: 
+        upon: 37
+            clearUpon: 37
+            clearUpon: 45
+            clearUpon: 32
+            gotoLabelRequests: s32'Sousai'
+        endUpon: 
+        upon: 32
+            clearUpon: 37
+            clearUpon: 45
+            clearUpon: 32
+            gotoLabelRequests: s32'End'
+        endUpon: 
     endUpon: 
-    upon: (HIT)
-      Unknown2329: 3, 3, 123, 22, 123
-      ifOperation: (IS_LESSER), Mem(Tmp), Val(0)
-        sendSignalToAction: s32'SpecialShot_D', 24
-      endIf: 
-    endUpon: 
-    initializeDestroy: 
-    numberOfHits: 1
-    destroyOnDamageCollision: 1
-    Unknown2209: 1
-    Unknown2257: 1
-    Unknown2212: 1
-    Unknown2213: 0
-    upon: 45
-      clearUpon: 37
-      clearUpon: 45
-      clearUpon: 32
-      gotoLabelRequests: s32'End'
-    endUpon: 
+    sprite: s32'SpecialShot_D_1st', 2
+    hit: 
+    Unknown1950: 0x63746C5F3430305F440000000000000000000000000000000000000000000000
+    callSubroutine: s32'cmnWeaponLvMaxColorInit'
+    createObject: s32'CTL_400_D_Sub', (PLAYER)
+    runOnObject: (PREVIOUS)
+        setPositionX: -7988
+        setPositionY: -78237
+        setDepth: 50678
+    endRunOnObject: 
+    sprite: s32'SpecialShot_D_2nd', 1
+    Unknown1950: 0x63746C5F3430305F443200000000000000000000000000000000000000000000
+    callSubroutine: s32'cmnWeaponLvMaxColorInit'
+    createObject: s32'CTL_400_D_Sub', (PLAYER)
+    runOnObject: (PREVIOUS)
+        setPositionX: 230905
+        setPositionY: 65271
+        setDepth: 41914
+    endRunOnObject: 
+    sprite: s32'SpecialShot_D_3rd', 1
+    Unknown1950: 0x63746C5F3430305F443300000000000000000000000000000000000000000000
+    callSubroutine: s32'cmnWeaponLvMaxColorInit'
+    createObject: s32'CTL_400_D_Sub', (PLAYER)
+    runOnObject: (PREVIOUS)
+        setPositionX: 463788
+        setPositionY: -124547
+        setDepth: 56737
+    endRunOnObject: 
+    createObject: s32'CTL_400_D_Sub', (PLAYER)
+    runOnObject: (PREVIOUS)
+        setPositionX: 692819
+        setPositionY: 57094
+        setDepth: 46565
+    endRunOnObject: 
+    sprite: s32'SpecialShot_D_4th', 6
     upon: 37
-      clearUpon: 37
-      clearUpon: 45
-      clearUpon: 32
-      gotoLabelRequests: s32'Sousai'
+        clearUpon: 37
+        clearUpon: 45
+        clearUpon: 32
+        gotoLabelRequests: s32'End'
     endUpon: 
-    upon: 32
-      clearUpon: 37
-      clearUpon: 45
-      clearUpon: 32
-      gotoLabelRequests: s32'End'
-    endUpon: 
-  endUpon: 
-  sprite: s32'SpecialShot_D_1st', 2
-  hit: 
-  Unknown1950: 0x63746C5F3430305F440000000000000000000000000000000000000000000000
-  callSubroutine: s32'cmnWeaponLvMaxColorInit'
-  createObject: s32'CTL_400_D_Sub', (PLAYER)
-  runOnObject: (PREVIOUS)
-    setPositionX: -7988
-    setPositionY: -78237
-    setDepth: 50678
-  endRunOnObject: 
-  sprite: s32'SpecialShot_D_2nd', 1
-  Unknown1950: 0x63746C5F3430305F443200000000000000000000000000000000000000000000
-  callSubroutine: s32'cmnWeaponLvMaxColorInit'
-  createObject: s32'CTL_400_D_Sub', (PLAYER)
-  runOnObject: (PREVIOUS)
-    setPositionX: 230905
-    setPositionY: 65271
-    setDepth: 41914
-  endRunOnObject: 
-  sprite: s32'SpecialShot_D_3rd', 1
-  Unknown1950: 0x63746C5F3430305F443300000000000000000000000000000000000000000000
-  callSubroutine: s32'cmnWeaponLvMaxColorInit'
-  createObject: s32'CTL_400_D_Sub', (PLAYER)
-  runOnObject: (PREVIOUS)
-    setPositionX: 463788
-    setPositionY: -124547
-    setDepth: 56737
-  endRunOnObject: 
-  createObject: s32'CTL_400_D_Sub', (PLAYER)
-  runOnObject: (PREVIOUS)
-    setPositionX: 692819
-    setPositionY: 57094
-    setDepth: 46565
-  endRunOnObject: 
-  sprite: s32'SpecialShot_D_4th', 6
-  upon: 37
+    Unknown1950: 0x63746C5F3430305F443400000000000000000000000000000000000000000000
+    callSubroutine: s32'cmnWeaponLvMaxColorInit'
+    createObject: s32'CTL_400_D_Sub', (PLAYER)
+    runOnObject: (PREVIOUS)
+        setPositionX: 975720
+        setPositionY: -64341
+        setDepth: 54271
+    endRunOnObject: 
+    sprite: s32'null', 60
+    sprite: s32'null', 1
+    gotoLabel: s32'End'
+    beginLabel: s32'Sousai'
+    sprite: s32'null', 20
+    setAlphaColorSpeed: -50
+    beginLabel: s32'Hit'
+    sprite: s32'keep', 3
+    beginLabel: s32'End'
+    sprite: s32'null', 40
     clearUpon: 37
     clearUpon: 45
     clearUpon: 32
-    gotoLabelRequests: s32'End'
-  endUpon: 
-  Unknown1950: 0x63746C5F3430305F443400000000000000000000000000000000000000000000
-  callSubroutine: s32'cmnWeaponLvMaxColorInit'
-  createObject: s32'CTL_400_D_Sub', (PLAYER)
-  runOnObject: (PREVIOUS)
-    setPositionX: 975720
-    setPositionY: -64341
-    setDepth: 54271
-  endRunOnObject: 
-  sprite: s32'null', 60
-  sprite: s32'null', 1
-  gotoLabel: s32'End'
-  beginLabel: s32'Sousai'
-  sprite: s32'null', 20
-  setAlphaColorSpeed: -50
-  beginLabel: s32'Hit'
-  sprite: s32'keep', 3
-  beginLabel: s32'End'
-  sprite: s32'null', 40
-  clearUpon: 37
-  clearUpon: 45
-  clearUpon: 32
-  if: Mem(417)
-    modifyVar2: (ADD), Val(180), Mem(287)
-    storeValue: Mem(287), Mem(Tmp)
-  endIf: 
-  else: 
-    Unknown1921: 0, 180
-  endElse: 
-  Unknown1923: 0
-  Unknown1950: 0x63746C5F3430305F443500000000000000000000000000000000000000000000
-  setLinkObjectDestroyOnDamage: 3
-  callSubroutine: s32'cmnWeaponLvMaxColorInit'
+    if: Mem(417)
+        modifyVar2: (ADD), Val(180), Mem(287)
+        storeValue: Mem(287), Mem(Tmp)
+    endIf: 
+    else: 
+        Unknown1921: 0, 180
+    endElse: 
+    Unknown1923: 0
+    Unknown1950: 0x63746C5F3430305F443500000000000000000000000000000000000000000000
+    setLinkObjectDestroyOnDamage: 3
+    callSubroutine: s32'cmnWeaponLvMaxColorInit'
 endState: 
 
 beginState: s32'CTL_400_D_Sub'
-  upon: (IMMEDIATE)
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    linkObjectZ: 3
-  endUpon: 
-  sprite: s32'null', 5
-  linkParticle: s32'ctl_400_DNokosi'
-  sprite: s32'null', 25
-  setLinkObjectDestroyOnStateChange: 0
-  linkObjectPosition: 0
+    upon: (IMMEDIATE)
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        linkObjectZ: 3
+    endUpon: 
+    sprite: s32'null', 5
+    linkParticle: s32'ctl_400_DNokosi'
+    sprite: s32'null', 25
+    setLinkObjectDestroyOnStateChange: 0
+    linkObjectPosition: 0
 endState: 
 
 beginState: s32'CTL_400_D_HitEff'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  Unknown2276: 0, -13651969
-  createParticleWithArg2: s32'cmn_hit_sp', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    Unknown2276: 0, -13651969
+    createParticleWithArg2: s32'cmn_hit_sp', (PLAYER)
 endState: 
 
 beginState: s32'ctl400_are'
-  upon: (IMMEDIATE)
-    linkPawnWithAnimation: s32'ARE', s32''
-    beginMeshSet: s32'ARE'
-      addToMeshSet: s32'body'
-      addToMeshSet: s32'toge'
-      addToMeshSet: s32'are'
-      addToMeshSet: s32'shield'
-    endMeshSet: 
-    swapMeshSet: s32'ARE'
-    gotoLabelUpon: 23, s32'Atk'
+    upon: (IMMEDIATE)
+        linkPawnWithAnimation: s32'ARE', s32''
+        beginMeshSet: s32'ARE'
+            addToMeshSet: s32'body'
+            addToMeshSet: s32'toge'
+            addToMeshSet: s32'are'
+            addToMeshSet: s32'shield'
+        endMeshSet: 
+        swapMeshSet: s32'ARE'
+        gotoLabelUpon: 23, s32'Atk'
+        setLightRedColor: 750
+        setLightGreenColor: 750
+        setLightBlueColor: 750
+        privateSE: s32'ctl_09'
+        upon: (FRAME_STEP)
+            ifOnFrame: Val(3)
+                setLightRedColor: 500
+                setLightGreenColor: 500
+                setLightBlueColor: 500
+            endIf: 
+            ifOnFrame: Val(5)
+                setLightRedColor: 250
+                setLightGreenColor: 250
+                setLightBlueColor: 250
+            endIf: 
+            ifOnFrame: Val(7)
+                setLightRedColor: 0
+                setLightGreenColor: 0
+                setLightBlueColor: 0
+                clearUpon: (FRAME_STEP)
+            endIf: 
+        endUpon: 
+        setLinkObjectDestroyOnDamage: 3
+        zLine: 0, 5
+    endUpon: 
+    sprite: s32'are400_02', 2
+    sprite: s32'are400_03', 2
+    sprite: s32'are400_04', 2
+    sprite: s32'are400_05', 2
+    sprite: s32'are400_06', 2
+    sprite: s32'are400_07', 2
+    sprite: s32'are400_08', 2
+    beginLabel: s32'Atk'
+    sprite: s32'are400_09', 4
+    sprite: s32'are400_10', 4
+    sprite: s32'are400_11', 4
+    sprite: s32'are400_12', 4
+    sprite: s32'are400_13', 4
+    sprite: s32'are400_14', 4
+    sprite: s32'are400_15', 4
+    setLightRedColor: 250
+    setLightGreenColor: 250
+    setLightBlueColor: 250
+    sprite: s32'are400_16', 4
+    setLightRedColor: 500
+    setLightGreenColor: 500
+    setLightBlueColor: 500
+    createObject: s32'ctl_areWarpEff', (PLAYER)
+    runOnObject: (PREVIOUS)
+        addPositionX: -10989
+        Unknown1727: 18036
+        setObjectSize: 700
+    endRunOnObject: 
+    privateSE: s32'ctl_09_2'
+    sprite: s32'are400_17', 4
+    setLightRedColor: 750
+    setLightGreenColor: 750
+    setLightBlueColor: 750
+endState: 
+
+beginState: s32'ctl_areWarpEff'
+    upon: (IMMEDIATE)
+        setLinkObjectDestroyOnDamage: 3
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_are_warp'
+endState: 
+
+beginState: s32'CTL401_Slash01'
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_401_slash01'
+        createObject: s32'CTL401_splash01', (PLAYER)
+        createObject: s32'401Eff_slash_bloom', (PLAYER)
+        createObject: s32'401Eff_slash_bloom2', (PLAYER)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 2
+        upon: 23
+            gotoLabelRequests: s32'Loop01'
+            sendSignalToAction: s32'401Eff_slash_bloom', 24
+            sendSignalToAction: s32'401Eff_slash_bloom2', 24
+        endUpon: 
+        upon: 24
+            gotoLabelRequests: s32'Loop02'
+            sendSignalToAction: s32'401Eff_slash_bloom', 25
+            sendSignalToAction: s32'401Eff_slash_bloom2', 25
+        endUpon: 
+        upon: 25
+            gotoLabelRequests: s32'End'
+            sendSignalToAction: s32'401Eff_slash_bloom', 26
+            sendSignalToAction: s32'401Eff_slash_bloom2', 26
+        endUpon: 
+        setMaxActionTime: 180
+    endUpon: 
+    sprite: s32'null', 15
+    beginLabel: s32'Loop01'
+    sprite: s32'null', 15
+    clearUpon: 23
+    linkParticle: s32'ctl_401_slash02'
+    createObject: s32'CTL401_splash02', (PLAYER)
+    createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+    beginLabel: s32'Loop02'
+    sprite: s32'null', 15
+    clearUpon: 24
+    linkParticle: s32'ctl_401_slash03'
+    createObject: s32'CTL401_splash03', (PLAYER)
+    beginLabel: s32'End'
+    sprite: s32'null', 30
+    clearUpon: 25
+    linkParticle: s32'ctl_401_slash04'
+    createObject: s32'CTL401_splash04', (PLAYER)
+endState: 
+
+beginState: s32'CTL401_Slash01_Easy'
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_401_slash02'
+        createObject: s32'CTL401_splash02', (PLAYER)
+        createObject: s32'401Eff_jump', (PLAYER)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 2
+        gotoLabelUpon: 23, s32'Loop01'
+        gotoLabelUpon: 24, s32'End'
+    endUpon: 
+    sprite: s32'null', 15
+    beginLabel: s32'Loop01'
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_401_slash03'
+    createObject: s32'CTL401_splash03', (PLAYER)
+    beginLabel: s32'End'
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_401_slash04'
+    createObject: s32'CTL401_splash04', (PLAYER)
+endState: 
+
+beginState: s32'CTL401_splash01'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_401_splash01'
+endState: 
+
+beginState: s32'CTL401_splash02'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_401_splash02'
+endState: 
+
+beginState: s32'CTL401_splash03'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_401_splash03'
+endState: 
+
+beginState: s32'CTL401_splash04'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_401_splash04'
+endState: 
+
+beginState: s32'401Eff_slash_bloom'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+        gotoLabelUpon: 24, s32'1'
+        gotoLabelUpon: 25, s32'2'
+        gotoLabelUpon: 26, s32'3'
+    endUpon: 
+    sprite: s32'null', 10
+    linkParticle: s32'ctl_401_slash_bloom'
+    setPositionX: 116891
+    setPositionY: 201251
+    setDepth: 274026
+    setObjectSize: 900
+    beginLabel: s32'1'
+    sprite: s32'null', 10
+    clearUpon: 24
+    setPositionX: 201874
+    setPositionY: 584596
+    setDepth: 90561
+    setObjectSize: 1200
+    beginLabel: s32'2'
+    sprite: s32'null', 20
+    clearUpon: 25
+    setPositionX: 171880
+    setPositionY: 606670
+    setDepth: 43481
+    setObjectSize: 1000
+    beginLabel: s32'3'
+    sprite: s32'null', 6
+    clearUpon: 26
+    linkParticle: s32'ctl_401_slash_bloom_end'
+    setPositionX: 164887
+    setPositionY: 632318
+    setDepth: -85517
+endState: 
+
+beginState: s32'401Eff_slash_bloom2'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+        gotoLabelUpon: 24, s32'1'
+        gotoLabelUpon: 25, s32'2'
+        gotoLabelUpon: 26, s32'3'
+    endUpon: 
+    sprite: s32'null', 10
+    beginLabel: s32'1'
+    sprite: s32'null', 10
+    clearUpon: 24
+    linkParticle: s32'ctl_401_slash_bloom'
+    setPositionX: 233898
+    setPositionY: 344271
+    setDepth: 93084
+    setObjectSize: 700
+    beginLabel: s32'2'
+    sprite: s32'null', 20
+    clearUpon: 25
+    linkParticle: s32'ctl_401_slash_bloom_end'
+    setPositionX: 163904
+    setPositionY: 420427
+    setDepth: 68379
+    setObjectSize: 800
+    beginLabel: s32'3'
+    sprite: s32'null', 6
+    clearUpon: 26
+    deactivateCurrentObject: 
+endState: 
+
+beginState: s32'ctl405_are'
+    upon: (IMMEDIATE)
+        linkPawnWithAnimation: s32'ARE', s32''
+        beginMeshSet: s32'ARE'
+            addToMeshSet: s32'body'
+            addToMeshSet: s32'toge'
+            addToMeshSet: s32'are'
+            addToMeshSet: s32'shield'
+        endMeshSet: 
+        swapMeshSet: s32'ARE'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        zLine: 0, 5
+        addPositionX: -70000
+        addPositionY: 40000
+    endUpon: 
+    sprite: s32'are413_01', 3
+    setLightRedColor: 750
+    setLightGreenColor: 750
+    setLightBlueColor: 750
+    exPointFReset: (PLAYER), 0, 100000
+    createParticle: s32'ctl_are_warp2', (EX_POINT_F)
+    privateSE: s32'ctl_09'
+    sprite: s32'are413_01', 3
+    setLightRedColor: 500
+    setLightGreenColor: 500
+    setLightBlueColor: 500
+    sprite: s32'are413_01', 1
+    setLightRedColor: 250
+    setLightGreenColor: 250
+    setLightBlueColor: 250
+    sprite: s32'are413_02', 7
+    setLightRedColor: 0
+    setLightGreenColor: 0
+    setLightBlueColor: 0
+    sprite: s32'are413_04', 2
+    sprite: s32'are413_07', 1
+    sprite: s32'are413_08', 2
+    sprite: s32'are413_09', 3
+    sprite: s32'are413_10', 3
+    sprite: s32'are413_11', 3
+    sprite: s32'are413_12', 3
+    sprite: s32'are413_13', 3
+    sprite: s32'are413_14', 3
+    sprite: s32'are413_15', 3
+    sprite: s32'are413_16', 3
+    sprite: s32'are413_17', 3
+    setLightRedColor: 250
+    setLightGreenColor: 250
+    setLightBlueColor: 250
+    sprite: s32'are413_18', 3
+    linkObjectPosition: 0
+    createObject: s32'ctl_areWarpEff', (PLAYER)
+    runOnObject: (PREVIOUS)
+        addPositionX: -10989
+        Unknown1727: 18036
+        setObjectSize: 700
+    endRunOnObject: 
+    privateSE: s32'ctl_09_2'
+    setLightRedColor: 500
+    setLightGreenColor: 500
+    setLightBlueColor: 500
+    sprite: s32'are413_19', 3
+    setLightRedColor: 750
+    setLightGreenColor: 750
+    setLightBlueColor: 750
+endState: 
+
+beginState: s32'ctl_405_ThrustEff'
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_405_thrust'
+        linkObjectPosition: 3
+        stopLinkObject: 3
+        setLinkObjectDestroyOnStateChange: 3
+        setLinkObjectDestroyOnDamage: 3
+        stopLinkObject: 3
+    endUpon: 
+    sprite: s32'null', 60
+    setPositionX: 524895
+    setPositionY: 304041
+    setDepth: 28283
+endState: 
+
+beginState: s32'ctl_405_EnshutuCamera'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 3
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        ignoreSuperFreezeFromAlly: 1
+        upon: (BEFORE_EXIT)
+            Unknown2582: 
+            haikuEnd: 
+        endUpon: 
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2074: 3, 94337, 372492, 131438, -202, -1383, -397, 60, 0, 5, 0, 0, 0, 0
+    Unknown2875: 5
+    cameraShake: s32'ShakeTate', 500, 0, 10, 0
+    sprite: s32'null', 20
+    Unknown2074: 3, 95729, 382876, 131621, -181, -1390, -397, 60, 20, 0, 0, 0, 0, 0
+    sprite: s32'null', 15
+    Unknown2074: 3, 95729, 382876, 131621, -181, -1390, -397, 60, 0, 0, 15, 0, 0, 0
+    Unknown2876: 15
+    sprite: s32'null', 1
+    Unknown2582: 
+    haikuEnd: 
+endState: 
+
+beginState: s32'402Eff_dash'
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_402_dash'
+    endUpon: 
+    sprite: s32'null', 70
+endState: 
+
+beginState: s32'402Eff_dashsmoke'
+    upon: (IMMEDIATE)
+        linkParticle: s32'bg_GroundBurst'
+        setLinkObjectDestroyOnStateChange: 2
+        addPositionX: -94981
+        addPositionY: 30167
+        setAngleX: 0
+        setAngleY: 0
+        setAngle: 1200
+    endUpon: 
+    sprite: s32'null', 60
+endState: 
+
+beginState: s32'402Eff_slash'
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_402_slash'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 60
+    createObject: s32'402Eff_slash_bloom', (PLAYER)
+endState: 
+
+beginState: s32'402Eff_slash_bloom'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash_bloom'
+    setPositionX: 433830
+    setPositionY: 230641
+    setDepth: 105145
+    setObjectSize: 900
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash_bloom_end'
+    setObjectSizeScaleSpeed: -100
+endState: 
+
+beginState: s32'402Eff_Shield'
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_402_shield'
+        linkObjectPosition: 3
+        stopLinkObject: 3
+        setLinkObjectDestroyOnStateChange: 3
+        setLinkObjectDestroyOnDamage: 3
+        linkObjectZ: 3
+        upon: 23
+            clearUpon: 23
+            addPositionX: 90000
+            setObjectSizeScaleSpeed: 0
+        endUpon: 
+        upon: 32
+            clearUpon: 32
+            gotoLabelRequests: s32'End'
+        endUpon: 
+    endUpon: 
+    sprite: s32'null', 60
+    setPositionX: 98925
+    setPositionY: 300856
+    setDepth: -11895
+    setAngleY: 800
+    setAngleY: 2800
+    setObjectSize: 500
+    setObjectSizeScaleSpeed: 50
+    beginLabel: s32'End'
+    sprite: s32'null', 5
+    setObjectSizeScaleSpeed: 50
+    setAlphaColorSpeed: -200
+endState: 
+
+beginState: s32'403Eff_dash'
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_403_dash'
+    endUpon: 
+    sprite: s32'null', 70
+endState: 
+
+beginState: s32'403Eff_dashsmoke'
+    upon: (IMMEDIATE)
+        linkParticle: s32'bg_GroundBurst'
+        setLinkObjectDestroyOnStateChange: 2
+        addPositionX: -94981
+        addPositionY: 30167
+        setAngleX: 0
+        setAngleY: 0
+        setAngle: 1200
+    endUpon: 
+    sprite: s32'null', 60
+endState: 
+
+beginState: s32'403Eff_slash'
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_403_slash'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 60
+    createObject: s32'403Eff_slash_bloom', (PLAYER)
+endState: 
+
+beginState: s32'403Eff_slash_bloom'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash_bloom'
+    setPositionX: 433830
+    setPositionY: 230641
+    setDepth: 105145
+    setObjectSize: 1200
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash_bloom_end'
+    setObjectSizeScaleSpeed: -100
+endState: 
+
+beginState: s32'ctl402_are'
+    upon: (IMMEDIATE)
+        linkPawnWithAnimation: s32'ARE', s32''
+        beginMeshSet: s32'ARE'
+            addToMeshSet: s32'body'
+            addToMeshSet: s32'toge'
+            addToMeshSet: s32'are'
+            addToMeshSet: s32'shield'
+        endMeshSet: 
+        swapMeshSet: s32'ARE'
+        linkObjectPosition: 2
+        stopLinkObject: 3
+        setLinkObjectDestroyOnStateChange: 3
+        setLinkObjectDestroyOnDamage: 3
+        zLine: 0, 5
+        setZOffset: 5
+        addPositionX: 20000
+        gotoLabelUpon: 23, s32'Attack1st'
+        gotoLabelUpon: 24, s32'PreAttack2nd'
+        gotoLabelUpon: 25, s32'Attack2nd'
+        gotoLabelUpon: 32, s32'End'
+        upon: (BEFORE_EXIT)
+            createObject: s32'ctl_areWarpEff', (PLAYER)
+            runOnObject: (PREVIOUS)
+                addPositionX: -10989
+                Unknown1727: 18036
+                setObjectSize: 700
+            endRunOnObject: 
+            privateSE: s32'ctl_09_2'
+        endUpon: 
+    endUpon: 
+    sprite: s32'are412_01', 3
     setLightRedColor: 750
     setLightGreenColor: 750
     setLightBlueColor: 750
     privateSE: s32'ctl_09'
-    upon: (FRAME_STEP)
-      ifOnFrame: Val(3)
-        setLightRedColor: 500
-        setLightGreenColor: 500
-        setLightBlueColor: 500
-      endIf: 
-      ifOnFrame: Val(5)
-        setLightRedColor: 250
-        setLightGreenColor: 250
-        setLightBlueColor: 250
-      endIf: 
-      ifOnFrame: Val(7)
-        setLightRedColor: 0
-        setLightGreenColor: 0
-        setLightBlueColor: 0
-        clearUpon: (FRAME_STEP)
-      endIf: 
-    endUpon: 
-    setLinkObjectDestroyOnDamage: 3
-    zLine: 0, 5
-  endUpon: 
-  sprite: s32'are400_02', 2
-  sprite: s32'are400_03', 2
-  sprite: s32'are400_04', 2
-  sprite: s32'are400_05', 2
-  sprite: s32'are400_06', 2
-  sprite: s32'are400_07', 2
-  sprite: s32'are400_08', 2
-  beginLabel: s32'Atk'
-  sprite: s32'are400_09', 4
-  sprite: s32'are400_10', 4
-  sprite: s32'are400_11', 4
-  sprite: s32'are400_12', 4
-  sprite: s32'are400_13', 4
-  sprite: s32'are400_14', 4
-  sprite: s32'are400_15', 4
-  setLightRedColor: 250
-  setLightGreenColor: 250
-  setLightBlueColor: 250
-  sprite: s32'are400_16', 4
-  setLightRedColor: 500
-  setLightGreenColor: 500
-  setLightBlueColor: 500
-  createObject: s32'ctl_areWarpEff', (PLAYER)
-  runOnObject: (PREVIOUS)
-    addPositionX: -10989
-    Unknown1727: 18036
-    setObjectSize: 700
-  endRunOnObject: 
-  privateSE: s32'ctl_09_2'
-  sprite: s32'are400_17', 4
-  setLightRedColor: 750
-  setLightGreenColor: 750
-  setLightBlueColor: 750
-endState: 
-
-beginState: s32'ctl_areWarpEff'
-  upon: (IMMEDIATE)
-    setLinkObjectDestroyOnDamage: 3
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_are_warp'
-endState: 
-
-beginState: s32'CTL401_Slash01'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_401_slash01'
-    createObject: s32'CTL401_splash01', (PLAYER)
-    createObject: s32'401Eff_slash_bloom', (PLAYER)
-    createObject: s32'401Eff_slash_bloom2', (PLAYER)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 2
-    upon: 23
-      gotoLabelRequests: s32'Loop01'
-      sendSignalToAction: s32'401Eff_slash_bloom', 24
-      sendSignalToAction: s32'401Eff_slash_bloom2', 24
-    endUpon: 
-    upon: 24
-      gotoLabelRequests: s32'Loop02'
-      sendSignalToAction: s32'401Eff_slash_bloom', 25
-      sendSignalToAction: s32'401Eff_slash_bloom2', 25
-    endUpon: 
-    upon: 25
-      gotoLabelRequests: s32'End'
-      sendSignalToAction: s32'401Eff_slash_bloom', 26
-      sendSignalToAction: s32'401Eff_slash_bloom2', 26
-    endUpon: 
-    setMaxActionTime: 180
-  endUpon: 
-  sprite: s32'null', 15
-  beginLabel: s32'Loop01'
-  sprite: s32'null', 15
-  clearUpon: 23
-  linkParticle: s32'ctl_401_slash02'
-  createObject: s32'CTL401_splash02', (PLAYER)
-  createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
-  beginLabel: s32'Loop02'
-  sprite: s32'null', 15
-  clearUpon: 24
-  linkParticle: s32'ctl_401_slash03'
-  createObject: s32'CTL401_splash03', (PLAYER)
-  beginLabel: s32'End'
-  sprite: s32'null', 30
-  clearUpon: 25
-  linkParticle: s32'ctl_401_slash04'
-  createObject: s32'CTL401_splash04', (PLAYER)
-endState: 
-
-beginState: s32'CTL401_Slash01_Easy'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_401_slash02'
-    createObject: s32'CTL401_splash02', (PLAYER)
-    createObject: s32'401Eff_jump', (PLAYER)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 2
-    gotoLabelUpon: 23, s32'Loop01'
-    gotoLabelUpon: 24, s32'End'
-  endUpon: 
-  sprite: s32'null', 15
-  beginLabel: s32'Loop01'
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_401_slash03'
-  createObject: s32'CTL401_splash03', (PLAYER)
-  beginLabel: s32'End'
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_401_slash04'
-  createObject: s32'CTL401_splash04', (PLAYER)
-endState: 
-
-beginState: s32'CTL401_splash01'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_401_splash01'
-endState: 
-
-beginState: s32'CTL401_splash02'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_401_splash02'
-endState: 
-
-beginState: s32'CTL401_splash03'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_401_splash03'
-endState: 
-
-beginState: s32'CTL401_splash04'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_401_splash04'
-endState: 
-
-beginState: s32'401Eff_slash_bloom'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-    gotoLabelUpon: 24, s32'1'
-    gotoLabelUpon: 25, s32'2'
-    gotoLabelUpon: 26, s32'3'
-  endUpon: 
-  sprite: s32'null', 10
-  linkParticle: s32'ctl_401_slash_bloom'
-  setPositionX: 116891
-  setPositionY: 201251
-  setDepth: 274026
-  setObjectSize: 900
-  beginLabel: s32'1'
-  sprite: s32'null', 10
-  clearUpon: 24
-  setPositionX: 201874
-  setPositionY: 584596
-  setDepth: 90561
-  setObjectSize: 1200
-  beginLabel: s32'2'
-  sprite: s32'null', 20
-  clearUpon: 25
-  setPositionX: 171880
-  setPositionY: 606670
-  setDepth: 43481
-  setObjectSize: 1000
-  beginLabel: s32'3'
-  sprite: s32'null', 6
-  clearUpon: 26
-  linkParticle: s32'ctl_401_slash_bloom_end'
-  setPositionX: 164887
-  setPositionY: 632318
-  setDepth: -85517
-endState: 
-
-beginState: s32'401Eff_slash_bloom2'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-    gotoLabelUpon: 24, s32'1'
-    gotoLabelUpon: 25, s32'2'
-    gotoLabelUpon: 26, s32'3'
-  endUpon: 
-  sprite: s32'null', 10
-  beginLabel: s32'1'
-  sprite: s32'null', 10
-  clearUpon: 24
-  linkParticle: s32'ctl_401_slash_bloom'
-  setPositionX: 233898
-  setPositionY: 344271
-  setDepth: 93084
-  setObjectSize: 700
-  beginLabel: s32'2'
-  sprite: s32'null', 20
-  clearUpon: 25
-  linkParticle: s32'ctl_401_slash_bloom_end'
-  setPositionX: 163904
-  setPositionY: 420427
-  setDepth: 68379
-  setObjectSize: 800
-  beginLabel: s32'3'
-  sprite: s32'null', 6
-  clearUpon: 26
-  deactivateCurrentObject: 
-endState: 
-
-beginState: s32'ctl405_are'
-  upon: (IMMEDIATE)
-    linkPawnWithAnimation: s32'ARE', s32''
-    beginMeshSet: s32'ARE'
-      addToMeshSet: s32'body'
-      addToMeshSet: s32'toge'
-      addToMeshSet: s32'are'
-      addToMeshSet: s32'shield'
-    endMeshSet: 
-    swapMeshSet: s32'ARE'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    zLine: 0, 5
-    addPositionX: -70000
-    addPositionY: 40000
-  endUpon: 
-  sprite: s32'are413_01', 3
-  setLightRedColor: 750
-  setLightGreenColor: 750
-  setLightBlueColor: 750
-  exPointFReset: (PLAYER), 0, 100000
-  createParticle: s32'ctl_are_warp2', (EX_POINT_F)
-  privateSE: s32'ctl_09'
-  sprite: s32'are413_01', 3
-  setLightRedColor: 500
-  setLightGreenColor: 500
-  setLightBlueColor: 500
-  sprite: s32'are413_01', 1
-  setLightRedColor: 250
-  setLightGreenColor: 250
-  setLightBlueColor: 250
-  sprite: s32'are413_02', 7
-  setLightRedColor: 0
-  setLightGreenColor: 0
-  setLightBlueColor: 0
-  sprite: s32'are413_04', 2
-  sprite: s32'are413_07', 1
-  sprite: s32'are413_08', 2
-  sprite: s32'are413_09', 3
-  sprite: s32'are413_10', 3
-  sprite: s32'are413_11', 3
-  sprite: s32'are413_12', 3
-  sprite: s32'are413_13', 3
-  sprite: s32'are413_14', 3
-  sprite: s32'are413_15', 3
-  sprite: s32'are413_16', 3
-  sprite: s32'are413_17', 3
-  setLightRedColor: 250
-  setLightGreenColor: 250
-  setLightBlueColor: 250
-  sprite: s32'are413_18', 3
-  linkObjectPosition: 0
-  createObject: s32'ctl_areWarpEff', (PLAYER)
-  runOnObject: (PREVIOUS)
-    addPositionX: -10989
-    Unknown1727: 18036
-    setObjectSize: 700
-  endRunOnObject: 
-  privateSE: s32'ctl_09_2'
-  setLightRedColor: 500
-  setLightGreenColor: 500
-  setLightBlueColor: 500
-  sprite: s32'are413_19', 3
-  setLightRedColor: 750
-  setLightGreenColor: 750
-  setLightBlueColor: 750
-endState: 
-
-beginState: s32'ctl_405_ThrustEff'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_405_thrust'
-    linkObjectPosition: 3
-    stopLinkObject: 3
-    setLinkObjectDestroyOnStateChange: 3
-    setLinkObjectDestroyOnDamage: 3
-    stopLinkObject: 3
-  endUpon: 
-  sprite: s32'null', 60
-  setPositionX: 524895
-  setPositionY: 304041
-  setDepth: 28283
-endState: 
-
-beginState: s32'ctl_405_EnshutuCamera'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 3
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    ignoreSuperFreezeFromAlly: 1
-    upon: (BEFORE_EXIT)
-      Unknown2582: 
-      haikuEnd: 
-    endUpon: 
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2074: 3, 94337, 372492, 131438, -202, -1383, -397, 60, 0, 5, 0, 0, 0, 0
-  Unknown2875: 5
-  cameraShake: s32'ShakeTate', 500, 0, 10, 0
-  sprite: s32'null', 20
-  Unknown2074: 3, 95729, 382876, 131621, -181, -1390, -397, 60, 20, 0, 0, 0, 0, 0
-  sprite: s32'null', 15
-  Unknown2074: 3, 95729, 382876, 131621, -181, -1390, -397, 60, 0, 0, 15, 0, 0, 0
-  Unknown2876: 15
-  sprite: s32'null', 1
-  Unknown2582: 
-  haikuEnd: 
-endState: 
-
-beginState: s32'402Eff_dash'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_402_dash'
-  endUpon: 
-  sprite: s32'null', 70
-endState: 
-
-beginState: s32'402Eff_dashsmoke'
-  upon: (IMMEDIATE)
-    linkParticle: s32'bg_GroundBurst'
-    setLinkObjectDestroyOnStateChange: 2
-    addPositionX: -94981
-    addPositionY: 30167
-    setAngleX: 0
-    setAngleY: 0
-    setAngle: 1200
-  endUpon: 
-  sprite: s32'null', 60
-endState: 
-
-beginState: s32'402Eff_slash'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_402_slash'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 60
-  createObject: s32'402Eff_slash_bloom', (PLAYER)
-endState: 
-
-beginState: s32'402Eff_slash_bloom'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash_bloom'
-  setPositionX: 433830
-  setPositionY: 230641
-  setDepth: 105145
-  setObjectSize: 900
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash_bloom_end'
-  setObjectSizeScaleSpeed: -100
-endState: 
-
-beginState: s32'402Eff_Shield'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_402_shield'
-    linkObjectPosition: 3
-    stopLinkObject: 3
-    setLinkObjectDestroyOnStateChange: 3
-    setLinkObjectDestroyOnDamage: 3
-    linkObjectZ: 3
-    upon: 23
-      clearUpon: 23
-      addPositionX: 90000
-      setObjectSizeScaleSpeed: 0
-    endUpon: 
-    upon: 32
-      clearUpon: 32
-      gotoLabelRequests: s32'End'
-    endUpon: 
-  endUpon: 
-  sprite: s32'null', 60
-  setPositionX: 98925
-  setPositionY: 300856
-  setDepth: -11895
-  setAngleY: 800
-  setAngleY: 2800
-  setObjectSize: 500
-  setObjectSizeScaleSpeed: 50
-  beginLabel: s32'End'
-  sprite: s32'null', 5
-  setObjectSizeScaleSpeed: 50
-  setAlphaColorSpeed: -200
-endState: 
-
-beginState: s32'403Eff_dash'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_403_dash'
-  endUpon: 
-  sprite: s32'null', 70
-endState: 
-
-beginState: s32'403Eff_dashsmoke'
-  upon: (IMMEDIATE)
-    linkParticle: s32'bg_GroundBurst'
-    setLinkObjectDestroyOnStateChange: 2
-    addPositionX: -94981
-    addPositionY: 30167
-    setAngleX: 0
-    setAngleY: 0
-    setAngle: 1200
-  endUpon: 
-  sprite: s32'null', 60
-endState: 
-
-beginState: s32'403Eff_slash'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_403_slash'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 60
-  createObject: s32'403Eff_slash_bloom', (PLAYER)
-endState: 
-
-beginState: s32'403Eff_slash_bloom'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash_bloom'
-  setPositionX: 433830
-  setPositionY: 230641
-  setDepth: 105145
-  setObjectSize: 1200
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash_bloom_end'
-  setObjectSizeScaleSpeed: -100
-endState: 
-
-beginState: s32'ctl402_are'
-  upon: (IMMEDIATE)
-    linkPawnWithAnimation: s32'ARE', s32''
-    beginMeshSet: s32'ARE'
-      addToMeshSet: s32'body'
-      addToMeshSet: s32'toge'
-      addToMeshSet: s32'are'
-      addToMeshSet: s32'shield'
-    endMeshSet: 
-    swapMeshSet: s32'ARE'
-    linkObjectPosition: 2
-    stopLinkObject: 3
-    setLinkObjectDestroyOnStateChange: 3
-    setLinkObjectDestroyOnDamage: 3
-    zLine: 0, 5
-    setZOffset: 5
-    addPositionX: 20000
-    gotoLabelUpon: 23, s32'Attack1st'
-    gotoLabelUpon: 24, s32'PreAttack2nd'
-    gotoLabelUpon: 25, s32'Attack2nd'
-    gotoLabelUpon: 32, s32'End'
-    upon: (BEFORE_EXIT)
-      createObject: s32'ctl_areWarpEff', (PLAYER)
-      runOnObject: (PREVIOUS)
+    sprite: s32'are412_02', 3
+    setLightRedColor: 500
+    setLightGreenColor: 500
+    setLightBlueColor: 500
+    sprite: s32'are412_03', 3
+    setLightRedColor: 250
+    setLightGreenColor: 250
+    setLightBlueColor: 250
+    sprite: s32'are412_04', 3
+    setLightRedColor: 0
+    setLightGreenColor: 0
+    setLightBlueColor: 0
+    sprite: s32'are412_05', 3
+    sprite: s32'are412_06', 3
+    sprite: s32'are412_07', 3
+    beginLabel: s32'Attack1st'
+    sprite: s32'are412_08', 3
+    setLightRedColor: 0
+    setLightGreenColor: 0
+    setLightBlueColor: 0
+    sprite: s32'are412_09', 3
+    sprite: s32'are412_10', 3
+    sprite: s32'are412_11', 3
+    sprite: s32'are412_12', 3
+    sprite: s32'are412_13', 3
+    sprite: s32'are412_14', 3
+    sprite: s32'are412_15', 3
+    sprite: s32'are412_16', 3
+    beginLabel: s32'PreAttack2nd'
+    sprite: s32'are413_03', 1
+    addPositionX: -45000
+    sprite: s32'are413_04', 1
+    addPositionX: -45000
+    sprite: s32'are413_05', 1
+    addPositionX: -45000
+    sprite: s32'are413_06', 10
+    beginLabel: s32'Attack2nd'
+    sprite: s32'are413_07', 2
+    addPositionX: -145000
+    sprite: s32'are413_08', 2
+    sprite: s32'are413_09', 2
+    sprite: s32'are413_10', 2
+    sprite: s32'are413_11', 2
+    sprite: s32'are413_12', 2
+    sprite: s32'are413_13', 2
+    beginLabel: s32'End'
+    sprite: s32'are413_14', 3
+    addPositionX: 45000
+    sprite: s32'are413_15', 3
+    addPositionX: 45000
+    sprite: s32'are413_16', 3
+    addPositionX: 45000
+    sprite: s32'are413_17', 3
+    sprite: s32'are413_18', 3
+    sprite: s32'are413_19', 3
+    setLightRedColor: 250
+    setLightGreenColor: 250
+    setLightBlueColor: 250
+    sprite: s32'are413_19', 3
+    clearUpon: (BEFORE_EXIT)
+    linkObjectPosition: 0
+    stopLinkObject: 0
+    setLinkObjectDestroyOnStateChange: 0
+    setLinkObjectDestroyOnDamage: 0
+    setLightRedColor: 500
+    setLightGreenColor: 500
+    setLightBlueColor: 500
+    createObject: s32'ctl_areWarpEff', (PLAYER)
+    runOnObject: (PREVIOUS)
         addPositionX: -10989
         Unknown1727: 18036
         setObjectSize: 700
-      endRunOnObject: 
-      privateSE: s32'ctl_09_2'
-    endUpon: 
-  endUpon: 
-  sprite: s32'are412_01', 3
-  setLightRedColor: 750
-  setLightGreenColor: 750
-  setLightBlueColor: 750
-  privateSE: s32'ctl_09'
-  sprite: s32'are412_02', 3
-  setLightRedColor: 500
-  setLightGreenColor: 500
-  setLightBlueColor: 500
-  sprite: s32'are412_03', 3
-  setLightRedColor: 250
-  setLightGreenColor: 250
-  setLightBlueColor: 250
-  sprite: s32'are412_04', 3
-  setLightRedColor: 0
-  setLightGreenColor: 0
-  setLightBlueColor: 0
-  sprite: s32'are412_05', 3
-  sprite: s32'are412_06', 3
-  sprite: s32'are412_07', 3
-  beginLabel: s32'Attack1st'
-  sprite: s32'are412_08', 3
-  setLightRedColor: 0
-  setLightGreenColor: 0
-  setLightBlueColor: 0
-  sprite: s32'are412_09', 3
-  sprite: s32'are412_10', 3
-  sprite: s32'are412_11', 3
-  sprite: s32'are412_12', 3
-  sprite: s32'are412_13', 3
-  sprite: s32'are412_14', 3
-  sprite: s32'are412_15', 3
-  sprite: s32'are412_16', 3
-  beginLabel: s32'PreAttack2nd'
-  sprite: s32'are413_03', 1
-  addPositionX: -45000
-  sprite: s32'are413_04', 1
-  addPositionX: -45000
-  sprite: s32'are413_05', 1
-  addPositionX: -45000
-  sprite: s32'are413_06', 10
-  beginLabel: s32'Attack2nd'
-  sprite: s32'are413_07', 2
-  addPositionX: -145000
-  sprite: s32'are413_08', 2
-  sprite: s32'are413_09', 2
-  sprite: s32'are413_10', 2
-  sprite: s32'are413_11', 2
-  sprite: s32'are413_12', 2
-  sprite: s32'are413_13', 2
-  beginLabel: s32'End'
-  sprite: s32'are413_14', 3
-  addPositionX: 45000
-  sprite: s32'are413_15', 3
-  addPositionX: 45000
-  sprite: s32'are413_16', 3
-  addPositionX: 45000
-  sprite: s32'are413_17', 3
-  sprite: s32'are413_18', 3
-  sprite: s32'are413_19', 3
-  setLightRedColor: 250
-  setLightGreenColor: 250
-  setLightBlueColor: 250
-  sprite: s32'are413_19', 3
-  clearUpon: (BEFORE_EXIT)
-  linkObjectPosition: 0
-  stopLinkObject: 0
-  setLinkObjectDestroyOnStateChange: 0
-  setLinkObjectDestroyOnDamage: 0
-  setLightRedColor: 500
-  setLightGreenColor: 500
-  setLightBlueColor: 500
-  createObject: s32'ctl_areWarpEff', (PLAYER)
-  runOnObject: (PREVIOUS)
-    addPositionX: -10989
-    Unknown1727: 18036
-    setObjectSize: 700
-  endRunOnObject: 
-  privateSE: s32'ctl_09_2'
-  sprite: s32'are413_19', 3
-  setLightRedColor: 750
-  setLightGreenColor: 750
-  setLightBlueColor: 750
-  sprite: s32'are413_19', 3
+    endRunOnObject: 
+    privateSE: s32'ctl_09_2'
+    sprite: s32'are413_19', 3
+    setLightRedColor: 750
+    setLightGreenColor: 750
+    setLightBlueColor: 750
+    sprite: s32'are413_19', 3
 endState: 
 
 beginState: s32'430Eff_slash'
-  upon: (IMMEDIATE)
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_430_slash1'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+        flipDirection: 
+    endUpon: 
+    sprite: s32'null', 3
     linkParticle: s32'ctl_430_slash1'
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-    flipDirection: 
-  endUpon: 
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_430_slash1'
-  createObject: s32'430Eff_slash_bloom', (PLAYER)
-  createObject: s32'430Eff_slash_sub01', (PLAYER)
-  Unknown2272: 1
-  createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER)
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_430_slash2'
-  sprite: s32'null', 12
-  linkParticle: s32'ctl_430_slash3'
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_430_slash4'
-  createObject: s32'430Eff_slash_sub02', (PLAYER)
-  Unknown2272: 1
-  createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER)
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_430_slash5'
-  createObject: s32'430Eff_slash_sub03', (PLAYER)
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_430_slash6'
-  sprite: s32'null', 9
-  linkObjectPosition: 0
+    createObject: s32'430Eff_slash_bloom', (PLAYER)
+    createObject: s32'430Eff_slash_sub01', (PLAYER)
+    Unknown2272: 1
+    createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER)
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_430_slash2'
+    sprite: s32'null', 12
+    linkParticle: s32'ctl_430_slash3'
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_430_slash4'
+    createObject: s32'430Eff_slash_sub02', (PLAYER)
+    Unknown2272: 1
+    createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER)
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_430_slash5'
+    createObject: s32'430Eff_slash_sub03', (PLAYER)
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_430_slash6'
+    sprite: s32'null', 9
+    linkObjectPosition: 0
 endState: 
 
 beginState: s32'430Eff_slash_sub01'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_430_slash_sub01'
-  sprite: s32'null', 24
-  linkObjectPosition: 0
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_430_slash_sub01'
+    sprite: s32'null', 24
+    linkObjectPosition: 0
 endState: 
 
 beginState: s32'430Eff_slash_sub02'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 24
-  linkParticle: s32'ctl_430_slash_sub02'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 24
+    linkParticle: s32'ctl_430_slash_sub02'
 endState: 
 
 beginState: s32'430Eff_slash_sub03'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 24
-  linkParticle: s32'ctl_430_slash_sub03'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 24
+    linkParticle: s32'ctl_430_slash_sub03'
 endState: 
 
 beginState: s32'430Eff_slash_bloom'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash_bloom'
-  setPositionX: 186885
-  setPositionY: 148613
-  setDepth: 241701
-  sprite: s32'null', 3
-  setPositionX: 216855
-  setPositionY: 148613
-  setDepth: 241701
-  sprite: s32'null', 12
-  linkParticle: s32'ctl_cs440_slash_bloom_end'
-  setPositionX: 293842
-  setPositionY: 148705
-  setDepth: 239703
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash_bloom'
-  setPositionX: -232028
-  setPositionY: 200470
-  setDepth: 268961
-  sprite: s32'null', 3
-  setPositionX: -6090
-  setPositionY: 553256
-  setDepth: -16905
-  setObjectSize: 1300
-  sprite: s32'null', 12
-  linkParticle: s32'ctl_cs440_slash_bloom_end'
-  setPositionX: 50885
-  setPositionY: 588664
-  setDepth: -71406
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash_bloom'
+    setPositionX: 186885
+    setPositionY: 148613
+    setDepth: 241701
+    sprite: s32'null', 3
+    setPositionX: 216855
+    setPositionY: 148613
+    setDepth: 241701
+    sprite: s32'null', 12
+    linkParticle: s32'ctl_cs440_slash_bloom_end'
+    setPositionX: 293842
+    setPositionY: 148705
+    setDepth: 239703
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash_bloom'
+    setPositionX: -232028
+    setPositionY: 200470
+    setDepth: 268961
+    sprite: s32'null', 3
+    setPositionX: -6090
+    setPositionY: 553256
+    setDepth: -16905
+    setObjectSize: 1300
+    sprite: s32'null', 12
+    linkParticle: s32'ctl_cs440_slash_bloom_end'
+    setPositionX: 50885
+    setPositionY: 588664
+    setDepth: -71406
 endState: 
 
 beginState: s32'430Eff_thrust'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-    upon: 23
-      clearUpon: 23
-      gotoLabelRequests: s32'End'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+        upon: 23
+            clearUpon: 23
+            gotoLabelRequests: s32'End'
+        endUpon: 
+        linkParticle: s32'ctl_430_thrust01'
+        createParticle: s32'ctl_430_thrust_ring', (PLAYER)
     endUpon: 
-    linkParticle: s32'ctl_430_thrust01'
-    createParticle: s32'ctl_430_thrust_ring', (PLAYER)
-  endUpon: 
-  beginLabel: s32'Loop'
-  sprite: s32'null', 3
-  createObject: s32'430Eff_thrust_sub', (PLAYER)
-  gotoLabel: s32'Loop'
-  beginLabel: s32'End'
-  sprite: s32'null', 3
-  clearUpon: 23
-  linkParticle: s32'ctl_430_thrust02'
-  createObject: s32'430Eff_thrust_sub', (PLAYER)
-  sprite: s32'null', 30
-  createObject: s32'430Eff_thrust_sub', (PLAYER)
+    beginLabel: s32'Loop'
+    sprite: s32'null', 3
+    createObject: s32'430Eff_thrust_sub', (PLAYER)
+    gotoLabel: s32'Loop'
+    beginLabel: s32'End'
+    sprite: s32'null', 3
+    clearUpon: 23
+    linkParticle: s32'ctl_430_thrust02'
+    createObject: s32'430Eff_thrust_sub', (PLAYER)
+    sprite: s32'null', 30
+    createObject: s32'430Eff_thrust_sub', (PLAYER)
 endState: 
 
 beginState: s32'430Eff_thrust_sub'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setLinkObjectDestroyOnStateChange: 2
-    addPositionX: 100000
-    addPositionY: -100000
-  endUpon: 
-  sprite: s32'null', 60
-  linkParticle: s32'ctl_430_thrust_sub'
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setLinkObjectDestroyOnStateChange: 2
+        addPositionX: 100000
+        addPositionY: -100000
+    endUpon: 
+    sprite: s32'null', 60
+    linkParticle: s32'ctl_430_thrust_sub'
 endState: 
 
 beginState: s32'430csEff'
-  upon: (IMMEDIATE)
-    fadeOut: 1
-    sceneMulColor: 255, 255, 255
-    sceneLightColor: 128, 128, 145
-    sceneAmbientColor: 111, 116, 145
-    diffusionFilterToForce: 0
-    diffusionFilterToSaturation: 1000
-    fadeOutStart: 0, 0
-    hideUI: 1
-    upon: (FRAME_STEP)
-      ifOnFrame: Val(0)
-        sceneAddColor: 0, 0, 0
+    upon: (IMMEDIATE)
+        fadeOut: 1
         sceneMulColor: 255, 255, 255
-        sceneLightColor: 100, 100, 110
-        sceneAmbientColor: 100, 100, 110
-        createObject: s32'430csEff_screen_grad', (PLAYER)
-        createObject: s32'430csEff_BG', (PLAYER)
-      endIf: 
-      ifOnFrame: Val(47)
-        sendSignalToAction: s32'430csEff_BG', 23
-      endIf: 
-      ifOnFrame: Val(60)
-        createObject: s32'430csEff_swordrotaion', (PLAYER)
-      endIf: 
-      ifOnFrame: Val(115)
-        sceneMulColor: 255, 255, 255
-        sceneLightColor: 100, 100, 180
-        sceneAmbientColor: 105, 105, 150
-        deactivateObjectByName: s32'430csEff_swordrotaion'
-        createObject: s32'430csEff_swordaura', (PLAYER)
-        sendSignalToAction: s32'430csEff_BG', 24
-      endIf: 
-      ifOnFrame: Val(143)
-        overrideLightColor: 100, 100, 180, 130, 0x82000000A000000014000000
-        Unknown379: 0x69000000690000009600000078000000780000009100000014000000
-      endIf: 
-      ifOnFrame: Val(159)
-        createObject: s32'CTL_430_Scr01', (PLAYER)
-      endIf: 
-      ifOnFrame: Val(173)
-        createObject: s32'430csEff_speedline', (PLAYER)
-      endIf: 
-      ifOnFrame: Val(199)
-        createObject: s32'CTL_430_Scr02', (PLAYER)
-      endIf: 
-      ifOnFrame: Val(231)
-        deactivateObjectByName: s32'430csEff_speedline'
-        deactivateObjectByName: s32'430csEff_atk1'
-        createObject: s32'430csEff_scr03', (PLAYER)
-      endIf: 
-      ifOnFrame: Val(269)
-        resetSceneColor: 
-        fadeOut: 0
-        hideUI: 0
-        sceneMulColor: 230, 230, 255
-        sceneLightColor: 140, 140, 150
-        sceneAmbientColor: 128, 128, 128
-        createObject: s32'430csEff_swordfin', (PLAYER)
-        deactivateObjectByName: s32'430csEff_scr03'
-        createObject: s32'430csEff_sword', (PLAYER)
-        runOnObject: (PREVIOUS)
-          addPositionX: 19610
-          addPositionY: 663027
-          Unknown1727: -35522
-          setAngleX: 48000
-          setAngleY: 89600
-          setAngle: 351600
-          setObjectSize: 700
-        endRunOnObject: 
-        createObject: s32'430csEff_sword', (PLAYER)
-        runOnObject: (PREVIOUS)
-          addPositionX: 174053
-          addPositionY: 629085
-          Unknown1727: 8148
-          setAngleX: 322400
-          setAngleY: 28800
-          setAngle: 158000
-          setObjectSize: 600
-        endRunOnObject: 
-        createObject: s32'430csEff_sword', (PLAYER)
-        runOnObject: (PREVIOUS)
-          addPositionX: -24436
-          addPositionY: 788826
-          Unknown1727: -113623
-          setAngleX: 307600
-          setAngleY: 109200
-          setAngle: 174400
-          setObjectSize: 700
-        endRunOnObject: 
-      endIf: 
+        sceneLightColor: 128, 128, 145
+        sceneAmbientColor: 111, 116, 145
+        diffusionFilterToForce: 0
+        diffusionFilterToSaturation: 1000
+        fadeOutStart: 0, 0
+        hideUI: 1
+        upon: (FRAME_STEP)
+            ifOnFrame: Val(0)
+                sceneAddColor: 0, 0, 0
+                sceneMulColor: 255, 255, 255
+                sceneLightColor: 100, 100, 110
+                sceneAmbientColor: 100, 100, 110
+                createObject: s32'430csEff_screen_grad', (PLAYER)
+                createObject: s32'430csEff_BG', (PLAYER)
+            endIf: 
+            ifOnFrame: Val(47)
+                sendSignalToAction: s32'430csEff_BG', 23
+            endIf: 
+            ifOnFrame: Val(60)
+                createObject: s32'430csEff_swordrotaion', (PLAYER)
+            endIf: 
+            ifOnFrame: Val(115)
+                sceneMulColor: 255, 255, 255
+                sceneLightColor: 100, 100, 180
+                sceneAmbientColor: 105, 105, 150
+                deactivateObjectByName: s32'430csEff_swordrotaion'
+                createObject: s32'430csEff_swordaura', (PLAYER)
+                sendSignalToAction: s32'430csEff_BG', 24
+            endIf: 
+            ifOnFrame: Val(143)
+                overrideLightColor: 100, 100, 180, 130, 0x82000000A000000014000000
+                Unknown379: 0x69000000690000009600000078000000780000009100000014000000
+            endIf: 
+            ifOnFrame: Val(159)
+                createObject: s32'CTL_430_Scr01', (PLAYER)
+            endIf: 
+            ifOnFrame: Val(173)
+                createObject: s32'430csEff_speedline', (PLAYER)
+            endIf: 
+            ifOnFrame: Val(199)
+                createObject: s32'CTL_430_Scr02', (PLAYER)
+            endIf: 
+            ifOnFrame: Val(231)
+                deactivateObjectByName: s32'430csEff_speedline'
+                deactivateObjectByName: s32'430csEff_atk1'
+                createObject: s32'430csEff_scr03', (PLAYER)
+            endIf: 
+            ifOnFrame: Val(269)
+                resetSceneColor: 
+                fadeOut: 0
+                hideUI: 0
+                sceneMulColor: 230, 230, 255
+                sceneLightColor: 140, 140, 150
+                sceneAmbientColor: 128, 128, 128
+                createObject: s32'430csEff_swordfin', (PLAYER)
+                deactivateObjectByName: s32'430csEff_scr03'
+                createObject: s32'430csEff_sword', (PLAYER)
+                runOnObject: (PREVIOUS)
+                    addPositionX: 19610
+                    addPositionY: 663027
+                    Unknown1727: -35522
+                    setAngleX: 48000
+                    setAngleY: 89600
+                    setAngle: 351600
+                    setObjectSize: 700
+                endRunOnObject: 
+                createObject: s32'430csEff_sword', (PLAYER)
+                runOnObject: (PREVIOUS)
+                    addPositionX: 174053
+                    addPositionY: 629085
+                    Unknown1727: 8148
+                    setAngleX: 322400
+                    setAngleY: 28800
+                    setAngle: 158000
+                    setObjectSize: 600
+                endRunOnObject: 
+                createObject: s32'430csEff_sword', (PLAYER)
+                runOnObject: (PREVIOUS)
+                    addPositionX: -24436
+                    addPositionY: 788826
+                    Unknown1727: -113623
+                    setAngleX: 307600
+                    setAngleY: 109200
+                    setAngle: 174400
+                    setObjectSize: 700
+                endRunOnObject: 
+            endIf: 
+        endUpon: 
     endUpon: 
-  endUpon: 
-  sprite: s32'null', 500
+    sprite: s32'null', 500
 endState: 
 
 beginState: s32'430csEff_screen_grad'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs430_screen_grad'
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 500
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs430_screen_grad'
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 500
 endState: 
 
 beginState: s32'430csEff_swordrotaion'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs430_swordrotation'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    addPositionX: -19216
-    addPositionY: 1637598
-    Unknown1727: 0
-    setAngleX: 30000
-    setAngleY: 90000
-    setAngle: 180000
-    setObjectSize: 950
-  endUpon: 
-  sprite: s32'null', 115
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs430_swordrotation'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        addPositionX: -19216
+        addPositionY: 1637598
+        Unknown1727: 0
+        setAngleX: 30000
+        setAngleY: 90000
+        setAngle: 180000
+        setObjectSize: 950
+    endUpon: 
+    sprite: s32'null', 115
 endState: 
 
 beginState: s32'430csEff_BG'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs430_kouya'
-    setLinkObjectDestroyOnStateChange: 2
-    linkObjectPosition: 2
-    upon: 23
-      gotoLabelRequests: s32'0'
-      setPositionX: -3661567
-      setPositionY: 3427926
-      setDepth: 0
-      setAngleX: 0
-      setAngleY: 0
-      setAngle: 320800
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs430_kouya'
+        setLinkObjectDestroyOnStateChange: 2
+        linkObjectPosition: 2
+        upon: 23
+            gotoLabelRequests: s32'0'
+            setPositionX: -3661567
+            setPositionY: 3427926
+            setDepth: 0
+            setAngleX: 0
+            setAngleY: 0
+            setAngle: 320800
+        endUpon: 
+        gotoLabelUpon: 24, s32'1'
     endUpon: 
-    gotoLabelUpon: 24, s32'1'
-  endUpon: 
-  sprite: s32'null', 27
-  addPositionX: -5531720
-  addPositionY: 1001338
-  Unknown1727: -822910
-  setAngleX: 18400
-  setAngleY: 340000
-  setAngle: 358000
-  sprite: s32'null', 8
-  setPositionX: -3214333
-  setPositionY: 337531
-  setDepth: -894911
-  sprite: s32'null', 50
-  setPositionX: -3633034
-  setPositionY: 1497922
-  setDepth: -135241
-  setAngleX: 18400
-  setAngleY: 18000
-  setAngle: 324000
-  beginLabel: s32'0'
-  sprite: s32'null', 500
-  clearUpon: 23
-  beginLabel: s32'1'
-  sprite: s32'null', 500
-  clearUpon: 24
-  setPositionX: -6858548
-  setPositionY: 356041
-  setDepth: 329875
-  setAngleX: 0
-  setAngleY: 0
-  setAngle: 348000
+    sprite: s32'null', 27
+    addPositionX: -5531720
+    addPositionY: 1001338
+    Unknown1727: -822910
+    setAngleX: 18400
+    setAngleY: 340000
+    setAngle: 358000
+    sprite: s32'null', 8
+    setPositionX: -3214333
+    setPositionY: 337531
+    setDepth: -894911
+    sprite: s32'null', 50
+    setPositionX: -3633034
+    setPositionY: 1497922
+    setDepth: -135241
+    setAngleX: 18400
+    setAngleY: 18000
+    setAngle: 324000
+    beginLabel: s32'0'
+    sprite: s32'null', 500
+    clearUpon: 23
+    beginLabel: s32'1'
+    sprite: s32'null', 500
+    clearUpon: 24
+    setPositionX: -6858548
+    setPositionY: 356041
+    setDepth: 329875
+    setAngleX: 0
+    setAngleY: 0
+    setAngle: 348000
 endState: 
 
 beginState: s32'430csEff_swordaura'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs430_swordaura'
-    setLinkObjectDestroyOnStateChange: 2
-    addPositionX: 206944
-    addPositionY: 1474911
-    Unknown1727: 38
-    setObjectWidth: 500
-    setObjectHeight: 500
-    setObjectDepth: 500
-    setAngleX: 30000
-    setAngleY: 90000
-    setAngle: 180000
-  endUpon: 
-  sprite: s32'null', 500
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs430_swordaura'
+        setLinkObjectDestroyOnStateChange: 2
+        addPositionX: 206944
+        addPositionY: 1474911
+        Unknown1727: 38
+        setObjectWidth: 500
+        setObjectHeight: 500
+        setObjectDepth: 500
+        setAngleX: 30000
+        setAngleY: 90000
+        setAngle: 180000
+    endUpon: 
+    sprite: s32'null', 500
 endState: 
 
 beginState: s32'430csEff_speedline'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs430_speedline'
-    setLinkObjectDestroyOnStateChange: 2
-    addPositionX: 506544
-    addPositionY: 1383855
-    Unknown1727: 2723
-    setAngleX: 36000
-    setAngleY: 270000
-    setAngle: 345200
-    setObjectWidth: 200
-    setObjectHeight: 200
-    setObjectDepth: 200
-  endUpon: 
-  sprite: s32'null', 10
-  sprite: s32'null', 460
-  setObjectWidth: 100
-  setObjectHeight: 100
-  setObjectDepth: 100
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs430_speedline'
+        setLinkObjectDestroyOnStateChange: 2
+        addPositionX: 506544
+        addPositionY: 1383855
+        Unknown1727: 2723
+        setAngleX: 36000
+        setAngleY: 270000
+        setAngle: 345200
+        setObjectWidth: 200
+        setObjectHeight: 200
+        setObjectDepth: 200
+    endUpon: 
+    sprite: s32'null', 10
+    sprite: s32'null', 460
+    setObjectWidth: 100
+    setObjectHeight: 100
+    setObjectDepth: 100
 endState: 
 
 beginState: s32'430csEff_scr03'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs430_scr03'
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 42
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs430_scr03'
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 42
 endState: 
 
 beginState: s32'430csEff_swordfin'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs430_swordfin'
-    setLinkObjectDestroyOnStateChange: 2
-    fadeOutStart: 0, 0
-    addPositionX: 249515
-    addPositionY: 629406
-    Unknown1727: -38832
-  endUpon: 
-  sprite: s32'null', 500
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs430_swordfin'
+        setLinkObjectDestroyOnStateChange: 2
+        fadeOutStart: 0, 0
+        addPositionX: 249515
+        addPositionY: 629406
+        Unknown1727: -38832
+    endUpon: 
+    sprite: s32'null', 500
 endState: 
 
 beginState: s32'430csEff_sword'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs430_sword'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-  endUpon: 
-  sprite: s32'null', 115
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs430_sword'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+    endUpon: 
+    sprite: s32'null', 115
 endState: 
 
 beginState: s32'CTL_430_dust01'
-  upon: (IMMEDIATE)
-    ignoreFinishStop: 1
-    ignoreSuperFreeze: 1
-    setPositionX: 849830
-    setPositionY: 660151
-    setDepth: 211788
-  endUpon: 
-  sprite: s32'null', 120
-  linkParticle: s32'ctl_430_dust01'
+    upon: (IMMEDIATE)
+        ignoreFinishStop: 1
+        ignoreSuperFreeze: 1
+        setPositionX: 849830
+        setPositionY: 660151
+        setDepth: 211788
+    endUpon: 
+    sprite: s32'null', 120
+    linkParticle: s32'ctl_430_dust01'
 endState: 
 
 beginState: s32'CTL_430_Scr01'
-  upon: (IMMEDIATE)
-    ignoreFinishStop: 1
-    ignoreSuperFreeze: 1
-    setLinkObjectDestroyOnStateChange: 2
-    flipDirection: 
-  endUpon: 
-  sprite: s32'null', 32
-  linkParticle: s32'ctl_cs430_scr01'
+    upon: (IMMEDIATE)
+        ignoreFinishStop: 1
+        ignoreSuperFreeze: 1
+        setLinkObjectDestroyOnStateChange: 2
+        flipDirection: 
+    endUpon: 
+    sprite: s32'null', 32
+    linkParticle: s32'ctl_cs430_scr01'
 endState: 
 
 beginState: s32'CTL_430_Scr02'
-  upon: (IMMEDIATE)
-    ignoreFinishStop: 1
-    ignoreSuperFreeze: 1
-    setLinkObjectDestroyOnStateChange: 2
-    flipDirection: 
-  endUpon: 
-  sprite: s32'null', 28
-  linkParticle: s32'ctl_cs430_scr02'
+    upon: (IMMEDIATE)
+        ignoreFinishStop: 1
+        ignoreSuperFreeze: 1
+        setLinkObjectDestroyOnStateChange: 2
+        flipDirection: 
+    endUpon: 
+    sprite: s32'null', 28
+    linkParticle: s32'ctl_cs430_scr02'
 endState: 
 
 beginState: s32'440Eff_slash'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 2
-    flipDirection: 
-  endUpon: 
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash1'
-  createObject: s32'440Eff_slash_sub01', (PLAYER)
-  createObject: s32'440Eff_slash_bloom', (PLAYER)
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash2'
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash3'
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash4'
-  sprite: s32'null', 3
-  sprite: s32'null', 3
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash6'
-  Unknown2268: 0, 900
-  createObjectWithArg: s32'440Eff_slash_sub02', (PLAYER)
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash7'
-  createObject: s32'440Eff_splash02', (PLAYER)
-  createObject: s32'440Eff_slash_sub03', (PLAYER)
-  createParticle: s32'ctl_cs440_jump', (PLAYER_LAND)
-  Unknown2272: 1
-  createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER_LAND)
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash8'
-  createObject: s32'440Eff_slash_sub04', (PLAYER)
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash9'
-  createObject: s32'440Eff_splash02', (PLAYER)
-  createObject: s32'440Eff_slash_sub05', (PLAYER)
-  sprite: s32'null', 9
-  linkObjectPosition: 0
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 2
+        flipDirection: 
+    endUpon: 
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash1'
+    createObject: s32'440Eff_slash_sub01', (PLAYER)
+    createObject: s32'440Eff_slash_bloom', (PLAYER)
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash2'
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash3'
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash4'
+    sprite: s32'null', 3
+    sprite: s32'null', 3
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash6'
+    Unknown2268: 0, 900
+    createObjectWithArg: s32'440Eff_slash_sub02', (PLAYER)
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash7'
+    createObject: s32'440Eff_splash02', (PLAYER)
+    createObject: s32'440Eff_slash_sub03', (PLAYER)
+    createParticle: s32'ctl_cs440_jump', (PLAYER_LAND)
+    Unknown2272: 1
+    createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash8'
+    createObject: s32'440Eff_slash_sub04', (PLAYER)
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash9'
+    createObject: s32'440Eff_splash02', (PLAYER)
+    createObject: s32'440Eff_slash_sub05', (PLAYER)
+    sprite: s32'null', 9
+    linkObjectPosition: 0
 endState: 
 
 beginState: s32'440Eff_slash_sub01'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_cs440_slash_sub01'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_cs440_slash_sub01'
 endState: 
 
 beginState: s32'440Eff_slash_sub02'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_cs440_slash_sub02'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_cs440_slash_sub02'
 endState: 
 
 beginState: s32'440Eff_slash_sub03'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_cs440_slash_sub03'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_cs440_slash_sub03'
 endState: 
 
 beginState: s32'440Eff_slash_sub04'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    setAngle: 10000
-    addPositionY: -50000
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_cs440_slash_sub04'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        setAngle: 10000
+        addPositionY: -50000
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_cs440_slash_sub04'
 endState: 
 
 beginState: s32'440Eff_slash_sub05'
-  upon: (IMMEDIATE)
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-    addPositionY: 100000
-  endUpon: 
-  sprite: s32'null', 30
-  linkParticle: s32'ctl_cs440_slash_sub05'
+    upon: (IMMEDIATE)
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+        addPositionY: 100000
+    endUpon: 
+    sprite: s32'null', 30
+    linkParticle: s32'ctl_cs440_slash_sub05'
 endState: 
 
 beginState: s32'440Eff_splash02'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs440_splash02'
-  endUpon: 
-  sprite: s32'null', 40
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs440_splash02'
+    endUpon: 
+    sprite: s32'null', 40
 endState: 
 
 beginState: s32'440Eff_slash_bloom'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash_bloom'
-  setPositionX: -196008
-  setPositionY: 205121
-  setDepth: 139072
-  sprite: s32'null', 3
-  setPositionX: -159017
-  setPositionY: 453312
-  setDepth: -112358
-  setObjectSize: 1300
-  sprite: s32'null', 12
-  linkParticle: s32'ctl_cs440_slash_bloom_end'
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash_bloom'
-  setPositionX: -144020
-  setPositionY: 266279
-  setDepth: 159732
-  setObjectSize: 1000
-  sprite: s32'null', 3
-  setPositionX: -54038
-  setPositionY: 478266
-  setDepth: -225372
-  setObjectSize: 1300
-  sprite: s32'null', 3
-  setPositionX: 275896
-  setPositionY: 460409
-  setDepth: 69115
-  setObjectSize: 1100
-  sprite: s32'null', 3
-  linkParticle: s32'ctl_cs440_slash_bloom_end'
-  setPositionX: -89031
-  setPositionY: 238193
-  setDepth: 344674
-  objectSizeScaleSpeedPercent: 30
+    upon: (IMMEDIATE)
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash_bloom'
+    setPositionX: -196008
+    setPositionY: 205121
+    setDepth: 139072
+    sprite: s32'null', 3
+    setPositionX: -159017
+    setPositionY: 453312
+    setDepth: -112358
+    setObjectSize: 1300
+    sprite: s32'null', 12
+    linkParticle: s32'ctl_cs440_slash_bloom_end'
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash_bloom'
+    setPositionX: -144020
+    setPositionY: 266279
+    setDepth: 159732
+    setObjectSize: 1000
+    sprite: s32'null', 3
+    setPositionX: -54038
+    setPositionY: 478266
+    setDepth: -225372
+    setObjectSize: 1300
+    sprite: s32'null', 3
+    setPositionX: 275896
+    setPositionY: 460409
+    setDepth: 69115
+    setObjectSize: 1100
+    sprite: s32'null', 3
+    linkParticle: s32'ctl_cs440_slash_bloom_end'
+    setPositionX: -89031
+    setPositionY: 238193
+    setDepth: 344674
+    objectSizeScaleSpeedPercent: 30
 endState: 
 
 beginState: s32'ctl_440_CS1stEff'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    sceneAddColor: 16, 16, 32
-    sceneMulColor: 240, 240, 255
-    sceneLightColor: 117, 130, 180
-    sceneAmbientColor: 88, 92, 91
-  endUpon: 
-  sprite: s32'null', 110
-  upon: (FRAME_STEP)
-    ifOnFrame: Val(0)
-      hideUI: 1
-      createObject: s32'ctl_440_AlesAura', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(47)
-      createObject: s32'ctl_440_SordAura', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(60)
-      hideUI: 0
-    endIf: 
-    ifOnFrame: Val(65)
-      createObject: s32'ctl_440_FaceLight', (PLAYER)
-    endIf: 
-  endUpon: 
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        sceneAddColor: 16, 16, 32
+        sceneMulColor: 240, 240, 255
+        sceneLightColor: 117, 130, 180
+        sceneAmbientColor: 88, 92, 91
+    endUpon: 
+    sprite: s32'null', 110
+    upon: (FRAME_STEP)
+        ifOnFrame: Val(0)
+            hideUI: 1
+            createObject: s32'ctl_440_AlesAura', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(47)
+            createObject: s32'ctl_440_SordAura', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(60)
+            hideUI: 0
+        endIf: 
+        ifOnFrame: Val(65)
+            createObject: s32'ctl_440_FaceLight', (PLAYER)
+        endIf: 
+    endUpon: 
 endState: 
 
 beginState: s32'ctl_440_AlesAura'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    setObjectSize: 800
-    setPositionX: 129803
-    setPositionY: 489352
-    setDepth: -33933
-    setAngleX: 0
-    setAngleY: 298000
-    setAngle: 0
-    linkParticle: s32'ctl_440CS_AlesAura'
-  endUpon: 
-  sprite: s32'null', 3
-  sprite: s32'null', 4
-  sprite: s32'null', 4
-  sprite: s32'null', 4
-  sprite: s32'null', 64
-  setPositionX: 85532
-  setPositionY: 485808
-  setDepth: -60206
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        setObjectSize: 800
+        setPositionX: 129803
+        setPositionY: 489352
+        setDepth: -33933
+        setAngleX: 0
+        setAngleY: 298000
+        setAngle: 0
+        linkParticle: s32'ctl_440CS_AlesAura'
+    endUpon: 
+    sprite: s32'null', 3
+    sprite: s32'null', 4
+    sprite: s32'null', 4
+    sprite: s32'null', 4
+    sprite: s32'null', 64
+    setPositionX: 85532
+    setPositionY: 485808
+    setDepth: -60206
 endState: 
 
 beginState: s32'ctl_440_SordAura'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    flipDirection: 
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_440CS_SordAura01'
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_440CS_SordAura02'
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_440CS_SordAura03'
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_440CS_SordAura04'
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_440CS_SordAura05'
-  sprite: s32'null', 60
-  linkParticle: s32'ctl_440CS_SordAura06'
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        flipDirection: 
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_440CS_SordAura01'
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_440CS_SordAura02'
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_440CS_SordAura03'
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_440CS_SordAura04'
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_440CS_SordAura05'
+    sprite: s32'null', 60
+    linkParticle: s32'ctl_440CS_SordAura06'
 endState: 
 
 beginState: s32'ctl_440_FaceLight'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    setPositionX: 16345
-    setPositionY: 269040
-    setDepth: 167977
-  endUpon: 
-  sprite: s32'null', 60
-  linkParticle: s32'ctl_440CS_FaceLight'
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        setPositionX: 16345
+        setPositionY: 269040
+        setDepth: 167977
+    endUpon: 
+    sprite: s32'null', 60
+    linkParticle: s32'ctl_440CS_FaceLight'
 endState: 
 
 beginState: s32'ctl_440_CS2stEff'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    sceneAddColor: 16, 16, 32
-    sceneMulColor: 240, 240, 255
-    sceneLightColor: 117, 130, 180
-    sceneAmbientColor: 88, 92, 91
-    fadeOutStart: 0, 1
-  endUpon: 
-  sprite: s32'null', 1000
-  upon: (FRAME_STEP)
-    ifOnFrame: Val(0)
-      hideUI: 1
-      createObject: s32'ctl_440_BlueAura', (PLAYER)
-      createObject: s32'ctl_440CS_kouya', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(47)
-      createObject: s32'ctl_440_ScrEyeAnim', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(63)
-      createObject: s32'ctl_440_EyeRay', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(80)
-      deactivateObjectByName: s32'ctl_440_BlueAura'
-      createObject: s32'ctl_440_BlueAura2', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(127)
-      deactivateObjectByName: s32'ctl_440_BlueAura2'
-    endIf: 
-    ifOnFrame: Val(151)
-      createObject: s32'ctl_440_Charge', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(163)
-      createObject: s32'ctl_440_Charge2', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(175)
-      createObject: s32'ctl_440_AirDash', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(187)
-      createObject: s32'ctl_440_Ryuhai', (PLAYER)
-      deactivateObjectByName: s32'ctl_440CS_kouya'
-    endIf: 
-    ifOnFrame: Val(191)
-      createObject: s32'ctl_440_Slash', (PLAYER)
-      createObject: s32'ctl_440_Hit', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(219)
-      deactivateObjectByName: s32'ctl_440_Slash'
-      createObject: s32'ctl_440CS_kouya', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(303)
-      createObject: s32'ctl_440_Slash2', (PLAYER)
-      createObject: s32'ctl_440_Hit2', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(331)
-      createObject: s32'ctl_440_Slash3', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(407)
-      createObject: s32'ctl_440_ScrSlash', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(447)
-      createObject: s32'ctl_440_Twinkle', (PLAYER)
-    endIf: 
-    ifOnFrame: Val(484)
-      createObject: s32'ctl_440_Bomb', (PLAYER)
-    endIf: 
-  endUpon: 
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        sceneAddColor: 16, 16, 32
+        sceneMulColor: 240, 240, 255
+        sceneLightColor: 117, 130, 180
+        sceneAmbientColor: 88, 92, 91
+        fadeOutStart: 0, 1
+    endUpon: 
+    sprite: s32'null', 1000
+    upon: (FRAME_STEP)
+        ifOnFrame: Val(0)
+            hideUI: 1
+            createObject: s32'ctl_440_BlueAura', (PLAYER)
+            createObject: s32'ctl_440CS_kouya', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(47)
+            createObject: s32'ctl_440_ScrEyeAnim', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(63)
+            createObject: s32'ctl_440_EyeRay', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(80)
+            deactivateObjectByName: s32'ctl_440_BlueAura'
+            createObject: s32'ctl_440_BlueAura2', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(127)
+            deactivateObjectByName: s32'ctl_440_BlueAura2'
+        endIf: 
+        ifOnFrame: Val(151)
+            createObject: s32'ctl_440_Charge', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(163)
+            createObject: s32'ctl_440_Charge2', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(175)
+            createObject: s32'ctl_440_AirDash', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(187)
+            createObject: s32'ctl_440_Ryuhai', (PLAYER)
+            deactivateObjectByName: s32'ctl_440CS_kouya'
+        endIf: 
+        ifOnFrame: Val(191)
+            createObject: s32'ctl_440_Slash', (PLAYER)
+            createObject: s32'ctl_440_Hit', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(219)
+            deactivateObjectByName: s32'ctl_440_Slash'
+            createObject: s32'ctl_440CS_kouya', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(303)
+            createObject: s32'ctl_440_Slash2', (PLAYER)
+            createObject: s32'ctl_440_Hit2', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(331)
+            createObject: s32'ctl_440_Slash3', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(407)
+            createObject: s32'ctl_440_ScrSlash', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(447)
+            createObject: s32'ctl_440_Twinkle', (PLAYER)
+        endIf: 
+        ifOnFrame: Val(484)
+            createObject: s32'ctl_440_Bomb', (PLAYER)
+        endIf: 
+    endUpon: 
 endState: 
 
 beginState: s32'ctl_440CS_kouya'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 1000
-  linkParticle: s32'ctl_440CS_kouya'
-  addPositionX: -367886
-  addPositionY: -2180340
-  Unknown1727: -1853757
-  setAngleX: 12000
-  setAngleY: 0
-  setAngle: 353600
-  setObjectSize: 2000
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 1000
+    linkParticle: s32'ctl_440CS_kouya'
+    addPositionX: -367886
+    addPositionY: -2180340
+    Unknown1727: -1853757
+    setAngleX: 12000
+    setAngleY: 0
+    setAngle: 353600
+    setObjectSize: 2000
 endState: 
 
 beginState: s32'ctl_440_BlueAura'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 120
-  linkParticle: s32'ctl_441CS_BlueAura'
-  setPositionX: -11041
-  setPositionY: 529532
-  setDepth: 114002
-  setObjectSize: 50
-  setAngle: 290800
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 120
+    linkParticle: s32'ctl_441CS_BlueAura'
+    setPositionX: -11041
+    setPositionY: 529532
+    setDepth: 114002
+    setObjectSize: 50
+    setAngle: 290800
 endState: 
 
 beginState: s32'ctl_440_BlueAura2'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 120
-  linkParticle: s32'ctl_441CS_BlueAura2'
-  addPositionX: 780827
-  addPositionY: 361988
-  Unknown1727: -975482
-  setObjectSize: 3000
-  setAngle: 60000
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 120
+    linkParticle: s32'ctl_441CS_BlueAura2'
+    addPositionX: 780827
+    addPositionY: 361988
+    Unknown1727: -975482
+    setObjectSize: 3000
+    setAngle: 60000
 endState: 
 
 beginState: s32'ctl_440_Charge'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Charge'
-  setPositionX: 48050
-  setPositionY: 169836
-  setDepth: 194511
-  setObjectWidth: 400
-  setObjectHeight: 400
-  setObjectDepth: 400
-  setAngleX: 192000
-  setAngleY: 256400
-  setAngle: 31600
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Charge2'
-  setObjectSize: 300
-  setPositionX: 35443
-  setPositionY: 201388
-  setDepth: 245743
-  setAngleX: 171200
-  setAngleY: 253200
-  setAngle: 37200
-  sprite: s32'null', 4
-  setObjectSize: 200
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Charge'
+    setPositionX: 48050
+    setPositionY: 169836
+    setDepth: 194511
+    setObjectWidth: 400
+    setObjectHeight: 400
+    setObjectDepth: 400
+    setAngleX: 192000
+    setAngleY: 256400
+    setAngle: 31600
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Charge2'
+    setObjectSize: 300
+    setPositionX: 35443
+    setPositionY: 201388
+    setDepth: 245743
+    setAngleX: 171200
+    setAngleY: 253200
+    setAngle: 37200
+    sprite: s32'null', 4
+    setObjectSize: 200
 endState: 
 
 beginState: s32'ctl_440_Charge2'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Thrust'
-  setPositionX: 22953
-  setPositionY: 166345
-  setDepth: 314295
-  setAngleX: 358400
-  setAngleY: 266400
-  setAngle: 31200
-  sprite: s32'null', 4
-  sprite: s32'null', 4
-  setObjectSize: 1700
-  setPositionX: 31816
-  setPositionY: 99434
-  setDepth: 456573
-  setAngleX: 23600
-  setAngleY: 286400
-  setAngle: 31200
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Thrust'
+    setPositionX: 22953
+    setPositionY: 166345
+    setDepth: 314295
+    setAngleX: 358400
+    setAngleY: 266400
+    setAngle: 31200
+    sprite: s32'null', 4
+    sprite: s32'null', 4
+    setObjectSize: 1700
+    setPositionX: 31816
+    setPositionY: 99434
+    setDepth: 456573
+    setAngleX: 23600
+    setAngleY: 286400
+    setAngle: 31200
 endState: 
 
 beginState: s32'ctl_440_AirDash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_AirDash'
-  setPositionX: -105655
-  setPositionY: 278974
-  setDepth: 395159
-  setAngleX: 17600
-  setAngleY: 343200
-  setAngle: 1600
-  sprite: s32'null', 4
-  setPositionX: 100190
-  setPositionY: 477178
-  setDepth: 445418
-  setAngleX: 17600
-  setAngleY: 357200
-  setAngle: 1600
-  sprite: s32'null', 4
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_AirDash'
+    setPositionX: -105655
+    setPositionY: 278974
+    setDepth: 395159
+    setAngleX: 17600
+    setAngleY: 343200
+    setAngle: 1600
+    sprite: s32'null', 4
+    setPositionX: 100190
+    setPositionY: 477178
+    setDepth: 445418
+    setAngleX: 17600
+    setAngleY: 357200
+    setAngle: 1600
+    sprite: s32'null', 4
 endState: 
 
 beginState: s32'ctl_440_Ryuhai'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441_CS_ryuhai'
-  addPositionX: -197766
-  addPositionY: 202062
-  Unknown1727: -42489
-  setAngleX: 0
-  setAngleY: 346000
-  setAngle: 14800
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441_CS_ryuhai'
+    addPositionX: -197766
+    addPositionY: 202062
+    Unknown1727: -42489
+    setAngleX: 0
+    setAngleY: 346000
+    setAngle: 14800
 endState: 
 
 beginState: s32'ctl_440_Slash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Slash01'
-  setPositionX: -374747
-  setPositionY: 243182
-  setDepth: 657937
-  setObjectWidth: 1000
-  setObjectHeight: 400
-  setAngleX: 38000
-  setAngleY: 284400
-  setAngle: 400
-  sprite: s32'null', 4
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Slash02'
-  sprite: s32'null', 4
-  sprite: s32'null', 4
-  sprite: s32'null', 4
-  sprite: s32'null', 4
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Slash01'
+    setPositionX: -374747
+    setPositionY: 243182
+    setDepth: 657937
+    setObjectWidth: 1000
+    setObjectHeight: 400
+    setAngleX: 38000
+    setAngleY: 284400
+    setAngle: 400
+    sprite: s32'null', 4
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Slash02'
+    sprite: s32'null', 4
+    sprite: s32'null', 4
+    sprite: s32'null', 4
+    sprite: s32'null', 4
 endState: 
 
 beginState: s32'ctl_440_Slash2'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Slash01'
-  setPositionX: 67389
-  setPositionY: 1070882
-  setDepth: -249253
-  setAngle: 270800
-  setObjectWidth: 1000
-  setObjectHeight: 2000
-  setObjectDepth: 1000
-  sprite: s32'null', 20
-  linkParticle: s32'ctl_441CS_Slash03'
-  setObjectWidth: 1000
-  setObjectHeight: 1500
-  setObjectDepth: 1000
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Slash01'
+    setPositionX: 67389
+    setPositionY: 1070882
+    setDepth: -249253
+    setAngle: 270800
+    setObjectWidth: 1000
+    setObjectHeight: 2000
+    setObjectDepth: 1000
+    sprite: s32'null', 20
+    linkParticle: s32'ctl_441CS_Slash03'
+    setObjectWidth: 1000
+    setObjectHeight: 1500
+    setObjectDepth: 1000
 endState: 
 
 beginState: s32'ctl_440_Slash3'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Slash01'
-  setPositionX: -576482
-  setPositionY: 352428
-  setDepth: -210707
-  setAngleX: 0
-  setAngleY: 0
-  setAngle: 356000
-  setObjectWidth: 1000
-  setObjectHeight: 1000
-  setObjectDepth: 1000
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Slash03'
-  setObjectWidth: 1000
-  setObjectHeight: 250
-  setObjectDepth: 1000
-  setPositionX: -695292
-  setPositionY: 804247
-  setDepth: -1119575
-  setAngleX: 8000
-  setAngleY: 74000
-  setAngle: 337200
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Slash01'
+    setPositionX: -576482
+    setPositionY: 352428
+    setDepth: -210707
+    setAngleX: 0
+    setAngleY: 0
+    setAngle: 356000
+    setObjectWidth: 1000
+    setObjectHeight: 1000
+    setObjectDepth: 1000
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Slash03'
+    setObjectWidth: 1000
+    setObjectHeight: 250
+    setObjectDepth: 1000
+    setPositionX: -695292
+    setPositionY: 804247
+    setDepth: -1119575
+    setAngleX: 8000
+    setAngleY: 74000
+    setAngle: 337200
 endState: 
 
 beginState: s32'ctl_440_Hit'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_hit'
-  setObjectWidth: 250
-  setObjectHeight: 250
-  setObjectDepth: 250
-  addPositionX: -129002
-  addPositionY: 240033
-  Unknown1727: -214335
-  setAngleX: 54000
-  setAngleY: 314000
-  setAngle: 241200
-  sprite: s32'null', 4
-  setPositionX: -140948
-  setPositionY: 245856
-  setDepth: -209043
-  setAngleX: 54000
-  setAngleY: 314000
-  setAngle: 241200
-  sprite: s32'null', 4
-  setPositionX: -152886
-  setPositionY: 252662
-  setDepth: -204289
-  sprite: s32'null', 4
-  sprite: s32'null', 4
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_hit'
+    setObjectWidth: 250
+    setObjectHeight: 250
+    setObjectDepth: 250
+    addPositionX: -129002
+    addPositionY: 240033
+    Unknown1727: -214335
+    setAngleX: 54000
+    setAngleY: 314000
+    setAngle: 241200
+    sprite: s32'null', 4
+    setPositionX: -140948
+    setPositionY: 245856
+    setDepth: -209043
+    setAngleX: 54000
+    setAngleY: 314000
+    setAngle: 241200
+    sprite: s32'null', 4
+    setPositionX: -152886
+    setPositionY: 252662
+    setDepth: -204289
+    sprite: s32'null', 4
+    sprite: s32'null', 4
 endState: 
 
 beginState: s32'ctl_440_Hit2'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 20
-  linkParticle: s32'ctl_441CS_hit2'
-  setObjectWidth: 500
-  setObjectHeight: 500
-  setObjectDepth: 500
-  setPositionX: -2618
-  setPositionY: 337176
-  setDepth: -78957
-  setAngleX: 0
-  setAngleY: 0
-  setAngle: 9600
-  sprite: s32'null', 4
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 20
+    linkParticle: s32'ctl_441CS_hit2'
+    setObjectWidth: 500
+    setObjectHeight: 500
+    setObjectDepth: 500
+    setPositionX: -2618
+    setPositionY: 337176
+    setDepth: -78957
+    setAngleX: 0
+    setAngleY: 0
+    setAngle: 9600
+    sprite: s32'null', 4
 endState: 
 
 beginState: s32'ctl_440_ScrEyeAnim'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    flipDirection: 
-  endUpon: 
-  sprite: s32'null', 24
-  linkParticle: s32'ctl_441CS_ScrEyeAnim'
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        flipDirection: 
+    endUpon: 
+    sprite: s32'null', 24
+    linkParticle: s32'ctl_441CS_ScrEyeAnim'
 endState: 
 
 beginState: s32'ctl_440_EyeRay'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_EyeRay'
-  setObjectSize: 100
-  setPositionX: 55988
-  setPositionY: 620052
-  setDepth: -112212
-  sprite: s32'null', 4
-  setObjectSize: 75
-  setPositionX: 58957
-  setPositionY: 621450
-  setDepth: -118050
-  sprite: s32'null', 4
-  setObjectSize: 50
-  setPositionX: 60983
-  setPositionY: 621670
-  setDepth: -119023
-  sprite: s32'null', 4
-  setPositionX: 61982
-  setPositionY: 621440
-  setDepth: -118050
-  sprite: s32'null', 4
-  setPositionX: 90977
-  setPositionY: 626002
-  setDepth: -114996
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_EyeRay'
+    setObjectSize: 100
+    setPositionX: 55988
+    setPositionY: 620052
+    setDepth: -112212
+    sprite: s32'null', 4
+    setObjectSize: 75
+    setPositionX: 58957
+    setPositionY: 621450
+    setDepth: -118050
+    sprite: s32'null', 4
+    setObjectSize: 50
+    setPositionX: 60983
+    setPositionY: 621670
+    setDepth: -119023
+    sprite: s32'null', 4
+    setPositionX: 61982
+    setPositionY: 621440
+    setDepth: -118050
+    sprite: s32'null', 4
+    setPositionX: 90977
+    setPositionY: 626002
+    setDepth: -114996
 endState: 
 
 beginState: s32'ctl_440_ScrSlash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 48
-  linkParticle: s32'ctl_441CS_ScrSlash02'
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 48
+    linkParticle: s32'ctl_441CS_ScrSlash02'
 endState: 
 
 beginState: s32'ctl_440_Twinkle'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Twinkle'
-  setObjectSize: 500
-  setPositionX: -64090
-  setPositionY: 384354
-  setDepth: -380322
-  setAngleX: 0
-  setAngleY: 0
-  setAngle: 35600
-  sprite: s32'null', 4
-  setObjectSize: 180
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Twinkle2'
-  setObjectSize: 250
-  sprite: s32'null', 4
-  linkParticle: s32'ctl_441CS_Twinkle'
-  setObjectSize: 360
-  setPositionX: -29563
-  setPositionY: 385348
-  setDepth: -385990
-  setAngleX: 0
-  setAngleY: 0
-  setAngle: 297600
-  sprite: s32'null', 4
-  setObjectSize: 180
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Twinkle'
+    setObjectSize: 500
+    setPositionX: -64090
+    setPositionY: 384354
+    setDepth: -380322
+    setAngleX: 0
+    setAngleY: 0
+    setAngle: 35600
+    sprite: s32'null', 4
+    setObjectSize: 180
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Twinkle2'
+    setObjectSize: 250
+    sprite: s32'null', 4
+    linkParticle: s32'ctl_441CS_Twinkle'
+    setObjectSize: 360
+    setPositionX: -29563
+    setPositionY: 385348
+    setDepth: -385990
+    setAngleX: 0
+    setAngleY: 0
+    setAngle: 297600
+    sprite: s32'null', 4
+    setObjectSize: 180
 endState: 
 
 beginState: s32'ctl_440_Bomb'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 300
-  linkParticle: s32'ctl_441CS_Bomb'
-  setPositionX: -31026
-  setPositionY: 93447
-  setDepth: -224324
-  setAngleX: 9200
-  setAngleY: 329600
-  setAngle: 4000
-  setObjectSize: 500
-  setObjectSizeScaleSpeed: 2
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 300
+    linkParticle: s32'ctl_441CS_Bomb'
+    setPositionX: -31026
+    setPositionY: 93447
+    setDepth: -224324
+    setAngleX: 9200
+    setAngleY: 329600
+    setAngle: 4000
+    setObjectSize: 500
+    setObjectSizeScaleSpeed: 2
 endState: 
 
 beginState: s32'ctl_440_WhiteIn'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    linkObjectPosition: 2
-    stopLinkObject: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 10
-  linkParticle: s32'ctl_441CS_WhiteIn'
-  createParticle: s32'ctl_441CS_Enddust', (PLAYER)
-  sprite: s32'null', 60
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 10
+    linkParticle: s32'ctl_441CS_WhiteIn'
+    createParticle: s32'ctl_441CS_Enddust', (PLAYER)
+    sprite: s32'null', 60
 endState: 
 
 beginState: s32'ctl_442_GroundBurst'
-  upon: (IMMEDIATE)
-    linkParticle: s32'bg_GroundBurst'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 4
-  setPositionX: 75258
-  setPositionY: 58434
-  setDepth: -100368
-  setAngleX: 8000
-  setAngleY: 96400
-  setAngle: 0
-  setObjectWidth: 700
-  setObjectHeight: 700
-  setObjectDepth: 50
-  sprite: s32'null', 60
-  setPositionX: 72114
-  setPositionY: 45060
-  setDepth: -28546
-  setAngleX: 8000
-  setAngleY: 96400
-  setAngle: 0
+    upon: (IMMEDIATE)
+        linkParticle: s32'bg_GroundBurst'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 4
+    setPositionX: 75258
+    setPositionY: 58434
+    setDepth: -100368
+    setAngleX: 8000
+    setAngleY: 96400
+    setAngle: 0
+    setObjectWidth: 700
+    setObjectHeight: 700
+    setObjectDepth: 50
+    sprite: s32'null', 60
+    setPositionX: 72114
+    setPositionY: 45060
+    setDepth: -28546
+    setAngleX: 8000
+    setAngleY: 96400
+    setAngle: 0
 endState: 
 
 beginState: s32'ctl_442_GroundBurst2'
-  upon: (IMMEDIATE)
-    linkParticle: s32'bg_GroundBurst'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 60
-  setPositionX: -18992
-  setPositionY: 27377
-  setDepth: 274905
-  setAngleX: 0
-  setAngleY: 77600
-  setAngle: 0
+    upon: (IMMEDIATE)
+        linkParticle: s32'bg_GroundBurst'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 60
+    setPositionX: -18992
+    setPositionY: 27377
+    setDepth: 274905
+    setAngleX: 0
+    setAngleY: 77600
+    setAngle: 0
 endState: 
 
 beginState: s32'ctl_442_GroundBurst3'
-  upon: (IMMEDIATE)
-    linkParticle: s32'bg_dash'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 60
-  setObjectWidth: 2000
-  setObjectHeight: 1600
-  setObjectDepth: 2000
-  setPositionX: -691367
-  setPositionY: 26966
-  setDepth: -144387
-  setAngleX: 0
-  setAngleY: 98800
-  setAngle: 0
+    upon: (IMMEDIATE)
+        linkParticle: s32'bg_dash'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 60
+    setObjectWidth: 2000
+    setObjectHeight: 1600
+    setObjectDepth: 2000
+    setPositionX: -691367
+    setPositionY: 26966
+    setDepth: -144387
+    setAngleX: 0
+    setAngleY: 98800
+    setAngle: 0
 endState: 
 
 beginState: s32'ctl_442_GroundBurst4'
-  upon: (IMMEDIATE)
-    linkParticle: s32'bg_dash'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-  endUpon: 
-  sprite: s32'null', 60
-  setPositionX: -928113
-  setPositionY: 22027
-  setDepth: -56469
-  setAngleX: 0
-  setAngleY: 94800
-  setAngle: 0
-  setObjectWidth: 2100
-  setObjectHeight: 2100
-  setObjectDepth: 2100
+    upon: (IMMEDIATE)
+        linkParticle: s32'bg_dash'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+    endUpon: 
+    sprite: s32'null', 60
+    setPositionX: -928113
+    setPositionY: 22027
+    setDepth: -56469
+    setAngleX: 0
+    setAngleY: 94800
+    setAngle: 0
+    setObjectWidth: 2100
+    setObjectHeight: 2100
+    setObjectDepth: 2100
 endState: 
 
 beginState: s32'ctl_442_EnterAres'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_442CS_EnterAres'
-    linkObjectPosition: 2
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    setPositionX: 103506
-    setPositionY: -19048
-    setDepth: -238167
-    setAngleX: 0
-    setAngleY: 1200
-    setAngle: 0
-  endUpon: 
-  sprite: s32'null', 240
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_442CS_EnterAres'
+        linkObjectPosition: 2
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        setPositionX: 103506
+        setPositionY: -19048
+        setDepth: -238167
+        setAngleX: 0
+        setAngleY: 1200
+        setAngle: 0
+    endUpon: 
+    sprite: s32'null', 240
 endState: 
 
 beginState: s32'CS700Eff1'
-  upon: (IMMEDIATE)
-    linkParticle: s32'ctl_cs700_01'
-    setAngleX: 0
-    setAngleY: 244000
-    setAngle: 0
-    addPositionX: -448923
-    addPositionY: 163955
-    Unknown1727: -105143
-  endUpon: 
-  sprite: s32'null', 500
+    upon: (IMMEDIATE)
+        linkParticle: s32'ctl_cs700_01'
+        setAngleX: 0
+        setAngleY: 244000
+        setAngle: 0
+        addPositionX: -448923
+        addPositionY: 163955
+        Unknown1727: -105143
+    endUpon: 
+    sprite: s32'null', 500
 endState: 
 
 beginState: s32'NmlAtk5DCamera'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 60
-  Unknown2074: 23, 258824, 267498, 119799, -786, -6350, 0, 60, 2, 160, 8, 0, 0, 0
-  cameraShake: s32'ShakeTate', 2000, 0, 8, 0
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 60
+    Unknown2074: 23, 258824, 267498, 119799, -786, -6350, 0, 60, 2, 160, 8, 0, 0, 0
+    cameraShake: s32'ShakeTate', 2000, 0, 8, 0
 endState: 
 
 beginState: s32'FinishCamera_LandAtkB'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 60
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2074: 14, -5171, 384526, 120989, -454, 0, 0, 65, 6, 180, 30, 0, 0, 2
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 60
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2074: 14, -5171, 384526, 120989, -454, 0, 0, 65, 6, 180, 30, 0, 0, 2
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'FinishCamera_LandAtkC'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 60
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2074: 14, -5171, 384526, 133210, -454, 0, 0, 60, 6, 180, 30, 0, 0, 2
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 60
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2074: 14, -5171, 384526, 133210, -454, 0, 0, 60, 6, 180, 30, 0, 0, 2
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'FinishCamera_AviAtkNear'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 60
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2074: 13, 48863, 411672, 85822, 466, 0, 0, 55, 6, 180, 20, 0, 0, 2
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 60
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2074: 13, 48863, 411672, 85822, 466, 0, 0, 55, 6, 180, 20, 0, 0, 2
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'FinishCamera_AviAtkFar'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 60
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2074: 13, 81310, 411672, 85822, 466, 0, 0, 55, 6, 180, 20, 0, 0, 2
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 60
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2074: 13, 81310, 411672, 85822, 466, 0, 0, 55, 6, 180, 20, 0, 0, 2
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'FinishCamera_LongFar'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 60
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2075: 13, 14, -40000, 180000, 280000, 0, 145000, 0, -200000, 50, 60, 6, 180, 20, 0, 2, 2
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 60
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2075: 13, 14, -40000, 180000, 280000, 0, 145000, 0, -200000, 50, 60, 6, 180, 20, 0, 2, 2
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'FinishCamera_NomalB'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 60
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2154: 0x0D0000000E000000E0C810000000000000000000000000003600000006000000B400000014000000000000000000000002000000
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 60
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2154: 0x0D0000000E000000E0C810000000000000000000000000003600000006000000B400000014000000000000000000000002000000
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'FinishCamera_NomalC'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 60
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2154: 0x0D0000000E00000040420F000000000000000000000000003600000006000000B400000014000000000000000000000002000000
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 60
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2154: 0x0D0000000E00000040420F000000000000000000000000003600000006000000B400000014000000000000000000000002000000
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'FinishCamera_AviAtk'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 60
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2154: 0x0D0000000E000000A0BB0D000000000000000000000000003600000006000000B400000014000000000000000000000002000000
-  sprite: s32'null', 30
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 60
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2154: 0x0D0000000E000000A0BB0D000000000000000000000000003600000006000000B400000014000000000000000000000002000000
+    sprite: s32'null', 30
 endState: 
 
 beginState: s32'ctl_208_DOF'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 3
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    ignoreSuperFreezeFromAlly: 1
-    forceCameraMove: 1
-    upon: (BEFORE_EXIT)
-      Unknown2582: 
+    upon: (IMMEDIATE)
+        linkObjectPosition: 3
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        ignoreSuperFreezeFromAlly: 1
+        forceCameraMove: 1
+        upon: (BEFORE_EXIT)
+            Unknown2582: 
+        endUpon: 
     endUpon: 
-  endUpon: 
-  sprite: s32'null', 15
-  Unknown2875: 1
-  sprite: s32'null', 15
-  Unknown2586: 15
-  sprite: s32'null', 1
+    sprite: s32'null', 15
+    Unknown2875: 1
+    sprite: s32'null', 15
+    Unknown2586: 15
+    sprite: s32'null', 1
 endState: 
 
 beginState: s32'FinishCamera_Special'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-    resetCamera: 
-    linkCommonPawn: 
-  endUpon: 
-  sprite: s32'null', 23
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2074: 14, -5171, 335717, 106638, -453, 0, 0, 60, 6, 20, 30, 0, 0, 2
-  sprite: s32'null', 23
-  cameraShake: s32'ShakeTate', 1500, 3, 25, 3
-  Unknown2074: 13, -7630, 384757, 75142, 466, 0, 0, 60, 0, 20, 8, 0, 0, 2
-  sprite: s32'null', 60
-  Unknown2075: 13, 14, -40000, 160000, 280000, 0, -25000, 0, -150000, 50, 60, 0, 45, 12, 0, 0, 2
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+        resetCamera: 
+        linkCommonPawn: 
+    endUpon: 
+    sprite: s32'null', 23
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2074: 14, -5171, 335717, 106638, -453, 0, 0, 60, 6, 20, 30, 0, 0, 2
+    sprite: s32'null', 23
+    cameraShake: s32'ShakeTate', 1500, 3, 25, 3
+    Unknown2074: 13, -7630, 384757, 75142, 466, 0, 0, 60, 0, 20, 8, 0, 0, 2
+    sprite: s32'null', 60
+    Unknown2075: 13, 14, -40000, 160000, 280000, 0, -25000, 0, -150000, 50, 60, 0, 45, 12, 0, 0, 2
 endState: 
 
 beginSubroutine: s32'ctl_HitEffColor'
-  Unknown2276: 0, -14647041
+    Unknown2276: 0, -14647041
 endSubroutine: 
 
 beginSubroutine: s32'ctl_HitEffColor_LinkParticle'
-  setColor: -14647041
+    setColor: -14647041
 endSubroutine: 
 
 beginState: s32'ctl_208_HitEff_Slash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  callSubroutine: s32'ctl_HitEffColor'
-  createArgAngle: 0, 190000
-  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    callSubroutine: s32'ctl_HitEffColor'
+    createArgAngle: 0, 190000
+    createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
 endState: 
 
 beginState: s32'ctl_309_HitEff_Slash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  callSubroutine: s32'ctl_HitEffColor'
-  createArgAngle: 0, 180000
-  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    callSubroutine: s32'ctl_HitEffColor'
+    createArgAngle: 0, 180000
+    createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
 endState: 
 
 beginState: s32'ctl_401_HitEff_Slash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  callSubroutine: s32'ctl_HitEffColor'
-  createArgAngle: 0, -100000
-  createParticleWithArg2: s32'cmn_slash_normal', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    callSubroutine: s32'ctl_HitEffColor'
+    createArgAngle: 0, -100000
+    createParticleWithArg2: s32'cmn_slash_normal', (PLAYER)
 endState: 
 
 beginState: s32'ctl_401_HitEff2_Slash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  callSubroutine: s32'ctl_HitEffColor'
-  createArgAngle: 0, 80000
-  createParticleWithArg2: s32'cmn_slash_normal', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    callSubroutine: s32'ctl_HitEffColor'
+    createArgAngle: 0, 80000
+    createParticleWithArg2: s32'cmn_slash_normal', (PLAYER)
 endState: 
 
 beginState: s32'ctl_430_HitEff_Slash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 30
-  callSubroutine: s32'ctl_HitEffColor_LinkParticle'
-  setAngle: 200000
-  Unknown1950: 0x636D6E5F6869745F7370736C6173685F4C6F6E67000000000000000000000000
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 30
+    callSubroutine: s32'ctl_HitEffColor_LinkParticle'
+    setAngle: 200000
+    Unknown1950: 0x636D6E5F6869745F7370736C6173685F4C6F6E67000000000000000000000000
 endState: 
 
 beginState: s32'ctl_440_HitEff_Slash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  callSubroutine: s32'ctl_HitEffColor'
-  createArgAngle: 0, -100000
-  createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    callSubroutine: s32'ctl_HitEffColor'
+    createArgAngle: 0, -100000
+    createParticleWithArg2: s32'cmn_hit_spslash_Long', (PLAYER)
 endState: 
 
 beginState: s32'ctl_440_HitEff2_Slash'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  callSubroutine: s32'ctl_HitEffColor'
-  createArgAngle: 0, -100000
-  createParticleWithArg2: s32'cmn_slash_normal', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    callSubroutine: s32'ctl_HitEffColor'
+    createArgAngle: 0, -100000
+    createParticleWithArg2: s32'cmn_slash_normal', (PLAYER)
 endState: 
 
 beginState: s32'ctl_SPHitEff_Long'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  callSubroutine: s32'ctl_HitEffColor'
-  createParticleWithArg2: s32'cmn_hit_sp_Long', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    callSubroutine: s32'ctl_HitEffColor'
+    createParticleWithArg2: s32'cmn_hit_sp_Long', (PLAYER)
 endState: 
 
 beginState: s32'ctl_SPHitEff_Short'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  callSubroutine: s32'ctl_HitEffColor'
-  createParticleWithArg2: s32'cmn_hit_sp_Short', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    callSubroutine: s32'ctl_HitEffColor'
+    createParticleWithArg2: s32'cmn_hit_sp_Short', (PLAYER)
 endState: 
 
 beginState: s32'ctl_SPHitEff'
-  upon: (IMMEDIATE)
-    ignoreSuperFreezeFromAlly: 1
-    ignoreFinishStop: 1
-  endUpon: 
-  sprite: s32'null', 1
-  callSubroutine: s32'ctl_HitEffColor'
-  createParticleWithArg2: s32'cmn_hit_sp', (PLAYER)
+    upon: (IMMEDIATE)
+        ignoreSuperFreezeFromAlly: 1
+        ignoreFinishStop: 1
+    endUpon: 
+    sprite: s32'null', 1
+    callSubroutine: s32'ctl_HitEffColor'
+    createParticleWithArg2: s32'cmn_hit_sp', (PLAYER)
 endState: 
 
 beginState: s32'ctl_301_EnshutuCamera'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 3
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    ignoreSuperFreezeFromAlly: 1
-    forceCameraMove: 1
-    upon: (BEFORE_EXIT)
-      Unknown2582: 
-      haikuEnd: 
+    upon: (IMMEDIATE)
+        linkObjectPosition: 3
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        ignoreSuperFreezeFromAlly: 1
+        forceCameraMove: 1
+        upon: (BEFORE_EXIT)
+            Unknown2582: 
+            haikuEnd: 
+        endUpon: 
     endUpon: 
-  endUpon: 
-  sprite: s32'null', 10
-  Unknown2074: 3, 75578, 410459, 101759, -210, -1069, 0, 60, 10, 0, 0, 0, 0, 0
-  Unknown2875: 10
-  sprite: s32'null', 25
-  Unknown2074: 3, 73645, 391673, 101378, -210, -1069, 0, 60, 25, 0, 2400, 0, 0, 0
-  sprite: s32'null', 15
-  Unknown2074: 3, 73645, 391673, 101378, -210, -1069, 0, 60, 0, 0, 15, 0, 0, 0
-  Unknown2586: 15
-  sprite: s32'null', 1
-  Unknown2582: 
+    sprite: s32'null', 10
+    Unknown2074: 3, 75578, 410459, 101759, -210, -1069, 0, 60, 10, 0, 0, 0, 0, 0
+    Unknown2875: 10
+    sprite: s32'null', 25
+    Unknown2074: 3, 73645, 391673, 101378, -210, -1069, 0, 60, 25, 0, 2400, 0, 0, 0
+    sprite: s32'null', 15
+    Unknown2074: 3, 73645, 391673, 101378, -210, -1069, 0, 60, 0, 0, 15, 0, 0, 0
+    Unknown2586: 15
+    sprite: s32'null', 1
+    Unknown2582: 
 endState: 
 
 beginState: s32'ctl_303_EnshutuCamera'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 3
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    ignoreSuperFreezeFromAlly: 1
-    forceCameraMove: 1
-    upon: (BEFORE_EXIT)
-      Unknown2582: 
-      haikuEnd: 
+    upon: (IMMEDIATE)
+        linkObjectPosition: 3
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        ignoreSuperFreezeFromAlly: 1
+        forceCameraMove: 1
+        upon: (BEFORE_EXIT)
+            Unknown2582: 
+            haikuEnd: 
+        endUpon: 
     endUpon: 
-  endUpon: 
-  sprite: s32'null', 20
-  Unknown2074: 3, -54132, 381510, 125884, -201, 1285, 0, 60, 20, 0, 600, 0, 0, 0
-  Unknown2875: 10
-  sprite: s32'null', 15
-  Unknown2074: 3, -69951, 488531, 127970, -201, 1285, 0, 60, 15, 0, 600, 0, 0, 0
-  sprite: s32'null', 15
-  Unknown2074: 3, -69951, 488531, 127970, -201, 1285, 0, 60, 0, 0, 15, 0, 0, 0
-  Unknown2586: 15
-  sprite: s32'null', 1
-  Unknown2582: 
+    sprite: s32'null', 20
+    Unknown2074: 3, -54132, 381510, 125884, -201, 1285, 0, 60, 20, 0, 600, 0, 0, 0
+    Unknown2875: 10
+    sprite: s32'null', 15
+    Unknown2074: 3, -69951, 488531, 127970, -201, 1285, 0, 60, 15, 0, 600, 0, 0, 0
+    sprite: s32'null', 15
+    Unknown2074: 3, -69951, 488531, 127970, -201, 1285, 0, 60, 0, 0, 15, 0, 0, 0
+    Unknown2586: 15
+    sprite: s32'null', 1
+    Unknown2582: 
 endState: 
 
 beginState: s32'ctl_309_EnshutuCamera'
-  upon: (IMMEDIATE)
-    linkObjectPosition: 3
-    setLinkObjectDestroyOnStateChange: 2
-    setLinkObjectDestroyOnDamage: 3
-    ignoreSuperFreezeFromAlly: 1
-    forceCameraMove: 1
-    upon: (BEFORE_EXIT)
-      Unknown2582: 
-      haikuEnd: 
+    upon: (IMMEDIATE)
+        linkObjectPosition: 3
+        setLinkObjectDestroyOnStateChange: 2
+        setLinkObjectDestroyOnDamage: 3
+        ignoreSuperFreezeFromAlly: 1
+        forceCameraMove: 1
+        upon: (BEFORE_EXIT)
+            Unknown2582: 
+            haikuEnd: 
+        endUpon: 
     endUpon: 
-  endUpon: 
-  sprite: s32'null', 10
-  Unknown2074: 3, 75578, 410459, 101759, -210, -1069, 0, 60, 10, 0, 0, 0, 0, 0
-  Unknown2875: 10
-  sprite: s32'null', 25
-  Unknown2074: 3, 73645, 391673, 101378, -210, -1069, 0, 60, 25, 0, 0, 0, 0, 0
-  sprite: s32'null', 30
-  Unknown2074: 3, -336298, 275182, 97730, 67, 6888, 0, 60, 5, 600, 0, 0, 0, 0
-  sprite: s32'null', 15
-  Unknown2074: 3, -336298, 275182, 97730, 67, 6888, 0, 60, 0, 0, 10, 0, 0, 1
-  Unknown2586: 15
-  sprite: s32'null', 1
-  Unknown2582: 
+    sprite: s32'null', 10
+    Unknown2074: 3, 75578, 410459, 101759, -210, -1069, 0, 60, 10, 0, 0, 0, 0, 0
+    Unknown2875: 10
+    sprite: s32'null', 25
+    Unknown2074: 3, 73645, 391673, 101378, -210, -1069, 0, 60, 25, 0, 0, 0, 0, 0
+    sprite: s32'null', 30
+    Unknown2074: 3, -336298, 275182, 97730, 67, 6888, 0, 60, 5, 600, 0, 0, 0, 0
+    sprite: s32'null', 15
+    Unknown2074: 3, -336298, 275182, 97730, 67, 6888, 0, 60, 0, 0, 10, 0, 0, 1
+    Unknown2586: 15
+    sprite: s32'null', 1
+    Unknown2582: 
 endState: 
 
 beginState: s32'Miss_Test'
-  upon: (IMMEDIATE)
-    linkParticle: s32'cmn_hard_atk'
-    upon: (FRAME_STEP)
-      if: Mem(SideID)
-        if: Mem(Dir)
-          Unknown1915: 23
-          Unknown1916: 11
-        endIf: 
-        else: 
-          Unknown1915: 77
-          Unknown1916: 11
-        endElse: 
-      endIf: 
-      else: 
-        if: Mem(Dir)
-          Unknown1915: 77
-          Unknown1916: 11
-        endIf: 
-        else: 
-          Unknown1915: 23
-          Unknown1916: 11
-        endElse: 
-      endElse: 
+    upon: (IMMEDIATE)
+        linkParticle: s32'cmn_hard_atk'
+        upon: (FRAME_STEP)
+            if: Mem(SideID)
+                if: Mem(Dir)
+                    Unknown1915: 23
+                    Unknown1916: 11
+                endIf: 
+                else: 
+                    Unknown1915: 77
+                    Unknown1916: 11
+                endElse: 
+            endIf: 
+            else: 
+                if: Mem(Dir)
+                    Unknown1915: 77
+                    Unknown1916: 11
+                endIf: 
+                else: 
+                    Unknown1915: 23
+                    Unknown1916: 11
+                endElse: 
+            endElse: 
+        endUpon: 
     endUpon: 
-  endUpon: 
-  sprite: s32'null', 40
+    sprite: s32'null', 40
 endState: 
 
 beginState: s32'DUMMYDUMMY'
-  sprite: s32'null', 1
+    sprite: s32'null', 1
 endState: 
 

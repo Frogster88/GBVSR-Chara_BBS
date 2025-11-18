@@ -1,698 +1,698 @@
 beginSubroutine: s32'PreInit'
-  charaName: s16'egn'
+    charaName: s16'egn'
 endSubroutine: 
 
 beginSubroutine: s32'PreInit2nd'
-  storeValue: Mem(GTmpReg0), Val(0)
-  ifNot: Mem(GTmpReg0)
-    ifOperation: (IS_EQUAL), Mem(SideID), Val(0)
-      entryAction: s32'entry_default', s32'', 0
-      storeValue: Mem(GTmpReg0), Val(1)
+    storeValue: Mem(GTmpReg0), Val(0)
+    ifNot: Mem(GTmpReg0)
+        ifOperation: (IS_EQUAL), Mem(SideID), Val(0)
+            entryAction: s32'entry_default', s32'', 0
+            storeValue: Mem(GTmpReg0), Val(1)
+        endIf: 
+        else: 
+            entryAction: s32'entry_2p01', s32'entry_1p01', 3
+            storeValue: Mem(GTmpReg0), Val(1)
+        endElse: 
     endIf: 
-    else: 
-      entryAction: s32'entry_2p01', s32'entry_1p01', 3
-      storeValue: Mem(GTmpReg0), Val(1)
-    endElse: 
-  endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'RoundInit'
-  Unknown1430: 
-  health: 10000
-  addMove: s32'Stand'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: 54
-    moveInput: 29
-    Unknown1419: s32'Func_Stand'
-  endMove: 
-  addMove: s32'Walk'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_6)
-    moveInput: 29
-    Unknown1419: s32'Func_Walk'
-  endMove: 
-  addMove: s32'Turn'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_4)
-    moveInput: 29
-    Unknown1419: s32'Func_Turn'
-  endMove: 
-  addMove: s32'Jump'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: 67
-    moveInput: 29
-    Unknown1419: s32'Func_Jump'
-  endMove: 
-  addMove: s32'FJump'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: 71
-    moveInput: 29
-    Unknown1419: s32'Func_FJump'
-  endMove: 
-  addMove: s32'BJump'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: 63
-    moveInput: 29
-    Unknown1419: s32'Func_BJump'
-  endMove: 
-  addMove: s32'BackStep'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_PRESS_G)
-    moveInput: 29
-    Unknown1419: s32'Func_BackStep'
-  endMove: 
-  addMove: s32'Damage'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_2)
-    moveInput: (INPUT_PRESS_G)
-    moveInput: 29
-    Unknown1419: s32'Func_Damage'
-  endMove: 
-  addMove: s32'Die'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (SPECIAL)
-    moveInput: 84
-    moveInput: (INPUT_PRESS_G)
-    moveInput: 29
-    Unknown1419: s32'Func_Die'
-  endMove: 
-  addMove: s32'Attack5A'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_PRESS_L)
-    moveInput: (INPUT_DISSALOW_UP)
-    moveInput: 29
-    Unknown1419: s32'Func_Attack5A'
-  endMove: 
-  addMove: s32'Attack2A'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_PRESS_L)
-    moveInput: (INPUT_ANY_DOWN)
-    moveInput: 29
-    Unknown1419: s32'Func_Attack2A'
-  endMove: 
-  addMove: s32'Attack5B'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_PRESS_M)
-    moveInput: (INPUT_DISSALOW_UP)
-    moveInput: 29
-    Unknown1419: s32'Func_Attack5B'
-  endMove: 
-  addMove: s32'Attack2B'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_PRESS_M)
-    moveInput: (INPUT_ANY_DOWN)
-    moveInput: 29
-    Unknown1419: s32'Func_Attack2B'
-  endMove: 
-  addMove: s32'Attack5C'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_PRESS_H)
-    moveInput: (INPUT_DISSALOW_UP)
-    moveInput: 29
-    Unknown1419: s32'Func_Attack5C'
-  endMove: 
-  addMove: s32'Attack2C'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_PRESS_H)
-    moveInput: (INPUT_ANY_DOWN)
-    moveInput: 29
-    Unknown1419: s32'Func_Attack2C'
-  endMove: 
-  addMove: s32'Attack5D'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_PRESS_U)
-    moveInput: (INPUT_DISSALOW_UP)
-    moveInput: 29
-    Unknown1419: s32'Func_Attack5D'
-  endMove: 
-  addMove: s32'Attack2D'
-    usableByCPU: 0
-    Unknown1425: 11
-    moveType: (NORMAL)
-    moveInput: (INPUT_PRESS_U)
-    moveInput: (INPUT_ANY_DOWN)
-    moveInput: 29
-    Unknown1419: s32'Func_Attack2D'
-  endMove: 
-  addMove: s32'AppearIMS'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_L)
-    moveInput: 25
-    moveInput: 54
-  endMove: 
-  addMove: s32'AppearIML'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_M)
-    moveInput: 25
-    moveInput: 54
-  endMove: 
-  addMove: s32'AppearIMB'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_H)
-    moveInput: 25
-    moveInput: 54
-  endMove: 
-  addMove: s32'AppearIMC'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_U)
-    moveInput: 25
-    moveInput: 54
-  endMove: 
-  addMove: s32'AppearGBS'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_L)
-    moveInput: 25
-    moveInput: (INPUT_ANY_DOWN)
-  endMove: 
-  addMove: s32'AppearGBB'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_M)
-    moveInput: 25
-    moveInput: (INPUT_ANY_DOWN)
-  endMove: 
-  addMove: s32'AppearGBM'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_H)
-    moveInput: 25
-    moveInput: (INPUT_ANY_DOWN)
-  endMove: 
-  addMove: s32'AppearGBD'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_U)
-    moveInput: 25
-    moveInput: (INPUT_ANY_DOWN)
-  endMove: 
-  addMove: s32'AppearSLN'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_L)
-    moveInput: 25
-    moveInput: (INPUT_6)
-  endMove: 
-  addMove: s32'AppearSLS'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_M)
-    moveInput: 25
-    moveInput: (INPUT_6)
-  endMove: 
-  addMove: s32'AppearSLG'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_H)
-    moveInput: 25
-    moveInput: (INPUT_6)
-  endMove: 
-  addMove: s32'AppearWON'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_L)
-    moveInput: 25
-    moveInput: (INPUT_4)
-  endMove: 
-  addMove: s32'AppearWOS'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_M)
-    moveInput: 25
-    moveInput: (INPUT_4)
-  endMove: 
-  addMove: s32'AppearWOR'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_H)
-    moveInput: 25
-    moveInput: (INPUT_4)
-  endMove: 
-  addMove: s32'AppearANG'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_L)
-    moveInput: 25
-    moveInput: (INPUT_ANY_UP)
-  endMove: 
-  addMove: s32'AppearAAN'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_M)
-    moveInput: 25
-    moveInput: (INPUT_ANY_UP)
-  endMove: 
-  addMove: s32'AppearCTP'
-    usableByCPU: 0
-    moveType: (NORMAL)
-    moveStance: (STANDING)
-    moveInput: (INPUT_PRESS_H)
-    moveInput: 25
-    moveInput: (INPUT_ANY_UP)
-  endMove: 
-  registerMove: s32'AppearIMS'
-  registerMove: s32'AppearGBD'
-  registerMove: s32'AppearIMC'
-  registerMove: s32'AppearIML'
-  registerMove: s32'AppearIMB'
-  registerMove: s32'AppearGBS'
-  registerMove: s32'AppearGBB'
-  registerMove: s32'AppearGBM'
-  registerMove: s32'AppearSLN'
-  registerMove: s32'AppearSLS'
-  registerMove: s32'AppearSLG'
-  registerMove: s32'AppearWON'
-  registerMove: s32'AppearWOS'
-  registerMove: s32'AppearWOR'
-  registerMove: s32'AppearANG'
-  registerMove: s32'AppearAAN'
-  registerMove: s32'AppearCTP'
-  registerMove: s32'Stand'
-  registerMove: s32'Walk'
-  registerMove: s32'Turn'
-  registerMove: s32'Jump'
-  registerMove: s32'FJump'
-  registerMove: s32'BJump'
-  registerMove: s32'BackStep'
-  registerMove: s32'Attack5A'
-  registerMove: s32'Attack2A'
-  registerMove: s32'Attack5B'
-  registerMove: s32'Attack2B'
-  registerMove: s32'Attack5C'
-  registerMove: s32'Attack2C'
-  registerMove: s32'Attack5D'
-  registerMove: s32'Attack2D'
-  registerMove: s32'Damage'
-  registerMove: s32'Die'
-  linkPawn: s32''
-  Unknown2050: 0
-  invulnForce: 1
-  ignoreSuperFreezeFromAlly: 1
-  disableCrouch: 1
-  Unknown2328: 1
-  Unknown2601: 1
+    Unknown1430: 
+    health: 10000
+    addMove: s32'Stand'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: 54
+        moveInput: 29
+        Unknown1419: s32'Func_Stand'
+    endMove: 
+    addMove: s32'Walk'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_6)
+        moveInput: 29
+        Unknown1419: s32'Func_Walk'
+    endMove: 
+    addMove: s32'Turn'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_4)
+        moveInput: 29
+        Unknown1419: s32'Func_Turn'
+    endMove: 
+    addMove: s32'Jump'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: 67
+        moveInput: 29
+        Unknown1419: s32'Func_Jump'
+    endMove: 
+    addMove: s32'FJump'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: 71
+        moveInput: 29
+        Unknown1419: s32'Func_FJump'
+    endMove: 
+    addMove: s32'BJump'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: 63
+        moveInput: 29
+        Unknown1419: s32'Func_BJump'
+    endMove: 
+    addMove: s32'BackStep'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_PRESS_G)
+        moveInput: 29
+        Unknown1419: s32'Func_BackStep'
+    endMove: 
+    addMove: s32'Damage'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_2)
+        moveInput: (INPUT_PRESS_G)
+        moveInput: 29
+        Unknown1419: s32'Func_Damage'
+    endMove: 
+    addMove: s32'Die'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (SPECIAL)
+        moveInput: 84
+        moveInput: (INPUT_PRESS_G)
+        moveInput: 29
+        Unknown1419: s32'Func_Die'
+    endMove: 
+    addMove: s32'Attack5A'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_PRESS_L)
+        moveInput: (INPUT_DISSALOW_UP)
+        moveInput: 29
+        Unknown1419: s32'Func_Attack5A'
+    endMove: 
+    addMove: s32'Attack2A'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_PRESS_L)
+        moveInput: (INPUT_ANY_DOWN)
+        moveInput: 29
+        Unknown1419: s32'Func_Attack2A'
+    endMove: 
+    addMove: s32'Attack5B'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_PRESS_M)
+        moveInput: (INPUT_DISSALOW_UP)
+        moveInput: 29
+        Unknown1419: s32'Func_Attack5B'
+    endMove: 
+    addMove: s32'Attack2B'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_PRESS_M)
+        moveInput: (INPUT_ANY_DOWN)
+        moveInput: 29
+        Unknown1419: s32'Func_Attack2B'
+    endMove: 
+    addMove: s32'Attack5C'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_PRESS_H)
+        moveInput: (INPUT_DISSALOW_UP)
+        moveInput: 29
+        Unknown1419: s32'Func_Attack5C'
+    endMove: 
+    addMove: s32'Attack2C'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_PRESS_H)
+        moveInput: (INPUT_ANY_DOWN)
+        moveInput: 29
+        Unknown1419: s32'Func_Attack2C'
+    endMove: 
+    addMove: s32'Attack5D'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_PRESS_U)
+        moveInput: (INPUT_DISSALOW_UP)
+        moveInput: 29
+        Unknown1419: s32'Func_Attack5D'
+    endMove: 
+    addMove: s32'Attack2D'
+        usableByCPU: 0
+        Unknown1425: 11
+        moveType: (NORMAL)
+        moveInput: (INPUT_PRESS_U)
+        moveInput: (INPUT_ANY_DOWN)
+        moveInput: 29
+        Unknown1419: s32'Func_Attack2D'
+    endMove: 
+    addMove: s32'AppearIMS'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_L)
+        moveInput: 25
+        moveInput: 54
+    endMove: 
+    addMove: s32'AppearIML'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_M)
+        moveInput: 25
+        moveInput: 54
+    endMove: 
+    addMove: s32'AppearIMB'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_H)
+        moveInput: 25
+        moveInput: 54
+    endMove: 
+    addMove: s32'AppearIMC'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_U)
+        moveInput: 25
+        moveInput: 54
+    endMove: 
+    addMove: s32'AppearGBS'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_L)
+        moveInput: 25
+        moveInput: (INPUT_ANY_DOWN)
+    endMove: 
+    addMove: s32'AppearGBB'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_M)
+        moveInput: 25
+        moveInput: (INPUT_ANY_DOWN)
+    endMove: 
+    addMove: s32'AppearGBM'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_H)
+        moveInput: 25
+        moveInput: (INPUT_ANY_DOWN)
+    endMove: 
+    addMove: s32'AppearGBD'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_U)
+        moveInput: 25
+        moveInput: (INPUT_ANY_DOWN)
+    endMove: 
+    addMove: s32'AppearSLN'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_L)
+        moveInput: 25
+        moveInput: (INPUT_6)
+    endMove: 
+    addMove: s32'AppearSLS'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_M)
+        moveInput: 25
+        moveInput: (INPUT_6)
+    endMove: 
+    addMove: s32'AppearSLG'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_H)
+        moveInput: 25
+        moveInput: (INPUT_6)
+    endMove: 
+    addMove: s32'AppearWON'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_L)
+        moveInput: 25
+        moveInput: (INPUT_4)
+    endMove: 
+    addMove: s32'AppearWOS'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_M)
+        moveInput: 25
+        moveInput: (INPUT_4)
+    endMove: 
+    addMove: s32'AppearWOR'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_H)
+        moveInput: 25
+        moveInput: (INPUT_4)
+    endMove: 
+    addMove: s32'AppearANG'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_L)
+        moveInput: 25
+        moveInput: (INPUT_ANY_UP)
+    endMove: 
+    addMove: s32'AppearAAN'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_M)
+        moveInput: 25
+        moveInput: (INPUT_ANY_UP)
+    endMove: 
+    addMove: s32'AppearCTP'
+        usableByCPU: 0
+        moveType: (NORMAL)
+        moveStance: (STANDING)
+        moveInput: (INPUT_PRESS_H)
+        moveInput: 25
+        moveInput: (INPUT_ANY_UP)
+    endMove: 
+    registerMove: s32'AppearIMS'
+    registerMove: s32'AppearGBD'
+    registerMove: s32'AppearIMC'
+    registerMove: s32'AppearIML'
+    registerMove: s32'AppearIMB'
+    registerMove: s32'AppearGBS'
+    registerMove: s32'AppearGBB'
+    registerMove: s32'AppearGBM'
+    registerMove: s32'AppearSLN'
+    registerMove: s32'AppearSLS'
+    registerMove: s32'AppearSLG'
+    registerMove: s32'AppearWON'
+    registerMove: s32'AppearWOS'
+    registerMove: s32'AppearWOR'
+    registerMove: s32'AppearANG'
+    registerMove: s32'AppearAAN'
+    registerMove: s32'AppearCTP'
+    registerMove: s32'Stand'
+    registerMove: s32'Walk'
+    registerMove: s32'Turn'
+    registerMove: s32'Jump'
+    registerMove: s32'FJump'
+    registerMove: s32'BJump'
+    registerMove: s32'BackStep'
+    registerMove: s32'Attack5A'
+    registerMove: s32'Attack2A'
+    registerMove: s32'Attack5B'
+    registerMove: s32'Attack2B'
+    registerMove: s32'Attack5C'
+    registerMove: s32'Attack2C'
+    registerMove: s32'Attack5D'
+    registerMove: s32'Attack2D'
+    registerMove: s32'Damage'
+    registerMove: s32'Die'
+    linkPawn: s32''
+    Unknown2050: 0
+    invulnForce: 1
+    ignoreSuperFreezeFromAlly: 1
+    disableCrouch: 1
+    Unknown2328: 1
+    Unknown2601: 1
 endSubroutine: 
 
 beginSubroutine: s32'ActionInit'
-  setRawPositionX: 1000000000
-  checkScreenCollision: 0
-  worldCollision: 0
-  setNoCollision: 0
+    setRawPositionX: 1000000000
+    checkScreenCollision: 0
+    worldCollision: 0
+    setNoCollision: 0
 endSubroutine: 
 
 beginSubroutine: s32'EnableAction_Walk'
-  storeValue: Mem(GTmpReg0), Val(0)
-  storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg5)
-  ifNot: Mem(Tmp)
-    storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg6)
+    storeValue: Mem(GTmpReg0), Val(0)
+    storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg5)
     ifNot: Mem(Tmp)
-      storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg7)
-      ifNot: Mem(Tmp)
-        storeValue: Mem(GTmpReg0), Val(1)
-      endIf: 
+        storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg6)
+        ifNot: Mem(Tmp)
+            storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg7)
+            ifNot: Mem(Tmp)
+                storeValue: Mem(GTmpReg0), Val(1)
+            endIf: 
+        endIf: 
     endIf: 
-  endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'EnableAction'
-  storeValue: Mem(GTmpReg0), Val(0)
-  storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg6)
-  ifNot: Mem(Tmp)
-    storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg7)
+    storeValue: Mem(GTmpReg0), Val(0)
+    storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg6)
     ifNot: Mem(Tmp)
-      storeValue: Mem(GTmpReg0), Val(1)
+        storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg7)
+        ifNot: Mem(Tmp)
+            storeValue: Mem(GTmpReg0), Val(1)
+        endIf: 
     endIf: 
-  endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Stand'
-  storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg5)
-  if: Mem(Tmp)
-    Unknown2035: 11, s32'Stand', 0
-  endIf: 
+    storeValueFromObject: (SELF), Mem(Tmp), (STACK7), Mem(ActReg5)
+    if: Mem(Tmp)
+        Unknown2035: 11, s32'Stand', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Walk'
-  callSubroutine: s32'EnableAction_Walk'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Walk', 0
-  endIf: 
+    callSubroutine: s32'EnableAction_Walk'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Walk', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Turn'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Turn', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Turn', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Jump'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'VJump', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'VJump', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_FJump'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'FJump', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'FJump', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_BJump'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'BJump', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'BJump', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Attack5A'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Attack5A', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Attack5A', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Attack2A'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Attack2A', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Attack2A', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Attack5B'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Attack5B', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Attack5B', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Attack2B'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Attack2B', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Attack2B', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Attack5C'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Attack5C', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Attack5C', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Attack2C'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Attack2C', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Attack2C', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Attack5D'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Attack5D', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Attack5D', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Attack2D'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'Attack2D', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'Attack2D', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_BackStep'
-  callSubroutine: s32'EnableAction'
-  if: Mem(GTmpReg0)
-    Unknown2035: 11, s32'BackStep', 0
-  endIf: 
+    callSubroutine: s32'EnableAction'
+    if: Mem(GTmpReg0)
+        Unknown2035: 11, s32'BackStep', 0
+    endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Func_Damage'
-  Unknown2035: 11, s32'Damage', 0
+    Unknown2035: 11, s32'Damage', 0
 endSubroutine: 
 
 beginSubroutine: s32'Func_Die'
-  Unknown2035: 11, s32'Die', 0
+    Unknown2035: 11, s32'Die', 0
 endSubroutine: 
 
 beginState: s32'CmnActStand'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-  endUpon: 
-  sprite: s32'null', 2147483647
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+    endUpon: 
+    sprite: s32'null', 2147483647
 endState: 
 
 beginState: s32'CmnActEntryWait'
-  upon: (IMMEDIATE)
-  endUpon: 
-  sprite: s32'null', 2147483647
-  Unknown2050: 0
+    upon: (IMMEDIATE)
+    endUpon: 
+    sprite: s32'null', 2147483647
+    Unknown2050: 0
 endState: 
 
 beginState: s32'CmnActHizakuzure'
-  sprite: s32'null', 2147483647
+    sprite: s32'null', 2147483647
 endState: 
 
 beginState: s32'CmnActLose'
-  sprite: s32'null', 2147483647
-  Unknown1703: 
+    sprite: s32'null', 2147483647
+    Unknown1703: 
 endState: 
 
 beginState: s32'CmnActRoundWin'
-  sprite: s32'null', 2147483647
-  Unknown1703: 
+    sprite: s32'null', 2147483647
+    Unknown1703: 
 endState: 
 
 beginState: s32'CmnActMatchWin'
-  sprite: s32'null', 2147483647
-  Unknown1703: 
+    sprite: s32'null', 2147483647
+    Unknown1703: 
 endState: 
 
 beginState: s32'AppearIMS'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x0A000000494D530000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x0A000000494D530000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearIMC'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x0A000000494D430000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x0A000000494D430000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearIML'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x0B000000494D4C0000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x0B000000494D4C0000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearIMB'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x0C000000494D420000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x0C000000494D420000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearGBS'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x140000004742530000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x140000004742530000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearGBB'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x140000004742420000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x140000004742420000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearGBM'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x1400000047424D0000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x1400000047424D0000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearGBD'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x140000004742440000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x140000004742440000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearSLN'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x1E000000534C4E0000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x1E000000534C4E0000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearSLS'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x1F000000534C530000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x1F000000534C530000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearSLG'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x20000000534C470000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x20000000534C470000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearWON'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x28000000574F4E0000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x28000000574F4E0000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearWOS'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x29000000574F530000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x29000000574F530000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearWOR'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x2A000000574F520000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x2A000000574F520000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearANG'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x32000000414E47000000000000000000000000000000000000000000000000000000000000000000010000000000000090D0030000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x32000000414E47000000000000000000000000000000000000000000000000000000000000000000010000000000000090D0030000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearAAN'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x3300000041414E000000000000000000000000000000000000000000000000000000000000000000010000000000000090D0030000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x3300000041414E000000000000000000000000000000000000000000000000000000000000000000010000000000000090D0030000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'AppearCTP'
-  upon: (IMMEDIATE)
-    callSubroutine: s32'ActionInit'
-    exitStateUpon: (ACTION_END), s32'_NEUTRAL'
-  endUpon: 
-  sprite: s32'null', 5
-  Unknown2708: 0x140000004354500000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
-  stackObject: (STACK7), (PREVIOUS)
+    upon: (IMMEDIATE)
+        callSubroutine: s32'ActionInit'
+        exitStateUpon: (ACTION_END), s32'_NEUTRAL'
+    endUpon: 
+    sprite: s32'null', 5
+    Unknown2708: 0x140000004354500000000000000000000000000000000000000000000000000000000000000000000100000020A107000000000000000000
+    stackObject: (STACK7), (PREVIOUS)
 endState: 
 
 beginState: s32'DUMMYDUMMY'
-  sprite: s32'null', 1
+    sprite: s32'null', 1
 endState: 
 
