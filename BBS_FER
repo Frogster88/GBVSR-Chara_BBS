@@ -2406,17 +2406,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'StraightShot_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'StraightShot_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'StraightShot_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'StraightShot_D'
@@ -2430,17 +2430,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'Oinu_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'Oinu_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'Oinu_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'Oinu_D'
@@ -2457,17 +2457,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'ParabolaShot_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 999
+        skillCooldown: 2, 999
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'ParabolaShot_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 999
+        skillCooldown: 2, 999
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'ParabolaShot_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 999
+        skillCooldown: 2, 999
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'ParabolaShot_D'
@@ -2480,7 +2480,7 @@ beginSubroutine: s32'AbilityCoolDown_2'
             storeValue: Mem(289), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 2, 999
+            skillCooldown: 2, 999
         endElse: 
         Unknown1923: 2
     endIf: 
@@ -2489,17 +2489,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Whip_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Whip_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Whip_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Whip_D'
@@ -3063,7 +3063,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3406,16 +3406,16 @@ beginState: s32'entry_1p03'
                         createObject: s32'FER_700cs_SoulEnd4', (PLAYER)
                     endIf: 
                     ifOnFrame: Val(39)
-                        sendSignalToAction: s32'FER_700cs_SoulEnd2', 23
+                        sendSignalToAction: s32'FER_700cs_SoulEnd2', (SIGNAL_A)
                     endIf: 
                     ifOnFrame: Val(47)
-                        sendSignalToAction: s32'FER_700cs_SoulEnd4', 23
+                        sendSignalToAction: s32'FER_700cs_SoulEnd4', (SIGNAL_A)
                     endIf: 
                     ifOnFrame: Val(51)
-                        sendSignalToAction: s32'FER_700cs_SoulEnd3', 23
+                        sendSignalToAction: s32'FER_700cs_SoulEnd3', (SIGNAL_A)
                     endIf: 
                     ifOnFrame: Val(63)
-                        sendSignalToAction: s32'FER_700cs_SoulEnd1', 23
+                        sendSignalToAction: s32'FER_700cs_SoulEnd1', (SIGNAL_A)
                     endIf: 
                 endUpon: 
             endIf: 
@@ -3434,7 +3434,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3812,7 +3812,7 @@ beginState: s32'GC_Attack'
     smartRandomVoiceLine: s16'vFER_BST_00', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'fer350_01', 2
     sprite: s32'fer350_04', 2
-    sendSignalToAction: s32'FER_350_Eff', 23
+    sendSignalToAction: s32'FER_350_Eff', (SIGNAL_A)
     sprite: s32'fer350_05', 2
     sprite: s32'fer350_06', 2
     cmnSfx: s32'SE_BTL_SwingWhipL'
@@ -4191,7 +4191,7 @@ beginState: s32'NmlAtk5BNear'
     sprite: s32'fer204_04', 3
     hit: 
     sprite: s32'fer204_05', 3
-    sendSignalToAction: s32'fer_204_Strike', 23
+    sendSignalToAction: s32'fer_204_Strike', (SIGNAL_A)
     sprite: s32'fer204_06', 3
     attackEndDelay: 
     sprite: s32'fer204_07', 3
@@ -4430,7 +4430,7 @@ beginState: s32'NmlAtk5D'
     sprite: s32'fer208_14', 2
     attackEndDelay: 
     sprite: s32'fer208_15', 2
-    sendSignalToAction: s32'fer_208_WipAura', 23
+    sendSignalToAction: s32'fer_208_WipAura', (SIGNAL_A)
     sprite: s32'fer208_16', 2
     sprite: s32'fer208_17', 2
     sprite: s32'fer208_18', 3
@@ -4457,7 +4457,7 @@ beginState: s32'NmlAtk2D'
     sprite: s32'fer233_04', 3
     sprite: s32'fer233_05', 4
     attackEndDelay: 
-    sendSignalToAction: s32'FER_233_WipAura', 23
+    sendSignalToAction: s32'FER_233_WipAura', (SIGNAL_A)
     sprite: s32'fer233_06', 3
     sprite: s32'fer233_07', 3
     sprite: s32'fer233_08', 3
@@ -4628,7 +4628,7 @@ beginState: s32'GuardCrash'
     sprite: s32'fer350_03', 2
     sprite: s32'fer350_01', 1
     sprite: s32'fer350_04', 2
-    sendSignalToAction: s32'FER_350_Eff', 23
+    sendSignalToAction: s32'FER_350_Eff', (SIGNAL_A)
     sprite: s32'fer350_05', 2
     sprite: s32'fer350_06', 2
     cmnSfx: s32'SE_BTL_SwingWhipL'
@@ -4848,7 +4848,7 @@ beginState: s32'NmlAtkAir5D'
     beginLabel: s32'Landing'
     sprite: s32'fer253_09', 4
     clearUpon: (FRAME_STEP)
-    sendSignalToAction: s32'fer_253_WipAura_5D', 23
+    sendSignalToAction: s32'fer_253_WipAura_5D', (SIGNAL_A)
     attackEndDelay: 
     setCrouch: 1
     clearUpon: (FRAME_STEP)
@@ -4917,7 +4917,7 @@ beginState: s32'NmlAtkAir6D'
     beginLabel: s32'Landing'
     sprite: s32'fer253_09', 4
     clearUpon: (FRAME_STEP)
-    sendSignalToAction: s32'fer_253_WipAura_3D', 23
+    sendSignalToAction: s32'fer_253_WipAura_3D', (SIGNAL_A)
     attackEndDelay: 
     setCrouch: 1
     clearUpon: (FRAME_STEP)
@@ -4982,7 +4982,7 @@ beginState: s32'NmlAtkAir4D'
     beginLabel: s32'Landing'
     sprite: s32'fer253_09', 4
     clearUpon: (FRAME_STEP)
-    sendSignalToAction: s32'fer_253_WipAura_2D', 23
+    sendSignalToAction: s32'fer_253_WipAura_2D', (SIGNAL_A)
     attackEndDelay: 
     setCrouch: 1
     clearUpon: (FRAME_STEP)
@@ -5392,7 +5392,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'fer302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'fer302_03', 3
     attackEndDelay: 
     sprite: s32'fer302_04', 3
@@ -5495,14 +5495,14 @@ beginSubroutine: s32'StraightShotInit'
     upon: 8
         clearUpon: 8
         gotoLabelRequests: s32'End'
-        sendSignalToAction: s32'ncf_400', 23
-        sendSignalToAction: s32'FER_400_BulletEff_A', 23
-        sendSignalToAction: s32'ncf_411', 23
-        sendSignalToAction: s32'FER_400_BulletEff_B', 23
-        sendSignalToAction: s32'ncf_411_EX', 23
-        sendSignalToAction: s32'FER_400_BulletEff_B', 23
-        sendSignalToAction: s32'ncf_411_D', 23
-        sendSignalToAction: s32'FER_400_BulletEff_C', 23
+        sendSignalToAction: s32'ncf_400', (SIGNAL_A)
+        sendSignalToAction: s32'FER_400_BulletEff_A', (SIGNAL_A)
+        sendSignalToAction: s32'ncf_411', (SIGNAL_A)
+        sendSignalToAction: s32'FER_400_BulletEff_B', (SIGNAL_A)
+        sendSignalToAction: s32'ncf_411_EX', (SIGNAL_A)
+        sendSignalToAction: s32'FER_400_BulletEff_B', (SIGNAL_A)
+        sendSignalToAction: s32'ncf_411_D', (SIGNAL_A)
+        sendSignalToAction: s32'FER_400_BulletEff_C', (SIGNAL_A)
     endUpon: 
     upon: 37
         clearUpon: 37
@@ -5592,7 +5592,7 @@ beginState: s32'StraightShot_A'
     sprite: s32'fer400_09', 4
     clearUpon: 78
     clearUpon: 8
-    sendSignalToAction: s32'FER_400_BulletEff_A', 23
+    sendSignalToAction: s32'FER_400_BulletEff_A', (SIGNAL_A)
     sendSignalToAction: s32'ncf_400', 30
     attackEndDelay: 
     sprite: s32'fer400_10', 4
@@ -5610,7 +5610,7 @@ beginState: s32'StraightShot_A'
     callSubroutine: s32'StraightShot_Hobaku'
     sprite: s32'fer400_09', 4
     setSpriteTime: 2, Mem(ActReg1)
-    sendSignalToAction: s32'FER_400_BulletEff_A', 23
+    sendSignalToAction: s32'FER_400_BulletEff_A', (SIGNAL_A)
     attackEndDelay: 
     sprite: s32'fer400_10', 4
     setSpriteTime: 3, Mem(ActReg1)
@@ -5676,7 +5676,7 @@ beginState: s32'StraightShot_B'
     sprite: s32'fer400_04', 2
     cmnSfx: s32'SE_BTL_SwingWhipM'
     sendSignalToAction: s32'ncf_411', 24
-    sendSignalToAction: s32'FER_400_Eff_B', 23
+    sendSignalToAction: s32'FER_400_Eff_B', (SIGNAL_A)
     sprite: s32'fer411_00', 2
     if: Mem(BattleDoing)
         hit: 
@@ -5697,7 +5697,7 @@ beginState: s32'StraightShot_B'
     sprite: s32'fer400_09', 3
     clearUpon: 78
     clearUpon: 8
-    sendSignalToAction: s32'FER_400_BulletEff_B', 23
+    sendSignalToAction: s32'FER_400_BulletEff_B', (SIGNAL_A)
     sendSignalToAction: s32'ncf_411', 29
     attackEndDelay: 
     sprite: s32'fer400_10', 3
@@ -5714,7 +5714,7 @@ beginState: s32'StraightShot_B'
     sprite: s32'keep', 1
     callSubroutine: s32'StraightShot_Hobaku'
     sprite: s32'fer400_09', 2
-    sendSignalToAction: s32'FER_400_BulletEff_B', 23
+    sendSignalToAction: s32'FER_400_BulletEff_B', (SIGNAL_A)
     attackEndDelay: 
     sprite: s32'fer400_10', 3
     sprite: s32'fer400_11', 2
@@ -5777,7 +5777,7 @@ beginState: s32'StraightShot_C'
     sprite: s32'fer400_09', 3
     clearUpon: 78
     clearUpon: 8
-    sendSignalToAction: s32'FER_400_BulletEff_C', 23
+    sendSignalToAction: s32'FER_400_BulletEff_C', (SIGNAL_A)
     sendSignalToAction: s32'ncf_411_EX', 29
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
@@ -5795,7 +5795,7 @@ beginState: s32'StraightShot_C'
     sprite: s32'keep', 1
     callSubroutine: s32'StraightShot_Hobaku'
     sprite: s32'fer400_09', 2
-    sendSignalToAction: s32'FER_400_BulletEff_C', 23
+    sendSignalToAction: s32'FER_400_BulletEff_C', (SIGNAL_A)
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'fer400_10', 3
@@ -5878,7 +5878,7 @@ beginState: s32'StraightShot_D'
     clearUpon: 8
     clearUpon: (HIT)
     clearUpon: 86
-    sendSignalToAction: s32'FER_400_BulletEff_C', 23
+    sendSignalToAction: s32'FER_400_BulletEff_C', (SIGNAL_A)
     sendSignalToAction: s32'ncf_411_D', 29
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
@@ -5928,7 +5928,7 @@ beginState: s32'StraightShot_D'
     enemyHitstopAddition: -4, 4, 4
     armorBreak: 1
     onlyHitPlayer: 1
-    sendSignalToAction: s32'FER_400_BulletEff_C', 23
+    sendSignalToAction: s32'FER_400_BulletEff_C', (SIGNAL_A)
     ifOperation: (IS_GREATER), Mem(EnemyDistanceX), Val(750000)
         gotoLabelRequests: s32'Far'
     endIf: 
@@ -6091,11 +6091,11 @@ beginState: s32'Hobaku_D'
         damageEffect: 4, s32'fer_hit_sp_Ghost'
         createObject: s32'FER_400_Circle', (PLAYER)
         callSubroutine: s32'cmn_DelEXSkillEff'
-        sendSignalToAction: s32'geg_404', 23
-        sendSignalToAction: s32'geg_405', 23
-        sendSignalToAction: s32'geg_setting', 23
+        sendSignalToAction: s32'geg_404', (SIGNAL_A)
+        sendSignalToAction: s32'geg_405', (SIGNAL_A)
+        sendSignalToAction: s32'geg_setting', (SIGNAL_A)
         storeValue: Mem(ObjReg3), Val(0)
-        upon: 23
+        upon: (SIGNAL_A)
             grabOrRelease: 
             createObject: s32'bep_401', (PLAYER)
         endUpon: 
@@ -6144,14 +6144,14 @@ beginState: s32'Hobaku_D'
     sprite: s32'fer401_05', 3
     sprite: s32'fer401_06', 3
     sprite: s32'fer401_04', 3
-    sendSignalToAction: s32'FER_400_Circle', 23
+    sendSignalToAction: s32'FER_400_Circle', (SIGNAL_A)
     sprite: s32'fer401_05', 3
     sprite: s32'fer401_06', 3
     sprite: s32'fer401_04', 3
-    sendSignalToAction: s32'geg_401', 32
-    sendSignalToAction: s32'bep_401', 32
+    sendSignalToAction: s32'geg_401', (SIGNAL_B)
+    sendSignalToAction: s32'bep_401', (SIGNAL_B)
     deactivateObjectByName: s32'ncf_401'
-    sendSignalToAction: s32'FER_401_EnshutuCamera_Near', 23
+    sendSignalToAction: s32'FER_401_EnshutuCamera_Near', (SIGNAL_A)
     sprite: s32'fer401_05', 3
     sprite: s32'fer401_06', 3
     voiceLine: s16'vFER_ATKS_101'
@@ -6189,14 +6189,14 @@ beginState: s32'Hobaku_D'
     sprite: s32'fer412_05', 3
     sprite: s32'fer412_06', 3
     sprite: s32'fer412_04', 3
-    sendSignalToAction: s32'FER_400_Circle', 23
+    sendSignalToAction: s32'FER_400_Circle', (SIGNAL_A)
     sprite: s32'fer412_05', 3
     sprite: s32'fer412_06', 3
     sprite: s32'fer412_04', 3
-    sendSignalToAction: s32'geg_401', 32
-    sendSignalToAction: s32'bep_401', 32
+    sendSignalToAction: s32'geg_401', (SIGNAL_B)
+    sendSignalToAction: s32'bep_401', (SIGNAL_B)
     deactivateObjectByName: s32'ncf_401'
-    sendSignalToAction: s32'FER_401_EnshutuCamera_Far', 23
+    sendSignalToAction: s32'FER_401_EnshutuCamera_Far', (SIGNAL_A)
     sprite: s32'fer412_05', 3
     sprite: s32'fer412_06', 3
     voiceLine: s16'vFER_ATKS_101'
@@ -6343,7 +6343,7 @@ beginState: s32'Bomb'
             endIf: 
         endIf: 
         callSubroutine: s32'cmnSkillInputCheck_Hasei'
-        sendSignalToAction: s32'FER_400_Circle', 23
+        sendSignalToAction: s32'FER_400_Circle', (SIGNAL_A)
         storeValue: Mem(ObjReg3), Val(0)
         upon: (BEFORE_EXIT)
             storeValue: Mem(ObjReg0), Val(0)
@@ -6358,7 +6358,7 @@ beginState: s32'Bomb'
     checkLastStateName: s32'Hobaku_BC'
     gotoLabelIf: s32'Pre_Hobaku_BC', Mem(Tmp)
     sprite: s32'fer401_04', 3
-    sendSignalToAction: s32'FER_401_EnshutuCamera_Near', 23
+    sendSignalToAction: s32'FER_401_EnshutuCamera_Near', (SIGNAL_A)
     endSprite: 
     gotoIfOperation: s32'Short', (IS_EQUAL), Mem(ObjReg0), Val(0)
     sprite: s32'fer401_05', 3
@@ -6379,7 +6379,7 @@ beginState: s32'Bomb'
     gotoLabel: s32'End'
     beginLabel: s32'Pre_Hobaku_BC'
     sprite: s32'fer412_04', 3
-    sendSignalToAction: s32'FER_401_EnshutuCamera_Far', 23
+    sendSignalToAction: s32'FER_401_EnshutuCamera_Far', (SIGNAL_A)
     sprite: s32'fer412_05', 3
     sprite: s32'fer412_06', 3
     sprite: s32'fer412_04', 3
@@ -6607,7 +6607,7 @@ beginState: s32'Whip_A'
     sprite: s32'fer410_09', 1
     attackEndDelay: 
     characterSfx: s32'fer_03'
-    sendSignalToAction: s32'FER_410_WipAura', 23
+    sendSignalToAction: s32'FER_410_WipAura', (SIGNAL_A)
     sprite: s32'fer410_10', 1
     characterSfx: s32'fer_01_Random'
     sprite: s32'fer410_11', 1
@@ -6667,7 +6667,7 @@ beginState: s32'Whip_B'
     sprite: s32'fer410_09', 1
     attackEndDelay: 
     characterSfx: s32'fer_03'
-    sendSignalToAction: s32'FER_410_WipAura', 23
+    sendSignalToAction: s32'FER_410_WipAura', (SIGNAL_A)
     sprite: s32'fer410_10', 1
     characterSfx: s32'fer_01_Random'
     sprite: s32'fer410_11', 1
@@ -6729,7 +6729,7 @@ beginState: s32'Whip_C'
     sprite: s32'fer410_09', 1
     attackEndDelay: 
     characterSfx: s32'fer_03'
-    sendSignalToAction: s32'FER_410_WipAura', 23
+    sendSignalToAction: s32'FER_410_WipAura', (SIGNAL_A)
     sprite: s32'fer410_10', 1
     characterSfx: s32'fer_01_Random'
     sprite: s32'fer410_11', 1
@@ -6790,7 +6790,7 @@ beginState: s32'Whip_D'
         endIf: 
     endElse: 
     runOnObject: (ENEMY)
-        Unknown2253: 0
+        slipperyEffect: 0
     endRunOnObject: 
     endUpon: 
     sprite: s32'fer415_08', 2
@@ -6818,8 +6818,8 @@ beginState: s32'Whip_D'
     clearUpon: 36
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
-    sendSignalToAction: s32'FER_415_WhipEff', 23
-    sendSignalToAction: s32'FER_415_AuraLoop', 23
+    sendSignalToAction: s32'FER_415_WhipEff', (SIGNAL_A)
+    sendSignalToAction: s32'FER_415_AuraLoop', (SIGNAL_A)
     sprite: s32'fer415_13', 2
     createObject: s32'FER_415_AuraEnd', (PLAYER)
     sprite: s32'fer415_14', 3
@@ -7098,7 +7098,7 @@ beginState: s32'Oinu_D'
     sprite: s32'fer406_04', 3
     clearUpon: (HIT_OR_GUARD)
     clearUpon: 78
-    sendSignalToAction: s32'bep_407', 23
+    sendSignalToAction: s32'bep_407', (SIGNAL_A)
     voiceLine: s16'vFER_ATKS_103'
     sprite: s32'fer406_05', 3
     sprite: s32'fer406_06', 3
@@ -7392,7 +7392,7 @@ beginState: s32'Buff'
     sprite: s32'fer431_07', 3
     sprite: s32'fer431_08', 3
     sprite: s32'fer431_09', 3
-    sendSignalToAction: s32'FER_431_BodyAura', 23
+    sendSignalToAction: s32'FER_431_BodyAura', (SIGNAL_A)
     sprite: s32'fer431_10', 3
     sprite: s32'fer431_11', 3
     sprite: s32'fer431_12', 3
@@ -7417,7 +7417,7 @@ beginState: s32'Fer_Kaihou'
             cameraShake: s32'ShakeTate', 800, 0, 27, 10
             storeValue: Mem(ActReg1), Val(1)
             callSubroutine: s32'cmnKaihou_Maai_ON_ATTACK'
-            sendSignalToAction: s32'Fer_UltimateShot', 23
+            sendSignalToAction: s32'Fer_UltimateShot', (SIGNAL_A)
         endUpon: 
         upon: 78
             clearUpon: 78
@@ -7488,7 +7488,7 @@ beginState: s32'Fer_Kaihou'
                 createObject: s32'FER_440_ScrAnimWipAura', (PLAYER)
             endIf: 
             ifOnFrame: Val(67)
-                sendSignalToAction: s32'FER_440_Screw', 23
+                sendSignalToAction: s32'FER_440_Screw', (SIGNAL_A)
                 deactivateObjectByName: s32'FER_440_EnagySphere01'
                 deactivateObjectByName: s32'FER_440_EnagySphere02'
                 deactivateObjectByName: s32'FER_440_EnagySphere03'
@@ -7598,7 +7598,7 @@ beginState: s32'Fer_Kaihou'
     sprite: s32'fer440_14', 1
     sprite: s32'fer440_15', 3
     if: Mem(ActReg1)
-        sendSignalToAction: s32'FER_440_WipAuraMatome', 23
+        sendSignalToAction: s32'FER_440_WipAuraMatome', (SIGNAL_A)
         grabOrRelease: 
         damage: 1200
         airHitEffect: (KIRIMOMI)

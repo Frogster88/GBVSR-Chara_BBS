@@ -9,8 +9,8 @@ beginState: s32'skn_001_FireScrewEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -331,8 +331,8 @@ beginState: s32'skn_253_CrowEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -559,7 +559,7 @@ beginState: s32'skn_350_FireBallEff'
         stopLinkObject: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 47
+        upon: (AFTER_EXIT)
             linkObjectPosition: 0
             stopLinkObject: 0
         endUpon: 
@@ -720,7 +720,7 @@ beginState: s32'skn_400_StandByEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        gotoLabelUpon: 23, s32'Move0'
+        gotoLabelUpon: (SIGNAL_A), s32'Move0'
         gotoLabelUpon: 24, s32'Move1'
         gotoLabelUpon: 25, s32'End'
     endUpon: 
@@ -741,7 +741,7 @@ beginState: s32'skn_400_StandByEff'
     setAngleX: 0
     setAngleY: 354400
     setAngle: 6400
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     beginLabel: s32'Move1'
     sprite: s32'null', 5
     setPositionX: -75968
@@ -790,7 +790,7 @@ beginState: s32'Assault_DummyAtk'
         Unknown1915: 50
         upon: (HIT)
             if: Mem(BattleDoing)
-                sendSignalToAction: s32'Assault_D', 23
+                sendSignalToAction: s32'Assault_D', (SIGNAL_A)
             endIf: 
             else: 
                 runOnObject: (PLAYER)
@@ -835,7 +835,7 @@ beginState: s32'skn_402_StrikeEff'
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
         flipDirection: 
-        gotoLabelUpon: 23, s32'Move0'
+        gotoLabelUpon: (SIGNAL_A), s32'Move0'
         gotoLabelUpon: 24, s32'Move1'
         gotoLabelUpon: 25, s32'End'
     endUpon: 
@@ -857,7 +857,7 @@ beginState: s32'skn_402_StrikeEff'
     setAngleX: 3600
     setAngleY: 12000
     setAngle: 341200
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     beginLabel: s32'Move1'
     sprite: s32'null', 15
     linkParticle: s32'skn_402_Strike03'
@@ -977,8 +977,8 @@ beginState: s32'skn_404_SlashEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -1014,8 +1014,8 @@ beginState: s32'skn_404_SlashEffSub'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             deactivateObjectById: (SELF)
         endUpon: 
     endUpon: 
@@ -1760,8 +1760,8 @@ beginState: s32'skn_430cs_Breath'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -1981,8 +1981,8 @@ beginState: s32'skn_430cs_Breath2'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -2348,7 +2348,7 @@ beginState: s32'skn_440_StrikeEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2427,8 +2427,8 @@ beginState: s32'skn_440_StandByEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -2797,8 +2797,8 @@ beginState: s32'skn_441cs_FinalBG'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
         upon: 24
@@ -3264,8 +3264,8 @@ beginState: s32'skn_441cs_Font'
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
         faceLeft: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'FontChange'
         endUpon: 
     endUpon: 
@@ -3484,8 +3484,8 @@ beginState: s32'skn_442_Wipe'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -3616,8 +3616,8 @@ beginState: s32'skn_800_ryuhai4'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -3647,8 +3647,8 @@ beginState: s32'skn_800_ryuhai_CutinWipe'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -3701,8 +3701,8 @@ beginState: s32'skn_800_ryuhai_CutinWipe2'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -4029,8 +4029,8 @@ beginState: s32'skn_700_1PFireScrew'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 

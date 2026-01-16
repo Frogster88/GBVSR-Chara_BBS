@@ -403,8 +403,8 @@ beginState: s32'gri_301_WindLoop2'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -901,14 +901,14 @@ beginState: s32'gri_400_ShotEff'
         Unknown2257: 1
         Unknown2212: 1
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 30
             clearUpon: (FRAME_STEP)
-            clearUpon: 45
-            clearUpon: 49
-            sendSignalToAction: s32'SpecialShot_A', 23
-            sendSignalToAction: s32'SpecialShot_B', 23
-            sendSignalToAction: s32'SpecialShot_C', 23
+            clearUpon: (ON_DESTROY)
+            clearUpon: (SIGNAL_NAME)
+            sendSignalToAction: s32'SpecialShot_A', (SIGNAL_A)
+            sendSignalToAction: s32'SpecialShot_B', (SIGNAL_A)
+            sendSignalToAction: s32'SpecialShot_C', (SIGNAL_A)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -934,11 +934,11 @@ beginState: s32'gri_400_ShotEff'
             modifyVar: (ADD), Mem(ActReg4), Val(-1)
             ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg4), Val(-1)
                 clearUpon: (FRAME_STEP)
-                clearUpon: 49
-                clearUpon: 45
-                sendSignalToAction: s32'SpecialShot_A', 23
-                sendSignalToAction: s32'SpecialShot_B', 23
-                sendSignalToAction: s32'SpecialShot_C', 23
+                clearUpon: (SIGNAL_NAME)
+                clearUpon: (ON_DESTROY)
+                sendSignalToAction: s32'SpecialShot_A', (SIGNAL_A)
+                sendSignalToAction: s32'SpecialShot_B', (SIGNAL_A)
+                sendSignalToAction: s32'SpecialShot_C', (SIGNAL_A)
                 attackOff: 
                 gotoLabelRequests: s32'Koware'
             endIf: 
@@ -1015,13 +1015,13 @@ beginState: s32'gri_400_ShotEff'
             endIf: 
         endUpon: 
         addMoveForceDisableFlag: 1
-        upon: 49
+        upon: (SIGNAL_NAME)
             callSubroutine: s32'SpecialShotAdd_Matome'
         endUpon: 
         upon: 37
-            sendSignalToAction: s32'SpecialShot_A', 23
-            sendSignalToAction: s32'SpecialShot_B', 23
-            sendSignalToAction: s32'SpecialShot_C', 23
+            sendSignalToAction: s32'SpecialShot_A', (SIGNAL_A)
+            sendSignalToAction: s32'SpecialShot_B', (SIGNAL_A)
+            sendSignalToAction: s32'SpecialShot_C', (SIGNAL_A)
         endUpon: 
         upon: 54
         endUpon: 
@@ -1052,7 +1052,7 @@ beginState: s32'gri_400_ShotEff'
     gotoIfOperation: s32'StopAtk', (IS_GREATER), Mem(ActReg4), Val(0)
     beginLabel: s32'Koware'
     sprite: s32'null', 15
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     haltMomentum: 1
     setAlphaColor: 700
     setAlphaColorSpeed: -30
@@ -1060,17 +1060,17 @@ beginState: s32'gri_400_ShotEff'
     setObjectWidthScaleSpeed: 50
     setObjectDepthScaleSpeed: 50
     ifOperation: (IS_EQUAL), Mem(ActReg3), Val(0)
-        sendSignalToAction: s32'SpecialShot_A', 23
-        sendSignalToAction: s32'SpecialShot_B', 23
-        sendSignalToAction: s32'SpecialShot_C', 23
+        sendSignalToAction: s32'SpecialShot_A', (SIGNAL_A)
+        sendSignalToAction: s32'SpecialShot_B', (SIGNAL_A)
+        sendSignalToAction: s32'SpecialShot_C', (SIGNAL_A)
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-            Unknown1921: 0, 5
+            skillCooldown: 0, 5
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-            Unknown1921: 0, 5
+            skillCooldown: 0, 5
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-            Unknown1921: 0, 420
+            skillCooldown: 0, 420
         endIf: 
         Unknown1923: 0
         deleteMoveForceDisableFlag: 1
@@ -1094,26 +1094,26 @@ beginSubroutine: s32'SpecialShotAdd_Matome'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
     velocityXPercentEachFrame: 100
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        Unknown1921: 0, 5
+        skillCooldown: 0, 5
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        Unknown1921: 0, 5
+        skillCooldown: 0, 5
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
     endIf: 
     Unknown1923: 0
     deleteMoveForceDisableFlag: 1
     checkSignalName: s32'gri_SpecialShot_6'
     if: Mem(Tmp)
-        clearUpon: 49
+        clearUpon: (SIGNAL_NAME)
         storeValue: Mem(ActReg3), Val(6)
         storeValue: Mem(ActReg4), Val(20)
         addMoveForceDisableFlag: 2
     endIf: 
     checkSignalName: s32'gri_SpecialShot_4'
     if: Mem(Tmp)
-        clearUpon: 49
+        clearUpon: (SIGNAL_NAME)
         storeValue: Mem(ActReg3), Val(4)
         storeValue: Mem(ActReg4), Val(60)
         addMoveForceDisableFlag: 4
@@ -1122,7 +1122,7 @@ beginSubroutine: s32'SpecialShotAdd_Matome'
     endIf: 
     checkSignalName: s32'gri_SpecialShot_8'
     if: Mem(Tmp)
-        clearUpon: 49
+        clearUpon: (SIGNAL_NAME)
         storeValue: Mem(ActReg3), Val(8)
         storeValue: Mem(ActReg4), Val(20)
         addMoveForceDisableFlag: 8
@@ -1163,9 +1163,9 @@ beginState: s32'gri_400D_ShotEff'
         Unknown2257: 1
         Unknown2212: 1
         Unknown2213: 1
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: (FRAME_STEP)
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         setMaxActionTime: 600
@@ -1201,7 +1201,7 @@ beginState: s32'gri_400D_ShotEff'
     gotoLabel: s32'Loop'
     beginLabel: s32'Koware'
     sprite: s32'null', 10
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 13
     clearUpon: (FRAME_STEP)
     velocityXPercentEachFrame: 90
@@ -1218,7 +1218,7 @@ beginState: s32'gri_400D_ShotEff'
         storeValue: Mem(287), Mem(Tmp)
     endIf: 
     else: 
-        Unknown1921: 0, 180
+        skillCooldown: 0, 180
     endElse: 
     Unknown1923: 0
     deleteMoveForceDisableFlag: 1
@@ -1455,15 +1455,15 @@ beginState: s32'gri_Booster'
     upon: (IMMEDIATE)
         worldCollision: 1
         zLine: 0, 5
-        upon: 45
-            clearUpon: 45
-            clearUpon: 23
+        upon: (ON_DESTROY)
+            clearUpon: (ON_DESTROY)
+            clearUpon: (SIGNAL_A)
             clearUpon: 30
             clearUpon: 31
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             gotoLabelRequests: s32'End'
         endUpon: 
-        upon: 23
+        upon: (SIGNAL_A)
             Unknown2203: 23
             createObject: s32'gri_Booster2_test', (PLAYER)
         endUpon: 
@@ -1486,30 +1486,30 @@ beginState: s32'gri_Booster'
             createObject: s32'gri_Booster_Touch', (PLAYER)
         endUpon: 
         upon: 31
-            clearUpon: 45
-            clearUpon: 23
+            clearUpon: (ON_DESTROY)
+            clearUpon: (SIGNAL_A)
             clearUpon: 30
             clearUpon: 31
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             gotoLabelRequests: s32'OugiBuffEnd'
         endUpon: 
-        upon: 32
-            clearUpon: 45
-            clearUpon: 23
+        upon: (SIGNAL_B)
+            clearUpon: (ON_DESTROY)
+            clearUpon: (SIGNAL_A)
             clearUpon: 30
             clearUpon: 31
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             storeValue: Mem(ActReg6), Val(1)
         endUpon: 
         upon: 30
-            clearUpon: 45
-            clearUpon: 23
+            clearUpon: (ON_DESTROY)
+            clearUpon: (SIGNAL_A)
             clearUpon: 30
             clearUpon: 31
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             gotoLabelRequests: s32'YarareEnd'
         endUpon: 
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'HikitsugiVal0_0â1'
             if: Mem(Tmp)
                 storeValue: Mem(Hikitsugi0), Val(1)
@@ -1737,7 +1737,7 @@ beginState: s32'gri_Booster1_test'
         stopLinkObject: 2
         faceLeft: 
         setAngleY: 90000
-        upon: 23
+        upon: (SIGNAL_A)
             setObjectSizeScaleSpeed: 50
             storeValue: Mem(ActReg1), Val(1)
             storeValue: Mem(ActReg2), Val(1)
@@ -2097,8 +2097,8 @@ beginState: s32'gri_411_WindEff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'gri_411_Wind'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2164,8 +2164,8 @@ beginState: s32'gri_411_GroundLoop_Eff'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2187,8 +2187,8 @@ beginState: s32'gri_411_Nokosi_Eff'
         setPositionX: 58953
         setPositionY: 244067
         setDepth: 2743
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2217,8 +2217,8 @@ beginState: s32'gri_412_Sphere'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2323,8 +2323,8 @@ beginState: s32'gri_413_WindEff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'gri_413_Wind'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2532,28 +2532,28 @@ beginState: s32'gri_430_Atk'
         Unknown2257: 1
         Unknown2212: 10
         Unknown2213: 10
-        upon: 45
-            clearUpon: 23
+        upon: (ON_DESTROY)
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             clearUpon: 8
             clearUpon: 13
-            sendSignalToAction: s32'gri_430_SuperTornado', 23
+            sendSignalToAction: s32'gri_430_SuperTornado', (SIGNAL_A)
             sendSignalToAction: s32'gri_Ougi', 25
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             clearUpon: 8
             clearUpon: 13
-            sendSignalToAction: s32'gri_430_SuperTornado', 23
+            sendSignalToAction: s32'gri_430_SuperTornado', (SIGNAL_A)
             sendSignalToAction: s32'gri_Ougi', 25
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
         upon: 24
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             clearUpon: 13
             gotoLabelRequests: s32'Lock'
@@ -2562,9 +2562,9 @@ beginState: s32'gri_430_Atk'
             modifyVar: (ADD), Mem(ActReg4), Val(1)
             ifOperation: (IS_EQUAL), Mem(ActReg4), Val(9)
                 gotoLabelRequests: s32'End'
-                clearUpon: 23
+                clearUpon: (SIGNAL_A)
                 clearUpon: 8
-                clearUpon: 45
+                clearUpon: (ON_DESTROY)
             endIf: 
         endUpon: 
         upon: (HIT_OR_GUARD)
@@ -2580,7 +2580,7 @@ beginState: s32'gri_430_Atk'
             stackObjectEx: (SELF), 11, 3, 11
             callSubroutine: s32'cmnOugi_Maai_ON_ATTACK'
             if: Mem(ActReg0)
-                sendSignalToAction: s32'gri_Ougi', 23
+                sendSignalToAction: s32'gri_Ougi', (SIGNAL_A)
             endIf: 
         endUpon: 
         upon: 78
@@ -2594,11 +2594,11 @@ beginState: s32'gri_430_Atk'
         addPositionX: 200000
         setEventTrigger: 13, 120
         upon: 13
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             clearUpon: 8
             clearUpon: 13
-            sendSignalToAction: s32'gri_430_SuperTornado', 23
+            sendSignalToAction: s32'gri_430_SuperTornado', (SIGNAL_A)
             sendSignalToAction: s32'gri_Ougi', 25
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
@@ -2626,7 +2626,7 @@ beginState: s32'gri_430_Atk'
     attackThroughArmor: 1
     haltMomentum: 1
     clearUpon: 8
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     upon: 8
         modifyVar: (ADD), Mem(ActReg4), Val(1)
         ifOperation: (IS_EQUAL), Mem(ActReg4), Val(10)
@@ -2641,7 +2641,7 @@ beginState: s32'gri_430_Atk'
             nextHitActionName: s32'gri_Ougi'
             sendSignalToAction: s32'gri_Ougi', 24
             clearUpon: 8
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
         endIf: 
     endUpon: 
     beginLabel: s32'LockLoop'
@@ -2663,12 +2663,12 @@ beginState: s32'gri_430_Atk'
     wallPushback: 0, 200
     attackFrontDirection: 3
     guardEffectEconomy: 0
-    sendSignalToAction: s32'gri_430_SuperTornado', 23
+    sendSignalToAction: s32'gri_430_SuperTornado', (SIGNAL_A)
     sendSignalToAction: s32'gri_Ougi', 25
     haltMomentum: 1
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     recoveryState: 
 endState: 
 
@@ -2911,8 +2911,8 @@ beginState: s32'gri_430_SuperTornado'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
         linkParticle: s32'gri_430_Loop'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             createObject: s32'gri_430_SuperTornadoEnd', (PLAYER)
             gotoLabelRequests: s32'End'
         endUpon: 
@@ -3089,8 +3089,8 @@ beginState: s32'gri_430_ArmRayEff'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         ignoreSuperFreezeFromAlly: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
         upon: 24
@@ -3289,8 +3289,8 @@ beginState: s32'gri_440CS_ChargeAura'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
         stopLinkObject: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -3695,8 +3695,8 @@ beginState: s32'gri_441CS_BG'
         setPositionX: -244806
         setPositionY: -12345
         setAngleY: 20400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
         upon: 24
@@ -3857,8 +3857,8 @@ beginState: s32'gri_441CS_Moon'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -3880,8 +3880,8 @@ beginState: s32'gri_441CS_Rose1'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -4045,7 +4045,7 @@ beginState: s32'gri_441_WhiteOut'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -4162,8 +4162,8 @@ beginState: s32'gri_442CS_BG'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -4195,7 +4195,7 @@ beginState: s32'gri_442_WhiteIn'
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
         linkParticle: s32'cmn_FadeOut_HUDBack'
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -4259,8 +4259,8 @@ beginState: s32'gri_442CS_Rose'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -4289,8 +4289,8 @@ beginState: s32'gri_442CS_MoonLight'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -4566,8 +4566,8 @@ beginState: s32'gri_7002PCS_TornadoEff'
             clearUpon: 13
             gotoLabelRequests: s32'Move'
         endUpon: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Stop'
         endUpon: 
         upon: 24
@@ -4603,7 +4603,7 @@ beginState: s32'gri_7002PCS_TornadoEff'
     gotoLabel: s32'Stop'
     beginLabel: s32'Move2'
     sprite: s32'null', 1
-    sendSignalToAction: s32'gri_7002PCS_GroundSmokeEff', 23
+    sendSignalToAction: s32'gri_7002PCS_GroundSmokeEff', (SIGNAL_A)
     deactivateObjectByName: s32'gri_7002PCS_GroundBurstEff'
     deactivateObjectByName: s32'gri_7002PCS_GroundBurstEff2'
     setObjectSize: 850
@@ -4748,8 +4748,8 @@ beginState: s32'gri_7002PCS_GroundSmokeEff'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
         linkParticle: s32'gri_700_TornadoSmoke'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Scale'
         endUpon: 
         upon: 24

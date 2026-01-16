@@ -2206,19 +2206,19 @@ beginSubroutine: s32'OnFrameStep'
         Unknown1925: 2, 0
         Unknown1925: 3, 0
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(287), Val(0)
-            Unknown1921: 0, 1
+            skillCooldown: 0, 1
             Unknown1923: 0
         endIf: 
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(288), Val(0)
-            Unknown1921: 1, 1
+            skillCooldown: 1, 1
             Unknown1923: 1
         endIf: 
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(289), Val(0)
-            Unknown1921: 2, 1
+            skillCooldown: 2, 1
             Unknown1923: 2
         endIf: 
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(290), Val(0)
-            Unknown1921: 3, 1
+            skillCooldown: 3, 1
             Unknown1923: 3
         endIf: 
         Unknown1889: 0, 1
@@ -2268,13 +2268,13 @@ beginSubroutine: s32'OnFrameStep'
         Unknown1925: 2, 0
         Unknown1925: 3, 0
         ifNot: Mem(ObjReg1)
-            Unknown1921: 0, 1
+            skillCooldown: 0, 1
             Unknown1923: 0
-            Unknown1921: 1, 1
+            skillCooldown: 1, 1
             Unknown1923: 1
-            Unknown1921: 2, 1
+            skillCooldown: 2, 1
             Unknown1923: 2
-            Unknown1921: 3, 1
+            skillCooldown: 3, 1
             Unknown1923: 3
             storeValue: Mem(ObjReg1), Val(1)
         endIf: 
@@ -2291,11 +2291,11 @@ beginSubroutine: s32'OnFrameStep'
         ifOperation: (IS_EQUAL), Mem(ExGage2), Val(0)
             if: Mem(MatchEnd)
                 Unknown2928: 20
-                sendSignalToAction: s32'nie_431_Filter', 23
+                sendSignalToAction: s32'nie_431_Filter', (SIGNAL_A)
             endIf: 
             ifOperation: (IS_LESSER_OR_EQUAL), Mem(HitPoint), Val(0)
                 Unknown2928: 20
-                sendSignalToAction: s32'nie_431_Filter', 23
+                sendSignalToAction: s32'nie_431_Filter', (SIGNAL_A)
             endIf: 
         endIf: 
     endIf: 
@@ -2332,12 +2332,12 @@ beginSubroutine: s32'BuffEnd'
     ifOpponentCharacter: s16'nie'
         Unknown310: 9, 32, 2, 27, 0, 0
         Unknown2928: 20
-        sendSignalToAction: s32'nie_431_Filter', 23
+        sendSignalToAction: s32'nie_431_Filter', (SIGNAL_A)
     endIf: 
     endIf: 
     else: 
         Unknown2928: 20
-        sendSignalToAction: s32'nie_431_Filter', 23
+        sendSignalToAction: s32'nie_431_Filter', (SIGNAL_A)
     endElse: 
 endSubroutine: 
 
@@ -2440,17 +2440,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'SpecialMultiAttack_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 10
+        skillCooldown: 0, 10
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialMultiAttack_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 10
+        skillCooldown: 0, 10
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialMultiAttack_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 10
+        skillCooldown: 0, 10
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialMultiAttack_D'
@@ -2464,17 +2464,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 10
+        skillCooldown: 1, 10
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 10
+        skillCooldown: 1, 10
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 10
+        skillCooldown: 1, 10
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -2488,17 +2488,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'SpecialAttack_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 10
+        skillCooldown: 2, 10
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialAttack_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 10
+        skillCooldown: 2, 10
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialAttack_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 10
+        skillCooldown: 2, 10
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialAttack_D'
@@ -2512,17 +2512,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 10
+        skillCooldown: 3, 10
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 10
+        skillCooldown: 3, 10
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 10
+        skillCooldown: 3, 10
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -2641,7 +2641,7 @@ beginState: s32'CmnActStand'
     sprite: s32'nie001_10', 8
     sprite: s32'nie001_11', 8
     createObject: s32'nie_001_FireEff', (PLAYER)
-    sendSignalToAction: s32'nie_001_FireloopEff', 23
+    sendSignalToAction: s32'nie_001_FireloopEff', (SIGNAL_A)
     sprite: s32'nie001_12', 3
     sprite: s32'nie001_13', 3
     sprite: s32'nie001_14', 3
@@ -3039,7 +3039,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3183,7 +3183,7 @@ beginState: s32'entry_1p03'
                         playAnimation: s32'nie700cs_1p_05', 0
                         Unknown2084: s32'nie700cs_1P_cam05', 0, 0, 0, 1, 0, -1
                         sendSignalToAction: s32'dea700cs_1p_04', 24
-                        sendSignalToAction: s32'dea700cs_1p_04', 23
+                        sendSignalToAction: s32'dea700cs_1p_04', (SIGNAL_A)
                         characterSfx: s32'nie_entry_1P_00'
                         createObject: s32'nie_700cs1P_DeathAura', (PLAYER)
                         runOnObject: (PREVIOUS)
@@ -3277,7 +3277,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3639,7 +3639,7 @@ beginState: s32'CmnActEmotion'
         voiceLine: s16'vNIE_EMO_01_b'
     endElse: 
     sprite: s32'nie307_16', 8
-    sendSignalToAction: s32'nie_307_FireEff', 23
+    sendSignalToAction: s32'nie_307_FireEff', (SIGNAL_A)
     sprite: s32'nie307_17', 8
     sprite: s32'nie307_18', 8
     sprite: s32'nie307_19', 8
@@ -3690,8 +3690,8 @@ beginState: s32'GC_Attack'
     sprite: s32'nie350_09', 2
     sprite: s32'nie350_10', 3
     attackEndDelay: 
-    sendSignalToAction: s32'nie_350_GroundCrackEff', 23
-    sendSignalToAction: s32'nie_350_FireEff', 23
+    sendSignalToAction: s32'nie_350_GroundCrackEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_350_FireEff', (SIGNAL_A)
     sprite: s32'nie350_11', 3
     sprite: s32'nie350_12', 3
     sprite: s32'nie350_13', 3
@@ -4341,7 +4341,7 @@ beginState: s32'NmlAtk5D'
     endIf: 
     sprite: s32'nie208_02', 2
     if: Mem(PlayerVal0)
-        Unknown2035: 4, s32'koware', 0
+        pawnAnimation: 4, s32'koware', 0
     endIf: 
     createObject: s32'nie_208_Aura01Eff', (PLAYER)
     characterSfx: s32'nie_05'
@@ -4382,7 +4382,7 @@ beginState: s32'NmlAtk5D'
     wallBounceCount: 1
     wallBounceInCornerOnly: 1
     if: Mem(PlayerVal0)
-        Unknown2035: 4, s32'koware', 0
+        pawnAnimation: 4, s32'koware', 0
     endIf: 
     sprite: s32'nie208_07', 2
     attackEndDelay: 
@@ -4486,12 +4486,12 @@ beginState: s32'GuardCrash'
     endIf: 
     sprite: s32'nie350_09', 2
     sprite: s32'nie350_10', 3
-    sendSignalToAction: s32'nie_350_GroundCrackEff', 23
+    sendSignalToAction: s32'nie_350_GroundCrackEff', (SIGNAL_A)
     if: Mem(ActReg6)
-        sendSignalToAction: s32'nie_350_FireEff_D', 23
+        sendSignalToAction: s32'nie_350_FireEff_D', (SIGNAL_A)
     endIf: 
     ifNot: Mem(ActReg6)
-        sendSignalToAction: s32'nie_350_FireEff', 23
+        sendSignalToAction: s32'nie_350_FireEff', (SIGNAL_A)
     endIf: 
     sprite: s32'nie350_11', 3
     sprite: s32'nie350_12', 3
@@ -4721,7 +4721,7 @@ beginState: s32'NmlAtkAir5D'
     sprite: s32'nie253_01', 1
     gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
     if: Mem(PlayerVal0)
-        Unknown2035: 4, s32'koware', 0
+        pawnAnimation: 4, s32'koware', 0
     endElse: 
     sprite: s32'nie253_02', 2
     createObject: s32'nie_253_Aura01Eff', (PLAYER)
@@ -4767,7 +4767,7 @@ beginState: s32'NmlAtkAir5D'
         upon: (BEFORE_EXIT)
             storeValue: Mem(PlayerVal298), Val(0)
         endUpon: 
-        Unknown2035: 4, s32'koware', 0
+        pawnAnimation: 4, s32'koware', 0
     endIf: 
     sprite: s32'nie253_02', 2
     sprite: s32'nie253_03', 3
@@ -4831,7 +4831,7 @@ beginState: s32'NmlAtkDash6A'
     endIf: 
     sprite: s32'nie220_06', 3
     sprite: s32'nie220_07', 3
-    sendSignalToAction: s32'nie_220_FireEff', 23
+    sendSignalToAction: s32'nie_220_FireEff', (SIGNAL_A)
     sprite: s32'nie220_08', 3
     sprite: s32'nie220_09', 2
 endState: 
@@ -5138,7 +5138,7 @@ beginState: s32'ThrowExe'
         endUpon: 
     endIf: 
     ifNot: Mem(ObjReg0)
-        sendSignalToAction: s32'nie_301_SphereAuraEff', 23
+        sendSignalToAction: s32'nie_301_SphereAuraEff', (SIGNAL_A)
         upon: (HIT)
             cmnSfx: s32'SE_BTL_HitBlowL'
         endUpon: 
@@ -5251,7 +5251,7 @@ beginState: s32'BackThrowExe'
     ifNot: Mem(ObjReg0)
         createObject: s32'nie_309_BloodEff', (PLAYER)
     endIf: 
-    sendSignalToAction: s32'nie_309_MistEff', 23
+    sendSignalToAction: s32'nie_309_MistEff', (SIGNAL_A)
     sprite: s32'nie309_07', 3
     sprite: s32'nie309_08', 2
     runOnObject: 21
@@ -5296,7 +5296,7 @@ beginState: s32'BackThrowExe'
     gotoLabelIf: s32'dea', Mem(ObjReg0)
     sprite: s32'nie309_09', 3
     attackEndDelay: 
-    sendSignalToAction: s32'nie_309_BloodEff', 23
+    sendSignalToAction: s32'nie_309_BloodEff', (SIGNAL_A)
     sprite: s32'nie309_10', 3
     sprite: s32'nie309_11', 3
     sprite: s32'nie309_12', 3
@@ -5319,7 +5319,7 @@ beginState: s32'BackThrowExe'
     exitState: 
     beginLabel: s32'dea'
     sprite: s32'nie309_26', 3
-    sendSignalToAction: s32'nie_309_BloodDEff', 23
+    sendSignalToAction: s32'nie_309_BloodDEff', (SIGNAL_A)
     sprite: s32'nie309_27', 2
     sprite: s32'nie309_27', 1
     grabOrRelease: 
@@ -5332,7 +5332,7 @@ beginState: s32'BackThrowExe'
             storeValue: Mem(ActReg0), Val(0)
             modifyVar: (ADD), Mem(ActReg1), Val(1)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(5)
-                sendSignalToAction: s32'dea309', 23
+                sendSignalToAction: s32'dea309', (SIGNAL_A)
                 clearUpon: (FRAME_STEP)
                 hitstop: 3
                 nextHitActionName: s32''
@@ -5381,7 +5381,7 @@ beginState: s32'NmlAtkAirThrow'
     sprite: s32'nie302_01', 2
     sprite: s32'nie302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'nie302_03', 3
     attackEndDelay: 
@@ -5503,9 +5503,9 @@ beginState: s32'AirThrowExe'
     exPointFReset: (PLAYER), 20000, 30000
     Unknown540: 130, 100, 0
     sendSignalToAction: s32'nie_303_SphereAuraEff', 24
-    sendSignalToAction: s32'nie_303_SphereNokoshiEff', 23
+    sendSignalToAction: s32'nie_303_SphereNokoshiEff', (SIGNAL_A)
     sprite: s32'nie303_05', 3
-    sendSignalToAction: s32'nie_303_EnshutuCamera', 23
+    sendSignalToAction: s32'nie_303_EnshutuCamera', (SIGNAL_A)
     exPointFReset: (PLAYER), 20000, -70000
     Unknown540: 130, 100, 0
     physicsYImpulse: -15000
@@ -5535,15 +5535,15 @@ beginState: s32'AirThrowExe'
     attackLockKeep: 0
     killType: (NORMAL)
     nextHitActionName: s32''
-    sendSignalToAction: s32'nie_303_SphereAuraEff', 23
+    sendSignalToAction: s32'nie_303_SphereAuraEff', (SIGNAL_A)
     sendSignalToAction: s32'nie_303_SphereNokoshiEff', 24
     if: Mem(ObjReg0)
         spriteTimeAdd: 120
         attackLockKeep: 1
         killType: (NOT_KILL)
         nextHitActionName: s32'AirThrowExe'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'dea'
         endUpon: 
     endIf: 
@@ -5815,9 +5815,9 @@ beginSubroutine: s32'Input_236A'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea401_A', 0
+                    pawnAnimation: 4, s32'dea401_A', 0
                 endElse: 
-                Unknown1921: 0, 10
+                skillCooldown: 0, 10
                 Unknown1923: 0
                 callSubroutine: s32'AddFlexChain_623'
                 callSubroutine: s32'AddFlexChain_214'
@@ -5857,9 +5857,9 @@ beginSubroutine: s32'Input_236B'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea401_B', 0
+                    pawnAnimation: 4, s32'dea401_B', 0
                 endElse: 
-                Unknown1921: 0, 10
+                skillCooldown: 0, 10
                 Unknown1923: 0
                 callSubroutine: s32'AddFlexChain_623'
                 callSubroutine: s32'AddFlexChain_214'
@@ -5900,9 +5900,9 @@ beginSubroutine: s32'Input_236C'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea401_C', 0
+                    pawnAnimation: 4, s32'dea401_C', 0
                 endElse: 
-                Unknown1921: 0, 10
+                skillCooldown: 0, 10
                 Unknown1923: 0
                 callSubroutine: s32'AddFlexChain_623'
                 callSubroutine: s32'AddFlexChain_214'
@@ -5941,9 +5941,9 @@ beginSubroutine: s32'Input_623A'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea404_A', 0
+                    pawnAnimation: 4, s32'dea404_A', 0
                 endElse: 
-                Unknown1921: 1, 10
+                skillCooldown: 1, 10
                 Unknown1923: 1
                 callSubroutine: s32'AddFlexChain_236'
                 callSubroutine: s32'AddFlexChain_214'
@@ -5982,9 +5982,9 @@ beginSubroutine: s32'Input_623B'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea404_B', 0
+                    pawnAnimation: 4, s32'dea404_B', 0
                 endElse: 
-                Unknown1921: 1, 10
+                skillCooldown: 1, 10
                 Unknown1923: 1
                 callSubroutine: s32'AddFlexChain_236'
                 callSubroutine: s32'AddFlexChain_214'
@@ -6024,9 +6024,9 @@ beginSubroutine: s32'Input_623C'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea404_C', 0
+                    pawnAnimation: 4, s32'dea404_C', 0
                 endElse: 
-                Unknown1921: 1, 10
+                skillCooldown: 1, 10
                 Unknown1923: 1
                 callSubroutine: s32'AddFlexChain_236'
                 callSubroutine: s32'AddFlexChain_214'
@@ -6065,9 +6065,9 @@ beginSubroutine: s32'Input_214A'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea402_A', 0
+                    pawnAnimation: 4, s32'dea402_A', 0
                 endElse: 
-                Unknown1921: 3, 10
+                skillCooldown: 3, 10
                 Unknown1923: 3
                 callSubroutine: s32'AddFlexChain_236'
                 callSubroutine: s32'AddFlexChain_623'
@@ -6106,9 +6106,9 @@ beginSubroutine: s32'Input_214B'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea402_B', 0
+                    pawnAnimation: 4, s32'dea402_B', 0
                 endElse: 
-                Unknown1921: 3, 10
+                skillCooldown: 3, 10
                 Unknown1923: 3
                 callSubroutine: s32'AddFlexChain_236'
                 callSubroutine: s32'AddFlexChain_623'
@@ -6148,9 +6148,9 @@ beginSubroutine: s32'Input_214C'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea402_C', 0
+                    pawnAnimation: 4, s32'dea402_C', 0
                 endElse: 
-                Unknown1921: 3, 10
+                skillCooldown: 3, 10
                 Unknown1923: 3
                 callSubroutine: s32'AddFlexChain_236'
                 callSubroutine: s32'AddFlexChain_623'
@@ -6189,9 +6189,9 @@ beginSubroutine: s32'Input_22A'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea406_A', 0
+                    pawnAnimation: 4, s32'dea406_A', 0
                 endElse: 
-                Unknown1921: 2, 10
+                skillCooldown: 2, 10
                 Unknown1923: 2
                 callSubroutine: s32'AddFlexChain_236'
                 callSubroutine: s32'AddFlexChain_623'
@@ -6230,9 +6230,9 @@ beginSubroutine: s32'Input_22B'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea406_B', 0
+                    pawnAnimation: 4, s32'dea406_B', 0
                 endElse: 
-                Unknown1921: 2, 10
+                skillCooldown: 2, 10
                 Unknown1923: 2
                 callSubroutine: s32'AddFlexChain_236'
                 callSubroutine: s32'AddFlexChain_623'
@@ -6272,9 +6272,9 @@ beginSubroutine: s32'Input_22C'
                     stackObject: (STACK0), (PREVIOUS)
                 endIf: 
                 else: 
-                    Unknown2035: 4, s32'dea406_C', 0
+                    pawnAnimation: 4, s32'dea406_C', 0
                 endElse: 
-                Unknown1921: 2, 10
+                skillCooldown: 2, 10
                 Unknown1923: 2
                 callSubroutine: s32'AddFlexChain_236'
                 callSubroutine: s32'AddFlexChain_623'
@@ -6308,7 +6308,7 @@ beginState: s32'SpecialMultiAttack_A'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea401_A', 0
+        pawnAnimation: 4, s32'dea401_A', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     callSubroutine: s32'Test_Icon_LM'
@@ -6334,13 +6334,13 @@ beginState: s32'SpecialMultiAttack_A'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6360,7 +6360,7 @@ beginState: s32'SpecialMultiAttack_B'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea401_B', 0
+        pawnAnimation: 4, s32'dea401_B', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     callSubroutine: s32'Test_Icon_LM'
@@ -6386,13 +6386,13 @@ beginState: s32'SpecialMultiAttack_B'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6412,7 +6412,7 @@ beginState: s32'SpecialMultiAttack_C'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea401_C', 0
+        pawnAnimation: 4, s32'dea401_C', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     modifyVar: (ADD), Mem(ExGage0), Val(-1)
@@ -6439,13 +6439,13 @@ beginState: s32'SpecialMultiAttack_C'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6465,7 +6465,7 @@ beginState: s32'SpecialMultiAttack_D'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea401_D', 0
+        pawnAnimation: 4, s32'dea401_D', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     modifyVar: (ADD), Mem(ExGage0), Val(-1)
@@ -6483,13 +6483,13 @@ beginState: s32'SpecialMultiAttack_D'
     sprite: s32'nie400_09', 4
     sprite: s32'nie400_14', 4
     attackEndDelay: 
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6530,7 +6530,7 @@ beginState: s32'AntiAir_A'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea404_A', 0
+        pawnAnimation: 4, s32'dea404_A', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     callSubroutine: s32'Test_Icon_LM'
@@ -6556,13 +6556,13 @@ beginState: s32'AntiAir_A'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6582,7 +6582,7 @@ beginState: s32'AntiAir_B'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea404_B', 0
+        pawnAnimation: 4, s32'dea404_B', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     callSubroutine: s32'Test_Icon_LM'
@@ -6608,13 +6608,13 @@ beginState: s32'AntiAir_B'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6634,7 +6634,7 @@ beginState: s32'AntiAir_C'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea404_C', 0
+        pawnAnimation: 4, s32'dea404_C', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     modifyVar: (ADD), Mem(ExGage0), Val(-1)
@@ -6661,13 +6661,13 @@ beginState: s32'AntiAir_C'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6686,8 +6686,8 @@ beginState: s32'AntiAir_D'
             endIf: 
         endUpon: 
         attackIgnoreCaution: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             clearUpon: (FRAME_STEP)
             invulnForce: 1
             upon: (FRAME_STEP)
@@ -6744,7 +6744,7 @@ beginState: s32'AntiAir_D'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea404_D', 0
+        pawnAnimation: 4, s32'dea404_D', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     modifyVar: (ADD), Mem(ExGage0), Val(-1)
@@ -6770,13 +6770,13 @@ beginState: s32'AntiAir_D'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6800,7 +6800,7 @@ beginState: s32'Assault_A'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea402_A', 0
+        pawnAnimation: 4, s32'dea402_A', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     callSubroutine: s32'Test_Icon_LM'
@@ -6826,13 +6826,13 @@ beginState: s32'Assault_A'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6852,7 +6852,7 @@ beginState: s32'Assault_B'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea402_B', 0
+        pawnAnimation: 4, s32'dea402_B', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     callSubroutine: s32'Test_Icon_LM'
@@ -6878,13 +6878,13 @@ beginState: s32'Assault_B'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6904,7 +6904,7 @@ beginState: s32'Assault_C'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea402_C', 0
+        pawnAnimation: 4, s32'dea402_C', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     modifyVar: (ADD), Mem(ExGage0), Val(-1)
@@ -6931,13 +6931,13 @@ beginState: s32'Assault_C'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -6957,7 +6957,7 @@ beginState: s32'Assault_D'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea402_D', 0
+        pawnAnimation: 4, s32'dea402_D', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     modifyVar: (ADD), Mem(ExGage0), Val(-1)
@@ -6979,13 +6979,13 @@ beginState: s32'Assault_D'
     sprite: s32'nie400_13', 2
     sprite: s32'nie400_14', 4
     attackEndDelay: 
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -7005,7 +7005,7 @@ beginState: s32'SpecialAttack_A'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea406_A', 0
+        pawnAnimation: 4, s32'dea406_A', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     callSubroutine: s32'Test_Icon_LM'
@@ -7031,13 +7031,13 @@ beginState: s32'SpecialAttack_A'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -7057,7 +7057,7 @@ beginState: s32'SpecialAttack_B'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea406_B', 0
+        pawnAnimation: 4, s32'dea406_B', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     callSubroutine: s32'Test_Icon_LM'
@@ -7083,13 +7083,13 @@ beginState: s32'SpecialAttack_B'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -7109,7 +7109,7 @@ beginState: s32'SpecialAttack_C'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea406_C', 0
+        pawnAnimation: 4, s32'dea406_C', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     modifyVar: (ADD), Mem(ExGage0), Val(-1)
@@ -7136,13 +7136,13 @@ beginState: s32'SpecialAttack_C'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'nie400_14', 4
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -7162,7 +7162,7 @@ beginState: s32'SpecialAttack_D'
         stackObject: (STACK0), (PREVIOUS)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea406_D', 0
+        pawnAnimation: 4, s32'dea406_D', 0
     endElse: 
     callSubroutine: s32'CreateCard'
     modifyVar: (ADD), Mem(ExGage0), Val(-1)
@@ -7181,13 +7181,13 @@ beginState: s32'SpecialAttack_D'
     sprite: s32'nie400_10', 4
     sprite: s32'nie400_14', 4
     attackEndDelay: 
-    sendSignalToAction: s32'nie_400_JewelRayEff', 23
+    sendSignalToAction: s32'nie_400_JewelRayEff', (SIGNAL_A)
     sprite: s32'nie400_15', 4
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'nie400_16', 3
     sprite: s32'nie400_16', 1
-    sendSignalToAction: s32'nie_400_CardEff', 23
-    sendSignalToAction: s32'nie_400_Card2PEff', 23
+    sendSignalToAction: s32'nie_400_CardEff', (SIGNAL_A)
+    sendSignalToAction: s32'nie_400_Card2PEff', (SIGNAL_A)
     sprite: s32'nie400_17', 4
     callSubroutine: s32'cmnNandemoCancel'
 endState: 
@@ -7196,8 +7196,8 @@ beginState: s32'nie_Ougi'
     upon: (IMMEDIATE)
         attackIgnoreCaution: 1
         pauseTimer: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Hit'
         endUpon: 
         upon: 24
@@ -7212,7 +7212,7 @@ beginState: s32'nie_Ougi'
     sprite: s32'nie430_01', 2
     isObjectActive: (STACK0)
     if: Mem(Tmp)
-        Unknown2035: 4, s32'Ougi_Pre', 0
+        pawnAnimation: 4, s32'Ougi_Pre', 0
     endIf: 
     sprite: s32'nie430_02', 2
     sprite: s32'keep', 1
@@ -7305,7 +7305,7 @@ beginState: s32'nie_Ougi'
         createObject: s32'dea430', (PLAYER)
     endIf: 
     else: 
-        Unknown2035: 4, s32'dea430', 0
+        pawnAnimation: 4, s32'dea430', 0
     endElse: 
     sprite: s32'nie430_03', 3
     callSubroutine: s32'cmnOugi_WLDSTP_End'
@@ -7538,7 +7538,7 @@ beginState: s32'nie_Kaihou'
     sprite: s32'nie440_01', 1
     isObjectActive: (STACK0)
     if: Mem(Tmp)
-        Unknown2035: 4, s32'Ougi_Pre', 0
+        pawnAnimation: 4, s32'Ougi_Pre', 0
     endIf: 
     sprite: s32'nie440_02', 3
     sprite: s32'nie440_03', 3
@@ -7561,7 +7561,7 @@ beginState: s32'nie_Kaihou'
         hideAllButSelf: 1
         swapMeshSet: s32'high'
         storeValue: Mem(PlayerVal298), Val(1)
-        sendSignalToAction: s32'death_Stand', 23
+        sendSignalToAction: s32'death_Stand', (SIGNAL_A)
         deactivateObjectById: (STACK0)
         playAnimation: s32'nie440cs', 0
         playCameraAnimation: s32'nie440cs', 23, 0, 0
@@ -7671,8 +7671,8 @@ beginState: s32'nie_Kaihou'
             endIf: 
         endUpon: 
     endIf: 
-    upon: 23
-        clearUpon: 23
+    upon: (SIGNAL_A)
+        clearUpon: (SIGNAL_A)
         clearUpon: (FRAME_STEP)
         invulnForce: 1
         storeValue: Mem(ActReg1), Val(1)

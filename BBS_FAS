@@ -1927,17 +1927,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'SubLove_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SubLove_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SubLove_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SubLove_D'
@@ -1948,17 +1948,17 @@ beginSubroutine: s32'AbilityCoolDown_N'
     endIf: 
     checkCurrentStateName: (SELF), s32'AirSubLove_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'AirSubLove_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'AirSubLove_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'AirSubLove_D'
@@ -1972,17 +1972,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'LoveHeadbad_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'LoveHeadbad_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'LoveHeadbad_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'LoveHeadbad_D'
@@ -1999,17 +1999,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -2023,17 +2023,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Lariat_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Lariat_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Lariat_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Lariat_D'
@@ -2532,7 +2532,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2748,7 +2748,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2956,7 +2956,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
         endIf: 
         ifOnFrame: Val(255)
             cmnSfx: s32'SE_BTL_Motion_2'
-            sendSignalToAction: s32'FAS_443_CS_CameraFlash', 23
+            sendSignalToAction: s32'FAS_443_CS_CameraFlash', (SIGNAL_A)
         endIf: 
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(308)
             if: Mem(ActReg0)
@@ -3570,7 +3570,7 @@ beginState: s32'NmlAtk2C'
     groundHitEffect: (AIR_FACE_UP)
     physicsXImpulse: 15000
     velocityXPercentEachFrame: 90
-    sendSignalToAction: s32'FAS_232_StrikeEff', 23
+    sendSignalToAction: s32'FAS_232_StrikeEff', (SIGNAL_A)
     sprite: s32'fas232_06', 2
     attackEndDelay: 
     sprite: s32'fas232_07', 3
@@ -4182,7 +4182,7 @@ beginState: s32'ThrowExe'
     hit: 
     cameraShake: s32'ShakeTate', 2000, 0, 10, 0
     createObject: s32'FAS_301_ShockEff', (PLAYER)
-    sendSignalToAction: s32'FAS_301_EnshutuCamera', 23
+    sendSignalToAction: s32'FAS_301_EnshutuCamera', (SIGNAL_A)
     sprite: s32'fas301_08', 14
     sprite: s32'fas301_09', 3
     sprite: s32'fas301_10', 3
@@ -4305,7 +4305,7 @@ beginState: s32'BackThrowExe'
     Unknown540: 0, 116, 0
     createObject: s32'FAS_309_line01_all', (CENTER)
     sprite: s32'fas309_09', 1
-    sendSignalToAction: s32'FAS_309_EnshutuCamera', 23
+    sendSignalToAction: s32'FAS_309_EnshutuCamera', (SIGNAL_A)
     hit: 
     createObject: s32'FAS_309_shock01Eff', (PLAYER)
     Unknown538: 39
@@ -4354,7 +4354,7 @@ beginState: s32'NmlAtkAirThrow'
     sprite: s32'fas302_01', 2
     sprite: s32'fas302_02', 5
     createObject: s32'FAS_302_StrikeEff', (PLAYER)
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     hit: 
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'fas302_03', 3
@@ -4432,9 +4432,9 @@ beginState: s32'AirThrowExe'
     Unknown538: 39
     Unknown540: 0, 0, 0
     cameraShake: s32'ShakeTate', 2000, 0, 10, 0
-    sendSignalToAction: s32'FAS_303_line01_all', 23
+    sendSignalToAction: s32'FAS_303_line01_all', (SIGNAL_A)
     createObject: s32'FAS_303_shock01Eff', (PLAYER)
-    sendSignalToAction: s32'FAS_303_EnshutuCamera', 23
+    sendSignalToAction: s32'FAS_303_EnshutuCamera', (SIGNAL_A)
     sprite: s32'fas303_07', 1
     grabOrRelease: 
     attackLevel: 0
@@ -4515,7 +4515,7 @@ beginState: s32'Lariat_A'
     sprite: s32'fas401_10', 2
     characterSfx: s32'fas_10'
     sprite: s32'fas401_11', 1
-    sendSignalToAction: s32'FAS_401_Eff', 23
+    sendSignalToAction: s32'FAS_401_Eff', (SIGNAL_A)
     deactivateObjectByName: s32'FAS_401_SPdashEff'
     hit: 
     blockstunAmount: 24
@@ -4593,7 +4593,7 @@ beginState: s32'Lariat_B'
     characterSfx: s32'fas_10'
     sprite: s32'fas401_11', 1
     hit: 
-    sendSignalToAction: s32'FAS_401_Eff', 23
+    sendSignalToAction: s32'FAS_401_Eff', (SIGNAL_A)
     deactivateObjectByName: s32'FAS_401_SPdashEff'
     blockstunAmount: 22
     sprite: s32'fas401_11', 1
@@ -4655,7 +4655,7 @@ beginState: s32'Lariat_C'
     characterSfx: s32'fas_10'
     sprite: s32'fas401_11', 1
     hit: 
-    sendSignalToAction: s32'FAS_401_Eff', 23
+    sendSignalToAction: s32'FAS_401_Eff', (SIGNAL_A)
     deactivateObjectByName: s32'FAS_401_SPdashEff'
     blockstunAmount: 31
     sprite: s32'fas401_11', 1
@@ -4738,7 +4738,7 @@ beginState: s32'Lariat_D'
     characterSfx: s32'fas_10'
     sprite: s32'fas401_11ex01', 1
     hit: 
-    sendSignalToAction: s32'FAS_401_EffD', 23
+    sendSignalToAction: s32'FAS_401_EffD', (SIGNAL_A)
     deactivateObjectByName: s32'FAS_401_SPdashEff'
     blockstunAmount: 40
     timeSlow: 0
@@ -5982,7 +5982,7 @@ beginState: s32'SubLoveExe++'
     createObject: s32'FAS_405_GroundCrack', (PLAYER)
     characterSfx: s32'fas_02'
     characterSfx: s32'fas_00'
-    sendSignalToAction: s32'FAS_405_EnshutuCamera', 23
+    sendSignalToAction: s32'FAS_405_EnshutuCamera', (SIGNAL_A)
     exPointFReset: (PLAYER_LAND), 200000, 0
     Unknown538: 53
     Unknown540: 0, 0, 2
@@ -6055,7 +6055,7 @@ beginState: s32'AirSubLove_A'
     if: Mem(BattleDoing)
         hit: 
     endIf: 
-    Unknown1819: 15, 1
+    landingRecovery: 15, 1
     sprite: s32'fas406_03', 4
     attackEndDelay: 
     storeValue: Mem(ObjReg4), Val(0)
@@ -6101,7 +6101,7 @@ beginState: s32'AirSubLove_B'
     if: Mem(BattleDoing)
         hit: 
     endIf: 
-    Unknown1819: 15, 1
+    landingRecovery: 15, 1
     sprite: s32'fas406_03', 4
     attackEndDelay: 
     storeValue: Mem(ObjReg4), Val(0)
@@ -6145,7 +6145,7 @@ beginState: s32'AirSubLove_C'
     if: Mem(BattleDoing)
         hit: 
     endIf: 
-    Unknown1819: 15, 1
+    landingRecovery: 15, 1
     sprite: s32'fas406_03', 4
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
@@ -6220,7 +6220,7 @@ beginState: s32'AirSubLove_D'
         hit: 
     endIf: 
     timeSlow: 0
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     clearUpon: (FRAME_STEP)
     sprite: s32'fas406_03', 3
     attackEndDelay: 
@@ -7330,7 +7330,7 @@ beginState: s32'AntiAirExe'
     characterSfx: s32'fas_10'
     sprite: s32'fas401_11', 3
     hit: 
-    sendSignalToAction: s32'FAS_401_Eff', 23
+    sendSignalToAction: s32'FAS_401_Eff', (SIGNAL_A)
     callSubroutine: s32'cmnSpecialAtkLv5_AtkInit'
     damage: 2000
     groundHitEffect: (KIRIMOMI)
@@ -7409,7 +7409,7 @@ beginState: s32'AntiAirExe'
     clearUpon: 4
     velocityYPercentEachFrame: 90
     gravityPercent: 50
-    sendSignalToAction: s32'FAS_412_SpinEff', 23
+    sendSignalToAction: s32'FAS_412_SpinEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     sprite: s32'fas412_10', 3
     sprite: s32'fas412_11', 6
@@ -7426,8 +7426,8 @@ beginState: s32'AntiAirExe'
     beginLabel: s32'Landing'
     sprite: s32'fas412_18', 3
     hit: 
-    sendSignalToAction: s32'FAS_412_BakeEff', 23
-    sendSignalToAction: s32'FAS_412_LineEff', 23
+    sendSignalToAction: s32'FAS_412_BakeEff', (SIGNAL_A)
+    sendSignalToAction: s32'FAS_412_LineEff', (SIGNAL_A)
     createObject: s32'FAS_412_ShockEff', (PLAYER)
     characterSfx: s32'fas_02'
     callSubroutine: s32'cmnSpecialAtkLv5_AtkInit'
@@ -7445,7 +7445,7 @@ beginState: s32'AntiAirExe'
     if: Mem(ObjReg4)
         addValToDamage: 0, 500
     endIf: 
-    sendSignalToAction: s32'FAS_412_EnshutuCamera', 23
+    sendSignalToAction: s32'FAS_412_EnshutuCamera', (SIGNAL_A)
     noFinishCamera: 1
     Unknown2318: 0
     upon: 89
@@ -7870,7 +7870,7 @@ beginState: s32'LoveMaxB_ThrowExe'
     Unknown2172: 0, 100
     sprite: s32'fas401_11', 3
     hit: 
-    sendSignalToAction: s32'FAS_401_Eff', 23
+    sendSignalToAction: s32'FAS_401_Eff', (SIGNAL_A)
     callSubroutine: s32'cmnUltimateAtkLv5_AtkInit'
     damage: 2000
     groundHitEffect: (AIR_LAUNCH)
@@ -8263,7 +8263,7 @@ beginState: s32'Fas_KaihouExe'
             createObject: s32'FAS_440_CS_CameraFlash', (PLAYER)
         endIf: 
         ifOnFrame: Val(130)
-            sendSignalToAction: s32'FAS_440_CS_CameraFlash', 23
+            sendSignalToAction: s32'FAS_440_CS_CameraFlash', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(167)
             sendSignalToAction: s32'FAS_440_CS_CameraFlash', 24

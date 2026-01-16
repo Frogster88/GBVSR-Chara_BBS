@@ -2061,11 +2061,11 @@ beginSubroutine: s32'OnIdling'
         endElse: 
     endElse: 
     ifOperation: (IS_EQUAL), Mem(276), Val(60)
-        Unknown2035: 4, s32'NotBattleDoing', 0
-        Unknown2035: 5, s32'NotBattleDoing', 0
-        Unknown2035: 6, s32'NotBattleDoing', 0
-        Unknown2035: 7, s32'NotBattleDoing', 0
-        Unknown2035: 8, s32'NotBattleDoing', 0
+        pawnAnimation: 4, s32'NotBattleDoing', 0
+        pawnAnimation: 5, s32'NotBattleDoing', 0
+        pawnAnimation: 6, s32'NotBattleDoing', 0
+        pawnAnimation: 7, s32'NotBattleDoing', 0
+        pawnAnimation: 8, s32'NotBattleDoing', 0
     endIf: 
     endIf: 
 endSubroutine: 
@@ -2248,21 +2248,21 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'Firework_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
         Unknown1681: 
         modifyVar: (ADD), Mem(PlayerVal2), Val(1)
     endIf: 
     checkCurrentStateName: (SELF), s32'Firework_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
         Unknown1681: 
         modifyVar: (ADD), Mem(PlayerVal2), Val(1)
     endIf: 
     checkCurrentStateName: (SELF), s32'Firework_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
         modifyVar: (ADD), Mem(PlayerVal2), Val(1)
     endIf: 
@@ -2310,19 +2310,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'LongRange_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'LongRange_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'LongRange_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'LongRange_D'
@@ -2808,7 +2808,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3072,7 +3072,7 @@ beginState: s32'entry_1p03'
                         createObject: s32'vky_700_1p_Kira4', (PLAYER)
                     endIf: 
                     ifOnFrame: Val(244)
-                        sendSignalToAction: s32'vky_700_1p_BG1', 23
+                        sendSignalToAction: s32'vky_700_1p_BG1', (SIGNAL_A)
                     endIf: 
                     ifOnFrame: Val(248)
                         createObject: s32'vky_700_1p_Kira5', (PLAYER)
@@ -3173,7 +3173,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3563,14 +3563,14 @@ beginState: s32'CmnActEmotion'
     sprite: s32'vky307_11', 80
     smartRandomVoiceLine: s16'vVKY_EMO_00', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'vky307_11', 100
-    sendSignalToAction: s32'vkd307', 23
+    sendSignalToAction: s32'vkd307', (SIGNAL_A)
     sprite: s32'vky307_12', 6
     sendSignalToAction: s32'vkd307', 31
     sprite: s32'vky307_13', 6
     sprite: s32'vky307_14', 8
     sprite: s32'vky307_15', 4
     sprite: s32'vky307_16', 4
-    sendSignalToAction: s32'vkd307', 32
+    sendSignalToAction: s32'vkd307', (SIGNAL_B)
     sprite: s32'vky307_17', 4
     sprite: s32'vky307_18', 4
     sprite: s32'vky307_19', 4
@@ -4290,31 +4290,31 @@ beginSubroutine: s32'Func_ItemInit_Random'
                 storeValue: Mem(PlayerVal1), Val(0)
             endElse: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(1)
-                Unknown2035: 4, s32'Item01', 0
+                pawnAnimation: 4, s32'Item01', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
-                Unknown2035: 4, s32'Item02', 0
+                pawnAnimation: 4, s32'Item02', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
-                Unknown2035: 4, s32'Item03', 0
+                pawnAnimation: 4, s32'Item03', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(4)
-                Unknown2035: 4, s32'Item04', 0
+                pawnAnimation: 4, s32'Item04', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(5)
-                Unknown2035: 4, s32'Item05', 0
+                pawnAnimation: 4, s32'Item05', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(6)
-                Unknown2035: 4, s32'Item06', 0
+                pawnAnimation: 4, s32'Item06', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(7)
-                Unknown2035: 4, s32'Item07', 0
+                pawnAnimation: 4, s32'Item07', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(8)
-                Unknown2035: 4, s32'Item08', 0
+                pawnAnimation: 4, s32'Item08', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(9)
-                Unknown2035: 4, s32'Item09', 0
+                pawnAnimation: 4, s32'Item09', 0
             endIf: 
         endIf: 
     endIf: 
@@ -4327,34 +4327,34 @@ beginSubroutine: s32'Func_ItemInit_RandomFast'
         ifOperation: (MOD_EQUALS_2), Mem(ActReg0), Val(8)
             Unknown2197: 2, 52, 0, 1, 0, 10
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(1)
-                Unknown2035: 4, s32'Item01', 0
+                pawnAnimation: 4, s32'Item01', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
-                Unknown2035: 4, s32'Item02', 0
+                pawnAnimation: 4, s32'Item02', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
-                Unknown2035: 4, s32'Item03', 0
+                pawnAnimation: 4, s32'Item03', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(4)
-                Unknown2035: 4, s32'Item04', 0
+                pawnAnimation: 4, s32'Item04', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(5)
-                Unknown2035: 4, s32'Item05', 0
+                pawnAnimation: 4, s32'Item05', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(6)
-                Unknown2035: 4, s32'Item06', 0
+                pawnAnimation: 4, s32'Item06', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(7)
-                Unknown2035: 4, s32'Item07', 0
+                pawnAnimation: 4, s32'Item07', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(8)
-                Unknown2035: 4, s32'Item08', 0
+                pawnAnimation: 4, s32'Item08', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(9)
-                Unknown2035: 4, s32'Item09', 0
+                pawnAnimation: 4, s32'Item09', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(10)
-                Unknown2035: 4, s32'Item01', 0
+                pawnAnimation: 4, s32'Item01', 0
                 storeValue: Mem(ActReg7), Val(1)
             endIf: 
         endIf: 
@@ -4368,34 +4368,34 @@ beginSubroutine: s32'Func_ItemInit_FixedSlow'
         ifOperation: (MOD_EQUALS_2), Mem(ActReg0), Val(30)
             modifyVar: (ADD), Mem(ActReg7), Val(1)
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(1)
-                Unknown2035: 4, s32'Item01', 0
+                pawnAnimation: 4, s32'Item01', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
-                Unknown2035: 4, s32'Item02', 0
+                pawnAnimation: 4, s32'Item02', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
-                Unknown2035: 4, s32'Item03', 0
+                pawnAnimation: 4, s32'Item03', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(4)
-                Unknown2035: 4, s32'Item04', 0
+                pawnAnimation: 4, s32'Item04', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(5)
-                Unknown2035: 4, s32'Item05', 0
+                pawnAnimation: 4, s32'Item05', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(6)
-                Unknown2035: 4, s32'Item06', 0
+                pawnAnimation: 4, s32'Item06', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(7)
-                Unknown2035: 4, s32'Item07', 0
+                pawnAnimation: 4, s32'Item07', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(8)
-                Unknown2035: 4, s32'Item08', 0
+                pawnAnimation: 4, s32'Item08', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(9)
-                Unknown2035: 4, s32'Item09', 0
+                pawnAnimation: 4, s32'Item09', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(10)
-                Unknown2035: 4, s32'Item01', 0
+                pawnAnimation: 4, s32'Item01', 0
                 storeValue: Mem(ActReg7), Val(1)
             endIf: 
         endIf: 
@@ -4409,34 +4409,34 @@ beginSubroutine: s32'Func_ItemInit_FixedFast'
         ifOperation: (MOD_EQUALS_2), Mem(ActReg0), Val(8)
             modifyVar: (ADD), Mem(ActReg7), Val(1)
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(1)
-                Unknown2035: 4, s32'Item01', 0
+                pawnAnimation: 4, s32'Item01', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
-                Unknown2035: 4, s32'Item02', 0
+                pawnAnimation: 4, s32'Item02', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
-                Unknown2035: 4, s32'Item03', 0
+                pawnAnimation: 4, s32'Item03', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(4)
-                Unknown2035: 4, s32'Item04', 0
+                pawnAnimation: 4, s32'Item04', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(5)
-                Unknown2035: 4, s32'Item05', 0
+                pawnAnimation: 4, s32'Item05', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(6)
-                Unknown2035: 4, s32'Item06', 0
+                pawnAnimation: 4, s32'Item06', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(7)
-                Unknown2035: 4, s32'Item07', 0
+                pawnAnimation: 4, s32'Item07', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(8)
-                Unknown2035: 4, s32'Item08', 0
+                pawnAnimation: 4, s32'Item08', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(9)
-                Unknown2035: 4, s32'Item09', 0
+                pawnAnimation: 4, s32'Item09', 0
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(10)
-                Unknown2035: 4, s32'Item01', 0
+                pawnAnimation: 4, s32'Item01', 0
                 storeValue: Mem(ActReg7), Val(1)
             endIf: 
         endIf: 
@@ -4447,43 +4447,43 @@ endSubroutine:
 beginSubroutine: s32'Func_ItemInit_SelectRandom'
     if: Mem(ActReg0)
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(1)
-            Unknown2035: 4, s32'Item01', 0
+            pawnAnimation: 4, s32'Item01', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
-            Unknown2035: 4, s32'Item02', 0
+            pawnAnimation: 4, s32'Item02', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
-            Unknown2035: 4, s32'Item03', 0
+            pawnAnimation: 4, s32'Item03', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(4)
-            Unknown2035: 4, s32'Item04', 0
+            pawnAnimation: 4, s32'Item04', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(5)
-            Unknown2035: 4, s32'Item05', 0
+            pawnAnimation: 4, s32'Item05', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(6)
-            Unknown2035: 4, s32'Item06', 0
+            pawnAnimation: 4, s32'Item06', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(7)
-            Unknown2035: 4, s32'Item07', 0
+            pawnAnimation: 4, s32'Item07', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(8)
-            Unknown2035: 4, s32'Item08', 0
+            pawnAnimation: 4, s32'Item08', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(9)
-            Unknown2035: 4, s32'Item09', 0
+            pawnAnimation: 4, s32'Item09', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(10)
-            Unknown2035: 4, s32'Item01', 0
+            pawnAnimation: 4, s32'Item01', 0
             storeValue: Mem(ActReg7), Val(1)
         endIf: 
     endIf: 
@@ -4505,43 +4505,43 @@ endSubroutine:
 beginSubroutine: s32'Func_ItemInit_SelectFixed'
     if: Mem(ActReg0)
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(1)
-            Unknown2035: 4, s32'Item01', 0
+            pawnAnimation: 4, s32'Item01', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
-            Unknown2035: 4, s32'Item02', 0
+            pawnAnimation: 4, s32'Item02', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
-            Unknown2035: 4, s32'Item03', 0
+            pawnAnimation: 4, s32'Item03', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(4)
-            Unknown2035: 4, s32'Item04', 0
+            pawnAnimation: 4, s32'Item04', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(5)
-            Unknown2035: 4, s32'Item05', 0
+            pawnAnimation: 4, s32'Item05', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(6)
-            Unknown2035: 4, s32'Item06', 0
+            pawnAnimation: 4, s32'Item06', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(7)
-            Unknown2035: 4, s32'Item07', 0
+            pawnAnimation: 4, s32'Item07', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(8)
-            Unknown2035: 4, s32'Item08', 0
+            pawnAnimation: 4, s32'Item08', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(9)
-            Unknown2035: 4, s32'Item09', 0
+            pawnAnimation: 4, s32'Item09', 0
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg7), Val(10)
-            Unknown2035: 4, s32'Item01', 0
+            pawnAnimation: 4, s32'Item01', 0
             storeValue: Mem(ActReg7), Val(1)
         endIf: 
     endIf: 
@@ -4617,7 +4617,7 @@ beginState: s32'NmlAtk5D'
     beginLabel: s32'Shot'
     sprite: s32'vky208_05', 2
     clearUpon: (FRAME_STEP)
-    sendSignalToAction: s32'vky_208_ItemEff', 32
+    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
     callSubroutine: s32'Func_ItemShot'
     sprite: s32'vky208_06', 1
     smartRandomVoiceLine: s16'vVKY_ATKAby_01', 100, s16'vVKY_ATKAby_02', 100, s16'vVKY_ATKAby_03', 100, s16'', 0
@@ -4650,7 +4650,7 @@ beginState: s32'NmlAtk5D'
     beginLabel: s32'End'
     sprite: s32'keep', 4
     clearUpon: (FRAME_STEP)
-    sendSignalToAction: s32'vky_208_ItemEff', 32
+    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
     attackEndDelay: 
     sprite: s32'vky208_19', 4
     sprite: s32'vky208_20', 4
@@ -4686,7 +4686,7 @@ beginState: s32'NmlAtk5D_ChainOnly'
     endIf: 
     createObjectWithArg: s32'Item01_ShotAtk', (PLAYER)
     stackObject: (STACK0), (PREVIOUS)
-    Unknown2035: 1, s32'NoBound', 0
+    pawnAnimation: 1, s32'NoBound', 0
     sprite: s32'vky208_06', 2
     smartRandomVoiceLine: s16'vVKY_ATKAby_01', 100, s16'vVKY_ATKAby_02', 100, s16'vVKY_ATKAby_03', 100, s16'', 0
     sprite: s32'vky208_07', 2
@@ -4734,7 +4734,7 @@ beginState: s32'NmlAtk5D_ChainOnly2'
     endIf: 
     createObjectWithArg: s32'Item01_ShotAtk', (PLAYER)
     stackObject: (STACK0), (PREVIOUS)
-    Unknown2035: 1, s32'NoBound', 0
+    pawnAnimation: 1, s32'NoBound', 0
     sprite: s32'vky208_06', 2
     smartRandomVoiceLine: s16'vVKY_ATKAby_01', 100, s16'vVKY_ATKAby_02', 100, s16'vVKY_ATKAby_03', 100, s16'', 0
     sprite: s32'vky208_07', 2
@@ -5034,7 +5034,7 @@ beginState: s32'NmlAtkAir5D'
     haltMomentum: 1
     physicsYImpulse: -1000
     velocityYPercentEachFrame: 102
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     characterSfx: s32'vky_03'
     smartRandomVoiceLine: s16'vVKY_ATKAby_00', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'vky253_02', 8
@@ -5051,9 +5051,9 @@ beginState: s32'NmlAtkAir5D'
     sprite: s32'vky253_05', 2
     clearUpon: (FRAME_STEP)
     haltMomentum: 1
-    sendSignalToAction: s32'vky_208_ItemEff', 32
-    sendSignalToAction: s32'vky_253_CloudEff', 23
-    sendSignalToAction: s32'vky_253_CloudEff2', 23
+    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
+    sendSignalToAction: s32'vky_253_CloudEff', (SIGNAL_A)
+    sendSignalToAction: s32'vky_253_CloudEff2', (SIGNAL_A)
     callSubroutine: s32'Func_ItemShot'
     sprite: s32'vky253_06', 2
     smartRandomVoiceLine: s16'vVKY_ATKAby_01', 100, s16'vVKY_ATKAby_02', 100, s16'vVKY_ATKAby_03', 100, s16'', 0
@@ -5087,9 +5087,9 @@ beginState: s32'NmlAtkAir5D'
     beginLabel: s32'End'
     sprite: s32'vky253_19', 3
     clearUpon: (FRAME_STEP)
-    sendSignalToAction: s32'vky_208_ItemEff', 32
-    sendSignalToAction: s32'vky_253_CloudEff', 23
-    sendSignalToAction: s32'vky_253_CloudEff2', 23
+    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
+    sendSignalToAction: s32'vky_253_CloudEff', (SIGNAL_A)
+    sendSignalToAction: s32'vky_253_CloudEff2', (SIGNAL_A)
     attackEndDelay: 
     sprite: s32'vky253_20', 3
     sprite: s32'vky253_21', 3
@@ -5136,7 +5136,7 @@ beginState: s32'NmlAtkAir5D_ChainOnly'
     endIf: 
     createObjectWithArg: s32'Item01_ShotAtk', (PLAYER)
     stackObject: (STACK0), (PREVIOUS)
-    Unknown2035: 1, s32'NoBound', 0
+    pawnAnimation: 1, s32'NoBound', 0
     sprite: s32'vky253_06', 2
     smartRandomVoiceLine: s16'vVKY_ATKAby_01', 100, s16'vVKY_ATKAby_02', 100, s16'vVKY_ATKAby_03', 100, s16'', 0
     sprite: s32'vky253_07', 3
@@ -5159,9 +5159,9 @@ beginState: s32'NmlAtkAir5D_ChainOnly'
     beginLabel: s32'End'
     sprite: s32'vky253_19', 3
     clearUpon: (FRAME_STEP)
-    sendSignalToAction: s32'vky_208_ItemEff', 32
-    sendSignalToAction: s32'vky_253_CloudEff', 23
-    sendSignalToAction: s32'vky_253_CloudEff2', 23
+    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
+    sendSignalToAction: s32'vky_253_CloudEff', (SIGNAL_A)
+    sendSignalToAction: s32'vky_253_CloudEff2', (SIGNAL_A)
     attackEndDelay: 
     sprite: s32'vky253_20', 3
     resetGravity: 
@@ -5252,13 +5252,13 @@ beginState: s32'ThrowExe'
         callSubroutine: s32'StandBy_Photo'
     endRunOnObject: 
     characterSfx: s32'vky_14'
-    Unknown2035: 4, s32'NoDisp', 0
-    Unknown2035: 5, s32'NoDisp', 0
-    Unknown2035: 6, s32'NoDisp', 0
-    Unknown2035: 7, s32'NoDisp', 0
-    Unknown2035: 8, s32'NoDisp', 0
+    pawnAnimation: 4, s32'NoDisp', 0
+    pawnAnimation: 5, s32'NoDisp', 0
+    pawnAnimation: 6, s32'NoDisp', 0
+    pawnAnimation: 7, s32'NoDisp', 0
+    pawnAnimation: 8, s32'NoDisp', 0
     sendSignalToAction: s32'Item05_SmokeEff', 24
-    sendSignalToAction: s32'vkd301', 23
+    sendSignalToAction: s32'vkd301', (SIGNAL_A)
     addSlowdown: 1
     smartRandomVoiceLine: s16'vVKY_THWOK_00', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'vky301_05', 3
@@ -5276,12 +5276,12 @@ beginState: s32'ThrowExe'
     runOnObject: (ENEMY)
         callSubroutine: s32'StandBy_Photo2'
     endRunOnObject: 
-    sendSignalToAction: s32'vky_301_EnshutuCamera', 23
-    Unknown2035: 4, s32'ReDisp', 0
-    Unknown2035: 5, s32'ReDisp', 0
-    Unknown2035: 6, s32'ReDisp', 0
-    Unknown2035: 7, s32'ReDisp', 0
-    Unknown2035: 8, s32'ReDisp', 0
+    sendSignalToAction: s32'vky_301_EnshutuCamera', (SIGNAL_A)
+    pawnAnimation: 4, s32'ReDisp', 0
+    pawnAnimation: 5, s32'ReDisp', 0
+    pawnAnimation: 6, s32'ReDisp', 0
+    pawnAnimation: 7, s32'ReDisp', 0
+    pawnAnimation: 8, s32'ReDisp', 0
     sendSignalToAction: s32'Item05_SmokeEff', 25
     sendSignalToAction: s32'vkd301', 24
     addSlowdown: 0
@@ -5313,7 +5313,7 @@ beginState: s32'ThrowExe'
     attackLockKeep: 0
     Unknown1066: 0
     attackHitPositionType: 4, 180000, 1
-    sendSignalToAction: s32'vkh301', 23
+    sendSignalToAction: s32'vkh301', (SIGNAL_A)
     upon: 78
         clearUpon: 78
         runOnObject: (ENEMY)
@@ -5417,7 +5417,7 @@ beginState: s32'BackThrowExe'
     smartRandomVoiceLine: s16'vVKY_THWBKOK_00', 100, s16'vVKY_THWBKOK_01', 100, s16'', 0, s16'', 0
     sprite: s32'vky309_02', 3
     Unknown538: 44
-    sendSignalToAction: s32'vkn309', 23
+    sendSignalToAction: s32'vkn309', (SIGNAL_A)
     sprite: s32'vky309_03', 3
     Unknown538: 45
     sprite: s32'vky309_04', 3
@@ -5481,7 +5481,7 @@ beginState: s32'BackThrowExe'
     runOnObject: (ENEMY)
         zLine: 5, 1
     endRunOnObject: 
-    sendSignalToAction: s32'vkn309', 32
+    sendSignalToAction: s32'vkn309', (SIGNAL_B)
     sprite: s32'vky309_18', 3
 endState: 
 
@@ -5495,7 +5495,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'vky302_03', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'vky302_04', 3
     attackEndDelay: 
     sprite: s32'vky302_05', 3
@@ -5776,7 +5776,7 @@ beginState: s32'SpecialCannon_A'
     enableWhiffCancel: 1
     sprite: s32'vky400_13', 5
     enableWhiffCancel: 0
-    sendSignalToAction: s32'vky_208_ItemEff', 32
+    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
     sprite: s32'vky400_14', 3
     sprite: s32'vky400_15', 3
     sprite: s32'vky400_16', 3
@@ -5849,7 +5849,7 @@ beginState: s32'SpecialCannon_B'
     enableWhiffCancel: 1
     sprite: s32'vky400_13', 5
     enableWhiffCancel: 0
-    sendSignalToAction: s32'vky_208_ItemEff', 32
+    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
     sprite: s32'vky400_14', 3
     sprite: s32'vky400_15', 3
     sprite: s32'vky400_16', 3
@@ -5931,7 +5931,7 @@ beginState: s32'SpecialCannon_C'
     enableWhiffCancel: 1
     sprite: s32'vky400_13', 5
     enableWhiffCancel: 0
-    sendSignalToAction: s32'vky_208_ItemEff', 32
+    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'vky400_14', 3
     sprite: s32'vky400_15', 3
@@ -5960,7 +5960,7 @@ beginState: s32'SpecialCannon_D'
     sprite: s32'vky400_07', 2
     sprite: s32'vky400_08', 1
     sprite: s32'vky400_09', 3
-    sendSignalToAction: s32'SpecialCannon_CannonBig', 23
+    sendSignalToAction: s32'SpecialCannon_CannonBig', (SIGNAL_A)
     sprite: s32'vky400_10', 3
     sprite: s32'vky400_11', 3
     sprite: s32'vky400_12', 3
@@ -5984,7 +5984,7 @@ beginState: s32'SpecialCannon_D'
     sprite: s32'vky350_11', 2
     landingEffect: 100, 1, 1
     cameraShake: s32'ShakeTate', 1000, 0, 10, 0
-    sendSignalToAction: s32'SpecialCannon_CannonBig', 32
+    sendSignalToAction: s32'SpecialCannon_CannonBig', (SIGNAL_B)
     setInertia: -30000
     sprite: s32'vky350_12', 2
     sprite: s32'vky350_13', 2
@@ -6077,7 +6077,7 @@ beginState: s32'SpecialCannon_Add_Land'
         upon: (FRAME_STEP)
             ifNot: Mem(295)
                 ifOperation: (IS_EQUAL), Mem(ActionTime), Val(7)
-                    sendSignalToAction: s32'vky_208_ItemEff', 32
+                    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
                     ifNot: Mem(ActReg0)
                         callSubroutine: s32'Func_ItemShot'
                         Unknown1793: 4, 25
@@ -6130,7 +6130,7 @@ beginState: s32'SpecialCannon_Add_Air'
         upon: (FRAME_STEP)
             ifNot: Mem(295)
                 ifOperation: (IS_EQUAL), Mem(ActionTime), Val(7)
-                    sendSignalToAction: s32'vky_208_ItemEff', 32
+                    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
                     ifNot: Mem(ActReg0)
                         callSubroutine: s32'Func_ItemShot'
                         Unknown1793: 4, 27
@@ -6169,7 +6169,7 @@ beginState: s32'SpecialCannon_Add_Ex'
         upon: (FRAME_STEP)
             ifNot: Mem(295)
                 ifOperation: (IS_EQUAL), Mem(ActionTime), Val(7)
-                    sendSignalToAction: s32'vky_208_ItemEff', 32
+                    sendSignalToAction: s32'vky_208_ItemEff', (SIGNAL_B)
                     ifNot: Mem(ObjReg1)
                         callSubroutine: s32'Func_ItemShot'
                         Unknown1793: 4, 25
@@ -6225,7 +6225,7 @@ beginState: s32'SpecialCannonAir_A'
     sprite: s32'vky401_00', 3
     sprite: s32'vky401_01', 3
     haltMomentum: 1
-    Unknown1819: 10, 0
+    landingRecovery: 10, 0
     sprite: s32'vky401_02', 3
     smartRandomVoiceLine: s16'vVKY_ATKS_00', 100, s16'', 0, s16'', 0, s16'', 0
     upon: (FRAME_STEP)
@@ -6313,7 +6313,7 @@ beginState: s32'SpecialCannonAir_B'
     sprite: s32'vky401_00', 3
     sprite: s32'vky401_01', 3
     haltMomentum: 1
-    Unknown1819: 10, 0
+    landingRecovery: 10, 0
     sprite: s32'vky401_02', 3
     smartRandomVoiceLine: s16'vVKY_ATKS_01', 100, s16'', 0, s16'', 0, s16'', 0
     upon: (FRAME_STEP)
@@ -6401,7 +6401,7 @@ beginState: s32'SpecialCannonAir_C'
     sprite: s32'vky401_00', 3
     sprite: s32'vky401_01', 3
     haltMomentum: 1
-    Unknown1819: 10, 0
+    landingRecovery: 10, 0
     sprite: s32'vky401_02', 3
     smartRandomVoiceLine: s16'vVKY_ATKS_02', 100, s16'', 0, s16'', 0, s16'', 0
     upon: (FRAME_STEP)
@@ -6503,7 +6503,7 @@ beginState: s32'SpecialCannonAir_D'
     sprite: s32'vky401_07', 2
     sprite: s32'vky401_08', 1
     sprite: s32'vky401_09', 3
-    sendSignalToAction: s32'SpecialCannon_CannonAirBig', 23
+    sendSignalToAction: s32'SpecialCannon_CannonAirBig', (SIGNAL_A)
     sprite: s32'vky401_10', 3
     sprite: s32'vky401_11', 3
     sprite: s32'vky401_12', 3
@@ -6527,7 +6527,7 @@ beginState: s32'SpecialCannonAir_D'
     sprite: s32'vky350_11', 3
     landingEffect: 100, 1, 1
     cameraShake: s32'ShakeTate', 1000, 0, 10, 0
-    sendSignalToAction: s32'SpecialCannon_CannonAirBig', 32
+    sendSignalToAction: s32'SpecialCannon_CannonAirBig', (SIGNAL_B)
     sprite: s32'vky350_12', 3
     sprite: s32'vky350_13', 3
     sprite: s32'vky350_14', 3
@@ -6674,7 +6674,7 @@ beginState: s32'Firework_D'
         upon: 30
             clearUpon: 30
             clearUpon: 31
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             upon: (FRAME_STEP)
                 ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(10)
                     clearUpon: (FRAME_STEP)
@@ -6685,7 +6685,7 @@ beginState: s32'Firework_D'
         upon: 31
             clearUpon: 30
             clearUpon: 31
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             setNoCollision: 0
             upon: (FRAME_STEP)
                 ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(60)
@@ -6694,10 +6694,10 @@ beginState: s32'Firework_D'
                 endIf: 
             endUpon: 
         endUpon: 
-        upon: 32
+        upon: (SIGNAL_B)
             clearUpon: 30
             clearUpon: 31
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             upon: (FRAME_STEP)
                 ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(45)
                     clearUpon: (FRAME_STEP)
@@ -6745,7 +6745,7 @@ beginState: s32'Firework_D'
     beginLabel: s32'End'
     sprite: s32'vky403_14', 3
     clearUpon: 31
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     clearUpon: (FRAME_STEP)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'vky403_15', 3
@@ -6757,7 +6757,7 @@ beginState: s32'Firework_D'
     beginLabel: s32'LockEnd'
     sprite: s32'vky309_15', 6
     clearUpon: 31
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     clearUpon: (FRAME_STEP)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'vky309_16', 6
@@ -6782,8 +6782,8 @@ beginSubroutine: s32'LongRange_AtkInit'
     wallPushback: 0, 1800
     damageEffect: 2, s32'vky_SPHitEff'
     upon: (BEFORE_EXIT)
-        sendSignalToAction: s32'vkd405', 32
-        sendSignalToAction: s32'vky_406_TrailEff', 32
+        sendSignalToAction: s32'vkd405', (SIGNAL_B)
+        sendSignalToAction: s32'vky_406_TrailEff', (SIGNAL_B)
     endUpon: 
     upon: 8
         clearUpon: 8
@@ -6792,7 +6792,7 @@ beginSubroutine: s32'LongRange_AtkInit'
         linkObjectCollision: 0
         checkCurrentStateName: (SELF), s32'LongRange_B'
         if: Mem(Tmp)
-            sendSignalToAction: s32'vkd405', 23
+            sendSignalToAction: s32'vkd405', (SIGNAL_A)
             storeValue: Mem(ActReg0), Val(1)
         endIf: 
         checkCurrentStateName: (SELF), s32'LongRange_C'
@@ -6832,7 +6832,7 @@ beginState: s32'LongRange_A'
     attackEndDelay: 
     clearUpon: (BEFORE_EXIT)
     linkObjectCollision: 0
-    sendSignalToAction: s32'vkd405', 32
+    sendSignalToAction: s32'vkd405', (SIGNAL_B)
     sprite: s32'vky405_10', 3
     sprite: s32'vky405_11', 3
     sprite: s32'vky405_12', 3
@@ -6884,7 +6884,7 @@ beginState: s32'LongRange_B'
     attackEndDelay: 
     clearUpon: (BEFORE_EXIT)
     linkObjectCollision: 0
-    sendSignalToAction: s32'vkd405', 32
+    sendSignalToAction: s32'vkd405', (SIGNAL_B)
     if: Mem(ActReg0)
         spriteTimeAdd: 2
     endIf: 
@@ -6939,7 +6939,7 @@ beginState: s32'LongRange_C'
     attackEndDelay: 
     clearUpon: (BEFORE_EXIT)
     linkObjectCollision: 0
-    sendSignalToAction: s32'vkd405', 32
+    sendSignalToAction: s32'vkd405', (SIGNAL_B)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     if: Mem(ActReg0)
         spriteTimeAdd: 4
@@ -7010,9 +7010,9 @@ beginState: s32'LongRange_D'
             endIf: 
         endUpon: 
         upon: (BEFORE_EXIT)
-            sendSignalToAction: s32'vkd405', 32
-            sendSignalToAction: s32'vky_406_TrailEff_D', 32
-            sendSignalToAction: s32'vky_406_NksEff_Kira_U', 23
+            sendSignalToAction: s32'vkd405', (SIGNAL_B)
+            sendSignalToAction: s32'vky_406_TrailEff_D', (SIGNAL_B)
+            sendSignalToAction: s32'vky_406_NksEff_Kira_U', (SIGNAL_A)
         endUpon: 
         gotoLabelUpon: 86, s32'End'
         gotoLabelUpon: (HIT_OR_GUARD), s32'End'
@@ -7045,7 +7045,7 @@ beginState: s32'LongRange_D'
     ignorePushback: 1
     attackEndDelay: 
     linkObjectCollision: 0
-    sendSignalToAction: s32'vkd405', 32
+    sendSignalToAction: s32'vkd405', (SIGNAL_B)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     clearUpon: (HIT)
     clearUpon: 86
@@ -7099,7 +7099,7 @@ beginState: s32'LongRange_D_Exe'
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(680000)
         exPointFReset: (PLAYER), 680000, 0
         Unknown540: 130, 123, 0
-        sendSignalToAction: s32'vky_406_TrailEff_D', 23
+        sendSignalToAction: s32'vky_406_TrailEff_D', (SIGNAL_A)
     endIf: 
     else: 
         sendSignalToAction: s32'vky_406_TrailEff_D', 24
@@ -7123,8 +7123,8 @@ beginState: s32'LongRange_D_Exe'
     sprite: s32'vky405_08', 2
     sprite: s32'vky405_09', 2
     createObject: s32'vkd406_BokoSuka', (PLAYER)
-    sendSignalToAction: s32'vky_406_TrailEff_D', 32
-    sendSignalToAction: s32'vkd406', 32
+    sendSignalToAction: s32'vky_406_TrailEff_D', (SIGNAL_B)
+    sendSignalToAction: s32'vkd406', (SIGNAL_B)
     beginLabel: s32'Add'
     sprite: s32'vky406_00', 3
     sprite: s32'vky406_01', 3
@@ -7165,7 +7165,7 @@ beginState: s32'LongRange_D_Exe'
     sprite: s32'vky406_09', 6
     sprite: s32'vky406_10', 6
     sprite: s32'vky406_11', 6
-    sendSignalToAction: s32'vkn406', 32
+    sendSignalToAction: s32'vkn406', (SIGNAL_B)
     damageEffect: 2, s32'vky_SPHitEff'
     sprite: s32'vky406_12', 2
     clearUpon: (FRAME_STEP)
@@ -7176,7 +7176,7 @@ beginState: s32'LongRange_D_Exe'
     attackLockKeep: 0
     atkCameraShake: s32'ShakeTate', 2000, 0, 15, 15
     killType: (NORMAL)
-    sendSignalToAction: s32'vkd406_BokoSuka', 23
+    sendSignalToAction: s32'vkd406_BokoSuka', (SIGNAL_A)
     runOnObject: (ENEMY)
         Unknown2050: 1
     endRunOnObject: 
@@ -7574,11 +7574,11 @@ beginState: s32'vky_Ougi'
     upon: (FRAME_STEP)
         deactivateObjectById: (STACK0)
         deactivateObjectByName: s32'Item02_Bomb_Eff'
-        Unknown2035: 4, s32'NoDisp', 0
-        Unknown2035: 5, s32'NoDisp', 0
-        Unknown2035: 6, s32'NoDisp', 0
-        Unknown2035: 7, s32'NoDisp', 0
-        Unknown2035: 8, s32'NoDisp', 0
+        pawnAnimation: 4, s32'NoDisp', 0
+        pawnAnimation: 5, s32'NoDisp', 0
+        pawnAnimation: 6, s32'NoDisp', 0
+        pawnAnimation: 7, s32'NoDisp', 0
+        pawnAnimation: 8, s32'NoDisp', 0
         sendSignalToAction: s32'Item05_SmokeEff', 24
         ifOnFrame: Val(0)
             Unknown2858: 3000
@@ -7693,7 +7693,7 @@ beginState: s32'vky_Ougi'
     upon: 31
         storeValue: Mem(ActReg1), Val(100)
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         storeValue: Mem(ActReg1), Val(169)
     endUpon: 
     voiceLine: s16'vVKY_ATKO_00_c'
@@ -7714,13 +7714,13 @@ beginState: s32'vky_Ougi'
     endRunOnObject: 
     endIf: 
     sprite: s32'keep', 15
-    sendSignalToAction: s32'vky_430_EnshutuCamera2', 23
+    sendSignalToAction: s32'vky_430_EnshutuCamera2', (SIGNAL_A)
     fadeInStart: 10
-    Unknown2035: 4, s32'ReDisp', 0
-    Unknown2035: 5, s32'ReDisp', 0
-    Unknown2035: 6, s32'ReDisp', 0
-    Unknown2035: 7, s32'ReDisp', 0
-    Unknown2035: 8, s32'ReDisp', 0
+    pawnAnimation: 4, s32'ReDisp', 0
+    pawnAnimation: 5, s32'ReDisp', 0
+    pawnAnimation: 6, s32'ReDisp', 0
+    pawnAnimation: 7, s32'ReDisp', 0
+    pawnAnimation: 8, s32'ReDisp', 0
     sendSignalToAction: s32'Item05_SmokeEff', 25
     addSlowdown: 0
     sprite: s32'vky430_29', 4
@@ -7741,8 +7741,8 @@ beginState: s32'vky_Kaihou'
         damage: 0
         Unknown1206: 0x767878785F55444D475F30355F610000
         wallBounceDownOnly: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg2), Val(1)
             invulnForce: 1
         endUpon: 
@@ -7826,7 +7826,7 @@ beginState: s32'vky_Kaihou'
     deactivateObjectByName: s32'vkd440cs'
     sprite: s32'vky440_03', 2
     sprite: s32'vky440_04', 2
-    sendSignalToAction: s32'vkd440_Atk', 23
+    sendSignalToAction: s32'vkd440_Atk', (SIGNAL_A)
     upon: (FRAME_STEP)
         if: Mem(ActReg1)
             if: Mem(BattleDoing)
@@ -7854,7 +7854,7 @@ beginState: s32'vky_Kaihou'
     sprite: s32'vky440_08', 3
     sprite: s32'vky440_09', 3
     clearUpon: (FRAME_STEP)
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: 24
     clearUpon: 25
     Unknown1302: 
@@ -7879,13 +7879,13 @@ beginState: s32'vky_Kaihou'
     sprite: s32'keep', 443
     deactivateObjectById: (STACK0)
     deactivateObjectByName: s32'Item02_Bomb_Eff'
-    Unknown2035: 4, s32'NoDisp', 0
-    Unknown2035: 5, s32'NoDisp', 0
-    Unknown2035: 6, s32'NoDisp', 0
-    Unknown2035: 7, s32'NoDisp', 0
-    Unknown2035: 8, s32'NoDisp', 0
+    pawnAnimation: 4, s32'NoDisp', 0
+    pawnAnimation: 5, s32'NoDisp', 0
+    pawnAnimation: 6, s32'NoDisp', 0
+    pawnAnimation: 7, s32'NoDisp', 0
+    pawnAnimation: 8, s32'NoDisp', 0
     sendSignalToAction: s32'Item05_SmokeEff', 24
-    sendSignalToAction: s32'vkd301', 23
+    sendSignalToAction: s32'vkd301', (SIGNAL_A)
     callSubroutine: s32'cmnKaihou_LockCSInit'
     swapMeshSet: s32'high_LiveVFX'
     playAnimation: s32'vky441cs', 0
@@ -8031,7 +8031,7 @@ beginState: s32'vky_Kaihou'
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(785000)
         setPositionX: 815000
     endIf: 
-    sendSignalToAction: s32'vky_441cs_whiteOut', 23
+    sendSignalToAction: s32'vky_441cs_whiteOut', (SIGNAL_A)
     deactivateObjectByName: s32'vky_441cs_FallsEff'
     deactivateObjectByName: s32'vky_441_cs_Fog'
     deactivateObjectByName: s32'vkd441cs'
@@ -8046,11 +8046,11 @@ beginState: s32'vky_Kaihou'
     hitAirPushbackY: 27000
     hitGravity: 1500
     setColor: -385875969
-    Unknown2035: 4, s32'ReDisp', 0
-    Unknown2035: 5, s32'ReDisp', 0
-    Unknown2035: 6, s32'ReDisp', 0
-    Unknown2035: 7, s32'ReDisp', 0
-    Unknown2035: 8, s32'ReDisp', 0
+    pawnAnimation: 4, s32'ReDisp', 0
+    pawnAnimation: 5, s32'ReDisp', 0
+    pawnAnimation: 6, s32'ReDisp', 0
+    pawnAnimation: 7, s32'ReDisp', 0
+    pawnAnimation: 8, s32'ReDisp', 0
     sendSignalToAction: s32'Item05_SmokeEff', 25
     sendSignalToAction: s32'vkd301', 24
     sprite: s32'vky440_15', 35

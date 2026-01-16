@@ -1609,7 +1609,7 @@ beginSubroutine: s32'OnFrameStep'
                     ifNot: Mem(Tmp)
                         checkCurrentStateName: (SELF), s32'CmnActAirLockReject'
                         ifNot: Mem(Tmp)
-                            sendSignalToAction: s32'eus402_BombD_Atk', 32
+                            sendSignalToAction: s32'eus402_BombD_Atk', (SIGNAL_B)
                         endIf: 
                     endIf: 
                 endIf: 
@@ -1873,17 +1873,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -1896,7 +1896,7 @@ beginSubroutine: s32'AbilityCoolDown_N'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 999
+            skillCooldown: 0, 999
         endElse: 
         Unknown1923: 0
     endIf: 
@@ -1905,17 +1905,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'SpecialShot_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 999
+        skillCooldown: 1, 999
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 999
+        skillCooldown: 1, 999
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 999
+        skillCooldown: 1, 999
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_D'
@@ -1928,7 +1928,7 @@ beginSubroutine: s32'AbilityCoolDown_6'
             storeValue: Mem(288), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 1, 999
+            skillCooldown: 1, 999
         endElse: 
         Unknown1923: 1
     endIf: 
@@ -1937,17 +1937,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'SpecialBomb_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 999
+        skillCooldown: 2, 999
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialBomb_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 999
+        skillCooldown: 2, 999
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialBomb_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 999
+        skillCooldown: 2, 999
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialBomb_D'
@@ -1960,7 +1960,7 @@ beginSubroutine: s32'AbilityCoolDown_2'
             storeValue: Mem(289), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 2, 999
+            skillCooldown: 2, 999
         endElse: 
         Unknown1923: 2
     endIf: 
@@ -1969,17 +1969,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -2476,7 +2476,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2743,7 +2743,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2807,7 +2807,7 @@ beginState: s32'CmnActRoundWin'
     sprite: s32'eus601_01', 12
     sprite: s32'eus601_02', 3
     createObject: s32'WON_eus601', (PLAYER)
-    gotoLabelUpon: 23, s32'Tern'
+    gotoLabelUpon: (SIGNAL_A), s32'Tern'
     voiceLine: s16'vEUS_WIN_01'
     beginLabel: s32'Loop'
     sprite: s32'eus601_03', 6
@@ -2816,7 +2816,7 @@ beginState: s32'CmnActRoundWin'
     gotoLabel: s32'Loop'
     beginLabel: s32'Tern'
     sprite: s32'eus601_05', 6
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     characterSfx: s32'eus_22'
     sprite: s32'eus601_06', 8
     sprite: s32'eus601_07', 8
@@ -3217,7 +3217,7 @@ beginState: s32'GC_Attack'
     sprite: s32'eus350_09', 2
     sprite: s32'eus350_10', 3
     attackEndDelay: 
-    sendSignalToAction: s32'eus_350_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_350_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus350_11', 3
     sprite: s32'eus350_12', 3
     sprite: s32'eus350_13', 3
@@ -3649,7 +3649,7 @@ beginState: s32'NmlAtk5CFar'
     sprite: s32'eus207_06', 3
     sprite: s32'eus207_06', 3
     enableWhiffCancel: 0
-    sendSignalToAction: s32'eus_207_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_207_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus207_07', 3
     sprite: s32'eus207_11', 2
     sprite: s32'eus207_12', 3
@@ -3735,7 +3735,7 @@ beginState: s32'NmlAtk2C'
     sprite: s32'eus232_07', 2
     sprite: s32'eus232_07', 2
     enableWhiffCancel: 0
-    sendSignalToAction: s32'eus_232_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_232_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus232_08', 4
     sprite: s32'eus232_09', 3
     sprite: s32'eus232_10', 2
@@ -3779,7 +3779,7 @@ beginState: s32'NmlAtk2C_Add'
     characterSfx: s32'eus_00'
     smartRandomVoiceLine: s16'vEUS_ATK_06', 100, s16'vEUS_ATK_07', 100, s16'', 0, s16'', 0
     sprite: s32'eus232_15', 3
-    sendSignalToAction: s32'eus_232_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_232_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus232_16', 3
     attackEndDelay: 
     sprite: s32'eus232_17', 3
@@ -3829,7 +3829,7 @@ beginState: s32'NmlAtk5D'
     sprite: s32'eus208_09', 3
     sprite: s32'eus208_16', 3
     enableWhiffCancel: 0
-    sendSignalToAction: s32'eus_208_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_208_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus208_17', 3
     sprite: s32'eus208_18', 3
     sprite: s32'eus208_19', 3
@@ -3877,7 +3877,7 @@ beginState: s32'NmlAtk5D_Add'
     hit: 
     createObject: s32'eus_208_shockRingEff', (PLAYER)
     createObject: s32'eus_208_MuzzleSparkEff', (PLAYER)
-    sendSignalToAction: s32'eus_208_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_208_WaitSparkEff', (SIGNAL_A)
     cameraShake: s32'ShakeYoko', 500, 0, 10, 0
     characterSfx: s32'eus_00'
     voiceLine: s16'vEUS_ATKAby_01'
@@ -4075,7 +4075,7 @@ beginState: s32'GuardCrash'
     smartRandomVoiceLine: s16'vEUS_ATKC_00', 50, s16'vEUS_ATKHard_00', 50, s16'', 0, s16'', 0
     sprite: s32'eus350_09', 2
     sprite: s32'eus350_10', 3
-    sendSignalToAction: s32'eus_350_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_350_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus350_11', 3
     sprite: s32'eus350_12', 3
     sprite: s32'eus350_13', 3
@@ -4223,7 +4223,7 @@ beginState: s32'NmlAtkAir5D'
     damageEffect: 4, s32''
     createObject: s32'eus_253_shockRingEff', (PLAYER)
     createObject: s32'eus_253_MuzzleSparkEff', (PLAYER)
-    sendSignalToAction: s32'eus_253_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_253_WaitSparkEff', (SIGNAL_A)
     characterSfx: s32'eus_00'
     sprite: s32'eus253_04', 3
     smartRandomVoiceLine: s16'vEUS_ATKAby_02', 100, s16'', 0, s16'', 0, s16'', 0
@@ -4235,7 +4235,7 @@ beginState: s32'NmlAtkAir5D'
     attackEndDelay: 
     velocityXPercent: 120
     gravityPercent: 130
-    Unknown1819: 6, 1
+    landingRecovery: 6, 1
     sprite: s32'eus253_06', 3
     sprite: s32'eus253_07', 3
     sprite: s32'eus253_08', 3
@@ -4285,7 +4285,7 @@ beginState: s32'ThrowExe'
         attackMultiHit: 0
         damageEffect: 4, s32''
         atkEnemyHitSuperArmor: 1
-        sendSignalToAction: s32'eus402_BombC_Set_Atk', 23
+        sendSignalToAction: s32'eus402_BombC_Set_Atk', (SIGNAL_A)
     endUpon: 
     sprite: s32'eus300_03', 3
     exPointFReset: (PLAYER), 175000, 220000
@@ -4327,7 +4327,7 @@ beginState: s32'ThrowExe'
     Unknown538: 2
     createObject: s32'eus_301_ElecShock', (ENEMY_CENTER)
     sprite: s32'eus301_09', 3
-    sendSignalToAction: s32'eus_301_needle_loopEff', 23
+    sendSignalToAction: s32'eus_301_needle_loopEff', (SIGNAL_A)
     hit: 
     findState: s32'eus402_BombD_Atk', 4, 0, 0
     if: Mem(Tmp)
@@ -4337,7 +4337,7 @@ beginState: s32'ThrowExe'
     endIf: 
     sendSignalToAction: s32'eus402_BombC_Set_Atk', 26
     sprite: s32'eus301_10', 5
-    sendSignalToAction: s32'eus_301_ElecShock', 23
+    sendSignalToAction: s32'eus_301_ElecShock', (SIGNAL_A)
     attackEndDelay: 
     sprite: s32'eus301_11', 5
     sprite: s32'eus301_12', 5
@@ -4388,7 +4388,7 @@ beginState: s32'BackThrowExe'
         attackMultiHit: 0
         nextHitActionName: s32'BackThrowExe'
         killType: (NOT_KILL)
-        sendSignalToAction: s32'eus402_BombC_Set_Atk', 23
+        sendSignalToAction: s32'eus402_BombC_Set_Atk', (SIGNAL_A)
     endUpon: 
     sprite: s32'eus300_03', 3
     exPointFReset: (PLAYER), 175000, 220000
@@ -4437,7 +4437,7 @@ beginState: s32'BackThrowExe'
     nextHitActionName: s32''
     attackDirectionReverse: 1
     killType: (NORMAL)
-    sendSignalToAction: s32'eus_309_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_309_WaitSparkEff', (SIGNAL_A)
     findState: s32'eus402_BombD_Atk', 4, 0, 0
     if: Mem(Tmp)
         Unknown310: 13, 4, 2, 14, 0, 230000
@@ -4484,7 +4484,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'eus302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'eus302_03', 3
     attackEndDelay: 
     sprite: s32'eus302_04', 3
@@ -4514,7 +4514,7 @@ beginState: s32'AirThrowExe'
         shortHitstop: 1
         attackMultiHit: 0
         damageEffect: 4, s32''
-        sendSignalToAction: s32'eus402_BombC_Set_Atk', 23
+        sendSignalToAction: s32'eus402_BombC_Set_Atk', (SIGNAL_A)
     endUpon: 
     sprite: s32'eus302_02', 15
     exPointFReset: (PLAYER), 140000, 300000
@@ -4622,7 +4622,7 @@ beginState: s32'SpecialShot_A'
     clearUpon: (FRAME_STEP)
     characterSfx: s32'eus_01_3'
     sprite: s32'eus400_09', 3
-    sendSignalToAction: s32'eus_400_StartRay', 23
+    sendSignalToAction: s32'eus_400_StartRay', (SIGNAL_A)
     createObject: s32'eus_400_Shot_B_EX_Eff', 0
     createObject: s32'eus_400_BeamEff', 0
     createArgHikitsukiVal: Val(0), Val(0)
@@ -4639,7 +4639,7 @@ beginState: s32'SpecialShot_A'
     clearUpon: 19
     clearUpon: (FRAME_STEP)
     sprite: s32'eus400_09', 3
-    sendSignalToAction: s32'eus_400_StartRay', 23
+    sendSignalToAction: s32'eus_400_StartRay', (SIGNAL_A)
     createObject: s32'eus_400_Shot_A_Eff', 0
     createArgHikitsukiVal: Val(0), Val(0)
     createObjectWithArg: s32'eus_400_Shot_A', 0
@@ -4651,7 +4651,7 @@ beginState: s32'SpecialShot_A'
     sprite: s32'eus400_12', 2
     beginLabel: s32'End'
     sprite: s32'eus400_13', 2
-    sendSignalToAction: s32'eus_400_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_400_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus400_14', 2
     sprite: s32'eus400_15', 2
     sprite: s32'eus400_16', 2
@@ -4715,7 +4715,7 @@ beginState: s32'SpecialShot_B'
     clearUpon: (FRAME_STEP)
     characterSfx: s32'eus_01_3'
     sprite: s32'eus400_09', 3
-    sendSignalToAction: s32'eus_400_StartRay', 23
+    sendSignalToAction: s32'eus_400_StartRay', (SIGNAL_A)
     createObject: s32'eus_400_Shot_B_EX_Eff', 0
     createObject: s32'eus_400_BeamEff', 0
     createArgHikitsukiVal: Val(1), Val(0)
@@ -4732,7 +4732,7 @@ beginState: s32'SpecialShot_B'
     clearUpon: 19
     clearUpon: (FRAME_STEP)
     sprite: s32'eus400_09', 3
-    sendSignalToAction: s32'eus_400_StartRay', 23
+    sendSignalToAction: s32'eus_400_StartRay', (SIGNAL_A)
     createObject: s32'eus_400_Shot_A_Eff', 0
     createArgHikitsukiVal: Val(1), Val(0)
     createObjectWithArg: s32'eus_400_Shot_A', 0
@@ -4744,7 +4744,7 @@ beginState: s32'SpecialShot_B'
     sprite: s32'eus400_12', 2
     beginLabel: s32'End'
     sprite: s32'eus400_13', 2
-    sendSignalToAction: s32'eus_400_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_400_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus400_14', 2
     sprite: s32'eus400_15', 2
     sprite: s32'eus400_16', 2
@@ -4809,7 +4809,7 @@ beginState: s32'SpecialShot_C'
     clearUpon: (FRAME_STEP)
     characterSfx: s32'eus_01_3'
     sprite: s32'eus400_09', 3
-    sendSignalToAction: s32'eus_400_StartRay', 23
+    sendSignalToAction: s32'eus_400_StartRay', (SIGNAL_A)
     createObject: s32'eus_400_Shot_B_EX_Eff', 0
     createObject: s32'eus_400_BeamEff', 0
     createArgHikitsukiVal: Val(2), Val(0)
@@ -4826,7 +4826,7 @@ beginState: s32'SpecialShot_C'
     clearUpon: 19
     clearUpon: (FRAME_STEP)
     sprite: s32'eus400_09', 3
-    sendSignalToAction: s32'eus_400_StartRay', 23
+    sendSignalToAction: s32'eus_400_StartRay', (SIGNAL_A)
     createObject: s32'eus_400_Shot_A_Eff', 0
     createArgHikitsukiVal: Val(2), Val(0)
     createObjectWithArg: s32'eus_400_Shot_A', 0
@@ -4841,7 +4841,7 @@ beginState: s32'SpecialShot_C'
     beginLabel: s32'End'
     sprite: s32'eus400_13', 2
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
-    sendSignalToAction: s32'eus_400_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_400_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus400_14', 2
     sprite: s32'eus400_15', 2
     sprite: s32'eus400_16', 2
@@ -4886,7 +4886,7 @@ beginState: s32'SpecialShot_D'
     sprite: s32'eus400_13', 3
     sprite: s32'eus400_14', 2
     sprite: s32'eus400_15', 2
-    sendSignalToAction: s32'eus_400_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_400_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus400_08', 3
     sprite: s32'eus400_09', 3
     createObject: s32'eus_409_Muzzle_Eff', 0
@@ -4896,7 +4896,7 @@ beginState: s32'SpecialShot_D'
     createObjectWithArg: s32'eus_409_Shot', 0
     sprite: s32'eus400_10', 3
     sprite: s32'eus400_11', 3
-    sendSignalToAction: s32'eus_409_Spark_Eff', 23
+    sendSignalToAction: s32'eus_409_Spark_Eff', (SIGNAL_A)
     sprite: s32'eus400_12', 3
     sprite: s32'eus409_00', 2
     sprite: s32'eus409_01', 2
@@ -4921,7 +4921,7 @@ beginState: s32'SpecialShot_D'
     sprite: s32'eus409_08', 3
     sprite: s32'eus409_09', 3
     sprite: s32'eus409_10', 3
-    sendSignalToAction: s32'eus_409_Spark_Eff', 23
+    sendSignalToAction: s32'eus_409_Spark_Eff', (SIGNAL_A)
     sprite: s32'eus409_11', 3
     sprite: s32'eus409_12', 3
     sprite: s32'eus409_13', 3
@@ -4984,7 +4984,7 @@ beginState: s32'AntiAir_A'
     endElse: 
     createObjectWithArg: s32'eus_401_ball_loopEff', (PLAYER)
     clearUpon: (BEFORE_EXIT)
-    sendSignalToAction: s32'eus_401_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_401_WaitSparkEff', (SIGNAL_A)
     smartRandomVoiceLine: s16'vEUS_ATKS_03', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'eus401_07', 3
     sprite: s32'eus401_08', 3
@@ -5051,7 +5051,7 @@ beginState: s32'AntiAir_B'
     endElse: 
     createObjectWithArg: s32'eus_401_ball_loopEff', (PLAYER)
     clearUpon: (BEFORE_EXIT)
-    sendSignalToAction: s32'eus_401_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_401_WaitSparkEff', (SIGNAL_A)
     smartRandomVoiceLine: s16'vEUS_ATKS_04', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'eus401_07', 3
     sprite: s32'eus401_08', 3
@@ -5117,7 +5117,7 @@ beginState: s32'AntiAir_C'
         createArgHikitsukiVal: Val(2), Val(0)
     endElse: 
     createObjectWithArg: s32'eus_401_ball_loopEff', (PLAYER)
-    sendSignalToAction: s32'eus_401_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_401_WaitSparkEff', (SIGNAL_A)
     smartRandomVoiceLine: s16'vEUS_ATKS_05', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'eus401_07', 3
     if: Mem(ActReg1)
@@ -5161,7 +5161,7 @@ beginState: s32'AntiAir_D'
     sprite: s32'eus401_06', 2
     createArgHikitsukiVal: Val(3), Val(0)
     createObjectWithArg: s32'eus_410_ball_loopEff', (PLAYER)
-    sendSignalToAction: s32'eus_401_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_401_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus401_07', 2
     createArgHikitsukiVal: Val(30), Val(0)
     createObjectWithArg: s32'eus_410_ball_loopEff', (PLAYER)
@@ -5184,7 +5184,7 @@ beginState: s32'AntiAir_D'
     voiceLine: s16'vEUS_ATKS_105'
     sprite: s32'eus410_09', 2
     sprite: s32'eus410_10', 3
-    sendSignalToAction: s32'eus_410_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_410_WaitSparkEff', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'eus410_11', 4
     sprite: s32'eus410_12', 4
@@ -5499,7 +5499,7 @@ beginState: s32'Assault_D'
                 killType: (NOT_KILL)
                 attackHitPositionType: 4, 200000, 20000
                 storeValue: Mem(ActReg0), Val(1)
-                sendSignalToAction: s32'eus402_BombC_Set_Atk', 23
+                sendSignalToAction: s32'eus402_BombC_Set_Atk', (SIGNAL_A)
             endIf: 
         endUpon: 
         upon: 78
@@ -5540,7 +5540,7 @@ beginState: s32'Assault_D'
     physicsYImpulse: 38000
     resetGravity: 
     deactivateObjectByName: s32'eus_403_GroundBurst01'
-    sendSignalToAction: s32'eus_407_Thrust', 23
+    sendSignalToAction: s32'eus_407_Thrust', (SIGNAL_A)
     createObject: s32'eus_407GroundShock', (PLAYER_LAND)
     createObject: s32'eus_407Mazzle', (PLAYER)
     characterSfx: s32'eus_00'
@@ -5607,7 +5607,7 @@ beginState: s32'Assault_D'
     armorBreak: 1
     killType: (NORMAL)
     createObject: s32'eus_408_MuzzleSparkEff', (PLAYER)
-    sendSignalToAction: s32'eus_253_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_253_WaitSparkEff', (SIGNAL_A)
     characterSfx: s32'eus_03'
     upon: 95
         if: Mem(PlayerVal0)
@@ -5845,7 +5845,7 @@ beginState: s32'Assault_HaseiC'
         hitAirPushbackX: 10500
         callSubroutine: s32'cmnMuteki_False'
     endElse: 
-    sendSignalToAction: s32'eus_407_Thrust', 23
+    sendSignalToAction: s32'eus_407_Thrust', (SIGNAL_A)
     createObject: s32'eus_407GroundShock', (PLAYER_LAND)
     createObject: s32'eus_407Mazzle', (PLAYER)
     characterSfx: s32'eus_00'
@@ -6131,7 +6131,7 @@ beginState: s32'eus_Ougi'
             gotoLabelRequests: s32'Ranbu'
         endUpon: 
         upon: (HIT)
-            sendSignalToAction: s32'eus402_BombC_Set_Atk', 23
+            sendSignalToAction: s32'eus402_BombC_Set_Atk', (SIGNAL_A)
             invulnForce: 1
         endUpon: 
         upon: 78
@@ -6288,7 +6288,7 @@ beginState: s32'eus_Ougi'
     sprite: s32'eus430_10', 3
     sprite: s32'eus430_11', 3
     sprite: s32'eus430_12', 3
-    sendSignalToAction: s32'eus_430_ThrustNokosiEff', 23
+    sendSignalToAction: s32'eus_430_ThrustNokosiEff', (SIGNAL_A)
     sprite: s32'eus430_13', 3
     sprite: s32'eus430_14', 3
     sprite: s32'eus430_15', 3
@@ -6315,7 +6315,7 @@ beginState: s32'eus_Ougi'
     killType: (NOT_KILL)
     Unknown2033: 40000
     setInertia: 20000
-    sendSignalToAction: s32'eus_430_ThrustNokosiEff', 23
+    sendSignalToAction: s32'eus_430_ThrustNokosiEff', (SIGNAL_A)
     sprite: s32'eus430_22', 3
     Unknown2033: 60000
     sprite: s32'eus430_23', 3
@@ -6428,7 +6428,7 @@ beginState: s32'eus_Ougi'
     createObject: s32'eus_430_LastBeamEff', (PLAYER)
     voiceLine: s16'vEUS_ATKO_00_c'
     sprite: s32'eus430_53', 4
-    sendSignalToAction: s32'eus_430_LastBeamEff', 23
+    sendSignalToAction: s32'eus_430_LastBeamEff', (SIGNAL_A)
     sprite: s32'eus430_54', 4
     sendSignalToAction: s32'eus_430_LastBeamEff', 24
     sprite: s32'eus430_55', 3
@@ -6495,8 +6495,8 @@ beginState: s32'eus_Ougi'
     attackEndDelay: 
     deactivateObjectByName: s32'eus_Ougi_Camera'
     sendSignalToAction: s32'eus_430_LastBeamEff', 26
-    sendSignalToAction: s32'eus_430_ryuhaiEff', 23
-    sendSignalToAction: s32'eus_430_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_430_ryuhaiEff', (SIGNAL_A)
+    sendSignalToAction: s32'eus_430_WaitSparkEff', (SIGNAL_A)
     characterSfx: s32'eus_ougi_02'
     sprite: s32'eus430_57', 3
     sprite: s32'eus430_58', 3
@@ -6754,7 +6754,7 @@ beginState: s32'eus_Kaihou'
         storeValue: Mem(ActReg2), Val(1)
         characterSfx: s32'eus_kaihou_04'
     endUpon: 
-    sendSignalToAction: s32'eus_440_BeamEff', 23
+    sendSignalToAction: s32'eus_440_BeamEff', (SIGNAL_A)
     deactivateObjectByName: s32'eus_440_GroundBurst'
     endSprite: 
     gotoLabelIfNot: s32'End', Mem(ActReg2)
@@ -6777,7 +6777,7 @@ beginState: s32'eus_Kaihou'
     endIf: 
     beginLabel: s32'End'
     sprite: s32'eus440_04', 3
-    sendSignalToAction: s32'eus_440_FullHit', 23
+    sendSignalToAction: s32'eus_440_FullHit', (SIGNAL_A)
     Unknown1302: 
     sprite: s32'eus440_05', 3
     sprite: s32'eus440_06', 3
@@ -6790,7 +6790,7 @@ beginState: s32'eus_Kaihou'
     sprite: s32'eus440_12', 4
     sprite: s32'eus440_13', 4
     createObject: s32'eus_440_smokeEff', (PLAYER)
-    sendSignalToAction: s32'eus_440_WaitSparkEff', 23
+    sendSignalToAction: s32'eus_440_WaitSparkEff', (SIGNAL_A)
     sprite: s32'eus440_14', 4
     sprite: s32'eus440_15', 4
     sprite: s32'eus440_16', 4
@@ -6892,7 +6892,7 @@ beginState: s32'eus_Kaihou'
             Unknown2583: 20900, 0, 3, 22400, 53000, 9600
         endIf: 
         ifOnFrame: Val(91)
-            sendSignalToAction: s32'eus_441_GunRay', 23
+            sendSignalToAction: s32'eus_441_GunRay', (SIGNAL_A)
             Unknown2583: 21000, 0, 3, 24300, 53000, 6300
         endIf: 
         ifOnFrame: Val(99)
@@ -6931,7 +6931,7 @@ beginState: s32'eus_Kaihou'
             deactivateObjectByName: s32'eus_441_GroundRay'
             deactivateObjectByName: s32'eus_441_ChargeThunder'
             createObject: s32'eus_441_GunRay2', (PLAYER)
-            sendSignalToAction: s32'eus_441_BG', 23
+            sendSignalToAction: s32'eus_441_BG', (SIGNAL_A)
             Unknown2583: 32000, 0, 3, 306600, 37100, 2200
         endIf: 
         ifOnFrame: Val(167)
@@ -7031,7 +7031,7 @@ beginState: s32'eus_Kaihou'
     fadeOutStart: 0, 0
     fadeInStart: 10
     attackEndDelay: 
-    sendSignalToAction: s32'eus_441_WhiteOut', 23
+    sendSignalToAction: s32'eus_441_WhiteOut', (SIGNAL_A)
     createObject: s32'eus_441_EndEff', (PLAYER_LAND)
     characterSfx: s32'eus_kaihou_05'
     deactivateObjectByName: s32'eus_441_BG'

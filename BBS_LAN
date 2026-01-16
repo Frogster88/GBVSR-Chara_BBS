@@ -2013,17 +2013,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'SpecialShot_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_D'
@@ -2036,7 +2036,7 @@ beginSubroutine: s32'AbilityCoolDown_N'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 999
+            skillCooldown: 0, 999
         endElse: 
         Unknown1923: 0
     endIf: 
@@ -2045,17 +2045,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'BladeImpulse_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'BladeImpulse_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'BladeImpulse_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'BladeImpulse_D'
@@ -2072,17 +2072,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'Warp_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_D'
@@ -2099,17 +2099,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'SouthernCross_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'SouthernCross_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'SouthernCross_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'SouthernCross_D'
@@ -2669,7 +2669,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2868,7 +2868,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3311,7 +3311,7 @@ beginState: s32'GC_Attack'
     attackEndDelay: 
     sprite: s32'lan350_11', 3
     sprite: s32'lan350_12', 3
-    sendSignalToAction: s32'lan_350_IceCrossEff', 23
+    sendSignalToAction: s32'lan_350_IceCrossEff', (SIGNAL_A)
     sprite: s32'lan350_13', 3
     sprite: s32'lan350_14', 3
     sprite: s32'lan350_15', 3
@@ -3779,7 +3779,7 @@ beginState: s32'NmlAtk5D'
         addWhiffCancelOption: s32'Warp_Back'
         addWhiffCancelOption: s32'Warp_Jump'
         addWhiffCancelOption: s32'Warp_Dash'
-        upon: 47
+        upon: (AFTER_EXIT)
             pushInertia: 
         endUpon: 
     endUpon: 
@@ -3965,7 +3965,7 @@ beginState: s32'Warp_Jump'
     sprite: s32'lan211_01', 4
     Unknown2050: 0
     callSubroutine: s32'cmnMuteki'
-    sendSignalToAction: s32'LAN_211_aura01', 23
+    sendSignalToAction: s32'LAN_211_aura01', (SIGNAL_A)
     velocityXPercentEachFrame: 96
     sprite: s32'lan211_02', 3
     sprite: s32'lan211_03', 3
@@ -3988,7 +3988,7 @@ beginState: s32'Warp_Jump'
     sprite: s32'lan211_04', 2
     Unknown2050: 1
     callSubroutine: s32'cmnMuteki_False'
-    sendSignalToAction: s32'Lan_211_appear01', 23
+    sendSignalToAction: s32'Lan_211_appear01', (SIGNAL_A)
     faceOpponent: 
     sprite: s32'lan211_05', 2
     sprite: s32'lan211_06', 1
@@ -4019,7 +4019,7 @@ beginState: s32'NmlAtk2D'
     sprite: s32'lan233_04', 3
     sprite: s32'lan233_05', 3
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'LAN_233_Eff', 23
+    sendSignalToAction: s32'LAN_233_Eff', (SIGNAL_A)
     sprite: s32'lan233_06', 3
     attackEndDelay: 
     sprite: s32'lan233_07', 3
@@ -4178,7 +4178,7 @@ beginState: s32'GuardCrash'
     sprite: s32'lan350_10', 2
     sprite: s32'lan350_11', 3
     sprite: s32'lan350_12', 3
-    sendSignalToAction: s32'lan_350_IceCrossEff', 23
+    sendSignalToAction: s32'lan_350_IceCrossEff', (SIGNAL_A)
     sprite: s32'lan350_13', 3
     sprite: s32'lan350_14', 3
     sprite: s32'lan350_15', 3
@@ -4563,7 +4563,7 @@ beginState: s32'NmlAtkAirThrow'
     sprite: s32'lan302_01', 2
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'lan302_02', 5
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     hit: 
     sprite: s32'lan302_03', 3
     attackEndDelay: 
@@ -4700,7 +4700,7 @@ beginState: s32'BladeImpulse_A'
     sprite: s32'lan403_08', 2
     sprite: s32'lan403_09', 2
     sprite: s32'lan403_10', 2
-    sendSignalToAction: s32'LAN_403_IceNokosiMatome', 23
+    sendSignalToAction: s32'LAN_403_IceNokosiMatome', (SIGNAL_A)
     attackEndDelay: 
     velocityXPercentEachFrame: 70
     sprite: s32'lan403_11', 2
@@ -4752,7 +4752,7 @@ beginState: s32'BladeImpulse_B'
     attackEndDelay: 
     setNoCollision: 1
     velocityXPercentEachFrame: 70
-    sendSignalToAction: s32'LAN_403_IceNokosiMatome', 23
+    sendSignalToAction: s32'LAN_403_IceNokosiMatome', (SIGNAL_A)
     sprite: s32'lan403_11', 2
     sprite: s32'lan403_12', 2
     sprite: s32'lan403_13', 2
@@ -4802,7 +4802,7 @@ beginState: s32'BladeImpulse_C'
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     velocityXPercentEachFrame: 70
-    sendSignalToAction: s32'LAN_403_IceNokosiMatome', 23
+    sendSignalToAction: s32'LAN_403_IceNokosiMatome', (SIGNAL_A)
     sprite: s32'lan403_11', 3
     sprite: s32'lan403_12', 2
     sprite: s32'lan403_13', 2
@@ -4896,7 +4896,7 @@ beginState: s32'BladeImpulse_D'
     beginLabel: s32'Add'
     sprite: s32'lan408_10', 2
     Unknown2050: 1
-    sendSignalToAction: s32'LAN_403_IceNokosiMatome_D', 23
+    sendSignalToAction: s32'LAN_403_IceNokosiMatome_D', (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     physicsXImpulse: 35000
     velocityXPercentEachFrame: 90
@@ -4963,7 +4963,7 @@ beginState: s32'SpecialShot_A'
     createObject: s32'LAN_401_Slash01', (PLAYER)
     Unknown1681: 
     sprite: s32'lan401_03', 3
-    sendSignalToAction: s32'LAN_401_Slash01', 23
+    sendSignalToAction: s32'LAN_401_Slash01', (SIGNAL_A)
     sprite: s32'lan401_04', 3
     sendSignalToAction: s32'LAN_401_Slash01', 24
     sprite: s32'lan401_05', 2
@@ -5005,7 +5005,7 @@ beginState: s32'SpecialShot_B'
     createObject: s32'LAN_401_Slash01', (PLAYER)
     Unknown1681: 
     sprite: s32'lan401_03', 4
-    sendSignalToAction: s32'LAN_401_Slash01', 23
+    sendSignalToAction: s32'LAN_401_Slash01', (SIGNAL_A)
     sprite: s32'lan401_04', 4
     sendSignalToAction: s32'LAN_401_Slash01', 24
     sprite: s32'lan401_05', 2
@@ -5046,7 +5046,7 @@ beginState: s32'SpecialShot_C'
     sprite: s32'lan401_02', 3
     createObject: s32'LAN_401_Slash01', (PLAYER)
     sprite: s32'lan401_03', 3
-    sendSignalToAction: s32'LAN_401_Slash01', 23
+    sendSignalToAction: s32'LAN_401_Slash01', (SIGNAL_A)
     sprite: s32'lan401_04', 3
     sendSignalToAction: s32'LAN_401_Slash01', 24
     sprite: s32'lan401_05', 2
@@ -5092,7 +5092,7 @@ beginState: s32'SpecialShot_D'
     sprite: s32'lan401_02', 3
     createObject: s32'LAN_401_Slash01', (PLAYER)
     sprite: s32'lan401_03', 3
-    sendSignalToAction: s32'LAN_401_Slash01', 23
+    sendSignalToAction: s32'LAN_401_Slash01', (SIGNAL_A)
     sprite: s32'lan401_04', 3
     sendSignalToAction: s32'LAN_401_Slash01', 24
     sprite: s32'lan401_05', 3
@@ -5976,7 +5976,7 @@ beginState: s32'Warp_A'
     sprite: s32'lan211_01', 3
     Unknown2050: 0
     callSubroutine: s32'cmnMuteki'
-    sendSignalToAction: s32'LAN_211_aura01', 23
+    sendSignalToAction: s32'LAN_211_aura01', (SIGNAL_A)
     sprite: s32'lan211_02', 3
     sprite: s32'lan211_03', 3
     sprite: s32'lan211_02', 3
@@ -6007,7 +6007,7 @@ beginState: s32'Warp_A'
     addWhiffCancelOption: s32'Warp_A_Add'
     Unknown2050: 1
     callSubroutine: s32'cmnMuteki_False'
-    sendSignalToAction: s32'Lan_211_appear01', 23
+    sendSignalToAction: s32'Lan_211_appear01', (SIGNAL_A)
     faceOpponent: 
     attackEndDelay: 
     sprite: s32'lan211_04', 2
@@ -6055,7 +6055,7 @@ beginState: s32'Warp_B'
     sprite: s32'lan211_01', 3
     Unknown2050: 0
     callSubroutine: s32'cmnMuteki'
-    sendSignalToAction: s32'LAN_211_aura01', 23
+    sendSignalToAction: s32'LAN_211_aura01', (SIGNAL_A)
     ifNot: Mem(ActReg1)
         velocityXPercentEachFrame: 87
     endIf: 
@@ -6084,7 +6084,7 @@ beginState: s32'Warp_B'
     addWhiffCancelOption: s32'Warp_B_Add'
     Unknown2050: 1
     callSubroutine: s32'cmnMuteki_False'
-    sendSignalToAction: s32'Lan_211_appear01', 23
+    sendSignalToAction: s32'Lan_211_appear01', (SIGNAL_A)
     faceOpponent: 
     attackEndDelay: 
     sprite: s32'lan211_04', 2
@@ -6131,7 +6131,7 @@ beginState: s32'Warp_C'
     sprite: s32'lan211_01', 3
     Unknown2050: 0
     callSubroutine: s32'cmnMuteki'
-    sendSignalToAction: s32'LAN_211_aura01', 23
+    sendSignalToAction: s32'LAN_211_aura01', (SIGNAL_A)
     ifNot: Mem(ActReg1)
         velocityXPercentEachFrame: 96
     endIf: 
@@ -6173,7 +6173,7 @@ beginState: s32'Warp_C'
     addWhiffCancelOption: s32'Warp_C_Add'
     Unknown2050: 1
     callSubroutine: s32'cmnMuteki_False'
-    sendSignalToAction: s32'Lan_211_appear01', 23
+    sendSignalToAction: s32'Lan_211_appear01', (SIGNAL_A)
     faceOpponent: 
     setNoCollision: 1
     attackEndDelay: 
@@ -6440,7 +6440,7 @@ beginState: s32'Warp_D'
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
     sprite: s32'lan409_19', 3
     sprite: s32'lan409_20', 3
-    sendSignalToAction: s32'LAN_403_Wind_Matome', 23
+    sendSignalToAction: s32'LAN_403_Wind_Matome', (SIGNAL_A)
     sprite: s32'lan409_18', 3
     sprite: s32'lan409_19', 3
     sprite: s32'lan409_20', 3
@@ -6501,8 +6501,8 @@ beginState: s32'Warp_A_Add'
         callSubroutine: s32'WarpAdd_Init'
     endUpon: 
     sprite: s32'lan301_10', 1
-    sendSignalToAction: s32'Lan_211_appear01', 23
-    sendSignalToAction: s32'LAN_211_aura01', 23
+    sendSignalToAction: s32'Lan_211_appear01', (SIGNAL_A)
+    sendSignalToAction: s32'LAN_211_aura01', (SIGNAL_A)
     sprite: s32'lan301_11', 2
     createObject: s32'LAN_301_Shine001', (PLAYER)
     characterSfx: s32'lan_11'
@@ -6547,8 +6547,8 @@ beginState: s32'Warp_B_Add'
         callSubroutine: s32'WarpAdd_Init'
     endUpon: 
     sprite: s32'lan301_10', 1
-    sendSignalToAction: s32'Lan_211_appear01', 23
-    sendSignalToAction: s32'LAN_211_aura01', 23
+    sendSignalToAction: s32'Lan_211_appear01', (SIGNAL_A)
+    sendSignalToAction: s32'LAN_211_aura01', (SIGNAL_A)
     sprite: s32'lan301_11', 2
     createObject: s32'LAN_301_Shine001', (PLAYER)
     characterSfx: s32'lan_11'
@@ -6599,8 +6599,8 @@ beginState: s32'Warp_C_Add'
     sprite: s32'lan301_10', 1
     createObject: s32'cmn_EXSkillJizokuEff', (CENTER)
     callSubroutine: s32'cmnExSkill_Color'
-    sendSignalToAction: s32'Lan_211_appear01', 23
-    sendSignalToAction: s32'LAN_211_aura01', 23
+    sendSignalToAction: s32'Lan_211_appear01', (SIGNAL_A)
+    sendSignalToAction: s32'LAN_211_aura01', (SIGNAL_A)
     sprite: s32'lan301_11', 2
     createObject: s32'LAN_301_Shine001', (PLAYER)
     characterSfx: s32'lan_11'
@@ -6755,7 +6755,7 @@ beginState: s32'WeissFlugel'
     sprite: s32'lan430_13', 3
     sprite: s32'lan430_14', 3
     createObject: s32'LAN_430_syutyusen01', (PLAYER)
-    sendSignalToAction: s32'LAN_430_slash_start01', 23
+    sendSignalToAction: s32'LAN_430_slash_start01', (SIGNAL_A)
     voiceLine: s16'vLAN_ATKO_00_b'
     sprite: s32'lan430_15', 3
     sendSignalToAction: s32'LAN_430_slash_start01', 25
@@ -6784,7 +6784,7 @@ beginState: s32'WeissFlugel'
     sprite: s32'lan430_18', 3
     hit: 
     atkAngle: 120
-    sendSignalToAction: s32'LAN_430_slash_ranbu01', 23
+    sendSignalToAction: s32'LAN_430_slash_ranbu01', (SIGNAL_A)
     sprite: s32'lan430_19', 3
     sprite: s32'lan430_20', 3
     sprite: s32'lan430_21', 3
@@ -6807,7 +6807,7 @@ beginState: s32'WeissFlugel'
     sprite: s32'lan430_18', 3
     hit: 
     atkAngle: 180
-    sendSignalToAction: s32'LAN_430_slash_ranbu01', 23
+    sendSignalToAction: s32'LAN_430_slash_ranbu01', (SIGNAL_A)
     sprite: s32'lan430_19', 3
     sprite: s32'lan430_20', 3
     sprite: s32'lan430_21', 3
@@ -7251,10 +7251,10 @@ beginState: s32'Sylph'
     else: 
         Unknown1302: 
     endElse: 
-    sendSignalToAction: s32'lan_440_aura01', 23
-    sendSignalToAction: s32'lan_440_Str_Slash01', 23
-    sendSignalToAction: s32'lan_440_Str_Slash02', 23
-    sendSignalToAction: s32'lan_440_Str_Slash03', 23
+    sendSignalToAction: s32'lan_440_aura01', (SIGNAL_A)
+    sendSignalToAction: s32'lan_440_Str_Slash01', (SIGNAL_A)
+    sendSignalToAction: s32'lan_440_Str_Slash02', (SIGNAL_A)
+    sendSignalToAction: s32'lan_440_Str_Slash03', (SIGNAL_A)
     pushboxHeightLow: 268435455
     sprite: s32'lan440_16', 4
     sprite: s32'lan440_17', 14
@@ -7472,10 +7472,10 @@ beginState: s32'AirSylph'
     else: 
         Unknown1302: 
     endElse: 
-    sendSignalToAction: s32'lan_440_aura01', 23
-    sendSignalToAction: s32'lan_440_Str_Slash01', 23
-    sendSignalToAction: s32'lan_440_Str_Slash02', 23
-    sendSignalToAction: s32'lan_440_Str_Slash03', 23
+    sendSignalToAction: s32'lan_440_aura01', (SIGNAL_A)
+    sendSignalToAction: s32'lan_440_Str_Slash01', (SIGNAL_A)
+    sendSignalToAction: s32'lan_440_Str_Slash02', (SIGNAL_A)
+    sendSignalToAction: s32'lan_440_Str_Slash03', (SIGNAL_A)
     characterSfx: s32'lan_02'
     sprite: s32'lan440_16', 4
     sprite: s32'lan440_17', 14

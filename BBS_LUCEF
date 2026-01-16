@@ -12,7 +12,7 @@ beginSubroutine: s32'Weapon_Common_Init'
     setPositionY: 0
     storeValue: Mem(ObjReg4), Val(0)
     Unknown432: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'lwa000'
         if: Mem(Tmp)
             preSubroutineBegin: s32'lwa000'
@@ -877,7 +877,7 @@ beginState: s32'lwa000'
             ifNot: Mem(EnvR21)
                 if: Mem(PlayerVal0)
                     clearUpon: (FRAME_STEP)
-                    Unknown2035: 23, s32'lwa500', 0
+                    pawnAnimation: 23, s32'lwa500', 0
                 endIf: 
             endIf: 
         endUpon: 
@@ -930,7 +930,7 @@ beginState: s32'lwb000'
             ifNot: Mem(EnvR21)
                 if: Mem(PlayerVal0)
                     clearUpon: (FRAME_STEP)
-                    Unknown2035: 23, s32'lwb500', 0
+                    pawnAnimation: 23, s32'lwb500', 0
                 endIf: 
             endIf: 
         endUpon: 
@@ -983,7 +983,7 @@ beginState: s32'lwc000'
             ifNot: Mem(EnvR21)
                 if: Mem(PlayerVal0)
                     clearUpon: (FRAME_STEP)
-                    Unknown2035: 23, s32'lwc500', 0
+                    pawnAnimation: 23, s32'lwc500', 0
                 endIf: 
             endIf: 
         endUpon: 
@@ -1281,7 +1281,7 @@ beginState: s32'lwa030'
         callSubroutine: s32'Weapon_A_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwa000'
         endUpon: 
     endUpon: 
@@ -1305,7 +1305,7 @@ beginState: s32'lwb030'
         callSubroutine: s32'Weapon_B_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwb000'
         endUpon: 
     endUpon: 
@@ -1329,7 +1329,7 @@ beginState: s32'lwc030'
         callSubroutine: s32'Weapon_C_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc000'
         endUpon: 
     endUpon: 
@@ -1353,7 +1353,7 @@ beginState: s32'lwa031'
         callSubroutine: s32'Weapon_A_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwa000'
         endUpon: 
     endUpon: 
@@ -1377,7 +1377,7 @@ beginState: s32'lwb031'
         callSubroutine: s32'Weapon_B_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwb000'
         endUpon: 
     endUpon: 
@@ -1401,7 +1401,7 @@ beginState: s32'lwc031'
         callSubroutine: s32'Weapon_C_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc000'
         endUpon: 
     endUpon: 
@@ -1425,7 +1425,7 @@ beginState: s32'lwa033'
         callSubroutine: s32'Weapon_A_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwa000'
         endUpon: 
     endUpon: 
@@ -1448,7 +1448,7 @@ beginState: s32'lwb033'
         callSubroutine: s32'Weapon_B_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwb000'
         endUpon: 
     endUpon: 
@@ -1471,7 +1471,7 @@ beginState: s32'lwc033'
         callSubroutine: s32'Weapon_C_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc000'
         endUpon: 
     endUpon: 
@@ -1494,7 +1494,7 @@ beginState: s32'lwa034'
         callSubroutine: s32'Weapon_A_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwa000'
         endUpon: 
     endUpon: 
@@ -1517,7 +1517,7 @@ beginState: s32'lwb034'
         callSubroutine: s32'Weapon_B_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwb000'
         endUpon: 
     endUpon: 
@@ -1540,7 +1540,7 @@ beginState: s32'lwc034'
         callSubroutine: s32'Weapon_C_Init'
         callSubroutine: s32'Weapon_Neutral'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc000'
         endUpon: 
     endUpon: 
@@ -2299,7 +2299,7 @@ beginState: s32'luc_204_fireEff'
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'luc_204_fire'
         ignoreSuperFreezeFromAlly: 1
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setPositionX: 100899
@@ -2309,7 +2309,7 @@ beginState: s32'luc_204_fireEff'
     sprite: s32'null', 3
     beginLabel: s32'End'
     sprite: s32'null', 50
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'luc_204_fireEnd'
     linkObjectPosition: 0
     stopLinkObject: 0
@@ -2670,9 +2670,9 @@ beginSubroutine: s32'SwordAtk_AtkInit'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 1
-    gotoLabelUpon: 45, s32'End'
-    upon: 23
-        clearUpon: 23
+    gotoLabelUpon: (ON_DESTROY), s32'End'
+    upon: (SIGNAL_A)
+        clearUpon: (SIGNAL_A)
         gotoLabelRequests: s32'Shot'
     endUpon: 
 endSubroutine: 
@@ -2705,8 +2705,8 @@ beginState: s32'lwa209'
     sprite: s32'lwa209_01ex', 5
     beginLabel: s32'End'
     sprite: s32'keep', 10
-    clearUpon: 23
-    clearUpon: 45
+    clearUpon: (SIGNAL_A)
+    clearUpon: (ON_DESTROY)
     haltMomentum: 1
     Unknown1793: 3, 32
     recoveryState: 
@@ -2721,7 +2721,7 @@ beginState: s32'lwa209'
     sprite: s32'keep', 60
     callSubroutine: s32'Weapon_Disappear'
     storeValue: Mem(ObjReg6), Val(1)
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Player_CutScene'
         if: Mem(Tmp)
             moveToObject: (PLAYER)
@@ -2837,8 +2837,8 @@ beginState: s32'lwb211'
     recoveryState: 
     beginLabel: s32'End'
     sprite: s32'keep', 10
-    clearUpon: 23
-    clearUpon: 45
+    clearUpon: (SIGNAL_A)
+    clearUpon: (ON_DESTROY)
     haltMomentum: 1
     Unknown1793: 3, 32
     recoveryState: 
@@ -2853,7 +2853,7 @@ beginState: s32'lwb211'
     sprite: s32'keep', 120
     callSubroutine: s32'Weapon_Disappear'
     storeValue: Mem(ObjReg6), Val(1)
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Player_CutScene'
         if: Mem(Tmp)
             moveToObject: (PLAYER)
@@ -2922,9 +2922,9 @@ beginState: s32'lwc213'
         isAirUnblockable: 1
         Unknown1961: 1
         storeValue: Mem(PlayerVal3), Val(1)
-        upon: 45
+        upon: (ON_DESTROY)
         endUpon: 
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'lwc401to400'
             if: Mem(Tmp)
                 callSubroutine: s32'Weapon_Disappear_Flag'
@@ -2953,8 +2953,8 @@ beginState: s32'lwc213'
     recoveryState: 
     beginLabel: s32'End'
     sprite: s32'keep', 10
-    clearUpon: 23
-    clearUpon: 45
+    clearUpon: (SIGNAL_A)
+    clearUpon: (ON_DESTROY)
     haltMomentum: 1
     recoveryState: 
     upon: (FRAME_STEP)
@@ -2968,7 +2968,7 @@ beginState: s32'lwc213'
     sprite: s32'keep', 170
     callSubroutine: s32'Weapon_Disappear'
     storeValue: Mem(ObjReg6), Val(1)
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Player_CutScene'
         if: Mem(Tmp)
             moveToObject: (PLAYER)
@@ -3176,7 +3176,7 @@ beginSubroutine: s32'SwordWait_Init'
         endIf: 
     endElse: 
     endUpon: 
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Player_CutScene'
         if: Mem(Tmp)
             linkObjectZ: 3
@@ -3332,7 +3332,7 @@ beginState: s32'luc_213_SlashEff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
         flipDirection: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3340,7 +3340,7 @@ beginState: s32'luc_213_SlashEff'
     linkParticle: s32'luc_213_Slash01'
     beginLabel: s32'End'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'luc_213_Slash02'
 endState: 
 
@@ -3413,7 +3413,7 @@ beginState: s32'luc_208_groundEff'
         linkParticle: s32'luc_208_ground'
         linkObjectDirection: 3
         addPositionX: -17000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3434,7 +3434,7 @@ beginState: s32'luc_208_groundEff'
     endUpon: 
     beginLabel: s32'End'
     sprite: s32'null', 12
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     setAlphaColor: 1000
     setAlphaColorSpeed: -60
@@ -3448,7 +3448,7 @@ beginState: s32'luc_208_groundparticleEff'
         setLinkObjectDestroyOnDamage: 3
         linkObjectDirection: 3
         addPositionX: -17000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3458,7 +3458,7 @@ beginState: s32'luc_208_groundparticleEff'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'null', 1
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     createParticleWithArg2: s32'luc_208_groundparticle', (PLAYER)
 endState: 
 
@@ -3628,9 +3628,9 @@ beginState: s32'lwc232'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_C_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 23, s32'Start'
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc010_Loop'
         endUpon: 
     endUpon: 
@@ -3712,7 +3712,7 @@ beginState: s32'lwa233'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_A_Init'
         Unknown2483: 2, 32, 2, 32
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwa010_Loop'
         endUpon: 
     endUpon: 
@@ -3736,7 +3736,7 @@ beginState: s32'lwb233'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_B_Init'
         Unknown2483: 2, 32, 2, 32
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwb010_Loop'
         endUpon: 
     endUpon: 
@@ -3798,8 +3798,8 @@ beginState: s32'lwa250'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_A_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwa000'
         endUpon: 
     endUpon: 
@@ -3823,8 +3823,8 @@ beginState: s32'lwb250'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_B_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwb000'
         endUpon: 
     endUpon: 
@@ -3848,8 +3848,8 @@ beginState: s32'lwc250'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_C_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc000'
         endUpon: 
     endUpon: 
@@ -3895,8 +3895,8 @@ beginState: s32'lwa251'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_A_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwa000'
         endUpon: 
     endUpon: 
@@ -3920,8 +3920,8 @@ beginState: s32'lwb251'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_B_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwb000'
         endUpon: 
     endUpon: 
@@ -3945,8 +3945,8 @@ beginState: s32'lwc251'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_C_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc000'
         endUpon: 
     endUpon: 
@@ -3991,8 +3991,8 @@ beginState: s32'lwa252'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_A_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwa000'
         endUpon: 
     endUpon: 
@@ -4017,8 +4017,8 @@ beginState: s32'lwb252'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_B_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwb000'
         endUpon: 
     endUpon: 
@@ -4043,8 +4043,8 @@ beginState: s32'lwc252'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_C_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc000'
         endUpon: 
     endUpon: 
@@ -4073,7 +4073,7 @@ beginState: s32'luc_252_ThunderEff'
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'luc_252_Thunder01'
         setObjectSize: 1400
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4086,7 +4086,7 @@ beginState: s32'luc_252_ThunderEff'
     stopLinkObject: 3
     beginLabel: s32'End'
     sprite: s32'null', 40
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'luc_252_Thunder01End'
     linkObjectPosition: 0
     setLinkObjectDestroyOnStateChange: 0
@@ -4096,9 +4096,9 @@ beginState: s32'lwa253'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_A_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 23, s32'Start'
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwa000'
         endUpon: 
     endUpon: 
@@ -4123,9 +4123,9 @@ beginState: s32'lwb253'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_B_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 23, s32'Start'
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwb000'
         endUpon: 
     endUpon: 
@@ -4150,9 +4150,9 @@ beginState: s32'lwc253'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_C_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 23, s32'Start'
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc000'
         endUpon: 
     endUpon: 
@@ -4202,7 +4202,7 @@ beginState: s32'luc_253_ThunderEff'
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'luc_252_Thunder01'
         setObjectSize: 1400
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4215,7 +4215,7 @@ beginState: s32'luc_253_ThunderEff'
     stopLinkObject: 3
     beginLabel: s32'End'
     sprite: s32'null', 40
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'luc_252_Thunder01End'
     linkObjectPosition: 0
     setLinkObjectDestroyOnStateChange: 0
@@ -4273,7 +4273,7 @@ beginState: s32'luc_301_ThrowGareki'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'luc_301_Gareki'
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4281,7 +4281,7 @@ beginState: s32'luc_301_ThrowGareki'
     setObjectSize: 3000
     beginLabel: s32'End'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setLinkObjectDestroyOnStateChange: 0
     linkObjectPosition: 0
     setAlphaColorSpeed: -40
@@ -4296,7 +4296,7 @@ beginState: s32'luc_301_EnshutuCamera'
             Unknown2582: 
             haikuEnd: 
         endUpon: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Fall'
         endUpon: 
         upon: 24
@@ -4315,7 +4315,7 @@ beginState: s32'luc_301_EnshutuCamera'
     Unknown2074: 3, 38989, 540000, 129795, 18, 0, 0, 60, 20, 40, 0, 0, 0, 0
     beginLabel: s32'Landing'
     sprite: s32'null', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkObjectPosition: 3
     Unknown2074: 3, 16392, 279398, 57578, -98, 67, 0, 60, 3, 0, 1200, 0, 0, 0
     cameraShake: s32'ShakeTate', 1000, 0, 15, 5
@@ -4395,8 +4395,8 @@ beginState: s32'luc_306_StrikeEff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4452,8 +4452,8 @@ beginState: s32'lwa350'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_A_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 23, s32'Start'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'lwa350_00', 2
     sprite: s32'lwa350_01', 2
@@ -4490,8 +4490,8 @@ beginState: s32'lwb350'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_B_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 23, s32'Start'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'lwb350_00', 2
     sprite: s32'lwb350_01', 2
@@ -4528,8 +4528,8 @@ beginState: s32'lwc350'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_C_Init'
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 23, s32'Start'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'lwc350_00', 2
     sprite: s32'lwc350_01', 2
@@ -4583,7 +4583,7 @@ beginState: s32'luc_350_SordEff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'luc_350_Sord01'
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Atk'
         endUpon: 
     endUpon: 
@@ -4622,9 +4622,9 @@ beginState: s32'lwc400'
         linkObjectZ: 0
         zLine: 5, 5
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 23, s32'Start'
-        gotoLabelUpon: 32, s32'End'
-        gotoLabelUpon: 47, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        gotoLabelUpon: (AFTER_EXIT), s32'End'
     endUpon: 
     sprite: s32'keep', 2
     Unknown412: 80, 2, 7, 1
@@ -4653,16 +4653,16 @@ beginState: s32'lwc400'
     sprite: s32'lwc400_02', 2
     createObject: s32'luc_400_slashEff', (PLAYER)
     sprite: s32'lwc400_03', 2
-    sendSignalToAction: s32'luc_400_slashEff', 23
+    sendSignalToAction: s32'luc_400_slashEff', (SIGNAL_A)
     sprite: s32'lwc400_04', 2
     sprite: s32'lwc400_05', 2
     sprite: s32'lwc400_06', 2147483647
     beginLabel: s32'End'
     sprite: s32'keep', 10
-    clearUpon: 23
-    clearUpon: 32
-    clearUpon: 47
-    sendSignalToAction: s32'luc_400_slashEff', 23
+    clearUpon: (SIGNAL_A)
+    clearUpon: (SIGNAL_B)
+    clearUpon: (AFTER_EXIT)
+    sendSignalToAction: s32'luc_400_slashEff', (SIGNAL_A)
     callSubroutine: s32'Weapon_Disappear'
     storeValue: Mem(ObjReg6), Val(1)
     addPositionX: -50000
@@ -4678,14 +4678,14 @@ beginState: s32'luc_400_slashEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
     endUpon: 
     sprite: s32'null', 2
     linkParticle: s32'luc_400_Slash01'
     beginLabel: s32'End'
     sprite: s32'null', 30
     linkParticle: s32'luc_400_Slash02'
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setLinkObjectDestroyOnStateChange: 0
     linkObjectPosition: 0
     stopLinkObject: 3
@@ -4708,12 +4708,12 @@ beginState: s32'lwc401'
         linkObjectZ: 0
         zLine: 5, 5
         Unknown2483: 2, 32, 2, 32
-        upon: 47
+        upon: (AFTER_EXIT)
             jumpToState: s32'lwc000'
         endUpon: 
-        gotoLabelUpon: 23, s32'Start'
-        gotoLabelUpon: 32, s32'End'
-        gotoLabelUpon: 47, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        gotoLabelUpon: (AFTER_EXIT), s32'End'
     endUpon: 
     sprite: s32'keep', 2
     Unknown412: 80, 2, 7, 1
@@ -4741,10 +4741,10 @@ beginState: s32'lwc401'
     sprite: s32'lwc401_06', 2147483647
     beginLabel: s32'End'
     sprite: s32'keep', 10
-    clearUpon: 23
-    clearUpon: 32
-    clearUpon: 47
-    sendSignalToAction: s32'luc_401_slashEff', 23
+    clearUpon: (SIGNAL_A)
+    clearUpon: (SIGNAL_B)
+    clearUpon: (AFTER_EXIT)
+    sendSignalToAction: s32'luc_401_slashEff', (SIGNAL_A)
     callSubroutine: s32'Weapon_Disappear'
     storeValue: Mem(ObjReg6), Val(1)
     sprite: s32'null', 2147483647
@@ -4759,7 +4759,7 @@ beginState: s32'luc_401_slashEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
     endUpon: 
     sprite: s32'null', 2
     linkParticle: s32'luc_401_Slash01'
@@ -4767,7 +4767,7 @@ beginState: s32'luc_401_slashEff'
     beginLabel: s32'End'
     sprite: s32'null', 30
     linkParticle: s32'luc_401_Slash02'
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setLinkObjectDestroyOnStateChange: 0
     linkObjectPosition: 0
     requestShake: 6000, 6000
@@ -4788,10 +4788,10 @@ beginState: s32'lwc401to400'
         linkObjectZ: 0
         zLine: 5, 5
         Unknown2483: 2, 32, 2, 32
-        gotoLabelUpon: 23, s32'Start'
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
         gotoLabelUpon: 24, s32'2nd'
-        gotoLabelUpon: 32, s32'End'
-        gotoLabelUpon: 47, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        gotoLabelUpon: (AFTER_EXIT), s32'End'
     endUpon: 
     sprite: s32'keep', 2
     Unknown412: 80, 2, 7, 1
@@ -4834,15 +4834,15 @@ beginState: s32'lwc401to400'
     sprite: s32'lwc400_06', 2147483647
     beginLabel: s32'End'
     sprite: s32'keep', 10
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: 24
-    clearUpon: 32
-    clearUpon: 47
+    clearUpon: (SIGNAL_B)
+    clearUpon: (AFTER_EXIT)
     if: Mem(ActReg0)
-        sendSignalToAction: s32'luc_400_slashEff', 23
+        sendSignalToAction: s32'luc_400_slashEff', (SIGNAL_A)
     endIf: 
     else: 
-        sendSignalToAction: s32'luc_401_slashEff', 23
+        sendSignalToAction: s32'luc_401_slashEff', (SIGNAL_A)
     endElse: 
     callSubroutine: s32'Weapon_Disappear'
     storeValue: Mem(ObjReg6), Val(1)
@@ -4927,14 +4927,14 @@ beginState: s32'SpecialShot_Y'
                 endIf: 
             endUpon: 
         endIf: 
-        gotoLabelUpon: 23, s32'Attack'
+        gotoLabelUpon: (SIGNAL_A), s32'Attack'
         upon: (FRAME_STEP)
             if: Mem(ActReg0)
                 setLinkObjectDestroyOnStateChange: 0
                 setLinkObjectDestroyOnDamage: 0
                 Unknown2212: 1
                 Unknown2213: 0
-                clearUpon: 23
+                clearUpon: (SIGNAL_A)
                 if: Mem(ActReg4)
                     initializeDestroy: 
                     checkScreenCollision: 1
@@ -4970,7 +4970,7 @@ beginState: s32'SpecialShot_Y'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
@@ -5006,13 +5006,13 @@ beginState: s32'SpecialShot_Y'
             storeValue: Mem(EnvR21), Val(0)
             ifNot: Mem(ActReg2)
                 ifNot: Mem(PlayerDamage)
-                    Unknown2035: 4, s32'Appear_Fast', 0
-                    Unknown2035: 5, s32'Appear_Fast', 0
+                    pawnAnimation: 4, s32'Appear_Fast', 0
+                    pawnAnimation: 5, s32'Appear_Fast', 0
                 endIf: 
                 else: 
                     Unknown310: 9, 3, 2, 31, 0, 1
-                    Unknown2035: 4, s32'Appear_Fast', 0
-                    Unknown2035: 5, s32'Appear_Fast', 0
+                    pawnAnimation: 4, s32'Appear_Fast', 0
+                    pawnAnimation: 5, s32'Appear_Fast', 0
                 endIf: 
             endElse: 
         endIf: 
@@ -5090,7 +5090,7 @@ beginState: s32'SpecialShot_Y'
     gotoLabel: s32'Loop'
     beginLabel: s32'Koware'
     sprite: s32'null', 20
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 13
     clearUpon: (FRAME_STEP)
     clearUpon: 35
@@ -5108,13 +5108,13 @@ beginState: s32'SpecialShot_Y'
     storeValue: Mem(PlayerVal2), Val(0)
     storeValue: Mem(EnvR21), Val(0)
     ifNot: Mem(PlayerDamage)
-        Unknown2035: 4, s32'Appear_Fast', 0
-        Unknown2035: 5, s32'Appear_Fast', 0
+        pawnAnimation: 4, s32'Appear_Fast', 0
+        pawnAnimation: 5, s32'Appear_Fast', 0
     endIf: 
     else: 
         Unknown310: 9, 3, 2, 31, 0, 1
-        Unknown2035: 4, s32'Appear_Fast', 0
-        Unknown2035: 5, s32'Appear_Fast', 0
+        pawnAnimation: 4, s32'Appear_Fast', 0
+        pawnAnimation: 5, s32'Appear_Fast', 0
     endIf: 
     endElse: 
     storeValue: Mem(ActReg2), Val(1)
@@ -5214,7 +5214,7 @@ beginState: s32'SpecialShot_T'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         setEventTrigger: 13, 100
@@ -5228,7 +5228,7 @@ beginState: s32'SpecialShot_T'
         upon: 54
             hitstop: 3
         endUpon: 
-        gotoLabelUpon: 23, s32'Pre'
+        gotoLabelUpon: (SIGNAL_A), s32'Pre'
         gotoLabelUpon: 24, s32'Attack'
         addPositionX: 201973
         addPositionY: 260868
@@ -5244,13 +5244,13 @@ beginState: s32'SpecialShot_T'
             storeValue: Mem(EnvR21), Val(0)
             ifNot: Mem(ActReg2)
                 ifNot: Mem(PlayerDamage)
-                    Unknown2035: 4, s32'Appear_Fast', 0
-                    Unknown2035: 5, s32'Appear_Fast', 0
+                    pawnAnimation: 4, s32'Appear_Fast', 0
+                    pawnAnimation: 5, s32'Appear_Fast', 0
                 endIf: 
                 else: 
                     Unknown310: 9, 3, 2, 31, 0, 1
-                    Unknown2035: 4, s32'Appear_Fast', 0
-                    Unknown2035: 5, s32'Appear_Fast', 0
+                    pawnAnimation: 4, s32'Appear_Fast', 0
+                    pawnAnimation: 5, s32'Appear_Fast', 0
                 endIf: 
             endElse: 
         endIf: 
@@ -5310,7 +5310,7 @@ beginState: s32'SpecialShot_T'
     gotoLabel: s32'Loop'
     beginLabel: s32'Koware'
     sprite: s32'null', 20
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 13
     clearUpon: (FRAME_STEP)
     clearUpon: 35
@@ -5322,13 +5322,13 @@ beginState: s32'SpecialShot_T'
     storeValue: Mem(PlayerVal2), Val(0)
     storeValue: Mem(EnvR21), Val(0)
     ifNot: Mem(PlayerDamage)
-        Unknown2035: 4, s32'Appear_Fast', 0
-        Unknown2035: 5, s32'Appear_Fast', 0
+        pawnAnimation: 4, s32'Appear_Fast', 0
+        pawnAnimation: 5, s32'Appear_Fast', 0
     endIf: 
     else: 
         Unknown310: 9, 3, 2, 31, 0, 1
-        Unknown2035: 4, s32'Appear_Fast', 0
-        Unknown2035: 5, s32'Appear_Fast', 0
+        pawnAnimation: 4, s32'Appear_Fast', 0
+        pawnAnimation: 5, s32'Appear_Fast', 0
     endIf: 
     endElse: 
     storeValue: Mem(ActReg2), Val(1)
@@ -5340,16 +5340,16 @@ beginState: s32'SpecialShot_T_Eff'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Pre'
         endUpon: 
         upon: 24
             clearUpon: 24
             gotoLabelRequests: s32'Attack'
         endUpon: 
-        upon: 45
-            clearUpon: 45
+        upon: (ON_DESTROY)
+            clearUpon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         setAngleX: 16000
@@ -5405,7 +5405,7 @@ beginState: s32'SpecialShot_T_Eff'
     gotoLabel: s32'Loop'
     beginLabel: s32'Koware'
     sprite: s32'null', 40
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     if: Mem(405)
         linkParticle: s32'luc_402_SlashSpinEnd02LM'
         callSubroutine: s32'cmnWeaponLvMaxColorInit'
@@ -5432,13 +5432,13 @@ beginState: s32'lwa403'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_A_Init'
         Unknown2483: 2, 32, 2, 32
-        upon: 23
+        upon: (SIGNAL_A)
             callSubroutine: s32'Weapon_Disappear'
             callSubroutine: s32'Weapon_Disappear_Flag'
         endUpon: 
         gotoLabelUpon: 24, s32'Attack'
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             Unknown412: 100, 2, 5, 1
             Unknown413: 0, 2, 5, 1
             jumpToState: s32'lwa000'
@@ -5468,7 +5468,7 @@ beginState: s32'lwa403'
     gotoLabel: s32'End'
     beginLabel: s32'End'
     sprite: s32'lwa403_15', 3
-    clearUpon: 47
+    clearUpon: (AFTER_EXIT)
     callSubroutine: s32'Weapon_Appear_50_2'
     Unknown413: 4, 2, 5, 1
     sprite: s32'lwa403_16', 2
@@ -5480,13 +5480,13 @@ beginState: s32'lwb403'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_B_Init'
         Unknown2483: 2, 32, 2, 32
-        upon: 23
+        upon: (SIGNAL_A)
             callSubroutine: s32'Weapon_Disappear'
             callSubroutine: s32'Weapon_Disappear_Flag'
         endUpon: 
         gotoLabelUpon: 24, s32'Attack'
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             Unknown412: 100, 2, 6, 1
             Unknown413: 0, 2, 6, 1
             jumpToState: s32'lwb000'
@@ -5516,7 +5516,7 @@ beginState: s32'lwb403'
     gotoLabel: s32'End'
     beginLabel: s32'End'
     sprite: s32'lwb403_15', 3
-    clearUpon: 47
+    clearUpon: (AFTER_EXIT)
     callSubroutine: s32'Weapon_Appear_50_2'
     Unknown413: 4, 2, 5, 1
     sprite: s32'lwb403_16', 2
@@ -5528,13 +5528,13 @@ beginState: s32'lwc403'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_C_Init'
         Unknown2483: 2, 32, 2, 32
-        upon: 23
+        upon: (SIGNAL_A)
             callSubroutine: s32'Weapon_Disappear'
             callSubroutine: s32'Weapon_Disappear_Flag'
         endUpon: 
         gotoLabelUpon: 24, s32'Attack'
-        gotoLabelUpon: 32, s32'End'
-        upon: 47
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (AFTER_EXIT)
             Unknown412: 100, 2, 7, 1
             Unknown413: 0, 2, 7, 1
             jumpToState: s32'lwc000'
@@ -5564,7 +5564,7 @@ beginState: s32'lwc403'
     gotoLabel: s32'End'
     beginLabel: s32'End'
     sprite: s32'lwc403_15', 3
-    clearUpon: 47
+    clearUpon: (AFTER_EXIT)
     callSubroutine: s32'Weapon_Appear_50_2'
     Unknown413: 4, 2, 5, 1
     sprite: s32'lwc403_16', 2
@@ -5684,7 +5684,7 @@ beginState: s32'luc_403_AuraStartEff'
         stopLinkObject: 3
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'loop'
         endUpon: 
         upon: 24
@@ -5703,7 +5703,7 @@ beginState: s32'luc_403_AuraStartEff'
     setDepth: -53438
     beginLabel: s32'loop'
     sprite: s32'null', 300
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setPositionX: -128907
     setPositionY: 317554
     setDepth: -98262
@@ -5728,7 +5728,7 @@ beginState: s32'luc_403_AuraEff'
         stopLinkObject: 3
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -5740,7 +5740,7 @@ beginState: s32'luc_403_AuraEff'
     beginLabel: s32'End'
     sprite: s32'null', 30
     linkParticle: s32'luc_403_HandAuraEnd'
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setLinkObjectDestroyOnStateChange: 0
     linkObjectPosition: 0
 endState: 
@@ -5753,7 +5753,7 @@ beginState: s32'luc_403_AuraDashEff'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 3
         setPositionY: 271727
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -5767,7 +5767,7 @@ beginState: s32'luc_403_AuraDashEff'
     createParticleWithArg2: s32'bg_GroundBurst', (PLAYER_LAND)
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32''
     Unknown2268: 0, 800
     createParticleWithArg2: s32'bg_GroundBurst', (PLAYER_LAND)
@@ -6047,7 +6047,7 @@ beginState: s32'luc_406_kickEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setAngleX: 343200
@@ -6062,7 +6062,7 @@ beginState: s32'luc_406_kickEff'
     beginLabel: s32'End'
     sprite: s32'null', 25
     linkParticle: s32'luc_405_kickloopEnd'
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setLinkObjectDestroyOnStateChange: 0
     linkObjectPosition: 0
     requestShake: 6000, 6000
@@ -6185,8 +6185,8 @@ beginState: s32'luc_430_BodyAura'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkParticle: s32'luc_430_BodyAura'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6210,8 +6210,8 @@ beginState: s32'luc_430_HandAura'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkParticle: s32'luc_430_ChargeAura'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6239,8 +6239,8 @@ beginState: s32'luc_430_HandAura2'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkParticle: s32'luc_430_ChargeAura2'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6268,8 +6268,8 @@ beginState: s32'luc_430CS_HandParticle'
         stopLinkObject: 3
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'AuraStart'
         endUpon: 
     endUpon: 
@@ -6582,7 +6582,7 @@ beginState: s32'lwa440'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_A_Init'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             storeValue: Mem(ObjReg0), Val(0)
             Unknown412: 100, 2, 5, 1
             Unknown413: 0, 2, 5, 1
@@ -6608,7 +6608,7 @@ beginState: s32'lwa440'
     sprite: s32'lwa440_10', 3
     sprite: s32'lwa440_11', 3
     sprite: s32'lwa440_12', 3
-    clearUpon: 47
+    clearUpon: (AFTER_EXIT)
     storeValue: Mem(ObjReg0), Val(0)
     callSubroutine: s32'Weapon_Appear'
     sprite: s32'lwa440_13', 3
@@ -6624,7 +6624,7 @@ beginState: s32'lwb440'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_B_Init'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             storeValue: Mem(ObjReg0), Val(0)
             Unknown412: 100, 2, 6, 1
             Unknown413: 0, 2, 6, 1
@@ -6650,7 +6650,7 @@ beginState: s32'lwb440'
     sprite: s32'lwb440_10', 3
     sprite: s32'lwb440_11', 3
     sprite: s32'lwb440_12', 3
-    clearUpon: 47
+    clearUpon: (AFTER_EXIT)
     storeValue: Mem(ObjReg0), Val(0)
     callSubroutine: s32'Weapon_Appear'
     sprite: s32'lwb440_13', 3
@@ -6666,7 +6666,7 @@ beginState: s32'lwc440'
     upon: (IMMEDIATE)
         callSubroutine: s32'Weapon_C_Init'
         storeValue: Mem(ObjReg5), Val(0)
-        upon: 47
+        upon: (AFTER_EXIT)
             storeValue: Mem(ObjReg0), Val(0)
             Unknown412: 100, 2, 7, 1
             Unknown413: 0, 2, 7, 1
@@ -6692,7 +6692,7 @@ beginState: s32'lwc440'
     sprite: s32'lwc440_10', 3
     sprite: s32'lwc440_11', 3
     sprite: s32'lwc440_12', 3
-    clearUpon: 47
+    clearUpon: (AFTER_EXIT)
     storeValue: Mem(ObjReg0), Val(0)
     callSubroutine: s32'Weapon_Appear'
     sprite: s32'lwc440_13', 3
@@ -6711,8 +6711,8 @@ beginState: s32'luc_440_ShockWaveEff'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 3
         linkParticle: s32'luc_440_Burst'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setPositionX: -33066
@@ -7013,8 +7013,8 @@ beginState: s32'luc_440CS_BG'
         stopLinkObject: 3
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'PosChangeA'
         endUpon: 
         upon: 24
@@ -7664,8 +7664,8 @@ beginState: s32'luc_442CS_BG'
         stopLinkObject: 3
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'PosChangeA'
         endUpon: 
     endUpon: 
@@ -7883,8 +7883,8 @@ beginState: s32'luc_440_SkyRay'
         linkObjectZ: 3
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'luc_440_SkyRay'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -7930,7 +7930,7 @@ beginState: s32'luc_440_BossBeam'
     beginLabel: s32'End'
     sprite: s32'null', 75
     linkParticle: s32'luc_440_Beam01End'
-    sendSignalToAction: s32'luc_440_BossBeamGareki', 23
+    sendSignalToAction: s32'luc_440_BossBeamGareki', (SIGNAL_A)
 endState: 
 
 beginState: s32'luc_440_BossBeamGareki'
@@ -7940,8 +7940,8 @@ beginState: s32'luc_440_BossBeamGareki'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'luc_440_BeamGareki'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -7963,7 +7963,7 @@ beginState: s32'luc_501_BodyAura'
         upon: (FRAME_STEP)
             moveToPosType: 2, 103
         endUpon: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Restart'
         endUpon: 
         upon: 24
@@ -8019,7 +8019,7 @@ beginState: s32'luc_504_Barriar'
         linkObjectDirection: 3
         linkParticle: s32'luc_504_Barriar'
         addPositionY: 15000
-        upon: 23
+        upon: (SIGNAL_A)
             ifNot: Mem(ActReg0)
                 gotoLabelRequests: s32'Damage'
             endIf: 
@@ -8250,7 +8250,7 @@ beginState: s32'luc_700CS1P_SordAura'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Flash'
         endUpon: 
     endUpon: 
@@ -8378,8 +8378,8 @@ beginState: s32'luc_700CS2P_Spark'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -8414,8 +8414,8 @@ beginState: s32'luc_700CS2P_HandAura'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -8764,7 +8764,7 @@ beginState: s32'Kakujin_lvupEff'
         linkObjectPosition: 3
         linkParticle: s32'luc_lvup'
         addPositionY: 250000
-        upon: 23
+        upon: (SIGNAL_A)
             linkObjectPosition: 0
         endUpon: 
     endUpon: 

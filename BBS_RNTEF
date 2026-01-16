@@ -568,7 +568,7 @@ beginState: s32'rnt_208_Atk'
     setLinkObjectDestroyOnStateChange: 0
     sprite: s32'null', 60
     stackObjectEx: (SELF), 6, 3, 6
-    Unknown2035: 6, s32'PreQuake', 0
+    pawnAnimation: 6, s32'PreQuake', 0
     linkObjectPosition: 0
     stopLinkObject: 0
 endState: 
@@ -598,8 +598,8 @@ beginState: s32'rnt_252_StrikeEff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             stopLinkObject: 0
         endUpon: 
     endUpon: 
@@ -874,7 +874,7 @@ beginState: s32'rnt400_atk'
             addPositionX: 50000
             setObjectSize: 1600
         endIf: 
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'null', 60
     linkParticle: s32'rnt_400_loop'
@@ -904,7 +904,7 @@ beginState: s32'RNU401_Exe'
         moveToObject: (PLAYER)
         addPositionX: -460000
         setObjectSize: 1300
-        gotoLabelUpon: 23, s32'Atk'
+        gotoLabelUpon: (SIGNAL_A), s32'Atk'
     endUpon: 
     sprite: s32'rnu401_00', 3
     privateSE: s32'rnt_05_2'
@@ -962,7 +962,7 @@ beginState: s32'RNU401_ExeD'
         addPositionX: -410000
         setPositionY: 0
         setObjectSize: 1300
-        gotoLabelUpon: 23, s32'Atk'
+        gotoLabelUpon: (SIGNAL_A), s32'Atk'
     endUpon: 
     sprite: s32'rnu401_14', 3
     privateSE: s32'rnt_05_2'
@@ -1011,7 +1011,7 @@ beginState: s32'RNU401_ExeD2'
             flipDirection: 
         endIf: 
         addPositionX: -310000
-        gotoLabelUpon: 23, s32'Atk'
+        gotoLabelUpon: (SIGNAL_A), s32'Atk'
     endUpon: 
     sprite: s32'rnu401_14', 3
     sprite: s32'rnu401_15', 3
@@ -1106,7 +1106,7 @@ beginState: s32'rnt_400_WandRayEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1117,7 +1117,7 @@ beginState: s32'rnt_400_WandRayEff'
     setDepth: 117001
     beginLabel: s32'End'
     sprite: s32'null', 2
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setPositionX: -201011
     setPositionY: 333044
     setDepth: 97594
@@ -1191,7 +1191,7 @@ beginState: s32'rnt_400_BG'
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
         setObjectSize: 2000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1213,7 +1213,7 @@ beginState: s32'rnt_402_JetEff'
         setAngleX: 339200
         setAngleY: 0
         setAngle: 39200
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: 24
@@ -1244,7 +1244,7 @@ beginState: s32'rnt_402_JetEff'
     sprite: s32'null', 24
     setObjectSize: 1750
     linkParticle: s32'rnt_402_jetend'
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setPositionX: -92967
     setPositionY: 269703
     setDepth: 35824
@@ -1271,7 +1271,7 @@ beginState: s32'rnt_403_Screw'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1288,7 +1288,7 @@ beginState: s32'rnt_403_Screw'
     sprite: s32'null', 30
     linkObjectPosition: 0
     stopLinkObject: 0
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     physicsYImpulse: 2500
     sprite: s32'null', 5
     physicsYImpulse: 1250
@@ -1307,7 +1307,7 @@ beginState: s32'rnt_403_Screw2'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1324,7 +1324,7 @@ beginState: s32'rnt_403_Screw2'
     sprite: s32'null', 30
     linkObjectPosition: 0
     stopLinkObject: 0
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     physicsYImpulse: 2500
     sprite: s32'null', 5
     physicsYImpulse: 1250
@@ -1389,7 +1389,7 @@ beginState: s32'rnt_404_AtkRayEff'
         setPositionX: 110973
         setPositionY: 399328
         setDepth: 115511
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1397,7 +1397,7 @@ beginState: s32'rnt_404_AtkRayEff'
     linkParticle: s32'rnt_404_atkEff'
     beginLabel: s32'End'
     sprite: s32'null', 10
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setAlphaColorSpeed: -100
 endState: 
 
@@ -1441,7 +1441,7 @@ beginState: s32'rnt_405_Shot'
         Unknown2257: 1
         Unknown2212: 1
         Unknown2213: 1
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 37
             gotoLabelRequests: s32'ShotEnd'
         endUpon: 
@@ -1451,7 +1451,7 @@ beginState: s32'rnt_405_Shot'
         addPositionY: 450000
         addPositionX: -100000
         setObjectSize: 1000
-        gotoLabelUpon: 23, s32'Fall'
+        gotoLabelUpon: (SIGNAL_A), s32'Fall'
         gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
         Unknown1909: 100000
         worldCollision: 1
@@ -1571,7 +1571,7 @@ beginState: s32'rnt_405_Shot_Exe'
         addPositionY: 450000
         addPositionX: -100000
         setObjectSize: 1000
-        gotoLabelUpon: 23, s32'Fall'
+        gotoLabelUpon: (SIGNAL_A), s32'Fall'
         gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
         Unknown1909: 100000
     endUpon: 
@@ -1668,7 +1668,7 @@ beginState: s32'rnt_405_Shot_Exe_D'
         addPositionY: 450000
         addPositionX: -100000
         setObjectSize: 1000
-        gotoLabelUpon: 23, s32'Fall'
+        gotoLabelUpon: (SIGNAL_A), s32'Fall'
         gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
         Unknown1909: 100000
     endUpon: 
@@ -1706,7 +1706,7 @@ beginState: s32'rnt_405_Shot_Exe_D'
     privateSE: s32'rnt_10'
     privateSE: s32'rnt_01'
     sprite: s32'rnt_405_shotAtk', 60
-    sendSignalToAction: s32'AntiAirExe_D', 32
+    sendSignalToAction: s32'AntiAirExe_D', (SIGNAL_B)
     recoveryState: 
 endState: 
 
@@ -2227,7 +2227,7 @@ beginSubroutine: s32'Rock_Disp'
 endSubroutine: 
 
 beginSubroutine: s32'Rock_Signal_Name'
-    upon: 49
+    upon: (SIGNAL_NAME)
         callSubroutine: s32'Rock_Disp'
         checkSignalName: s32'FallWait'
         if: Mem(Tmp)
@@ -2262,8 +2262,8 @@ beginSubroutine: s32'Rock_Signal_Name'
             Unknown2024: 0x010000001600000067000000000000000000000000000000A086010000000000204E00000000000046000000
             clearUpon: (FRAME_STEP)
             clearUpon: (TOUCH_GROUND)
-            clearUpon: 49
-            sendSignalToAction: s32'rnt_408_FallSign', 23
+            clearUpon: (SIGNAL_NAME)
+            sendSignalToAction: s32'rnt_408_FallSign', (SIGNAL_A)
             hit: 
             onlyHitPlayer: 1
             attackThroughArmor: 1
@@ -2283,8 +2283,8 @@ beginSubroutine: s32'Rock_Signal_Name'
                 Unknown2024: 0x010000001600000067000000000000000000000000000000A086010000000000204E00000000000046000000
                 clearUpon: (FRAME_STEP)
                 clearUpon: (TOUCH_GROUND)
-                clearUpon: 49
-                sendSignalToAction: s32'rnt_408_FallSign', 23
+                clearUpon: (SIGNAL_NAME)
+                sendSignalToAction: s32'rnt_408_FallSign', (SIGNAL_A)
                 hit: 
                 callSubroutine: s32'cmnOugiShot_AtkInit'
                 onlyHitPlayer: 1
@@ -2352,7 +2352,7 @@ beginSubroutine: s32'rnt_408_Rock_Init'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 0
-    upon: 45
+    upon: (ON_DESTROY)
         clearUpon: 37
         gotoLabelRequests: s32'Koware'
     endUpon: 
@@ -2521,18 +2521,18 @@ beginState: s32'rnt_408_Rock_Test'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 1
-    upon: 45
+    upon: (ON_DESTROY)
         clearUpon: 37
         gotoLabelRequests: s32'Koware'
     endUpon: 
     endUpon: 
     sprite: s32'rnt408_AtkCol', 20
     attackOff: 
-    gotoLabelUpon: 23, s32'Fall'
+    gotoLabelUpon: (SIGNAL_A), s32'Fall'
     beginLabel: s32'Fall'
     sprite: s32'keep', 3
-    clearUpon: 23
-    upon: 49
+    clearUpon: (SIGNAL_A)
+    upon: (SIGNAL_NAME)
         callSubroutine: s32'Rock_Disp'
     endUpon: 
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg0), Val(3)
@@ -2555,9 +2555,9 @@ beginState: s32'rnt_408_Rock_Test'
     gotoLabel: s32'Fall_Loop'
     beginLabel: s32'Landing'
     sprite: s32'null', 120
-    clearUpon: 45
-    clearUpon: 49
-    upon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
+    upon: (SIGNAL_NAME)
         callSubroutine: s32'Rock_Disp'
     endUpon: 
     attackEndDelay: 
@@ -2576,8 +2576,8 @@ beginState: s32'rnt_408_Rock_Test'
     beginLabel: s32'Koware'
     sprite: s32'keep', 20
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
-    clearUpon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
     setAngle: 0
     haltMomentum: 1
     setAlphaColorSpeed: -100
@@ -2608,8 +2608,8 @@ beginState: s32'rnt_408_FallSign_Test'
         else: 
             linkParticle: s32'rnt_408_FallSign'
         endElse: 
-        gotoLabelUpon: 23, s32'End'
-        upon: 49
+        gotoLabelUpon: (SIGNAL_A), s32'End'
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'NoDisp'
             if: Mem(Tmp)
                 setAlphaColor: 0
@@ -2695,8 +2695,8 @@ beginState: s32'rnt_408_RockS'
     beginLabel: s32'Fall'
     sprite: s32'rnt408_AtkCol_S', 1
     clearUpon: (FRAME_STEP)
-    clearUpon: 49
-    upon: 49
+    clearUpon: (SIGNAL_NAME)
+    upon: (SIGNAL_NAME)
         callSubroutine: s32'Rock_Disp'
     endUpon: 
     linkParticle: s32'rnt_408_StoneSFall'
@@ -2704,7 +2704,7 @@ beginState: s32'rnt_408_RockS'
     hit: 
     physicsYImpulse: -60000
     setGravity: 3000
-    sendSignalToAction: s32'rnt_408_FallSign', 23
+    sendSignalToAction: s32'rnt_408_FallSign', (SIGNAL_A)
     beginLabel: s32'Fall_Loop'
     sprite: s32'keep', 6
     endSprite: 
@@ -2712,12 +2712,12 @@ beginState: s32'rnt_408_RockS'
     beginLabel: s32'AntiAir'
     sprite: s32'rnt408_AtkCol_S_ex00', 2147483647
     clearUpon: (FRAME_STEP)
-    clearUpon: 49
-    upon: 49
+    clearUpon: (SIGNAL_NAME)
+    upon: (SIGNAL_NAME)
         callSubroutine: s32'Rock_Disp'
         checkSignalName: s32'AntiAir_Shot'
         if: Mem(Tmp)
-            clearUpon: 49
+            clearUpon: (SIGNAL_NAME)
             Unknown2020: 
             Unknown1950: 0x726E745F3430355F5472756553686F7431000000000000000000000000000000
             linkObjectZ: 3
@@ -2738,7 +2738,7 @@ beginState: s32'rnt_408_RockS'
         endIf: 
         checkSignalName: s32'AntiAir_ShotExe'
         if: Mem(Tmp)
-            clearUpon: 49
+            clearUpon: (SIGNAL_NAME)
             Unknown2020: 
             Unknown1950: 0x726E745F3430355F5472756553686F7431000000000000000000000000000000
             linkObjectZ: 3
@@ -2761,16 +2761,16 @@ beginState: s32'rnt_408_RockS'
         endIf: 
     endUpon: 
     Unknown2024: 0x00000000030000000000000000000000000000000000000000000000000000000A0000000000000028000000
-    sendSignalToAction: s32'rnt_408_FallSign', 23
+    sendSignalToAction: s32'rnt_408_FallSign', (SIGNAL_A)
     beginLabel: s32'AntiAir_Loop'
     sprite: s32'keep', 6
     endSprite: 
     gotoLabel: s32'AntiAir_Loop'
     beginLabel: s32'Landing'
     sprite: s32'null', 120
-    clearUpon: 45
-    clearUpon: 49
-    upon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
+    upon: (SIGNAL_NAME)
         callSubroutine: s32'Rock_Disp'
     endUpon: 
     attackEndDelay: 
@@ -2782,8 +2782,8 @@ beginState: s32'rnt_408_RockS'
     beginLabel: s32'Koware'
     sprite: s32'keep', 20
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
-    clearUpon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
     setAngle: 0
     haltMomentum: 1
     setAlphaColorSpeed: -100
@@ -2792,8 +2792,8 @@ beginState: s32'rnt_408_RockS'
     exitState: 
     beginLabel: s32'SpecialThrowAir_End'
     sprite: s32'keep', 60
-    clearUpon: 45
-    clearUpon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
     sprite: s32'keep', 60
     Unknown2020: 
     haltMomentum: 1
@@ -2822,8 +2822,8 @@ beginState: s32'rnt_408_RockL'
     sprite: s32'rnt408_AtkCol_L', 1
     clearUpon: 13
     clearUpon: (FRAME_STEP)
-    clearUpon: 49
-    upon: 49
+    clearUpon: (SIGNAL_NAME)
+    upon: (SIGNAL_NAME)
         callSubroutine: s32'Rock_Disp'
     endUpon: 
     linkParticle: s32'rnt_408_StoneLFall'
@@ -2831,7 +2831,7 @@ beginState: s32'rnt_408_RockL'
     hit: 
     physicsYImpulse: -60000
     setGravity: 3000
-    sendSignalToAction: s32'rnt_408_FallSign', 23
+    sendSignalToAction: s32'rnt_408_FallSign', (SIGNAL_A)
     beginLabel: s32'Fall_Loop'
     sprite: s32'keep', 6
     endSprite: 
@@ -2839,12 +2839,12 @@ beginState: s32'rnt_408_RockL'
     beginLabel: s32'AntiAir'
     sprite: s32'rnt408_AtkCol_L_ex00', 2147483647
     clearUpon: (FRAME_STEP)
-    clearUpon: 49
-    upon: 49
+    clearUpon: (SIGNAL_NAME)
+    upon: (SIGNAL_NAME)
         callSubroutine: s32'Rock_Disp'
         checkSignalName: s32'AntiAir_Shot'
         if: Mem(Tmp)
-            clearUpon: 49
+            clearUpon: (SIGNAL_NAME)
             Unknown2020: 
             linkObjectZ: 3
             hit: 
@@ -2863,7 +2863,7 @@ beginState: s32'rnt_408_RockL'
         endIf: 
         checkSignalName: s32'AntiAir_ShotExe'
         if: Mem(Tmp)
-            clearUpon: 49
+            clearUpon: (SIGNAL_NAME)
             Unknown2020: 
             linkObjectZ: 3
             hit: 
@@ -2886,16 +2886,16 @@ beginState: s32'rnt_408_RockL'
         endIf: 
     endUpon: 
     Unknown2024: 0x00000000030000000000000000000000000000000000000000000000000000000A0000000000000028000000
-    sendSignalToAction: s32'rnt_408_FallSign', 23
+    sendSignalToAction: s32'rnt_408_FallSign', (SIGNAL_A)
     beginLabel: s32'AntiAir_Loop'
     sprite: s32'keep', 6
     endSprite: 
     gotoLabel: s32'AntiAir_Loop'
     beginLabel: s32'Landing'
     sprite: s32'null', 120
-    clearUpon: 45
-    clearUpon: 49
-    upon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
+    upon: (SIGNAL_NAME)
         callSubroutine: s32'Rock_Disp'
     endUpon: 
     attackEndDelay: 
@@ -2906,8 +2906,8 @@ beginState: s32'rnt_408_RockL'
     privateSE: s32'rnt_10'
     beginLabel: s32'Koware'
     sprite: s32'keep', 20
-    clearUpon: 45
-    clearUpon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
     setAngle: 0
     haltMomentum: 1
     setAlphaColorSpeed: -100
@@ -2916,8 +2916,8 @@ beginState: s32'rnt_408_RockL'
     exitState: 
     beginLabel: s32'SpecialThrowAir_End'
     sprite: s32'keep', 60
-    clearUpon: 45
-    clearUpon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
     sprite: s32'keep', 60
     Unknown2020: 
     haltMomentum: 1
@@ -2928,7 +2928,7 @@ beginState: s32'rnt_408_FallSign'
         setLinkObjectDestroyOnStateChange: 2
         worldCollision: 1
         linkParticle: s32'rnt_408_FallSign'
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: 24
             setAlphaColor: 0
             storeValue: Mem(ActReg0), Val(1)
@@ -3174,7 +3174,7 @@ beginState: s32'rnt_430_Shot'
         endElse: 
         setEventTrigger: 13, 100
         gotoLabelUpon: 13, s32'TimeOverEnd'
-        gotoLabelUpon: 23, s32'Start'
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
         addMoveForceDisableFlag: 1
     endUpon: 
     sprite: s32'null', 7
@@ -3200,21 +3200,21 @@ beginState: s32'rnt_430_Shot'
     gotoLabel: s32'Loop'
     beginLabel: s32'TimeOverEnd'
     sprite: s32'null', 20
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: 13
     clearUpon: (HIT)
     clearUpon: 86
     clearUpon: (HIT_OR_GUARD)
     clearUpon: 93
     linkParticle: s32'rnt_430_ShotEnd'
-    sendSignalToAction: s32'rnt_430_GroundRay', 23
+    sendSignalToAction: s32'rnt_430_GroundRay', (SIGNAL_A)
     recoveryState: 
     haltMomentum: 1
     endSprite: 
     exitState: 
     beginLabel: s32'NextAtk'
     sprite: s32'UltimateShot_Atk_Add', 5
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: 13
     clearUpon: (HIT)
     clearUpon: 86
@@ -3235,14 +3235,14 @@ beginState: s32'rnt_430_Shot'
     wallPushback: 0, 200
     hitstop: 0
     attackThroughArmor: 1
-    sendSignalToAction: s32'rnt_430_GroundRay', 23
+    sendSignalToAction: s32'rnt_430_GroundRay', (SIGNAL_A)
     privateSE: s32'rnt_04'
     sprite: s32'keep', 1
     linkParticle: s32'rnt_430_ShotAtk'
     privateSE: s32'rnt_ougi_02'
     upon: (FRAME_STEP)
         stackObjectEx: (SELF), 6, 3, 6
-        Unknown2035: 6, s32'Ultimate', 0
+        pawnAnimation: 6, s32'Ultimate', 0
     endUpon: 
     createObject: s32'rnt_430_Screw', (PLAYER)
     runOnObject: (PREVIOUS)
@@ -3322,9 +3322,9 @@ beginState: s32'rnt_430_Shot'
         privateSE: s32'rnt_01_2'
         commonSE: s32'SE_BTL_HitCritical'
     endIf: 
-    sendSignalToAction: s32'rnt_430_Screw', 23
-    sendSignalToAction: s32'rnt_430_Screw2', 23
-    sendSignalToAction: s32'rnt_430_ScrewLand', 23
+    sendSignalToAction: s32'rnt_430_Screw', (SIGNAL_A)
+    sendSignalToAction: s32'rnt_430_Screw2', (SIGNAL_A)
+    sendSignalToAction: s32'rnt_430_ScrewLand', (SIGNAL_A)
     stopLinkObject: 22
     linkParticle: s32'rnt_430_ShotAtkEnd'
     privateSE: s32'rnt_04'
@@ -3344,7 +3344,7 @@ beginState: s32'rnt_430_Screw'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3366,7 +3366,7 @@ beginState: s32'rnt_430_Screw'
     beginLabel: s32'End'
     sprite: s32'null', 60
     stopLinkObject: 0
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
 endState: 
 
 beginState: s32'rnt_430_Screw2'
@@ -3376,7 +3376,7 @@ beginState: s32'rnt_430_Screw2'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3398,7 +3398,7 @@ beginState: s32'rnt_430_Screw2'
     beginLabel: s32'End'
     sprite: s32'null', 60
     stopLinkObject: 0
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
 endState: 
 
 beginState: s32'rnt_430_ScrewLand'
@@ -3409,7 +3409,7 @@ beginState: s32'rnt_430_ScrewLand'
         setLinkObjectDestroyOnDamage: 2
         linkObjectZ: 2
         flipDirection: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3417,7 +3417,7 @@ beginState: s32'rnt_430_ScrewLand'
     linkParticle: s32'rnt_430_ScrewLand'
     beginLabel: s32'End'
     sprite: s32'null', 15
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'rnt_430_ScrewLandEnd'
 endState: 
 
@@ -3439,7 +3439,7 @@ beginState: s32'rnt_430_GroundRay'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3447,7 +3447,7 @@ beginState: s32'rnt_430_GroundRay'
     linkParticle: s32'rnt_430_GroundRay'
     beginLabel: s32'End'
     sprite: s32'null', 10
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setAlphaColorSpeed: -100
 endState: 
 
@@ -3626,7 +3626,7 @@ beginState: s32'rnt_440_RockEff'
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 22
         addPositionY: 170000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3691,7 +3691,7 @@ beginState: s32'rnt_440_BlackOut'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -3732,7 +3732,7 @@ beginState: s32'rnt_441_BG'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        gotoLabelUpon: 23, s32'NoDisp'
+        gotoLabelUpon: (SIGNAL_A), s32'NoDisp'
         gotoLabelUpon: 24, s32'PosChange1'
         gotoLabelUpon: 25, s32'PosChange2'
     endUpon: 

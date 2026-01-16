@@ -7,8 +7,8 @@ beginState: s32'ABL_206_WeaponFlash'
         linkObjectZ: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -173,7 +173,7 @@ beginState: s32'abl_208_BeamEff'
     endIf: 
     beginLabel: s32'End'
     sprite: s32'null', 10
-    sendSignalToAction: s32'abl_208_BeamLoot', 23
+    sendSignalToAction: s32'abl_208_BeamLoot', (SIGNAL_A)
     linkObjectPosition: 0
     stopLinkObject: 0
     setLinkObjectDestroyOnStateChange: 0
@@ -189,8 +189,8 @@ beginState: s32'abl_208_BeamLoot'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -422,8 +422,8 @@ beginState: s32'ABL_250_WeaponFlash'
         linkObjectPosition: 2
         linkObjectZ: 3
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -446,8 +446,8 @@ beginState: s32'ABL_251_WeaponFlash'
         linkObjectPosition: 2
         linkObjectZ: 3
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -517,13 +517,13 @@ beginState: s32'ABL_253_StrikeEff'
         setAngleX: 359200
         setAngleY: 355600
         setAngle: 138000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: 24
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             gotoLabelRequests: s32'Landing'
         endUpon: 
@@ -716,8 +716,8 @@ beginState: s32'abl_306_StrikeEff'
         stopLinkObject: 2
         linkObjectPosition: 2
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Landing'
         endUpon: 
     endUpon: 
@@ -789,7 +789,7 @@ beginState: s32'abl_Apple'
     destroyOnDamageCollision: 1
     numberOfHits: 1
     Unknown2204: 1
-    upon: 45
+    upon: (ON_DESTROY)
         randomAddVelocityX: -10000, 10000
         physicsYImpulse: 15000
         randomAddVelocityY: -2500, 2500
@@ -813,7 +813,7 @@ beginState: s32'abl_Apple'
     sprite: s32'rin307_00', 4
     invulnForce: 1
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     setObjectSize: 1
     sprite: s32'rin307_00', 4
     setObjectSize: 1000
@@ -1022,8 +1022,8 @@ beginState: s32'abl_350_GroundEff'
         linkObjectZ: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -1226,8 +1226,8 @@ beginState: s32'abl_401_Strike2'
         setAngleX: 299200
         setAngleY: 326000
         setAngle: 58400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1344,8 +1344,8 @@ beginState: s32'abl_402_1st_StrikeEfft'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Atk_StandBy'
         endUpon: 
         upon: 24
@@ -1400,8 +1400,8 @@ beginState: s32'abl_402_1st_HandEff'
         setAngleX: 356000
         setAngleY: 326400
         setAngle: 88400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move01'
         endUpon: 
         upon: 24
@@ -1426,7 +1426,7 @@ beginState: s32'abl_402_1st_HandEff'
     linkParticle: s32'abl_407_AuraHandLoop'
     beginLabel: s32'Move01'
     sprite: s32'null', 100
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setPositionX: 20128
     setPositionY: 508930
     setDepth: -34806
@@ -1462,8 +1462,8 @@ beginState: s32'abl_402_2nd_HandEff'
         setAngleX: 320000
         setAngleY: 92800
         setAngle: 320400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move01'
         endUpon: 
         upon: 24
@@ -1483,7 +1483,7 @@ beginState: s32'abl_402_2nd_HandEff'
     sprite: s32'null', 100
     beginLabel: s32'Move01'
     sprite: s32'null', 100
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'abl_407_AuraHandLoop'
     setPositionX: 102973
     setPositionY: 143152
@@ -1885,11 +1885,11 @@ beginState: s32'abl_400_Goetia'
             Unknown2209: 1
             Unknown2210: 1
         endIf: 
-        upon: 45
-            clearUpon: 45
+        upon: (ON_DESTROY)
+            clearUpon: (ON_DESTROY)
             clearUpon: 13
-            sendSignalToAction: s32'SpecialShot_A', 23
-            sendSignalToAction: s32'SpecialShot_B', 23
+            sendSignalToAction: s32'SpecialShot_A', (SIGNAL_A)
+            sendSignalToAction: s32'SpecialShot_B', (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: (HIT_OR_GUARD)
@@ -1906,12 +1906,12 @@ beginState: s32'abl_400_Goetia'
             setEventTrigger: 13, 80
         endIf: 
         upon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 13
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: (TOUCH_GROUND)
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 13
             gotoLabelRequests: s32'End'
         endUpon: 
@@ -1935,7 +1935,7 @@ beginState: s32'abl_400_Goetia'
     velocityXPercentEachFrame: 60
     velocityYPercentEachFrame: 60
     sprite: s32'null', 1
-    sendSignalToAction: s32'SpecialShot_C', 23
+    sendSignalToAction: s32'SpecialShot_C', (SIGNAL_A)
     linkParticle: s32''
     ifNot: Mem(ActReg3)
         createObject: s32'abl_400_Goetia_ShotEnd', (PLAYER)
@@ -1945,13 +1945,13 @@ beginState: s32'abl_400_Goetia'
     Unknown1793: 5, 23
     deleteMoveForceDisableFlag: 1
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
-        Unknown1921: 0, 10
+        skillCooldown: 0, 10
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
-        Unknown1921: 0, 10
+        skillCooldown: 0, 10
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(2)
-        Unknown1921: 0, 180
+        skillCooldown: 0, 180
     endIf: 
     Unknown1923: 0
 endState: 
@@ -1982,8 +1982,8 @@ beginState: s32'abl_400_Goetia_nokosi'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2004,8 +2004,8 @@ beginState: s32'abl_400_GoetiaGround'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             stopLinkObject: 0
             setLinkObjectDestroyOnStateChange: 0
             setLinkObjectDestroyOnDamage: 0
@@ -2095,7 +2095,7 @@ beginState: s32'abl_400_Goetia2'
                     untechAmount: 36
                 endIf: 
             endIf: 
-            sendSignalToAction: s32'SpecialShot_B', 23
+            sendSignalToAction: s32'SpecialShot_B', (SIGNAL_A)
         endUpon: 
         initializeDestroy: 
         numberOfHits: 1
@@ -2107,16 +2107,16 @@ beginState: s32'abl_400_Goetia2'
         Unknown2257: 1
         Unknown2212: 1
         Unknown2213: 1
-        upon: 45
-            clearUpon: 45
+        upon: (ON_DESTROY)
+            clearUpon: (ON_DESTROY)
             clearUpon: (TOUCH_GROUND)
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
-        upon: 23
-            clearUpon: 45
+        upon: (SIGNAL_A)
+            clearUpon: (ON_DESTROY)
             clearUpon: (TOUCH_GROUND)
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: 24
@@ -2131,9 +2131,9 @@ beginState: s32'abl_400_Goetia2'
         endUpon: 
         Unknown1909: 0
         upon: (TOUCH_GROUND)
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: (TOUCH_GROUND)
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         linkObjectPosition: 3
@@ -2247,16 +2247,16 @@ beginState: s32'abl_400_Goetia2'
     velocityYPercentEachFrame: 100
     beginLabel: s32'End'
     sprite: s32'null', 2
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: (TOUCH_GROUND)
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     recoveryState: 
     velocityXPercentEachFrame: 40
     velocityYPercentEachFrame: 40
     ifNot: Mem(EnvR21)
         storeValue: Mem(EnvR21), Val(1)
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-            Unknown1921: 0, 10
+            skillCooldown: 0, 10
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
             if: Mem(417)
@@ -2264,7 +2264,7 @@ beginState: s32'abl_400_Goetia2'
                 storeValue: Mem(287), Mem(Tmp)
             endIf: 
             else: 
-                Unknown1921: 0, 120
+                skillCooldown: 0, 120
             endElse: 
         endIf: 
         Unknown1923: 0
@@ -2343,8 +2343,8 @@ beginState: s32'abl_400_Goetia_nokosi_B'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2758,18 +2758,18 @@ beginState: s32'ABL_405_StrikeEff'
         setAngleX: 20400
         setAngleY: 13600
         setAngle: 136400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Loop2'
         endUpon: 
         upon: 24
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             clearUpon: 25
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: 25
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             clearUpon: 25
             gotoLabelRequests: s32'Landing'
@@ -2829,8 +2829,8 @@ beginState: s32'ABL_405_StrikeEff2_SubRotate'
         setAngleX: 162000
         setAngleY: 47600
         setAngle: 316400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2869,8 +2869,8 @@ beginState: s32'ABL_405_StrikeEff2_SubRotate2'
         setAngleX: 248000
         setAngleY: 46400
         setAngle: 326800
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3045,8 +3045,8 @@ beginState: s32'ABL_406_Charge'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         setObjectSize: 700
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3070,8 +3070,8 @@ beginState: s32'ABL_406_StrikeEff'
         linkObjectZ: 3
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: 24
@@ -3423,7 +3423,7 @@ beginState: s32'ABL_400_Rocks'
                     physicsXImpulse: 20000
                     storeValue: Mem(ActReg4), Val(1)
                     deleteMoveForceDisableFlag: 1
-                    Unknown1921: 0, 10
+                    skillCooldown: 0, 10
                     Unknown1923: 0
                 endIf: 
                 ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
@@ -3495,9 +3495,9 @@ beginState: s32'ABL_400_Rocks'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 1
-    upon: 45
-        clearUpon: 45
-        clearUpon: 23
+    upon: (ON_DESTROY)
+        clearUpon: (ON_DESTROY)
+        clearUpon: (SIGNAL_A)
         clearUpon: 8
         gotoLabelRequests: s32'End'
     endUpon: 
@@ -3506,8 +3506,8 @@ beginState: s32'ABL_400_Rocks'
         Unknown2210: 1
     endIf: 
     addMoveForceDisableFlag: 1
-    upon: 23
-        clearUpon: 23
+    upon: (SIGNAL_A)
+        clearUpon: (SIGNAL_A)
         Unknown2203: 23
     endUpon: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
@@ -3595,14 +3595,14 @@ beginState: s32'ABL_400_Rocks'
     beginLabel: s32'End'
     sprite: s32'null', 1
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
-    clearUpon: 23
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_A)
     recoveryState: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
         if: Mem(ActReg2)
             ifNot: Mem(ActReg4)
                 deleteMoveForceDisableFlag: 1
-                Unknown1921: 0, 40
+                skillCooldown: 0, 40
                 Unknown1923: 0
             endIf: 
         endIf: 
@@ -3610,7 +3610,7 @@ beginState: s32'ABL_400_Rocks'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
         deleteMoveForceDisableFlag: 1
         if: Mem(ActReg2)
-            Unknown1921: 0, 180
+            skillCooldown: 0, 180
             Unknown1923: 0
         endIf: 
     endIf: 
@@ -3644,8 +3644,8 @@ beginState: s32'ABL_404_Eff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Loop'
         endUpon: 
         upon: 24
@@ -3717,8 +3717,8 @@ beginState: s32'ABL_404_B_Eff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Loop'
         endUpon: 
         upon: 24
@@ -3774,8 +3774,8 @@ beginState: s32'ABL_405_Eff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3851,8 +3851,8 @@ beginState: s32'abl_407_AuraHand'
         setAngleX: 320000
         setAngleY: 92800
         setAngle: 320400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move01'
         endUpon: 
         upon: 24
@@ -3872,7 +3872,7 @@ beginState: s32'abl_407_AuraHand'
     sprite: s32'null', 100
     beginLabel: s32'Move01'
     sprite: s32'null', 100
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'abl_407_AuraHandLoop'
     setPositionX: 102973
     setPositionY: 143152
@@ -4145,7 +4145,7 @@ beginState: s32'abl_407_BeamEff'
     Unknown409: 40, 1
     beginLabel: s32'End'
     sprite: s32'null', 10
-    sendSignalToAction: s32'abl_407_BeamLoot', 23
+    sendSignalToAction: s32'abl_407_BeamLoot', (SIGNAL_A)
     linkObjectPosition: 0
     stopLinkObject: 0
     setLinkObjectDestroyOnStateChange: 0
@@ -4186,7 +4186,7 @@ beginState: s32'abl_407_BeamEffSlide'
     sprite: s32'null', 10
     setAngleSpeed: 0
     angleSpeedPercent: 100
-    sendSignalToAction: s32'abl_407_BeamLoot', 23
+    sendSignalToAction: s32'abl_407_BeamLoot', (SIGNAL_A)
     linkObjectPosition: 0
     stopLinkObject: 0
     setLinkObjectDestroyOnStateChange: 0
@@ -4203,8 +4203,8 @@ beginState: s32'abl_407_BeamLoot'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectAngle: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4462,8 +4462,8 @@ beginState: s32'abl_408_FirePillar'
         linkParticle: s32'abl_408_FirePillar'
         addPositionX: 46981
         Unknown1727: 51948
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4652,8 +4652,8 @@ beginState: s32'abl_430_StrikeChargeEff'
         setPositionX: 23409
         setPositionY: 393291
         setDepth: 80826
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4770,8 +4770,8 @@ beginState: s32'abl_430_SordChargeEff'
         stopLinkObject: 2
         linkObjectPosition: 2
         setObjectSize: 650
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4792,8 +4792,8 @@ beginState: s32'abl_430_SordSpeed'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4920,8 +4920,8 @@ beginState: s32'abl_432_AssultAuraEff'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Assult'
         endUpon: 
         upon: 24
@@ -4959,8 +4959,8 @@ beginState: s32'abl_432_AssultGroundEnd'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -5031,7 +5031,7 @@ beginState: s32'abl_432_Wipe'
     endUpon: 
     sprite: s32'null', 35
     linkParticle: s32'abl_432_Wipe'
-    sendSignalToAction: s32'abl_432_BinetEff', 23
+    sendSignalToAction: s32'abl_432_BinetEff', (SIGNAL_A)
     sprite: s32'null', 60
     linkParticle: s32'abl_432_WipeEnd'
     deactivateObjectByName: s32'abl_432_Trail'
@@ -5150,8 +5150,8 @@ beginState: s32'abl_432_BinetEff'
     upon: (IMMEDIATE)
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -5885,7 +5885,7 @@ beginState: s32'abl_440_GroundCrack'
         wallPushback: 0, 600
         wallPushbackOnHit: 0, 0
         damageEffect: 2, s32'ABL_SPHitEff_Long'
-        upon: 23
+        upon: (SIGNAL_A)
             storeValue: Mem(ActReg0), Val(1)
         endUpon: 
         upon: (HIT)
@@ -5983,7 +5983,7 @@ beginState: s32'abl_440_GroundCrack'
     recoveryState: 
     beginLabel: s32'End'
     sprite: s32'null', 50
-    sendSignalToAction: s32'abl_440_Burst', 23
+    sendSignalToAction: s32'abl_440_Burst', (SIGNAL_A)
     Unknown410: -2, 3
 endState: 
 
@@ -5992,8 +5992,8 @@ beginState: s32'abl_440_Burst'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6434,7 +6434,7 @@ beginState: s32'abl_441_Laser'
         setAngleX: 344800
         setAngleY: 217600
         setAngle: 331200
-        gotoLabelUpon: 23, s32'Move1'
+        gotoLabelUpon: (SIGNAL_A), s32'Move1'
     endUpon: 
     sprite: s32'null', 300
     beginLabel: s32'Move1'
@@ -6519,7 +6519,7 @@ beginState: s32'ABL_441_BeamWhiteOut'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -6556,7 +6556,7 @@ beginState: s32'ABL_441_Mcicle'
         setAngleX: 350000
         setAngleY: 1200
         setAngle: 15200
-        gotoLabelUpon: 23, s32'Move'
+        gotoLabelUpon: (SIGNAL_A), s32'Move'
     endUpon: 
     sprite: s32'null', 300
     linkParticle: s32'abl_431_Mcircle'
@@ -7743,7 +7743,7 @@ beginState: s32'abl_444_DarkSphere'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'move'
+        gotoLabelUpon: (SIGNAL_A), s32'move'
         gotoLabelUpon: 24, s32'move2'
     endUpon: 
     sprite: s32'null', 300
@@ -8140,9 +8140,9 @@ beginState: s32'abl_700_cs_2p_Orb2'
         setObjectHeight: 300
         setObjectDepth: 300
         setAngleY: 90000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'null', 30

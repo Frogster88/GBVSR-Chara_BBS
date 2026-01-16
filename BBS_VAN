@@ -1570,17 +1570,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'MultiAttack_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'MultiAttack_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'MultiAttack_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'MultiAttack_D'
@@ -1597,17 +1597,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -1624,17 +1624,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'SpecialShield_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShield_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShield_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShield_D'
@@ -1651,17 +1651,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -1675,17 +1675,17 @@ beginSubroutine: s32'AbilityCoolDown_4'
     endIf: 
     checkCurrentStateName: (SELF), s32'AirAssault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'AirAssault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'AirAssault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'AirAssault_D'
@@ -2185,7 +2185,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2456,7 +2456,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2666,7 +2666,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
         endIf: 
         ifOnFrame: Val(135)
             Unknown2583: 5200, 0, 3, 170000, 27800, 4400
-            sendSignalToAction: s32'van_442cs_BokehFrontEff', 23
+            sendSignalToAction: s32'van_442cs_BokehFrontEff', (SIGNAL_A)
             createObject: s32'van_442cs_HaloEff', (PLAYER)
             createObject: s32'van_442cs_BokehEff', (PLAYER)
             createObject: s32'cmn_OverrayBinet', (PLAYER)
@@ -3871,7 +3871,7 @@ beginState: s32'NmlAtkAir5D'
     sprite: s32'van253_03', 3
     hit: 
     haltMomentum: 1
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     createObject: s32'van_253_BurstEff', (PLAYER)
     characterSfx: s32'van_00_2'
     attackVoiceLine: 2, -1
@@ -4147,7 +4147,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'van302_03', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'van302_04', 3
     attackEndDelay: 
     sprite: s32'van302_05', 3
@@ -4346,7 +4346,7 @@ beginState: s32'MultiAttack_A'
     cmnSfx: s32'SE_BTL_SwingWeaponAxeM'
     characterSfx: s32'van_00'
     sprite: s32'van400_08', 2
-    sendSignalToAction: s32'van_400_GroundBurstEff', 23
+    sendSignalToAction: s32'van_400_GroundBurstEff', (SIGNAL_A)
     sprite: s32'van400_07', 2
     hit: 
     modifyVar: (ADD), Mem(ActReg0), Val(-1)
@@ -4378,7 +4378,7 @@ beginState: s32'MultiAttack_A'
         endIf: 
     endUpon: 
     createObject: s32'van_400_ThrustFinishEff', (PLAYER)
-    sendSignalToAction: s32'van_400_GroundBurstEff', 23
+    sendSignalToAction: s32'van_400_GroundBurstEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingWeaponAxeM'
     characterSfx: s32'van_00'
     sprite: s32'van400_12', 3
@@ -4435,7 +4435,7 @@ beginState: s32'MultiAttack_B'
     cmnSfx: s32'SE_BTL_SwingWeaponAxeM'
     characterSfx: s32'van_00'
     sprite: s32'van400_08', 2
-    sendSignalToAction: s32'van_400_GroundBurstEff', 23
+    sendSignalToAction: s32'van_400_GroundBurstEff', (SIGNAL_A)
     sprite: s32'van400_07', 2
     hit: 
     modifyVar: (ADD), Mem(ActReg0), Val(-1)
@@ -4468,7 +4468,7 @@ beginState: s32'MultiAttack_B'
         endIf: 
     endUpon: 
     createObject: s32'van_400_ThrustFinishEff', (PLAYER)
-    sendSignalToAction: s32'van_400_GroundBurstEff', 23
+    sendSignalToAction: s32'van_400_GroundBurstEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingWeaponAxeM'
     characterSfx: s32'van_00'
     sprite: s32'van400_12', 4
@@ -4524,7 +4524,7 @@ beginState: s32'MultiAttack_C'
     cmnSfx: s32'SE_BTL_SwingWeaponAxeM'
     characterSfx: s32'van_00'
     sprite: s32'van400_08', 2
-    sendSignalToAction: s32'van_400_GroundBurstEff', 23
+    sendSignalToAction: s32'van_400_GroundBurstEff', (SIGNAL_A)
     sprite: s32'van400_07', 2
     hit: 
     modifyVar: (ADD), Mem(ActReg0), Val(-1)
@@ -4559,7 +4559,7 @@ beginState: s32'MultiAttack_C'
         endIf: 
     endUpon: 
     createObject: s32'van_400_ThrustFinishEff', (PLAYER)
-    sendSignalToAction: s32'van_400_GroundBurstEff', 23
+    sendSignalToAction: s32'van_400_GroundBurstEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingWeaponAxeM'
     characterSfx: s32'van_00'
     sprite: s32'van400_12', 4
@@ -4627,7 +4627,7 @@ beginState: s32'MultiAttack_D'
     cmnSfx: s32'SE_BTL_SwingWeaponAxeM'
     characterSfx: s32'van_00'
     sprite: s32'van400_08', 2
-    sendSignalToAction: s32'van_400_GroundBurstEff', 23
+    sendSignalToAction: s32'van_400_GroundBurstEff', (SIGNAL_A)
     sprite: s32'van400_07', 2
     hit: 
     modifyVar: (ADD), Mem(ActReg0), Val(-1)
@@ -4664,7 +4664,7 @@ beginState: s32'MultiAttack_D'
         modifyVar: (ADD), Mem(ActReg1), Val(1)
     endUpon: 
     createObject: s32'van_400_ThrustFinishEff', (PLAYER)
-    sendSignalToAction: s32'van_400_GroundBurstEff', 23
+    sendSignalToAction: s32'van_400_GroundBurstEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingWeaponAxeM'
     characterSfx: s32'van_00'
     upon: 86
@@ -4787,8 +4787,8 @@ beginState: s32'AntiAir_A'
     sprite: s32'van402_08', 3
     sprite: s32'van402_09', 3
     attackEndDelay: 
-    sendSignalToAction: s32'van_402_BurstEff', 23
-    sendSignalToAction: s32'van_402_LightPillarEff', 23
+    sendSignalToAction: s32'van_402_BurstEff', (SIGNAL_A)
+    sendSignalToAction: s32'van_402_LightPillarEff', (SIGNAL_A)
     sprite: s32'van402_10', 3
     sprite: s32'van402_08', 3
     sprite: s32'van402_09', 3
@@ -4842,8 +4842,8 @@ beginState: s32'AntiAir_B'
     sprite: s32'van402_08', 3
     sprite: s32'van402_09', 3
     attackEndDelay: 
-    sendSignalToAction: s32'van_402_BurstEff', 23
-    sendSignalToAction: s32'van_402_LightPillarEff', 23
+    sendSignalToAction: s32'van_402_BurstEff', (SIGNAL_A)
+    sendSignalToAction: s32'van_402_LightPillarEff', (SIGNAL_A)
     sprite: s32'van402_10', 3
     sprite: s32'van402_08', 3
     sprite: s32'van402_09', 3
@@ -4896,8 +4896,8 @@ beginState: s32'AntiAir_C'
     sprite: s32'van402_09', 3
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
-    sendSignalToAction: s32'van_402_BurstEff', 23
-    sendSignalToAction: s32'van_402_LightPillarEff', 23
+    sendSignalToAction: s32'van_402_BurstEff', (SIGNAL_A)
+    sendSignalToAction: s32'van_402_LightPillarEff', (SIGNAL_A)
     setPushboxWidth: -1
     sprite: s32'van402_10', 3
     sprite: s32'van402_08', 3
@@ -5021,8 +5021,8 @@ beginState: s32'AntiAir_D'
     callSubroutine: s32'cmnMuteki_False'
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
-    sendSignalToAction: s32'van_402_BurstEff', 23
-    sendSignalToAction: s32'van_402_LightPillarEff', 23
+    sendSignalToAction: s32'van_402_BurstEff', (SIGNAL_A)
+    sendSignalToAction: s32'van_402_LightPillarEff', (SIGNAL_A)
     sprite: s32'van402_08', 3
     sprite: s32'van402_09', 3
     sprite: s32'van402_10', 3
@@ -5041,10 +5041,10 @@ beginState: s32'AntiAir_D'
     fadeInStart: 0
     addSlowdown: 0
     resetCamera: 
-    sendSignalToAction: s32'van_402_KurumadaEnd1Eff', 23
+    sendSignalToAction: s32'van_402_KurumadaEnd1Eff', (SIGNAL_A)
     deactivateObjectByName: s32'van_402_RyuhaiEff'
     deactivateObjectByName: s32'van_402_KurumadaEff'
-    sendSignalToAction: s32'van_402_KurumadaEnd2Eff', 23
+    sendSignalToAction: s32'van_402_KurumadaEnd2Eff', (SIGNAL_A)
     sendSignalToAction: s32'van_406_ShieldEff', 25
     runOnObject: (DEFENDER)
         setPositionY: 1000000
@@ -5074,8 +5074,8 @@ beginState: s32'AntiAir_D'
     sprite: s32'van402_08', 3
     sprite: s32'van402_09', 3
     sprite: s32'van402_10', 3
-    sendSignalToAction: s32'van_402_BurstEff', 23
-    sendSignalToAction: s32'van_402_LightPillarEff', 23
+    sendSignalToAction: s32'van_402_BurstEff', (SIGNAL_A)
+    sendSignalToAction: s32'van_402_LightPillarEff', (SIGNAL_A)
     sprite: s32'van402_08', 3
     sprite: s32'van402_09', 3
     sprite: s32'van402_10', 3
@@ -5221,7 +5221,7 @@ beginState: s32'Assault_B'
     hit: 
     haltMomentum: 1
     cameraShake: s32'ShakeTate', 2000, 0, 15, 0
-    sendSignalToAction: s32'van_404_Eff', 23
+    sendSignalToAction: s32'van_404_Eff', (SIGNAL_A)
     createObject: s32'van_404_CrackEff', (PLAYER)
     sprite: s32'van403_10ex01', 3
     sprite: s32'van403_11ex01', 2
@@ -5444,7 +5444,7 @@ beginState: s32'AirAssault_A'
     callSubroutine: s32'Func_AirAssault_Atk_Land'
     damage: 1200
     cameraShake: s32'ShakeTate', 2000, 0, 15, 0
-    sendSignalToAction: s32'van_404_Eff', 23
+    sendSignalToAction: s32'van_404_Eff', (SIGNAL_A)
     createObject: s32'van_404_CrackEff', (PLAYER)
     ifNot: Mem(ActReg0)
         smartRandomVoiceLine: s16'vVAN_ATKS_11', 100, s16'', 0, s16'', 0, s16'', 0
@@ -5522,7 +5522,7 @@ beginState: s32'AirAssault_B'
     callSubroutine: s32'Func_AirAssault_Atk_Land'
     damage: 1300
     cameraShake: s32'ShakeTate', 2000, 0, 15, 0
-    sendSignalToAction: s32'van_404_Eff', 23
+    sendSignalToAction: s32'van_404_Eff', (SIGNAL_A)
     createObject: s32'van_404_CrackEff', (PLAYER)
     ifNot: Mem(ActReg0)
         smartRandomVoiceLine: s16'vVAN_ATKS_12', 100, s16'', 0, s16'', 0, s16'', 0
@@ -5618,7 +5618,7 @@ beginState: s32'AirAssault_C'
     hitAirPushbackY: -44000
     isAirUnblockable: 0
     cameraShake: s32'ShakeTate', 2000, 0, 15, 0
-    sendSignalToAction: s32'van_404_Eff', 23
+    sendSignalToAction: s32'van_404_Eff', (SIGNAL_A)
     createObject: s32'van_404_CrackEff', (PLAYER)
     ifNot: Mem(ActReg0)
         smartRandomVoiceLine: s16'vVAN_ATKS_13', 100, s16'', 0, s16'', 0, s16'', 0
@@ -5704,7 +5704,7 @@ beginState: s32'AirAssault_D'
     isAirUnblockable: 0
     storeValue: Mem(PlayerVal8), Val(1)
     cameraShake: s32'ShakeTate', 2000, 0, 15, 0
-    sendSignalToAction: s32'van_404_Eff', 23
+    sendSignalToAction: s32'van_404_Eff', (SIGNAL_A)
     createObject: s32'van_404_CrackUEff', (PLAYER)
     ifNot: Mem(ActReg0)
         smartRandomVoiceLine: s16'vVAN_ATKS_14', 100, s16'', 0, s16'', 0, s16'', 0
@@ -6280,7 +6280,7 @@ beginState: s32'van_Kaihou'
     createObject: s32'twb_440_GroundBurstEff', (PLAYER)
     createObject: s32'cmn_spwind', (PLAYER)
     sprite: s32'van441_13', 6
-    sendSignalToAction: s32'van_441_EnshutuCamera', 23
+    sendSignalToAction: s32'van_441_EnshutuCamera', (SIGNAL_A)
     fadeInStart: 30
     sprite: s32'van441_14', 6
     sprite: s32'van441_15', 6
@@ -6398,7 +6398,7 @@ beginState: s32'van_Kaihou'
             Unknown2583: 5000, 0, 3, 210000, 43800, 5300
         endIf: 
         ifOnFrame: Val(256)
-            sendSignalToAction: s32'van_441cs_ExplosionEff', 23
+            sendSignalToAction: s32'van_441cs_ExplosionEff', (SIGNAL_A)
             Unknown2587: 1601069430, s32'PP_Nega'
             Unknown2588: s32'van_PP_Nega', 1, 0
             Unknown2588: s32'van_PP_Nega', 3, 50

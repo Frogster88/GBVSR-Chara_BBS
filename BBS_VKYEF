@@ -1361,8 +1361,8 @@ beginState: s32'vky_253_CloudEff'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1388,8 +1388,8 @@ beginState: s32'vky_253_CloudEff2'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1429,7 +1429,7 @@ beginState: s32'vky_208_ItemEff'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkObjectZ: 3
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'Item01'
             if: Mem(Tmp)
                 linkParticle: s32'vky_Item_01'
@@ -1467,9 +1467,9 @@ beginState: s32'vky_208_ItemEff'
                 linkParticle: s32'vky_Item_09'
             endIf: 
         endUpon: 
-        upon: 32
-            clearUpon: 49
-            clearUpon: 32
+        upon: (SIGNAL_B)
+            clearUpon: (SIGNAL_NAME)
+            clearUpon: (SIGNAL_B)
             gotoLabelRequests: s32'End'
         endUpon: 
         setPositionX: 0
@@ -1546,12 +1546,12 @@ beginSubroutine: s32'Func_SetCannon_STACK1'
     pushPositionY: 
     moveToPosType: 5, 103
     modifyVar: (ADD), Mem(ActReg2), Val(1)
-    Unknown2035: 5, s32'CannonShot_Zine', 0
+    pawnAnimation: 5, s32'CannonShot_Zine', 0
     isObjectActive: (STACK2)
     if: Mem(Tmp)
         Unknown2329: 1, 23, 100, 6, 100
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
-            Unknown2035: 6, s32'CannonShot_Zine', 0
+            pawnAnimation: 6, s32'CannonShot_Zine', 0
         endIf: 
     endIf: 
     gotoLabelRequests: s32'Cannon'
@@ -1588,12 +1588,12 @@ beginSubroutine: s32'Func_SetCannon_STACK2'
     pushPositionY: 
     moveToPosType: 6, 103
     modifyVar: (ADD), Mem(ActReg2), Val(1)
-    Unknown2035: 6, s32'CannonShot_Zine', 0
+    pawnAnimation: 6, s32'CannonShot_Zine', 0
     isObjectActive: (STACK1)
     if: Mem(Tmp)
         Unknown2329: 1, 23, 100, 5, 100
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
-            Unknown2035: 5, s32'CannonShot_Zine', 0
+            pawnAnimation: 5, s32'CannonShot_Zine', 0
         endIf: 
     endIf: 
     gotoLabelRequests: s32'Cannon'
@@ -1630,12 +1630,12 @@ beginSubroutine: s32'Func_SetCannon_STACK3'
     pushPositionY: 
     moveToPosType: 7, 103
     modifyVar: (ADD), Mem(ActReg2), Val(1)
-    Unknown2035: 7, s32'CannonShot_Zine', 0
+    pawnAnimation: 7, s32'CannonShot_Zine', 0
     isObjectActive: (STACK4)
     if: Mem(Tmp)
         Unknown2329: 1, 23, 100, 8, 100
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
-            Unknown2035: 8, s32'CannonShot_Zine', 0
+            pawnAnimation: 8, s32'CannonShot_Zine', 0
         endIf: 
     endIf: 
     gotoLabelRequests: s32'Cannon'
@@ -1672,12 +1672,12 @@ beginSubroutine: s32'Func_SetCannon_STACK4'
     pushPositionY: 
     moveToPosType: 8, 103
     modifyVar: (ADD), Mem(ActReg2), Val(1)
-    Unknown2035: 8, s32'CannonShot_Zine', 0
+    pawnAnimation: 8, s32'CannonShot_Zine', 0
     isObjectActive: (STACK3)
     if: Mem(Tmp)
         Unknown2329: 1, 23, 100, 7, 100
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
-            Unknown2035: 7, s32'CannonShot_Zine', 0
+            pawnAnimation: 7, s32'CannonShot_Zine', 0
         endIf: 
     endIf: 
     gotoLabelRequests: s32'Cannon'
@@ -1777,13 +1777,13 @@ beginSubroutine: s32'ShotAtk_Init'
     Unknown2257: 1
     Unknown2212: 1
     Unknown2213: 0
-    upon: 45
+    upon: (ON_DESTROY)
         clearUpon: 36
         gotoLabelRequests: s32'Koware'
     endUpon: 
     checkCurrentStateName: (PLAYER), s32'NmlAtk5D'
     if: Mem(Tmp)
-        upon: 23
+        upon: (SIGNAL_A)
             callSubroutine: s32'ShotAtk_Init_Land'
             physicsXImpulse: 6000
             physicsYImpulse: 0
@@ -1807,7 +1807,7 @@ beginSubroutine: s32'ShotAtk_Init'
     endIf: 
     checkCurrentStateName: (PLAYER), s32'NmlAtkAir5D'
     if: Mem(Tmp)
-        upon: 23
+        upon: (SIGNAL_A)
             callSubroutine: s32'ShotAtk_Init_Air'
             physicsXImpulse: 10000
             physicsYImpulse: 0
@@ -1827,7 +1827,7 @@ beginSubroutine: s32'ShotAtk_Init'
     checkCurrentStateName: (PLAYER), s32'NmlAtk5D_ChainOnly'
     if: Mem(Tmp)
         storeValue: Mem(ActReg1), Val(99)
-        upon: 23
+        upon: (SIGNAL_A)
             callSubroutine: s32'ShotAtk_Init_Land'
             physicsXImpulse: 6000
             physicsYImpulse: 0
@@ -1836,7 +1836,7 @@ beginSubroutine: s32'ShotAtk_Init'
     checkCurrentStateName: (PLAYER), s32'NmlAtk5D_ChainOnly2'
     if: Mem(Tmp)
         storeValue: Mem(ActReg1), Val(99)
-        upon: 23
+        upon: (SIGNAL_A)
             callSubroutine: s32'ShotAtk_Init_Land'
             physicsXImpulse: 6000
             physicsYImpulse: 20000
@@ -1846,7 +1846,7 @@ beginSubroutine: s32'ShotAtk_Init'
     checkCurrentStateName: (PLAYER), s32'NmlAtkAir5D_ChainOnly'
     if: Mem(Tmp)
         storeValue: Mem(ActReg1), Val(99)
-        upon: 23
+        upon: (SIGNAL_A)
             callSubroutine: s32'ShotAtk_Init_Air'
             physicsXImpulse: 6000
             physicsYImpulse: 10000
@@ -1865,7 +1865,7 @@ beginSubroutine: s32'ShotAtk_Init'
     if: Mem(Tmp)
         callSubroutine: s32'SpecialCannon_Add_Init'
     endIf: 
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'NoDisp'
         if: Mem(Tmp)
             Unknown2050: 0
@@ -2041,7 +2041,7 @@ beginState: s32'Item01_ShotAtk'
     endUpon: 
     beginLabel: s32'Koware'
     sprite: s32'null', 10
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 36
     haltMomentum: 1
     Unknown2050: 0
@@ -2213,7 +2213,7 @@ beginState: s32'Item02_ShotAtk'
     worldCollision: 0
     beginLabel: s32'Koware'
     sprite: s32'null', 10
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 36
     haltMomentum: 1
     Unknown2050: 0
@@ -2343,7 +2343,7 @@ beginState: s32'Item03_ShotAtk'
     endUpon: 
     beginLabel: s32'Koware'
     sprite: s32'null', 10
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 36
     haltMomentum: 1
     Unknown2050: 0
@@ -2465,7 +2465,7 @@ beginState: s32'Item04_ShotAtk'
     gotoLabel: s32'ShotLoop'
     beginLabel: s32'Koware'
     sprite: s32'null', 10
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 36
     haltMomentum: 1
     Unknown2050: 0
@@ -2546,7 +2546,7 @@ beginState: s32'Item05_ShotAtk'
     endUpon: 
     beginLabel: s32'Koware'
     sprite: s32'null', 10
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 36
     haltMomentum: 1
     Unknown2050: 0
@@ -2725,7 +2725,7 @@ beginState: s32'Item06_ShotAtk'
     sprite: s32'null', 10
     storeValue: Mem(ActReg4), Val(0)
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 36
     haltMomentum: 1
     Unknown2050: 0
@@ -2884,7 +2884,7 @@ beginState: s32'Item07_ShotAtk'
     callSubroutine: s32'SetCannon'
     beginLabel: s32'Koware'
     sprite: s32'null', 10
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 36
     clearUpon: (FRAME_STEP)
     storeValue: Mem(ActReg4), Val(0)
@@ -3031,7 +3031,7 @@ beginState: s32'Item08_ShotAtk'
     callSubroutine: s32'SetCannon'
     beginLabel: s32'Koware'
     sprite: s32'null', 10
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 36
     clearUpon: (FRAME_STEP)
     storeValue: Mem(ActReg4), Val(0)
@@ -3126,7 +3126,7 @@ beginState: s32'Item09_ShotAtk'
     endUpon: 
     beginLabel: s32'Koware'
     sprite: s32'null', 30
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 36
     haltMomentum: 1
     Unknown2050: 0
@@ -3734,7 +3734,7 @@ beginState: s32'vkh301'
         upon: (BEFORE_EXIT)
             createParticle: s32'vky_vkdKill', (PLAYER)
         endUpon: 
-        upon: 23
+        upon: (SIGNAL_A)
             setLinkObjectDestroyOnStateChange: 22
             setLinkObjectDestroyOnDamage: 22
         endUpon: 
@@ -3751,7 +3751,7 @@ beginState: s32'vkd301'
         callSubroutine: s32'MeshSet_VKD'
         linkObjectZ: 3
         stopLinkObject: 3
-        upon: 23
+        upon: (SIGNAL_A)
             Unknown2050: 0
         endUpon: 
         upon: 24
@@ -3849,7 +3849,7 @@ beginState: s32'vky_301_EnshutuCamera'
             Unknown2582: 
             haikuEnd: 
         endUpon: 
-        gotoLabelUpon: 23, s32'CameraEnd'
+        gotoLabelUpon: (SIGNAL_A), s32'CameraEnd'
     endUpon: 
     sprite: s32'null', 40
     Unknown2074: 3, -65802, 171800, 114810, -487, 5808, 2366, 60, 0, 640, 0, 0, 0, 0
@@ -3859,7 +3859,7 @@ beginState: s32'vky_301_EnshutuCamera'
     ignoreFinishStop: 0
     beginLabel: s32'CameraEnd'
     sprite: s32'null', 40
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     ignoreFinishStop: 0
     Unknown2074: 3, 96906, 318734, 117967, 417, -3286, 0, 60, 0, 40, 6000, 0, 0, 0
     linkParticle: s32''
@@ -4143,9 +4143,9 @@ beginState: s32'vkd307'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkObjectZ: 3
-        gotoLabelUpon: 23, s32'Loop'
+        gotoLabelUpon: (SIGNAL_A), s32'Loop'
         gotoLabelUpon: 31, s32'End'
-        gotoLabelUpon: 32, s32'Delete'
+        gotoLabelUpon: (SIGNAL_B), s32'Delete'
     endUpon: 
     sprite: s32'vkd307_00', 2147483647
     createObject: s32'vky_307_Spawn', (PLAYER)
@@ -4224,11 +4224,11 @@ beginState: s32'vkn309'
             addPositionX: 50000
         endIf: 
         physicsXImpulse: -20000
-        gotoLabelUpon: 23, s32'Catch'
+        gotoLabelUpon: (SIGNAL_A), s32'Catch'
         gotoLabelUpon: 24, s32'CarryStart'
         gotoLabelUpon: 30, s32'CarryEnd'
         gotoLabelUpon: 31, s32'Throw'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'vkn309_00', 1
     beginLabel: s32'Sliding'
@@ -4358,8 +4358,8 @@ beginState: s32'vky_309_EnshutuCamera'
         setLinkObjectDestroyOnDamage: 3
         ignoreSuperFreezeFromAlly: 1
         ignoreFinishStop: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Aitata'
         endUpon: 
         upon: (BEFORE_EXIT)
@@ -4737,7 +4737,7 @@ beginSubroutine: s32'SpecialCannon_Init'
         callSubroutine: s32'SpecialCannon_Samechara_Zline'
         storeValue: Mem(ActReg3), Val(600)
     endUpon: 
-    upon: 23
+    upon: (SIGNAL_A)
         ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
             Unknown1793: 5, 25
             gotoLabelRequests: s32'Setting'
@@ -4777,7 +4777,7 @@ beginSubroutine: s32'SpecialCannon_Init'
         createObjectWithArg: s32'Cannon_ShotAtk', (PLAYER)
         gotoLabelRequests: s32'Shot'
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         clearUpon: (FRAME_STEP)
         clearUpon: 24
         Unknown2268: 0, 1750
@@ -4785,16 +4785,16 @@ beginSubroutine: s32'SpecialCannon_Init'
         createParticleWithArg2: s32'vky_205_nks', (EX_POINT_F)
         deactivateObjectById: (SELF)
     endUpon: 
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'NoDisp'
         if: Mem(Tmp)
             Unknown2050: 0
-            Unknown2035: 5, s32'NoDisp', 0
+            pawnAnimation: 5, s32'NoDisp', 0
         endIf: 
         checkSignalName: s32'ReDisp'
         if: Mem(Tmp)
             Unknown2050: 1
-            Unknown2035: 5, s32'ReDisp', 0
+            pawnAnimation: 5, s32'ReDisp', 0
         endIf: 
         checkSignalName: s32'NotBattleDoing'
         if: Mem(Tmp)
@@ -4859,7 +4859,7 @@ beginSubroutine: s32'SpecialCannon_Idling'
 endSubroutine: 
 
 beginSubroutine: s32'SpecialCannon_SettingInit'
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: 35
     pushboxFix: 0
     attackEndDelay: 
@@ -4902,7 +4902,7 @@ beginState: s32'SpecialCannon_CannonLow'
     sprite: s32'vcn400_02', 3
     beginLabel: s32'Shot1st'
     sprite: s32'vcn400_03', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     pushboxFix: 0
     ifNot: Mem(ActReg1)
         hit: 
@@ -4956,7 +4956,7 @@ beginState: s32'SpecialCannon_CannonHigh'
     sprite: s32'vcn400_12', 3
     beginLabel: s32'Shot1st'
     sprite: s32'vcn400_13', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     pushboxFix: 0
     ifNot: Mem(ActReg1)
         hit: 
@@ -5016,7 +5016,7 @@ beginState: s32'SpecialCannon_CannonAirLow'
     sprite: s32'vcn401_02', 3
     beginLabel: s32'Shot1st'
     sprite: s32'vcn401_03', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     pushboxFix: 0
     ifNot: Mem(ActReg1)
         hit: 
@@ -5108,7 +5108,7 @@ beginState: s32'SpecialCannon_CannonAirHigh'
     sprite: s32'vcn401_12', 3
     beginLabel: s32'Shot1st'
     sprite: s32'vcn401_13', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     pushboxFix: 0
     ifNot: Mem(ActReg1)
         hit: 
@@ -5173,9 +5173,9 @@ beginState: s32'SpecialCannon_CannonBig'
         addPositionX: 50000
         zLine: 0, 5
         setZOffset: 3
-        gotoLabelUpon: 23, s32'PreAtk'
+        gotoLabelUpon: (SIGNAL_A), s32'PreAtk'
         gotoLabelUpon: 24, s32'Atk'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
         gotoLabelUpon: 35, s32'End'
     endUpon: 
     sprite: s32'vcn400_20', 2
@@ -5214,9 +5214,9 @@ beginState: s32'SpecialCannon_CannonAirBig'
         Unknown2327: 1
         addPositionY: 200000
         addPositionX: 200000
-        gotoLabelUpon: 23, s32'PreAtk'
+        gotoLabelUpon: (SIGNAL_A), s32'PreAtk'
         gotoLabelUpon: 24, s32'Atk'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
         gotoLabelUpon: 35, s32'End'
     endUpon: 
     sprite: s32'vcn401_20', 2
@@ -5265,8 +5265,8 @@ beginState: s32'Baloon_CannonAirLow'
         setDepth: -40000
         gotoLabelUpon: 24, s32'Shot'
         gotoLabelUpon: 25, s32'Setting'
-        gotoLabelUpon: 32, s32'End'
-        upon: 49
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'NoDisp'
             if: Mem(Tmp)
                 Unknown2050: 0
@@ -5305,8 +5305,8 @@ beginState: s32'Baloon_CannonAirHigh'
         setDepth: -40000
         gotoLabelUpon: 24, s32'Shot'
         gotoLabelUpon: 25, s32'Setting'
-        gotoLabelUpon: 32, s32'End'
-        upon: 49
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'NoDisp'
             if: Mem(Tmp)
                 Unknown2050: 0
@@ -5374,7 +5374,7 @@ beginSubroutine: s32'CannonShot_Init'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: 45
+    upon: (ON_DESTROY)
         gotoLabelRequests: s32'Koware'
     endUpon: 
     Unknown1909: 35000
@@ -5419,7 +5419,7 @@ beginState: s32'Cannon_ShotAtk'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: 45
+    upon: (ON_DESTROY)
         gotoLabelRequests: s32'Koware'
     endUpon: 
     Unknown1909: 35000
@@ -5541,7 +5541,7 @@ beginState: s32'CannonBig_ShotAtk'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         Unknown1909: 35000
@@ -5575,7 +5575,7 @@ beginState: s32'Item_CanonShotNokosiEff_U'
         linkObjectPosition: 2
         stopLinkObject: 2
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             deactivateCurrentObject: 
         endUpon: 
     endUpon: 
@@ -5791,7 +5791,7 @@ beginState: s32'vkn403_Atk'
             Unknown2209: 1
             Unknown2210: 2
         endIf: 
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 37
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -5858,8 +5858,8 @@ beginState: s32'vky_403_FireWorkEff'
         linkObjectPosition: 2
         linkObjectZ: 2
         linkParticle: s32'vky_403_FireWork'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -5950,7 +5950,7 @@ beginState: s32'vkc404_Atk'
         storeValue: Mem(PlayerVal9), Val(1)
         addPositionX: 140000
         addPositionY: 200000
-        clearUpon: 45
+        clearUpon: (ON_DESTROY)
         setEventTrigger: 13, 12
         gotoLabelUpon: 13, s32'Upper'
         gotoLabelUpon: 8, s32'Upper'
@@ -5999,7 +5999,7 @@ beginState: s32'vkc404_Atk'
     endUpon: 
     sprite: s32'vrc404_00ex01', 3
     hit: 
-    sendSignalToAction: s32'vkn404', 23
+    sendSignalToAction: s32'vkn404', (SIGNAL_A)
     linkParticle: s32'vky_404_Burst00'
     createObject: s32'vky_404_Nks', (PLAYER)
     physicsXImpulse: 4000
@@ -6008,7 +6008,7 @@ beginState: s32'vkc404_Atk'
     velocityXPercentEachFrame: 120
     beginLabel: s32'Loop'
     sprite: s32'vrc404_00', 3
-    sendSignalToAction: s32'vkn404', 23
+    sendSignalToAction: s32'vkn404', (SIGNAL_A)
     clearUpon: (HIT)
     sprite: s32'vrc404_01', 3
     sendSignalToAction: s32'vkn404', 24
@@ -6110,7 +6110,7 @@ beginState: s32'vkc404_Atk'
     Unknown2050: 0
     haltMomentum: 1
     upon: (HIT)
-        sendSignalToAction: s32'Firework_D', 32
+        sendSignalToAction: s32'Firework_D', (SIGNAL_B)
     endUpon: 
     endSprite: 
     sendSignalToAction: s32'Firework_D', 30
@@ -6130,7 +6130,7 @@ beginState: s32'vkn404'
         linkObjectPosition: 2
         stopLinkObject: 2
         linkObjectZ: 2
-        gotoLabelUpon: 23, s32'vrc404_00'
+        gotoLabelUpon: (SIGNAL_A), s32'vrc404_00'
         gotoLabelUpon: 24, s32'vrc404_01'
         gotoLabelUpon: 25, s32'vrc404_02'
     endUpon: 
@@ -6222,28 +6222,28 @@ beginState: s32'vkd405'
             stopLinkObject: 0
             attackOff: 
             haltMomentum: 1
-            sendSignalToAction: s32'vky_406_HeadWind', 23
-            sendSignalToAction: s32'vky_406_NksEff_Kira_U', 23
+            sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
+            sendSignalToAction: s32'vky_406_NksEff_Kira_U', (SIGNAL_A)
         endUpon: 
-        upon: 23
-            clearUpon: 23
-            clearUpon: 32
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
+            clearUpon: (SIGNAL_B)
             deactivateObjectByName: s32'vky_406_NksEff'
             deactivateObjectByName: s32'vky_406_NksEff_U'
-            sendSignalToAction: s32'vky_406_TrailEff', 23
-            sendSignalToAction: s32'vky_406_TrailEff_D', 32
-            sendSignalToAction: s32'vky_406_HeadWind', 23
+            sendSignalToAction: s32'vky_406_TrailEff', (SIGNAL_A)
+            sendSignalToAction: s32'vky_406_TrailEff_D', (SIGNAL_B)
+            sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
             onSpriteChange: s32'vkd406_00'
             gotoLabelRequests: s32'Lock'
         endUpon: 
-        upon: 32
-            clearUpon: 23
-            clearUpon: 32
+        upon: (SIGNAL_B)
+            clearUpon: (SIGNAL_A)
+            clearUpon: (SIGNAL_B)
             deactivateObjectByName: s32'vky_406_NksEff'
             deactivateObjectByName: s32'vky_406_NksEff_U'
-            sendSignalToAction: s32'vky_406_TrailEff', 23
-            sendSignalToAction: s32'vky_406_TrailEff_D', 32
-            sendSignalToAction: s32'vky_406_HeadWind', 23
+            sendSignalToAction: s32'vky_406_TrailEff', (SIGNAL_A)
+            sendSignalToAction: s32'vky_406_TrailEff_D', (SIGNAL_B)
+            sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6270,8 +6270,8 @@ beginState: s32'vkd405'
     stopLinkObject: 0
     attackOff: 
     haltMomentum: 1
-    sendSignalToAction: s32'vky_406_HeadWind', 23
-    sendSignalToAction: s32'vky_406_NksEff_Kira_U', 23
+    sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
+    sendSignalToAction: s32'vky_406_NksEff_Kira_U', (SIGNAL_A)
     sprite: s32'vkd405_05', 1
     Unknown2050: 0
     createParticle: s32'vky_vkdKill', (PLAYER)
@@ -6287,8 +6287,8 @@ beginState: s32'vkd405'
     stopLinkObject: 0
     attackOff: 
     haltMomentum: 1
-    sendSignalToAction: s32'vky_406_HeadWind', 23
-    sendSignalToAction: s32'vky_406_NksEff_Kira_U', 23
+    sendSignalToAction: s32'vky_406_HeadWind', (SIGNAL_A)
+    sendSignalToAction: s32'vky_406_NksEff_Kira_U', (SIGNAL_A)
     sprite: s32'vkd406_00', 1
     Unknown2050: 0
     createParticle: s32'vky_vkdKill', (PLAYER)
@@ -6309,7 +6309,7 @@ beginState: s32'vkd406'
         endIf: 
         setPositionY: 200000
         deactivateObjectByName: s32'vkd405'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'vkd406_00', 3
     createArgHikitsukiVal: Val(0), Val(0)
@@ -6369,7 +6369,7 @@ beginState: s32'vkn406'
                 gotoLabelRequests: s32'Landing_D'
             endIf: 
         endUpon: 
-        upon: 32
+        upon: (SIGNAL_B)
             linkObjectPosition: 0
             moveToObject: (ENEMY)
             setPositionY: 0
@@ -6418,8 +6418,8 @@ beginState: s32'vkd406_BokoSuka'
         moveToObject: (ENEMY)
         setPositionY: 0
         linkParticle: s32'vky_405_bokosuka'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6438,7 +6438,7 @@ beginState: s32'vkd406_BokoSuka'
     beginLabel: s32'End'
     sprite: s32'null', 20
     createParticle: s32'vky_405_Finish', (PLAYER)
-    sendSignalToAction: s32'vkd406_BokoSuka_Icon', 23
+    sendSignalToAction: s32'vkd406_BokoSuka_Icon', (SIGNAL_A)
     setAlphaColorSpeed: -50
 endState: 
 
@@ -6448,8 +6448,8 @@ beginState: s32'vkd406_BokoSuka_Icon'
         linkObjectPosition: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setPositionX: -26997
@@ -6479,8 +6479,8 @@ beginState: s32'vky_406_HeadWind'
         linkObjectPosition: 2
         stopLinkObject: 2
         linkObjectZ: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6502,8 +6502,8 @@ beginState: s32'vky_406_TrailEff'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkObjectZ: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6534,7 +6534,7 @@ beginState: s32'vky_406_TrailEff'
     stopLinkObject: 0
     setObjectHeightScaleSpeed: -50
     setObjectDepthScaleSpeed: -50
-    sendSignalToAction: s32'vky_406_TrailRootEff', 23
+    sendSignalToAction: s32'vky_406_TrailRootEff', (SIGNAL_A)
 endState: 
 
 beginState: s32'vky_406_TrailEff_D'
@@ -6543,20 +6543,20 @@ beginState: s32'vky_406_TrailEff_D'
         stopLinkObject: 3
         linkObjectZ: 2
         addPositionX: 50000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             linkParticle: s32'vky_405_Trail'
             setAlphaColor: 610
             gotoLabelRequests: s32'Catch'
         endUpon: 
         upon: 24
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             gotoLabelRequests: s32'Catch'
         endUpon: 
-        upon: 32
-            clearUpon: 32
+        upon: (SIGNAL_B)
+            clearUpon: (SIGNAL_B)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6578,8 +6578,8 @@ beginState: s32'vky_406_TrailEff_D'
     stopLinkObject: 0
     setObjectHeightScaleSpeed: -50
     setObjectDepthScaleSpeed: -50
-    sendSignalToAction: s32'vky_406_TrailRootEff', 23
-    sendSignalToAction: s32'vky_406_NksEff_Kira_U', 23
+    sendSignalToAction: s32'vky_406_TrailRootEff', (SIGNAL_A)
+    sendSignalToAction: s32'vky_406_NksEff_Kira_U', (SIGNAL_A)
 endState: 
 
 beginState: s32'vky_406_TrailRootEff'
@@ -6588,8 +6588,8 @@ beginState: s32'vky_406_TrailRootEff'
         linkObjectPosition: 2
         linkObjectZ: 2
         addPositionX: 25000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6669,7 +6669,7 @@ beginState: s32'vky_406_NksEff_Kira_U'
         setLinkObjectDestroyOnDamage: 3
         stopLinkObject: 3
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -6680,7 +6680,7 @@ beginState: s32'vky_406_NksEff_Kira_U'
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
     sprite: s32'null', 40
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'vky_405_nks'
 endState: 
 
@@ -6798,9 +6798,9 @@ beginState: s32'VKD_402_Low'
         Unknown2257: 1
         Unknown2212: 1
         Unknown2213: 0
-        gotoLabelUpon: 45, s32'End'
-        gotoLabelUpon: 23, s32'Move'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (ON_DESTROY), s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'Move'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
         gotoLabelUpon: 35, s32'End'
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
             Unknown1909: 0
@@ -6817,7 +6817,7 @@ beginState: s32'VKD_402_Low'
                 endIf: 
             endUpon: 
             upon: (HIT_OR_GUARD)
-                clearUpon: 32
+                clearUpon: (SIGNAL_B)
                 worldCollision: 0
                 storeValue: Mem(ActReg0), Val(1)
             endUpon: 
@@ -6876,7 +6876,7 @@ beginState: s32'VKD_402_Low'
     endIf: 
     sprite: s32'vkd402_04', 6
     sprite: s32'vkd402_05', 4
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     clearUpon: 35
     worldCollision: 1
     hit: 
@@ -6901,7 +6901,7 @@ beginState: s32'VKD_402_Low'
     endElse: 
     beginLabel: s32'End'
     sprite: s32'keep', 1
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     clearUpon: (FRAME_STEP)
     clearUpon: 35
     clearUpon: (HIT_OR_GUARD)
@@ -6972,16 +6972,16 @@ beginState: s32'VKD_402_High'
         invulnForce: 1
         enableSuperArmor: 1
         superArmorHontaiAttack: 0
-        upon: 45
+        upon: (ON_DESTROY)
             storeValue: Mem(ActReg2), Val(1)
             Unknown2347: s32'vky_Mission02_success'
             gotoLabelRequests: s32'End'
         endUpon: 
-        gotoLabelUpon: 23, s32'Move'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'Move'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
         gotoLabelUpon: 35, s32'End'
         upon: (HIT_OR_GUARD)
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
         endUpon: 
     endUpon: 
     sprite: s32'vkd402_00', 30
@@ -7071,15 +7071,15 @@ beginState: s32'VKD_402_High'
     privateSE: s32'vky_05'
     sprite: s32'vkd402_12', 6
     sprite: s32'vkd402_12', 6
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     setGravity: 1800
     velocityYPercentEachFrame: 100
     beginLabel: s32'End'
     sprite: s32'keep', 1
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
-    clearUpon: 23
-    clearUpon: 32
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_A)
+    clearUpon: (SIGNAL_B)
     clearUpon: 35
     clearUpon: (HIT_OR_GUARD)
     haltMomentum: 1
@@ -7407,7 +7407,7 @@ beginState: s32'vkd432'
         moveToObject: (ENEMY)
         setPositionY: 0
         upon: (HIT)
-            sendSignalToAction: s32'vky_Ougi', 32
+            sendSignalToAction: s32'vky_Ougi', (SIGNAL_B)
         endUpon: 
         clearUpon: 131
         upon: 131
@@ -7845,8 +7845,8 @@ beginState: s32'vky_430_EnshutuCamera2'
         setLinkObjectDestroyOnDamage: 3
         ignoreSuperFreezeFromAlly: 1
         ignoreFinishStop: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -8310,7 +8310,7 @@ beginState: s32'vky_441cs_whiteOut'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -8465,7 +8465,7 @@ beginState: s32'vkd440_Atk'
         damageEffect: 2, s32'vky_SPHitEff'
         postSubroutineBegin: s32'vky_Kaihou'
         Unknown1961: 1
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Atk'
         endUpon: 
         upon: 24
@@ -8478,7 +8478,7 @@ beginState: s32'vkd440_Atk'
             if: Mem(ActReg0)
                 Unknown963: 0, -20000
                 callSubroutine: s32'cmn_Kaihou_AttackRate2Init'
-                sendSignalToAction: s32'vky_Kaihou', 23
+                sendSignalToAction: s32'vky_Kaihou', (SIGNAL_A)
             endIf: 
         endUpon: 
         upon: (HIT)
@@ -8552,8 +8552,8 @@ beginState: s32'vkd440_Atk'
     sprite: s32'vkd440_02', 2
     clearUpon: (FRAME_STEP)
     linkParticle: s32'vky_440_SpeedLine2'
-    sendSignalToAction: s32'vky_440_AuraEff_Upper', 23
-    sendSignalToAction: s32'vky_440_AuraEff_Downer', 23
+    sendSignalToAction: s32'vky_440_AuraEff_Upper', (SIGNAL_A)
+    sendSignalToAction: s32'vky_440_AuraEff_Downer', (SIGNAL_A)
     createArgHikitsukiVal: Val(1), Val(0)
     createObjectWithArg: s32'vky_440_AuraEndSub', (PLAYER)
     createArgHikitsukiVal: Val(2), Val(0)
@@ -8698,7 +8698,7 @@ beginState: s32'vky_440_AuraEff_Upper'
         linkObjectPosition: 2
         stopLinkObject: 2
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Atk'
         endUpon: 
     endUpon: 
@@ -8733,7 +8733,7 @@ beginState: s32'vky_440_AuraEff_Middle'
         linkObjectPosition: 2
         stopLinkObject: 2
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Atk'
         endUpon: 
     endUpon: 
@@ -8768,7 +8768,7 @@ beginState: s32'vky_440_AuraEff_Downer'
         linkObjectPosition: 2
         stopLinkObject: 2
         linkObjectZ: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Atk'
         endUpon: 
     endUpon: 
@@ -9068,7 +9068,7 @@ beginState: s32'vky_700_1p_BG1'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkObjectZ: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Move1'
         endUpon: 
         upon: 24
@@ -9752,7 +9752,7 @@ beginState: s32'vky_442cs_whiteIn'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1

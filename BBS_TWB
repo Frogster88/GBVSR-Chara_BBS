@@ -3099,7 +3099,7 @@ beginSubroutine: s32'StandBy_Photo'
     setAngleX: 356000
     setAngleY: 342000
     setAngle: 4000
-    Unknown2035: 4, s32'DispModel_FALSE', 0
+    pawnAnimation: 4, s32'DispModel_FALSE', 0
     createObject: s32'twb_610_ChairEff', (PLAYER)
     stackObjectEx: (SELF), 11, 22, 11
     runOnObject: (STACK7)
@@ -3119,7 +3119,7 @@ beginSubroutine: s32'StandBy_Photo2'
     setAngleX: 0
     setAngleY: 6000
     setAngle: 0
-    Unknown2035: 4, s32'pod_Appear', 0
+    pawnAnimation: 4, s32'pod_Appear', 0
     stackObjectEx: (SELF), 11, 22, 11
     runOnObject: (STACK7)
         setPositionX: 0
@@ -3594,7 +3594,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3747,7 +3747,7 @@ beginState: s32'entry_2p01'
                     ifOnFrame: Val(1)
                         playAnimation: s32'twb700cs_2p_03', 0
                         playCameraAnimation: s32'twb700cs_2p_cam03', 23, 0, -1
-                        sendSignalToAction: s32'pod_A_700cs_2p', 23
+                        sendSignalToAction: s32'pod_A_700cs_2p', (SIGNAL_A)
                     endIf: 
                     ifOnFrame: Val(20)
                         Unknown2583: 13000, 0, 3, 165500, 69000, 6200
@@ -3925,7 +3925,7 @@ beginState: s32'entry_1p03'
             Unknown2084: s32'twb700cs_1P_cam05', 0, 0, 0, 1, 0, -1
             Unknown1793: 22, 32
             hideAllButSelf: 0
-            sendSignalToAction: s32'pod_A_700cs_1p', 23
+            sendSignalToAction: s32'pod_A_700cs_1p', (SIGNAL_A)
             storeValue: Mem(ActReg1), Val(1)
             storeValue: Mem(ActReg0), Val(0)
         endIf: 
@@ -3981,7 +3981,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -4072,7 +4072,7 @@ beginState: s32'CmnActRoundWin'
     callSubroutine: s32'WeaponA_Disappear_Fastest'
     characterSfx: s32'twb_01_2'
     sprite: s32'twb601_06', 6
-    Unknown2035: 4, s32'pod601', 0
+    pawnAnimation: 4, s32'pod601', 0
     characterSfx: s32'twb_16'
     sprite: s32'twb601_07', 6
     callSubroutine: s32'WeaponA_Appear_Fastest'
@@ -4196,7 +4196,7 @@ beginState: s32'CmnActMatchWin'
                         ifOnFrame: Val(1)
                             playAnimation: s32'twb800cs_02', 0
                             playCameraAnimation: s32'twb800cs_02', 23, 0, -1
-                            sendSignalToAction: s32'pod_A_800cs', 23
+                            sendSignalToAction: s32'pod_A_800cs', (SIGNAL_A)
                             Unknown2193: 1
                             voiceLine: s16'vTWB_WINR_00_b'
                             Unknown2238: s32'prev', -2147483618
@@ -4384,7 +4384,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
         endIf: 
         ifOnFrame: Val(83)
             Unknown2582: 
-            sendSignalToAction: s32'twb_442cs_WinParticleNearEff', 23
+            sendSignalToAction: s32'twb_442cs_WinParticleNearEff', (SIGNAL_A)
             createObject: s32'twb_442_BGOverRayEff', (PLAYER)
             Unknown2588: s32'twb_PP_442FGVI', 1, 50
             Unknown2590: s32'twb_PP_442FGVI', 1, 0
@@ -4394,7 +4394,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
         ifOnFrame: Val(231)
             Unknown2583: 8000, 0, 3, 100000, 1000, 1000
             sendSignalToAction: s32'twb_442cs_WinParticleNearEff', 24
-            sendSignalToAction: s32'twb_442cs_WinGlareEff', 23
+            sendSignalToAction: s32'twb_442cs_WinGlareEff', (SIGNAL_A)
             deactivateObjectByName: s32'twb_442_BGOverRayEff'
         endIf: 
         ifOnFrame: Val(359)
@@ -4647,7 +4647,7 @@ beginState: s32'CancelDash'
     sprite: s32'twb306_10', 3
     haltMomentum: 1
     pushboxHeightLow: -1
-    sendSignalToAction: s32'twb_306_StrikeEff', 23
+    sendSignalToAction: s32'twb_306_StrikeEff', (SIGNAL_A)
     cameraShake: s32'ShakeTate', 700, 0, 12, 0
     characterSfx: s32'twb_02'
     sprite: s32'twb306_11', 3
@@ -6557,9 +6557,9 @@ beginState: s32'NmlAtkAir5D'
     gotoLabelIf: s32'Float', Mem(Tmp)
     sprite: s32'twb254_00', 3
     sprite: s32'twb254_01', 3
-    Unknown2035: 4, s32'pod254', 0
+    pawnAnimation: 4, s32'pod254', 0
     storeValue: Mem(ObjReg1), Val(0)
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     upon: (BEFORE_EXIT)
         physicsXImpulse: 0
         resetGravity: 
@@ -6583,7 +6583,7 @@ beginState: s32'NmlAtkAir5D'
     sprite: s32'twb254_03', 3
     checkLastStateName: s32'NmlAtkAir5DAdd'
     if: Mem(Tmp)
-        Unknown2035: 4, s32'Float', 0
+        pawnAnimation: 4, s32'Float', 0
         popVelocityX: 
         popVelocityY: 
         popGravity: 
@@ -6679,14 +6679,14 @@ beginState: s32'NmlAtkAir5D'
     gotoLabel: s32'Downloop'
     beginLabel: s32'ToFloat'
     sprite: s32'twb254_22', 3
-    Unknown2035: 4, s32'ToFloat', 0
+    pawnAnimation: 4, s32'ToFloat', 0
     sprite: s32'twb254_23', 3
     sprite: s32'twb254_24', 3
     endSprite: 
     gotoLabel: s32'Float'
     beginLabel: s32'ToDown'
     sprite: s32'twb254_08', 3
-    Unknown2035: 4, s32'ToDown', 0
+    pawnAnimation: 4, s32'ToDown', 0
     resetGravity: 
     attackEndDelay: 
     sprite: s32'twb254_09', 3
@@ -6712,7 +6712,7 @@ beginState: s32'NmlAtkAir5DAdd'
         endUpon: 
     endUpon: 
     sprite: s32'twb254_10', 2
-    Unknown2035: 4, s32'Atk', 0
+    pawnAnimation: 4, s32'Atk', 0
     landingAutoAction: 0
     Unknown2163: 0
     sprite: s32'twb254_11', 2
@@ -6776,7 +6776,7 @@ beginState: s32'NmlAtkAir5DAdd'
     gotoLabel: s32'Downloop'
     beginLabel: s32'ToFloat'
     sprite: s32'twb254_22', 3
-    Unknown2035: 4, s32'ToFloat', 0
+    pawnAnimation: 4, s32'ToFloat', 0
     sprite: s32'twb254_23', 3
     sprite: s32'twb254_24', 3
     endSprite: 
@@ -6786,7 +6786,7 @@ beginState: s32'NmlAtkAir5DAdd'
     jumpToState: s32'NmlAtkAir5D'
     beginLabel: s32'ToDown'
     sprite: s32'twb254_08', 3
-    Unknown2035: 4, s32'ToDown', 0
+    pawnAnimation: 4, s32'ToDown', 0
     resetGravity: 
     sprite: s32'twb254_09', 3
     endSprite: 
@@ -6798,7 +6798,7 @@ beginState: s32'AirJump'
         attackIgnoreCaution: 1
         attackEndDelay: 
         haltMomentum: 1
-        Unknown1819: 3, 1
+        landingRecovery: 3, 1
         storeValue: Mem(EnvR22), Val(1)
         modifyVar: (SUB), Mem(ExGage0), Val(12000)
         createObject: s32'twb_DoubleJumpEff', (PLAYER)
@@ -6934,7 +6934,7 @@ beginState: s32'ThrowExe'
         killType: (NOT_KILL)
         Unknown1048: 1
         ignorePushback: 1
-        sendSignalToAction: s32'pod_414_VoltEff', 23
+        sendSignalToAction: s32'pod_414_VoltEff', (SIGNAL_A)
     endUpon: 
     sprite: s32'twb300_03', 3
     exPointFReset: (PLAYER), 175000, 220000
@@ -7053,7 +7053,7 @@ beginState: s32'BackThrowExe'
         killType: (NOT_KILL)
         Unknown1048: 1
         ignorePushback: 1
-        sendSignalToAction: s32'pod_414_VoltEff', 23
+        sendSignalToAction: s32'pod_414_VoltEff', (SIGNAL_A)
     endUpon: 
     sprite: s32'twb300_03', 3
     exPointFReset: (PLAYER), 175000, 220000
@@ -7154,7 +7154,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'twb302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'twb302_03', 3
     attackEndDelay: 
     sprite: s32'twb302_04', 3
@@ -7187,7 +7187,7 @@ beginState: s32'AirThrowExe'
         hitEffectSlash: 1
         atkAngle: -35
         gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
-        sendSignalToAction: s32'pod_414_VoltEff', 23
+        sendSignalToAction: s32'pod_414_VoltEff', (SIGNAL_A)
     endUpon: 
     sprite: s32'twb302_02', 15
     exPointFReset: (PLAYER), 90000, 340000
@@ -7252,11 +7252,11 @@ beginState: s32'Gatling'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod404', 0
+                pawnAnimation: 4, s32'pod404', 0
             endIf: 
         endUpon: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg0), Val(1)
         endUpon: 
     endUpon: 
@@ -7298,7 +7298,7 @@ beginState: s32'Laser_Small'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod405', 0
+                pawnAnimation: 4, s32'pod405', 0
             endIf: 
         endUpon: 
     endUpon: 
@@ -7329,7 +7329,7 @@ beginState: s32'Missile_Shot'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod406', 0
+                pawnAnimation: 4, s32'pod406', 0
             endIf: 
         endUpon: 
     endUpon: 
@@ -7361,7 +7361,7 @@ beginState: s32'Laser_Big'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod407', 0
+                pawnAnimation: 4, s32'pod407', 0
             endIf: 
         endUpon: 
     endUpon: 
@@ -7403,7 +7403,7 @@ beginState: s32'Missile_Attack'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod410', 0
+                pawnAnimation: 4, s32'pod410', 0
             endIf: 
         endUpon: 
         upon: (HIT_OR_GUARD)
@@ -7444,10 +7444,10 @@ beginState: s32'Missile_Attack'
     attackEndDelay: 
     velocityXPercent: 50
     Unknown1793: 4, 23
-    sendSignalToAction: s32'twb_410_MissileRushEff', 23
-    sendSignalToAction: s32'twb_410_MissileRushSmokeEff', 23
+    sendSignalToAction: s32'twb_410_MissileRushEff', (SIGNAL_A)
+    sendSignalToAction: s32'twb_410_MissileRushSmokeEff', (SIGNAL_A)
     if: Mem(405)
-        sendSignalToAction: s32'twb_410_NokoshiSPEff', 23
+        sendSignalToAction: s32'twb_410_NokoshiSPEff', (SIGNAL_A)
     endIf: 
     sprite: s32'twb410_10', 2
     velocityXPercentEachFrame: 70
@@ -7467,17 +7467,17 @@ beginState: s32'Wire'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod411', 0
+                pawnAnimation: 4, s32'pod411', 0
             endIf: 
         endUpon: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             Unknown1793: 4, 23
             gotoLabelRequests: s32'Hit'
         endUpon: 
         upon: 24
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             gotoLabelRequests: s32'End'
         endUpon: 
@@ -7509,7 +7509,7 @@ beginState: s32'Wire'
     sprite: s32'twb400_04', 3
     sprite: s32'twb400_05', 3
     sprite: s32'twb400_07', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: 24
     sprite: s32'twb400_08', 3
     sprite: s32'twb400_09', 3
@@ -7553,7 +7553,7 @@ beginState: s32'Wire'
     beginLabel: s32'Stop'
     sprite: s32'twb411_05', 3
     velocityXPercentEachFrame: 90
-    sendSignalToAction: s32'pod411_Shot', 23
+    sendSignalToAction: s32'pod411_Shot', (SIGNAL_A)
     sprite: s32'twb411_06', 3
     sprite: s32'twb411_07', 3
     attackEndDelay: 
@@ -7584,7 +7584,7 @@ beginState: s32'Hammer'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod409', 0
+                pawnAnimation: 4, s32'pod409', 0
             endIf: 
         endUpon: 
         upon: (HIT_OR_GUARD)
@@ -7600,7 +7600,7 @@ beginState: s32'Hammer'
                     wallPushback: 0, 0
                     wallPushbackOnHit: 0, 0
                     cameraShake: s32'ShakeTate', 3000, 0, 20, 0
-                    sendSignalToAction: s32'twb_409_HammerEff', 23
+                    sendSignalToAction: s32'twb_409_HammerEff', (SIGNAL_A)
                     sendSignalToAction: s32'twb_409_MagicCircle01Eff', 24
                     gotoLabelRequests: s32'End'
                 endIf: 
@@ -7660,7 +7660,7 @@ beginState: s32'Mirage'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod408', 0
+                pawnAnimation: 4, s32'pod408', 0
             endIf: 
         endUpon: 
         upon: 78
@@ -7768,7 +7768,7 @@ beginState: s32'Mirage'
     Unknown2050: 1
     Unknown1793: 4, 23
     createObject: s32'twb_408_MirageEndFont', (PLAYER)
-    sendSignalToAction: s32'twb_408_MirageLoop', 23
+    sendSignalToAction: s32'twb_408_MirageLoop', (SIGNAL_A)
     createObject: s32'twb_408_WarpEff', (PLAYER)
     ignorePushback: 0
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
@@ -7794,7 +7794,7 @@ beginState: s32'Wave'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod412', 0
+                pawnAnimation: 4, s32'pod412', 0
             endIf: 
         endUpon: 
     endUpon: 
@@ -7816,7 +7816,7 @@ beginState: s32'Wave'
     characterSfx: s32'twb_08'
     sprite: s32'twb412_01', 2
     sprite: s32'twb412_02', 3
-    Unknown2035: 4, s32'DispModel_TRUE', 0
+    pawnAnimation: 4, s32'DispModel_TRUE', 0
     characterSfx: s32'twb_00'
     pushboxHeightLow: -100000
     sprite: s32'twb412_03', 3
@@ -7854,8 +7854,8 @@ beginState: s32'Gravity'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod413', 0
-                sendSignalToAction: s32'twb_413_Gravity', 23
+                pawnAnimation: 4, s32'pod413', 0
+                sendSignalToAction: s32'twb_413_Gravity', (SIGNAL_A)
             endIf: 
         endUpon: 
         upon: (BEFORE_EXIT)
@@ -7887,7 +7887,7 @@ beginState: s32'Volt'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod414', 0
+                pawnAnimation: 4, s32'pod414', 0
             endIf: 
         endUpon: 
     endUpon: 
@@ -7950,7 +7950,7 @@ beginState: s32'Bomb'
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
                 clearUpon: (FRAME_STEP)
-                Unknown2035: 4, s32'pod415', 0
+                pawnAnimation: 4, s32'pod415', 0
             endIf: 
         endUpon: 
     endUpon: 
@@ -7996,8 +7996,8 @@ beginState: s32'twb_Ougi'
         upon: (HIT)
             clearUpon: (HIT)
             storeValue: Mem(ActReg0), Val(1)
-            sendSignalToAction: s32'twb_413_GravityTame', 23
-            sendSignalToAction: s32'twb_413_Gravity', 23
+            sendSignalToAction: s32'twb_413_GravityTame', (SIGNAL_A)
+            sendSignalToAction: s32'twb_413_Gravity', (SIGNAL_A)
             if: Mem(ActReg0)
                 invulnForce: 1
                 attackThroughArmor: 1
@@ -8275,7 +8275,7 @@ beginState: s32'twb_Ougi'
     airHitEffect: (EX_DAMAGE)
     damageSprite: 46
     doubleSlashEffectBugFix: 1
-    Unknown2035: 4, s32'pod430', 0
+    pawnAnimation: 4, s32'pod430', 0
     createObject: s32'pod430_Pod_B', (PLAYER)
     createObject: s32'pod430_Pod_C', (PLAYER)
     sprite: s32'twb430_33', 3
@@ -8345,8 +8345,8 @@ beginState: s32'twb_Kaihou'
             ifNot: Mem(ActReg3)
                 callSubroutine: s32'cmnMuteki'
                 storeValue: Mem(ActReg1), Val(1)
-                sendSignalToAction: s32'twb_413_GravityTame', 23
-                sendSignalToAction: s32'twb_413_Gravity', 23
+                sendSignalToAction: s32'twb_413_GravityTame', (SIGNAL_A)
+                sendSignalToAction: s32'twb_413_Gravity', (SIGNAL_A)
                 cameraShake: s32'ShakeYoko', 1500, 0, 10, 0
                 callSubroutine: s32'cmnKaihou_Maai_ON_ATTACK'
                 if: Mem(ActReg0)
@@ -8465,7 +8465,7 @@ beginState: s32'twb_Kaihou'
         endUpon: 
     endUpon: 
     sprite: s32'twb440_03', 1
-    Unknown2035: 4, s32'DispModel_FALSE', 0
+    pawnAnimation: 4, s32'DispModel_FALSE', 0
     hideUI: 0
     Unknown2008: 1
     deactivateObjectByName: s32'pod_A_440cs'
@@ -8477,9 +8477,9 @@ beginState: s32'twb_Kaihou'
     callSubroutine: s32'cmnKaihou_WLDSTP_End'
     createObject: s32'twb_441_barrierEndEff', (PLAYER)
     createObject: s32'twb_441_ImpactEndEff', (PLAYER)
-    upon: 47
-        clearUpon: 47
-        Unknown2035: 4, s32'pod_Appear', 0
+    upon: (AFTER_EXIT)
+        clearUpon: (AFTER_EXIT)
+        pawnAnimation: 4, s32'pod_Appear', 0
     endUpon: 
     sprite: s32'twb440_04', 2
     sprite: s32'twb440_05', 1
@@ -8527,8 +8527,8 @@ beginState: s32'twb_Kaihou'
     sprite: s32'twb440_20', 3
     sprite: s32'twb440_21', 3
     sprite: s32'twb440_22', 3
-    clearUpon: 47
-    Unknown2035: 4, s32'pod_Appear', 0
+    clearUpon: (AFTER_EXIT)
+    pawnAnimation: 4, s32'pod_Appear', 0
     sprite: s32'twb440_23', 3
     endSprite: 
     exitState: 
@@ -8536,7 +8536,7 @@ beginState: s32'twb_Kaihou'
     sprite: s32'twb441_00', 2
     faceOpponent: 
     callSubroutine: s32'WeaponA_Appear_Fastest'
-    sendSignalToAction: s32'twb_441_EnshutuCamera', 23
+    sendSignalToAction: s32'twb_441_EnshutuCamera', (SIGNAL_A)
     sprite: s32'twb441_01', 3
     sprite: s32'twb441_02', 3
     sprite: s32'twb441_03', 2
@@ -8666,8 +8666,8 @@ beginState: s32'twb_Kaihou'
     sprite: s32'twb441_32', 3
     sprite: s32'twb441_33', 3
     sprite: s32'twb441_34', 3
-    clearUpon: 47
-    Unknown2035: 4, s32'pod_Appear', 0
+    clearUpon: (AFTER_EXIT)
+    pawnAnimation: 4, s32'pod_Appear', 0
     sprite: s32'twb441_35', 3
     endSprite: 
     exitState: 
@@ -8902,8 +8902,8 @@ beginState: s32'twb_Kaihou'
     sprite: s32'twb441_37', 3
     sprite: s32'twb441_39', 3
     sprite: s32'twb441_40', 3
-    clearUpon: 47
-    Unknown2035: 4, s32'pod_Appear', 0
+    clearUpon: (AFTER_EXIT)
+    pawnAnimation: 4, s32'pod_Appear', 0
     callSubroutine: s32'WeaponB_Appear_Fastest'
     callSubroutine: s32'WeaponA_Appear_Fastest'
     sprite: s32'twb441_41', 3
@@ -8994,7 +8994,7 @@ beginState: s32'twb_Kaihou_Explosion'
     sprite: s32'twb442_11', 3
     sprite: s32'twb442_12', 3
     sprite: s32'twb442_10', 3
-    sendSignalToAction: s32'twb_442_CircleEff', 23
+    sendSignalToAction: s32'twb_442_CircleEff', (SIGNAL_A)
     sprite: s32'twb442_11', 3
     sprite: s32'twb442_12', 3
     sprite: s32'twb442_10', 3
@@ -9039,14 +9039,14 @@ beginState: s32'twb_Kaihou_Explosion'
     ifOperation: (IS_EQUAL), Mem(MOM_ItemLevel), Val(2)
         callSubroutine: s32'MeshSet_Setting_AllOff'
     endIf: 
-    sendSignalToAction: s32'twb_442_GCEff', 23
-    sendSignalToAction: s32'twb_442_SelfDestructEff', 23
-    sendSignalToAction: s32'twb_442_Aura02Eff', 23
+    sendSignalToAction: s32'twb_442_GCEff', (SIGNAL_A)
+    sendSignalToAction: s32'twb_442_SelfDestructEff', (SIGNAL_A)
+    sendSignalToAction: s32'twb_442_Aura02Eff', (SIGNAL_A)
     createObject: s32'twb_442_BurstEff', (HEART)
     createObject: s32'twb_442_GroundBurst01', (PLAYER)
     createObject: s32'twb_442_GroundBurst02', (PLAYER)
     createParticle: s32'twb_442_Rock', (PLAYER_LAND)
-    sendSignalToAction: s32'twb_442_EnshutuCamera', 23
+    sendSignalToAction: s32'twb_442_EnshutuCamera', (SIGNAL_A)
     characterSfx: s32'twb_27'
     sprite: s32'twb442_14', 1
     hit: 

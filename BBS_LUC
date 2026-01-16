@@ -1654,14 +1654,14 @@ beginSubroutine: s32'OnDamage'
     callSubroutine: s32'cmn_Fn_OnDamage'
     ifNot: Mem(363)
         ifOperation: (IS_EQUAL), Mem(403), Val(0)
-            Unknown2035: 4, s32'lwa050', 0
-            Unknown2035: 5, s32'lwb050', 0
-            Unknown2035: 6, s32'lwc050', 0
+            pawnAnimation: 4, s32'lwa050', 0
+            pawnAnimation: 5, s32'lwb050', 0
+            pawnAnimation: 6, s32'lwc050', 0
         endIf: 
         ifOperation: (IS_EQUAL), Mem(403), Val(1)
-            Unknown2035: 4, s32'lwa052', 0
-            Unknown2035: 5, s32'lwb052', 0
-            Unknown2035: 6, s32'lwc052', 0
+            pawnAnimation: 4, s32'lwa052', 0
+            pawnAnimation: 5, s32'lwb052', 0
+            pawnAnimation: 6, s32'lwc052', 0
         endIf: 
     endIf: 
     if: Mem(PlayerVal0)
@@ -1715,27 +1715,27 @@ endSubroutine:
 beginSubroutine: s32'luc_AbilityCoolDown0_Set'
     callSubroutine: s32'KAKUJIN_Init'
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(0)
-        Unknown1921: 0, 720
+        skillCooldown: 0, 720
         Unknown1923: 0
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(1)
-        Unknown1921: 0, 600
+        skillCooldown: 0, 600
         Unknown1923: 0
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(2)
-        Unknown1921: 0, 600
+        skillCooldown: 0, 600
         Unknown1923: 0
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(3)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(4)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(5)
-        Unknown1921: 0, 180
+        skillCooldown: 0, 180
         Unknown1923: 0
     endIf: 
 endSubroutine: 
@@ -1743,27 +1743,27 @@ endSubroutine:
 beginSubroutine: s32'luc_AbilityCoolDown1_Set'
     callSubroutine: s32'KAKUJIN_Init'
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(0)
-        Unknown1921: 1, 720
+        skillCooldown: 1, 720
         Unknown1923: 1
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(1)
-        Unknown1921: 1, 600
+        skillCooldown: 1, 600
         Unknown1923: 1
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(2)
-        Unknown1921: 1, 600
+        skillCooldown: 1, 600
         Unknown1923: 1
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(3)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(4)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(5)
-        Unknown1921: 1, 180
+        skillCooldown: 1, 180
         Unknown1923: 1
     endIf: 
 endSubroutine: 
@@ -1771,27 +1771,27 @@ endSubroutine:
 beginSubroutine: s32'luc_AbilityCoolDown2_Set'
     callSubroutine: s32'KAKUJIN_Init'
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(0)
-        Unknown1921: 2, 720
+        skillCooldown: 2, 720
         Unknown1923: 2
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(1)
-        Unknown1921: 2, 600
+        skillCooldown: 2, 600
         Unknown1923: 2
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(2)
-        Unknown1921: 2, 600
+        skillCooldown: 2, 600
         Unknown1923: 2
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(3)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(4)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(5)
-        Unknown1921: 2, 180
+        skillCooldown: 2, 180
         Unknown1923: 2
     endIf: 
 endSubroutine: 
@@ -1799,27 +1799,27 @@ endSubroutine:
 beginSubroutine: s32'luc_AbilityCoolDown3_Set'
     callSubroutine: s32'KAKUJIN_Init'
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(0)
-        Unknown1921: 3, 720
+        skillCooldown: 3, 720
         Unknown1923: 3
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(1)
-        Unknown1921: 3, 600
+        skillCooldown: 3, 600
         Unknown1923: 3
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(2)
-        Unknown1921: 3, 600
+        skillCooldown: 3, 600
         Unknown1923: 3
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(3)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(4)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ExGage0), Val(5)
-        Unknown1921: 3, 180
+        skillCooldown: 3, 180
         Unknown1923: 3
     endIf: 
 endSubroutine: 
@@ -1985,68 +1985,68 @@ beginSubroutine: s32'Weapon_Create'
     ifNot: Mem(Tmp)
         createObject: s32'lwa000', (PLAYER)
         stackObject: (STACK0), (PREVIOUS)
-        Unknown2035: 4, s32'CreateInit', 0
+        pawnAnimation: 4, s32'CreateInit', 0
     endIf: 
     isObjectActive: (STACK1)
     ifNot: Mem(Tmp)
         createObject: s32'lwb000', (PLAYER)
         stackObject: (STACK1), (PREVIOUS)
-        Unknown2035: 5, s32'CreateInit', 0
+        pawnAnimation: 5, s32'CreateInit', 0
     endIf: 
     isObjectActive: (STACK2)
     ifNot: Mem(Tmp)
         createObject: s32'lwc000', (PLAYER)
         stackObject: (STACK2), (PREVIOUS)
-        Unknown2035: 6, s32'CreateInit', 0
+        pawnAnimation: 6, s32'CreateInit', 0
     endIf: 
 endSubroutine: 
 
 beginSubroutine: s32'Weapon_Disp'
-    Unknown2035: 4, s32'Disp', 0
-    Unknown2035: 5, s32'Disp', 0
-    Unknown2035: 6, s32'Disp', 0
+    pawnAnimation: 4, s32'Disp', 0
+    pawnAnimation: 5, s32'Disp', 0
+    pawnAnimation: 6, s32'Disp', 0
 endSubroutine: 
 
 beginSubroutine: s32'Weapon_NoDisp'
-    Unknown2035: 4, s32'NoDisp', 0
-    Unknown2035: 5, s32'NoDisp', 0
-    Unknown2035: 6, s32'NoDisp', 0
+    pawnAnimation: 4, s32'NoDisp', 0
+    pawnAnimation: 5, s32'NoDisp', 0
+    pawnAnimation: 6, s32'NoDisp', 0
 endSubroutine: 
 
 beginSubroutine: s32'Weapon_Appear'
-    Unknown2035: 4, s32'Appear', 0
-    Unknown2035: 5, s32'Appear', 0
-    Unknown2035: 6, s32'Appear', 0
+    pawnAnimation: 4, s32'Appear', 0
+    pawnAnimation: 5, s32'Appear', 0
+    pawnAnimation: 6, s32'Appear', 0
 endSubroutine: 
 
 beginSubroutine: s32'Weapon_Disappear'
-    Unknown2035: 4, s32'Disappear', 0
-    Unknown2035: 5, s32'Disappear', 0
-    Unknown2035: 6, s32'Disappear', 0
+    pawnAnimation: 4, s32'Disappear', 0
+    pawnAnimation: 5, s32'Disappear', 0
+    pawnAnimation: 6, s32'Disappear', 0
 endSubroutine: 
 
 beginSubroutine: s32'Weapon_Disappear_Fast'
-    Unknown2035: 4, s32'Disappear_Fast', 0
-    Unknown2035: 5, s32'Disappear_Fast', 0
-    Unknown2035: 6, s32'Disappear_Fast', 0
+    pawnAnimation: 4, s32'Disappear_Fast', 0
+    pawnAnimation: 5, s32'Disappear_Fast', 0
+    pawnAnimation: 6, s32'Disappear_Fast', 0
 endSubroutine: 
 
 beginSubroutine: s32'Weapon_Disappear_Flag'
-    Unknown2035: 4, s32'Disappear_Flag', 0
-    Unknown2035: 5, s32'Disappear_Flag', 0
-    Unknown2035: 6, s32'Disappear_Flag', 0
+    pawnAnimation: 4, s32'Disappear_Flag', 0
+    pawnAnimation: 5, s32'Disappear_Flag', 0
+    pawnAnimation: 6, s32'Disappear_Flag', 0
 endSubroutine: 
 
 beginSubroutine: s32'ExSkill2_Color'
-    Unknown2035: 4, s32'ExSkill2_Color', 0
-    Unknown2035: 5, s32'ExSkill2_Color', 0
-    Unknown2035: 6, s32'ExSkill2_Color', 0
+    pawnAnimation: 4, s32'ExSkill2_Color', 0
+    pawnAnimation: 5, s32'ExSkill2_Color', 0
+    pawnAnimation: 6, s32'ExSkill2_Color', 0
 endSubroutine: 
 
 beginSubroutine: s32'ExSkill_ColorEnd'
-    Unknown2035: 4, s32'ExSkill_ColorEnd', 0
-    Unknown2035: 5, s32'ExSkill_ColorEnd', 0
-    Unknown2035: 6, s32'ExSkill_ColorEnd', 0
+    pawnAnimation: 4, s32'ExSkill_ColorEnd', 0
+    pawnAnimation: 5, s32'ExSkill_ColorEnd', 0
+    pawnAnimation: 6, s32'ExSkill_ColorEnd', 0
 endSubroutine: 
 
 beginSubroutine: s32'BLI442csDamage'
@@ -2329,9 +2329,9 @@ beginState: s32'CmnActFDashStop'
             clearUpon: (FRAME_STEP)
             callSubroutine: s32'cmnNandemoCancel'
         endIf: 
-        Unknown2035: 4, s32'lwa034', 0
-        Unknown2035: 5, s32'lwb034', 0
-        Unknown2035: 6, s32'lwc034', 0
+        pawnAnimation: 4, s32'lwa034', 0
+        pawnAnimation: 5, s32'lwb034', 0
+        pawnAnimation: 6, s32'lwc034', 0
     endUpon: 
     sprite: s32'luc034_00', 3
     sprite: s32'luc034_01', 3
@@ -2557,7 +2557,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2642,8 +2642,8 @@ beginState: s32'entry_2p01'
                         createObject: s32'luc_700CS2P_HandAura', (PLAYER)
                     endIf: 
                     ifOnFrame: Val(116)
-                        sendSignalToAction: s32'luc_700CS2P_Spark', 23
-                        sendSignalToAction: s32'luc_700CS2P_HandAura', 23
+                        sendSignalToAction: s32'luc_700CS2P_Spark', (SIGNAL_A)
+                        sendSignalToAction: s32'luc_700CS2P_HandAura', (SIGNAL_A)
                     endIf: 
                     ifOnFrame: Val(124)
                         Unknown2583: 32000, 0, 3, 134600, 90073, 3400
@@ -2744,7 +2744,7 @@ beginState: s32'entry_1p03'
                         Unknown2583: 30000, 0, 3, 85400, 8910, 5000
                     endIf: 
                     ifOnFrame: Val(309)
-                        sendSignalToAction: s32'luc_700CS1P_SordAura', 23
+                        sendSignalToAction: s32'luc_700CS1P_SordAura', (SIGNAL_A)
                         fadeInStart: 60
                     endIf: 
                     ifOnFrame: Val(380)
@@ -2786,7 +2786,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2815,9 +2815,9 @@ beginState: s32'CmnActRoundWin'
     gotoIfOperation: s32'TypeB', (PERCENT), Val(50), Val(100)
     beginLabel: s32'TypeA'
     sprite: s32'luc600_00', 6
-    Unknown2035: 4, s32'lwa600', 0
-    Unknown2035: 5, s32'lwb600', 0
-    Unknown2035: 6, s32'lwc600', 0
+    pawnAnimation: 4, s32'lwa600', 0
+    pawnAnimation: 5, s32'lwb600', 0
+    pawnAnimation: 6, s32'lwc600', 0
     createObject: s32'luc_RoundWin_Camera', (PLAYER)
     characterSfx: s32'luc_26'
     sprite: s32'luc600_01', 6
@@ -3028,7 +3028,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
         endIf: 
         ifOnFrame: Val(147)
             deactivateObjectByName: s32'luc_442CS_BGCloud'
-            sendSignalToAction: s32'luc_442CS_BG', 23
+            sendSignalToAction: s32'luc_442CS_BG', (SIGNAL_A)
             createObject: s32'luc_442CS_Cloud02', (PLAYER)
         endIf: 
         ifOnFrame: Val(166)
@@ -3097,9 +3097,9 @@ endState:
 beginState: s32'CmnActDodge'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnDodgeInit'
-        Unknown2035: 4, s32'lwa304', 0
-        Unknown2035: 5, s32'lwb304', 0
-        Unknown2035: 6, s32'lwc304', 0
+        pawnAnimation: 4, s32'lwa304', 0
+        pawnAnimation: 5, s32'lwb304', 0
+        pawnAnimation: 6, s32'lwc304', 0
     endUpon: 
     sprite: s32'luc304_00', 2
     sprite: s32'luc304_01', 2
@@ -3173,7 +3173,7 @@ beginState: s32'GC_Attack'
     characterSfx: s32'luc_14'
     sprite: s32'luc204_04', 2
     sprite: s32'luc204_05', 4
-    sendSignalToAction: s32'luc_204_fireEff', 23
+    sendSignalToAction: s32'luc_204_fireEff', (SIGNAL_A)
     sprite: s32'luc204_06', 4
     sprite: s32'luc204_07', 4
     sprite: s32'luc204_08', 4
@@ -3182,9 +3182,9 @@ beginState: s32'GC_Attack'
     exitState: 
     beginLabel: s32'AntiStrike'
     sprite: s32'luc350_00', 3
-    Unknown2035: 4, s32'lwa350', 0
-    Unknown2035: 5, s32'lwb350', 0
-    Unknown2035: 6, s32'lwc350', 0
+    pawnAnimation: 4, s32'lwa350', 0
+    pawnAnimation: 5, s32'lwb350', 0
+    pawnAnimation: 6, s32'lwc350', 0
     sprite: s32'luc350_01', 2
     smartRandomVoiceLine: s16'vLUC_BST_00', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'luc350_02', 2
@@ -3193,7 +3193,7 @@ beginState: s32'GC_Attack'
     sprite: s32'luc350_04', 2
     sprite: s32'luc350_05', 2
     sprite: s32'luc350_06', 2
-    sendSignalToAction: s32'luc_350_SordEff', 23
+    sendSignalToAction: s32'luc_350_SordEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingWeaponLognL'
     characterSfx: s32'luc_03'
     sprite: s32'luc350_07', 2
@@ -3265,7 +3265,7 @@ beginState: s32'CancelDash'
     beginLabel: s32'Landing'
     sprite: s32'luc306_11', 3
     haltMomentum: 1
-    sendSignalToAction: s32'luc_306_StrikeEff', 23
+    sendSignalToAction: s32'luc_306_StrikeEff', (SIGNAL_A)
     characterSfx: s32'luc_11'
     sprite: s32'luc306_12', 3
     attackEndDelay: 
@@ -3510,7 +3510,7 @@ beginState: s32'NmlAtk5BNear'
     sprite: s32'luc204_04', 2
     sprite: s32'luc204_05', 4
     attackEndDelay: 
-    sendSignalToAction: s32'luc_204_fireEff', 23
+    sendSignalToAction: s32'luc_204_fireEff', (SIGNAL_A)
     sprite: s32'luc204_06', 3
     sprite: s32'luc204_07', 3
     sprite: s32'luc204_08', 3
@@ -3678,7 +3678,7 @@ beginState: s32'NmlAtk2C'
             atkAngle: 85
         endIf: 
         addGatlingOption: s32'NmlAtk5D'
-        Unknown2035: 6, s32'lwc232', 0
+        pawnAnimation: 6, s32'lwc232', 0
     endUpon: 
     sprite: s32'luc232_00', 2
     sprite: s32'luc232_01', 2
@@ -3749,10 +3749,10 @@ beginState: s32'NmlAtk5D'
     sprite: s32'luc501_01', 6
     storeValue: Mem(PlayerVal0), Val(1)
     ifNot: Mem(EnvR21)
-        Unknown2035: 4, s32'lwa500', 0
-        Unknown2035: 5, s32'lwb500', 0
+        pawnAnimation: 4, s32'lwa500', 0
+        pawnAnimation: 5, s32'lwb500', 0
     endIf: 
-    Unknown2035: 6, s32'lwc500', 0
+    pawnAnimation: 6, s32'lwc500', 0
     createObject: s32'luc_208_groundEff', (PLAYER)
     createObject: s32'luc_208_groundparticleEff', (PLAYER)
     characterSfx: s32'luc_05'
@@ -3808,12 +3808,12 @@ beginState: s32'NmlAtk5D'
     Unknown2244: 0
     callSubroutine: s32'Weapon_Disappear_Fast'
     callSubroutine: s32'Weapon_Disappear_Flag'
-    sendSignalToAction: s32'luc_208_groundEff', 23
-    sendSignalToAction: s32'luc_208_groundparticleEff', 23
+    sendSignalToAction: s32'luc_208_groundEff', (SIGNAL_A)
+    sendSignalToAction: s32'luc_208_groundparticleEff', (SIGNAL_A)
     storeValue: Mem(PlayerVal0), Val(0)
-    Unknown2035: 4, s32'lwa000', 0
-    Unknown2035: 5, s32'lwb000', 0
-    Unknown2035: 6, s32'lwc000', 0
+    pawnAnimation: 4, s32'lwa000', 0
+    pawnAnimation: 5, s32'lwb000', 0
+    pawnAnimation: 6, s32'lwc000', 0
     sprite: s32'luc501_02', 6
     sprite: s32'luc501_01', 6
     sprite: s32'luc501_00', 6
@@ -3831,11 +3831,11 @@ beginState: s32'NmlAtk5D_5D'
     storeValue: Mem(PlayerVal0), Val(0)
     callSubroutine: s32'Weapon_Disappear_Fast'
     callSubroutine: s32'Weapon_Disappear_Flag'
-    sendSignalToAction: s32'luc_208_groundEff', 23
-    sendSignalToAction: s32'luc_208_groundparticleEff', 23
-    Unknown2035: 4, s32'lwa000', 0
-    Unknown2035: 5, s32'lwb000', 0
-    Unknown2035: 6, s32'lwc000', 0
+    sendSignalToAction: s32'luc_208_groundEff', (SIGNAL_A)
+    sendSignalToAction: s32'luc_208_groundparticleEff', (SIGNAL_A)
+    pawnAnimation: 4, s32'lwa000', 0
+    pawnAnimation: 5, s32'lwb000', 0
+    pawnAnimation: 6, s32'lwc000', 0
     characterSfx: s32'luc_05_2'
     sprite: s32'luc501_02', 6
     sprite: s32'luc501_01', 6
@@ -3921,16 +3921,16 @@ endState:
 beginState: s32'NmlAtk5D_5A'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnShotCounterUkeru'
-        Unknown2035: 4, s32'lwa209', 0
+        pawnAnimation: 4, s32'lwa209', 0
         modifyVar: (ADD), Mem(ExGage1), Val(2000)
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'luc209_00', 3
     sprite: s32'luc209_01', 3
     attackVoiceLine: 0, -1
     sprite: s32'luc209_12', 3
     sprite: s32'luc209_13', 3
-    sendSignalToAction: s32'lwa209', 23
+    sendSignalToAction: s32'lwa209', (SIGNAL_A)
     sprite: s32'luc209_14', 3
     sprite: s32'luc209_15', 3
     sprite: s32'luc209_16', 3
@@ -3942,16 +3942,16 @@ beginState: s32'NmlAtk5D_5A'
     sprite: s32'luc209_19', 3
     beginLabel: s32'End'
     sprite: s32'luc209_20', 3
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     callSubroutine: s32'Weapon_Disappear_Fast'
     callSubroutine: s32'Weapon_Disappear_Flag'
     sprite: s32'luc209_21', 3
     storeValue: Mem(PlayerVal0), Val(0)
-    Unknown2035: 4, s32'lwa000', 0
-    Unknown2035: 5, s32'lwb000', 0
-    Unknown2035: 6, s32'lwc000', 0
-    sendSignalToAction: s32'luc_208_groundEff', 23
-    sendSignalToAction: s32'luc_208_groundparticleEff', 23
+    pawnAnimation: 4, s32'lwa000', 0
+    pawnAnimation: 5, s32'lwb000', 0
+    pawnAnimation: 6, s32'lwc000', 0
+    sendSignalToAction: s32'luc_208_groundEff', (SIGNAL_A)
+    sendSignalToAction: s32'luc_208_groundparticleEff', (SIGNAL_A)
     sprite: s32'luc209_22', 3
     sprite: s32'luc209_23', 3
     sprite: s32'luc209_24', 3
@@ -3960,39 +3960,39 @@ endState:
 beginState: s32'NmlAtk5D_5B'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnShotCounterUkeru'
-        Unknown2035: 5, s32'lwb211', 0
+        pawnAnimation: 5, s32'lwb211', 0
         modifyVar: (ADD), Mem(ExGage1), Val(2000)
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'luc208_00', 5
     sprite: s32'luc208_01', 5
     attackVoiceLine: 1, -1
     sprite: s32'luc208_02', 5
     sprite: s32'luc208_03', 5
-    sendSignalToAction: s32'lwb211', 23
+    sendSignalToAction: s32'lwb211', (SIGNAL_A)
     sprite: s32'luc208_04', 5
     sprite: s32'luc208_05', 5
     sprite: s32'luc208_06', 5
     sprite: s32'luc208_07', 30
     beginLabel: s32'End'
     sprite: s32'luc208_08', 3
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     callSubroutine: s32'Weapon_Disappear_Fast'
     callSubroutine: s32'Weapon_Disappear_Flag'
     sprite: s32'luc208_08', 5
     storeValue: Mem(PlayerVal0), Val(0)
-    Unknown2035: 4, s32'lwa000', 0
-    Unknown2035: 5, s32'lwb000', 0
-    Unknown2035: 6, s32'lwc000', 0
-    sendSignalToAction: s32'luc_208_groundEff', 23
-    sendSignalToAction: s32'luc_208_groundparticleEff', 23
+    pawnAnimation: 4, s32'lwa000', 0
+    pawnAnimation: 5, s32'lwb000', 0
+    pawnAnimation: 6, s32'lwc000', 0
+    sendSignalToAction: s32'luc_208_groundEff', (SIGNAL_A)
+    sendSignalToAction: s32'luc_208_groundparticleEff', (SIGNAL_A)
     sprite: s32'luc208_09', 3
 endState: 
 
 beginState: s32'NmlAtk5D_5C'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnShotCounterUkeru'
-        Unknown2035: 6, s32'lwc213', 0
+        pawnAnimation: 6, s32'lwc213', 0
         modifyVar: (ADD), Mem(ExGage1), Val(2000)
     endUpon: 
     sprite: s32'luc206_00ex01', 2
@@ -4002,7 +4002,7 @@ beginState: s32'NmlAtk5D_5C'
     sprite: s32'luc206_03ex01', 2
     sprite: s32'luc206_04ex01', 1
     sprite: s32'luc206_05ex01', 2
-    sendSignalToAction: s32'lwc213', 23
+    sendSignalToAction: s32'lwc213', (SIGNAL_A)
     sprite: s32'luc206_06ex01', 3
     sprite: s32'luc206_07ex01', 3
     sprite: s32'luc206_08ex01', 3
@@ -4010,11 +4010,11 @@ beginState: s32'NmlAtk5D_5C'
     callSubroutine: s32'Weapon_Disappear_Flag'
     sprite: s32'luc206_09ex01', 3
     storeValue: Mem(PlayerVal0), Val(0)
-    Unknown2035: 4, s32'lwa000', 0
-    Unknown2035: 5, s32'lwb000', 0
-    Unknown2035: 6, s32'lwc000', 0
-    sendSignalToAction: s32'luc_208_groundEff', 23
-    sendSignalToAction: s32'luc_208_groundparticleEff', 23
+    pawnAnimation: 4, s32'lwa000', 0
+    pawnAnimation: 5, s32'lwb000', 0
+    pawnAnimation: 6, s32'lwc000', 0
+    sendSignalToAction: s32'luc_208_groundEff', (SIGNAL_A)
+    sendSignalToAction: s32'luc_208_groundparticleEff', (SIGNAL_A)
     sprite: s32'luc206_10ex01', 3
     sprite: s32'luc206_11ex01', 3
     sprite: s32'luc206_12ex01', 2
@@ -4033,8 +4033,8 @@ beginState: s32'NmlAtk2D'
         if: Mem(ActReg3)
             hitEffectSlash: 1
             atkAngle: -10
-            Unknown2035: 4, s32'lwa233', 0
-            Unknown2035: 5, s32'lwb233', 0
+            pawnAnimation: 4, s32'lwa233', 0
+            pawnAnimation: 5, s32'lwb233', 0
         endIf: 
     endUpon: 
     sprite: s32'luc233_00', 2
@@ -4175,9 +4175,9 @@ beginState: s32'GuardCrash'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnGuardCrashAttack_AtkInit'
         damageEffect: 2, s32'luc_405_HitEff'
-        Unknown2035: 4, s32'lwa350', 0
-        Unknown2035: 5, s32'lwb350', 0
-        Unknown2035: 6, s32'lwc350', 0
+        pawnAnimation: 4, s32'lwa350', 0
+        pawnAnimation: 5, s32'lwb350', 0
+        pawnAnimation: 6, s32'lwc350', 0
     endUpon: 
     sprite: s32'luc350_00', 4
     sprite: s32'luc350_01', 4
@@ -4188,7 +4188,7 @@ beginState: s32'GuardCrash'
     sprite: s32'luc350_04', 3
     sprite: s32'luc350_05', 3
     sprite: s32'luc350_06', 3
-    sendSignalToAction: s32'luc_350_SordEff', 23
+    sendSignalToAction: s32'luc_350_SordEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingWeaponLognL'
     characterSfx: s32'luc_03'
     sprite: s32'luc350_07', 2
@@ -4220,9 +4220,9 @@ beginState: s32'NmlAtkAir5A'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnAtkAir5A_AtkInit'
         guardSoundEffect: s32'SE_BTL_GuardBlowS'
-        Unknown2035: 4, s32'lwa250', 0
-        Unknown2035: 5, s32'lwb250', 0
-        Unknown2035: 6, s32'lwc250', 0
+        pawnAnimation: 4, s32'lwa250', 0
+        pawnAnimation: 5, s32'lwb250', 0
+        pawnAnimation: 6, s32'lwc250', 0
     endUpon: 
     sprite: s32'luc250_00', 2
     sprite: s32'luc250_01', 2
@@ -4258,9 +4258,9 @@ beginState: s32'NmlAtkAir5B'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnAtkAir5BCross_AtkInit'
         guardSoundEffect: s32'SE_BTL_GuardBlowS'
-        Unknown2035: 4, s32'lwa251', 0
-        Unknown2035: 5, s32'lwb251', 0
-        Unknown2035: 6, s32'lwc251', 0
+        pawnAnimation: 4, s32'lwa251', 0
+        pawnAnimation: 5, s32'lwb251', 0
+        pawnAnimation: 6, s32'lwc251', 0
     endUpon: 
     sprite: s32'luc251_00', 2
     sprite: s32'luc251_01', 2
@@ -4307,10 +4307,10 @@ beginState: s32'NmlAtkAir5C'
         if: Mem(ActReg2)
             hitEffectSlash: 1
             atkAngle: -20
-            Unknown2035: 4, s32'lwa252', 0
-            Unknown2035: 5, s32'lwb252', 0
+            pawnAnimation: 4, s32'lwa252', 0
+            pawnAnimation: 5, s32'lwb252', 0
         endIf: 
-        Unknown2035: 6, s32'lwc252', 0
+        pawnAnimation: 6, s32'lwc252', 0
     endUpon: 
     sprite: s32'luc252_00', 2
     sprite: s32'luc252_01', 3
@@ -4327,7 +4327,7 @@ beginState: s32'NmlAtkAir5C'
     sprite: s32'luc252_04', 3
     sprite: s32'luc252_05', 3
     attackEndDelay: 
-    sendSignalToAction: s32'luc_252_ThunderEff', 23
+    sendSignalToAction: s32'luc_252_ThunderEff', (SIGNAL_A)
     sprite: s32'luc252_06', 3
     sprite: s32'luc252_07', 3
     sprite: s32'luc252_08', 3
@@ -4361,9 +4361,9 @@ beginState: s32'NmlAtkAir5D'
             hitEffectSlash: 1
             atkAngle: 20
         endIf: 
-        Unknown2035: 4, s32'lwa253', 0
-        Unknown2035: 5, s32'lwb253', 0
-        Unknown2035: 6, s32'lwc253', 0
+        pawnAnimation: 4, s32'lwa253', 0
+        pawnAnimation: 5, s32'lwb253', 0
+        pawnAnimation: 6, s32'lwc253', 0
     endUpon: 
     sprite: s32'luc253_00', 2
     sprite: s32'luc253_01', 2
@@ -4386,7 +4386,7 @@ beginState: s32'NmlAtkAir5D'
     sprite: s32'luc253_04', 3
     sprite: s32'luc253_05', 3
     attackEndDelay: 
-    sendSignalToAction: s32'luc_252_ThunderEff', 23
+    sendSignalToAction: s32'luc_252_ThunderEff', (SIGNAL_A)
     sprite: s32'luc253_06', 3
     sprite: s32'luc253_07', 3
     sprite: s32'luc253_08', 3
@@ -4487,7 +4487,7 @@ beginState: s32'ThrowExe'
     exPointFReset: (PLAYER), 70000, 355000
     Unknown540: 130, 115, 0
     zLine: 0, 5
-    sendSignalToAction: s32'luc_301_EnshutuCamera', 23
+    sendSignalToAction: s32'luc_301_EnshutuCamera', (SIGNAL_A)
     smartRandomVoiceLine: s16'vLUC_THWOK_00', 100, s16'vLUC_THWOK_01', 100, s16'', 0, s16'', 0
     beginLabel: s32'Loop'
     sprite: s32'luc301_04', 3
@@ -4532,7 +4532,7 @@ beginState: s32'ThrowExe'
     sprite: s32'luc301_15', 3
     sprite: s32'luc301_16', 3
     sprite: s32'luc301_17', 3
-    sendSignalToAction: s32'luc_301_ThrowGareki', 23
+    sendSignalToAction: s32'luc_301_ThrowGareki', (SIGNAL_A)
 endState: 
 
 beginState: s32'NmlAtkBackThrow'
@@ -4668,7 +4668,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'luc302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'luc302_03', 3
     attackEndDelay: 
     sprite: s32'luc302_04', 3
@@ -4725,9 +4725,9 @@ beginState: s32'AirThrowExe'
     velocityYPercentEachFrame: 140
     gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
     ifOperation: (IS_NOT_EQUAL), Mem(ActReg0), Mem(Dir)
-        Unknown2035: 4, s32'DirectionReverse', 0
-        Unknown2035: 5, s32'DirectionReverse', 0
-        Unknown2035: 6, s32'DirectionReverse', 0
+        pawnAnimation: 4, s32'DirectionReverse', 0
+        pawnAnimation: 5, s32'DirectionReverse', 0
+        pawnAnimation: 6, s32'DirectionReverse', 0
     endIf: 
     callSubroutine: s32'Weapon_Disappear'
     sprite: s32'luc303_01', 3
@@ -4744,7 +4744,7 @@ beginState: s32'AirThrowExe'
     sprite: s32'luc301_03', 3
     physicsYImpulse: -100000
     setGravity: 5000
-    sendSignalToAction: s32'luc_301_EnshutuCamera', 23
+    sendSignalToAction: s32'luc_301_EnshutuCamera', (SIGNAL_A)
     Unknown538: 45
     exPointFReset: (PLAYER), 70000, 355000
     Unknown540: 130, 115, 0
@@ -4798,7 +4798,7 @@ beginState: s32'AirThrowExe'
     sprite: s32'luc301_15', 3
     sprite: s32'luc301_16', 3
     sprite: s32'luc301_17', 3
-    sendSignalToAction: s32'luc_301_ThrowGareki', 23
+    sendSignalToAction: s32'luc_301_ThrowGareki', (SIGNAL_A)
 endState: 
 
 beginSubroutine: s32'luc_Ability_Init'
@@ -4812,8 +4812,8 @@ beginSubroutine: s32'SpecialShot_Init'
     upon: (FRAME_STEP)
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
             clearUpon: (FRAME_STEP)
-            Unknown2035: 4, s32'Disappear', 0
-            Unknown2035: 5, s32'Disappear', 0
+            pawnAnimation: 4, s32'Disappear', 0
+            pawnAnimation: 5, s32'Disappear', 0
         endIf: 
     endUpon: 
 endSubroutine: 
@@ -4840,7 +4840,7 @@ beginState: s32'SpecialShot_A'
     sprite: s32'luc402_09', 2
     sprite: s32'luc402_10', 2
     sprite: s32'luc402_11', 2
-    sendSignalToAction: s32'SpecialShot_Y', 23
+    sendSignalToAction: s32'SpecialShot_Y', (SIGNAL_A)
     sprite: s32'luc402_12', 3
     sprite: s32'luc402_13', 3
     sprite: s32'luc402_14', 3
@@ -4870,7 +4870,7 @@ beginState: s32'SpecialShot_B'
     smartRandomVoiceLine: s16'vLUC_ATKS_05', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'luc402_05', 2
     zLine: 0, 1
-    sendSignalToAction: s32'SpecialShot_T', 23
+    sendSignalToAction: s32'SpecialShot_T', (SIGNAL_A)
     sprite: s32'luc402_06', 2
     sprite: s32'luc402_07', 2
     sprite: s32'luc402_08', 2
@@ -4910,7 +4910,7 @@ beginState: s32'SpecialShot_C'
     smartRandomVoiceLine: s16'vLUC_ATKS_06', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'luc402_05', 3
     zLine: 0, 1
-    sendSignalToAction: s32'SpecialShot_T', 23
+    sendSignalToAction: s32'SpecialShot_T', (SIGNAL_A)
     sprite: s32'luc402_06', 3
     sprite: s32'luc402_07', 3
     sprite: s32'luc402_08', 3
@@ -4958,7 +4958,7 @@ beginState: s32'SpecialShot_D'
     sprite: s32'luc402_09', 3
     sprite: s32'luc402_10', 2
     sprite: s32'luc402_11', 2
-    sendSignalToAction: s32'SpecialShot_Y', 23
+    sendSignalToAction: s32'SpecialShot_Y', (SIGNAL_A)
     sprite: s32'luc402_12', 3
     sprite: s32'luc402_13', 3
     sprite: s32'luc402_14', 3
@@ -5021,7 +5021,7 @@ beginState: s32'AntiAir_A'
         damage: 1250
         groundBounceCount: 1
         groundBounceYVelocityPercent: 30
-        Unknown2035: 6, s32'lwc400', 0
+        pawnAnimation: 6, s32'lwc400', 0
         upon: 78
             clearUpon: 78
             modifyVar: (ADD), Mem(ExGage1), Val(2500)
@@ -5058,7 +5058,7 @@ beginState: s32'AntiAir_B'
     upon: (IMMEDIATE)
         callSubroutine: s32'AntiAirUpper_Init'
         damage: 1250
-        Unknown2035: 6, s32'lwc401', 0
+        pawnAnimation: 6, s32'lwc401', 0
         upon: 78
             clearUpon: 78
             modifyVar: (ADD), Mem(ExGage1), Val(2500)
@@ -5100,7 +5100,7 @@ beginState: s32'AntiAir_C'
         damage: 1000
         prorationTypeHistory: 0
         Unknown1085: 1
-        Unknown2035: 6, s32'lwc401to400', 0
+        pawnAnimation: 6, s32'lwc401to400', 0
         upon: (HIT)
             storeValueFromObject: (SELF), Mem(ActReg1), (ENEMY), Mem(PosY)
             storeValue: Mem(ActReg2), Val(31000)
@@ -5229,10 +5229,10 @@ beginState: s32'AntiAir_D'
     uiBattleText: 6
     sprite: s32'luc401_01', 1
     callSubroutine: s32'ExSkill2_Color'
-    Unknown2035: 6, s32'lwc401to400', 0
+    pawnAnimation: 6, s32'lwc401to400', 0
     sprite: s32'luc401_01', 1
     if: Mem(ActReg6)
-        Unknown2035: 6, s32'lwc401to400', 0
+        pawnAnimation: 6, s32'lwc401to400', 0
     endIf: 
     sprite: s32'luc401_02', 1
     zLine: 0, 5
@@ -5409,9 +5409,9 @@ beginSubroutine: s32'Assault_Init'
         endElse: 
     endElse: 
     endUpon: 
-    Unknown2035: 4, s32'lwa403', 0
-    Unknown2035: 5, s32'lwb403', 0
-    Unknown2035: 6, s32'lwc403', 0
+    pawnAnimation: 4, s32'lwa403', 0
+    pawnAnimation: 5, s32'lwb403', 0
+    pawnAnimation: 6, s32'lwc403', 0
 endSubroutine: 
 
 beginState: s32'Assault_A'
@@ -5480,7 +5480,7 @@ beginState: s32'Assault_B'
     createObject: s32'luc_403_AuraStartEff', (PLAYER)
     sprite: s32'luc403_03', 2
     sprite: s32'luc403_05', 2
-    sendSignalToAction: s32'luc_403_AuraStartEff', 23
+    sendSignalToAction: s32'luc_403_AuraStartEff', (SIGNAL_A)
     Unknown1793: 4, 24
     Unknown1793: 5, 24
     Unknown1793: 6, 24
@@ -5493,7 +5493,7 @@ beginState: s32'Assault_B'
     hit: 
     createObject: s32'luc_403_AuraEff', (PLAYER)
     sendSignalToAction: s32'luc_403_AuraStartEff', 25
-    sendSignalToAction: s32'luc_403_AuraDashEff', 23
+    sendSignalToAction: s32'luc_403_AuraDashEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     smartRandomVoiceLine: s16'vLUC_ATKS_11', 100, s16'', 0, s16'', 0, s16'', 0
     beginLabel: s32'End'
@@ -5501,7 +5501,7 @@ beginState: s32'Assault_B'
     sprite: s32'luc403_09', 2
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
-    sendSignalToAction: s32'luc_403_AuraEff', 23
+    sendSignalToAction: s32'luc_403_AuraEff', (SIGNAL_A)
     sprite: s32'luc403_10', 3
     Unknown1793: 4, 23
     Unknown1793: 5, 23
@@ -5532,7 +5532,7 @@ beginState: s32'Assault_C'
     sprite: s32'luc403_03', 3
     sprite: s32'luc403_04', 2
     sprite: s32'luc403_05', 2
-    sendSignalToAction: s32'luc_403_AuraStartEff', 23
+    sendSignalToAction: s32'luc_403_AuraStartEff', (SIGNAL_A)
     Unknown1793: 4, 24
     Unknown1793: 5, 24
     Unknown1793: 6, 24
@@ -5545,7 +5545,7 @@ beginState: s32'Assault_C'
     hit: 
     createObject: s32'luc_403_AuraEff', (PLAYER)
     sendSignalToAction: s32'luc_403_AuraStartEff', 25
-    sendSignalToAction: s32'luc_403_AuraDashEff', 23
+    sendSignalToAction: s32'luc_403_AuraDashEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     smartRandomVoiceLine: s16'vLUC_ATKS_14', 100, s16'', 0, s16'', 0, s16'', 0
     beginLabel: s32'End'
@@ -5553,7 +5553,7 @@ beginState: s32'Assault_C'
     sprite: s32'luc403_09', 2
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
-    sendSignalToAction: s32'luc_403_AuraEff', 23
+    sendSignalToAction: s32'luc_403_AuraEff', (SIGNAL_A)
     sprite: s32'luc403_10', 3
     Unknown1793: 4, 23
     Unknown1793: 5, 23
@@ -5616,9 +5616,9 @@ beginState: s32'Assault_Exe'
             endIf: 
         endIf: 
         haltMomentum: 1
-        Unknown2035: 4, s32'lwa000', 0
-        Unknown2035: 5, s32'lwb000', 0
-        Unknown2035: 6, s32'lwc000', 0
+        pawnAnimation: 4, s32'lwa000', 0
+        pawnAnimation: 5, s32'lwb000', 0
+        pawnAnimation: 6, s32'lwc000', 0
         upon: 24
             grabOrRelease: 
             damage: 300
@@ -5718,15 +5718,15 @@ beginState: s32'Assault_Exe'
         voiceLine: s16'vLUC_ATKS_15'
     endIf: 
     ifNot: Mem(ActReg1)
-        Unknown2035: 4, s32'lwa214_AssaultAtk', 0
+        pawnAnimation: 4, s32'lwa214_AssaultAtk', 0
         storeValue: Mem(ActReg4), Val(1)
     endIf: 
     ifNot: Mem(ActReg2)
-        Unknown2035: 5, s32'lwb214_AssaultAtk', 0
+        pawnAnimation: 5, s32'lwb214_AssaultAtk', 0
         storeValue: Mem(ActReg4), Val(1)
     endIf: 
     ifNot: Mem(ActReg3)
-        Unknown2035: 6, s32'lwc214_AssaultAtk', 0
+        pawnAnimation: 6, s32'lwc214_AssaultAtk', 0
     endIf: 
     modifyVar: (ADD), Mem(ExGage1), Val(5000)
     sprite: s32'luc301_06', 4
@@ -5739,13 +5739,13 @@ beginState: s32'Assault_Exe'
     sprite: s32'luc301_13', 4
     attackEndDelay: 
     ifNot: Mem(ActReg1)
-        Unknown2035: 4, s32'Appear', 0
+        pawnAnimation: 4, s32'Appear', 0
     endIf: 
     ifNot: Mem(ActReg2)
-        Unknown2035: 5, s32'Appear', 0
+        pawnAnimation: 5, s32'Appear', 0
     endIf: 
     ifNot: Mem(ActReg3)
-        Unknown2035: 6, s32'Appear', 0
+        pawnAnimation: 6, s32'Appear', 0
     endIf: 
     sprite: s32'luc301_14', 4
     sprite: s32'luc301_15', 4
@@ -5789,7 +5789,7 @@ beginState: s32'Assault_D'
     beginLabel: s32'Attack'
     sprite: s32'luc403_05', 2
     storeValue: Mem(ActReg1), Val(0)
-    sendSignalToAction: s32'luc_403_AuraStartEff', 23
+    sendSignalToAction: s32'luc_403_AuraStartEff', (SIGNAL_A)
     Unknown1793: 4, 24
     Unknown1793: 5, 24
     Unknown1793: 6, 24
@@ -5802,7 +5802,7 @@ beginState: s32'Assault_D'
     hit: 
     createObject: s32'luc_403_AuraEff', (PLAYER)
     sendSignalToAction: s32'luc_403_AuraStartEff', 25
-    sendSignalToAction: s32'luc_403_AuraDashEff', 23
+    sendSignalToAction: s32'luc_403_AuraDashEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     smartRandomVoiceLine: s16'vLUC_ATKS_17', 100, s16'', 0, s16'', 0, s16'', 0
     beginLabel: s32'End'
@@ -5810,7 +5810,7 @@ beginState: s32'Assault_D'
     timeSlow: 0
     sprite: s32'luc403_09', 2
     attackEndDelay: 
-    sendSignalToAction: s32'luc_403_AuraEff', 23
+    sendSignalToAction: s32'luc_403_AuraEff', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     callSubroutine: s32'ExSkill_ColorEnd'
     sprite: s32'luc403_10', 3
@@ -5855,12 +5855,12 @@ beginState: s32'Assault++_Exe'
         callSubroutine: s32'cmnExSkill2_Color'
         haltMomentum: 1
         ifNot: Mem(PlayerVal1)
-            Unknown2035: 4, s32'lwa404', 0
+            pawnAnimation: 4, s32'lwa404', 0
         endIf: 
         ifNot: Mem(PlayerVal2)
-            Unknown2035: 5, s32'lwb404', 0
+            pawnAnimation: 5, s32'lwb404', 0
         endIf: 
-        Unknown2035: 6, s32'lwc404', 0
+        pawnAnimation: 6, s32'lwc404', 0
         upon: (BEFORE_EXIT)
             Unknown412: 0, 2, 7, 0
         endUpon: 
@@ -6025,7 +6025,7 @@ beginState: s32'Tosshin_A'
             physicsXImpulse: 0
         endIf: 
     endUpon: 
-    sendSignalToAction: s32'Kakujin_lvupEff', 23
+    sendSignalToAction: s32'Kakujin_lvupEff', (SIGNAL_A)
     sprite: s32'keep', 1
     clearUpon: (FRAME_STEP)
     setNoCollision: 1
@@ -6087,7 +6087,7 @@ beginState: s32'Tosshin_B'
             physicsXImpulse: 0
         endIf: 
     endUpon: 
-    sendSignalToAction: s32'Kakujin_lvupEff', 23
+    sendSignalToAction: s32'Kakujin_lvupEff', (SIGNAL_A)
     sprite: s32'keep', 1
     clearUpon: (FRAME_STEP)
     setNoCollision: 1
@@ -6166,7 +6166,7 @@ beginState: s32'Tosshin_C'
             physicsXImpulse: 0
         endIf: 
     endUpon: 
-    sendSignalToAction: s32'Kakujin_lvupEff', 23
+    sendSignalToAction: s32'Kakujin_lvupEff', (SIGNAL_A)
     sprite: s32'keep', 1
     clearUpon: (FRAME_STEP)
     setNoCollision: 1
@@ -6224,7 +6224,7 @@ beginState: s32'Tosshin_C'
     sprite: s32'luc406_06', 3
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
-    sendSignalToAction: s32'luc_406_kickEff', 23
+    sendSignalToAction: s32'luc_406_kickEff', (SIGNAL_A)
     appendCollision: 1, -1, -1, -1, -1
     sprite: s32'luc406_07', 3
     sprite: s32'luc406_08', 2
@@ -6276,7 +6276,7 @@ beginState: s32'Tosshin_D'
             physicsXImpulse: 0
         endIf: 
     endUpon: 
-    sendSignalToAction: s32'Kakujin_lvupEff', 23
+    sendSignalToAction: s32'Kakujin_lvupEff', (SIGNAL_A)
     sprite: s32'keep', 1
     clearUpon: (FRAME_STEP)
     setNoCollision: 1
@@ -6324,8 +6324,8 @@ beginState: s32'luc_Ougi'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnOugiAtk_AtkInit'
         attackIgnoreCaution: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg4), Val(1)
         endUpon: 
         upon: 24
@@ -6368,9 +6368,9 @@ beginState: s32'luc_Ougi'
         ifNot: Mem(PlayerVal3)
             Unknown412: 100, 2, 7, 1
         endIf: 
-        Unknown2035: 4, s32'Player_CutScene', 0
-        Unknown2035: 5, s32'Player_CutScene', 0
-        Unknown2035: 6, s32'Player_CutScene', 0
+        pawnAnimation: 4, s32'Player_CutScene', 0
+        pawnAnimation: 5, s32'Player_CutScene', 0
+        pawnAnimation: 6, s32'Player_CutScene', 0
         upon: (FRAME_STEP)
             ifOnFrame: Val(0)
                 Unknown2858: 10000
@@ -6397,7 +6397,7 @@ beginState: s32'luc_Ougi'
             ifOnFrame: Val(95)
                 createObject: s32'luc_430CS_Wind', (PLAYER)
                 createObject: s32'luc_430CS_Blur', (PLAYER)
-                sendSignalToAction: s32'luc_430CS_HandParticle', 23
+                sendSignalToAction: s32'luc_430CS_HandParticle', (SIGNAL_A)
                 fadeOutStart: 300, 0
             endIf: 
             ifOnFrame: Val(99)
@@ -6423,7 +6423,7 @@ beginState: s32'luc_Ougi'
     sprite: s32'luc430_02', 3
     sprite: s32'luc431_00', 3
     createObject: s32'luc_430_HandAura2', (PLAYER)
-    sendSignalToAction: s32'luc_430_HandAura', 23
+    sendSignalToAction: s32'luc_430_HandAura', (SIGNAL_A)
     characterSfx: s32'luc_01'
     characterSfx: s32'luc_02'
     sprite: s32'luc431_01', 3
@@ -6477,7 +6477,7 @@ beginState: s32'luc_Ougi'
     sprite: s32'luc431_09', 3
     sprite: s32'luc431_10', 3
     sprite: s32'luc431_11', 3
-    sendSignalToAction: s32'luc_430_BodyAura', 23
+    sendSignalToAction: s32'luc_430_BodyAura', (SIGNAL_A)
     sprite: s32'luc431_12', 3
     sprite: s32'luc431_13', 3
     sprite: s32'luc431_14', 3
@@ -6594,8 +6594,8 @@ endSubroutine:
 beginState: s32'luc_Ougi2'
     upon: (IMMEDIATE)
         attackIgnoreCaution: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg4), Val(1)
         endUpon: 
         upon: 24
@@ -6639,9 +6639,9 @@ beginState: s32'luc_Ougi2'
         ifNot: Mem(PlayerVal3)
             Unknown412: 100, 2, 7, 1
         endIf: 
-        Unknown2035: 4, s32'Player_CutScene', 0
-        Unknown2035: 5, s32'Player_CutScene', 0
-        Unknown2035: 6, s32'Player_CutScene', 0
+        pawnAnimation: 4, s32'Player_CutScene', 0
+        pawnAnimation: 5, s32'Player_CutScene', 0
+        pawnAnimation: 6, s32'Player_CutScene', 0
         upon: (FRAME_STEP)
             ifOnFrame: Val(0)
                 Unknown2858: 10000
@@ -6668,7 +6668,7 @@ beginState: s32'luc_Ougi2'
             ifOnFrame: Val(95)
                 createObject: s32'luc_430CS_Wind', (PLAYER)
                 createObject: s32'luc_430CS_Blur', (PLAYER)
-                sendSignalToAction: s32'luc_430CS_HandParticle', 23
+                sendSignalToAction: s32'luc_430CS_HandParticle', (SIGNAL_A)
                 fadeOutStart: 300, 0
             endIf: 
             ifOnFrame: Val(99)
@@ -6709,7 +6709,7 @@ beginState: s32'luc_Ougi2'
     gotoLabel: s32'Loop'
     beginLabel: s32'Low'
     sprite: s32'luc430_06', 3
-    sendSignalToAction: s32'luc_430_HandAura', 23
+    sendSignalToAction: s32'luc_430_HandAura', (SIGNAL_A)
     sprite: s32'luc430_07', 3
     sprite: s32'luc430_08', 2
     createObject: s32'UltimateShot_Low', (PLAYER)
@@ -6735,7 +6735,7 @@ beginState: s32'luc_Ougi2'
     gotoLabel: s32'Loop'
     beginLabel: s32'High'
     sprite: s32'luc430_16', 3
-    sendSignalToAction: s32'luc_430_HandAura', 23
+    sendSignalToAction: s32'luc_430_HandAura', (SIGNAL_A)
     sprite: s32'luc430_17', 3
     sprite: s32'luc430_18', 2
     createObject: s32'UltimateShot_High', (PLAYER)
@@ -6761,7 +6761,7 @@ beginState: s32'luc_Ougi2'
     gotoLabel: s32'Loop'
     beginLabel: s32'Middle'
     sprite: s32'luc430_11', 4
-    sendSignalToAction: s32'luc_430_HandAura', 23
+    sendSignalToAction: s32'luc_430_HandAura', (SIGNAL_A)
     sprite: s32'luc430_12', 4
     sprite: s32'luc430_13', 2
     createObject: s32'UltimateShot_Middle', (PLAYER)
@@ -6789,8 +6789,8 @@ beginState: s32'luc_Ougi2'
     clearUpon: (FRAME_STEP)
     callSubroutine: s32'cmnMuteki_False'
     Unknown1302: 
-    sendSignalToAction: s32'luc_430_BodyAura', 23
-    sendSignalToAction: s32'luc_430_HandAura', 23
+    sendSignalToAction: s32'luc_430_BodyAura', (SIGNAL_A)
+    sendSignalToAction: s32'luc_430_HandAura', (SIGNAL_A)
     sprite: s32'luc430_02', 3
     sprite: s32'luc430_03', 3
     sprite: s32'luc430_04', 3
@@ -6812,7 +6812,7 @@ beginState: s32'luc_Ougi2'
     sprite: s32'luc431_00', 4
     superFreeze: 3, 119, 22, 22
     createObject: s32'luc_430_HandAura2', (PLAYER)
-    sendSignalToAction: s32'luc_430_HandAura', 23
+    sendSignalToAction: s32'luc_430_HandAura', (SIGNAL_A)
     characterSfx: s32'luc_01'
     characterSfx: s32'luc_02'
     sprite: s32'luc431_01', 3
@@ -6866,7 +6866,7 @@ beginState: s32'luc_Ougi2'
     sprite: s32'luc431_09', 3
     sprite: s32'luc431_10', 3
     sprite: s32'luc431_11', 3
-    sendSignalToAction: s32'luc_430_BodyAura', 23
+    sendSignalToAction: s32'luc_430_BodyAura', (SIGNAL_A)
     sprite: s32'luc431_12', 3
     sprite: s32'luc431_13', 3
     sprite: s32'luc431_14', 3
@@ -6902,9 +6902,9 @@ beginState: s32'luc_Kaihou'
                 callSubroutine: s32'cmn_Kaihou_AttackRate2Init'
             endIf: 
         endUpon: 
-        Unknown2035: 4, s32'lwa440', 0
-        Unknown2035: 5, s32'lwb440', 0
-        Unknown2035: 6, s32'lwc440', 0
+        pawnAnimation: 4, s32'lwa440', 0
+        pawnAnimation: 5, s32'lwb440', 0
+        pawnAnimation: 6, s32'lwc440', 0
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(ExGage0), Val(5)
             counterHitSoftKnockdown: 0, 1300
         endIf: 
@@ -7003,7 +7003,7 @@ beginState: s32'luc_Kaihou'
         callSubroutine: s32'cmnMuteki_False'
         Unknown1302: 
     endIf: 
-    sendSignalToAction: s32'luc_440_ShockWaveEff', 23
+    sendSignalToAction: s32'luc_440_ShockWaveEff', (SIGNAL_A)
     sprite: s32'luc440_06', 3
     sprite: s32'luc440_07', 3
     sprite: s32'luc440_08', 3
@@ -7072,9 +7072,9 @@ beginState: s32'luc_Kaihou'
     Unknown412: 100, 2, 5, 1
     Unknown412: 100, 2, 6, 1
     Unknown412: 100, 2, 7, 1
-    Unknown2035: 4, s32'Player_CutScene', 0
-    Unknown2035: 5, s32'Player_CutScene', 0
-    Unknown2035: 6, s32'Player_CutScene', 0
+    pawnAnimation: 4, s32'Player_CutScene', 0
+    pawnAnimation: 5, s32'Player_CutScene', 0
+    pawnAnimation: 6, s32'Player_CutScene', 0
     runOnObject: (ENEMY)
         Unknown2050: 1
         playAnimation: s32'xxx_luc441cs', 0
@@ -7180,7 +7180,7 @@ beginState: s32'luc_Kaihou'
             endIf: 
         endIf: 
         ifOnFrame: Val(111)
-            sendSignalToAction: s32'luc_440CS_BG', 23
+            sendSignalToAction: s32'luc_440CS_BG', (SIGNAL_A)
             Unknown2583: 32000, 0, 3, 541100, 21825, 2800
             createObject: s32'luc_441CS_Beam01', (PLAYER)
             deactivateObjectByName: s32'cmn_OverrayBinet'
@@ -7327,9 +7327,9 @@ beginState: s32'RoundStart_Run'
         endIf: 
     endUpon: 
     sprite: s32'luc033_00', 2
-    Unknown2035: 4, s32'lwa033', 0
-    Unknown2035: 5, s32'lwb033', 0
-    Unknown2035: 6, s32'lwc033', 0
+    pawnAnimation: 4, s32'lwa033', 0
+    pawnAnimation: 5, s32'lwb033', 0
+    pawnAnimation: 6, s32'lwc033', 0
     beginLabel: s32'loop'
     sprite: s32'luc033_01', 4
     sprite: s32'luc033_02', 4
@@ -7344,9 +7344,9 @@ beginState: s32'RoundStart_Run'
     beginLabel: s32'end'
     sprite: s32'luc034_00', 3
     velocityXPercentEachFrame: 70
-    Unknown2035: 4, s32'lwa034', 0
-    Unknown2035: 5, s32'lwb034', 0
-    Unknown2035: 6, s32'lwc034', 0
+    pawnAnimation: 4, s32'lwa034', 0
+    pawnAnimation: 5, s32'lwb034', 0
+    pawnAnimation: 6, s32'lwc034', 0
     sprite: s32'luc034_01', 3
     sprite: s32'luc034_02', 3
     sprite: s32'luc034_03', 3

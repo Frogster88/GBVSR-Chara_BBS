@@ -789,7 +789,7 @@ beginSubroutine: s32'RoundInit'
     addMove: s32'SpecialThrow_A'
         moveType: (SPECIAL)
         moveStance: (STANDING)
-        moveInput: 83
+        moveInput: (INPUT_632146)
         moveInput: (INPUT_PRESS_L)
         addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
         Unknown1513: 1
@@ -799,7 +799,7 @@ beginSubroutine: s32'RoundInit'
     addMove: s32'SpecialThrow_B'
         moveType: (SPECIAL)
         moveStance: (STANDING)
-        moveInput: 83
+        moveInput: (INPUT_632146)
         moveInput: (INPUT_PRESS_M)
         addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
         Unknown1513: 1
@@ -809,7 +809,7 @@ beginSubroutine: s32'RoundInit'
     addMove: s32'SpecialThrow_C'
         moveType: (SPECIAL)
         moveStance: (STANDING)
-        moveInput: 83
+        moveInput: (INPUT_632146)
         moveInput: (INPUT_PRESS_H)
         addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
         Unknown1513: 1
@@ -819,7 +819,7 @@ beginSubroutine: s32'RoundInit'
     addMove: s32'SpecialThrow_D'
         moveType: (SPECIAL)
         moveStance: (STANDING)
-        moveInput: 83
+        moveInput: (INPUT_632146)
         moveInput: (INPUT_PRESS_U)
         addMoveFlag: (REQUIRES_50_METER)
         Unknown1513: 1
@@ -1929,17 +1929,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'Blow_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Blow_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Blow_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Blow_D'
@@ -1952,7 +1952,7 @@ beginSubroutine: s32'AbilityCoolDown_N'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 999
+            skillCooldown: 0, 999
         endElse: 
         Unknown1923: 0
     endIf: 
@@ -1961,17 +1961,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'SpecialStrike_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialStrike_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialStrike_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialStrike_D'
@@ -1988,17 +1988,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'Kamae_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 80
+        skillCooldown: 2, 80
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Kamae_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 80
+        skillCooldown: 2, 80
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Kamae_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Kamae_D'
@@ -2015,17 +2015,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'SpecialThrow_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialThrow_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialThrow_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialThrow_D'
@@ -2702,7 +2702,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2770,7 +2770,7 @@ beginState: s32'entry_2p01'
             Unknown2583: 21000, 0, 3, 390000, 60600, 2200
         endIf: 
         ifOnFrame: Val(383)
-            sendSignalToAction: s32'vas_700_Smoke', 23
+            sendSignalToAction: s32'vas_700_Smoke', (SIGNAL_A)
             Unknown2583: 12700, 0, 3, 370000, 60600, 4300
         endIf: 
         ifOnFrame: Val(399)
@@ -2904,7 +2904,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3468,7 +3468,7 @@ beginState: s32'NmlAtk5A3rd_C'
     Unknown412: 0, 1, 11, 0
     Unknown413: 5, 1, 11, 0
     attackEndDelay: 
-    sendSignalToAction: s32'vas_224_CrackEff', 23
+    sendSignalToAction: s32'vas_224_CrackEff', (SIGNAL_A)
     characterSfx: s32'vas_01_VolUP'
     sprite: s32'vas224_10', 4
     sprite: s32'vas224_11', 4
@@ -3548,7 +3548,7 @@ beginState: s32'NmlAtk5BNear'
     hit: 
     Unknown2033: 5000
     sprite: s32'vas204_04', 2
-    sendSignalToAction: s32'vas_204_StrikeEff', 23
+    sendSignalToAction: s32'vas_204_StrikeEff', (SIGNAL_A)
     sprite: s32'vas204_05', 4
     attackEndDelay: 
     sprite: s32'vas204_06', 4
@@ -3924,7 +3924,7 @@ beginState: s32'NmlAtk5D'
     if: Mem(ActReg1)
         storeValue: Mem(PlayerVal0), Val(1)
     endIf: 
-    sendSignalToAction: s32'vas_208_Ability', 23
+    sendSignalToAction: s32'vas_208_Ability', (SIGNAL_A)
     characterSfx: s32'vas_04'
     if: Mem(ActReg0)
         if: Mem(ExGage0)
@@ -4514,7 +4514,7 @@ beginState: s32'NmlAtkAirThrow'
     sprite: s32'vas302_01', 2
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'vas302_02', 5
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     hit: 
     sprite: s32'vas302_03', 3
     attackEndDelay: 
@@ -4892,7 +4892,7 @@ beginState: s32'SpecialStrike_A'
     sprite: s32'vas402_31', 3
     attackEndDelay: 
     velocityXPercent: 50
-    sendSignalToAction: s32'vas_402_Eff', 23
+    sendSignalToAction: s32'vas_402_Eff', (SIGNAL_A)
     deactivateObjectByName: s32'vas_402_AfterImage_TypeA'
     deactivateObjectByName: s32'vas_402_GroundSmoke'
     sprite: s32'vas402_25', 2
@@ -4979,7 +4979,7 @@ beginState: s32'SpecialStrike_B'
     sprite: s32'vas402_22', 3
     attackEndDelay: 
     velocityXPercent: 50
-    sendSignalToAction: s32'vas_402_Eff', 23
+    sendSignalToAction: s32'vas_402_Eff', (SIGNAL_A)
     deactivateObjectByName: s32'vas_402_AfterImage_TypeB'
     deactivateObjectByName: s32'vas_402_GroundSmoke'
     if: Mem(ExGage0)
@@ -5069,7 +5069,7 @@ beginState: s32'SpecialStrike_C'
     sprite: s32'vas402_31', 3
     attackEndDelay: 
     velocityXPercent: 50
-    sendSignalToAction: s32'vas_402_Eff', 23
+    sendSignalToAction: s32'vas_402_Eff', (SIGNAL_A)
     deactivateObjectByName: s32'vas_402_AfterImage_TypeA'
     deactivateObjectByName: s32'vas_402_GroundSmoke'
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
@@ -5086,7 +5086,7 @@ beginState: s32'SpecialStrike_C'
     beginLabel: s32'Add'
     sprite: s32'vas402_15', 3
     velocityXPercent: 50
-    sendSignalToAction: s32'vas_402_Eff', 23
+    sendSignalToAction: s32'vas_402_Eff', (SIGNAL_A)
     deactivateObjectByName: s32'vas_402_AfterImage_TypeA'
     deactivateObjectByName: s32'vas_402_GroundSmoke'
     sprite: s32'vas402_16', 3
@@ -5114,7 +5114,7 @@ beginState: s32'SpecialStrike_C'
     sprite: s32'vas402_22', 3
     attackEndDelay: 
     velocityXPercent: 50
-    sendSignalToAction: s32'vas_402_Eff', 23
+    sendSignalToAction: s32'vas_402_Eff', (SIGNAL_A)
     deactivateObjectByName: s32'vas_402_AfterImage_TypeB'
     deactivateObjectByName: s32'vas_402_GroundSmoke'
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
@@ -5253,7 +5253,7 @@ beginState: s32'SpecialStrike_D'
     sprite: s32'vas402_13', 4
     attackEndDelay: 
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'vas_402_Eff', 23
+    sendSignalToAction: s32'vas_402_Eff', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     callSubroutine: s32'cmnMuteki_False'
     sprite: s32'vas402_31', 4
@@ -5398,7 +5398,7 @@ beginState: s32'KamaeLoop'
     attackEndDelay: 
     enableWhiffCancel: 0
     callSubroutine: s32'Func_ArmorDelete'
-    sendSignalToAction: s32'vas_407_EyeRay', 23
+    sendSignalToAction: s32'vas_407_EyeRay', (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     clearUpon: 13
     storeValue: Mem(ActReg0), Val(0)
@@ -5430,7 +5430,7 @@ beginState: s32'kamae_Add_Cancel'
         endIf: 
         callSubroutine: s32'Func_ArmorDelete'
         createObject: s32'vas_407_EyeRay', (PLAYER)
-        sendSignalToAction: s32'vas_407_EyeRay', 23
+        sendSignalToAction: s32'vas_407_EyeRay', (SIGNAL_A)
     endUpon: 
     sprite: s32'vas407_17', 3
     sprite: s32'vas407_18', 3
@@ -5540,7 +5540,7 @@ beginState: s32'Kamae_C'
     haltMomentum: 1
     deactivateObjectByName: s32'vas_408_EyeRay_EX'
     createObject: s32'vas_408_EyeRay_End', (PLAYER)
-    sendSignalToAction: s32'vas_408_Spark', 23
+    sendSignalToAction: s32'vas_408_Spark', (SIGNAL_A)
     sprite: s32'vas408_14', 3
     sprite: s32'vas408_15', 3
     sprite: s32'keep', 2
@@ -5643,7 +5643,7 @@ beginState: s32'kamae_Add_Walk'
     haltMomentum: 1
     deactivateObjectByName: s32'vas_408_EyeRay'
     createObject: s32'vas_408_EyeRay_End', (PLAYER)
-    sendSignalToAction: s32'vas_408_Spark', 23
+    sendSignalToAction: s32'vas_408_Spark', (SIGNAL_A)
     sprite: s32'vas408_14', 3
     sprite: s32'vas408_15', 3
     sprite: s32'keep', 2
@@ -5723,7 +5723,7 @@ beginState: s32'kamae_Add_Walk'
     haltMomentum: 1
     deactivateObjectByName: s32'vas_408_EyeRay_EX'
     createObject: s32'vas_408_EyeRay_End', (PLAYER)
-    sendSignalToAction: s32'vas_408_Spark', 23
+    sendSignalToAction: s32'vas_408_Spark', (SIGNAL_A)
     sprite: s32'vas408_14', 3
     sprite: s32'vas408_15', 3
     sprite: s32'keep', 2
@@ -5829,7 +5829,7 @@ beginState: s32'Kamae_D'
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
     deactivateObjectByName: s32'vas_408_EyeRay_EX'
     createObject: s32'vas_408_EyeRay_End++', (PLAYER)
-    sendSignalToAction: s32'vas_408_Spark', 23
+    sendSignalToAction: s32'vas_408_Spark', (SIGNAL_A)
     sprite: s32'vas408_14', 3
     sprite: s32'vas408_15', 3
     sprite: s32'vas408_16', 3
@@ -5843,7 +5843,7 @@ beginState: s32'Kamae_D'
     exitState: 
     beginLabel: s32'Finish'
     sprite: s32'vas408_10', 1
-    sendSignalToAction: s32'vas_408_Spark', 23
+    sendSignalToAction: s32'vas_408_Spark', (SIGNAL_A)
     deactivateObjectByName: s32'vas_408_EyeRay_EX'
     sprite: s32'vas412_01', 2
     sprite: s32'vas412_02', 2
@@ -5886,7 +5886,7 @@ beginState: s32'Kamae_D'
     sprite: s32'vas412_12', 2
     attackEndDelay: 
     callSubroutine: s32'cmnMuteki_False'
-    sendSignalToAction: s32'vas_412_Burst', 23
+    sendSignalToAction: s32'vas_412_Burst', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
     sprite: s32'vas412_13', 2
     sprite: s32'vas412_14', 2
@@ -5957,9 +5957,9 @@ beginState: s32'kamae_Add_A'
     sprite: s32'vas409_04', 3
     clearUpon: 15
     deactivateObjectByName: s32'vas_409_Aura'
-    sendSignalToAction: s32'vas_409_Aura2', 23
+    sendSignalToAction: s32'vas_409_Aura2', (SIGNAL_A)
     deactivateObjectByName: s32'vas_409_Aura3'
-    sendSignalToAction: s32'vas_409_Aura4', 23
+    sendSignalToAction: s32'vas_409_Aura4', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingWeaponSickleM'
     characterSfx: s32'vas_07'
     voiceLine: s16'vVAS_ATKS_14'
@@ -6052,8 +6052,8 @@ beginState: s32'kamae_Add_B'
     createObject: s32'vas_410_Aura3', (PLAYER)
     sprite: s32'vas410_10', 2
     deactivateObjectByName: s32'vas_410_Aura'
-    sendSignalToAction: s32'vas_410_Aura2', 23
-    sendSignalToAction: s32'vas_410_Aura3', 23
+    sendSignalToAction: s32'vas_410_Aura2', (SIGNAL_A)
+    sendSignalToAction: s32'vas_410_Aura3', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingWeaponSickleM'
     characterSfx: s32'vas_07'
     voiceLine: s16'vVAS_ATKS_15'
@@ -6149,7 +6149,7 @@ beginState: s32'kamae_Add_C'
     sprite: s32'vas411_04', 6
     sprite: s32'vas411_05', 7
     sprite: s32'vas411_06', 6
-    sendSignalToAction: s32'vas_411_Aura', 23
+    sendSignalToAction: s32'vas_411_Aura', (SIGNAL_A)
     sprite: s32'vas411_06', 1
     pushbackOnBlockX: 25
     blockstunAmount: 48
@@ -6269,7 +6269,7 @@ beginState: s32'kamae_Add_D'
     callSubroutine: s32'Func_ArmorDelete'
     Unknown1302: 
     callSubroutine: s32'cmnMuteki_False'
-    sendSignalToAction: s32'vas_412_Burst', 23
+    sendSignalToAction: s32'vas_412_Burst', (SIGNAL_A)
     if: Mem(ActReg0)
         callSubroutine: s32'cmnExSkill_ColorEnd_L'
     endIf: 
@@ -6964,7 +6964,7 @@ beginState: s32'Vas_Ougi'
     sprite: s32'vas430_13', 3
     velocityXPercentEachFrame: 80
     sprite: s32'vas430_33', 3
-    sendSignalToAction: s32'vas_430_Speed', 23
+    sendSignalToAction: s32'vas_430_Speed', (SIGNAL_A)
     deactivateObjectByName: s32'vas_430_GroundShock'
     clearUpon: (HIT)
     Unknown1302: 
@@ -6985,7 +6985,7 @@ beginState: s32'Vas_Ougi'
     clearUpon: (HIT)
     sprite: s32'vas430_14', 2
     createObject: s32'vas_430_Slash', (PLAYER)
-    sendSignalToAction: s32'vas_430_Speed', 23
+    sendSignalToAction: s32'vas_430_Speed', (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     cmnSfx: s32'SE_BTL_SwingWeaponSickleL'
     characterSfx: s32'vas_07'
@@ -7039,11 +7039,11 @@ beginState: s32'Vas_Ougi'
             endUpon: 
         endIf: 
         else: 
-            sendSignalToAction: s32'vas_430_Slash', 23
+            sendSignalToAction: s32'vas_430_Slash', (SIGNAL_A)
         endElse: 
     endIf: 
     else: 
-        sendSignalToAction: s32'vas_430_Slash', 23
+        sendSignalToAction: s32'vas_430_Slash', (SIGNAL_A)
         Unknown1302: 
         callSubroutine: s32'cmnMuteki_False'
     endElse: 
@@ -7355,7 +7355,7 @@ beginState: s32'Vas_Kaihou'
     sprite: s32'vas440_12', 3
     sprite: s32'vas440_13', 3
     sprite: s32'vas440_14', 3
-    sendSignalToAction: s32'vas_440_Impact', 23
+    sendSignalToAction: s32'vas_440_Impact', (SIGNAL_A)
     sprite: s32'vas440_14', 1
     if: Mem(ActReg0)
         if: Mem(BattleDoing)

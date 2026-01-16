@@ -1364,17 +1364,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'SpecialShot_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_D'
@@ -1387,7 +1387,7 @@ beginSubroutine: s32'AbilityCoolDown_N'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 999
+            skillCooldown: 0, 999
         endElse: 
         Unknown1923: 0
     endIf: 
@@ -1396,17 +1396,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 240
+        skillCooldown: 1, 240
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 600
+        skillCooldown: 1, 600
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -1423,18 +1423,18 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Strike'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'DodgeStrike'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Strike_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
-        Unknown1921: 3, 420
+        skillCooldown: 2, 420
+        skillCooldown: 3, 420
         Unknown1923: 2
         Unknown1923: 3
     endIf: 
@@ -1960,7 +1960,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2115,7 +2115,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2533,7 +2533,7 @@ beginState: s32'CancelDash'
     beginLabel: s32'Landing'
     sprite: s32'ctl306_09', 3
     zLine: 0, 1
-    sendSignalToAction: s32'306Eff', 23
+    sendSignalToAction: s32'306Eff', (SIGNAL_A)
     haltMomentum: 1
     characterSfx: s32'ctl_07'
     sprite: s32'ctl306_10', 3
@@ -3719,7 +3719,7 @@ beginState: s32'NmlAtkAirThrow'
     sprite: s32'ctl302_01', 2
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'ctl302_02', 5
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     hit: 
     sprite: s32'ctl302_03', 3
     attackEndDelay: 
@@ -3913,8 +3913,8 @@ beginState: s32'SpecialShot_D'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnShotCounterUkeru'
         callSubroutine: s32'cmnSpecialAttackD_Init'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             spriteTimeAdd: 14
         endUpon: 
         upon: 24
@@ -3944,7 +3944,7 @@ beginState: s32'SpecialShot_D'
     sprite: s32'ctl400_05', 3
     cmnSfx: s32'SE_BTL_SwingBlowL'
     characterSfx: s32'ctl_01'
-    sendSignalToAction: s32'ctl400_are', 23
+    sendSignalToAction: s32'ctl400_are', (SIGNAL_A)
     sprite: s32'ctl400_06', 3
     createObject: s32'400Eff_sword_start', (PLAYER)
     createObject: s32'400Eff_dashsmoke', (PLAYER)
@@ -3963,7 +3963,7 @@ beginState: s32'SpecialShot_D'
     sprite: s32'ctl400_09', 3
     sprite: s32'ctl400_10', 3
     sprite: s32'ctl400_11', 3
-    sendSignalToAction: s32'CTL_400_D', 32
+    sendSignalToAction: s32'CTL_400_D', (SIGNAL_B)
     clearUpon: 35
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
     sprite: s32'ctl400_12', 3
@@ -4001,7 +4001,7 @@ beginState: s32'AntiAir_A'
     createObject: s32'CTL401_Slash01', (PLAYER)
     hit: 
     sprite: s32'ctl401_03', 2
-    sendSignalToAction: s32'CTL401_Slash01', 23
+    sendSignalToAction: s32'CTL401_Slash01', (SIGNAL_A)
     physicsXImpulse: 16000
     velocityXPercentEachFrame: 90
     physicsYImpulse: 25000
@@ -4064,7 +4064,7 @@ beginState: s32'AntiAir_B'
     createObject: s32'CTL401_Slash01', (PLAYER)
     hit: 
     sprite: s32'ctl401_03', 2
-    sendSignalToAction: s32'CTL401_Slash01', 23
+    sendSignalToAction: s32'CTL401_Slash01', (SIGNAL_A)
     physicsXImpulse: 16000
     velocityXPercentEachFrame: 96
     physicsYImpulse: 40000
@@ -4131,7 +4131,7 @@ beginState: s32'AntiAir_C'
     createObject: s32'CTL401_Slash01', (PLAYER)
     hit: 
     sprite: s32'ctl401_03', 1
-    sendSignalToAction: s32'CTL401_Slash01', 23
+    sendSignalToAction: s32'CTL401_Slash01', (SIGNAL_A)
     physicsXImpulse: 16000
     velocityXPercentEachFrame: 96
     physicsYImpulse: 40000
@@ -4228,7 +4228,7 @@ beginState: s32'AntiAir_D'
     createObject: s32'CTL401_Slash01', (PLAYER)
     hit: 
     sprite: s32'ctl401_03', 1
-    sendSignalToAction: s32'CTL401_Slash01', 23
+    sendSignalToAction: s32'CTL401_Slash01', (SIGNAL_A)
     physicsXImpulse: 16000
     velocityXPercentEachFrame: 96
     physicsYImpulse: 40000
@@ -4640,7 +4640,7 @@ beginState: s32'Strike_D'
     grabOrRelease: 
     linkObjectCollision: 4
     Unknown1793: 4, 23
-    sendSignalToAction: s32'402Eff_Shield', 23
+    sendSignalToAction: s32'402Eff_Shield', (SIGNAL_A)
     sprite: s32'ctl402_03', 3
     linkObjectCollision: 0
     sprite: s32'ctl402_04', 3
@@ -4674,7 +4674,7 @@ beginState: s32'Strike_D'
     cmnSfx: s32'SE_BTL_SwingWeaponRapierL'
     characterSfx: s32'ctl_10'
     characterSfx: s32'ctl_11'
-    sendSignalToAction: s32'402Eff_Shield', 32
+    sendSignalToAction: s32'402Eff_Shield', (SIGNAL_B)
     sprite: s32'ctl402_07ex', 1
     callSubroutine: s32'cmnMuteki_False'
     appendCollision: 0, -1, -1, -1, -1
@@ -4844,7 +4844,7 @@ beginState: s32'IcicleNail'
     comboLimitScaling: -1
     upon: (TOUCH_GROUND)
         gotoLabelRequests: s32'Landing'
-        sendSignalToAction: s32'430Eff_thrust', 23
+        sendSignalToAction: s32'430Eff_thrust', (SIGNAL_A)
     endUpon: 
     beginLabel: s32'Landing'
     sprite: s32'ctl430_21', 2

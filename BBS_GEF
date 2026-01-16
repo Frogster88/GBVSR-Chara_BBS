@@ -1746,17 +1746,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'SpecialShot_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_D'
@@ -1769,7 +1769,7 @@ beginSubroutine: s32'AbilityCoolDown_N'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 999
+            skillCooldown: 0, 999
         endElse: 
         Unknown1923: 0
     endIf: 
@@ -1778,17 +1778,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 240
+        skillCooldown: 1, 240
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 600
+        skillCooldown: 1, 600
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -1805,17 +1805,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'Strike_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Strike_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Strike_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Strike_D'
@@ -1829,17 +1829,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -2349,7 +2349,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2555,7 +2555,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2698,7 +2698,7 @@ beginState: s32'CmnActMatchWin'
             createObject: s32'gef_800_Smoke2', (PLAYER)
         endIf: 
         ifOnFrame: Val(259)
-            sendSignalToAction: s32'gef_800_Smoke', 23
+            sendSignalToAction: s32'gef_800_Smoke', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(425)
             Unknown2193: 0
@@ -3808,7 +3808,7 @@ beginState: s32'NmlAtkAir5D'
     hitEffectSlash: 0
     if: Mem(ExGage2)
         onSpriteChange: s32'gef402_12'
-        sendSignalToAction: s32'gef_402_Burst2Eff', 23
+        sendSignalToAction: s32'gef_402_Burst2Eff', (SIGNAL_A)
     endIf: 
     sprite: s32'gef402_13', 2
     attackEndDelay: 
@@ -4212,7 +4212,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'gef302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'gef302_03', 3
     attackEndDelay: 
     sprite: s32'gef302_04', 3
@@ -4298,7 +4298,7 @@ beginState: s32'AirThrowExe'
     gotoIfOperation: s32'ATLoop', (IS_LESSER_OR_EQUAL), Mem(ActionTime), Val(600)
     beginLabel: s32'Landing'
     sprite: s32'gef303_07', 2
-    sendSignalToAction: s32'gef_303_EnshutuCamera', 23
+    sendSignalToAction: s32'gef_303_EnshutuCamera', (SIGNAL_A)
     Unknown538: 31
     exPointFReset: (PLAYER), 300000, 0
     Unknown540: 130, 100, 0
@@ -5728,7 +5728,7 @@ beginState: s32'AntiAir_D'
     whiffIfCombo: 0
     displayHitSparks: 0
     dontAddComboCount: 0
-    sendSignalToAction: s32'gef_414_EnshutuCamera', 23
+    sendSignalToAction: s32'gef_414_EnshutuCamera', (SIGNAL_A)
     damageEffect: 2, s32'gef_411_HitEff'
     noFinishCamera: 1
     wallPushback: 0, 500
@@ -6713,7 +6713,7 @@ beginState: s32'Kamae_Add_D2'
     sprite: s32'gef411_12', 2
     createParticle: s32'bg_GroundBurst', (PLAYER_LAND)
     sprite: s32'gef411_13', 2
-    sendSignalToAction: s32'gef_411_EnshutuCamera', 23
+    sendSignalToAction: s32'gef_411_EnshutuCamera', (SIGNAL_A)
     Unknown2033: -10000
     if: Mem(BattleDoing)
         hit: 
@@ -6858,8 +6858,8 @@ beginState: s32'Kamae_Add_D_Exe'
                 Unknown2601: 0
             endRunOnObject: 
         endUpon: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             deactivateObjectByName: s32'gef_411_Wall'
             gotoLabelRequests: s32'Atk'
         endUpon: 
@@ -6905,12 +6905,12 @@ beginState: s32'Kamae_Add_D_Exe'
     beginLabel: s32'Atk'
     sprite: s32'gef411_12', 3
     clearUpon: 46
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     createParticle: s32'bg_GroundBurst', (PLAYER_LAND)
     haltMomentum: 1
     sprite: s32'gef411_13', 3
     ifOperation: (IS_EQUAL), Mem(ActReg3), Val(3)
-        sendSignalToAction: s32'gef_411_EnshutuCamera', 23
+        sendSignalToAction: s32'gef_411_EnshutuCamera', (SIGNAL_A)
     endIf: 
     Unknown2033: -10000
     hit: 
@@ -6937,13 +6937,13 @@ beginState: s32'Kamae_Add_D_Exe'
     characterSfx: s32'gef_02_2'
     if: Mem(ExGage2)
         createObject: s32'gef_411_ThrustEff_Buff', (PLAYER)
-        sendSignalToAction: s32'gef_411_ThrustLoopEff_Buff', 23
-        sendSignalToAction: s32'gef_411_ThrustLoopEff', 23
+        sendSignalToAction: s32'gef_411_ThrustLoopEff_Buff', (SIGNAL_A)
+        sendSignalToAction: s32'gef_411_ThrustLoopEff', (SIGNAL_A)
         callSubroutine: s32'cmnExSkill_ColorEnd_L'
     endIf: 
     else: 
         createObject: s32'gef_411_ThrustEff', (PLAYER)
-        sendSignalToAction: s32'gef_411_ThrustLoopEff', 23
+        sendSignalToAction: s32'gef_411_ThrustLoopEff', (SIGNAL_A)
     endElse: 
     sprite: s32'gef411_14', 3
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
@@ -7298,8 +7298,8 @@ beginState: s32'gef_Ougi'
     beginLabel: s32'Landing'
     sprite: s32'gef430_19', 1
     clearUpon: (HIT)
-    sendSignalToAction: s32'gef_430_ThrustEff', 23
-    sendSignalToAction: s32'gef_430_Thrust_Nokoshi_Eff', 23
+    sendSignalToAction: s32'gef_430_ThrustEff', (SIGNAL_A)
+    sendSignalToAction: s32'gef_430_Thrust_Nokoshi_Eff', (SIGNAL_A)
     createObject: s32'gef_430_GroundShockEff', (PLAYER)
     if: Mem(ActReg1)
         hit: 
@@ -7324,8 +7324,8 @@ beginState: s32'gef_Ougi'
     exitState: 
     beginLabel: s32'HitLanding'
     sprite: s32'gef430_32', 3
-    sendSignalToAction: s32'gef_430_ThrustEff', 23
-    sendSignalToAction: s32'gef_430_Thrust_Nokoshi_Eff', 23
+    sendSignalToAction: s32'gef_430_ThrustEff', (SIGNAL_A)
+    sendSignalToAction: s32'gef_430_Thrust_Nokoshi_Eff', (SIGNAL_A)
     createObject: s32'gef_430_GroundShockEff', (PLAYER)
     sprite: s32'gef430_33', 3
     sprite: s32'gef430_34', 3
@@ -7798,9 +7798,9 @@ beginState: s32'gef_Kaihou'
     velocityXPercentEachFrame: 85
     Unknown1302: 
     callSubroutine: s32'cmnMuteki_False'
-    sendSignalToAction: s32'gef_440RushEff', 23
+    sendSignalToAction: s32'gef_440RushEff', (SIGNAL_A)
     sprite: s32'gef034_01', 3
-    sendSignalToAction: s32'gef_440_GroundLoop_Eff', 23
+    sendSignalToAction: s32'gef_440_GroundLoop_Eff', (SIGNAL_A)
     sprite: s32'gef034_02', 3
     sprite: s32'gef034_03', 3
     sprite: s32'gef034_04', 3
@@ -7819,7 +7819,7 @@ beginState: s32'gef_Kaihou'
     ignorePushback: 1
     physicsXImpulse: 80000
     velocityXPercentEachFrame: 100
-    sendSignalToAction: s32'gef_440RushEff', 23
+    sendSignalToAction: s32'gef_440RushEff', (SIGNAL_A)
     upon: (FRAME_STEP)
         ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(125000)
             gotoLabelRequests: s32'2nd'
@@ -7845,7 +7845,7 @@ beginState: s32'gef_Kaihou'
         storeValue: Mem(ActReg2), Val(1)
     endUpon: 
     clearUpon: (FRAME_STEP)
-    sendSignalToAction: s32'gef_440_GroundLoop_Eff', 23
+    sendSignalToAction: s32'gef_440_GroundLoop_Eff', (SIGNAL_A)
     upon: (HIT_OR_GUARD)
         clearUpon: (HIT_OR_GUARD)
         moveToObject: (ENEMY)
@@ -8143,7 +8143,7 @@ beginState: s32'gef_Kaihou'
     callSubroutine: s32'cmnKaihou_LockCSEnd'
     deactivateObjectByName: s32'gef_441cs_Burst'
     deactivateObjectByName: s32'gef_441cs_BG'
-    sendSignalToAction: s32'gef_441_WhiteOut', 23
+    sendSignalToAction: s32'gef_441_WhiteOut', (SIGNAL_A)
     Unknown384: 0, 7
     sprite: s32'gef440_21', 5
     sprite: s32'gef440_22', 5

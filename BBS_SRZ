@@ -1692,17 +1692,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'Tosshin_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Tosshin_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Tosshin_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Tosshin_D'
@@ -1719,17 +1719,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -1746,17 +1746,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'SpecialShot_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_D'
@@ -1773,17 +1773,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -2435,7 +2435,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2691,7 +2691,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2914,7 +2914,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
         endIf: 
         ifOnFrame: Val(171)
             createObject: s32'SRZ_442_Wind', (PLAYER)
-            sendSignalToAction: s32'SRZ_442_GroundCrack', 23
+            sendSignalToAction: s32'SRZ_442_GroundCrack', (SIGNAL_A)
             deactivateObjectByName: s32'SRZ_442_GroundCrack2'
             Unknown2583: 31000, 0, 3, 59400, 59100, 3900
         endIf: 
@@ -2928,7 +2928,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
             Unknown2583: 22300, 0, 3, 85900, 59100, 3900
         endIf: 
         ifOnFrame: Val(287)
-            sendSignalToAction: s32'SRZ_442_Wind', 23
+            sendSignalToAction: s32'SRZ_442_Wind', (SIGNAL_A)
             Unknown2583: 31000, 0, 3, 92800, 59100, 3900
         endIf: 
         ifOnFrame: Val(295)
@@ -3735,13 +3735,13 @@ beginState: s32'NmlAtk5D'
             ifNot: Mem(Tmp)
                 clearUpon: 36
                 callSubroutine: s32'cmnMuteki_False'
-                sendSignalToAction: s32'SRZ_208_Aura', 23
+                sendSignalToAction: s32'SRZ_208_Aura', (SIGNAL_A)
                 gotoLabelRequests: s32'End'
             endIf: 
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(60)
                 clearUpon: 36
                 callSubroutine: s32'cmnMuteki_False'
-                sendSignalToAction: s32'SRZ_208_Aura', 23
+                sendSignalToAction: s32'SRZ_208_Aura', (SIGNAL_A)
                 gotoLabelRequests: s32'End'
             endIf: 
         endIf: 
@@ -3771,7 +3771,7 @@ beginState: s32'NmlAtk5D'
     exitState: 
     beginLabel: s32'AtkStart'
     sprite: s32'srz209_00', 3
-    sendSignalToAction: s32'SRZ_208_Aura', 23
+    sendSignalToAction: s32'SRZ_208_Aura', (SIGNAL_A)
     sprite: s32'srz209_01', 3
     voiceLine: s16'vSRZ_ATKAby_01'
     sprite: s32'srz209_02', 3
@@ -4385,7 +4385,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'srz302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'srz302_03', 3
     attackEndDelay: 
     smartRandomVoiceLine: s16'vSRZ_THW_00', 100, s16'', 0, s16'', 0, s16'', 0
@@ -4471,8 +4471,8 @@ endState:
 beginState: s32'SpecialShot_A'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttack_Init'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             spriteTimeAdd: 3
         endUpon: 
     endUpon: 
@@ -4529,8 +4529,8 @@ endState:
 beginState: s32'SpecialShot_B'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttack_Init'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             spriteTimeAdd: 11
         endUpon: 
     endUpon: 
@@ -4597,8 +4597,8 @@ endState:
 beginState: s32'SpecialShot_C'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttackC_Init'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             spriteTimeAdd: 7
         endUpon: 
     endUpon: 
@@ -4691,7 +4691,7 @@ beginState: s32'SpecialShot_D'
     velocityXPercentEachFrame: 85
     sprite: s32'srz406_10', 3
     sprite: s32'srz406_11', 3
-    sendSignalToAction: s32'SRZ_406_ShineEff', 23
+    sendSignalToAction: s32'SRZ_406_ShineEff', (SIGNAL_A)
     beginLabel: s32'downloop'
     sprite: s32'srz406_12', 3
     sprite: s32'srz406_13', 3
@@ -5218,7 +5218,7 @@ beginState: s32'Assault_A'
     smartRandomVoiceLine: s16'vSRZ_ATKS_06', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'srz401_05', 3
     createParticle: s32'bg_GroundBurstZlink', (PLAYER)
-    sendSignalToAction: s32'SRZ_401_FistStandByEff', 23
+    sendSignalToAction: s32'SRZ_401_FistStandByEff', (SIGNAL_A)
     Unknown2033: 60000
     sprite: s32'srz401_08', 2
     hit: 
@@ -5323,7 +5323,7 @@ beginState: s32'Assault_A'
     smartRandomVoiceLine: s16'vSRZ_ATKS_06', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'srz401_05', 3
     createParticle: s32'bg_GroundBurstZlink', (PLAYER)
-    sendSignalToAction: s32'SRZ_401_FistStandByEff', 23
+    sendSignalToAction: s32'SRZ_401_FistStandByEff', (SIGNAL_A)
     Unknown2033: 60000
     sprite: s32'srz401_08', 2
     hit: 
@@ -5541,7 +5541,7 @@ beginState: s32'Assault_B'
     sprite: s32'srz401_05', 3
     physicsXImpulse: 38000
     createParticle: s32'bg_GroundBurstZlink', (PLAYER)
-    sendSignalToAction: s32'SRZ_401_FistStandByEff', 23
+    sendSignalToAction: s32'SRZ_401_FistStandByEff', (SIGNAL_A)
     sprite: s32'srz401_06', 3
     sprite: s32'srz401_08', 2
     haltMomentum: 1
@@ -5644,7 +5644,7 @@ beginState: s32'Assault_B'
     sprite: s32'srz401_05', 3
     physicsXImpulse: 38000
     createParticle: s32'bg_GroundBurstZlink', (PLAYER)
-    sendSignalToAction: s32'SRZ_401_FistStandByEff', 23
+    sendSignalToAction: s32'SRZ_401_FistStandByEff', (SIGNAL_A)
     sprite: s32'srz401_06', 3
     sprite: s32'srz401_08', 2
     haltMomentum: 1
@@ -5856,7 +5856,7 @@ beginState: s32'Assault_C'
     sprite: s32'srz401_05', 2
     physicsXImpulse: 57000
     createParticle: s32'bg_GroundBurstZlink', (PLAYER)
-    sendSignalToAction: s32'SRZ_401_FistStandByEff', 23
+    sendSignalToAction: s32'SRZ_401_FistStandByEff', (SIGNAL_A)
     sprite: s32'srz401_06', 2
     sprite: s32'srz401_08', 2
     haltMomentum: 1
@@ -5965,7 +5965,7 @@ beginState: s32'Assault_C'
     sprite: s32'srz401_05', 2
     physicsXImpulse: 57000
     createParticle: s32'bg_GroundBurstZlink', (PLAYER)
-    sendSignalToAction: s32'SRZ_401_FistStandByEff', 23
+    sendSignalToAction: s32'SRZ_401_FistStandByEff', (SIGNAL_A)
     sprite: s32'srz401_06', 2
     sprite: s32'srz401_08', 2
     haltMomentum: 1
@@ -6202,7 +6202,7 @@ beginState: s32'Assault_D'
     sprite: s32'srz401_05', 2
     physicsXImpulse: 40700
     createParticle: s32'bg_GroundBurstZlink', (PLAYER)
-    sendSignalToAction: s32'SRZ_401_FistStandByEff', 23
+    sendSignalToAction: s32'SRZ_401_FistStandByEff', (SIGNAL_A)
     sprite: s32'srz401_06', 3
     sprite: s32'srz401_07', 2
     sprite: s32'srz401_08', 1
@@ -6556,7 +6556,7 @@ beginState: s32'Assault_D'
     endIf: 
     sprite: s32'srz405_06', 3
     sprite: s32'srz405_09', 2
-    sendSignalToAction: s32'SRZ_405_Trail', 23
+    sendSignalToAction: s32'SRZ_405_Trail', (SIGNAL_A)
     attackEndDelay: 
     velocityXPercent: 50
     velocityXPercentEachFrame: 90
@@ -6565,8 +6565,8 @@ beginState: s32'Assault_D'
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
     sprite: s32'srz405_10', 2
     sprite: s32'srz405_11', 2
-    sendSignalToAction: s32'SRZ_405_Aura', 23
-    sendSignalToAction: s32'SRZ_405_Aura2', 23
+    sendSignalToAction: s32'SRZ_405_Aura', (SIGNAL_A)
+    sendSignalToAction: s32'SRZ_405_Aura2', (SIGNAL_A)
     sprite: s32'srz405_12', 2
     sprite: s32'srz405_12', 2147483647
     beginLabel: s32'Landing'
@@ -6770,7 +6770,7 @@ beginState: s32'Tosshin_A'
     sprite: s32'srz403_09', 2
     clearUpon: (FRAME_STEP)
     velocityXPercent: 80
-    sendSignalToAction: s32'SRZ_403_Strike', 23
+    sendSignalToAction: s32'SRZ_403_Strike', (SIGNAL_A)
     deactivateObjectByName: s32'SRZ_403_Dash'
     cmnSfx: s32'SE_BTL_SwingBlowL'
     characterSfx: s32'srz_06'
@@ -6824,7 +6824,7 @@ beginState: s32'Tosshin_A'
     sprite: s32'srz403_09', 2
     clearUpon: (FRAME_STEP)
     velocityXPercent: 80
-    sendSignalToAction: s32'SRZ_403_Strike_SP', 23
+    sendSignalToAction: s32'SRZ_403_Strike_SP', (SIGNAL_A)
     deactivateObjectByName: s32'SRZ_403_Dash_SP'
     cmnSfx: s32'SE_BTL_SwingBlowL'
     characterSfx: s32'srz_06'
@@ -6900,7 +6900,7 @@ beginState: s32'Tosshin_B'
     velocityXPercent: 80
     setAcceleration: 0
     deactivateObjectByName: s32'SRZ_403_Dash'
-    sendSignalToAction: s32'SRZ_403_Strike', 23
+    sendSignalToAction: s32'SRZ_403_Strike', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     characterSfx: s32'srz_06'
     sprite: s32'srz403_10', 3
@@ -6961,7 +6961,7 @@ beginState: s32'Tosshin_B'
     velocityXPercent: 60
     setAcceleration: 0
     deactivateObjectByName: s32'SRZ_403_Dash_SP'
-    sendSignalToAction: s32'SRZ_403_Strike_SP', 23
+    sendSignalToAction: s32'SRZ_403_Strike_SP', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     characterSfx: s32'srz_06'
     sprite: s32'srz403_10', 3
@@ -7030,7 +7030,7 @@ beginState: s32'Tosshin_C'
     clearUpon: (FRAME_STEP)
     velocityXPercent: 70
     deactivateObjectByName: s32'SRZ_403_Dash'
-    sendSignalToAction: s32'SRZ_403_Strike', 23
+    sendSignalToAction: s32'SRZ_403_Strike', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     characterSfx: s32'srz_06'
     sprite: s32'srz403_10', 3
@@ -7087,7 +7087,7 @@ beginState: s32'Tosshin_C'
     clearUpon: (FRAME_STEP)
     velocityXPercent: 70
     deactivateObjectByName: s32'SRZ_403_Dash_SP'
-    sendSignalToAction: s32'SRZ_403_Strike_SP', 23
+    sendSignalToAction: s32'SRZ_403_Strike_SP', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     characterSfx: s32'srz_06'
     sprite: s32'srz403_10', 3
@@ -7201,7 +7201,7 @@ beginState: s32'Tosshin_D'
     clearUpon: (FRAME_STEP)
     velocityXPercent: 80
     deactivateObjectByName: s32'SRZ_403_Dash'
-    sendSignalToAction: s32'SRZ_403_Strike', 23
+    sendSignalToAction: s32'SRZ_403_Strike', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     characterSfx: s32'srz_06'
     sprite: s32'srz403_10', 3
@@ -7286,7 +7286,7 @@ beginState: s32'Tosshin_D'
     clearUpon: (FRAME_STEP)
     velocityXPercent: 80
     deactivateObjectByName: s32'SRZ_403_Dash_SP'
-    sendSignalToAction: s32'SRZ_403_Strike_SP', 23
+    sendSignalToAction: s32'SRZ_403_Strike_SP', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     characterSfx: s32'srz_06'
     sprite: s32'srz403_10', 3
@@ -7384,7 +7384,7 @@ beginState: s32'Derive_236'
     characterSfx: s32'srz_10'
     sprite: s32'srz405_06', 3
     sprite: s32'srz405_09', 2
-    sendSignalToAction: s32'SRZ_405_Trail', 23
+    sendSignalToAction: s32'SRZ_405_Trail', (SIGNAL_A)
     attackEndDelay: 
     velocityXPercent: 50
     velocityXPercentEachFrame: 90
@@ -7392,8 +7392,8 @@ beginState: s32'Derive_236'
     extendPushboxX: 0
     sprite: s32'srz405_10', 2
     sprite: s32'srz405_11', 2
-    sendSignalToAction: s32'SRZ_405_Aura', 23
-    sendSignalToAction: s32'SRZ_405_Aura2', 23
+    sendSignalToAction: s32'SRZ_405_Aura', (SIGNAL_A)
+    sendSignalToAction: s32'SRZ_405_Aura2', (SIGNAL_A)
     sprite: s32'srz405_12', 2
     sprite: s32'srz405_12', 2147483647
     beginLabel: s32'Landing'
@@ -8401,9 +8401,9 @@ beginState: s32'srz_Kaihou_Attack'
             Unknown2587: 1601860211, s32'MI_post_RadialBlur'
             Unknown2588: s32'srz_MI_post_RadialBlur', 1, 100
             Unknown2590: s32'srz_MI_post_RadialBlur', 1, -2
-            sendSignalToAction: s32'SRZ_441_CSBG', 23
-            sendSignalToAction: s32'SRZ_441_CSImpact', 23
-            sendSignalToAction: s32'SRZ_441_CSGroundBurst', 23
+            sendSignalToAction: s32'SRZ_441_CSBG', (SIGNAL_A)
+            sendSignalToAction: s32'SRZ_441_CSImpact', (SIGNAL_A)
+            sendSignalToAction: s32'SRZ_441_CSGroundBurst', (SIGNAL_A)
             createObject: s32'SRZ_441_CSNearStones', (PLAYER)
             createObject: s32'SRZ_441_CSNearStones2', (PLAYER)
             createObject: s32'SRZ_441_CSFinalCrack', (PLAYER)
@@ -8446,7 +8446,7 @@ beginState: s32'srz_Kaihou_Attack'
     deactivateObjectByName: s32'SRZ_441_CSGroundBurst'
     deactivateObjectByName: s32'SRZ_441_CSFinalCrack'
     deactivateObjectByName: s32'SRZ_441_CSFinalCrack2'
-    sendSignalToAction: s32'SRZ_441_CSWhiteOut', 23
+    sendSignalToAction: s32'SRZ_441_CSWhiteOut', (SIGNAL_A)
     createObject: s32'SRZ_441_CSAfterEffect', (PLAYER)
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(400000)
         setPositionX: 1200000

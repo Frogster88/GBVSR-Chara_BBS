@@ -354,8 +354,8 @@ beginState: s32'anl_306_FallEff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'anl_306_Fall'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             linkParticle: s32'anl_306_FallEnd'
             gotoLabelRequests: s32'End'
         endUpon: 
@@ -388,8 +388,8 @@ beginState: s32'anl_306_FallEff2'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'anl_306_Fall'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             linkParticle: s32'anl_306_FallEnd'
             gotoLabelRequests: s32'End'
         endUpon: 
@@ -420,8 +420,8 @@ beginState: s32'anl_306_FallEff3'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'anl_306_Fall'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             linkParticle: s32'anl_306_FallEnd'
             gotoLabelRequests: s32'End'
         endUpon: 
@@ -452,8 +452,8 @@ beginState: s32'anl_306_FallEff4'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'anl_306_Fall'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             linkParticle: s32'anl_306_FallEnd'
             gotoLabelRequests: s32'End'
         endUpon: 
@@ -534,7 +534,7 @@ beginState: s32'anl307_sheep'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         callSubroutine: s32'ANH_SINGLE'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'anh307_01', 12
     createObject: s32'ANL_HitujiSpawn', (PLAYER)
@@ -713,8 +713,8 @@ beginState: s32'ANL_350_Strike'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Atk'
         endUpon: 
     endUpon: 
@@ -915,7 +915,7 @@ beginState: s32'anl400_Shot'
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
             numberOfHits: 3
         endIf: 
-        upon: 45
+        upon: (ON_DESTROY)
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
                 ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
                     createArgHikitsukiVal: Val(0), Val(1)
@@ -1051,7 +1051,7 @@ beginState: s32'anl400_Shot'
     clearUpon: (FRAME_STEP)
     clearUpon: 13
     clearUpon: 35
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     Unknown2050: 0
     if: Mem(405)
         deactivateObjectByName: s32'anl_400_SPEff'
@@ -1067,13 +1067,13 @@ beginState: s32'anl400_Shot'
     sprite: s32'null', 10
     if: Mem(ActReg2)
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-            Unknown1921: 0, 10
+            skillCooldown: 0, 10
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-            Unknown1921: 0, 10
+            skillCooldown: 0, 10
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-            Unknown1921: 0, 420
+            skillCooldown: 0, 420
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
             if: Mem(417)
@@ -1081,7 +1081,7 @@ beginState: s32'anl400_Shot'
                 storeValue: Mem(287), Mem(Tmp)
             endIf: 
             else: 
-                Unknown1921: 0, 180
+                skillCooldown: 0, 180
             endElse: 
         endIf: 
         ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(0)
@@ -1194,8 +1194,8 @@ beginState: s32'anl_401_strike'
         setAngleX: 166800
         setAngleY: 170800
         setAngle: 210400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1254,8 +1254,8 @@ beginState: s32'anl_402_MagicCircle'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setPositionX: 99984
@@ -1388,21 +1388,21 @@ beginState: s32'Assault_sheep'
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg0), Val(3)
         endIf: 
-        gotoLabelUpon: 23, s32'Attack'
+        gotoLabelUpon: (SIGNAL_A), s32'Attack'
         gotoLabelUpon: 24, s32'AttackEx'
         gotoLabelUpon: 25, s32'End'
         upon: 26
             clearUpon: 26
-            clearUpon: 47
-            sendSignalToAction: s32'anl_403_Wind', 23
+            clearUpon: (AFTER_EXIT)
+            sendSignalToAction: s32'anl_403_Wind', (SIGNAL_A)
             deactivateObjectByName: s32'anl_403_DashBurst'
             jumpToState: s32'sheep_die'
         endUpon: 
         gotoLabelUpon: 27, s32'TypeD_End'
-        upon: 47
+        upon: (AFTER_EXIT)
             clearUpon: 26
-            clearUpon: 47
-            sendSignalToAction: s32'anl_403_Wind', 23
+            clearUpon: (AFTER_EXIT)
+            sendSignalToAction: s32'anl_403_Wind', (SIGNAL_A)
             deactivateObjectByName: s32'anl_403_DashBurst'
             linkObjectPosition: 0
             setPositionY: 0
@@ -1478,7 +1478,7 @@ beginState: s32'Assault_sheep'
     sprite: s32'anh403_06', 2147483647
     beginLabel: s32'Attack'
     sprite: s32'anh403_07', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     beginLabel: s32'Loop'
     sprite: s32'anh403_08', 3
     sprite: s32'anh403_09', 3
@@ -1487,7 +1487,7 @@ beginState: s32'Assault_sheep'
     gotoLabel: s32'Loop'
     beginLabel: s32'AttackEx'
     sprite: s32'anh403_11', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     beginLabel: s32'LoopEx'
     sprite: s32'anh403_12', 3
     sprite: s32'anh403_13', 3
@@ -1496,13 +1496,13 @@ beginState: s32'Assault_sheep'
     gotoLabel: s32'LoopEx'
     beginLabel: s32'End'
     sprite: s32'anh403_15', 6
-    clearUpon: 47
+    clearUpon: (AFTER_EXIT)
     setInertia: 15000
     linkObjectZ: 0
     linkObjectPosition: 0
     stopLinkObject: 0
     zLine: 0, 5
-    sendSignalToAction: s32'anl_403_Wind', 23
+    sendSignalToAction: s32'anl_403_Wind', (SIGNAL_A)
     sprite: s32'anh403_16', 3
     sprite: s32'anh403_17', 3
     createObject: s32'ANL_HitujiEnd', (PLAYER)
@@ -1513,13 +1513,13 @@ beginState: s32'Assault_sheep'
     exitState: 
     beginLabel: s32'TypeD_End'
     sprite: s32'keep', 1
-    clearUpon: 47
+    clearUpon: (AFTER_EXIT)
     setInertia: 15000
     linkObjectZ: 0
     linkObjectPosition: 0
     stopLinkObject: 0
     zLine: 0, 5
-    sendSignalToAction: s32'anl_403_Wind', 23
+    sendSignalToAction: s32'anl_403_Wind', (SIGNAL_A)
     createObject: s32'ANL_HitujiEnd', (PLAYER)
     runOnObject: (PREVIOUS)
         addPositionY: 100000
@@ -1534,8 +1534,8 @@ beginState: s32'anl_403_Wind'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             stopLinkObject: 0
             gotoLabelRequests: s32'End'
         endUpon: 
@@ -1561,7 +1561,7 @@ beginState: s32'anl_403_WindNokosi'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1571,7 +1571,7 @@ beginState: s32'anl_403_WindNokosi'
     gotoLabel: s32'loop'
     beginLabel: s32'End'
     sprite: s32'null', 1
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
 endState: 
 
 beginState: s32'anl_403_DashBurst'
@@ -1582,7 +1582,7 @@ beginState: s32'anl_403_DashBurst'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         addPositionX: 100000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1593,7 +1593,7 @@ beginState: s32'anl_403_DashBurst'
     gotoLabel: s32'loop'
     beginLabel: s32'End'
     sprite: s32'null', 1
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
 endState: 
 
 beginState: s32'anl_403_Ring'
@@ -1735,14 +1735,14 @@ beginState: s32'Assault_Cancel_sheep'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 36
             storeValue: Mem(PlayerVal1), Val(0)
-            sendSignalToAction: s32'anl_404_Wind', 23
+            sendSignalToAction: s32'anl_404_Wind', (SIGNAL_A)
             jumpToState: s32'sheep_die'
         endUpon: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
         endIf: 
         upon: 35
             clearUpon: 36
@@ -1856,8 +1856,8 @@ beginState: s32'anl_404_Wind'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setPositionX: -9067
@@ -1893,8 +1893,8 @@ beginState: s32'anl_404_WindNokosi'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1912,8 +1912,8 @@ beginState: s32'anl_404_Spark'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         addPositionX: 200000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1944,7 +1944,7 @@ beginState: s32'SpecialJump_sheep'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         callSubroutine: s32'ANH_SINGLE'
-        gotoLabelUpon: 23, s32'loop1'
+        gotoLabelUpon: (SIGNAL_A), s32'loop1'
         gotoLabelUpon: 24, s32'loop2'
         gotoLabelUpon: 25, s32'loop3'
         gotoLabelUpon: 26, s32'loop4'
@@ -1956,7 +1956,7 @@ beginState: s32'SpecialJump_sheep'
     createObject: s32'ANL_HitujiSpawn', (PLAYER)
     beginLabel: s32'loop1'
     sprite: s32'anh405_01', 5
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     privateSE: s32'anl_00_3'
     privateSE: s32'anl_05'
     beginLabel: s32'loop2'
@@ -2069,7 +2069,7 @@ beginState: s32'anl430_AddAttack'
     hit: 
     sprite: s32'anh400_03', 4
     hit: 
-    sendSignalToAction: s32'anl_Ougi', 32
+    sendSignalToAction: s32'anl_Ougi', (SIGNAL_B)
 endState: 
 
 beginState: s32'anl430_sheep'
@@ -2130,8 +2130,8 @@ beginState: s32'anl_430_Kadomatu'
         setLinkObjectDestroyOnStateChange: 2
         setObjectSize: 2000
         addPositionX: 274931
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2159,7 +2159,7 @@ beginState: s32'anl_430_Kadomatu'
     stopLinkObject: 0
     Unknown409: 0, 1
     Unknown410: 10, 1
-    sendSignalToAction: s32'anl_430_Kadomatu_Kumo', 23
+    sendSignalToAction: s32'anl_430_Kadomatu_Kumo', (SIGNAL_A)
     sprite: s32'null', 120
     Unknown409: 100, 1
     Unknown410: 0, 1
@@ -2176,8 +2176,8 @@ beginState: s32'anl_430_Kadomatu_Kumo'
         setPositionX: 19980
         setPositionY: 295221
         setDepth: -227334
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2216,8 +2216,8 @@ beginState: s32'anl_430_EnshutuCamera'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         stopLinkObject: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: (BEFORE_EXIT)
@@ -2446,8 +2446,8 @@ beginState: s32'anl_440_Burst'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setObjectSize: 400
@@ -2482,8 +2482,8 @@ beginState: s32'anl_440_BurstNokosi'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2526,8 +2526,8 @@ beginState: s32'anl_440_DashBurst'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         addPositionX: -300000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2656,7 +2656,7 @@ beginState: s32'anl_441_BG'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'anl_441_BG'
-        gotoLabelUpon: 23, s32'AngleChange'
+        gotoLabelUpon: (SIGNAL_A), s32'AngleChange'
     endUpon: 
     sprite: s32'null', 600
     beginLabel: s32'AngleChange'
@@ -3527,7 +3527,7 @@ beginState: s32'anl_441_WhiteOut'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -3556,7 +3556,7 @@ beginState: s32'anl_442cs_WhiteOut'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -3586,7 +3586,7 @@ beginState: s32'anl_442_BG'
         setAngleX: 0
         setAngleY: 277600
         setAngle: 0
-        gotoLabelUpon: 23, s32'Change'
+        gotoLabelUpon: (SIGNAL_A), s32'Change'
     endUpon: 
     sprite: s32'null', 2147483647
     beginLabel: s32'Change'
@@ -3655,7 +3655,7 @@ beginState: s32'anh_700cs'
         worldCollision: 0
         invulnForce: 1
         ignoreSuperFreezeFromAlly: 1
-        gotoLabelUpon: 23, s32'700cs_2p_02'
+        gotoLabelUpon: (SIGNAL_A), s32'700cs_2p_02'
         gotoLabelUpon: 24, s32'700cs_2p_03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3663,7 +3663,7 @@ beginState: s32'anh_700cs'
     beginLabel: s32'700cs_2p_02'
     sprite: s32'null', 2147483647
     playAnimation: s32'anl700cs_2p_02', 1
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     beginLabel: s32'700cs_2p_03'
     sprite: s32'null', 2147483647
     playAnimation: s32'anl700cs_2p_03', 1

@@ -677,7 +677,7 @@ beginSubroutine: s32'RoundInit'
     addMove: s32'SpecialThrow_A'
         moveType: (SPECIAL)
         moveStance: (STANDING)
-        moveInput: 83
+        moveInput: (INPUT_632146)
         moveInput: (INPUT_PRESS_L)
         addMoveFlag: (DOWN_SKILL_CD_FALSE)
         Unknown1513: 1
@@ -687,7 +687,7 @@ beginSubroutine: s32'RoundInit'
     addMove: s32'SpecialThrow_B'
         moveType: (SPECIAL)
         moveStance: (STANDING)
-        moveInput: 83
+        moveInput: (INPUT_632146)
         moveInput: (INPUT_PRESS_M)
         addMoveFlag: (DOWN_SKILL_CD_FALSE)
         Unknown1513: 1
@@ -697,7 +697,7 @@ beginSubroutine: s32'RoundInit'
     addMove: s32'SpecialThrow_C'
         moveType: (SPECIAL)
         moveStance: (STANDING)
-        moveInput: 83
+        moveInput: (INPUT_632146)
         moveInput: (INPUT_PRESS_H)
         addMoveFlag: (DOWN_SKILL_CD_FALSE)
         Unknown1513: 1
@@ -707,7 +707,7 @@ beginSubroutine: s32'RoundInit'
     addMove: s32'SpecialThrow_D'
         moveType: (SPECIAL)
         moveStance: (STANDING)
-        moveInput: 83
+        moveInput: (INPUT_632146)
         moveInput: (INPUT_PRESS_U)
         addMoveFlag: (REQUIRES_50_METER)
         Unknown1513: 1
@@ -1826,17 +1826,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'SpecialShot_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_D'
@@ -1849,7 +1849,7 @@ beginSubroutine: s32'AbilityCoolDown_N'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 999
+            skillCooldown: 0, 999
         endElse: 
         Unknown1923: 0
     endIf: 
@@ -1858,17 +1858,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 600
+        skillCooldown: 1, 600
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -1885,17 +1885,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'SpecialThrow_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialThrow_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialThrow_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialThrow_D'
@@ -1912,17 +1912,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -2443,7 +2443,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2704,7 +2704,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3192,7 +3192,7 @@ beginState: s32'GC_Attack'
     sprite: s32'bli350_06', 2
     sprite: s32'bli350_07', 2
     sprite: s32'bli350_08', 2
-    sendSignalToAction: s32'bli_350_GroundEff', 23
+    sendSignalToAction: s32'bli_350_GroundEff', (SIGNAL_A)
     characterSfx: s32'bli_05_mono'
     sprite: s32'bli350_09', 1
     createObject: s32'bli_350_SlashEff', (PLAYER)
@@ -3277,7 +3277,7 @@ beginState: s32'CancelDash'
     beginLabel: s32'Landing'
     sprite: s32'bli306_10', 3
     haltMomentum: 1
-    sendSignalToAction: s32'bli_306_StrikeEff', 23
+    sendSignalToAction: s32'bli_306_StrikeEff', (SIGNAL_A)
     sprite: s32'bli306_11', 3
     attackEndDelay: 
     sprite: s32'bli306_12', 3
@@ -3568,7 +3568,7 @@ beginState: s32'NmlAtk5CNear'
     characterSfx: s32'bli_01'
     sprite: s32'bli206_02', 2
     attackVoiceLine: 2, -1
-    sendSignalToAction: s32'BLI_206_WeaponFlash', 23
+    sendSignalToAction: s32'BLI_206_WeaponFlash', (SIGNAL_A)
     sprite: s32'bli206_03', 2
     hit: 
     Unknown412: 100, 1, 7, 0
@@ -4021,7 +4021,7 @@ beginState: s32'GuardCrash'
     sprite: s32'bli350_06', 3
     sprite: s32'bli350_07', 2
     sprite: s32'bli350_08', 2
-    sendSignalToAction: s32'bli_350_GroundEff', 23
+    sendSignalToAction: s32'bli_350_GroundEff', (SIGNAL_A)
     characterSfx: s32'bli_05_mono'
     sprite: s32'bli350_09', 1
     hit: 
@@ -4064,7 +4064,7 @@ beginState: s32'NmlAtkAir5A'
     sprite: s32'bli250_02', 2
     hit: 
     attackVoiceLine: 0, -1
-    sendSignalToAction: s32'BLI_250_WeaponFlash', 23
+    sendSignalToAction: s32'BLI_250_WeaponFlash', (SIGNAL_A)
     beginLabel: s32'Loop'
     sprite: s32'bli250_03', 3
     sprite: s32'bli250_04', 3
@@ -4135,7 +4135,7 @@ beginState: s32'NmlAtkAir5C'
     characterSfx: s32'bli_01'
     sprite: s32'bli251_01', 2
     sprite: s32'bli251_02', 2
-    sendSignalToAction: s32'BLI_251_WeaponFlash', 23
+    sendSignalToAction: s32'BLI_251_WeaponFlash', (SIGNAL_A)
     Unknown412: 100, 2, 6, 0
     attackVoiceLine: 2, -1
     cmnSfx: s32'SE_BTL_SwingWeaponNormalL'
@@ -4573,7 +4573,7 @@ beginState: s32'NmlAtkAirThrow'
     sprite: s32'bli302_01', 2
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'bli302_02', 5
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     hit: 
     sprite: s32'bli302_03', 3
     attackEndDelay: 
@@ -4679,7 +4679,7 @@ beginSubroutine: s32'SpecialShot_Init'
     addWhiffCancelOption: s32'SpecialShotAdd_A'
     addWhiffCancelOption: s32'SpecialShotAdd_B'
     addWhiffCancelOption: s32'SpecialShotAdd_C'
-    upon: 23
+    upon: (SIGNAL_A)
         enableWhiffCancel: 0
     endUpon: 
 endSubroutine: 
@@ -4835,28 +4835,28 @@ beginState: s32'SpecialShot_D'
     upon: (IMMEDIATE)
         callSubroutine: s32'SpecialShot_Init'
         callSubroutine: s32'cmnSpecialAttackD_Init'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: 24
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             gotoLabelRequests: s32'Add'
         endUpon: 
         upon: 25
             clearUpon: 25
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             storeValue: Mem(ActReg1), Val(1)
         endUpon: 
         upon: 26
             clearUpon: 26
             invulnForce: 1
         endUpon: 
-        upon: 32
-            clearUpon: 32
+        upon: (SIGNAL_B)
+            clearUpon: (SIGNAL_B)
             clearUpon: (FRAME_STEP)
             gotoLabelRequests: s32'Addfinish'
         endUpon: 
@@ -4902,7 +4902,7 @@ beginState: s32'SpecialShot_D'
     exitState: 
     beginLabel: s32'Add'
     sprite: s32'bli403_00', 2
-    Unknown2035: 4, s32'Add_D', 0
+    pawnAnimation: 4, s32'Add_D', 0
     sprite: s32'bli403_01', 2
     sprite: s32'bli403_02', 2
     sprite: s32'bli403_03', 3
@@ -4950,7 +4950,7 @@ endSubroutine:
 beginState: s32'SpecialShotAdd_A'
     upon: (IMMEDIATE)
         callSubroutine: s32'SpecialShotAdd_Init'
-        Unknown2035: 4, s32'Add_A', 0
+        pawnAnimation: 4, s32'Add_A', 0
     endUpon: 
     sprite: s32'bli401_00', 2
     sprite: s32'bli401_01', 2
@@ -4976,7 +4976,7 @@ endState:
 beginState: s32'SpecialShotAdd_B'
     upon: (IMMEDIATE)
         callSubroutine: s32'SpecialShotAdd_Init'
-        Unknown2035: 4, s32'Add_B', 0
+        pawnAnimation: 4, s32'Add_B', 0
     endUpon: 
     sprite: s32'bli402_00', 2
     sprite: s32'bli402_01', 2
@@ -5001,7 +5001,7 @@ endState:
 beginState: s32'SpecialShotAdd_C'
     upon: (IMMEDIATE)
         callSubroutine: s32'SpecialShotAdd_Init'
-        Unknown2035: 4, s32'Add_C', 0
+        pawnAnimation: 4, s32'Add_C', 0
     endUpon: 
     sprite: s32'bli403_00', 2
     sprite: s32'bli403_01', 2
@@ -5063,7 +5063,7 @@ beginState: s32'AntiAir_A'
     damage: 300
     hitAirPushbackY: 22000
     hitAirPushbackX: 10000
-    sendSignalToAction: s32'BLI_404_Eff', 23
+    sendSignalToAction: s32'BLI_404_Eff', (SIGNAL_A)
     sprite: s32'bli404_06', 2
     sprite: s32'bli404_07', 3
     attackEndDelay: 
@@ -5130,7 +5130,7 @@ beginState: s32'AntiAir_B'
     cmnSfx: s32'SE_BTL_Jump'
     createObject: s32'BLI_404_B_Eff', (PLAYER)
     sprite: s32'bli405_04', 3
-    sendSignalToAction: s32'BLI_404_B_Eff', 23
+    sendSignalToAction: s32'BLI_404_B_Eff', (SIGNAL_A)
     haltMomentum: 1
     physicsXImpulse: 40000
     velocityXPercentEachFrame: 90
@@ -5206,7 +5206,7 @@ beginState: s32'AntiAir_B'
     else: 
         attackEndDelay: 
     endElse: 
-    sendSignalToAction: s32'BLI_405_Eff', 23
+    sendSignalToAction: s32'BLI_405_Eff', (SIGNAL_A)
     sprite: s32'bli405_17', 2
     attackEndDelay: 
     callSubroutine: s32'cmnMuteki_False'
@@ -5257,7 +5257,7 @@ beginState: s32'AntiAir_C'
     resetGravity: 
     hit: 
     damage: 400
-    sendSignalToAction: s32'BLI_404_Eff', 23
+    sendSignalToAction: s32'BLI_404_Eff', (SIGNAL_A)
     sprite: s32'bli404_06', 3
     sprite: s32'bli404_07', 3
     sprite: s32'bli406_00', 3
@@ -5337,7 +5337,7 @@ beginState: s32'AntiAir_C'
     else: 
         Unknown1302: 
     endElse: 
-    sendSignalToAction: s32'BLI_405_Eff', 23
+    sendSignalToAction: s32'BLI_405_Eff', (SIGNAL_A)
     sprite: s32'bli405_17', 4
     Unknown1302: 
     callSubroutine: s32'cmnMuteki_False'
@@ -5409,7 +5409,7 @@ beginState: s32'AntiAir_D'
     resetGravity: 
     hit: 
     attackHitPositionType: 0, 0, 0
-    sendSignalToAction: s32'BLI_404_Eff', 23
+    sendSignalToAction: s32'BLI_404_Eff', (SIGNAL_A)
     sprite: s32'bli404_06', 3
     sprite: s32'bli404_07', 3
     sprite: s32'bli406_00', 3
@@ -5505,7 +5505,7 @@ beginState: s32'AntiAir_D'
     else: 
         attackEndDelay: 
     endElse: 
-    sendSignalToAction: s32'BLI_405_Eff', 23
+    sendSignalToAction: s32'BLI_405_Eff', (SIGNAL_A)
     sprite: s32'bli405_17', 4
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
@@ -5650,7 +5650,7 @@ beginState: s32'Assault_A'
     sprite: s32'bli407_04', 3
     sprite: s32'bli407_07', 2
     physicsXImpulse: 50000
-    sendSignalToAction: s32'bli_407_AuraHand', 23
+    sendSignalToAction: s32'bli_407_AuraHand', (SIGNAL_A)
     createObject: s32'bli_407_TrailEffect', (PLAYER)
     characterSfx: s32'bli_08'
     cmnSfx: s32'SE_BTL_SwingBlowL'
@@ -5698,7 +5698,7 @@ beginState: s32'Assault_B'
     sprite: s32'bli407_06', 2
     sprite: s32'bli407_07', 3
     physicsXImpulse: 60000
-    sendSignalToAction: s32'bli_407_AuraHand', 23
+    sendSignalToAction: s32'bli_407_AuraHand', (SIGNAL_A)
     createObject: s32'bli_407_TrailEffect', (PLAYER)
     characterSfx: s32'bli_08'
     cmnSfx: s32'SE_BTL_SwingBlowL'
@@ -5744,7 +5744,7 @@ beginState: s32'Assault_C'
     sprite: s32'bli407_04', 2
     sprite: s32'bli407_07', 2
     physicsXImpulse: 60000
-    sendSignalToAction: s32'bli_407_AuraHand', 23
+    sendSignalToAction: s32'bli_407_AuraHand', (SIGNAL_A)
     createObject: s32'bli_407_TrailEffect', (PLAYER)
     characterSfx: s32'bli_08'
     cmnSfx: s32'SE_BTL_SwingBlowL'
@@ -5804,7 +5804,7 @@ beginState: s32'Assault_D'
     sprite: s32'bli407_06', 4
     sprite: s32'bli407_07', 3
     physicsXImpulse: 60000
-    sendSignalToAction: s32'bli_407_AuraHand', 23
+    sendSignalToAction: s32'bli_407_AuraHand', (SIGNAL_A)
     createObject: s32'bli_407_TrailEffect', (PLAYER)
     characterSfx: s32'bli_08'
     cmnSfx: s32'SE_BTL_SwingBlowL'
@@ -5975,7 +5975,7 @@ beginState: s32'Assault_Exe'
     Unknown538: 34
     Unknown540: 0, 115, 0
     sprite: s32'bli408_10', 3
-    sendSignalToAction: s32'bli_408_FirePillar', 23
+    sendSignalToAction: s32'bli_408_FirePillar', (SIGNAL_A)
     Unknown2278: 0, 180000
     exPointFReset: (PLAYER), 200000, 0
     createParticleWithArg2: s32'bg_GroundBurstZlink', (EX_POINT_F)
@@ -6078,7 +6078,7 @@ beginState: s32'Assault_Exe'
     Unknown538: 34
     Unknown540: 0, 115, 0
     sprite: s32'bli408_10', 3
-    sendSignalToAction: s32'bli_408_FirePillar', 23
+    sendSignalToAction: s32'bli_408_FirePillar', (SIGNAL_A)
     Unknown2278: 0, 180000
     exPointFReset: (PLAYER), 200000, 0
     createParticleWithArg2: s32'bg_GroundBurstZlink', (EX_POINT_F)
@@ -6790,7 +6790,7 @@ beginState: s32'Bli_Ougi'
     sprite: s32'bli430_06', 3
     sprite: s32'bli430_07', 3
     sprite: s32'bli430_08', 1
-    sendSignalToAction: s32'bli_430_StrikeChargeEff', 23
+    sendSignalToAction: s32'bli_430_StrikeChargeEff', (SIGNAL_A)
     sprite: s32'bli430_08', 2
     callSubroutine: s32'cmnOugi_WLDSTP_End'
     sprite: s32'bli430_09', 2
@@ -6871,7 +6871,7 @@ beginState: s32'Bli_Ougi'
         endIf: 
     endUpon: 
     Unknown412: 100, 2, 6, 0
-    sendSignalToAction: s32'bli_430_SordChargeEff', 23
+    sendSignalToAction: s32'bli_430_SordChargeEff', (SIGNAL_A)
     createObject: s32'bli_430_SordSpeed', (PLAYER)
     runOnObject: (PREVIOUS)
         addPositionX: -15009
@@ -6903,7 +6903,7 @@ beginState: s32'Bli_Ougi'
     Unknown1302: 
     velocityXPercent: 50
     deactivateObjectByName: s32'bli_430_AssultEff'
-    sendSignalToAction: s32'bli_430_SordSpeed', 23
+    sendSignalToAction: s32'bli_430_SordSpeed', (SIGNAL_A)
     Unknown412: 100, 2, 0, 0
     Unknown412: 100, 2, 1, 0
     Unknown413: -3, 2, 0, 0
@@ -6938,7 +6938,7 @@ beginState: s32'Bli_Ougi'
     clearUpon: (HIT)
     velocityXPercentEachFrame: 90
     deactivateObjectByName: s32'bli_430_AssultEff'
-    sendSignalToAction: s32'bli_430_SordSpeed', 23
+    sendSignalToAction: s32'bli_430_SordSpeed', (SIGNAL_A)
     sprite: s32'bli431_01', 3
     sprite: s32'bli431_02', 3
     sprite: s32'bli431_03', 3
@@ -7496,7 +7496,7 @@ beginState: s32'Bli_Kaihou'
         endIf: 
         ifOnFrame: Val(115)
             deactivateObjectByName: s32'bli_441_Spark'
-            sendSignalToAction: s32'BLI_441_Mcicle', 23
+            sendSignalToAction: s32'BLI_441_Mcicle', (SIGNAL_A)
             createObject: s32'BLI_441_FaceRay', (PLAYER)
             Unknown2583: 32000, 0, 3, 82000, 81400, 12700
         endIf: 
@@ -7544,7 +7544,7 @@ beginState: s32'Bli_Kaihou'
             Unknown2870: 0
         endIf: 
         ifOnFrame: Val(191)
-            sendSignalToAction: s32'bli_441_Laser', 23
+            sendSignalToAction: s32'bli_441_Laser', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(203)
             Unknown2583: 32000, 0, 3, 390000, 81400, 2800
@@ -7590,7 +7590,7 @@ beginState: s32'Bli_Kaihou'
         ifOnFrame: Val(271)
             deactivateObjectByName: s32'bli_441_Laser'
             deactivateObjectByName: s32'bli_441_Laser2'
-            sendSignalToAction: s32'BLI_441_BeamWhiteOut', 23
+            sendSignalToAction: s32'BLI_441_BeamWhiteOut', (SIGNAL_A)
             createObject: s32'BLI_441_Mcicle2', (PLAYER)
             createObject: s32'BLI_441_FinalBom', (PLAYER)
             createObject: s32'BLI_441_SordSpark', (PLAYER)

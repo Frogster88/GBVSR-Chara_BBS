@@ -8517,7 +8517,7 @@ beginState: s32'egn_Circle'
         setObjectHeight: 600
         setObjectDepth: 400
         callSubroutine: s32'Func_Color_LinkParticle'
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'egn_Circle_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -8546,7 +8546,7 @@ beginState: s32'egn_Circle90'
         setAngleY: 58800
         setAngle: 90000
         callSubroutine: s32'Func_Color_LinkParticle'
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'egn_Circle90_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -8575,7 +8575,7 @@ beginState: s32'egn_Circle90_Ang'
         setAngleY: 58800
         setAngle: 90000
         setLightColor: -8380161
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'egn_Circle90_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -8604,7 +8604,7 @@ beginState: s32'egn_Circle180'
         setObjectHeight: 600
         setObjectDepth: 300
         callSubroutine: s32'Func_Color_LinkParticle'
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'egn_Circle180_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -8631,7 +8631,7 @@ beginState: s32'egn_Circle45'
         callSubroutine: s32'Func_Color_LinkParticle'
         setObjectSize: 600
         setAngle: 45000
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'egn_Circle45_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -8704,7 +8704,7 @@ beginState: s32'ims_402_Eff'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'ims_402_Eff_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -8717,7 +8717,7 @@ beginState: s32'ims_402_Eff'
     linkParticle: s32'ims_402_slash02'
     beginLabel: s32'End'
     sprite: s32'null', 10
-    clearUpon: 49
+    clearUpon: (SIGNAL_NAME)
     linkParticle: s32'ims_402_slash03'
 endState: 
 
@@ -8729,7 +8729,7 @@ beginState: s32'iml_402_Thrust'
         stopLinkObject: 2
         linkObjectZ: 2
         flipDirection: 
-        upon: 23
+        upon: (SIGNAL_A)
             createObject: s32'iml_402_Thrust02', (PLAYER)
         endUpon: 
         upon: 24
@@ -8853,15 +8853,15 @@ beginState: s32'ArrowShot_Shot'
         Unknown2208: 0
         Unknown2209: 1
         Unknown2210: 1
-        upon: 45
-            clearUpon: 45
+        upon: (ON_DESTROY)
+            clearUpon: (ON_DESTROY)
             clearUpon: 86
             linkParticle: s32''
             haltMomentum: 1
             gotoLabelRequests: s32'End'
         endUpon: 
         upon: 86
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 86
             linkParticle: s32'imb_401_Arrow01_end'
             haltMomentum: 1
@@ -8943,7 +8943,7 @@ beginState: s32'imc_402_Eff'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'imc_402_Eff_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -8956,7 +8956,7 @@ beginState: s32'imc_402_Eff'
     linkParticle: s32'imc_402_slash02'
     beginLabel: s32'End'
     sprite: s32'null', 10
-    clearUpon: 49
+    clearUpon: (SIGNAL_NAME)
     linkParticle: s32'imc_402_slash03'
 endState: 
 
@@ -9015,7 +9015,7 @@ beginState: s32'gbs_400_Eff'
         stopLinkObject: 2
         linkObjectZ: 2
         linkObjectSize: 2
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     beginLabel: s32'Loop'
     sprite: s32'null', 3
@@ -9036,7 +9036,7 @@ beginState: s32'gbs_401_Eff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         setMaxActionTime: 160
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     beginLabel: s32'Loop'
     sprite: s32'null', 12
@@ -9116,7 +9116,7 @@ beginState: s32'gbm_MagicChant'
         stopLinkObject: 2
         linkObjectZ: 2
         linkObjectSize: 2
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'ims_402_Eff_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -9150,7 +9150,7 @@ beginState: s32'gbm_MagicShot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -9180,7 +9180,7 @@ beginState: s32'gbm_MagicShot'
     gotoLabel: s32'Loop'
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 13
     Unknown1950: 0x7270675F636D6E5F4D535F456E64000000000000000000000000000000000000
     haltMomentum: 1
@@ -9215,7 +9215,7 @@ beginState: s32'gbm_MagicWaveShot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -9256,7 +9256,7 @@ beginState: s32'gbm_MagicWaveShot'
     beginLabel: s32'Koware'
     sprite: s32'null', 60
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 13
     Unknown1950: 0x7270675F636D6E5F4D535F456E64000000000000000000000000000000000000
     haltMomentum: 1
@@ -9280,10 +9280,10 @@ beginState: s32'gbm_MagicBeam'
         initializeDestroy: 
         Unknown2212: 1
         Unknown2213: 1
-        upon: 45
+        upon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'gbm_MagicBeam_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'Koware'
@@ -9297,8 +9297,8 @@ beginState: s32'gbm_MagicBeam'
     hit: 
     beginLabel: s32'Koware'
     sprite: s32'null', 30
-    clearUpon: 45
-    clearUpon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
     Unknown1950: 0x67626D5F4D425F656E6400000000000000000000000000000000000000000000
     setLinkObjectDestroyOnStateChange: 0
     stopLinkObject: 0
@@ -9319,11 +9319,11 @@ beginState: s32'gbm_MagicStagnation'
         initializeDestroy: 
         Unknown2212: 1
         Unknown2213: 1
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'gbm_MagicStagnation_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'Koware'
@@ -9346,8 +9346,8 @@ beginState: s32'gbm_MagicStagnation'
     gotoLabel: s32'Loop'
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
-    clearUpon: 49
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_NAME)
     Unknown1950: 0x67626D5F6272656174685F656E64000000000000000000000000000000000000
     setLinkObjectDestroyOnStateChange: 0
     stopLinkObject: 0
@@ -9423,7 +9423,7 @@ beginState: s32'gbb_402_short_Eff'
         linkObjectZ: 2
         linkObjectSize: 2
         setMaxActionTime: 160
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     beginLabel: s32'Loop'
     sprite: s32'null', 12
@@ -9489,7 +9489,7 @@ beginState: s32'gbd_400_Eff'
         stopLinkObject: 2
         linkObjectZ: 2
         linkObjectSize: 2
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     beginLabel: s32'Loop'
     sprite: s32'null', 3
@@ -9510,7 +9510,7 @@ beginState: s32'gbd_401_Eff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         setMaxActionTime: 160
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     beginLabel: s32'Loop'
     sprite: s32'null', 12
@@ -9659,7 +9659,7 @@ beginState: s32'sli_Shot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -9689,7 +9689,7 @@ beginState: s32'sli_Shot'
     gotoLabel: s32'Loop'
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 13
     Unknown1950: 0x7270675F636D6E5F4D535F456E64000000000000000000000000000000000000
     haltMomentum: 1
@@ -9714,7 +9714,7 @@ beginState: s32'sli_CurveShot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -9751,7 +9751,7 @@ beginState: s32'sli_CurveShot'
     gotoLabel: s32'Loop'
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: (TOUCH_GROUND)
     clearUpon: 13
     Unknown1950: 0x7270675F636D6E5F4D535F456E64000000000000000000000000000000000000
@@ -9777,7 +9777,7 @@ beginState: s32'sli_MidShot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -9813,7 +9813,7 @@ beginState: s32'sli_MidShot'
     gotoLabel: s32'Loop'
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: (TOUCH_GROUND)
     clearUpon: 13
     Unknown1950: 0x7270675F636D6E5F4D535F456E64000000000000000000000000000000000000
@@ -9839,11 +9839,11 @@ beginState: s32'sln_LowShot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'sln_LowShot_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'Koware'
@@ -9860,7 +9860,7 @@ beginState: s32'sln_LowShot'
     hit: 
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 13
     Unknown1950: 0x736C6E5F3430345F6D6167696372696E675F656E640000000000000000000000
     haltMomentum: 1
@@ -9885,11 +9885,11 @@ beginState: s32'sls_LowShot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'sls_LowShot_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'Koware'
@@ -9906,7 +9906,7 @@ beginState: s32'sls_LowShot'
     hit: 
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 13
     Unknown1950: 0x736C735F3430345F6D6167696372696E675F656E640000000000000000000000
     haltMomentum: 1
@@ -9931,11 +9931,11 @@ beginState: s32'slg_LowShot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'slg_LowShot_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'Koware'
@@ -9952,7 +9952,7 @@ beginState: s32'slg_LowShot'
     hit: 
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 13
     Unknown1950: 0x736C675F3430345F6D6167696372696E675F656E640000000000000000000000
     haltMomentum: 1
@@ -9981,7 +9981,7 @@ beginState: s32'ang_MagicShot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -10016,7 +10016,7 @@ beginState: s32'ang_MagicShot'
     sprite: s32'gbm_shotcol', 10
     setObjectSize: 4000
     Unknown2294: 500
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: (TOUCH_GROUND)
     clearUpon: 13
     Unknown1950: 0x7270675F636D6E5F4D535F456E64000000000000000000000000000000000000
@@ -10026,7 +10026,7 @@ beginState: s32'ang_MagicShot'
     exitState: 
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: (TOUCH_GROUND)
     clearUpon: 13
     Unknown1950: 0x7270675F636D6E5F4D535F456E64000000000000000000000000000000000000
@@ -10040,7 +10040,7 @@ beginState: s32'ang_MagicBeam30'
         stopLinkObject: 2
         linkObjectZ: 2
         setLightColor: -8380161
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'ang_MagicBeam_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10059,8 +10059,8 @@ beginState: s32'ang_MagicBeam30'
     beginLabel: s32'End'
     sprite: s32'null', 30
     deactivateObjectByName: s32'ang_MagicBeam_Atk'
-    Unknown2035: 4, s32'ang_MagicBeam_End', 0
-    Unknown2035: 5, s32'ang_MagicBeam_End', 0
+    pawnAnimation: 4, s32'ang_MagicBeam_End', 0
+    pawnAnimation: 5, s32'ang_MagicBeam_End', 0
 endState: 
 
 beginState: s32'ang_MagicBeam60'
@@ -10070,7 +10070,7 @@ beginState: s32'ang_MagicBeam60'
         stopLinkObject: 2
         linkObjectZ: 2
         setLightColor: -8380161
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'ang_MagicBeam_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10089,8 +10089,8 @@ beginState: s32'ang_MagicBeam60'
     beginLabel: s32'End'
     sprite: s32'null', 30
     deactivateObjectByName: s32'ang_MagicBeam_Atk'
-    Unknown2035: 4, s32'ang_MagicBeam_End', 0
-    Unknown2035: 5, s32'ang_MagicBeam_End', 0
+    pawnAnimation: 4, s32'ang_MagicBeam_End', 0
+    pawnAnimation: 5, s32'ang_MagicBeam_End', 0
 endState: 
 
 beginState: s32'ang_MagicBeam_Eye'
@@ -10100,7 +10100,7 @@ beginState: s32'ang_MagicBeam_Eye'
         stopLinkObject: 2
         linkObjectZ: 2
         setLightColor: -8380161
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'ang_MagicBeam_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10124,7 +10124,7 @@ beginState: s32'ang_MagicBeam_Hontai'
         linkObjectZ: 2
         linkObjectAngle: 2
         setLightColor: -8380161
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'ang_MagicBeam_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10175,7 +10175,7 @@ beginState: s32'ang_Barrier'
         counterHitType: 1
         setObjectSize: 8000
         Unknown2294: 125
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'ang_Barrier_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10215,7 +10215,7 @@ beginState: s32'aan_MagicShot'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -10250,7 +10250,7 @@ beginState: s32'aan_MagicShot'
     sprite: s32'gbm_shotcol', 10
     setObjectSize: 4000
     Unknown2294: 500
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: (TOUCH_GROUND)
     clearUpon: 13
     Unknown1950: 0x7270675F636D6E5F4D535F456E64000000000000000000000000000000000000
@@ -10260,7 +10260,7 @@ beginState: s32'aan_MagicShot'
     exitState: 
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: (TOUCH_GROUND)
     clearUpon: 13
     Unknown1950: 0x7270675F636D6E5F4D535F456E64000000000000000000000000000000000000
@@ -10274,7 +10274,7 @@ beginState: s32'aan_MagicBeam30'
         stopLinkObject: 2
         linkObjectZ: 2
         setLightColor: -8380161
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'aan_MagicBeam_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10293,8 +10293,8 @@ beginState: s32'aan_MagicBeam30'
     beginLabel: s32'End'
     sprite: s32'null', 30
     deactivateObjectByName: s32'aan_MagicBeam_Atk'
-    Unknown2035: 4, s32'aan_MagicBeam_End', 0
-    Unknown2035: 5, s32'aan_MagicBeam_End', 0
+    pawnAnimation: 4, s32'aan_MagicBeam_End', 0
+    pawnAnimation: 5, s32'aan_MagicBeam_End', 0
 endState: 
 
 beginState: s32'aan_MagicBeam60'
@@ -10304,7 +10304,7 @@ beginState: s32'aan_MagicBeam60'
         stopLinkObject: 2
         linkObjectZ: 2
         setLightColor: -8380161
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'aan_MagicBeam_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10323,8 +10323,8 @@ beginState: s32'aan_MagicBeam60'
     beginLabel: s32'End'
     sprite: s32'null', 30
     deactivateObjectByName: s32'aan_MagicBeam_Atk'
-    Unknown2035: 4, s32'aan_MagicBeam_End', 0
-    Unknown2035: 5, s32'aan_MagicBeam_End', 0
+    pawnAnimation: 4, s32'aan_MagicBeam_End', 0
+    pawnAnimation: 5, s32'aan_MagicBeam_End', 0
 endState: 
 
 beginState: s32'aan_MagicBeam_Eye'
@@ -10334,7 +10334,7 @@ beginState: s32'aan_MagicBeam_Eye'
         stopLinkObject: 2
         linkObjectZ: 2
         setLightColor: -8380161
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'aan_MagicBeam_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10358,7 +10358,7 @@ beginState: s32'aan_MagicBeam_Hontai'
         linkObjectZ: 2
         linkObjectAngle: 2
         setLightColor: -8380161
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'aan_MagicBeam_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10409,7 +10409,7 @@ beginState: s32'aan_Barrier'
         counterHitType: 1
         setObjectSize: 8000
         Unknown2294: 125
-        upon: 49
+        upon: (SIGNAL_NAME)
             checkSignalName: s32'aan_Barrier_End'
             if: Mem(Tmp)
                 gotoLabelRequests: s32'End'
@@ -10448,8 +10448,8 @@ beginState: s32'ctp_405_Catapila'
     exPointFReset: (PLAYER), 75000, 200000
     createArgAngle: 0, 7000
     createParticleWithArg2: s32'ctp_405_shockRing', (EX_POINT_F)
-    sendSignalToAction: s32'ctp_405_Beam', 23
-    sendSignalToAction: s32'ctp_405_Eye', 23
+    sendSignalToAction: s32'ctp_405_Beam', (SIGNAL_A)
+    sendSignalToAction: s32'ctp_405_Eye', (SIGNAL_A)
     exPointFReset: (PLAYER), -20000, 160000
     createObject: s32'ctp_beam_Atk', (EX_POINT_F)
     sprite: s32'null', 30
@@ -10464,7 +10464,7 @@ beginState: s32'ctp_405_Beam'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setAngle: 7000
-        gotoLabelUpon: 23, s32'AtkLoop'
+        gotoLabelUpon: (SIGNAL_A), s32'AtkLoop'
         gotoLabelUpon: 24, s32'End'
         setZOffset: -15
     endUpon: 
@@ -10492,7 +10492,7 @@ beginState: s32'ctp_405_Eye'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'AtkLoop'
+        gotoLabelUpon: (SIGNAL_A), s32'AtkLoop'
         gotoLabelUpon: 24, s32'End'
         setZOffset: -15
     endUpon: 
@@ -10570,8 +10570,8 @@ beginState: s32'ctp_405_Catapila_Tojo'
     sprite: s32'null', 10
     exPointFReset: (PLAYER), 75000, 200000
     createArgAngle: 0, 7000
-    sendSignalToAction: s32'ctp_405_Beam_Tojo', 23
-    sendSignalToAction: s32'ctp_405_Eye_Tojo', 23
+    sendSignalToAction: s32'ctp_405_Beam_Tojo', (SIGNAL_A)
+    sendSignalToAction: s32'ctp_405_Eye_Tojo', (SIGNAL_A)
     sprite: s32'null', 30
     sendSignalToAction: s32'ctp_405_Beam_Tojo', 24
     sendSignalToAction: s32'ctp_405_Eye_Tojo', 24
@@ -10582,7 +10582,7 @@ beginState: s32'ctp_405_Beam_Tojo'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setAngle: 7000
-        gotoLabelUpon: 23, s32'AtkLoop'
+        gotoLabelUpon: (SIGNAL_A), s32'AtkLoop'
         gotoLabelUpon: 24, s32'End'
         setZOffset: -15
         ignoreSuperFreezeFromAlly: 1
@@ -10610,7 +10610,7 @@ beginState: s32'ctp_405_Eye_Tojo'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'AtkLoop'
+        gotoLabelUpon: (SIGNAL_A), s32'AtkLoop'
         gotoLabelUpon: 24, s32'End'
         setZOffset: -15
         ignoreSuperFreezeFromAlly: 1
@@ -10659,7 +10659,7 @@ beginState: s32'ctp_406_Catapila'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -10841,7 +10841,7 @@ endState:
 beginSubroutine: s32'IMSActions'
     callSubroutine: s32'IMSInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'IMS_StandLoopBegin'
@@ -11392,7 +11392,7 @@ beginState: s32'IMS_DamageAir'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -11652,7 +11652,7 @@ beginState: s32'IMS_Atk_JumpGiri'
         counterHitType: 1
         gotoLabelUpon: 4, s32'Top'
         upon: (TOUCH_GROUND)
-            Unknown2035: 4, s32'ims_402_Eff_End', 0
+            pawnAnimation: 4, s32'ims_402_Eff_End', 0
             haltMomentum: 1
             landingEffect: 100, 1, 1
             setPushboxHeight: 280000
@@ -11907,7 +11907,7 @@ endState:
 beginSubroutine: s32'IMLActions'
     callSubroutine: s32'IMLInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Walk'
         if: Mem(Tmp)
             jumpToState: s32'IML_Walk'
@@ -12387,7 +12387,7 @@ beginState: s32'IML_DamageAir'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -12603,7 +12603,7 @@ beginState: s32'IML_Atk_MultiAssault'
     sprite: s32'iml402_06', 3
     hit: 
     atkAngle: 20
-    sendSignalToAction: s32'iml_402_Thrust', 23
+    sendSignalToAction: s32'iml_402_Thrust', (SIGNAL_A)
     privateSE: s32'SE_RPG_IML_Attack_M'
     sprite: s32'iml402_07', 3
     hit: 
@@ -12652,7 +12652,7 @@ beginState: s32'IML_Atk_MultiAssault2'
     sprite: s32'iml402_06', 3
     hit: 
     atkAngle: 20
-    sendSignalToAction: s32'iml_402_Thrust', 23
+    sendSignalToAction: s32'iml_402_Thrust', (SIGNAL_A)
     privateSE: s32'SE_RPG_IML_Attack_M'
     sprite: s32'iml402_07', 3
     hit: 
@@ -12701,7 +12701,7 @@ beginState: s32'IML_Atk_MultiAssault3'
     sprite: s32'iml402_06', 3
     hit: 
     atkAngle: 20
-    sendSignalToAction: s32'iml_402_Thrust', 23
+    sendSignalToAction: s32'iml_402_Thrust', (SIGNAL_A)
     privateSE: s32'SE_RPG_IML_Attack_M'
     sprite: s32'iml402_07', 3
     hit: 
@@ -12750,7 +12750,7 @@ beginState: s32'IML_Atk_MultiAssault4'
     sprite: s32'iml402_06', 3
     hit: 
     atkAngle: 20
-    sendSignalToAction: s32'iml_402_Thrust', 23
+    sendSignalToAction: s32'iml_402_Thrust', (SIGNAL_A)
     privateSE: s32'SE_RPG_IML_Attack_M'
     sprite: s32'iml402_07', 3
     hit: 
@@ -12912,7 +12912,7 @@ endState:
 beginSubroutine: s32'IMBActions'
     callSubroutine: s32'IMBInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Walk'
         if: Mem(Tmp)
             jumpToState: s32'IMB_Walk'
@@ -13293,7 +13293,7 @@ beginState: s32'IMB_DamageAir'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -14213,7 +14213,7 @@ endState:
 beginSubroutine: s32'IMCActions'
     callSubroutine: s32'IMCInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'IMC_StandLoopBegin'
@@ -14627,7 +14627,7 @@ beginState: s32'IMC_DamageAir'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -14886,7 +14886,7 @@ beginState: s32'IMC_Atk_JumpGiri'
         counterHitType: 1
         gotoLabelUpon: 4, s32'Top'
         upon: (TOUCH_GROUND)
-            Unknown2035: 4, s32'imc_402_Eff_End', 0
+            pawnAnimation: 4, s32'imc_402_Eff_End', 0
             haltMomentum: 1
             landingEffect: 100, 1, 1
             setPushboxHeight: 280000
@@ -15141,7 +15141,7 @@ endState:
 beginSubroutine: s32'IMCBOSSActions'
     callSubroutine: s32'IMCBOSSInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'IMCBOSS_StandLoopBegin'
@@ -15717,7 +15717,7 @@ beginState: s32'IMCBOSS_DamageAir'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -16043,7 +16043,7 @@ beginState: s32'IMCBOSS_Atk_JumpGiri'
         counterHitType: 1
         gotoLabelUpon: 4, s32'Top'
         upon: (TOUCH_GROUND)
-            Unknown2035: 4, s32'imc_402_Eff_End', 0
+            pawnAnimation: 4, s32'imc_402_Eff_End', 0
             haltMomentum: 1
             landingEffect: 100, 1, 1
             setPushboxHeight: 280000
@@ -16298,7 +16298,7 @@ endState:
 beginSubroutine: s32'GBSActions'
     callSubroutine: s32'GBSInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'GBS_StandLoopBegin'
@@ -16784,7 +16784,7 @@ beginState: s32'GBS_DamageAir'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -16911,8 +16911,8 @@ beginState: s32'GBS_Atk_JumpGiri'
         counterHitType: 1
         gotoLabelUpon: 4, s32'Top'
         upon: (TOUCH_GROUND)
-            sendSignalToAction: s32'gbs_400_Eff', 23
-            Unknown2035: 4, s32'ims_402_Eff_End', 0
+            sendSignalToAction: s32'gbs_400_Eff', (SIGNAL_A)
+            pawnAnimation: 4, s32'ims_402_Eff_End', 0
             haltMomentum: 1
             landingEffect: 100, 1, 0
             privateSE: s32'SE_RPG_GBx_Landing'
@@ -17003,7 +17003,7 @@ beginState: s32'GBS_Atk_Sliding'
     sprite: s32'gbs401_08', 3
     sprite: s32'gbs401_09', 3
     haltMomentum: 1
-    sendSignalToAction: s32'gbs_401_Eff', 23
+    sendSignalToAction: s32'gbs_401_Eff', (SIGNAL_A)
     sprite: s32'gbs401_10', 3
     sprite: s32'gbs401_11', 3
     sprite: s32'gbs401_12', 3
@@ -17025,7 +17025,7 @@ beginState: s32'GBS_Atk_AntiAir'
         atkAngle: 55
         counterHitType: 1
         upon: (TOUCH_GROUND)
-            Unknown2035: 4, s32'ims_402_Eff_End', 0
+            pawnAnimation: 4, s32'ims_402_Eff_End', 0
             haltMomentum: 1
             landingEffect: 100, 1, 0
             privateSE: s32'SE_RPG_GBx_Landing'
@@ -17194,7 +17194,7 @@ beginState: s32'GBS_Atk_Throw2Exe'
         atkAngle: 60
         counterHitType: 1
         upon: (TOUCH_GROUND)
-            Unknown2035: 4, s32'ims_402_Eff_End', 0
+            pawnAnimation: 4, s32'ims_402_Eff_End', 0
             haltMomentum: 1
             landingEffect: 100, 1, 0
             privateSE: s32'SE_RPG_GBx_Landing'
@@ -17246,7 +17246,7 @@ endState:
 beginSubroutine: s32'GBBActions'
     callSubroutine: s32'GBBInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'GBB_StandLoopBegin'
@@ -17534,7 +17534,7 @@ beginState: s32'GBB_DamageAir'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -17832,7 +17832,7 @@ beginState: s32'GBB_Atk_ShieldBash'
     setPushboxWidth: -1
     velocityXPercent: 50
     velocityXPercentEachFrame: 90
-    sendSignalToAction: s32'gbb_402_short_Eff', 23
+    sendSignalToAction: s32'gbb_402_short_Eff', (SIGNAL_A)
     sprite: s32'gbb402_06', 4
     sprite: s32'gbb402_07', 4
     sprite: s32'gbb402_08', 4
@@ -17847,7 +17847,7 @@ endState:
 beginSubroutine: s32'GBMActions'
     callSubroutine: s32'GBMInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'GBM_StandLoopBegin'
@@ -18282,7 +18282,7 @@ beginState: s32'GBM_DamageAir'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -18350,7 +18350,7 @@ beginState: s32'GBM_Atk_MagicAtkBuff'
     sprite: s32'gbm400_13', 3
     sprite: s32'gbm400_14', 3
     sprite: s32'gbm400_15', 3
-    Unknown2035: 4, s32'gbm_MagicChant_End', 0
+    pawnAnimation: 4, s32'gbm_MagicChant_End', 0
     sprite: s32'gbm400_16', 3
     sprite: s32'gbm400_17', 3
     sprite: s32'keep', 2147483647
@@ -18397,7 +18397,7 @@ beginState: s32'GBM_Atk_MagicDefBuff'
     sprite: s32'gbm400_13', 3
     sprite: s32'gbm400_14', 3
     sprite: s32'gbm400_15', 3
-    Unknown2035: 4, s32'gbm_MagicChant_End', 0
+    pawnAnimation: 4, s32'gbm_MagicChant_End', 0
     sprite: s32'gbm400_16', 3
     sprite: s32'gbm400_17', 3
     sprite: s32'keep', 2147483647
@@ -18444,7 +18444,7 @@ beginState: s32'GBM_Atk_MagicAgiBuff'
     sprite: s32'gbm400_13', 3
     sprite: s32'gbm400_14', 3
     sprite: s32'gbm400_15', 3
-    Unknown2035: 4, s32'gbm_MagicChant_End', 0
+    pawnAnimation: 4, s32'gbm_MagicChant_End', 0
     sprite: s32'gbm400_16', 3
     sprite: s32'gbm400_17', 3
     sprite: s32'keep', 2147483647
@@ -18491,7 +18491,7 @@ beginState: s32'GBM_Atk_MagicHeal'
     sprite: s32'gbm400_13', 3
     sprite: s32'gbm400_14', 3
     sprite: s32'gbm400_15', 3
-    Unknown2035: 4, s32'gbm_MagicChant_End', 0
+    pawnAnimation: 4, s32'gbm_MagicChant_End', 0
     sprite: s32'gbm400_16', 3
     sprite: s32'gbm400_17', 3
     sprite: s32'keep', 2147483647
@@ -18525,7 +18525,7 @@ beginState: s32'GBM_Atk_MagicShot'
     sprite: s32'gbm400_14', 3
     sprite: s32'gbm400_15', 3
     sprite: s32'gbm400_01', 3
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'gbm400_02', 3
     sprite: s32'gbm400_03', 3
     sprite: s32'gbm400_04', 3
@@ -18573,7 +18573,7 @@ beginState: s32'GBM_Atk_MagicWaveShot'
     sprite: s32'gbm400_14', 3
     sprite: s32'gbm400_15', 3
     sprite: s32'gbm400_01', 3
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'gbm400_02', 3
     sprite: s32'gbm400_03', 3
     sprite: s32'gbm400_04', 3
@@ -18623,8 +18623,8 @@ beginState: s32'GBM_Atk_MagicBeam'
     sprite: s32'gbm400_14', 3
     sprite: s32'gbm400_15', 3
     sprite: s32'gbm400_01', 3
-    Unknown2035: 4, s32'egn_Circle90_End', 0
-    Unknown2035: 5, s32'gbm_MagicBeam_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 5, s32'gbm_MagicBeam_End', 0
     sprite: s32'gbm400_02', 3
     sprite: s32'gbm400_03', 3
     sprite: s32'gbm400_04', 3
@@ -18690,8 +18690,8 @@ beginState: s32'GBM_Atk_MagicStagnation'
     sprite: s32'gbm400_14', 3
     sprite: s32'gbm400_15', 3
     sprite: s32'gbm400_01', 3
-    Unknown2035: 4, s32'egn_Circle90_End', 0
-    Unknown2035: 5, s32'gbm_MagicStagnation_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 5, s32'gbm_MagicStagnation_End', 0
     sprite: s32'gbm400_02', 3
     sprite: s32'gbm400_03', 3
     sprite: s32'gbm400_04', 3
@@ -18715,7 +18715,7 @@ endState:
 beginSubroutine: s32'GBDActions'
     callSubroutine: s32'GBDInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'GBD_StandLoopBegin'
@@ -19218,7 +19218,7 @@ beginState: s32'GBD_DamageAir'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -19346,8 +19346,8 @@ beginState: s32'GBD_Atk_JumpGiri'
         counterHitType: 1
         gotoLabelUpon: 4, s32'Top'
         upon: (TOUCH_GROUND)
-            sendSignalToAction: s32'gbd_400_Eff', 23
-            Unknown2035: 4, s32'ims_402_Eff_End', 0
+            sendSignalToAction: s32'gbd_400_Eff', (SIGNAL_A)
+            pawnAnimation: 4, s32'ims_402_Eff_End', 0
             haltMomentum: 1
             landingEffect: 100, 1, 0
             privateSE: s32'SE_RPG_GBx_Landing'
@@ -19437,7 +19437,7 @@ beginState: s32'GBD_Atk_Sliding'
     sprite: s32'gbd401_08', 3
     sprite: s32'gbd401_09', 3
     haltMomentum: 1
-    sendSignalToAction: s32'gbd_401_Eff', 23
+    sendSignalToAction: s32'gbd_401_Eff', (SIGNAL_A)
     sprite: s32'gbd401_10', 3
     sprite: s32'gbd401_11', 3
     sprite: s32'gbd401_12', 3
@@ -19459,7 +19459,7 @@ beginState: s32'GBD_Atk_AntiAir'
         atkAngle: 55
         counterHitType: 1
         upon: (TOUCH_GROUND)
-            Unknown2035: 4, s32'ims_402_Eff_End', 0
+            pawnAnimation: 4, s32'ims_402_Eff_End', 0
             haltMomentum: 1
             landingEffect: 100, 1, 0
             privateSE: s32'SE_RPG_GBx_Landing'
@@ -19695,7 +19695,7 @@ beginState: s32'GBD_Atk_Throw2Exe'
         atkAngle: 60
         counterHitType: 1
         upon: (TOUCH_GROUND)
-            Unknown2035: 4, s32'ims_402_Eff_End', 0
+            pawnAnimation: 4, s32'ims_402_Eff_End', 0
             haltMomentum: 1
             landingEffect: 100, 1, 0
             privateSE: s32'SE_RPG_GBx_Landing'
@@ -19748,7 +19748,7 @@ endState:
 beginSubroutine: s32'SLNActions'
     callSubroutine: s32'SLNInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Walk'
         if: Mem(Tmp)
             jumpToState: s32'SLN_Walk'
@@ -20165,7 +20165,7 @@ beginState: s32'SLN_Damage'
     createParticle: s32'rpg_cmn_mobDie', (HEAD_3D)
     createParticle: s32'rpg_cmn_mobDie', (CHEST_3D)
     createParticle: s32'rpg_cmn_mobDie', (PELVIS_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -20275,7 +20275,7 @@ beginState: s32'SLN_Damage2'
     createParticle: s32'rpg_cmn_mobDie', (HEAD_3D)
     createParticle: s32'rpg_cmn_mobDie', (CHEST_3D)
     createParticle: s32'rpg_cmn_mobDie', (PELVIS_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -20505,7 +20505,7 @@ beginState: s32'SLN_Atk_Shot'
     sprite: s32'sln400_06', 3
     sprite: s32'sln400_07', 20
     sprite: s32'sln400_07', 10
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'sln400_08', 3
     sprite: s32'sln400_09', 3
     sprite: s32'sln400_10', 3
@@ -20532,7 +20532,7 @@ beginState: s32'SLN_Atk_CurveShot'
     sprite: s32'sln400_06', 3
     sprite: s32'sln400_07', 20
     sprite: s32'sln400_07', 10
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'sln400_08', 3
     sprite: s32'sln400_09', 3
     sprite: s32'sln400_10', 3
@@ -20559,7 +20559,7 @@ beginState: s32'SLN_Atk_MidShot'
     sprite: s32'sln400_06', 3
     sprite: s32'sln400_07', 20
     sprite: s32'sln400_07', 10
-    Unknown2035: 4, s32'egn_Circle180_End', 0
+    pawnAnimation: 4, s32'egn_Circle180_End', 0
     sprite: s32'sln400_08', 3
     sprite: s32'sln400_09', 3
     sprite: s32'sln400_10', 3
@@ -20587,8 +20587,8 @@ beginState: s32'SLN_Atk_LowShot'
     sprite: s32'sln400_06', 3
     sprite: s32'sln400_07', 40
     sprite: s32'sln400_07', 10
-    Unknown2035: 4, s32'egn_Circle_End', 0
-    Unknown2035: 5, s32'sln_LowShot_End', 0
+    pawnAnimation: 4, s32'egn_Circle_End', 0
+    pawnAnimation: 5, s32'sln_LowShot_End', 0
     sprite: s32'sln400_08', 3
     sprite: s32'sln400_09', 3
     sprite: s32'sln400_10', 3
@@ -20745,7 +20745,7 @@ endState:
 beginSubroutine: s32'SLSActions'
     callSubroutine: s32'SLSInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Walk'
         if: Mem(Tmp)
             jumpToState: s32'SLS_Walk'
@@ -21164,7 +21164,7 @@ beginState: s32'SLS_Damage'
     createParticle: s32'rpg_cmn_mobDie', (HEAD_3D)
     createParticle: s32'rpg_cmn_mobDie', (CHEST_3D)
     createParticle: s32'rpg_cmn_mobDie', (PELVIS_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -21393,7 +21393,7 @@ beginState: s32'SLS_Atk_Shot'
     sprite: s32'sls400_06', 3
     sprite: s32'sls400_07', 20
     sprite: s32'sls400_07', 10
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'sls400_08', 3
     sprite: s32'sls400_09', 3
     sprite: s32'sls400_10', 3
@@ -21420,7 +21420,7 @@ beginState: s32'SLS_Atk_CurveShot'
     sprite: s32'sls400_06', 3
     sprite: s32'sls400_07', 20
     sprite: s32'sls400_07', 10
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'sls400_08', 3
     sprite: s32'sls400_09', 3
     sprite: s32'sls400_10', 3
@@ -21447,7 +21447,7 @@ beginState: s32'SLS_Atk_MidShot'
     sprite: s32'sls400_06', 3
     sprite: s32'sls400_07', 20
     sprite: s32'sls400_07', 10
-    Unknown2035: 4, s32'egn_Circle180_End', 0
+    pawnAnimation: 4, s32'egn_Circle180_End', 0
     sprite: s32'sls400_08', 3
     sprite: s32'sls400_09', 3
     sprite: s32'sls400_10', 3
@@ -21475,8 +21475,8 @@ beginState: s32'SLS_Atk_LowShot'
     sprite: s32'sls400_06', 3
     sprite: s32'sls400_07', 40
     sprite: s32'sls400_07', 10
-    Unknown2035: 4, s32'egn_Circle_End', 0
-    Unknown2035: 5, s32'sls_LowShot_End', 0
+    pawnAnimation: 4, s32'egn_Circle_End', 0
+    pawnAnimation: 5, s32'sls_LowShot_End', 0
     sprite: s32'sls400_08', 3
     sprite: s32'sls400_09', 3
     sprite: s32'sls400_10', 3
@@ -21633,7 +21633,7 @@ endState:
 beginSubroutine: s32'SLGActions'
     callSubroutine: s32'SLGInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Walk'
         if: Mem(Tmp)
             jumpToState: s32'SLG_Walk'
@@ -22052,7 +22052,7 @@ beginState: s32'SLG_Damage'
     createParticle: s32'rpg_cmn_mobDie', (HEAD_3D)
     createParticle: s32'rpg_cmn_mobDie', (CHEST_3D)
     createParticle: s32'rpg_cmn_mobDie', (PELVIS_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -22281,7 +22281,7 @@ beginState: s32'SLG_Atk_Shot'
     sprite: s32'slg400_06', 3
     sprite: s32'slg400_07', 20
     sprite: s32'slg400_07', 10
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'slg400_08', 3
     sprite: s32'slg400_09', 3
     sprite: s32'slg400_10', 3
@@ -22308,7 +22308,7 @@ beginState: s32'SLG_Atk_CurveShot'
     sprite: s32'slg400_06', 3
     sprite: s32'slg400_07', 20
     sprite: s32'slg400_07', 10
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'slg400_08', 3
     sprite: s32'slg400_09', 3
     sprite: s32'slg400_10', 3
@@ -22335,7 +22335,7 @@ beginState: s32'SLG_Atk_MidShot'
     sprite: s32'slg400_06', 3
     sprite: s32'slg400_07', 20
     sprite: s32'slg400_07', 10
-    Unknown2035: 4, s32'egn_Circle180_End', 0
+    pawnAnimation: 4, s32'egn_Circle180_End', 0
     sprite: s32'slg400_08', 3
     sprite: s32'slg400_09', 3
     sprite: s32'slg400_10', 3
@@ -22363,8 +22363,8 @@ beginState: s32'SLG_Atk_LowShot'
     sprite: s32'slg400_06', 3
     sprite: s32'slg400_07', 40
     sprite: s32'slg400_07', 10
-    Unknown2035: 4, s32'egn_Circle_End', 0
-    Unknown2035: 5, s32'slg_LowShot_End', 0
+    pawnAnimation: 4, s32'egn_Circle_End', 0
+    pawnAnimation: 5, s32'slg_LowShot_End', 0
     sprite: s32'slg400_08', 3
     sprite: s32'slg400_09', 3
     sprite: s32'slg400_10', 3
@@ -22521,7 +22521,7 @@ endState:
 beginSubroutine: s32'WONActions'
     callSubroutine: s32'WONInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Walk'
         if: Mem(Tmp)
             jumpToState: s32'WON_Walk'
@@ -22927,7 +22927,7 @@ beginState: s32'WON_Damage'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -23471,7 +23471,7 @@ endState:
 beginSubroutine: s32'WOSActions'
     callSubroutine: s32'WOSInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Walk'
         if: Mem(Tmp)
             jumpToState: s32'WOS_Walk'
@@ -23877,7 +23877,7 @@ beginState: s32'WOS_Damage'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -24421,7 +24421,7 @@ endState:
 beginSubroutine: s32'WORActions'
     callSubroutine: s32'WORInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Walk'
         if: Mem(Tmp)
             jumpToState: s32'WOR_Walk'
@@ -24854,7 +24854,7 @@ beginState: s32'WOR_Damage'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (CALF_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -25399,7 +25399,7 @@ endState:
 beginSubroutine: s32'ANGActions'
     callSubroutine: s32'ANGInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'ANG_Stand'
@@ -25933,7 +25933,7 @@ beginState: s32'ANG_Damage'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -26040,7 +26040,7 @@ beginState: s32'ANG_Atk_Shot'
     sprite: s32'ang401_11', 2
     sprite: s32'ang401_10', 2
     sprite: s32'ang401_11', 2
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'ang401_10', 2
     sprite: s32'ang401_11', 2
     sprite: s32'ang401_10', 2
@@ -26088,7 +26088,7 @@ beginState: s32'ANG_Atk_Beam30'
     sprite: s32'ang401_11', 2
     sprite: s32'ang401_10', 2
     sprite: s32'ang401_11', 2
-    Unknown2035: 4, s32'ang_MagicBeam_End', 0
+    pawnAnimation: 4, s32'ang_MagicBeam_End', 0
     sprite: s32'ang401_10', 2
     sprite: s32'ang401_11', 2
     sprite: s32'ang401_10', 2
@@ -26134,7 +26134,7 @@ beginState: s32'ANG_Atk_Beam60'
     sprite: s32'ang401_11', 2
     sprite: s32'ang401_10', 2
     sprite: s32'ang401_11', 2
-    Unknown2035: 4, s32'ang_MagicBeam_End', 0
+    pawnAnimation: 4, s32'ang_MagicBeam_End', 0
     sprite: s32'ang401_10', 2
     sprite: s32'ang401_11', 2
     sprite: s32'ang401_10', 2
@@ -26180,7 +26180,7 @@ beginState: s32'ANG_Atk_Barrier'
     sprite: s32'ang401_11', 2
     sprite: s32'ang401_10', 2
     sprite: s32'ang401_11', 2
-    Unknown2035: 4, s32'ang_Barrier_End', 0
+    pawnAnimation: 4, s32'ang_Barrier_End', 0
     sprite: s32'ang401_10', 2
     sprite: s32'ang401_11', 2
     sprite: s32'ang401_10', 2
@@ -26233,7 +26233,7 @@ endState:
 beginSubroutine: s32'AANActions'
     callSubroutine: s32'AANInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'AAN_Stand'
@@ -26701,7 +26701,7 @@ beginState: s32'AAN_Damage'
     createParticle: s32'rpg_cmn_mobDie', (HAND_R_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_L_3D)
     createParticle: s32'rpg_cmn_mobDie', (FOOT_R_3D)
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)
@@ -26808,7 +26808,7 @@ beginState: s32'AAN_Atk_Shot'
     sprite: s32'aan401_11', 2
     sprite: s32'aan401_10', 2
     sprite: s32'aan401_11', 2
-    Unknown2035: 4, s32'egn_Circle90_End', 0
+    pawnAnimation: 4, s32'egn_Circle90_End', 0
     sprite: s32'aan401_10', 2
     sprite: s32'aan401_11', 2
     sprite: s32'aan401_10', 2
@@ -26856,7 +26856,7 @@ beginState: s32'AAN_Atk_Beam30'
     sprite: s32'aan401_11', 2
     sprite: s32'aan401_10', 2
     sprite: s32'aan401_11', 2
-    Unknown2035: 4, s32'aan_MagicBeam_End', 0
+    pawnAnimation: 4, s32'aan_MagicBeam_End', 0
     sprite: s32'aan401_10', 2
     sprite: s32'aan401_11', 2
     sprite: s32'aan401_10', 2
@@ -26902,7 +26902,7 @@ beginState: s32'AAN_Atk_Beam60'
     sprite: s32'aan401_11', 2
     sprite: s32'aan401_10', 2
     sprite: s32'aan401_11', 2
-    Unknown2035: 4, s32'aan_MagicBeam_End', 0
+    pawnAnimation: 4, s32'aan_MagicBeam_End', 0
     sprite: s32'aan401_10', 2
     sprite: s32'aan401_11', 2
     sprite: s32'aan401_10', 2
@@ -26948,7 +26948,7 @@ beginState: s32'AAN_Atk_Barrier'
     sprite: s32'aan401_11', 2
     sprite: s32'aan401_10', 2
     sprite: s32'aan401_11', 2
-    Unknown2035: 4, s32'aan_Barrier_End', 0
+    pawnAnimation: 4, s32'aan_Barrier_End', 0
     sprite: s32'aan401_10', 2
     sprite: s32'aan401_11', 2
     sprite: s32'aan401_10', 2
@@ -27001,7 +27001,7 @@ endState:
 beginSubroutine: s32'CTPActions'
     callSubroutine: s32'CTPInit'
     haltMomentum: 1
-    upon: 49
+    upon: (SIGNAL_NAME)
         checkSignalName: s32'Stand'
         if: Mem(Tmp)
             jumpToState: s32'CTP_Stand'
@@ -27367,7 +27367,7 @@ beginState: s32'CTP_Damage'
     setLightRedColor: 400
     setLightGreenColor: 400
     setLightBlueColor: 400
-    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', 23
+    sendSignalToAction: s32'rpg_GetTreasureBoxBoss', (SIGNAL_A)
     Unknown2719: 
     sprite: s32'keep', 2147483647
     deactivateObjectById: (SELF)

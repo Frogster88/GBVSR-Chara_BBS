@@ -204,8 +204,8 @@ beginState: s32'blz_253_Loop'
         setAngleY: 299600
         setAngle: 17600
         setObjectSize: 1500
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
             setLinkObjectDestroyOnStateChange: 0
             stopLinkObject: 0
@@ -226,9 +226,9 @@ beginState: s32'blz_206_Warp_Extinction'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
         linkObjectZ: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
         upon: 24
             gotoLabelRequests: s32'End2'
@@ -253,9 +253,9 @@ beginState: s32'blz_206_Warp_Enter'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
         linkObjectZ: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'null', 100
@@ -275,9 +275,9 @@ beginState: s32'blz_206_Warp_EyeAfterImage'
         linkObjectPosition: 2
         linkObjectZ: 3
         setObjectSize: 500
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
         upon: 24
             gotoLabelRequests: s32'End2'
@@ -1110,14 +1110,14 @@ beginState: s32'blz_400_Dagger_Root'
         Unknown2209: 1
         Unknown2210: 1
         Unknown2257: 1
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 24
             haltMomentum: 1
             gotoLabelRequests: s32'Koware'
         endUpon: 
         addMoveForceDisableFlag: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'AT'
         endUpon: 
         upon: 24
@@ -1181,7 +1181,7 @@ beginState: s32'blz_400_Dagger_Root'
     setLinkObjectDestroyOnDamage: 0
     setLinkObjectDestroyOnStateChange: 0
     sendSignalToAction: s32'blz_400_Dagger', 24
-    sendSignalToAction: s32'blz_400_Light', 23
+    sendSignalToAction: s32'blz_400_Light', (SIGNAL_A)
     hit: 
     ifOperation: (IS_EQUAL), Mem(ActReg2), Val(0)
         linkParticle: s32'blz_400_dagger_loop01'
@@ -1233,7 +1233,7 @@ beginState: s32'blz_400_Dagger_Root'
     beginLabel: s32'Koware'
     sprite: s32'null', 10
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkParticle: s32''
     Unknown2203: 4
     ifOperation: (IS_EQUAL), Mem(ActReg2), Val(0)
@@ -1245,7 +1245,7 @@ beginState: s32'blz_400_Dagger_Root'
         createParticleWithArg2: s32'blz_400_dagger_end02', (PLAYER)
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        Unknown1921: 0, 10
+        skillCooldown: 0, 10
     endIf: 
     Unknown1923: 0
 endState: 
@@ -1258,8 +1258,8 @@ beginState: s32'blz_400_Dagger'
         linkObjectAngle: 2
         stopLinkObject: 2
         linkObjectSize: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Tame'
         endUpon: 
         upon: 24
@@ -1268,7 +1268,7 @@ beginState: s32'blz_400_Dagger'
         endUpon: 
         setEventTrigger: 13, 3
         upon: 13
-            upon: 45
+            upon: (ON_DESTROY)
                 gotoLabelRequests: s32'koware'
             endUpon: 
         endUpon: 
@@ -1308,8 +1308,8 @@ beginState: s32'blz_400_Light'
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
         stopLinkObject: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             setLinkObjectDestroyOnDamage: 0
         endUpon: 
     endUpon: 
@@ -1443,7 +1443,7 @@ beginState: s32'blz_401'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         Unknown2210: 99
     endIf: 
-    upon: 45
+    upon: (ON_DESTROY)
         clearUpon: 24
         clearUpon: 25
         haltMomentum: 1
@@ -1454,9 +1454,9 @@ beginState: s32'blz_401'
         gotoLabelRequests: s32'Koware'
     endUpon: 
     addMoveForceDisableFlag: 1
-    upon: 23
-        clearUpon: 23
-        sendSignalToAction: s32'blz_401_Dagger_Root', 23
+    upon: (SIGNAL_A)
+        clearUpon: (SIGNAL_A)
+        sendSignalToAction: s32'blz_401_Dagger_Root', (SIGNAL_A)
         gotoLabelRequests: s32'Shot'
     endUpon: 
     upon: 24
@@ -1697,14 +1697,14 @@ beginState: s32'blz_401'
     beginLabel: s32'Koware'
     sprite: s32'null', 10
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     sendSignalToAction: s32'blz_401_Dagger_Root', 25
     sendSignalToAction: s32'blz_400_Dagger', 25
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        Unknown1921: 0, 10
+        skillCooldown: 0, 10
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         if: Mem(417)
@@ -1712,7 +1712,7 @@ beginState: s32'blz_401'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 180
+            skillCooldown: 0, 180
         endElse: 
     endIf: 
     Unknown1923: 0
@@ -1728,9 +1728,9 @@ beginState: s32'blz_401_Dagger_Root'
         Unknown1727: 90000
         setObjectSize: 800
         setMaxActionTime: 200
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'AT'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
         upon: 25
             gotoLabelRequests: s32'Koware'
@@ -1738,7 +1738,7 @@ beginState: s32'blz_401_Dagger_Root'
             clearUpon: 25
             haltMomentum: 1
         endUpon: 
-        upon: 45
+        upon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
             clearUpon: 24
             haltMomentum: 1
@@ -1787,7 +1787,7 @@ beginState: s32'blz_401_Dagger_Root'
     sprite: s32'keep', 6
     setLinkObjectDestroyOnDamage: 0
     sendSignalToAction: s32'blz_400_Dagger', 24
-    sendSignalToAction: s32'blz_400_Light', 23
+    sendSignalToAction: s32'blz_400_Light', (SIGNAL_A)
     beginLabel: s32'Loop'
     sprite: s32'keep', 8
     ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(1)
@@ -1821,9 +1821,9 @@ beginState: s32'blz_402_Barrier'
         setObjectSize: 650
         Unknown2327: 1
         setLightRedColor: 1000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'null', 5
@@ -1836,7 +1836,7 @@ beginState: s32'blz_402_Barrier'
     beginLabel: s32'End'
     sprite: s32'null', 3
     setLightRedColorSpeed: -66
-    sendSignalToAction: s32'blz_402_Shield_Normal', 23
+    sendSignalToAction: s32'blz_402_Shield_Normal', (SIGNAL_A)
     sprite: s32'null', 27
     setLinkObjectDestroyOnStateChange: 0
 endState: 
@@ -1849,9 +1849,9 @@ beginState: s32'blz_402_Shield_Normal'
         linkObjectPosition: 2
         linkParticle: s32'blz_402_Barrier_Loop2'
         ignoreFinishStop: 1
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
         setMaxActionTime: 300
     endUpon: 
@@ -1876,7 +1876,7 @@ beginState: s32'blz_402_Shield_Boss'
         linkObjectPosition: 2
         setObjectSize: 1000
         linkParticle: s32'blz_402_Barrier_Loop2'
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
     endUpon: 
     sprite: s32'null', 15
     setAngleY: 50000
@@ -1996,7 +1996,7 @@ beginState: s32'blz_403_ChargeEff'
         addPositionX: 17011
         addPositionY: 302372
         Unknown1727: 158343
-        gotoLabelUpon: 23, s32'ChargeEnd'
+        gotoLabelUpon: (SIGNAL_A), s32'ChargeEnd'
     endUpon: 
     sprite: s32'null', 1
     linkParticle: s32'blz_403_ChargeAura_Loop'
@@ -2019,8 +2019,8 @@ beginState: s32'blz_403_SpeedEff'
         linkObjectPosition: 3
         linkObjectZ: 3
         stopLinkObject: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Landing'
             setLinkObjectDestroyOnStateChange: 0
             setLinkObjectDestroyOnDamage: 0
@@ -2049,8 +2049,8 @@ beginState: s32'blz_403_EyeRay'
         linkObjectPosition: 3
         linkObjectZ: 3
         stopLinkObject: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             setPositionX: 233911
             setPositionY: -16426
             setDepth: 70000
@@ -2459,8 +2459,8 @@ beginState: s32'blz_406_BlackHole'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
         linkParticle: s32'blz_408_CoreLoop'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Suction'
         endUpon: 
         upon: 24
@@ -2508,8 +2508,8 @@ beginState: s32'blz_406_BlackHoleD'
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
         linkParticle: s32'blz_408_CoreLoop'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Suction'
         endUpon: 
         upon: 24
@@ -2663,9 +2663,9 @@ beginState: s32'blz_421_Barrier_Eff'
         Unknown1727: -50000
         setObjectSize: 800
         setLightRedColor: 1000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'null', 5
@@ -2679,7 +2679,7 @@ beginState: s32'blz_421_Barrier_Eff'
     beginLabel: s32'End'
     sprite: s32'null', 3
     setLightRedColorSpeed: -66
-    sendSignalToAction: s32'blz_421_Shield', 23
+    sendSignalToAction: s32'blz_421_Shield', (SIGNAL_A)
     sprite: s32'null', 27
     setLinkObjectDestroyOnStateChange: 0
 endState: 
@@ -2693,7 +2693,7 @@ beginState: s32'blz_421_Shield'
         setObjectSize: 1150
         Unknown1727: 10000
         linkParticle: s32'blz_402_Barrier_Loop2'
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
     endUpon: 
     sprite: s32'null', 9
     setAngleY: 0
@@ -2775,13 +2775,13 @@ beginState: s32'blz_430'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectPosition: 2
-        upon: 23
+        upon: (SIGNAL_A)
             deactivateObjectByName: s32'blz_430_CS_Sphere'
             stopLinkObject: 3
             setLinkObjectDestroyOnStateChange: 0
             linkObjectPosition: 0
             ignoreSuperFreeze: 1
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setPositionX: 206935
@@ -2829,8 +2829,8 @@ beginState: s32'blz_430_2'
         setLinkObjectDestroyOnStateChange: 3
         addPositionX: 300000
         addPositionY: 250000
-        upon: 23
-            sendSignalToAction: s32'blz_430_MC', 23
+        upon: (SIGNAL_A)
+            sendSignalToAction: s32'blz_430_MC', (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'null', 4
@@ -2849,8 +2849,8 @@ beginState: s32'blz_430_MC'
         linkObjectPosition: 2
         linkObjectAngle: 2
         setObjectSize: 1100
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
             linkObjectPosition: 0
             stopLinkObject: 0
@@ -2888,7 +2888,7 @@ beginState: s32'blz_430_Drill'
         upon: (TOUCH_GROUND)
             gotoLabelRequests: s32'Koware'
         endUpon: 
-        upon: 45
+        upon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
     endUpon: 
@@ -2914,16 +2914,16 @@ beginState: s32'blz_430_Drill'
     sprite: s32'null', 60
     clearUpon: 35
     clearUpon: (TOUCH_GROUND)
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkParticle: s32'blz_430_drill01_end'
     haltMomentum: 1
     setLightColor: 0
     setLightRedColorSpeed: 0
-    sendSignalToAction: s32'blz_430_WindRing01', 23
-    sendSignalToAction: s32'blz_430_WindRing02', 23
-    sendSignalToAction: s32'blz_430_Drill02', 23
-    sendSignalToAction: s32'blz_430_Drill03', 23
-    sendSignalToAction: s32'blz_430_MC', 23
+    sendSignalToAction: s32'blz_430_WindRing01', (SIGNAL_A)
+    sendSignalToAction: s32'blz_430_WindRing02', (SIGNAL_A)
+    sendSignalToAction: s32'blz_430_Drill02', (SIGNAL_A)
+    sendSignalToAction: s32'blz_430_Drill03', (SIGNAL_A)
+    sendSignalToAction: s32'blz_430_MC', (SIGNAL_A)
 endState: 
 
 beginState: s32'blz_430_Drill_Atk'
@@ -2993,7 +2993,7 @@ beginState: s32'blz_430_Drill_Atk'
     numberOfHits: 1
     Unknown2210: 1
     Unknown2257: 1
-    upon: 45
+    upon: (ON_DESTROY)
         gotoLabelRequests: s32'Koware'
     endUpon: 
     endUpon: 
@@ -3014,8 +3014,8 @@ beginState: s32'blz_430_Drill02'
         linkObjectPosition: 2
         stopLinkObject: 2
         linkObjectAngle: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3033,8 +3033,8 @@ beginState: s32'blz_430_Drill03'
         linkObjectPosition: 2
         stopLinkObject: 2
         linkObjectAngle: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3054,13 +3054,13 @@ beginState: s32'blz_430_WindRing01'
         randomAddPositionX: 20000, -20000
         randomAddPositionY: 20000, -20000
         createObject: s32'blz_430_Nokosi', (PLAYER)
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setEventTrigger: 13, 24
         upon: 13
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'null', 36
@@ -3079,13 +3079,13 @@ beginState: s32'blz_430_WindRing02'
         randomAddPositionX: 20000, -20000
         randomAddPositionY: 20000, -20000
         createObject: s32'blz_430_Nokosi', (PLAYER)
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setEventTrigger: 13, 24
         upon: 13
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'null', 36
@@ -3374,9 +3374,9 @@ beginState: s32'blz_431_Sphere'
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
         stopLinkObject: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'2nd'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
         setEventTrigger: 13, 22
         upon: 13
@@ -3531,7 +3531,7 @@ beginState: s32'blz_432'
         Unknown2050: 0
     endRunOnObject: 
     sprite: s32'null', 60
-    sendSignalToAction: s32'blz_432_Sphere', 23
+    sendSignalToAction: s32'blz_432_Sphere', (SIGNAL_A)
 endState: 
 
 beginState: s32'blz_432_Sphere'
@@ -3540,9 +3540,9 @@ beginState: s32'blz_432_Sphere'
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
         stopLinkObject: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'2nd'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
         setEventTrigger: 13, 38
         upon: 13
@@ -4355,8 +4355,8 @@ beginState: s32'blz_433_BlackSphere'
         stopLinkObject: 2
         linkObjectPosition: 2
         linkParticle: s32'blz_433_BlackSphere01'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4431,7 +4431,7 @@ beginState: s32'blz_440'
         upon: 35
             linkObjectPosition: 0
         endUpon: 
-        upon: 47
+        upon: (AFTER_EXIT)
             linkObjectPosition: 0
         endUpon: 
     endUpon: 
@@ -4497,7 +4497,7 @@ beginState: s32'blz_440_Spike01'
         ignoreSuperFreezeFromAlly: 1
         hideByCutscene: 1
         Unknown1727: -20000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Pre'
         endUpon: 
     endUpon: 
@@ -4515,14 +4515,14 @@ beginState: s32'blz_440_Spike01'
     linkParticle: s32'blz_440_spike01_loop'
     requestShake: 3000, 4000
     privateSE: s32'blz_00'
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     upon: 35
         Unknown2268: 0, 900
         createParticleWithArg2: s32'blz_440_spike_koware01', (PLAYER)
     endUpon: 
     sprite: s32'null', 52
     linkObjectPosition: 0
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     upon: 35
         Unknown2268: 0, 900
         createParticleWithArg2: s32'blz_440_spike_koware02', (PLAYER)
@@ -4541,7 +4541,7 @@ beginState: s32'blz_440_Spike02'
         hideByCutscene: 1
         addPositionX: -20000
         Unknown1727: -20000
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Pre'
         endUpon: 
     endUpon: 
@@ -4559,14 +4559,14 @@ beginState: s32'blz_440_Spike02'
     linkParticle: s32'blz_440_spike02_loop'
     requestShake: 3000, 4000
     privateSE: s32'blz_00'
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     upon: 35
         Unknown2268: 0, 900
         createParticleWithArg2: s32'blz_440_spike_koware01', (PLAYER)
     endUpon: 
     sprite: s32'null', 52
     linkObjectPosition: 0
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     upon: 35
         Unknown2268: 0, 900
         createParticleWithArg2: s32'blz_440_spike_koware02', (PLAYER)
@@ -4597,7 +4597,7 @@ beginState: s32'blz_440_KaihouDmy'
         upon: 35
             linkObjectPosition: 0
         endUpon: 
-        upon: 47
+        upon: (AFTER_EXIT)
             linkObjectPosition: 0
         endUpon: 
     endUpon: 
@@ -4664,7 +4664,7 @@ beginState: s32'blz_440_KaihouShot'
     Unknown310: 12, 2, 2, 47, 0, 3
     attackEndDelay: 
     endIf: 
-    upon: 23
+    upon: (SIGNAL_A)
         Unknown310: 9, 3, 2, 45, 0, 0
         attackThroughArmor: 0
     endIf: 
@@ -4722,7 +4722,7 @@ beginState: s32'blz_440_KaihouShot'
     endUpon: 
     upon: (BEFORE_EXIT)
         if: Mem(ActReg2)
-            Unknown2035: 3, s32'KaihouLock', 0
+            pawnAnimation: 3, s32'KaihouLock', 0
         endIf: 
     endUpon: 
     endUpon: 

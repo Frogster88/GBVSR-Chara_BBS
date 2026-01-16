@@ -103,8 +103,8 @@ beginState: s32'YUE_215_FireSlash_Eff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Start'
         endUpon: 
         upon: 24
@@ -192,9 +192,9 @@ beginState: s32'yue_253_Slash'
         Unknown1727: -8103
         setAngleX: 207000
         setAngleY: 300800
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Start'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
         upon: 24
             gotoLabelRequests: s32'keep'
@@ -233,9 +233,9 @@ beginState: s32'yue_253_Slash2'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
         addPositionX: -43924
         addPositionY: 273586
@@ -473,7 +473,7 @@ beginState: s32'YUE_AtemiEff'
         setPositionX: 88899
         setPositionY: 297728
         setDepth: 173120
-        upon: 23
+        upon: (SIGNAL_A)
             linkObjectPosition: 0
             stopLinkObject: 0
             ignoreSuperFreezeFromAlly: 1
@@ -643,8 +643,8 @@ beginState: s32'yue_400_FireThrust'
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
         upon: 24
@@ -735,8 +735,8 @@ beginState: s32'yue_400_FireThrust++'
             setPositionY: 223848
             setDepth: 30789
         endRunOnObject: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
         upon: 24
@@ -838,7 +838,7 @@ beginState: s32'yue_401_RotateFox'
     ignoreFinishStop: 0
     beginLabel: s32'End'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkObjectPosition: 0
     Unknown409: 50, 1
     Unknown410: -4, 1
@@ -864,7 +864,7 @@ beginState: s32'yue_401_RotateFox_SP'
     sprite: s32'null', 10
     ignoreFinishStop: 0
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkObjectPosition: 0
     Unknown409: 50, 1
     Unknown410: -4, 1
@@ -909,7 +909,7 @@ beginState: s32'yue_402_slash_Eff++'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         flipDirection: 
-        gotoLabelUpon: 23, s32'Landing'
+        gotoLabelUpon: (SIGNAL_A), s32'Landing'
         storeValue: Mem(ActReg0), Val(1)
         upon: 24
             clearUpon: 24
@@ -920,7 +920,7 @@ beginState: s32'yue_402_slash_Eff++'
     linkParticle: s32'yue_402_slashSP_00'
     beginLabel: s32'Landing'
     sprite: s32'null', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'yue_402_slashSP_01'
     sprite: s32'null', 2
     setSpriteTime: 4, Mem(ActReg0)
@@ -982,8 +982,8 @@ beginState: s32'yue_404_RotateSlash'
         stopLinkObject: 2
         linkObjectPosition: 2
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'ScrewStart'
         endUpon: 
         upon: 24
@@ -1027,8 +1027,8 @@ beginState: s32'yue_404_RotateSlashSubSpawn'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1049,8 +1049,8 @@ beginState: s32'yue_404_RotateSlashSubSpawn_SP'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1098,8 +1098,8 @@ beginState: s32'yue_404_RotateSlashSub_SP'
         setAngleY: 64800
         setAngle: 54400
         setObjectSize: 1300
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             stopLinkObject: 0
         endUpon: 
     endUpon: 
@@ -1186,7 +1186,7 @@ beginState: s32'yue_404_Slash_SP'
         setObjectSize: 800
     endUpon: 
     sprite: s32'null', 15
-    sendSignalToAction: s32'yue_404_RotateSlashSub_SP', 23
+    sendSignalToAction: s32'yue_404_RotateSlashSub_SP', (SIGNAL_A)
     linkParticle: s32'yue_404_SlashSP'
     setPositionX: -57946
     setPositionY: 201337
@@ -1335,8 +1335,8 @@ beginState: s32'yue_430_RotateSlash'
         stopLinkObject: 2
         linkObjectPosition: 2
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'ScrewStart'
         endUpon: 
         upon: 24
@@ -1383,8 +1383,8 @@ beginState: s32'yue_430_RotateSlashSubSpawn'
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
         flipDirection: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1772,7 +1772,7 @@ beginState: s32'yue_440_SuikomiObj'
         runOnObject: (ENEMY)
             Unknown2254: 80
         endRunOnObject: 
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
     endUpon: 
     sprite: s32'null', 10
     isObjectActive: (ENEMY)
@@ -1847,8 +1847,8 @@ beginState: s32'yue_440_RotateFox'
         upon: 13
             ignoreFinishStop: 0
         endUpon: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1883,8 +1883,8 @@ beginState: s32'yue_440_RotateParticle'
         setObjectSize: 900
         setObjectHeight: 1000
         ignoreSuperFreeze: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'SpawnEnd'
         endUpon: 
     endUpon: 
@@ -2418,8 +2418,8 @@ beginState: s32'yue_441_Moon'
         Unknown1727: -3084640
         setObjectSize: 500
         setAngleX: 33200
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2467,9 +2467,9 @@ beginState: s32'yue_441_WhiteOut'
             Unknown409: 0, 1
             Unknown410: 0, 1
         endUpon: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'null', 20
@@ -2542,9 +2542,9 @@ beginState: s32'yue_442_WhiteOut'
             Unknown409: 0, 1
             Unknown410: 0, 1
         endUpon: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'FadeOut'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
         upon: 24
             gotoLabelRequests: s32'FadeIn'
@@ -2622,7 +2622,7 @@ beginState: s32'yue_800_ryuhai'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'Move'
+        gotoLabelUpon: (SIGNAL_A), s32'Move'
     endUpon: 
     sprite: s32'null', 120
     linkParticle: s32'yue_800_Ryuhai'

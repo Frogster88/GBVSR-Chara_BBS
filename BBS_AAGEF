@@ -38,7 +38,7 @@ beginState: s32'aag_206_BiteEff'
         linkParticle: s32'aag_207_slash2'
         flipDirection: 
         setObjectSize: 1200
-        upon: 23
+        upon: (SIGNAL_A)
             Unknown2050: 1
         endUpon: 
     endUpon: 
@@ -82,8 +82,8 @@ endState:
 beginState: s32'AAS207_Add'
     upon: (IMMEDIATE)
         callSubroutine: s32'Mesh_Weapon_Float_SP'
-        upon: 23
-            sendSignalToAction: s32'aag_207_BiteEff', 23
+        upon: (SIGNAL_A)
+            sendSignalToAction: s32'aag_207_BiteEff', (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'aas207_04', 1
@@ -110,7 +110,7 @@ beginState: s32'aag_207_BiteEff'
         linkParticle: s32'aag_207_slash2'
         flipDirection: 
         setObjectSize: 1200
-        upon: 23
+        upon: (SIGNAL_A)
             Unknown2050: 1
         endUpon: 
     endUpon: 
@@ -172,7 +172,7 @@ beginState: s32'AAS208'
     upon: (IMMEDIATE)
         callSubroutine: s32'Mesh_Weapon_Float_SP'
         gotoLabelUpon: 24, s32'PreAtk'
-        gotoLabelUpon: 32, s32'Finish'
+        gotoLabelUpon: (SIGNAL_B), s32'Finish'
     endUpon: 
     sprite: s32'aas208_01', 3
     sprite: s32'aas208_02', 3
@@ -192,7 +192,7 @@ beginState: s32'AAS208'
     gotoLabel: s32'Loop'
     beginLabel: s32'Finish'
     sprite: s32'aas208_10', 30
-    sendSignalToAction: s32'aag_208_Screw', 23
+    sendSignalToAction: s32'aag_208_Screw', (SIGNAL_A)
 endState: 
 
 beginState: s32'aag_208_Screw'
@@ -208,8 +208,8 @@ beginState: s32'aag_208_Screw'
         else: 
             linkParticle: s32'aag_208_scew'
         endElse: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             linkObjectPosition: 0
             stopLinkObject: 0
             gotoLabelRequests: s32'End'
@@ -279,7 +279,7 @@ beginState: s32'aag_232_Bite'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
         linkParticle: s32'aag_232_bite'
-        upon: 23
+        upon: (SIGNAL_A)
             Unknown2050: 1
         endUpon: 
     endUpon: 
@@ -595,7 +595,7 @@ beginState: s32'gmz350'
         swapMeshSet: s32'GMZ'
         addPositionX: 160000
         Unknown1727: -100000
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
         upon: 36
             modifyVar: (ADD), Mem(ActReg0), Val(1)
             if: Mem(Hikitsugi0)
@@ -639,7 +639,7 @@ beginState: s32'aas350'
         swapMeshSet: s32'Weapon_Float'
         addPositionX: 160000
         Unknown1727: -100000
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'aas350_00', 2
     createObject: s32'aag_350_EntryHole', (PLAYER)
@@ -716,8 +716,8 @@ beginState: s32'aag_400_WaterBurst'
         setPositionX: -145978
         setPositionY: 234110
         setDepth: 2214
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -772,8 +772,8 @@ beginState: s32'aag_402_KickEff'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'aag_402_screw'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Landing'
         endUpon: 
     endUpon: 
@@ -801,8 +801,8 @@ beginState: s32'aag_403_MouceWater'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'aag_403_water'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Landing'
         endUpon: 
     endUpon: 
@@ -862,7 +862,7 @@ beginState: s32'aag_404_Beam'
         setPositionX: 0
         setPositionY: 335173
         setDepth: 62014
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     beginLabel: s32'Loop'
     sprite: s32'null', 3
@@ -887,7 +887,7 @@ beginState: s32'aag_404_BeamEx'
         setPositionX: 0
         setPositionY: 335173
         setDepth: 62014
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     beginLabel: s32'Loop'
     sprite: s32'null', 3
@@ -912,7 +912,7 @@ beginState: s32'aag_404_EnshutuCamera'
             Unknown2582: 
             haikuEnd: 
         endUpon: 
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'null', 40
     Unknown2875: 10
@@ -1011,7 +1011,7 @@ beginState: s32'AAS405_Zanku'
         Unknown2257: 1
         Unknown2212: 1
         Unknown2213: 1
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 37
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -1059,7 +1059,7 @@ beginState: s32'AAS405_Zanku'
     sprite: s32'null', 30
     linkParticle: s32'aag_405_shotEnd'
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: (FRAME_STEP)
     haltMomentum: 1
     deactivateObjectByName: s32'aag_405_NksEff'
@@ -1186,8 +1186,8 @@ beginState: s32'UrsulaBite_Shot'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
-            clearUpon: 45
+        upon: (ON_DESTROY)
+            clearUpon: (ON_DESTROY)
             storeValue: Mem(ActReg2), Val(1)
             if: Mem(ActReg0)
                 gotoLabelRequests: s32'KowareEx'
@@ -1198,13 +1198,13 @@ beginState: s32'UrsulaBite_Shot'
         endUpon: 
         upon: (BEFORE_EXIT)
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-                Unknown1921: 0, 20
+                skillCooldown: 0, 20
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-                Unknown1921: 0, 20
+                skillCooldown: 0, 20
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-                Unknown1921: 0, 420
+                skillCooldown: 0, 420
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
                 if: Mem(417)
@@ -1212,7 +1212,7 @@ beginState: s32'UrsulaBite_Shot'
                     storeValue: Mem(287), Mem(Tmp)
                 endIf: 
                 else: 
-                    Unknown1921: 0, 180
+                    skillCooldown: 0, 180
                 endElse: 
             endIf: 
             Unknown1923: 0
@@ -1284,16 +1284,16 @@ beginState: s32'UrsulaBite_Shot'
     gotoLabel: s32'End'
     beginLabel: s32'End'
     sprite: s32'aas409_05', 2
-    sendSignalToAction: s32'aag_409_WaterHoleEff', 23
+    sendSignalToAction: s32'aag_409_WaterHoleEff', (SIGNAL_A)
     clearUpon: (BEFORE_EXIT)
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         if: Mem(417)
@@ -1301,7 +1301,7 @@ beginState: s32'UrsulaBite_Shot'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 180
+            skillCooldown: 0, 180
         endElse: 
     endIf: 
     Unknown1923: 0
@@ -1318,8 +1318,8 @@ beginState: s32'aag_409_WaterHoleEff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 2
         linkParticle: s32'aag_409_hole'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1351,8 +1351,8 @@ beginState: s32'aag_409_WaterHoleDEff'
         setLinkObjectDestroyOnDamage: 2
         linkObjectZ: 3
         linkParticle: s32'aag_409_holeD'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1436,8 +1436,8 @@ beginState: s32'aag_406_Hire'
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
         linkParticle: s32'aag_406_hire'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Atk'
         endUpon: 
         upon: 26
@@ -1612,8 +1612,8 @@ beginState: s32'aag_407_Hire'
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
         linkParticle: s32'aag_406_hire'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Atk1'
         endUpon: 
         upon: 24
@@ -1758,13 +1758,13 @@ beginState: s32'gmz400_Attck'
         numberOfHits: 1
         Unknown2204: 1
         invulnForce: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: (FRAME_STEP)
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 35
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             haltMomentum: 1
             linkPawnWithAnimation: s32'GMZ', s32''
             beginMeshSet: s32'GMZ_damage'
@@ -1810,11 +1810,11 @@ beginState: s32'gmz400_Attck'
             addMoveForceDisableFlag: 1
             Unknown1793: 4, 31
             clearUpon: (FRAME_STEP)
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 35
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
-            clearUpon: 32
+            clearUpon: (SIGNAL_B)
             if: Mem(BattleDoing)
                 gotoLabelRequests: s32'End'
             endIf: 
@@ -1837,8 +1837,8 @@ beginState: s32'gmz400_Attck'
             endElse: 
         endIf: 
     endUpon: 
-    upon: 23
-        clearUpon: 23
+    upon: (SIGNAL_A)
+        clearUpon: (SIGNAL_A)
         storeValue: Mem(ActReg6), Val(1)
         upon: 12
             checkCurrentStateName: (PLAYER), s32'NmlAtk5D'
@@ -1857,13 +1857,13 @@ beginState: s32'gmz400_Attck'
             storeValue: Mem(ActReg1), Val(1)
         endIf: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         clearUpon: (FRAME_STEP)
-        clearUpon: 45
+        clearUpon: (ON_DESTROY)
         clearUpon: 35
-        clearUpon: 23
+        clearUpon: (SIGNAL_A)
         clearUpon: 24
-        clearUpon: 32
+        clearUpon: (SIGNAL_B)
         deactivateObjectById: (SELF)
         createObject: s32'aag_408_RetrunEff', (PLAYER)
         runOnObject: (PREVIOUS)
@@ -1877,11 +1877,11 @@ beginState: s32'gmz400_Attck'
     endUpon: 
     upon: 35
         clearUpon: (FRAME_STEP)
-        clearUpon: 45
+        clearUpon: (ON_DESTROY)
         clearUpon: 35
-        clearUpon: 23
+        clearUpon: (SIGNAL_A)
         clearUpon: 24
-        clearUpon: 32
+        clearUpon: (SIGNAL_B)
         deactivateObjectById: (SELF)
         if: Mem(IsEnemysCutScene)
             missionMissName: s32'TrialMiss_aag2'
@@ -2053,9 +2053,9 @@ beginState: s32'gmz400_Attck'
     endIf: 
     addMoveForceDisableFlag: 1
     clearUpon: 24
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     invulnForce: 1
     Unknown2329: 3, 23, 100, 3, 100
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(-1)
@@ -2243,19 +2243,19 @@ beginState: s32'AAS430_Shot'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 37
             gotoLabelRequests: s32'Koware'
         endUpon: 
         Unknown1909: 100000
         upon: (TOUCH_GROUND)
             clearUpon: 37
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         upon: 13
             clearUpon: 37
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         upon: 35
@@ -2274,7 +2274,7 @@ beginState: s32'AAS430_Shot'
     createObject: s32'aag_408_CannonBomb', (PLAYER)
     deactivateObjectByName: s32'aag_408_CannonNksEff'
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     haltMomentum: 1
     Unknown2050: 0
     sprite: s32'aas430_00ex', 3
@@ -2975,8 +2975,8 @@ beginState: s32'aag_440_TronadoEff'
         setAngleX: 9600
         setAngleY: 30800
         setAngle: 50400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3205,8 +3205,8 @@ beginState: s32'aag_441cs_Charge'
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
         linkParticle: s32'aag_441_charge'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Move'
         endUpon: 
     endUpon: 
@@ -3273,8 +3273,8 @@ beginState: s32'aag_441cs_TornadoBG2'
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
         linkParticle: s32'aag_441_trnadoBG2'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Change'
         endUpon: 
     endUpon: 
@@ -3381,8 +3381,8 @@ beginState: s32'aag_442_Ray2'
         setAngleX: 322400
         setAngleY: 286400
         setAngle: 345200
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Change'
         endUpon: 
     endUpon: 
@@ -4399,7 +4399,7 @@ beginState: s32'aag_Icon'
     endIf: 
     endIf: 
     endUpon: 
-    upon: 23
+    upon: (SIGNAL_A)
         linkParticle: s32'aag_IconB'
         callSubroutine: s32'Func_IconDisp'
     endUpon: 
@@ -4410,7 +4410,7 @@ beginState: s32'aag_Icon'
         Unknown409: 100, 4
         callSubroutine: s32'Func_IconDisp'
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         linkParticle: s32'aag_IconC'
         callSubroutine: s32'Func_IconDisp'
     endUpon: 

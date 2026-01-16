@@ -3095,18 +3095,18 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'Slash_Genji_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Slash_Genji_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Slash_Genji_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
-        Unknown1921: 2, 420
+        skillCooldown: 0, 420
+        skillCooldown: 2, 420
         Unknown1923: 0
         Unknown1923: 2
     endIf: 
@@ -3127,18 +3127,18 @@ beginSubroutine: s32'AbilityCoolDown_N'
     endIf: 
     checkCurrentStateName: (SELF), s32'Slash_Kagura_A'
     if: Mem(Tmp)
-        Unknown1921: 4, 20
+        skillCooldown: 4, 20
         Unknown1923: 4
     endIf: 
     checkCurrentStateName: (SELF), s32'Slash_Kagura_B'
     if: Mem(Tmp)
-        Unknown1921: 6, 20
+        skillCooldown: 6, 20
         Unknown1923: 6
     endIf: 
     checkCurrentStateName: (SELF), s32'Slash_Kagura_C'
     if: Mem(Tmp)
-        Unknown1921: 4, 420
-        Unknown1921: 6, 420
+        skillCooldown: 4, 420
+        skillCooldown: 6, 420
         Unknown1923: 4
         Unknown1923: 6
     endIf: 
@@ -3159,17 +3159,17 @@ beginSubroutine: s32'AbilityCoolDown_N'
     endIf: 
     checkCurrentStateName: (SELF), s32'Air_Assault_Kagura_A'
     if: Mem(Tmp)
-        Unknown1921: 7, 20
+        skillCooldown: 7, 20
         Unknown1923: 7
     endIf: 
     checkCurrentStateName: (SELF), s32'Air_Assault_Kagura_B'
     if: Mem(Tmp)
-        Unknown1921: 7, 20
+        skillCooldown: 7, 20
         Unknown1923: 7
     endIf: 
     checkCurrentStateName: (SELF), s32'Air_Assault_Kagura_C'
     if: Mem(Tmp)
-        Unknown1921: 7, 420
+        skillCooldown: 7, 420
         Unknown1923: 7
     endIf: 
     checkCurrentStateName: (SELF), s32'Air_Assault_Kagura_D'
@@ -3186,17 +3186,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_Genji_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_Genji_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 240
+        skillCooldown: 1, 240
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_Genji_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 600
+        skillCooldown: 1, 600
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_Genji_D'
@@ -3210,17 +3210,17 @@ beginSubroutine: s32'AbilityCoolDown_6'
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_Kagura_A'
     if: Mem(Tmp)
-        Unknown1921: 5, 20
+        skillCooldown: 5, 20
         Unknown1923: 5
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_Kagura_B'
     if: Mem(Tmp)
-        Unknown1921: 5, 240
+        skillCooldown: 5, 240
         Unknown1923: 5
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_Kagura_C'
     if: Mem(Tmp)
-        Unknown1921: 5, 600
+        skillCooldown: 5, 600
         Unknown1923: 5
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_Kagura_D'
@@ -3237,17 +3237,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_Genji_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Genji_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Genji_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Genji_D'
@@ -3261,17 +3261,17 @@ beginSubroutine: s32'AbilityCoolDown_4'
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Kagura_A'
     if: Mem(Tmp)
-        Unknown1921: 7, 20
+        skillCooldown: 7, 20
         Unknown1923: 7
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Kagura_B'
     if: Mem(Tmp)
-        Unknown1921: 7, 20
+        skillCooldown: 7, 20
         Unknown1923: 7
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Kagura_C'
     if: Mem(Tmp)
-        Unknown1921: 7, 420
+        skillCooldown: 7, 420
         Unknown1923: 7
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Kagura_D'
@@ -4003,7 +4003,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -4355,7 +4355,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -6510,7 +6510,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'nrm302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'nrm302_03', 3
     attackEndDelay: 
     sprite: s32'nrm302_04', 3
@@ -7429,7 +7429,7 @@ beginState: s32'Assault_Genji_A'
     sprite: s32'nrm402_06', 3
     characterSfx: s32'nrm_04_b'
     sprite: s32'nrm402_08', 3
-    sendSignalToAction: s32'nrm_402_SpeedEff', 23
+    sendSignalToAction: s32'nrm_402_SpeedEff', (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     velocityXPercentEachFrame: 70
     sprite: s32'nrm402_09', 3
@@ -7480,7 +7480,7 @@ beginState: s32'Assault_Genji_B'
     characterSfx: s32'nrm_04_b'
     sprite: s32'nrm402_05', 3
     sprite: s32'nrm402_08', 3
-    sendSignalToAction: s32'nrm_402_SpeedEff', 23
+    sendSignalToAction: s32'nrm_402_SpeedEff', (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     velocityXPercentEachFrame: 70
     characterSfx: s32'nrm_04_b'
@@ -7526,7 +7526,7 @@ beginState: s32'Assault_Genji_B'
     sprite: s32'nrm402_07', 3
     characterSfx: s32'nrm_04_b'
     sprite: s32'nrm402_05', 3
-    sendSignalToAction: s32'nrm_402_SpeedEff', 23
+    sendSignalToAction: s32'nrm_402_SpeedEff', (SIGNAL_A)
     sprite: s32'nrm402_12', 2
     clearUpon: (FRAME_STEP)
     setNoCollision: 1
@@ -7594,7 +7594,7 @@ beginState: s32'Assault_Genji_C'
     characterSfx: s32'nrm_04_b'
     beginLabel: s32'MoveEnd'
     sprite: s32'nrm402_08', 3
-    sendSignalToAction: s32'nrm_402_SpeedEff', 23
+    sendSignalToAction: s32'nrm_402_SpeedEff', (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     velocityXPercentEachFrame: 70
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
@@ -7675,7 +7675,7 @@ beginState: s32'Assault_Genji_D'
     Unknown413: 16, 1, 0, 1
     characterSfx: s32'nrm_04_c'
     characterSfx: s32'nrm_08'
-    sendSignalToAction: s32'nrm_402_SpeedEff', 23
+    sendSignalToAction: s32'nrm_402_SpeedEff', (SIGNAL_A)
     sprite: s32'nrm402_07', 3
     characterSfx: s32'nrm_04_c'
     sprite: s32'nrm402_05', 3
@@ -7701,7 +7701,7 @@ beginState: s32'Assault_Genji_D'
     addPositionX: 80000
     physicsXImpulse: 40000
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'nrm_402_SpeedEff', 23
+    sendSignalToAction: s32'nrm_402_SpeedEff', (SIGNAL_A)
     grabOrRelease: 
     damage: 200
     onlyHitPlayer: 1
@@ -7733,7 +7733,7 @@ beginState: s32'Assault_Genji_D'
     physicsXImpulse: 30000
     velocityXPercentEachFrame: 80
     callSubroutine: s32'402_SpeedEff_Mateme'
-    sendSignalToAction: s32'nrm_402_SpeedEff', 23
+    sendSignalToAction: s32'nrm_402_SpeedEff', (SIGNAL_A)
     Unknown413: -11, 1, 0, 0
     Unknown413: -11, 1, 0, 1
     createParticle: s32'nrm_402_HideAura', (HEAD_3D)
@@ -7817,7 +7817,7 @@ beginSubroutine: s32'Slash_Kagura_Init'
         popVelocityX: 
         velocityXPercent: 80
         callSubroutine: s32'402_SpeedEff_Mateme'
-        sendSignalToAction: s32'nrm_402_SpeedEff', 23
+        sendSignalToAction: s32'nrm_402_SpeedEff', (SIGNAL_A)
     endIf: 
     checkCurrentStateName: (SELF), s32'Slash_Kagura_C'
     if: Mem(Tmp)
@@ -9208,7 +9208,7 @@ beginState: s32'Air_Assault_Kagura_B'
                 physicsYImpulse: 8000
             endIf: 
         endUpon: 
-        upon: 47
+        upon: (AFTER_EXIT)
             faceOpponent: 
         endUpon: 
     endUpon: 
@@ -9285,7 +9285,7 @@ beginState: s32'Air_Assault_Kagura_C'
             setGravity: 2700
             storeValue: Mem(ActReg0), Val(1)
         endUpon: 
-        upon: 47
+        upon: (AFTER_EXIT)
             faceOpponent: 
         endUpon: 
     endUpon: 
@@ -9331,12 +9331,12 @@ beginState: s32'Air_Assault_Kagura_C'
     haltMomentum: 1
     callSubroutine: s32'ChangeKamae_Init'
     if: Mem(ActReg0)
-        clearUpon: 47
+        clearUpon: (AFTER_EXIT)
         callSubroutine: s32'cmnNandemoCancel'
     endIf: 
     sprite: s32'nrm404_19', 3
     sprite: s32'nrm404_20', 3
-    clearUpon: 47
+    clearUpon: (AFTER_EXIT)
     callSubroutine: s32'cmnNandemoCancel'
     sprite: s32'nrm404_21', 3
 endState: 
@@ -9714,7 +9714,7 @@ beginState: s32'Nrm_Ougi'
     endIf: 
     beginLabel: s32'Cancel'
     sprite: s32'nrm430_07', 5
-    sendSignalToAction: s32'nrm_430_Aura', 23
+    sendSignalToAction: s32'nrm_430_Aura', (SIGNAL_A)
     Unknown1302: 
     sprite: s32'nrm430_08', 5
     sprite: s32'nrm430_09', 5
@@ -9769,7 +9769,7 @@ beginState: s32'Nrm_Ougi'
     cmnSfx: s32'SE_BTL_SwingWeaponKatanaL'
     characterSfx: s32'nrm_13'
     Unknown1197: 0x53455F42544C5F486974426C6F774C0000000000000000000000000000000000
-    sendSignalToAction: s32'nrm_430_Aura', 23
+    sendSignalToAction: s32'nrm_430_Aura', (SIGNAL_A)
     sprite: s32'nrm431_07', 2
     hit: 
     initializeAttackCategoryByCurrent: 
@@ -10350,7 +10350,7 @@ beginState: s32'Nrm_Kaihou'
         endIf: 
         ifOnFrame: Val(227)
             deactivateObjectByName: s32'nrm_441_Ryuhai'
-            sendSignalToAction: s32'nrm_441_BG', 23
+            sendSignalToAction: s32'nrm_441_BG', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(227)
             hideUI: 0

@@ -57,8 +57,8 @@ beginSubroutine: s32'RoundInit'
     Unknown1297: 20
     Unknown1922: 0, 0, 4
     Unknown1922: 1, 3, 5
-    Unknown1922: 2, 5, 1
-    Unknown1922: 3, 6, 3
+    Unknown1922: 2, 8, 1
+    Unknown1922: 3, 5, 3
     addMove: s32'NmlAtk5ANear'
         moveType: (NORMAL)
         moveStance: (STANDING)
@@ -179,10 +179,10 @@ beginSubroutine: s32'RoundInit'
         moveInput: (INPUT_PRESS_U)
         moveInput: (INPUT_DISSALOW_UP)
         maxChainIntoSelf: 1
-        cpuEstimateAttackBox: -578, -219, 71, 219
-        cpuEstimatePoint: 75
-        cpuEstimateTagGuard: 
-        cpuEstimateTagTobi: 
+        cpuEstimatePoint: 50
+        cpuEstimateTagXMidPunish: 
+        cpuEstimateTagXFarPunish: 
+        cpuEstimateTagNoCombo: 
     endMove: 
     addMove: s32'NmlAtk2D'
         moveType: (NORMAL)
@@ -522,31 +522,135 @@ beginSubroutine: s32'RoundInit'
         cpuEstimateTagInvuln: 
         cpuEstimateTagSukidarake: 
     endMove: 
-    addMove: s32'Assault_A'
+    addMove: s32'SpecialJumpAttack_A'
         moveType: (SPECIAL)
         moveStance: (STANDING)
-        moveInput: (INPUT_214)
+        moveInput: 116
+        moveInput: 53
+        moveInput: 62
+        moveInput: 70
         moveInput: (INPUT_PRESS_L)
         addMoveFlag: (DOWN_SKILL_CD_FALSE)
         Unknown1513: 1
         Unknown1431: 109
         usableByCPU: 0
     endMove: 
-    addMove: s32'Assault_A_Hasei'
+    addMove: s32'SpecialJumpAttack_B'
+        moveType: (SPECIAL)
+        moveStance: (STANDING)
+        moveInput: 116
+        moveInput: 53
+        moveInput: 62
+        moveInput: 70
+        moveInput: (INPUT_PRESS_M)
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        Unknown1513: 1
+        Unknown1431: 109
+        usableByCPU: 0
+    endMove: 
+    addMove: s32'SpecialJumpAttack_C'
+        moveType: (SPECIAL)
+        moveStance: (STANDING)
+        moveInput: 116
+        moveInput: 53
+        moveInput: 62
+        moveInput: 70
+        moveInput: (INPUT_PRESS_H)
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        Unknown1513: 1
+        Unknown1431: 109
+        usableByCPU: 0
+    endMove: 
+    addMove: s32'SpecialJumpAttack_D'
+        moveType: (SPECIAL)
+        moveStance: (STANDING)
+        moveInput: 116
+        moveInput: 53
+        moveInput: 62
+        moveInput: 70
+        moveInput: (INPUT_PRESS_U)
+        addMoveFlag: (REQUIRES_50_METER)
+        Unknown1513: 1
+        Unknown1431: 109
+        usableByCPU: 0
+    endMove: 
+    addMove: s32'SpecialJumpAttack_A_Easy'
+        moveAlias: s32'SpecialJumpAttack_A'
+        moveType: (SPECIAL)
+        moveSubType: 2
+        moveStance: (STANDING)
+        moveInput: (INPUT_ANY_DOWN)
+        moveInput: (INPUT_PRESS_S)
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        Unknown1431: 919
+        Unknown1514: 2
+        cpuEstimateAttackBox: -438, -88, 438, 88
+        cpuEstimatePoint: 100
+        cpuEstimateTagGuard: 
+        cpuEstimateTagXMidPunish: 
+        cpuEstimateTagKugurare: 
+        cpuEstimateTagTobi: 
+        cpuEstimateTagNoCombo: 
+    endMove: 
+    addMove: s32'SpecialJumpAttack_B_Easy'
+        moveAlias: s32'SpecialJumpAttack_B'
+        moveType: (SPECIAL)
+        moveSubType: 3
+        moveStance: (STANDING)
+        moveInput: (INPUT_ANY_DOWN)
+        moveInput: 153
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        Unknown1431: 919
+        cpuEstimateAttackBox: -438, -88, 438, 88
+        cpuEstimatePoint: 100
+        cpuEstimateTagGuard: 
+        cpuEstimateTagXMidPunish: 
+        cpuEstimateTagKugurare: 
+        cpuEstimateTagTobi: 
+        cpuEstimateTagNoCombo: 
+    endMove: 
+    addMove: s32'SpecialJumpAttack_C_Easy'
+        moveAlias: s32'SpecialJumpAttack_C'
+        moveType: (SPECIAL)
+        moveSubType: 4
+        moveStance: (STANDING)
+        moveInput: (INPUT_ANY_DOWN)
+        moveInput: 154
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        Unknown1431: 919
+        cpuEstimateAttackBox: -438, -88, 438, 88
+        cpuEstimatePoint: 100
+        cpuEstimateTagGuard: 
+        cpuEstimateTagXMidPunish: 
+        cpuEstimateTagKugurare: 
+        cpuEstimateTagTobi: 
+        cpuEstimateTagNoCombo: 
+    endMove: 
+    addMove: s32'SpecialJumpAttack_D_Easy'
+        moveAlias: s32'SpecialJumpAttack_D'
+        moveType: (SPECIAL)
+        moveSubType: 5
+        moveStance: (STANDING)
+        moveInput: (INPUT_ANY_DOWN)
+        moveInput: 155
+        addMoveFlag: (REQUIRES_50_METER)
+        Unknown1431: 919
+        Unknown1514: 2
+        cpuEstimateAttackBox: -263, -88, 263, 88
+        cpuEstimatePoint: 100
+        cpuEstimateTagCombo: 
+        cpuUsesResource: 
+        cpuBigDamage: 
+    endMove: 
+    addMove: s32'Assault_A'
         moveType: (SPECIAL)
         moveStance: (STANDING)
         moveInput: (INPUT_214)
         moveInput: (INPUT_PRESS_L)
-        moveInput: (INPUT_BOOLEAN_OR)
-        moveInput: (INPUT_ANY_BACK)
-        moveInput: (INPUT_PRESS_S)
-        moveInput: (INPUT_BOOLEAN_OR)
-        moveInput: (INPUT_ANY_DOWN)
-        moveInput: (INPUT_PRESS_S)
-        isFollowupMove: 1
-        cpuEstimateAttackBox: -176, -351, 176, 351
-        cpuEstimatePoint: 150
-        cpuEstimateTagCombo: 
+        addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
+        Unknown1513: 1
+        Unknown1431: 109
+        usableByCPU: 0
     endMove: 
     addMove: s32'Assault_B'
         moveType: (SPECIAL)
@@ -558,63 +662,15 @@ beginSubroutine: s32'RoundInit'
         Unknown1431: 109
         usableByCPU: 0
     endMove: 
-    addMove: s32'Assault_B_Hasei'
-        moveAlias: s32'Assault_A_Hasei'
-        moveType: (SPECIAL)
-        moveStance: (STANDING)
-        moveInput: (INPUT_214)
-        moveInput: (INPUT_PRESS_M)
-        moveInput: (INPUT_BOOLEAN_OR)
-        moveInput: (INPUT_ANY_BACK)
-        moveInput: (INPUT_PRESS_S)
-        moveInput: (INPUT_BOOLEAN_OR)
-        moveInput: (INPUT_ANY_DOWN)
-        moveInput: (INPUT_PRESS_S)
-        isFollowupMove: 1
-        cpuEstimateAttackBox: -176, -351, 176, 351
-        cpuEstimatePoint: 150
-        cpuEstimateTagCombo: 
-    endMove: 
     addMove: s32'Assault_C'
         moveType: (SPECIAL)
         moveStance: (STANDING)
         moveInput: (INPUT_214)
         moveInput: (INPUT_PRESS_H)
-        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
         Unknown1513: 1
         Unknown1431: 109
         usableByCPU: 0
-    endMove: 
-    addMove: s32'Assault_C_Hasei_1'
-        moveType: (SPECIAL)
-        moveStance: (STANDING)
-        moveInput: (INPUT_214)
-        moveInput: (INPUT_PRESS_H)
-        moveInput: (INPUT_BOOLEAN_OR)
-        moveInput: (INPUT_ANY_BACK)
-        moveInput: (INPUT_PRESS_S)
-        moveInput: (INPUT_BOOLEAN_OR)
-        moveInput: (INPUT_ANY_DOWN)
-        moveInput: (INPUT_PRESS_S)
-        isFollowupMove: 1
-        cpuEstimateAttackBox: -526, -263, 219, 263
-        cpuEstimatePoint: 200
-    endMove: 
-    addMove: s32'Assault_C_Hasei_2'
-        moveType: (SPECIAL)
-        moveStance: (STANDING)
-        moveInput: (INPUT_214)
-        moveInput: (INPUT_PRESS_H)
-        moveInput: (INPUT_BOOLEAN_OR)
-        moveInput: (INPUT_ANY_BACK)
-        moveInput: (INPUT_PRESS_S)
-        moveInput: (INPUT_BOOLEAN_OR)
-        moveInput: (INPUT_ANY_DOWN)
-        moveInput: (INPUT_PRESS_S)
-        isFollowupMove: 1
-        cpuEstimateAttackBox: -176, -351, 176, 351
-        cpuEstimatePoint: 150
-        cpuEstimateTagCombo: 
     endMove: 
     addMove: s32'Assault_D'
         moveType: (SPECIAL)
@@ -632,92 +688,54 @@ beginSubroutine: s32'RoundInit'
         moveSubType: 2
         moveStance: (STANDING)
         moveInput: (INPUT_PRESS_S)
-        moveInput: (INPUT_ANY_DOWN)
-        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        moveInput: (INPUT_ANY_BACK)
+        addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
         Unknown1431: 919
-        Unknown1514: 2
-        cpuEstimateAttackBox: -526, -263, 219, 263
+        Unknown1514: 3
+        cpuEstimateAttackBox: -438, -219, 438, 219
         cpuEstimatePoint: 100
-        cpuEstimateTagGuard: 
-        cpuEstimateTagCombo: 
+        cpuEstimateTagXMidPunish: 
     endMove: 
     addMove: s32'Assault_B_Easy'
         moveType: (SPECIAL)
         moveAlias: s32'Assault_B'
-        moveSubType: 2
+        moveSubType: 3
         moveStance: (STANDING)
         moveInput: (INPUT_ANY_BACK)
-        moveInput: (INPUT_PRESS_S)
-        addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-        Unknown1431: 919
-        Unknown1514: 2
-        cpuEstimateAttackBox: -570, -263, 263, 263
-        cpuEstimatePoint: 75
-        cpuEstimateTagGuard: 
-        cpuEstimateTagCombo: 
-        cpuEstimateTagKugurare: 
-    endMove: 
-    addMove: s32'Assault_B_Easy2'
-        moveAlias: s32'Assault_B'
-        moveType: (SPECIAL)
-        moveSubType: 3
-        moveStance: (STANDING)
-        moveInput: (INPUT_ANY_DOWN)
         moveInput: 153
         addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
         Unknown1431: 919
-        usableByCPU: 0
-    endMove: 
-    addMove: s32'Assault_B_Easy3'
-        moveAlias: s32'Assault_B'
-        moveType: (SPECIAL)
-        moveSubType: 3
-        moveStance: (STANDING)
-        moveInput: (INPUT_ANY_DOWN)
-        moveInput: 153
-        addMoveFlag: (DOWN_SKILL_CD_FALSE)
-        addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
-        Unknown1431: 919
-        usableByCPU: 0
+        cpuEstimateAttackBox: -570, -219, 570, 219
+        cpuEstimatePoint: 100
+        cpuEstimateTagXMidPunish: 
     endMove: 
     addMove: s32'Assault_C_Easy'
         moveType: (SPECIAL)
         moveAlias: s32'Assault_C'
         moveSubType: 4
         moveStance: (STANDING)
-        moveInput: (INPUT_ANY_DOWN)
-        moveInput: 154
-        moveInput: (INPUT_BOOLEAN_OR)
         moveInput: (INPUT_ANY_BACK)
         moveInput: 154
-        addMoveFlag: (DOWN_SKILL_CD_FALSE)
         addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
         Unknown1431: 919
-        cpuEstimateAttackBox: -526, -263, 219, 263
-        cpuEstimatePoint: 150
-        cpuEstimateTagGuard: 
-        cpuEstimateTagCombo: 
-        cpuEstimateTagGamenhashi: 
+        cpuEstimateAttackBox: -570, -219, 570, 219
+        cpuEstimatePoint: 100
+        cpuEstimateTagXMidPunish: 
     endMove: 
     addMove: s32'Assault_D_Easy'
         moveType: (SPECIAL)
         moveAlias: s32'Assault_D'
         moveSubType: 5
         moveStance: (STANDING)
-        moveInput: (INPUT_ANY_DOWN)
-        moveInput: 155
-        moveInput: (INPUT_BOOLEAN_OR)
         moveInput: (INPUT_ANY_BACK)
         moveInput: 155
         addMoveFlag: (REQUIRES_50_METER)
         Unknown1431: 919
-        Unknown1514: 2
-        cpuEstimateAttackBox: -526, -263, 219, 263
+        Unknown1514: 3
+        cpuEstimateAttackBox: -570, -219, 570, 219
         cpuEstimatePoint: 100
-        cpuEstimateTagGuard: 
-        cpuEstimateTagCombo: 
+        cpuEstimateTagXMidPunish: 
         cpuUsesResource: 
-        cpuBigDamage: 
     endMove: 
     addMove: s32'djt_Ougi'
         moveType: (SUPER)
@@ -759,163 +777,6 @@ beginSubroutine: s32'RoundInit'
         cpuEstimateTagKugurare: 
         cpuEstimateTagInvuln: 
         cpuEstimateTagSukidarake: 
-    endMove: 
-    addMove: s32'djt_Ougi_Kaihou'
-        moveType: (SUPER)
-        moveAlias: s32'djt_Ougi'
-        moveStance: (STANDING)
-        moveInput: 119
-        moveInput: 35
-        addMoveFlag: (REQUIRES_100_METER)
-        addMoveFlag: (HEALTH_LEFT_30_TRUE)
-        Unknown1431: 10109
-        Unknown1447: 1, 1
-        usableByCPU: 0
-    endMove: 
-    addMove: s32'djt_Ougi_Kaihou_Tec'
-        moveType: (SUPER)
-        moveAlias: s32'djt_Ougi'
-        moveStance: (STANDING)
-        moveInput: 120
-        moveInput: 35
-        addMoveFlag: (REQUIRES_100_METER)
-        addMoveFlag: (HEALTH_LEFT_30_TRUE)
-        Unknown1431: 10109
-        Unknown1447: 1, 2
-        usableByCPU: 0
-    endMove: 
-    addMove: s32'djt_Ougi_Kaihou_Easy'
-        moveType: (SUPER)
-        moveAlias: s32'djt_Ougi'
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: 54
-        moveInput: 151
-        moveInput: 35
-        addMoveFlag: (REQUIRES_100_METER)
-        addMoveFlag: (HEALTH_LEFT_30_TRUE)
-        Unknown1431: 1
-        Unknown1431: 10919
-        Unknown1447: 1, 0
-        cpuEstimateAttackBox: -351, -307, 351, 307
-        cpuEstimatePoint: 50
-        cpuEstimateTagCombo: 
-        cpuUsesResource: 
-        cpuBigDamage: 
-        cpuEstimateTagKugurare: 
-        cpuEstimateTagInvuln: 
-        cpuEstimateTagSukidarake: 
-    endMove: 
-    addMove: s32'OugiHasei_1'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: (INPUT_PRESS_L)
-        moveInput: 11
-        moveInput: 17
-        moveInput: 23
-        moveInput: 29
-        isFollowupMove: 1
-    endMove: 
-    addMove: s32'OugiHasei_2'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: (INPUT_PRESS_L)
-        moveInput: 11
-        moveInput: 17
-        moveInput: 23
-        moveInput: 29
-        isFollowupMove: 1
-    endMove: 
-    addMove: s32'OugiHasei_3'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: (INPUT_PRESS_M)
-        moveInput: 5
-        moveInput: 17
-        moveInput: 23
-        moveInput: 29
-        isFollowupMove: 1
-    endMove: 
-    addMove: s32'OugiHasei_4'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: (INPUT_PRESS_M)
-        moveInput: 5
-        moveInput: 17
-        moveInput: 23
-        moveInput: 29
-        isFollowupMove: 1
-    endMove: 
-    addMove: s32'OugiHasei_5'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: (INPUT_PRESS_H)
-        moveInput: 5
-        moveInput: 11
-        moveInput: 23
-        moveInput: 29
-        isFollowupMove: 1
-    endMove: 
-    addMove: s32'OugiHasei_6'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: (INPUT_PRESS_H)
-        moveInput: 5
-        moveInput: 11
-        moveInput: 23
-        moveInput: 29
-        isFollowupMove: 1
-    endMove: 
-    addMove: s32'OugiHasei_7'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: (INPUT_PRESS_L)
-        moveInput: 11
-        moveInput: 17
-        moveInput: 23
-        moveInput: 29
-        isFollowupMove: 1
-    endMove: 
-    addMove: s32'OugiHasei_8'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (NONE)
-        moveInput: (INPUT_PRESS_M)
-        moveInput: 5
-        moveInput: 17
-        moveInput: 23
-        moveInput: 29
-        isFollowupMove: 1
-    endMove: 
-    addMove: s32'OugiHasei_9'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: (INPUT_PRESS_H)
-        moveInput: 5
-        moveInput: 11
-        moveInput: 23
-        moveInput: 29
-        isFollowupMove: 1
-    endMove: 
-    addMove: s32'OugiHasei_Finish'
-        moveType: (SUPER)
-        moveSubType: 4
-        moveStance: (STANDING)
-        moveInput: (INPUT_214)
-        moveInput: (INPUT_PRESS_U)
-        moveInput: 5
-        moveInput: 11
-        moveInput: 17
-        moveInput: 29
-        isFollowupMove: 1
     endMove: 
     addMove: s32'djt_Kaihou'
         moveType: (SUPER)
@@ -963,85 +824,33 @@ beginSubroutine: s32'RoundInit'
         cpuEstimateTagInvuln: 
         cpuEstimateTagSukidarake: 
     endMove: 
-    addMove: s32'MissionDJT_00_01'
+    addMove: s32'edjt_Mission01_01'
         moveRecipeStopTypeEx: 2, 0, 30
         Unknown1507: 1
-        moveRecipeEMove: s32'Assault_A_Easy'
-        moveRecipeEMove: s32'Assault_A_Hasei'
-    endMove: 
-    addMove: s32'MissionDJT_00_02'
-        moveRecipeStopTypeEx: 2, 0, 30
-        Unknown1507: 1
-        moveRecipeEMove: s32'Assault_B_Easy'
-        moveRecipeEMove: s32'Assault_B_Hasei'
-    endMove: 
-    addMove: s32'MissionDJT_00_03'
-        moveRecipeStopTypeEx: 2, 0, 30
-        Unknown1507: 1
-        moveRecipeEMove: s32'Assault_C_Easy'
-        moveRecipeEMove: s32'Assault_C_Hasei_1'
-        moveRecipeEMove: s32'Assault_C_Hasei_2'
-    endMove: 
-    addMove: s32'MissionDJT_01_01'
-        moveRecipeStopTypeEx: 2, 0, 30
-        Unknown1507: 1
-        moveRecipeEMove: s32'CmnFWalk'
-        moveRecipeEKey: 8, 15
+        moveRecipeEMove: s32'CmnFDash'
+        moveRecipeEKey: 8, 12
         moveRecipeEMove: s32'NmlAtk5BFar'
-        moveRecipeEMove: s32'Assault_B_Easy'
+        moveRecipeEMove: s32'NmlAtk5D'
     endMove: 
-    addMove: s32'Punish_01_01'
+    addMove: s32'Punish_05_01'
         moveRecipeStopTypeEx: 2, 0, 30
         Unknown1507: 1
-        cpuEstimatePoint: 1
-        moveRecipeEMove: s32'Assault_A_Easy'
-        moveRecipeEMove: s32'Assault_A_Hasei'
-    endMove: 
-    addMove: s32'Punish_01_02'
-        moveRecipeStopTypeEx: 2, 0, 30
-        Unknown1507: 1
-        cpuEstimatePoint: 1
-        moveRecipeEMove: s32'Assault_B_Easy'
-        moveRecipeEMove: s32'Assault_B_Hasei'
-    endMove: 
-    addMove: s32'Punish_01_03'
-        moveRecipeStopTypeEx: 2, 0, 30
-        Unknown1507: 1
-        cpuEstimatePoint: 1
-        moveRecipeEMove: s32'Assault_C_Easy'
-        moveRecipeEMove: s32'Assault_C_Hasei_1'
-        moveRecipeEMove: s32'Assault_C_Hasei_2'
-    endMove: 
-    addMove: s32'Punish_02_01'
-        moveRecipeStopTypeEx: 2, 0, 30
-        Unknown1507: 1
-        cpuEstimatePoint: 1
-        moveRecipeEMove: s32'NmlAtk5BNear'
-        moveRecipeEMove: s32'NmlAtk5A2nd'
-        moveRecipeEMove: s32'NmlAtk5A3rd'
-        moveRecipeEMove: s32'Assault_B_Easy'
-    endMove: 
-    addMove: s32'Punish_02_02'
-        moveRecipeStopTypeEx: 2, 0, 30
-        Unknown1507: 1
-        cpuEstimatePoint: 1
-        moveRecipeEMove: s32'NmlAtk5BNear'
-        moveRecipeEMove: s32'NmlAtk5A2nd'
-        moveRecipeEMove: s32'NmlAtk5A3rd'
-        moveRecipeEMove: s32'Assault_B_Easy'
-        moveRecipeEMove: s32'Assault_B_Hasei'
+        moveRecipeEMove: s32'CmnFDash'
+        moveRecipeEKey: 8, 12
+        moveRecipeEMove: s32'NmlAtk5BFar'
+        moveRecipeEMove: s32'Assault_D_Easy'
     endMove: 
     callSubroutine: s32'cmn_SkillRegist'
     callSubroutine: s32'cmn_SkillRegist_Normal_Land'
     callSubroutine: s32'cmn_SkillRegist_Normal_Air'
+    registerMove: s32'SpecialJumpAttack_A'
+    registerMove: s32'SpecialJumpAttack_B'
+    registerMove: s32'SpecialJumpAttack_C'
+    registerMove: s32'SpecialJumpAttack_D'
     registerMove: s32'SpecialShot_A'
     registerMove: s32'SpecialShot_B'
     registerMove: s32'SpecialShot_C'
     registerMove: s32'SpecialShot_D'
-    registerMove: s32'Assault_A_Hasei'
-    registerMove: s32'Assault_B_Hasei'
-    registerMove: s32'Assault_C_Hasei_1'
-    registerMove: s32'Assault_C_Hasei_2'
     registerMove: s32'Assault_A'
     registerMove: s32'Assault_B'
     registerMove: s32'Assault_C'
@@ -1062,41 +871,23 @@ beginSubroutine: s32'RoundInit'
     registerMove: s32'AntiAir_B_Easy'
     registerMove: s32'AntiAir_C_Easy'
     registerMove: s32'AntiAir_D_Easy'
-    registerMove: s32'Assault_B_Easy'
     registerMove: s32'Assault_A_Easy'
-    registerMove: s32'Assault_B_Easy2'
-    registerMove: s32'Assault_B_Easy3'
+    registerMove: s32'Assault_B_Easy'
     registerMove: s32'Assault_C_Easy'
     registerMove: s32'Assault_D_Easy'
+    registerMove: s32'SpecialJumpAttack_A_Easy'
+    registerMove: s32'SpecialJumpAttack_B_Easy'
+    registerMove: s32'SpecialJumpAttack_C_Easy'
+    registerMove: s32'SpecialJumpAttack_D_Easy'
     registerMove: s32'djt_Ougi'
     registerMove: s32'djt_Ougi_Tec'
-    registerMove: s32'djt_Ougi_Kaihou'
-    registerMove: s32'djt_Ougi_Kaihou_Tec'
-    registerMove: s32'OugiHasei_1'
-    registerMove: s32'OugiHasei_2'
-    registerMove: s32'OugiHasei_3'
-    registerMove: s32'OugiHasei_4'
-    registerMove: s32'OugiHasei_5'
-    registerMove: s32'OugiHasei_6'
-    registerMove: s32'OugiHasei_7'
-    registerMove: s32'OugiHasei_8'
-    registerMove: s32'OugiHasei_9'
-    registerMove: s32'OugiHasei_Finish'
     registerMove: s32'djt_Kaihou'
     registerMove: s32'djt_Kaihou_Tec'
     callSubroutine: s32'cmn_SkillRegist_2Button'
     registerMove: s32'djt_Ougi_Easy'
-    registerMove: s32'djt_Ougi_Kaihou_Easy'
     registerMove: s32'djt_Kaihou_Easy'
-    registerMove: s32'MissionDJT_00_01'
-    registerMove: s32'MissionDJT_00_02'
-    registerMove: s32'MissionDJT_00_03'
-    registerMove: s32'MissionDJT_01_01'
-    registerMove: s32'Punish_01_01'
-    registerMove: s32'Punish_01_02'
-    registerMove: s32'Punish_01_03'
-    registerMove: s32'Punish_02_01'
-    registerMove: s32'Punish_02_02'
+    registerMove: s32'edjt_Mission01_01'
+    registerMove: s32'Punish_05_01'
     setDamageSprite: 0, s32'djt050_00'
     setDamageSprite: 1, s32'djt050_01'
     setDamageSprite: 2, s32'djt050_02'
@@ -1917,9 +1708,10 @@ beginSubroutine: s32'RoundInit'
     changeDefaultMeshSet: 
     Unknown1878: 0
     Unknown1891: 0, 1
-    Unknown1883: 0, 90
+    Unknown1883: 0, 3
     Unknown1882: 0, 0
-    Unknown1887: 0, 0
+    Unknown1887: 0, 1
+    Unknown1902: 0, 1
     Unknown1889: 0, 0
 endSubroutine: 
 
@@ -1933,68 +1725,56 @@ beginSubroutine: s32'OnFrameStep'
         storeValue: Mem(PlayerVal2), Val(0)
         storeValue: Mem(ObjReg1), Val(0)
     endIf: 
-    storeValue: Mem(ExGage0), Mem(PlayerVal1)
     if: Mem(IsTrainingMode)
         if: Mem(IsRecoverableTypeA)
-            getTrainingItemVal: s32'ETMI_UniqueGauge_DJT_DriveBurst', 2, 61
-            ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(1)
-                ifOperation: (IS_LESSER_OR_EQUAL), Mem(PlayerVal1), Val(20)
-                    storeValue: Mem(PlayerVal1), Val(20)
-                endIf: 
-            endIf: 
-            ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(2)
-                ifOperation: (IS_LESSER_OR_EQUAL), Mem(PlayerVal1), Val(50)
-                    storeValue: Mem(PlayerVal1), Val(50)
-                endIf: 
-            endIf: 
-            ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(3)
-                ifOperation: (IS_LESSER_OR_EQUAL), Mem(PlayerVal1), Val(90)
-                    storeValue: Mem(PlayerVal1), Val(90)
-                endIf: 
+            getTrainingItemVal: s32'ETMI_UniqueGauge_DJTEX_ABlade', 2, 61
+            ifOperation: (IS_LESSER_OR_EQUAL), Mem(ExGage0), Mem(GTmpReg0)
+                storeValue: Mem(ExGage0), Mem(GTmpReg0)
             endIf: 
         endIf: 
     endIf: 
-    if: Mem(PlayerVal1)
+    if: Mem(ExGage0)
         if: Mem(BattleDoing)
-            modifyVar: (ADD), Mem(ObjReg0), Val(1)
             ifNot: Mem(IchigekiKuratta)
-                ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(1)
-                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(20)
-                        ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(50)
-                            Unknown1889: 0, 1
-                            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ObjReg0), Val(5)
-                                Unknown2268: 0, 600
-                                createParticleWithArg2: s32'djt_208_BuffAuraLv2', (CHEST_3D)
-                                storeValue: Mem(ObjReg0), Val(0)
-                            endIf: 
-                        endIf: 
+                ifOperation: (IS_EQUAL), Mem(ExGage0), Val(1)
+                    Unknown2347: s32'edjt_kyouka1'
+                    Unknown1889: 0, 1
+                    modifyVar: (ADD), Mem(ObjReg0), Val(1)
+                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(ObjReg0), Val(5)
+                        Unknown2268: 0, 600
+                        createParticleWithArg2: s32'djt_208_BuffAuraLv3', (CHEST_3D)
+                        storeValue: Mem(ObjReg0), Val(0)
                     endIf: 
-                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(50)
-                        ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(90)
-                            Unknown1889: 0, 2
-                            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ObjReg0), Val(5)
-                                Unknown2268: 0, 600
-                                createParticleWithArg2: s32'djt_208_BuffAuraLv3', (CHEST_3D)
-                                storeValue: Mem(ObjReg0), Val(0)
-                            endIf: 
-                        endIf: 
+                endIf: 
+                ifOperation: (IS_EQUAL), Mem(ExGage0), Val(2)
+                    Unknown2347: s32'edjt_kyouka2'
+                    Unknown1889: 0, 2
+                    modifyVar: (ADD), Mem(ObjReg0), Val(1)
+                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(ObjReg0), Val(5)
+                        Unknown2268: 0, 600
+                        createParticleWithArg2: s32'djt_208_BuffAuraLv3', (CHEST_3D)
+                        storeValue: Mem(ObjReg0), Val(0)
                     endIf: 
-                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(90)
-                        Unknown1889: 0, 3
-                        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ObjReg0), Val(5)
-                            Unknown2268: 0, 600
-                            createParticleWithArg2: s32'djt_208_BuffAuraLv4', (CHEST_3D)
-                            storeValue: Mem(ObjReg0), Val(0)
-                        endIf: 
+                endIf: 
+                ifOperation: (IS_EQUAL), Mem(ExGage0), Val(3)
+                    Unknown2347: s32'edjt_kyouka3'
+                    Unknown1889: 0, 3
+                    modifyVar: (ADD), Mem(ObjReg0), Val(1)
+                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(ObjReg0), Val(5)
+                        Unknown2268: 0, 600
+                        createParticleWithArg2: s32'djt_208_BuffAuraLv4', (CHEST_3D)
+                        storeValue: Mem(ObjReg0), Val(0)
                     endIf: 
                 endIf: 
             endIf: 
         endIf: 
     endIf: 
+    else: 
+        Unknown1889: 0, 0
+    endElse: 
 endSubroutine: 
 
 beginSubroutine: s32'OnActionBegin'
-    callSubroutine: s32'cmn_FN_OnActionBegin'
     checkSomething: 3, 3
     if: Mem(Tmp)
         Unknown1924: 0, 1
@@ -2025,6 +1805,7 @@ beginSubroutine: s32'OnIdling'
         callSubroutine: s32'AbilityCoolDown_N'
         callSubroutine: s32'AbilityCoolDown_N_ON_FINALIZE'
         callSubroutine: s32'AbilityCoolDown_6'
+        callSubroutine: s32'AbilityCoolDown_2'
         callSubroutine: s32'AbilityCoolDown_4'
     endIf: 
 endSubroutine: 
@@ -2039,12 +1820,9 @@ beginSubroutine: s32'OnDamage'
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActionTime), Val(2)
         callSubroutine: s32'AbilityCoolDown_N_DAMAGE'
         callSubroutine: s32'AbilityCoolDown_6'
+        callSubroutine: s32'AbilityCoolDown_2'
         callSubroutine: s32'AbilityCoolDown_4'
     endIf: 
-endSubroutine: 
-
-beginSubroutine: s32'OnLanding'
-    callSubroutine: s32'cmn_FN_OnLanding'
 endSubroutine: 
 
 beginSubroutine: s32'OnGuard'
@@ -2084,11 +1862,13 @@ beginSubroutine: s32'AbilityCoolDown_N_DAMAGE'
     if: Mem(Tmp)
         storeValue: Mem(287), Val(20)
         Unknown1923: 0
+        Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
         storeValue: Mem(287), Val(20)
         Unknown1923: 0
+        Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
@@ -2150,11 +1930,13 @@ beginSubroutine: s32'AbilityCoolDown_N'
     if: Mem(Tmp)
         skillCooldown: 0, 999
         Unknown1923: 0
+        Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
         skillCooldown: 0, 999
         Unknown1923: 0
+        Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
@@ -2182,11 +1964,13 @@ beginSubroutine: s32'AbilityCoolDown_6'
     if: Mem(Tmp)
         skillCooldown: 1, 20
         Unknown1923: 1
+        Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
         skillCooldown: 1, 240
         Unknown1923: 1
+        Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
@@ -2204,35 +1988,58 @@ beginSubroutine: s32'AbilityCoolDown_6'
     endIf: 
 endSubroutine: 
 
-beginSubroutine: s32'AbilityCoolDown_4'
-    checkCurrentStateName: (SELF), s32'Assault_A'
+beginSubroutine: s32'AbilityCoolDown_2'
+    checkCurrentStateName: (SELF), s32'SpecialJumpAttack_A'
     if: Mem(Tmp)
         skillCooldown: 2, 20
         Unknown1923: 2
+        Unknown1681: 
     endIf: 
-    checkCurrentStateName: (SELF), s32'Assault_B'
+    checkCurrentStateName: (SELF), s32'SpecialJumpAttack_B'
     if: Mem(Tmp)
-        skillCooldown: 3, 20
-        Unknown1923: 3
+        skillCooldown: 2, 20
+        Unknown1923: 2
+        Unknown1681: 
     endIf: 
-    checkCurrentStateName: (SELF), s32'Assault_C'
+    checkCurrentStateName: (SELF), s32'SpecialJumpAttack_C'
     if: Mem(Tmp)
         skillCooldown: 2, 420
-        skillCooldown: 3, 420
         Unknown1923: 2
-        Unknown1923: 3
     endIf: 
-    checkCurrentStateName: (SELF), s32'Assault_D'
+    checkCurrentStateName: (SELF), s32'SpecialJumpAttack_D'
     if: Mem(Tmp)
         if: Mem(289)
-            storeValue: Mem(417), Val(1)
-        endIf: 
-        if: Mem(290)
             storeValue: Mem(417), Val(1)
         endIf: 
         modifyVar2: (ADD), Val(180), Mem(289)
         storeValue: Mem(289), Mem(Tmp)
         Unknown1923: 2
+    endIf: 
+endSubroutine: 
+
+beginSubroutine: s32'AbilityCoolDown_4'
+    checkCurrentStateName: (SELF), s32'Assault_A'
+    if: Mem(Tmp)
+        skillCooldown: 3, 20
+        Unknown1923: 3
+        Unknown1681: 
+    endIf: 
+    checkCurrentStateName: (SELF), s32'Assault_B'
+    if: Mem(Tmp)
+        skillCooldown: 3, 20
+        Unknown1923: 3
+        Unknown1681: 
+    endIf: 
+    checkCurrentStateName: (SELF), s32'Assault_C'
+    if: Mem(Tmp)
+        skillCooldown: 3, 420
+        Unknown1923: 3
+    endIf: 
+    checkCurrentStateName: (SELF), s32'Assault_D'
+    if: Mem(Tmp)
+        if: Mem(290)
+            storeValue: Mem(417), Val(1)
+        endIf: 
         modifyVar2: (ADD), Val(180), Mem(290)
         storeValue: Mem(290), Mem(Tmp)
         Unknown1923: 3
@@ -3912,301 +3719,59 @@ beginState: s32'NmlAtk2C'
     sprite: s32'djt232_13', 3
 endState: 
 
-beginSubroutine: s32'DJT_charge_Wind_Del'
-    deactivateObjectByName: s32'DJT_charge_Wind_Lv0'
-    deactivateObjectByName: s32'DJT_charge_Wind_Lv1'
-    deactivateObjectByName: s32'DJT_charge_Wind_Lv2'
-    deactivateObjectByName: s32'DJT_charge_Wind_Lv3'
-    deactivateObjectByName: s32'DJT_charge_Wind_Lv4'
-endSubroutine: 
-
 beginState: s32'NmlAtk5D'
     upon: (IMMEDIATE)
-        callSubroutine: s32'cmnNormalAtkLv4_Land_AtkInit'
-        callSubroutine: s32'cmnHACT_BlowOff'
-        damage: 1200
-        clashLevel: 3
-        groundHitEffect: (FORCE_CROUCH)
-        airHitEffect: (AIR_FACE_UP)
-        airCounterHitEffect: (AIR_FACE_UP)
-        hitAirPushbackX: 15000
-        hitAirPushbackY: -50000
-        hitGravity: 0
-        enemyHitstopAddition: 0, 0, 4
-        wallPushback: 0, 1300
-        wallPushbackOnHit: 0, 1000
-        groundBounceYVelocityPercent: 30
-        groundBounceCount: 1
-        isAirUnblockable: 0
-        guardSoundEffect: s32'SE_BTL_GuardBlowL'
-        upon: (HIT_OR_GUARD)
-            clearUpon: (HIT_OR_GUARD)
-            modifyVar: (ADD), Mem(ActReg2), Val(1)
-        endUpon: 
-        upon: 99
-            clearUpon: 99
-            modifyVar: (ADD), Mem(ActReg2), Val(1)
-        endUpon: 
-        storeValue: Mem(ActReg3), Mem(PlayerVal1)
-        enableSpecialCancel: 0
-        gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
+        attackIgnoreCaution: 1
+        storeValue: Mem(ActReg0), Val(1)
     endUpon: 
-    sprite: s32'djt208_00', 2
-    sprite: s32'djt208_01', 2
-    sprite: s32'djt208_02', 2
-    smartRandomVoiceLine: s16'vDJT_ATKAby_00', 100, s16'', 0, s16'', 0, s16'', 0
+    sprite: s32'djt450_00', 3
+    sprite: s32'djt450_01', 3
+    createObject: s32'DJT_450_Charge', (PLAYER)
+    Unknown2421: 0x01000000CEFFFFFFC800000000000000
+    inertiaPercent: 30
+    smartRandomVoiceLine: s16'vDJT_ATKAby_200', 100, s16'', 0, s16'', 0, s16'', 0
     characterSfx: s32'djt_06'
-    sprite: s32'djt208_03', 3
-    ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(20)
-        createObject: s32'DJT_charge_Wind_Lv0', (PLAYER)
-    endIf: 
-    else: 
-        ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(50)
-            createObject: s32'DJT_charge_Wind_Lv2', (PLAYER)
-        endIf: 
-        else: 
-            ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(90)
-                createObject: s32'DJT_charge_Wind_Lv3', (PLAYER)
-            endIf: 
-            else: 
-                createObject: s32'DJT_charge_Wind_Lv4', (PLAYER)
-            endElse: 
-        endElse: 
-    endElse: 
-    sprite: s32'djt208_04', 3
-    Unknown2421: 0x010000009CFFFFFF6400000000000000
-    upon: (FRAME_STEP)
-        ifOperation: (IS_EQUAL), Mem(OnIdlingTime), Val(2)
-            modifyVar: (ADD), Mem(ActReg1), Val(1)
-            modifyVar: (ADD), Mem(PlayerVal1), Val(1)
-        endIf: 
-        ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(2)
-            modifyVar: (ADD), Mem(PlayerVal1), Val(1)
-            modifyVar: (ADD), Mem(ActReg1), Val(1)
-            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(120)
-                clearUpon: (FRAME_STEP)
-                gotoLabelRequests: s32'Cancel'
-            endIf: 
-        endIf: 
-        checkInput: (INPUT_HOLD_U)
-        ifNot: Mem(Tmp)
-            clearUpon: (FRAME_STEP)
-            gotoLabelRequests: s32'Atk'
-        endIf: 
-        checkInput: (INPUT_PRESS_L)
-        if: Mem(Tmp)
-            clearUpon: (FRAME_STEP)
-            Unknown2347: s32'NmlAtk5D_Cancel'
-            gotoLabelRequests: s32'Cancel'
-        endIf: 
-        checkInput: (INPUT_PRESS_M)
-        if: Mem(Tmp)
-            clearUpon: (FRAME_STEP)
-            Unknown2347: s32'NmlAtk5D_Cancel'
-            gotoLabelRequests: s32'Cancel'
-        endIf: 
-        checkInput: (INPUT_PRESS_H)
-        if: Mem(Tmp)
-            clearUpon: (FRAME_STEP)
-            Unknown2347: s32'NmlAtk5D_Cancel'
-            gotoLabelRequests: s32'Cancel'
-        endIf: 
-        checkInput: (INPUT_PRESS_G)
-        if: Mem(Tmp)
-            clearUpon: (FRAME_STEP)
-            Unknown2347: s32'NmlAtk5D_Cancel'
-            gotoLabelRequests: s32'Cancel'
-        endIf: 
-        ifOperation: (IS_NOT_EQUAL), Mem(ActReg3), Mem(PlayerVal1)
-            ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(20)
-                createObject: s32'DJT_LvUpEff_Lv2', (PLAYER)
-                callSubroutine: s32'DJT_charge_Wind_Del'
-                createObject: s32'DJT_charge_Wind_Lv2', (PLAYER)
-                characterSfx: s32'djt_11'
-                cameraShake: s32'ShakeTate', 250, 0, 10, 0
-            endIf: 
-            ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(50)
-                createObject: s32'DJT_LvUpEff_Lv3', (PLAYER)
-                callSubroutine: s32'DJT_charge_Wind_Del'
-                createObject: s32'DJT_charge_Wind_Lv3', (PLAYER)
-                characterSfx: s32'djt_11'
-                cameraShake: s32'ShakeTate', 500, 0, 10, 0
-            endIf: 
-            ifOperation: (IS_EQUAL), Mem(PlayerVal1), Val(90)
-                createObject: s32'DJT_LvUpEff_Lv4', (PLAYER)
-                callSubroutine: s32'DJT_charge_Wind_Del'
-                createObject: s32'DJT_charge_Wind_Lv4', (PLAYER)
-                characterSfx: s32'djt_11'
-                cameraShake: s32'ShakeTate', 1000, 0, 10, 0
-            endIf: 
-        endIf: 
-    endUpon: 
-    sprite: s32'djt208_05', 3
-    sprite: s32'djt208_06', 3
-    beginLabel: s32'loop'
-    sprite: s32'djt208_04', 3
-    sprite: s32'djt208_05', 3
-    sprite: s32'djt208_06', 3
+    sprite: s32'djt450_02', 3
+    sprite: s32'djt450_03', 3
+    sprite: s32'djt450_01', 3
+    haltMomentum: 1
+    sprite: s32'djt450_02', 3
+    sprite: s32'djt450_03', 3
+    sprite: s32'djt450_01', 3
+    endSprite: 
+    checkInput: (INPUT_HOLD_U)
+    gotoLabelIf: s32'Tame', Mem(Tmp)
+    gotoLabelIfNot: s32'End', Mem(Tmp)
+    beginLabel: s32'Tame'
+    sprite: s32'djt450_03', 3
+    storeValue: Mem(ActReg0), Val(2)
     characterSfx: s32'djt_05'
-    sprite: s32'djt208_04', 3
-    sprite: s32'djt208_05', 3
-    sprite: s32'djt208_06', 3
-    gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), Mem(ActionTime), Val(124)
-    sprite: s32'djt208_04', 3
-    sprite: s32'djt208_05', 3
-    sprite: s32'djt208_06', 3
-    sprite: s32'djt208_04', 4
-    beginLabel: s32'Cancel'
-    sprite: s32'djt208_06', 4
-    clearUpon: (FRAME_STEP)
-    attackEndDelay: 
-    Unknown2421: 0x00000000000000000000000000000000
-    sprite: s32'djt209_00', 3
-    ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(20)
-        callSubroutine: s32'DJT_charge_Wind_Del'
-        createObject: s32'DJT_ChargeStock_Lv0', (PLAYER)
-    endIf: 
-    else: 
-        ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(50)
-            callSubroutine: s32'DJT_charge_Wind_Del'
-            createObject: s32'DJT_ChargeStock_Lv2', (PLAYER)
-        endIf: 
-        else: 
-            ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(90)
-                callSubroutine: s32'DJT_charge_Wind_Del'
-                createObject: s32'DJT_ChargeStock_Lv3', (PLAYER)
-            endIf: 
-            else: 
-                callSubroutine: s32'DJT_charge_Wind_Del'
-                createObject: s32'DJT_ChargeStock_Lv4', (PLAYER)
-            endElse: 
-        endElse: 
-    endElse: 
-    characterSfx: s32'djt_07'
-    sprite: s32'djt209_01', 4
-    sprite: s32'djt209_02', 4
+    sprite: s32'djt450_01', 3
+    sprite: s32'djt450_02', 3
+    characterSfx: s32'djt_05'
+    sprite: s32'djt450_03', 3
+    sprite: s32'djt450_01', 3
     endSprite: 
-    exitState: 
-    beginLabel: s32'Atk'
-    sprite: s32'djt208_07', 2
+    beginLabel: s32'End'
+    sprite: s32'djt450_04', 3
+    sendSignalToAction: s32'DJT_450_Charge', (SIGNAL_A)
     Unknown2421: 0x00000000000000000000000000000000
-    clearUpon: (FRAME_STEP)
-    exPointFReset: (PLAYER), 40000, 0
-    createParticleWithArg2: s32'bg_GroundBurstZlink', (EX_POINT_F)
-    callSubroutine: s32'DJT_charge_Wind_Del'
-    physicsXImpulse: 24000
-    velocityXPercentEachFrame: 97
-    physicsYImpulse: 22000
-    setGravity: 2350
-    pushboxHeightLow: 0
-    Unknown713: 0, 6250
-    voiceLine: s16'vDJT_ATKAby_01'
-    cmnSfx: s32'SE_BTL_Jump'
-    upon: (BEFORE_EXIT)
-        storeValue: Mem(PlayerVal1), Val(0)
-        storeValue: Mem(ExGage0), Val(0)
-        Unknown1889: 0, 0
-    endUpon: 
-    sprite: s32'djt208_08', 1
-    sprite: s32'djt208_08', 1
-    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(20)
-        untechAmount: 60
+    ifOperation: (IS_EQUAL), Mem(ActReg0), Val(2)
+        cameraShake: s32'ShakeTate', 2000, 5, 5, 0
     endIf: 
-    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(50)
-        hitstunAmount: 22
-        groundBounceYVelocityPercent: 35
-    endIf: 
-    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(90)
-        hitstunAmount: 24
-        groundBounceYVelocityPercent: 50
-        callSubroutine: s32'cmnMuteki'
-        uiBattleText: 6
-    endIf: 
-    sprite: s32'djt208_11', 2
-    sprite: s32'djt208_12', 2
-    sprite: s32'djt208_13', 2
-    sprite: s32'djt208_14', 2
-    sprite: s32'djt208_15', 2
-    sprite: s32'djt208_16', 1
-    cmnSfx: s32'SE_BTL_SwingBlowL'
-    ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(20)
-        createObject: s32'DJT_208_strike_Lv0', (PLAYER)
-        stackObject: (STACK0), (PREVIOUS)
-    endIf: 
-    else: 
-        ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(50)
-            createObject: s32'DJT_208_strike_Lv2', (PLAYER)
-            stackObject: (STACK0), (PREVIOUS)
-        endIf: 
-        else: 
-            ifOperation: (IS_LESSER), Mem(PlayerVal1), Val(90)
-                createObject: s32'DJT_208_strike_Lv3', (PLAYER)
-                stackObject: (STACK0), (PREVIOUS)
-            endIf: 
-            else: 
-                createObject: s32'DJT_208_strike_Lv4', (PLAYER)
-                stackObject: (STACK0), (PREVIOUS)
-                characterSfx: s32'djt_09_VolDOWN'
-            endElse: 
-        endElse: 
-    endElse: 
-    characterSfx: s32'djt_00'
-    sprite: s32'djt208_17', 3
-    hit: 
-    velocityYPercentEachFrame: 110
-    setGravity: 3500
-    sprite: s32'djt208_18', 3
-    sprite: s32'djt208_19', 3
-    Unknown1793: 4, 23
-    beginLabel: s32'loop_Atk'
-    sprite: s32'djt208_17', 3
-    sprite: s32'djt208_18', 3
-    sprite: s32'djt208_19', 3
-    endSprite: 
-    gotoLabel: s32'loop_Atk'
-    beginLabel: s32'Landing'
-    sprite: s32'djt208_20', 1
-    clearUpon: (HIT_OR_GUARD)
-    clearUpon: 99
-    if: Mem(ActReg2)
-        appendCollision: 1, -190, -200, 130, 200
-        ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(20)
-            hit: 
-            damage: 300
-            hitAirPushbackX: 10000
-            ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(50)
-                addValToDamage: 0, 300
-            endIf: 
-            ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal1), Val(90)
-                addValToDamage: 0, 300
-                hitAirPushbackX: 5000
-            endIf: 
-            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(2)
-                enemyHitstopAddition: 0, 4, 4
-            endIf: 
-        endIf: 
-    endIf: 
-    addPositionX: 20000
-    Unknown1793: 4, 24
-    sprite: s32'djt208_21', 2
-    storeValue: Mem(PlayerVal1), Val(0)
-    storeValue: Mem(ExGage0), Val(0)
-    Unknown1889: 0, 0
-    appendCollision: 1, -1, -1, -1, -1
+    characterSfx: s32'djt_11'
+    sprite: s32'djt450_05', 3
+    sprite: s32'djt450_06', 3
+    sprite: s32'djt450_07', 3
+    sprite: s32'djt450_08', 2
+    modifyVar: (ADD), Mem(ExGage0), Mem(ActReg0)
+    modifyVar: (ADD), Mem(ExGage0), Val(1)
     attackEndDelay: 
-    callSubroutine: s32'cmnMuteki_False'
-    sprite: s32'djt208_22', 3
-    sprite: s32'djt208_23', 3
-    sprite: s32'djt208_24', 3
-    sprite: s32'djt208_25', 3
-    sprite: s32'djt208_26', 2
+    sprite: s32'djt450_09', 2
+    sprite: s32'djt450_10', 2
+    sprite: s32'djt450_11', 2
     callSubroutine: s32'cmnNandemoCancel'
-    callSubroutine: s32'DJT_charge_Wind_Del'
-    sprite: s32'djt010_21', 4
-    sprite: s32'djt010_22', 4
-    sprite: s32'djt010_23', 4
-    sprite: s32'djt010_24', 4
-    endSprite: 
+    sprite: s32'djt450_12', 2
 endState: 
 
 beginState: s32'NmlAtk2D'
@@ -4841,47 +4406,35 @@ beginState: s32'SpecialShot_A'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttack_Init'
         callSubroutine: s32'cmnShotCounterUkeru'
-        upon: (FRAME_STEP)
-            checkInput: (INPUT_HOLD_L)
-            if: Mem(Tmp)
-                storeValue: Mem(ActReg0), Val(1)
-            endIf: 
-            else: 
-                checkInput: 25
-                if: Mem(Tmp)
-                    storeValue: Mem(ActReg0), Val(1)
-                endIf: 
-                else: 
-                    clearUpon: (FRAME_STEP)
-                    storeValue: Mem(ActReg0), Val(0)
-                endElse: 
-            endElse: 
-        endUpon: 
+        storeValue: Mem(ActReg7), Mem(ExGage0)
     endUpon: 
     sprite: s32'djt400_00', 2
     sprite: s32'djt400_01', 3
     createObject: s32'400Eff_aura', (PLAYER)
-    smartRandomVoiceLine: s16'vDJT_ATKS_00', 100, s16'', 0, s16'', 0, s16'', 0
-    Unknown1681: 
+    smartRandomVoiceLine: s16'vDJT_ATKS_200', 100, s16'', 0, s16'', 0, s16'', 0
+    if: Mem(ActReg7)
+        modifyVar: (ADD), Mem(ExGage0), Val(-1)
+        createParticleWithArg2: s32'djt_208_ChargeStockLv3', (CHEST_3D)
+        characterSfx: s32'djt_12'
+    endIf: 
     sprite: s32'djt400_02', 3
     sprite: s32'djt400_03', 4
     sprite: s32'djt400_04', 3
     createObject: s32'Dashsmoke', (PLAYER)
+    sendSignalToAction: s32'400Eff_aura', (SIGNAL_B)
     sprite: s32'djt400_05', 2
-    clearUpon: (FRAME_STEP)
-    ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
+    clearUpon: (BEFORE_EXIT)
+    ifNot: Mem(ActReg7)
         createArgHikitsukiVal: Val(0), Val(0)
-        createObjectWithArg: s32'SpecialShot', 0
-        createObject: s32'400Eff_atk', (PLAYER)
-        characterSfx: s32'djt_02'
-        clearUpon: (BEFORE_EXIT)
+        createObjectWithArg: s32'SpecialShotEx', 0
     endIf: 
-    sprite: s32'djt400_06', 2
-    sprite: s32'djt400_06', 1
-    ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
-        createObject: s32'Charge_SpecialShot_ChargeEffect', (PLAYER)
-        gotoLabelRequests: s32'Charge_Atk'
+    if: Mem(ActReg7)
+        createArgHikitsukiVal: Val(0), Val(0)
+        createObjectWithArg: s32'Charge_SpecialShotEx', 0
     endIf: 
+    createObject: s32'400Eff_atk', (PLAYER)
+    characterSfx: s32'djt_02'
+    sprite: s32'djt400_06', 3
     sprite: s32'djt400_07', 3
     sprite: s32'djt400_08', 3
     sprite: s32'djt400_09', 3
@@ -4891,82 +4444,41 @@ beginState: s32'SpecialShot_A'
     sprite: s32'djt400_10', 3
     sprite: s32'djt400_11', 3
     sprite: s32'djt400_12', 3
-    endSprite: 
-    exitState: 
-    beginLabel: s32'Charge_Atk'
-    sprite: s32'djt400_07', 3
-    clearUpon: (FRAME_STEP)
-    sprite: s32'djt400_08', 3
-    sprite: s32'djt400_09', 3
-    sprite: s32'djt400_07', 3
-    sprite: s32'djt400_08', 3
-    sprite: s32'djt400_09', 3
-    sprite: s32'djt401_00', 2
-    voiceLine: s16'vDJT_ATKS_03'
-    sprite: s32'djt401_01', 2
-    deactivateObjectByName: s32'Charge_SpecialShot_ChargeEffect'
-    createArgHikitsukiVal: Val(0), Val(0)
-    createObjectWithArg: s32'Charge_SpecialShot', 0
-    createObject: s32'400Eff_atk', (PLAYER)
-    characterSfx: s32'djt_02'
-    clearUpon: (BEFORE_EXIT)
-    sprite: s32'djt401_02', 3
-    sprite: s32'djt401_03', 3
-    sprite: s32'djt401_04', 3
-    sprite: s32'djt401_05', 3
-    sprite: s32'djt401_06', 3
-    sprite: s32'djt401_07', 3
-    sprite: s32'djt401_08', 3
-    sprite: s32'djt401_09', 3
-    sprite: s32'djt401_10', 3
-    callSubroutine: s32'cmnNandemoCancel'
 endState: 
 
 beginState: s32'SpecialShot_B'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttack_Init'
         callSubroutine: s32'cmnShotCounterUkeru'
-        upon: (FRAME_STEP)
-            checkInput: (INPUT_HOLD_M)
-            if: Mem(Tmp)
-                storeValue: Mem(ActReg0), Val(1)
-            endIf: 
-            else: 
-                checkInput: 25
-                if: Mem(Tmp)
-                    storeValue: Mem(ActReg0), Val(1)
-                endIf: 
-                else: 
-                    clearUpon: (FRAME_STEP)
-                    storeValue: Mem(ActReg0), Val(0)
-                endElse: 
-            endElse: 
-        endUpon: 
+        storeValue: Mem(ActReg7), Mem(ExGage0)
     endUpon: 
     sprite: s32'djt400_00', 2
     sprite: s32'djt400_01', 3
     createObject: s32'400Eff_aura', (PLAYER)
-    smartRandomVoiceLine: s16'vDJT_ATKS_01', 100, s16'', 0, s16'', 0, s16'', 0
-    Unknown1681: 
+    smartRandomVoiceLine: s16'vDJT_ATKS_201', 100, s16'', 0, s16'', 0, s16'', 0
+    if: Mem(ActReg7)
+        modifyVar: (ADD), Mem(ExGage0), Val(-1)
+        createParticleWithArg2: s32'djt_208_ChargeStockLv3', (CHEST_3D)
+        characterSfx: s32'djt_12'
+    endIf: 
     sprite: s32'djt400_02', 3
     sprite: s32'djt400_03', 4
     sprite: s32'djt400_04', 3
     createObject: s32'Dashsmoke', (PLAYER)
+    sendSignalToAction: s32'400Eff_aura', (SIGNAL_B)
     sprite: s32'djt400_05', 2
-    clearUpon: (FRAME_STEP)
-    ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
+    clearUpon: (BEFORE_EXIT)
+    ifNot: Mem(ActReg7)
         createArgHikitsukiVal: Val(1), Val(0)
-        createObjectWithArg: s32'SpecialShot', 0
-        createObject: s32'400Eff_atk', (PLAYER)
-        characterSfx: s32'djt_02'
-        clearUpon: (BEFORE_EXIT)
+        createObjectWithArg: s32'SpecialShotEx', 0
     endIf: 
-    sprite: s32'djt400_06', 2
-    sprite: s32'djt400_06', 1
-    ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
-        createObject: s32'Charge_SpecialShot_ChargeEffect', (PLAYER)
-        gotoLabelRequests: s32'Charge_Atk'
+    if: Mem(ActReg7)
+        createArgHikitsukiVal: Val(1), Val(0)
+        createObjectWithArg: s32'Charge_SpecialShotEx', 0
     endIf: 
+    createObject: s32'400Eff_atk', (PLAYER)
+    characterSfx: s32'djt_02'
+    sprite: s32'djt400_06', 3
     sprite: s32'djt400_07', 3
     sprite: s32'djt400_08', 3
     sprite: s32'djt400_09', 3
@@ -4976,78 +4488,43 @@ beginState: s32'SpecialShot_B'
     sprite: s32'djt400_10', 3
     sprite: s32'djt400_11', 3
     sprite: s32'djt400_12', 3
-    endSprite: 
-    exitState: 
-    beginLabel: s32'Charge_Atk'
-    sprite: s32'djt400_07', 3
-    clearUpon: (FRAME_STEP)
-    sprite: s32'djt401_00', 2
-    voiceLine: s16'vDJT_ATKS_04'
-    sprite: s32'djt401_01', 2
-    deactivateObjectByName: s32'Charge_SpecialShot_ChargeEffect'
-    createArgHikitsukiVal: Val(1), Val(0)
-    createObjectWithArg: s32'Charge_SpecialShot', 0
-    createObject: s32'400Eff_atk', (PLAYER)
-    characterSfx: s32'djt_02'
-    clearUpon: (BEFORE_EXIT)
-    sprite: s32'djt401_02', 3
-    sprite: s32'djt401_03', 3
-    sprite: s32'djt401_04', 3
-    sprite: s32'djt401_05', 3
-    sprite: s32'djt401_06', 3
-    sprite: s32'djt401_07', 3
-    sprite: s32'djt401_08', 3
-    sprite: s32'djt401_09', 3
-    sprite: s32'djt401_10', 3
-    callSubroutine: s32'cmnNandemoCancel'
 endState: 
 
 beginState: s32'SpecialShot_C'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttackC_Init'
         callSubroutine: s32'cmnShotCounterUkeru'
-        upon: (FRAME_STEP)
-            checkInput: (INPUT_HOLD_H)
-            if: Mem(Tmp)
-                storeValue: Mem(ActReg0), Val(1)
-            endIf: 
-            else: 
-                checkInput: 25
-                if: Mem(Tmp)
-                    storeValue: Mem(ActReg0), Val(1)
-                endIf: 
-                else: 
-                    clearUpon: (FRAME_STEP)
-                    storeValue: Mem(ActReg0), Val(0)
-                endElse: 
-            endElse: 
-        endUpon: 
+        storeValue: Mem(ActReg7), Mem(ExGage0)
     endUpon: 
     sprite: s32'djt400_00', 2
     sprite: s32'djt400_01', 3
     createObject: s32'400Eff_aura', (PLAYER)
-    smartRandomVoiceLine: s16'vDJT_ATKS_02', 100, s16'', 0, s16'', 0, s16'', 0
+    smartRandomVoiceLine: s16'vDJT_ATKS_202', 100, s16'', 0, s16'', 0, s16'', 0
+    if: Mem(ActReg7)
+        modifyVar: (ADD), Mem(ExGage0), Val(-1)
+        createParticleWithArg2: s32'djt_208_ChargeStockLv3', (CHEST_3D)
+        characterSfx: s32'djt_12'
+    endIf: 
     sprite: s32'djt400_02', 3
     sprite: s32'djt400_03', 4
     sprite: s32'djt400_04', 3
     createObject: s32'Dashsmoke', (PLAYER)
+    sendSignalToAction: s32'400Eff_aura', (SIGNAL_B)
     sprite: s32'djt400_05', 2
-    clearUpon: (FRAME_STEP)
-    ifOperation: (IS_EQUAL), Mem(ActReg0), Val(0)
+    clearUpon: (BEFORE_EXIT)
+    ifNot: Mem(ActReg7)
         createArgHikitsukiVal: Val(2), Val(0)
-        createObjectWithArg: s32'SpecialShot', 0
-        createObject: s32'400Eff_atk', (PLAYER)
-        characterSfx: s32'djt_02'
-        clearUpon: (BEFORE_EXIT)
+        createObjectWithArg: s32'SpecialShotEx', 0
     endIf: 
-    sprite: s32'djt400_06', 2
-    sprite: s32'djt400_06', 1
-    ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
-        createObject: s32'Charge_SpecialShot_ChargeEffect', (PLAYER)
-        gotoLabelRequests: s32'Charge_Atk'
+    if: Mem(ActReg7)
+        createArgHikitsukiVal: Val(2), Val(0)
+        createObjectWithArg: s32'Charge_SpecialShotEx', 0
     endIf: 
-    sprite: s32'djt400_07', 3
+    createObject: s32'400Eff_atk', (PLAYER)
+    characterSfx: s32'djt_02'
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
+    sprite: s32'djt400_06', 3
+    sprite: s32'djt400_07', 3
     sprite: s32'djt400_08', 3
     sprite: s32'djt400_09', 3
     sprite: s32'djt400_07', 3
@@ -5056,36 +4533,6 @@ beginState: s32'SpecialShot_C'
     sprite: s32'djt400_10', 3
     sprite: s32'djt400_11', 3
     sprite: s32'djt400_12', 3
-    endSprite: 
-    exitState: 
-    beginLabel: s32'Charge_Atk'
-    sprite: s32'djt400_07', 3
-    clearUpon: (FRAME_STEP)
-    sprite: s32'djt400_08', 3
-    sprite: s32'djt400_09', 3
-    sprite: s32'djt400_07', 2
-    createArgHikitsukiVal: Val(2), Val(0)
-    createObjectWithArg: s32'Charge_Attack', 0
-    sprite: s32'djt401_00', 2
-    voiceLine: s16'vDJT_ATKS_05'
-    sprite: s32'djt401_01', 2
-    deactivateObjectByName: s32'Charge_SpecialShot_ChargeEffect'
-    createArgHikitsukiVal: Val(2), Val(0)
-    createObjectWithArg: s32'Charge_SpecialShot', 0
-    createObject: s32'400Eff_atk', (PLAYER)
-    characterSfx: s32'djt_02'
-    clearUpon: (BEFORE_EXIT)
-    sprite: s32'djt401_02', 3
-    sprite: s32'djt401_03', 3
-    sprite: s32'djt401_04', 2
-    sprite: s32'djt401_05', 4
-    callSubroutine: s32'cmnExSkill_ColorEnd_M'
-    sprite: s32'djt401_06', 4
-    sprite: s32'djt401_07', 3
-    sprite: s32'djt401_08', 3
-    sprite: s32'djt401_09', 3
-    sprite: s32'djt401_10', 3
-    callSubroutine: s32'cmnNandemoCancel'
 endState: 
 
 beginState: s32'SpecialShot_D'
@@ -5097,6 +4544,7 @@ beginState: s32'SpecialShot_D'
     sprite: s32'djt400_00', 1
     sprite: s32'djt400_01', 1
     sprite: s32'djt400_02', 1
+    smartRandomVoiceLine: s16'vDJT_ATKS_203', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'djt400_03', 1
     sprite: s32'djt400_04', 1
     sprite: s32'djt400_05', 1
@@ -5106,7 +4554,6 @@ beginState: s32'SpecialShot_D'
     sprite: s32'djt400_08', 3
     sprite: s32'djt400_09', 3
     sprite: s32'djt401_00', 2
-    smartRandomVoiceLine: s16'vDJT_ATKS_100', 100, s16'vDJT_ATKS_101', 100, s16'', 0, s16'', 0
     sprite: s32'djt401_01', 2
     deactivateObjectByName: s32'Charge_SpecialShot_ChargeEffect'
     createArgHikitsukiVal: Val(3), Val(0)
@@ -5115,16 +4562,15 @@ beginState: s32'SpecialShot_D'
     characterSfx: s32'djt_02'
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     clearUpon: (BEFORE_EXIT)
-    sprite: s32'djt401_02', 6
-    sprite: s32'djt401_03', 6
-    sprite: s32'djt401_04', 6
-    sprite: s32'djt401_05', 10
-    beginLabel: s32'End'
+    sprite: s32'djt401_02', 3
+    sprite: s32'djt401_03', 3
+    sprite: s32'djt401_04', 3
+    sprite: s32'djt401_05', 3
     sprite: s32'djt401_06', 3
     sprite: s32'djt401_07', 3
     sprite: s32'djt401_08', 3
-    sprite: s32'djt401_09', 3
-    sprite: s32'djt401_10', 3
+    sprite: s32'djt401_09', 2
+    sprite: s32'djt401_10', 2
 endState: 
 
 beginState: s32'AntiAir_A'
@@ -5145,7 +4591,6 @@ beginState: s32'AntiAir_A'
     sprite: s32'djt402_00', 2
     sprite: s32'djt402_01', 1
     smartRandomVoiceLine: s16'vDJT_ATKS_06', 100, s16'', 0, s16'', 0, s16'', 0
-    Unknown1681: 
     sprite: s32'djt402_02', 1
     sprite: s32'djt402_03', 1
     cmnSfx: s32'SE_BTL_SwingBlowL'
@@ -5213,7 +4658,6 @@ beginState: s32'AntiAir_B'
     uiBattleText: 6
     sprite: s32'djt403_01', 3
     smartRandomVoiceLine: s16'vDJT_ATKS_07', 100, s16'', 0, s16'', 0, s16'', 0
-    Unknown1681: 
     sprite: s32'djt403_02', 3
     sprite: s32'djt403_03', 2
     physicsXImpulse: 30000
@@ -5617,547 +5061,909 @@ beginState: s32'AntiAir_D'
     sprite: s32'djt010_00', 2
 endState: 
 
+beginSubroutine: s32'SpecialJumpAttack_Init'
+    callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
+    callSubroutine: s32'cmnSpecialAttack_Init'
+    groundHitEffect: (NORMAL_UPPER)
+    airHitEffect: (AIR_LAUNCH)
+    hitAirPushbackX: 5000
+    hitAirPushbackY: -55000
+    hitGravity: 0
+    untechAmount: 60
+    groundBounceYVelocityPercent: 30
+    groundBounceCount: 1
+    wallPushback: 0, 100
+    hitstop: 8
+    clashLevel: 1
+    isAirUnblockable: 0
+    gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
+endSubroutine: 
+
+beginSubroutine: s32'SpecialJumpAttack_Landing'
+    groundHitEffect: (AIR_LAUNCH)
+    airHitEffect: (AIR_LAUNCH)
+    hitAirPushbackX: 10000
+    hitAirPushbackY: 19000
+    resetHitGravity: 
+    groundBounceCount: 0
+    attackHitPositionType: 3, 0, -50000
+    wallPushback: 0, 1050
+    hitstop: 14
+endSubroutine: 
+
+beginState: s32'SpecialJumpAttack_A'
+    upon: (IMMEDIATE)
+        callSubroutine: s32'SpecialJumpAttack_Init'
+        damage: 600
+        damageEffect: 2, s32'DJT_SPHitEff'
+        gotoLabelUpon: 4, s32'Top_Down'
+    endUpon: 
+    sprite: s32'djt208_00', 1
+    sprite: s32'djt208_01', 2
+    sprite: s32'djt208_02', 2
+    characterSfx: s32'djt_06'
+    sprite: s32'djt208_03', 2
+    sprite: s32'djt208_07', 2
+    haltMomentum: 1
+    physicsXImpulse: 10000
+    physicsYImpulse: 24000
+    setGravity: 2000
+    Unknown2329: 3, 23, 100, 22, 100
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(0)
+        storeValue: Mem(SpeedX), Mem(EnemyFrontDistance)
+        velocityXPercent: 6
+        ifOperation: (IS_GREATER_OR_EQUAL), Mem(SpeedX), Val(20000)
+            physicsXImpulse: 20000
+        endIf: 
+    endIf: 
+    upon: (FRAME_STEP)
+        Unknown2329: 3, 23, 100, 22, 100
+        ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
+            velocityXPercent: 85
+        endIf: 
+    endUpon: 
+    exPointFReset: (PLAYER), 40000, 0
+    createParticleWithArg2: s32'bg_GroundBurstZlink', (EX_POINT_F)
+    cmnSfx: s32'SE_BTL_Jump'
+    beginLabel: s32'Top_Loop'
+    sprite: s32'djt208_08', 3
+    sprite: s32'djt208_09', 3
+    sprite: s32'djt208_10', 3
+    endSprite: 
+    gotoLabel: s32'Top_Loop'
+    beginLabel: s32'Top_Down'
+    sprite: s32'djt208_11', 1
+    clearUpon: 4
+    velocityXPercentEachFrame: 90
+    pushboxHeightLow: 0
+    sprite: s32'djt208_12', 1
+    sprite: s32'djt208_13', 1
+    sprite: s32'djt208_14', 1
+    sprite: s32'djt208_15', 1
+    sprite: s32'djt208_16', 1
+    cmnSfx: s32'SE_BTL_SwingBlowL'
+    characterSfx: s32'djt_00'
+    sprite: s32'djt208_17', 3
+    hit: 
+    velocityYPercent: 200
+    createObject: s32'DJT_451EX_Strike', (PLAYER)
+    smartRandomVoiceLine: s16'vDJT_ATKS_221', 100, s16'', 0, s16'', 0, s16'', 0
+    sprite: s32'djt208_18', 3
+    sprite: s32'djt208_19', 3
+    beginLabel: s32'loop'
+    sprite: s32'djt208_17', 3
+    sprite: s32'djt208_18', 3
+    sprite: s32'djt208_19', 3
+    endSprite: 
+    gotoLabel: s32'loop'
+    beginLabel: s32'Landing'
+    sprite: s32'djt208_20', 3
+    clearUpon: (FRAME_STEP)
+    attackOff: 
+    sendSignalToAction: s32'DJT_451EX_Strike', (SIGNAL_A)
+    sprite: s32'djt208_21ex01', 2
+    hit: 
+    callSubroutine: s32'SpecialJumpAttack_Landing'
+    hitAirPushbackY: 13000
+    sprite: s32'djt208_22', 3
+    attackEndDelay: 
+    sprite: s32'djt208_23', 4
+    sprite: s32'djt208_24', 3
+    sprite: s32'djt208_25', 3
+    sprite: s32'djt208_26', 3
+    callSubroutine: s32'cmnNandemoCancel'
+    sprite: s32'djt010_21', 3
+    sprite: s32'djt010_22', 3
+    sprite: s32'djt010_23', 3
+    sprite: s32'djt010_24', 3
+endState: 
+
+beginState: s32'SpecialJumpAttack_B'
+    upon: (IMMEDIATE)
+        callSubroutine: s32'SpecialJumpAttack_Init'
+        damage: 700
+        damageEffect: 2, s32'DJT_SPHitEff'
+        gotoLabelUpon: 4, s32'Top_Down'
+    endUpon: 
+    sprite: s32'djt208_00', 3
+    sprite: s32'djt208_01', 3
+    sprite: s32'djt208_02', 3
+    smartRandomVoiceLine: s16'vDJT_ATKS_222', 100, s16'', 0, s16'', 0, s16'', 0
+    characterSfx: s32'djt_06'
+    sprite: s32'djt208_03', 3
+    sprite: s32'djt208_07', 2
+    haltMomentum: 1
+    physicsXImpulse: 10000
+    physicsYImpulse: 35000
+    setGravity: 2500
+    Unknown2329: 3, 23, 100, 22, 100
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(0)
+        storeValue: Mem(SpeedX), Mem(EnemyFrontDistance)
+        velocityXPercent: 6
+        ifOperation: (IS_GREATER_OR_EQUAL), Mem(SpeedX), Val(18000)
+            physicsXImpulse: 18000
+        endIf: 
+    endIf: 
+    upon: (FRAME_STEP)
+        Unknown2329: 3, 23, 100, 22, 100
+        ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
+            velocityXPercent: 85
+        endIf: 
+    endUpon: 
+    exPointFReset: (PLAYER), 40000, 0
+    createParticleWithArg2: s32'bg_GroundBurstZlink', (EX_POINT_F)
+    cmnSfx: s32'SE_BTL_Jump'
+    beginLabel: s32'Top_Loop'
+    sprite: s32'djt208_08', 3
+    sprite: s32'djt208_09', 3
+    sprite: s32'djt208_10', 3
+    endSprite: 
+    gotoLabel: s32'Top_Loop'
+    beginLabel: s32'Top_Down'
+    sprite: s32'djt208_11', 1
+    clearUpon: 4
+    velocityXPercentEachFrame: 90
+    pushboxHeightLow: 0
+    sprite: s32'djt208_12', 1
+    sprite: s32'djt208_13', 1
+    sprite: s32'djt208_14', 1
+    sprite: s32'djt208_15', 1
+    sprite: s32'djt208_16', 2
+    cmnSfx: s32'SE_BTL_SwingBlowL'
+    characterSfx: s32'djt_00'
+    sprite: s32'djt208_17', 3
+    hit: 
+    velocityYPercent: 200
+    createObject: s32'DJT_451EX_Strike', (PLAYER)
+    sprite: s32'djt208_18', 3
+    sprite: s32'djt208_19', 3
+    beginLabel: s32'loop'
+    sprite: s32'djt208_17', 3
+    sprite: s32'djt208_18', 3
+    sprite: s32'djt208_19', 3
+    endSprite: 
+    gotoLabel: s32'loop'
+    beginLabel: s32'Landing'
+    sprite: s32'djt208_20', 3
+    clearUpon: (FRAME_STEP)
+    attackOff: 
+    sendSignalToAction: s32'DJT_451EX_Strike', (SIGNAL_A)
+    sprite: s32'djt208_21ex01', 2
+    hit: 
+    callSubroutine: s32'SpecialJumpAttack_Landing'
+    sprite: s32'djt208_22', 3
+    attackEndDelay: 
+    sprite: s32'djt208_23', 4
+    sprite: s32'djt208_24', 3
+    sprite: s32'djt208_25', 3
+    sprite: s32'djt208_26', 3
+    callSubroutine: s32'cmnNandemoCancel'
+    sprite: s32'djt010_21', 3
+    sprite: s32'djt010_22', 3
+    sprite: s32'djt010_23', 3
+    sprite: s32'djt010_24', 3
+endState: 
+
+beginState: s32'SpecialJumpAttack_C'
+    upon: (IMMEDIATE)
+        callSubroutine: s32'SpecialJumpAttack_Init'
+        callSubroutine: s32'cmnSpecialAttackC_Init'
+        damage: 800
+        damageEffect: 2, s32'DJT_SPHitEff'
+        isAirUnblockable: 0
+        gotoLabelUpon: 4, s32'Top_Down'
+    endUpon: 
+    sprite: s32'djt208_00', 1
+    sprite: s32'djt208_01', 1
+    sprite: s32'djt208_02', 1
+    smartRandomVoiceLine: s16'vDJT_ATKS_223', 100, s16'', 0, s16'', 0, s16'', 0
+    characterSfx: s32'djt_06'
+    sprite: s32'djt208_03', 2
+    sprite: s32'djt208_07', 2
+    haltMomentum: 1
+    physicsXImpulse: 10000
+    physicsYImpulse: 24000
+    setGravity: 2000
+    Unknown2329: 3, 23, 100, 22, 100
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(0)
+        storeValue: Mem(SpeedX), Mem(EnemyFrontDistance)
+        velocityXPercent: 6
+        ifOperation: (IS_GREATER_OR_EQUAL), Mem(SpeedX), Val(23000)
+            physicsXImpulse: 23000
+        endIf: 
+    endIf: 
+    upon: (FRAME_STEP)
+        Unknown2329: 3, 23, 100, 22, 100
+        ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
+            velocityXPercent: 85
+        endIf: 
+    endUpon: 
+    exPointFReset: (PLAYER), 40000, 0
+    createParticleWithArg2: s32'bg_GroundBurstZlink', (EX_POINT_F)
+    cmnSfx: s32'SE_BTL_Jump'
+    beginLabel: s32'Top_Loop'
+    sprite: s32'djt208_08', 3
+    sprite: s32'djt208_09', 3
+    sprite: s32'djt208_10', 3
+    endSprite: 
+    gotoLabel: s32'Top_Loop'
+    beginLabel: s32'Top_Down'
+    sprite: s32'djt208_11', 1
+    clearUpon: 4
+    velocityXPercentEachFrame: 90
+    pushboxHeightLow: 0
+    sprite: s32'djt208_12', 1
+    sprite: s32'djt208_13', 1
+    sprite: s32'djt208_14', 1
+    sprite: s32'djt208_15', 1
+    sprite: s32'djt208_16', 1
+    cmnSfx: s32'SE_BTL_SwingBlowL'
+    characterSfx: s32'djt_00'
+    sprite: s32'djt208_17', 3
+    hit: 
+    velocityYPercent: 200
+    createObject: s32'DJT_451EX_Strike', (PLAYER)
+    sprite: s32'djt208_18', 3
+    sprite: s32'djt208_19', 3
+    beginLabel: s32'loop'
+    sprite: s32'djt208_17', 3
+    sprite: s32'djt208_18', 3
+    sprite: s32'djt208_19', 3
+    endSprite: 
+    gotoLabel: s32'loop'
+    beginLabel: s32'Landing'
+    sprite: s32'djt208_20', 3
+    clearUpon: (FRAME_STEP)
+    attackOff: 
+    sendSignalToAction: s32'DJT_451EX_Strike', (SIGNAL_A)
+    sprite: s32'djt208_21ex01', 2
+    hit: 
+    callSubroutine: s32'SpecialJumpAttack_Landing'
+    sprite: s32'djt208_22', 3
+    attackEndDelay: 
+    callSubroutine: s32'cmnExSkill_ColorEnd_S'
+    sprite: s32'djt208_23', 4
+    sprite: s32'djt208_24', 3
+    sprite: s32'djt208_25', 3
+    sprite: s32'djt208_26', 3
+    callSubroutine: s32'cmnNandemoCancel'
+    sprite: s32'djt010_21', 3
+    sprite: s32'djt010_22', 3
+    sprite: s32'djt010_23', 3
+    sprite: s32'djt010_24', 3
+endState: 
+
+beginState: s32'SpecialJumpAttack_D'
+    upon: (IMMEDIATE)
+        callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
+        callSubroutine: s32'cmnSpecialAttackD_Init'
+        damage: 300
+        groundHitEffect: (AIR_LAUNCH)
+        airHitEffect: (AIR_LAUNCH)
+        hitAirPushbackX: -3000
+        hitAirPushbackY: 20000
+        wallPushback: 0, 1500
+        hitstop: 3
+        enemyHitstopAddition: 0, 0, 0
+        damageEffect: 2, s32'DJT_SPHitEff'
+        isAirUnblockable: 1
+        clashLevel: 4
+        upon: (HIT)
+            clearUpon: (HIT)
+            setNoCollision: 0
+            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(300000)
+                hitAirPushbackX: 1000
+                magnetismX: 1, 200000, 40000, 100, 0
+                magnetismY: 1, 0, 60000, 100, 0
+            endIf: 
+            deactivateObjectByName: s32'djt451_SuikomiObj'
+        endUpon: 
+        createObject: s32'djt451_SuikomiObj', (PLAYER)
+    endUpon: 
+    sprite: s32'djt208_00', 1
+    sprite: s32'djt208_01', 1
+    sprite: s32'djt208_02', 2
+    sprite: s32'djt208_03', 2
+    sprite: s32'djt208_04', 2
+    sprite: s32'djt451_00', 3
+    physicsXImpulse: 10000
+    sprite: s32'djt451_01', 3
+    sprite: s32'djt451_02', 3
+    hit: 
+    haltMomentum: 1
+    physicsXImpulse: 15000
+    velocityXPercentEachFrame: 97
+    physicsYImpulse: 60000
+    setGravity: 3600
+    exPointFReset: (PLAYER), 40000, 0
+    createParticleWithArg2: s32'bg_GroundBurstZlink', (EX_POINT_F)
+    smartRandomVoiceLine: s16'vDJT_ATKS_224', 100, s16'', 0, s16'', 0, s16'', 0
+    cmnSfx: s32'SE_BTL_Jump'
+    createObject: s32'DJT_451EX_StrikeD', (PLAYER)
+    cmnSfx: s32'SE_BTL_SwingBlowL'
+    sprite: s32'djt451_03', 3
+    hit: 
+    cmnSfx: s32'SE_BTL_SwingBlowL'
+    sprite: s32'djt451_04', 3
+    hit: 
+    cmnSfx: s32'SE_BTL_SwingBlowL'
+    beginLabel: s32'Top_Down'
+    sprite: s32'djt451_05', 3
+    clearUpon: 4
+    clearUpon: (HIT)
+    pushboxHeightLow: 0
+    sprite: s32'djt451_06', 3
+    sprite: s32'djt451_07', 3
+    sprite: s32'djt208_14', 2
+    sendSignalToAction: s32'DJT_451EX_StrikeD', (SIGNAL_A)
+    setNoCollision: 1
+    sprite: s32'djt208_15', 2
+    sprite: s32'djt208_16', 2
+    attackOff: 
+    cmnSfx: s32'SE_BTL_SwingBlowL'
+    characterSfx: s32'djt_00'
+    sprite: s32'djt208_17', 3
+    hit: 
+    callSubroutine: s32'SpecialJumpAttack_Init'
+    callSubroutine: s32'cmnSpecialAttackD_Init'
+    damage: 800
+    hitAirPushbackY: -100000
+    hitstop: 10
+    magnetismX: 0, 0, 0, 0, 0
+    magnetismY: 0, 0, 0, 0, 0
+    clashLevel: 4
+    velocityYPercent: 200
+    createObject: s32'DJT_451EX_Strike', (PLAYER)
+    characterSfx: s32'djt_09_VolDOWN'
+    sprite: s32'djt208_18', 3
+    sprite: s32'djt208_19', 3
+    beginLabel: s32'loop'
+    sprite: s32'djt208_17', 3
+    sprite: s32'djt208_18', 3
+    sprite: s32'djt208_19', 3
+    endSprite: 
+    gotoLabel: s32'loop'
+    beginLabel: s32'Landing'
+    sprite: s32'djt208_20', 3
+    clearUpon: (FRAME_STEP)
+    attackOff: 
+    sendSignalToAction: s32'DJT_451EX_Strike', (SIGNAL_A)
+    sprite: s32'djt208_21ex01', 3
+    hit: 
+    callSubroutine: s32'SpecialJumpAttack_Landing'
+    attackHitPositionType: 3, 50000, -100000
+    hitAirPushbackX: 6000
+    hitAirPushbackY: 26000
+    hitstop: 20
+    sprite: s32'djt208_22', 4
+    attackEndDelay: 
+    callSubroutine: s32'cmnExSkill_ColorEnd_M'
+    sprite: s32'djt208_23', 4
+    sprite: s32'djt208_24', 4
+    sprite: s32'djt208_25', 4
+    sprite: s32'djt208_26', 4
+    sprite: s32'djt010_21', 3
+    callSubroutine: s32'cmnNandemoCancel'
+    sprite: s32'djt010_22', 3
+    sprite: s32'djt010_23', 3
+    sprite: s32'djt010_24', 3
+endState: 
+
+beginSubroutine: s32'Assault_Init'
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    clashLevel: 2
+    wallPushback: 0, 1200
+    atkAngle: 60
+    hitEffectFire: 1
+    damageEffect: 2, s32'DJT_SPHitEff'
+    storeValue: Mem(ActReg0), Mem(ExGage0)
+    if: Mem(ActReg0)
+        groundHitEffect: (KIRIMOMI)
+        airHitEffect: (KIRIMOMI)
+    endIf: 
+    upon: (FRAME_STEP)
+        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
+            if: Mem(ActReg0)
+                clearUpon: (FRAME_STEP)
+                modifyVar: (ADD), Mem(ExGage0), Val(-1)
+                createParticleWithArg2: s32'djt_208_ChargeStockLv3', (CHEST_3D)
+                characterSfx: s32'djt_09_VolDOWN'
+            endIf: 
+        endIf: 
+    endUpon: 
+endSubroutine: 
+
 beginState: s32'Assault_A'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
         callSubroutine: s32'cmnSpecialAttack_Init'
-        damage: 350
-        groundHitEffect: (NORMAL_UPPER)
-        airHitEffect: (AIR_LAUNCH)
-        hitAirPushbackX: 8000
-        hitAirPushbackY: 12000
-        hitstop: 12
-        clashLevel: 2
-        comboLimitScaling: 2
-        damageEffect: 2, s32'DJT_Angle110Minus_HitEff'
-        atkAngle: 60
+        callSubroutine: s32'Assault_Init'
+        damage: 900
+        hitAirPushbackX: 10000
+        hitAirPushbackY: 20000
+        untechAmount: 20
+        counterUntechAmount: 20
+        if: Mem(ActReg0)
+            damage: 1000
+            hitAirPushbackY: 24000
+            untechAmount: 22
+            counterUntechAmount: 22
+        endIf: 
     endUpon: 
-    sprite: s32'djt404_00', 2
-    sprite: s32'djt404_00', 1
-    Unknown1681: 
-    sprite: s32'djt404_01', 4
-    physicsXImpulse: 45000
-    velocityXPercentEachFrame: 90
-    Unknown2034: 40000
-    smartRandomVoiceLine: s16'vDJT_ATKS_09', 100, s16'', 0, s16'', 0, s16'', 0
-    sprite: s32'djt404_02', 3
-    sprite: s32'djt404_03', 3
-    haltMomentum: 1
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalS'
-    sprite: s32'djt404_04', 3
+    sprite: s32'djt430_00ex01', 1
+    sprite: s32'djt430_01ex01', 1
+    sprite: s32'djt430_05ex01', 1
+    sprite: s32'djt430_06ex01', 2
+    sprite: s32'djt430_07ex01', 2
+    sprite: s32'djt430_09ex01', 2
+    sprite: s32'djt430_13ex01', 3
+    physicsXImpulse: 40000
+    sprite: s32'djt430_14ex01', 3
+    sprite: s32'djt430_17ex01', 1
     hit: 
-    createObject: s32'DJT_404_Slash01', (PLAYER)
-    characterSfx: s32'djt_08'
-    ignorePushback: 1
-    sprite: s32'djt405_00', 2
-    sprite: s32'djt405_01', 2
-    Unknown2034: 20000
-    sprite: s32'djt405_02', 2
-    Unknown2034: 40000
-    ifNot: Mem(431)
-        voiceLine: s16'vDJT_ATKS_10'
+    haltMomentum: 1
+    physicsXImpulse: 10000
+    velocityXPercentEachFrame: 90
+    createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+    if: Mem(ActReg0)
+        createObject: s32'DJT_430EX_ThrustEX', (PLAYER)
     endIf: 
-    sprite: s32'djt405_03', 2
-    physicsXImpulse: 30000
-    velocityXPercentEachFrame: 90
-    Unknown2034: 10000
-    sprite: s32'djt405_04', 3
-    sprite: s32'djt405_05', 3
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalM'
-    characterSfx: s32'djt_08'
-    hit: 
-    damage: 350
-    airHitEffect: (AIR_FACE_UP)
-    hitAirPushbackX: 15000
-    hitAirPushbackY: 18000
-    damageEffect: 2, s32'DJT_Angle20Minus_HitEff'
-    ignorePushback: 0
-    Unknown1643: 1
-    addWhiffCancelOption: s32'Assault_A_Hasei'
-    haltMomentum: 1
-    createObject: s32'DJT_405_Slash01', (PLAYER)
-    sprite: s32'djt405_06', 3
+    else: 
+        createObject: s32'DJT_430EX_Thrust', (PLAYER)
+    endElse: 
+    smartRandomVoiceLine: s16'vDJT_ATKS_212', 100, s16'', 0, s16'', 0, s16'', 0
+    cmnSfx: s32'SE_BTL_SwingWeaponNormalL'
+    characterSfx: s32'djt_03_2'
+    sprite: s32'djt430_18ex01', 1
+    sprite: s32'djt430_19ex01', 1
+    sprite: s32'djt430_20ex01', 1
+    sprite: s32'djt430_21ex01', 1
+    sprite: s32'djt430_22ex01', 1
+    sprite: s32'djt430_23ex01', 3
     attackEndDelay: 
-    sprite: s32'djt405_07', 3
-    sprite: s32'djt405_07', 1
-    enableWhiffCancel: 0
-    sprite: s32'djt405_08', 3
-    sprite: s32'djt405_09', 3
-    sprite: s32'djt405_10', 2
-    sprite: s32'djt405_11', 2
-    sprite: s32'djt405_12', 2
+    haltMomentum: 1
+    sprite: s32'djt431_00', 3
+    sprite: s32'djt431_01', 3
+    sprite: s32'djt431_02', 2
+    sprite: s32'djt431_03', 2
+    sprite: s32'djt431_04', 2
+    sprite: s32'djt431_05', 2
 endState: 
 
 beginState: s32'Assault_B'
     upon: (IMMEDIATE)
-        callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
+        callSubroutine: s32'cmnSpecialAtkLv5_AtkInit'
         callSubroutine: s32'cmnSpecialAttack_Init'
-        damage: 500
-        groundHitEffect: (NORMAL_UPPER)
-        groundCounterHitEffect: (AIR_FACE_UP)
-        airHitEffect: (AIR_FACE_UP)
-        hitAirPushbackX: 14000
-        hitAirPushbackY: 14000
-        untechAmount: 27
-        clashLevel: 2
-        comboLimitScaling: 2
-        damageEffect: 2, s32'DJT_Angle20Minus_HitEff'
-        Unknown1085: 1
-    endUpon: 
-    sprite: s32'djt406_00', 2
-    sprite: s32'djt406_01', 3
-    smartRandomVoiceLine: s16'vDJT_ATKS_12', 100, s16'', 0, s16'', 0, s16'', 0
-    Unknown1681: 
-    sprite: s32'djt406_02', 3
-    physicsXImpulse: 15000
-    sprite: s32'djt406_03', 4
-    physicsXImpulse: 35000
-    sprite: s32'djt406_04', 3
-    velocityXPercentEachFrame: 85
-    sprite: s32'djt406_05', 3
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalS'
-    sprite: s32'djt406_06', 3
-    hit: 
-    createObject: s32'DJT_406_Slash01', (PLAYER)
-    characterSfx: s32'djt_08'
-    sprite: s32'djt407_00', 2
-    haltMomentum: 1
-    Unknown2034: 20000
-    sprite: s32'djt407_01', 3
-    Unknown2034: 40000
-    sprite: s32'djt407_02', 3
-    Unknown2034: 20000
-    physicsXImpulse: 6000
-    ifNot: Mem(431)
-        voiceLine: s16'vDJT_ATKS_13'
-    endIf: 
-    sprite: s32'djt407_03', 3
-    Unknown2034: 10000
-    sprite: s32'djt407_04', 2
-    Unknown2034: 10000
-    physicsXImpulse: 25000
-    velocityXPercentEachFrame: 75
-    sprite: s32'djt407_05', 3
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalM'
-    characterSfx: s32'djt_08'
-    hit: 
-    damage: 500
-    airHitEffect: (AIR_LAUNCH)
-    hitAirPushbackX: 14000
-    hitAirPushbackY: 23000
-    counterhitAirPushbackX: 10000
-    counterhitAirPushbackY: 28000
-    damageEffect: 2, s32'DJT_Angle60Minus_HitEff'
-    Unknown1643: 1
-    addWhiffCancelOption: s32'Assault_B_Hasei'
-    Unknown2034: 30000
-    createObject: s32'DJT_407_Slash01', (PLAYER)
-    sprite: s32'djt407_06', 3
-    attackEndDelay: 
-    sprite: s32'djt407_07', 3
-    haltMomentum: 1
-    sprite: s32'djt407_07', 1
-    enableWhiffCancel: 0
-    sprite: s32'djt407_08', 3
-    sprite: s32'djt407_09', 3
-    sprite: s32'djt407_10', 3
-    sprite: s32'djt407_11', 2
-endState: 
-
-beginState: s32'Assault_A_Hasei'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
-        damage: 500
-        untechAmount: 16
-        counterUntechAmount: 16
-        groundHitEffect: (AIR_FACE_UP)
-        airHitEffect: (AIR_FACE_UP)
-        hitAirPushbackX: 12000
-        hitAirPushbackY: 19000
-        hitGravity: 2500
-        clashLevel: 2
-        hitEffectOnpa: 1
-        damageEffect: 2, s32'DJT_Angle190_HitEff'
-        storeValue: Mem(ObjReg1), Val(1)
-        upon: (BEFORE_EXIT)
-            storeValue: Mem(ObjReg1), Val(0)
-        endUpon: 
-        checkLastStateName: s32'Assault_A'
-        if: Mem(Tmp)
-            missionName: s32'Assault_A_Hasei'
-        endIf: 
-        checkLastStateName: s32'Assault_B'
-        if: Mem(Tmp)
-            missionName: s32'Assault_B_Hasei'
-            damage: 600
+        callSubroutine: s32'Assault_Init'
+        damage: 1300
+        hitAirPushbackX: 18000
+        hitAirPushbackY: 25000
+        counterhitAirPushbackX: 14000
+        counterhitAirPushbackY: 28000
+        untechAmount: 28
+        if: Mem(ActReg0)
+            damage: 1400
+            hitAirPushbackY: 28000
             untechAmount: 60
-            groundHitEffect: (KIRIMOMI)
-            airHitEffect: (KIRIMOMI)
         endIf: 
     endUpon: 
-    sprite: s32'djt408_00', 2
-    sprite: s32'djt408_01', 1
-    sprite: s32'djt408_02', 1
-    sprite: s32'djt408_03', 2
-    Unknown2034: 50000
-    checkLastStateName: s32'Assault_A'
-    if: Mem(Tmp)
-        voiceLine: s16'vDJT_ATKS_11'
-    endIf: 
-    checkLastStateName: s32'Assault_B'
-    if: Mem(Tmp)
-        voiceLine: s16'vDJT_ATKS_14'
-    endIf: 
-    sprite: s32'djt408_04', 3
-    physicsXImpulse: 23000
-    velocityXPercentEachFrame: 95
-    physicsYImpulse: 22000
-    velocityYPercentEachFrame: 85
-    setGravity: 1500
-    pushboxHeightLow: 0
-    ifOperation: (IS_EQUAL), Mem(PlayerVal6), Val(1)
-        ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDistanceY), Val(130000)
-            setPushboxHeight: 350000
-        endIf: 
-    endIf: 
-    gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
-    createObject: s32'DJT_408_BuffAura', (SHOULDER_R_3D)
-    createObject: s32'DJT_408_BuffAura', (SHOULDER_L_3D)
-    sprite: s32'djt408_05', 3
-    velocityYPercentEachFrame: 100
-    gravityPercent: 220
-    sprite: s32'djt408_06', 3
-    sprite: s32'djt408_07', 2147483647
-    beginLabel: s32'Landing'
-    sprite: s32'djt408_08', 3
+    sprite: s32'djt430_00ex01', 1
+    sprite: s32'djt430_01ex01', 1
+    sprite: s32'djt430_05ex01', 1
+    sprite: s32'djt430_06ex01', 2
+    sprite: s32'djt430_07ex01', 2
+    sprite: s32'djt430_09ex01', 2
+    sprite: s32'djt430_13ex01', 3
+    physicsXImpulse: 40000
+    sprite: s32'djt430_14ex01', 3
+    sprite: s32'djt430_15ex01', 2
+    velocityXPercentEachFrame: 90
+    sprite: s32'djt430_16ex01', 2
+    sprite: s32'djt430_17ex01', 1
     hit: 
     haltMomentum: 1
-    deactivateObjectByName: s32'DJT_408_BuffAura'
-    createObject: s32'DJT_408_Slash01', (PLAYER)
+    physicsXImpulse: 10000
+    velocityXPercentEachFrame: 90
+    createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+    if: Mem(ActReg0)
+        createObject: s32'DJT_430EX_ThrustEX', (PLAYER)
+    endIf: 
+    else: 
+        createObject: s32'DJT_430EX_Thrust', (PLAYER)
+    endElse: 
+    smartRandomVoiceLine: s16'vDJT_ATKS_213', 100, s16'', 0, s16'', 0, s16'', 0
     cmnSfx: s32'SE_BTL_SwingWeaponNormalL'
-    characterSfx: s32'djt_03'
-    sprite: s32'djt408_09', 2
+    characterSfx: s32'djt_03_2'
+    sprite: s32'djt430_18ex01', 1
+    sprite: s32'djt430_19ex01', 1
+    sprite: s32'djt430_20ex01', 1
+    sprite: s32'djt430_21ex01', 1
+    sprite: s32'djt430_22ex01', 1
+    sprite: s32'djt430_23ex01', 3
     attackEndDelay: 
-    sprite: s32'djt408_10', 2
-    sprite: s32'djt408_11', 3
-    sprite: s32'djt408_12', 3
-    sprite: s32'djt408_13', 3
-    sprite: s32'djt408_14', 3
-    sprite: s32'djt408_15', 3
-    sprite: s32'djt408_16', 3
-    sprite: s32'djt408_17', 3
-    callSubroutine: s32'cmnNandemoCancel'
+    haltMomentum: 1
+    sprite: s32'djt431_00', 3
+    sprite: s32'djt431_01', 3
+    sprite: s32'djt431_02', 3
+    sprite: s32'djt431_03', 3
+    sprite: s32'djt431_04', 2
+    sprite: s32'djt431_05', 2
 endState: 
 
 beginState: s32'Assault_C'
     upon: (IMMEDIATE)
-        callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
+        callSubroutine: s32'cmnSpecialAtkLv5_AtkInit'
         callSubroutine: s32'cmnSpecialAttackC_Init'
-        damage: 300
-        groundHitEffect: (NORMAL_UPPER)
+        callSubroutine: s32'Assault_Init'
+        damage: 900
+        groundHitEffect: (AIR_LAUNCH)
         airHitEffect: (AIR_LAUNCH)
-        hitAirPushbackX: 8000
-        hitAirPushbackY: 10000
-        hitstop: 10
-        clashLevel: 3
-        comboLimitScaling: 2
-        damageEffect: 2, s32'DJT_Angle60Minus_HitEff'
-        storeValue: Mem(ActReg0), Val(1)
-        upon: 8
-            clearUpon: 8
-            storeValue: Mem(ActReg0), Val(0)
-        endUpon: 
-    endUpon: 
-    sprite: s32'djt404_00', 4
-    sprite: s32'djt404_01', 3
-    physicsXImpulse: 70000
-    velocityXPercentEachFrame: 80
-    Unknown2034: 40000
-    smartRandomVoiceLine: s16'vDJT_ATKS_15', 100, s16'', 0, s16'', 0, s16'', 0
-    sprite: s32'djt404_02', 3
-    sprite: s32'djt404_03', 4
-    haltMomentum: 1
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalS'
-    sprite: s32'djt404_04', 2
-    createObject: s32'DJT_404_Slash01', (PLAYER)
-    characterSfx: s32'djt_08'
-    hit: 
-    sprite: s32'djt405_00', 1
-    sprite: s32'djt405_01', 1
-    Unknown2034: 20000
-    sprite: s32'djt405_02', 2
-    setSpriteTime: 1, Mem(ActReg0)
-    Unknown2034: 40000
-    ifNot: Mem(431)
-        voiceLine: s16'vDJT_ATKS_16'
-    endIf: 
-    sprite: s32'djt405_03', 2
-    setSpriteTime: 1, Mem(ActReg0)
-    physicsXImpulse: 30000
-    ifNot: Mem(ActReg0)
-        physicsXImpulse: 55000
-    endIf: 
-    velocityXPercentEachFrame: 90
-    Unknown2034: 10000
-    sprite: s32'djt405_04', 2
-    setSpriteTime: 1, Mem(ActReg0)
-    sprite: s32'djt405_05', 3
-    createObject: s32'DJT_405_Slash01', (PLAYER)
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalM'
-    characterSfx: s32'djt_08'
-    hit: 
-    airHitEffect: (AIR_FACE_UP)
-    hitAirPushbackX: 18000
-    Unknown1643: 1
-    addWhiffCancelOption: s32'Assault_C_Hasei_1'
-    haltMomentum: 1
-    damageEffect: 2, s32'DJT_Angle20Minus_HitEff'
-    sprite: s32'djt405_06', 2
-    sprite: s32'djt405_07', 4
-    attackEndDelay: 
-    callSubroutine: s32'cmnExSkill_ColorEnd_M'
-    sprite: s32'djt405_08', 1
-    sprite: s32'djt405_08', 3
-    enableWhiffCancel: 0
-    sprite: s32'djt405_09', 4
-    sprite: s32'djt405_10', 3
-    sprite: s32'djt405_11', 3
-    sprite: s32'djt405_12', 2
-endState: 
-
-beginState: s32'Assault_C_Hasei_1'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
-        callSubroutine: s32'cmnSpecialAttackC_AtkInit'
-        damage: 350
-        groundHitEffect: (NORMAL_UPPER)
-        airHitEffect: (AIR_FACE_UP)
         hitAirPushbackX: 20000
         hitAirPushbackY: 10000
-        hitstop: 12
+        Unknown1085: 1
+        enemyHitstopAddition: 0, 0, 0
         clashLevel: 3
-        comboLimitScaling: 0
-        damageEffect: 2, s32'DJT_Angle190_HitEff'
-        storeValue: Mem(ObjReg1), Val(1)
-        upon: (BEFORE_EXIT)
-            storeValue: Mem(ObjReg1), Val(0)
+        magnetismX: 1, 300000, 20000, 100, 0
+        magnetismY: 1, 0, 10000, 100, 0
+        if: Mem(ActReg0)
+            damage: 1000
+            groundHitEffect: (AIR_LAUNCH)
+            airHitEffect: (AIR_LAUNCH)
+        endIf: 
+        clearUpon: (FRAME_STEP)
+        upon: (FRAME_STEP)
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
+                if: Mem(ActReg0)
+                    clearUpon: (FRAME_STEP)
+                    modifyVar: (ADD), Mem(ExGage0), Val(-1)
+                    createParticleWithArg2: s32'djt_208_ChargeStockLv3', (CHEST_3D)
+                    characterSfx: s32'djt_09_VolDOWN'
+                endIf: 
+            endIf: 
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                setPushboxHeight: 380000
+            endIf: 
+        endUpon: 
+        upon: (HIT_OR_GUARD)
+            clearUpon: (HIT_OR_GUARD)
+            storeValue: Mem(ActReg1), Val(1)
+            upon: (FRAME_STEP)
+                Unknown2329: 3, 23, 100, 22, 100
+                ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
+                    clearUpon: (FRAME_STEP)
+                    gotoLabelRequests: s32'2nd'
+                endIf: 
+            endUpon: 
         endUpon: 
     endUpon: 
-    sprite: s32'djt406_00', 2
-    createObject: s32'cmn_EXSkillJizokuEff', (CENTER)
-    callSubroutine: s32'cmnExSkill_Color'
-    sprite: s32'djt406_01', 2
-    physicsXImpulse: 10000
-    ifNot: Mem(431)
-        voiceLine: s16'vDJT_ATKS_17'
+    sprite: s32'djt430_00ex01', 1
+    sprite: s32'djt430_01ex01', 1
+    sprite: s32'djt430_05ex01', 1
+    sprite: s32'djt430_06ex01', 2
+    sprite: s32'djt430_07ex01', 2
+    sprite: s32'djt430_09ex01', 2
+    sprite: s32'djt430_13ex01', 2
+    physicsXImpulse: 50000
+    sprite: s32'djt430_14ex01', 2
+    createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+    if: Mem(ActReg0)
+        createObject: s32'DJT_430EX_Thrust2EX', (PLAYER)
     endIf: 
-    sprite: s32'djt406_02', 2
-    physicsXImpulse: 25000
-    sprite: s32'djt406_03', 2
-    physicsXImpulse: 60000
-    velocityXPercentEachFrame: 75
-    sprite: s32'djt406_04', 1
-    sprite: s32'djt406_05', 1
-    sprite: s32'djt406_06', 2
-    createObject: s32'DJT_406_Slash01', (PLAYER)
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalS'
-    characterSfx: s32'djt_08'
+    else: 
+        createObject: s32'DJT_430EX_Thrust2', (PLAYER)
+    endElse: 
+    sprite: s32'djt430_15ex01', 2
     hit: 
-    sprite: s32'djt407_00', 2
-    haltMomentum: 1
-    Unknown2034: 20000
-    sprite: s32'djt407_01', 2
-    Unknown2034: 40000
-    sprite: s32'djt407_02', 2
-    Unknown2034: 20000
-    physicsXImpulse: 6000
-    sprite: s32'djt407_03', 2
-    Unknown2034: 10000
-    sprite: s32'djt407_04', 2
-    Unknown2034: 10000
-    physicsXImpulse: 25000
-    velocityXPercentEachFrame: 75
-    sprite: s32'djt407_05', 3
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalM'
-    characterSfx: s32'djt_08'
-    hit: 
-    groundHitEffect: (AIR_LAUNCH)
-    airHitEffect: (AIR_LAUNCH)
-    hitAirPushbackX: 16000
-    hitAirPushbackY: 28500
-    damageEffect: 2, s32'DJT_Angle100Minus_HitEff'
-    Unknown1643: 1
-    addWhiffCancelOption: s32'Assault_C_Hasei_2'
-    Unknown2034: 30000
-    createObject: s32'DJT_407_Slash01', (PLAYER)
-    sprite: s32'djt407_06', 3
+    smartRandomVoiceLine: s16'vDJT_ATKS_214', 100, s16'', 0, s16'', 0, s16'', 0
+    cmnSfx: s32'SE_BTL_SwingWeaponNormalL'
+    characterSfx: s32'djt_03_2'
+    sprite: s32'djt430_16ex01', 2
+    sprite: s32'djt430_14ex01', 2
+    endSprite: 
+    gotoLabelIf: s32'2nd', Mem(ActReg1)
+    sprite: s32'djt431_06', 2
     attackEndDelay: 
-    callSubroutine: s32'cmnExSkill_ColorEnd_M'
-    sprite: s32'djt407_07', 1
-    sprite: s32'djt407_07', 3
     haltMomentum: 1
-    sprite: s32'djt407_08', 2
-    sprite: s32'djt407_08', 2
-    enableWhiffCancel: 0
-    sprite: s32'djt407_09', 4
-    sprite: s32'djt407_10', 4
-    sprite: s32'djt407_11', 3
-endState: 
-
-beginState: s32'Assault_C_Hasei_2'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
-        callSubroutine: s32'cmnSpecialAttackC_AtkInit'
-        callSubroutine: s32'cmnSpecialAttackGauge_C'
-        damage: 800
+    physicsXImpulse: 20000
+    velocityXPercentEachFrame: 80
+    callSubroutine: s32'cmnExSkill_ColorEnd_L'
+    sprite: s32'djt431_07', 2
+    sprite: s32'djt431_08', 2
+    sprite: s32'djt431_09', 2
+    sprite: s32'djt431_10', 2
+    sprite: s32'djt431_11', 2
+    sprite: s32'djt431_12', 2
+    haltMomentum: 1
+    sprite: s32'djt431_02', 2
+    sprite: s32'djt431_03', 2
+    sprite: s32'djt431_04', 2
+    sprite: s32'djt431_05', 2
+    endSprite: 
+    exitState: 
+    beginLabel: s32'2nd'
+    sprite: s32'djt430_17ex01', 1
+    clearUpon: (FRAME_STEP)
+    hit: 
+    damage: 400
+    groundHitEffect: (AIR_FACE_UP)
+    airHitEffect: (AIR_FACE_UP)
+    hitAirPushbackX: 16000
+    hitAirPushbackY: 29000
+    magnetismX: 0, 0, 0, 0, 0
+    magnetismY: 0, 0, 0, 0, 0
+    if: Mem(ActReg0)
         groundHitEffect: (KIRIMOMI)
         airHitEffect: (KIRIMOMI)
-        hitAirPushbackX: 12000
-        hitAirPushbackY: 14000
-        hitGravity: 2500
-        comboLimitScaling: 0
-        clashLevel: 3
-        hitEffectOnpa: 1
-        damageEffect: 2, s32'DJT_Angle20Minus_HitEff'
-        storeValue: Mem(ObjReg1), Val(1)
-        upon: (BEFORE_EXIT)
-            storeValue: Mem(ObjReg1), Val(0)
-        endUpon: 
-    endUpon: 
-    sprite: s32'djt408_00', 2
-    createObject: s32'cmn_EXSkillJizokuEff', (CENTER)
-    callSubroutine: s32'cmnExSkill_Color'
-    sprite: s32'djt408_01', 1
-    sprite: s32'djt408_02', 1
-    sprite: s32'djt408_03', 1
-    Unknown2034: 50000
-    voiceLine: s16'vDJT_ATKS_19'
-    sprite: s32'djt408_04', 3
-    physicsXImpulse: 23000
-    velocityXPercentEachFrame: 95
-    physicsYImpulse: 25000
-    velocityYPercentEachFrame: 85
-    resetGravity: 
-    pushboxHeightLow: 0
-    Unknown310: 9, 22, 2, 24, 0, 1
-    Unknown310: 9, 22, 2, 30, 0, 1
-    physicsXImpulse: 35000
-    physicsYImpulse: 35000
-    hitAirPushbackX: 14000
+        hitAirPushbackX: 15000
+        hitAirPushbackY: 31000
     endIf: 
+    physicsXImpulse: 10000
+    velocityXPercentEachFrame: 90
+    if: Mem(ActReg0)
+        sendSignalToAction: s32'DJT_430EX_Thrust2EX', (SIGNAL_A)
     endIf: 
-    gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
-    createObject: s32'DJT_408_BuffAura', (SHOULDER_R_3D)
-    createObject: s32'DJT_408_BuffAura', (SHOULDER_L_3D)
-    sprite: s32'djt408_05', 2
-    velocityYPercentEachFrame: 100
-    gravityPercent: 220
-    sprite: s32'djt408_06', 3
-    sprite: s32'djt408_07', 2147483647
-    beginLabel: s32'Landing'
-    sprite: s32'djt408_08', 3
-    deactivateObjectByName: s32'DJT_408_BuffAura'
-    createObject: s32'DJT_408_Slash01', (PLAYER)
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalL'
-    characterSfx: s32'djt_03'
-    hit: 
-    haltMomentum: 1
-    sprite: s32'djt408_09', 2
+    else: 
+        sendSignalToAction: s32'DJT_430EX_Thrust2', (SIGNAL_A)
+    endElse: 
+    sprite: s32'djt430_18ex01', 1
+    sprite: s32'djt430_19ex01', 1
+    sprite: s32'djt430_20ex01', 1
+    sprite: s32'djt430_21ex01', 1
+    sprite: s32'djt430_22ex01', 1
+    sprite: s32'djt430_23ex01', 3
     attackEndDelay: 
+    haltMomentum: 1
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
-    sprite: s32'djt408_10', 2
-    sprite: s32'djt408_11', 3
-    sprite: s32'djt408_12', 3
-    sprite: s32'djt408_13', 3
-    sprite: s32'djt408_14', 3
-    sprite: s32'djt408_15', 3
-    sprite: s32'djt408_16', 3
-    sprite: s32'djt408_17', 3
-    callSubroutine: s32'cmnNandemoCancel'
+    sprite: s32'djt431_00', 3
+    sprite: s32'djt431_01', 3
+    sprite: s32'djt431_02', 3
+    sprite: s32'djt431_03', 3
+    sprite: s32'djt431_04', 3
+    sprite: s32'djt431_05', 3
 endState: 
 
 beginState: s32'Assault_D'
     upon: (IMMEDIATE)
-        callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
+        callSubroutine: s32'cmnSpecialAtkLv5_AtkInit'
         callSubroutine: s32'cmnSpecialAttackD_Init'
-        damage: 400
-        groundHitEffect: (AIR_LAUNCH)
-        airHitEffect: (AIR_LAUNCH)
-        hitAirPushbackX: 8000
-        hitAirPushbackY: 6000
-        hitstop: 10
+        damage: 1000
+        attackComboForceHitEx: 800
+        hitAirPushbackX: 18000
+        hitAirPushbackY: 23000
+        atkAngle: 60
+        hitEffectFire: 1
+        damageEffect: 2, s32'DJT_SPHitEff'
         clashLevel: 4
-        damageEffect: 2, s32'DJT_SPHit_Blue'
+        magnetismX: 1, 400000, 30000, 100, 0
+        magnetismY: 1, 0, 40000, 100, 0
+        clearUpon: (FRAME_STEP)
+        upon: (FRAME_STEP)
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                setPushboxHeight: 380000
+            endIf: 
+        endUpon: 
+        upon: (HIT_OR_GUARD)
+            clearUpon: (HIT_OR_GUARD)
+            storeValue: Mem(ActReg1), Val(1)
+            upon: (FRAME_STEP)
+                Unknown2329: 3, 23, 100, 22, 100
+                ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(350000)
+                    clearUpon: (FRAME_STEP)
+                    gotoLabelRequests: s32'2nd'
+                endIf: 
+            endUpon: 
+        endUpon: 
     endUpon: 
-    sprite: s32'djt404_00', 2
-    sprite: s32'djt404_00', 3
-    physicsXImpulse: 25000
-    sprite: s32'djt404_01', 6
-    smartRandomVoiceLine: s16'vDJT_ATKS_104', 100, s16'', 0, s16'', 0, s16'', 0
-    sprite: s32'djt404_02', 6
+    sprite: s32'djt430_00ex01', 1
+    sprite: s32'djt430_01ex01', 1
+    sprite: s32'djt430_02ex01', 1
+    sprite: s32'djt430_03ex01', 1
+    sprite: s32'djt430_04ex01', 2
+    sprite: s32'djt430_05ex01', 2
+    sprite: s32'djt430_06ex01', 2
+    sprite: s32'djt430_07ex01', 2
+    sprite: s32'djt430_08ex01', 2
+    sprite: s32'djt430_09ex01', 2
+    sprite: s32'djt430_10ex01', 2
+    sprite: s32'djt430_11ex01', 2
+    sprite: s32'djt430_12ex01', 2
+    sprite: s32'djt430_13ex01', 2
     physicsXImpulse: 50000
-    velocityXPercentEachFrame: 80
-    sprite: s32'djt404_03', 5
-    haltMomentum: 1
+    sprite: s32'djt430_14ex01', 2
+    hit: 
+    createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
+    if: Mem(ActReg0)
+        createObject: s32'DJT_430EX_Thrust2EX', (PLAYER)
+    endIf: 
+    else: 
+        createObject: s32'DJT_430EX_Thrust2', (PLAYER)
+    endElse: 
+    smartRandomVoiceLine: s16'vDJT_ATKS_215', 100, s16'', 0, s16'', 0, s16'', 0
     cmnSfx: s32'SE_BTL_SwingWeaponNormalL'
-    createObject: s32'DJT_408_TEN01', (PLAYER)
-    sprite: s32'djt404_04ex', 2
-    characterSfx: s32'djt_08'
-    hit: 
-    sprite: s32'djt405_00', 1
-    sprite: s32'djt405_01', 1
-    Unknown2034: 20000
-    sprite: s32'djt405_02', 1
-    Unknown2034: 40000
-    sprite: s32'djt405_03', 1
-    physicsXImpulse: 30000
-    velocityXPercentEachFrame: 90
-    Unknown2034: 10000
-    sprite: s32'djt405_04', 1
-    sprite: s32'djt405_05ex', 2
-    createObject: s32'DJT_408_TEN02', (PLAYER)
-    cmnSfx: s32'SE_BTL_SwingBlowL'
-    hit: 
-    airHitEffect: (AIR_FACE_UP)
-    gotoLabelUpon: (HIT_OR_GUARD), s32'Add'
-    haltMomentum: 1
-    sprite: s32'djt405_06ex', 2
-    sprite: s32'djt405_07', 4
+    characterSfx: s32'djt_03_2'
+    sprite: s32'djt430_15ex01', 2
+    sprite: s32'djt430_16ex01', 2
+    sprite: s32'djt430_14ex01', 2
+    endSprite: 
+    gotoLabelIf: s32'2nd', Mem(ActReg1)
+    sprite: s32'djt431_06', 3
     attackEndDelay: 
-    callSubroutine: s32'cmnExSkill_ColorEnd_S'
-    sprite: s32'djt405_08', 1
-    sprite: s32'djt405_08', 3
-    enableWhiffCancel: 0
-    sprite: s32'djt405_09', 4
-    sprite: s32'djt405_10', 2
-    sprite: s32'djt405_11', 2
-    sprite: s32'djt405_12', 2
+    haltMomentum: 1
+    physicsXImpulse: 20000
+    velocityXPercentEachFrame: 80
+    callSubroutine: s32'cmnExSkill_ColorEnd_L'
+    sprite: s32'djt431_07', 3
+    sprite: s32'djt431_08', 3
+    sprite: s32'djt431_09', 3
+    sprite: s32'djt431_10', 3
+    sprite: s32'djt431_11', 3
+    sprite: s32'djt431_12', 3
+    haltMomentum: 1
+    sprite: s32'djt431_02', 3
+    sprite: s32'djt431_03', 3
+    sprite: s32'djt431_04', 3
+    sprite: s32'djt431_05', 3
     endSprite: 
     exitState: 
-    beginLabel: s32'Add'
+    beginLabel: s32'2nd'
+    sprite: s32'djt430_17ex01', 1
+    clearUpon: (FRAME_STEP)
+    hit: 
+    damage: 500
+    attackComboForceHitEx: 400
+    groundHitEffect: (CRUMPLE)
+    airHitEffect: (KIRIMOMI)
+    hitAirPushbackX: 12000
+    hitAirPushbackY: 30000
+    magnetismX: 0, 0, 0, 0, 0
+    magnetismY: 0, 0, 0, 0, 0
+    if: Mem(PlayerVal6)
+        armorBreak: 1
+        attackRange: 400000, 0, 200000, 0
+    endIf: 
+    storeValue: Mem(SpeedX), Mem(EnemyDistanceX)
+    velocityXPercent: 10
+    velocityXPercentEachFrame: 90
+    if: Mem(ActReg0)
+        sendSignalToAction: s32'DJT_430EX_Thrust2EX', (SIGNAL_A)
+    endIf: 
+    else: 
+        sendSignalToAction: s32'DJT_430EX_Thrust2', (SIGNAL_A)
+    endElse: 
+    upon: 89
+        clearUpon: 89
+        if: Mem(BattleDoing)
+            upon: 95
+                clearUpon: 95
+                ifEnemyPlayerAlive: 0
+                    invulnForce: 1
+                    gotoLabelRequests: s32'Ranbu'
+                    callSubroutine: s32'cmnExSkill_ColorEnd_M'
+                endIf: 
+            endUpon: 
+        endIf: 
+    endUpon: 
+    sprite: s32'djt430_18ex01', 1
+    sprite: s32'djt430_19ex01', 1
+    sprite: s32'djt430_20ex01', 1
+    sprite: s32'djt430_21ex01', 1
+    sprite: s32'djt430_22ex01', 1
+    sprite: s32'djt430_23ex01', 3
+    attackEndDelay: 
+    haltMomentum: 1
+    callSubroutine: s32'cmnExSkill_ColorEnd_S'
+    sprite: s32'djt431_00', 3
+    sprite: s32'djt431_01', 3
+    sprite: s32'djt431_02', 2
+    sprite: s32'djt431_03', 2
+    sprite: s32'djt431_04', 2
+    sprite: s32'djt431_05', 2
+    exitState: 
+    beginLabel: s32'Ranbu'
+    invulnForce: 1
+    ignorePushback: 1
+    damage: 200
+    groundHitEffect: (WALL_STICK)
+    airHitEffect: (WALL_STICK)
+    hitstop: 6
+    groundBounceCount: 0
+    magnetismX: 0, 0, 0, 0, 0
+    wallPushback: 0, 500
+    killType: (NOT_KILL)
+    attackRange: -1, -1, -1, -1
+    setPushboxWidth: 350000
+    upon: (FRAME_STEP)
+        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(370000)
+            physicsXImpulse: -10000
+        endIf: 
+    endUpon: 
+    sprite: s32'djt430_17', 1
+    createObject: s32'DJT430Ex_EnshutuCamera', (PLAYER)
+    sprite: s32'djt430_18', 2
+    sprite: s32'djt430_19', 2
+    sprite: s32'djt430_20', 2
+    sprite: s32'djt430_21', 2
+    sprite: s32'djt430_22', 2
+    sprite: s32'djt430_23', 2
+    sprite: s32'djt431_00', 2
+    haltMomentum: 1
+    clearUpon: (FRAME_STEP)
+    sprite: s32'djt431_01', 2
+    sprite: s32'djt431_02', 2
+    sprite: s32'djt431_03', 2
+    sprite: s32'djt431_04', 2
+    sprite: s32'djt404_00', 2
+    sprite: s32'djt404_01', 2
+    physicsXImpulse: 70000
+    velocityXPercentEachFrame: 80
+    Unknown2034: 40000
+    sprite: s32'djt404_02', 2
+    sprite: s32'djt404_03', 2
+    haltMomentum: 1
+    cmnSfx: s32'SE_BTL_SwingWeaponNormalS'
+    voiceLine: s16'vDJT_ATKS_216'
+    sprite: s32'djt404_04', 2
+    createObject: s32'DJT_404_Slash01', (PLAYER)
+    characterSfx: s32'djt_08'
+    hit: 
+    groundHitEffect: (NORMAL_UPPER)
+    airHitEffect: (NORMAL_UPPER)
+    damageEffect: 2, s32'DJT_Angle60Minus_HitEff'
+    sprite: s32'djt405_00', 1
+    sprite: s32'djt405_01', 1
+    sprite: s32'djt405_02', 1
+    sprite: s32'djt405_03', 1
+    Unknown2034: 10000
+    sprite: s32'djt405_04', 1
+    sprite: s32'djt405_05', 2
+    deactivateObjectByName: s32'DJT_404_Slash01'
+    createObject: s32'DJT_405_Slash01', (PLAYER)
+    cmnSfx: s32'SE_BTL_SwingWeaponNormalM'
+    characterSfx: s32'djt_08'
+    hit: 
+    groundHitEffect: (NORMAL_LOWER)
+    airHitEffect: (NORMAL_LOWER)
+    haltMomentum: 1
+    damageEffect: 2, s32'DJT_Angle20Minus_HitEff'
     sprite: s32'djt406_00', 1
-    clearUpon: (HIT_OR_GUARD)
-    createObject: s32'DJT_408_TEN03', (PLAYER)
-    createObject: s32'DJT_408_TEN04', (PLAYER)
-    characterSfx: s32'djt_02'
     sprite: s32'djt406_01', 1
-    physicsXImpulse: 10000
     sprite: s32'djt406_02', 1
-    physicsXImpulse: 25000
     sprite: s32'djt406_03', 1
-    physicsXImpulse: 60000
-    velocityXPercentEachFrame: 75
     sprite: s32'djt406_04', 1
     sprite: s32'djt406_05', 1
-    sprite: s32'djt406_06ex', 2
-    deactivateObjectByName: s32'DJT_408_TEN02_Onpa'
+    sprite: s32'djt406_06', 2
+    deactivateObjectByName: s32'DJT_405_Slash01'
+    createObject: s32'DJT_406_Slash01', (PLAYER)
+    cmnSfx: s32'SE_BTL_SwingWeaponNormalS'
+    characterSfx: s32'djt_08'
     hit: 
-    characterSfx: s32'djt_02'
-    airHitEffect: (AIR_FACE_UP)
+    groundHitEffect: (FORCE_STAND)
+    airHitEffect: (FORCE_STAND)
+    damageEffect: 2, s32'DJT_Angle190_HitEff'
     sprite: s32'djt407_00', 1
     haltMomentum: 1
     Unknown2034: 20000
-    createObject: s32'DJT_408_TEN05', (PLAYER)
     sprite: s32'djt407_01', 1
     Unknown2034: 40000
     sprite: s32'djt407_02', 1
@@ -6169,88 +5975,69 @@ beginState: s32'Assault_D'
     Unknown2034: 10000
     physicsXImpulse: 25000
     velocityXPercentEachFrame: 75
-    characterSfx: s32'djt_14'
-    sprite: s32'djt407_05ex', 2
+    sprite: s32'djt407_05', 2
+    deactivateObjectByName: s32'DJT_406_Slash01'
+    cmnSfx: s32'SE_BTL_SwingWeaponNormalM'
+    characterSfx: s32'djt_08'
     hit: 
-    hitAirPushbackX: 16000
-    hitAirPushbackY: 24000
-    gotoLabelUpon: (HIT_OR_GUARD), s32'Finish'
+    groundHitEffect: (CRUMPLE)
+    airHitEffect: (CRUMPLE)
+    wallPushback: 0, 1500
     Unknown2034: 30000
-    sprite: s32'djt407_06', 3
-    attackEndDelay: 
-    callSubroutine: s32'cmnExSkill_ColorEnd_M'
-    sprite: s32'djt407_07', 1
-    sprite: s32'djt407_07', 3
+    createObject: s32'DJT_407_Slash01', (PLAYER)
+    damageEffect: 2, s32'DJT_Angle45_HitEff'
+    sprite: s32'djt408_00', 2
     haltMomentum: 1
-    sprite: s32'djt407_08', 2
-    sprite: s32'djt407_08', 2
-    enableWhiffCancel: 0
-    sprite: s32'djt407_09', 3
-    sprite: s32'djt407_10', 3
-    sprite: s32'djt407_11', 3
-    endSprite: 
-    exitState: 
-    beginLabel: s32'Finish'
-    sprite: s32'djt408_00', 1
-    clearUpon: (HIT_OR_GUARD)
-    sprite: s32'djt408_01', 1
-    sprite: s32'djt408_02', 1
-    sprite: s32'djt408_03', 1
-    Unknown2034: 50000
-    voiceLine: s16'vDJT_ATKS_108'
-    sprite: s32'djt408_04', 3
-    physicsXImpulse: 23000
-    velocityXPercentEachFrame: 95
-    physicsYImpulse: 25000
-    velocityYPercentEachFrame: 85
-    resetGravity: 
-    pushboxHeightLow: 0
-    Unknown310: 9, 22, 2, 24, 0, 1
-    Unknown310: 9, 22, 2, 30, 0, 1
-    physicsXImpulse: 35000
-    physicsYImpulse: 35000
-    hitAirPushbackX: 14000
-    endIf: 
-    endIf: 
+    sprite: s32'djt408_01', 2
+    sendSignalToAction: s32'DJT430Ex_EnshutuCamera', (SIGNAL_A)
+    sprite: s32'djt408_02', 2
+    sprite: s32'djt408_03', 2
+    sprite: s32'djt408_04', 5
+    physicsXImpulse: 16000
+    physicsYImpulse: 50000
+    setGravity: 5000
+    upon: (FRAME_STEP)
+        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(125000)
+            physicsXImpulse: 0
+            clearUpon: (FRAME_STEP)
+        endIf: 
+    endUpon: 
     gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
     createObject: s32'DJT_408_BuffAura', (SHOULDER_R_3D)
     createObject: s32'DJT_408_BuffAura', (SHOULDER_L_3D)
-    createObject: s32'DJT_408_TEN06', (PLAYER)
-    sprite: s32'djt408_05', 2
-    velocityYPercentEachFrame: 100
-    gravityPercent: 220
-    sprite: s32'djt408_06', 3
+    sprite: s32'djt408_05', 5
+    sprite: s32'djt408_06', 5
     sprite: s32'djt408_07', 2147483647
-    cmnSfx: s32'SE_BTL_SwingWeaponSickleL'
     beginLabel: s32'Landing'
     sprite: s32'djt408_08', 3
     deactivateObjectByName: s32'DJT_408_BuffAura'
-    sendSignalToAction: s32'DJT_408_TEN06', (SIGNAL_A)
+    createObject: s32'DJT_408_Slash01', (PLAYER)
+    cmnSfx: s32'SE_BTL_SwingWeaponNormalL'
+    characterSfx: s32'djt_03'
     hit: 
-    damage: 1000
-    groundHitEffect: (KIRIMOMI)
-    airHitEffect: (KIRIMOMI)
-    hitAirPushbackX: 20000
-    hitAirPushbackY: 14000
-    hitGravity: 2500
-    wallBounceCount: 1
-    wallBounceXVelocityPercent: 0
-    wallBounceWaitTime: 0
-    wallBounceInCornerOnly: 1
+    groundHitEffect: (AIR_FACE_DOWN)
+    airHitEffect: (AIR_FACE_DOWN)
+    hitAirPushbackX: 2500
+    hitAirPushbackY: -22000
+    hitGravity: 0
+    hitstop: 16
+    groundBounceCount: 1
+    ignorePushback: 1
     hitEffectOnpa: 1
     damageEffect: 2, s32'DJT_SPHit_Long_Blue'
+    killType: (NORMAL)
+    damageEffect: 2, s32'DJT_Angle20Minus_HitEff'
     haltMomentum: 1
-    ignorePushback: 1
     sprite: s32'djt408_09', 2
     attackEndDelay: 
-    callSubroutine: s32'cmnExSkill_ColorEnd_M'
+    setPushboxWidth: -1
     sprite: s32'djt408_10', 2
-    sprite: s32'djt408_11', 2
-    sprite: s32'djt408_12', 2
-    sprite: s32'djt408_13', 2
-    sprite: s32'djt408_14', 2
-    sprite: s32'djt408_15', 2
-    sprite: s32'djt408_16', 2
+    sprite: s32'djt408_11', 3
+    sprite: s32'djt408_12', 3
+    sprite: s32'djt408_13', 3
+    sprite: s32'djt408_14', 3
+    sprite: s32'djt408_15', 3
+    sprite: s32'djt408_16', 3
     sprite: s32'djt408_17', 2
 endState: 
 
@@ -6299,229 +6086,145 @@ endSubroutine:
 beginState: s32'djt_Ougi'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnOugiAtk_AtkInit'
-        storeValue: Mem(PlayerVal2), Val(0)
         storeValue: Mem(ObjReg1), Val(1)
-        ifOperation: (DIV), Mem(402), Val(10000)
-            storeValue: Mem(PlayerVal2), Val(1)
-            storeValue: Mem(ObjReg2), Val(0)
-            storeValue: Mem(ObjReg2), Mem(IsNamaDashiSkill)
-            addWhiffCancelOption: s32'djt_Kaihou'
-            addWhiffCancelOption: s32'djt_Kaihou_Tec'
-            addWhiffCancelOption: s32'djt_Kaihou_Easy'
-        endIf: 
-        damage: 500
-        groundHitEffect: (NORMAL_UPPER)
-        airHitEffect: (AIR_FACE_UP)
-        hitAirPushbackX: 10000
-        hitAirPushbackY: 8000
-        hitstunAmount: 25
-        untechAmount: 180
-        noPushbackScaling: 1
-        whiffIfCombo: 1
-        comboLimitScaling: 0
-        Unknown412: 0, 1, 6, 0
-        Unknown412: 0, 1, 7, 0
+        damage: 3500
+        airHitEffect: (KIRIMOMI)
+        groundHitEffect: (KIRIMOMI)
+        hitAirPushbackX: 30000
+        hitAirPushbackY: 40000
+        hitEffectSlash: 1
+        damageEffect: 2, s32'DJT_SPHit_Long_Blue'
         upon: (HIT)
             clearUpon: (HIT)
-            ifNot: Mem(ActReg1)
+            if: Mem(BattleDoing)
                 callSubroutine: s32'cmnOugi_Maai_ON_ATTACK'
-                ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyFrontDistance), Val(0)
-                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDiffY), Val(1)
-                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyPushDistance), Val(225000)
-                            storeValue: Mem(ActReg0), Val(1)
-                        endIf: 
-                    endIf: 
-                    else: 
-                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyPushDistance), Val(185000)
-                            storeValue: Mem(ActReg0), Val(1)
-                        endIf: 
-                    endElse: 
-                endIf: 
-                if: Mem(PlayerVal2)
-                    storeValue: Mem(ActReg0), Val(1)
-                    Unknown2329: 3, 3, 123, 22, 123
-                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(125000)
-                        attackHitPositionType: 4, 125000, 0
-                    endIf: 
-                endIf: 
                 if: Mem(ActReg0)
-                    invulnForce: 1
-                    pauseTimer: 1
-                    groundHitEffect: (CRUMPLE)
-                    airHitEffect: (CRUMPLE)
+                    damage: 2500
+                    airHitEffect: (AIR_LAUNCH)
+                    groundHitEffect: (AIR_LAUNCH)
+                    hitAirPushbackX: 3000
+                    hitAirPushbackY: 10000
+                    hitGravity: 400
+                    untechAmount: 200
+                    attackHitPositionType: 1, 250000, 0
                     Unknown1048: 0
-                    nextHitActionName: s32'OugiHasei_1'
-                    jumpToState: s32'OugiHasei_1'
+                    nextHitActionName: s32'OugiHasei_Finish'
                 endIf: 
+                else: 
+                    hitstop: 30
+                    atkCameraShake: s32'ShakeTate', 2500, 0, 10, 0
+                endElse: 
             endIf: 
         endUpon: 
         upon: 78
             clearUpon: 78
             if: Mem(ActReg0)
-                ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(0)
-                    Unknown963: 0, -10000
-                    callSubroutine: s32'cmn_Ougi_AttackRate2Init'
-                endIf: 
-                ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(1)
-                    Unknown963: 0, -20000
-                    callSubroutine: s32'cmn_Kaihou_AttackRate2Init'
-                endIf: 
+                Unknown963: 0, -10000
+                callSubroutine: s32'cmn_Ougi_AttackRate2Init'
             endIf: 
         endUpon: 
+        storeValue: Mem(ObjReg1), Val(1)
+        gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
     endUpon: 
-    sprite: s32'djt430_00', 2
+    sprite: s32'djt452_00', 3
     callSubroutine: s32'cmnMuteki'
     uiBattleText: 6
+    sprite: s32'djt452_01', 3
+    sprite: s32'djt452_02', 3
+    Unknown2421: 0x01000000CEFFFFFF6400000000000000
     if: Mem(PlayerVal2)
-        enableWhiffCancel: 1
+        Unknown412: 100, 2, 11, 0
     endIf: 
-    sprite: s32'djt430_01', 2
-    fadeOut: 1
-    if: Mem(PlayerVal2)
-        Unknown412: 20, 1, 8, 0
-        enableWhiffCancel: 0
-    endIf: 
-    sprite: s32'djt430_02', 2
-    sprite: s32'djt430_02', 7
     ignoreSuperFreezeFromAlly: 1
-    superFreeze: 3, 119, 60, 60
+    superFreeze: 3, 119, 68, 68
     upon: 50
         clearUpon: 50
         upon: (BEFORE_EXIT)
             callSubroutine: s32'cmnOugi_ON_FINALIZE'
             Unknown412: 0, 2, 11, 0
-            Unknown412: 0, 1, 8, 0
         endUpon: 
         callSubroutine: s32'cmnOugi_ON_WORLD_STOP'
-        if: Mem(PlayerVal2)
-            Unknown412: 40, 1, 8, 0
-        endIf: 
         updateOrthoBlend: 1
         Unknown2074: 23, -5018, 403704, 74534, 940, 75, 0, 54, 20, 30, 10, 0, 2, 2
     endUpon: 
-    sprite: s32'djt430_03', 3
-    sprite: s32'djt430_04', 3
-    if: Mem(PlayerVal2)
-        Unknown412: 60, 1, 8, 0
-    endIf: 
-    sprite: s32'djt430_05', 3
-    sprite: s32'djt430_06', 3
-    if: Mem(PlayerVal2)
-        Unknown412: 80, 1, 8, 0
-    endIf: 
-    sprite: s32'djt430_07', 3
-    sprite: s32'djt430_08', 3
-    if: Mem(PlayerVal2)
-        Unknown412: 100, 1, 8, 0
-    endIf: 
-    sprite: s32'djt430_09', 3
-    if: Mem(PlayerVal2)
-        Unknown413: 5, 2, 11, 0
-    endIf: 
-    createObject: s32'DJT_430_BodyAura', (PLAYER)
-    Unknown2278: 0, 180000
-    exPointFReset: (PLAYER), 100000, 0
-    createParticleWithArg2: s32'bg_GroundBurstZlink', (EX_POINT_F)
-    exPointFReset: (PLAYER), -100000, 0
-    createParticle: s32'bg_GroundBurstZlink', (EX_POINT_F)
-    createObject: s32'ten_430', (PLAYER)
-    Unknown2587: 1601464932, s32'RadialBlur'
-    Unknown2588: s32'djt_RadialBlur', 1, 100
-    sprite: s32'djt430_10', 3
-    smartRandomVoiceLine: s16'vDJT_ATKO_00_a', 100, s16'', 0, s16'', 0, s16'', 0
-    sprite: s32'djt430_11', 3
-    Unknown2590: s32'djt_RadialBlur', 1, -10
-    sprite: s32'djt430_12', 3
-    if: Mem(PlayerVal2)
-    endIf: 
-    sprite: s32'djt430_09', 3
-    if: Mem(PlayerVal2)
-    endIf: 
-    sprite: s32'djt430_10', 3
-    Unknown2590: s32'djt_RadialBlur', 1, 0
-    Unknown2587: 1601464932, s32'RadialBlur'
-    if: Mem(PlayerVal2)
-        Unknown412: 100, 2, 11, 0
-        Unknown413: 0, 2, 11, 0
-    endIf: 
-    sprite: s32'djt430_11', 3
-    sprite: s32'djt430_12', 3
-    sprite: s32'djt430_09', 3
-    sprite: s32'djt430_10', 3
-    sprite: s32'djt430_11', 4
-    sprite: s32'djt430_12', 2
-    sprite: s32'djt430_12', 2
+    createObject: s32'ten_430EX_Tenseiki', (PLAYER)
+    createObject: s32'DJT_430_BodyAuraEx', (PLAYER)
+    sprite: s32'djt452_03', 3
+    sprite: s32'djt452_04', 3
+    sprite: s32'djt452_05', 3
+    sprite: s32'djt452_03', 3
+    sprite: s32'djt452_04', 3
+    sprite: s32'djt452_05', 3
+    sprite: s32'djt452_03', 3
+    sprite: s32'djt452_04', 3
+    sprite: s32'djt452_05', 3
+    sprite: s32'djt452_03', 3
+    sprite: s32'djt452_04', 3
+    sprite: s32'djt452_05', 3
+    sprite: s32'djt452_03', 3
+    smartRandomVoiceLine: s16'vDJT_ATKO_200_a', 100, s16'', 0, s16'', 0, s16'', 0
+    sprite: s32'djt452_04', 3
+    sprite: s32'djt452_05', 3
+    sprite: s32'djt452_03', 3
+    sprite: s32'djt452_04', 3
+    sprite: s32'djt452_05', 3
+    sprite: s32'djt452_03', 3
+    sprite: s32'djt452_04', 3
+    sprite: s32'djt452_05', 3
+    sprite: s32'djt452_06', 2
+    physicsXImpulse: 20000
+    physicsYImpulse: 8000
+    setGravity: 2400
+    Unknown2421: 0x00000000000000000000000000000000
+    sprite: s32'djt452_07', 3
     callSubroutine: s32'cmnOugi_WLDSTP_End'
-    sprite: s32'djt430_13', 4
-    sendSignalToAction: s32'ten_430', (SIGNAL_A)
-    voiceLine: s16'vDJT_ATKO_00_b'
-    sprite: s32'djt430_14', 2
+    sendSignalToAction: s32'DJT_430_BodyAuraEx', (SIGNAL_A)
+    sprite: s32'djt452_08', 2147483647
+    beginLabel: s32'Landing'
+    sprite: s32'djt452_09', 2
+    appendCollision: 1, -295, -307, 276, 115
     hit: 
-    damageEffect: 4, s32'djt_430_HitEff'
-    createObject: s32'DJT_430_Thrust', (PLAYER)
-    createObject: s32'ten_430_Spear', (PLAYER)
-    physicsXImpulse: 70000
-    velocityXPercentEachFrame: 95
-    sendSignalToAction: s32'DJT_430_BodyAura', (SIGNAL_A)
+    createObject: s32'DJT_430EX_Slash', (PLAYER)
+    createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
     cmnSfx: s32'SE_BTL_SwingWeaponNormalL'
     characterSfx: s32'djt_09'
-    sprite: s32'djt430_15', 2
-    callSubroutine: s32'cmnMuteki_HN'
-    sprite: s32'djt430_16', 2
-    ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(0)
-        storeValue: Mem(ActReg1), Val(1)
-    endIf: 
-    ifNot: Mem(ActReg0)
-        callSubroutine: s32'cmnMuteki_False'
-    endIf: 
-    sprite: s32'djt430_14', 2
-    attackOff: 
-    sendSignalToAction: s32'ten_430_Spear', (SIGNAL_A)
-    sprite: s32'djt430_15', 2
-    sprite: s32'djt430_16', 2
-    sprite: s32'djt430_17', 3
+    sprite: s32'djt452_10', 1
+    Unknown2421: 0x01000000CEFFFFFF6400000000000000
+    sprite: s32'djt452_10', 2
     clearUpon: (HIT)
-    hit: 
-    damage: 3000
-    groundHitEffect: (AIR_STRONG)
-    airHitEffect: (AIR_STRONG)
-    hitAirPushbackX: 30000
-    hitAirPushbackY: 18000
-    hitstop: 16
-    damageEffect: 4, s32'djt_430_HitEff'
-    wallPushback: 0, 750
-    callSubroutine: s32'cmnMuteki_False'
-    velocityXPercentEachFrame: 70
-    setPushboxWidth: 145000
-    sendSignalToAction: s32'DJT_430_Thrust', (SIGNAL_A)
-    createParticleWithArg2: s32'bg_GroundBurstZlink', (PLAYER)
-    sprite: s32'djt430_18', 2
-    Unknown1302: 
-    sprite: s32'djt430_19', 2
-    setPushboxWidth: 165000
-    sprite: s32'djt430_20', 2
-    sprite: s32'djt430_21', 2
-    setPushboxWidth: 185000
-    sprite: s32'djt430_22', 2
-    sprite: s32'djt430_23', 2
-    setPushboxWidth: 205000
-    sprite: s32'djt431_06', 3
+    clearUpon: 78
+    sprite: s32'djt452_11', 3
+    sprite: s32'djt452_12', 3
+    appendCollision: 1, 0, 0, 0, 0
+    if: Mem(BattleDoing)
+        if: Mem(ActReg0)
+            jumpToState: s32'OugiHasei_Finish'
+        endIf: 
+        else: 
+            Unknown1302: 
+            callSubroutine: s32'cmnMuteki_False'
+        endElse: 
+    endIf: 
+    sprite: s32'djt452_10', 3
+    sprite: s32'djt452_11', 3
+    sprite: s32'djt452_12', 3
+    sprite: s32'djt452_10', 3
+    sprite: s32'djt452_11', 3
+    sprite: s32'djt452_12', 3
+    sprite: s32'djt452_13', 3
+    Unknown2421: 0x00000000000000000000000000000000
     callSubroutine: s32'AuraChange_1'
-    Unknown2033: -50000
-    setPushboxWidth: -1
-    sprite: s32'djt431_07', 3
+    sprite: s32'djt452_14', 3
     callSubroutine: s32'AuraChange_3'
-    Unknown2033: -30000
-    sprite: s32'djt431_08', 3
+    sprite: s32'djt452_15', 3
     callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt431_09', 3
+    sprite: s32'djt452_16', 3
     callSubroutine: s32'AuraChange_5'
-    sprite: s32'djt431_10', 3
+    sprite: s32'djt452_17', 3
+    Unknown412: 0, 2, 11, 0
     callSubroutine: s32'AuraChange_6'
-    sprite: s32'djt431_11', 3
-    sprite: s32'djt431_12', 3
-    haltMomentum: 1
-    sprite: s32'djt431_02', 3
+    sprite: s32'djt452_18', 3
+    sprite: s32'djt452_19', 3
 endState: 
 
 beginSubroutine: s32'OugiHasei_Init'
@@ -6561,485 +6264,6 @@ beginSubroutine: s32'OugiHasei_Init'
     callSubroutine: s32'cmnSkillInputCheck_Hasei'
 endSubroutine: 
 
-beginSubroutine: s32'OugiNextAction'
-    if: Mem(BattleDoing)
-        if: Mem(ActReg0)
-            checkCurrentStateName: (SELF), s32'OugiHasei_1'
-            if: Mem(Tmp)
-                jumpToState: s32'OugiHasei_2'
-            endIf: 
-            checkCurrentStateName: (SELF), s32'OugiHasei_2'
-            if: Mem(Tmp)
-                jumpToState: s32'OugiHasei_3'
-            endIf: 
-            checkCurrentStateName: (SELF), s32'OugiHasei_3'
-            if: Mem(Tmp)
-                jumpToState: s32'OugiHasei_4'
-            endIf: 
-            checkCurrentStateName: (SELF), s32'OugiHasei_4'
-            if: Mem(Tmp)
-                jumpToState: s32'OugiHasei_5'
-            endIf: 
-            checkCurrentStateName: (SELF), s32'OugiHasei_5'
-            if: Mem(Tmp)
-                jumpToState: s32'OugiHasei_6'
-            endIf: 
-            checkCurrentStateName: (SELF), s32'OugiHasei_6'
-            if: Mem(Tmp)
-                jumpToState: s32'OugiHasei_7'
-            endIf: 
-            checkCurrentStateName: (SELF), s32'OugiHasei_7'
-            if: Mem(Tmp)
-                jumpToState: s32'OugiHasei_8'
-            endIf: 
-            checkCurrentStateName: (SELF), s32'OugiHasei_8'
-            if: Mem(Tmp)
-                jumpToState: s32'OugiHasei_9'
-            endIf: 
-            checkCurrentStateName: (SELF), s32'OugiHasei_9'
-            if: Mem(Tmp)
-                jumpToState: s32'OugiHasei_Finish'
-            endIf: 
-        endIf: 
-    endIf: 
-endSubroutine: 
-
-beginState: s32'OugiHasei_1'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'OugiHasei_Init'
-        hitstop: 1
-        damageEffect: 1, s32''
-        Unknown1113: 0x2F2F000000000000000000000000000000000000000000000000000000000000
-        nextHitActionName: s32'OugiHasei_1'
-    endUpon: 
-    sprite: s32'djt430_16', 2
-    physicsXImpulse: 85000
-    velocityXPercentEachFrame: 95
-    createObject: s32'DJT_430_Thrust2', (PLAYER)
-    sendSignalToAction: s32'ten_430_Spear', (SIGNAL_A)
-    upon: (FRAME_STEP)
-        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyFrontDistance), Val(250000)
-            clearUpon: (FRAME_STEP)
-            gotoLabelRequests: s32'Niou'
-        endIf: 
-    endUpon: 
-    sprite: s32'djt430_14', 2
-    sprite: s32'djt430_15', 2
-    sprite: s32'djt430_16', 2
-    velocityXPercentEachFrame: 100
-    sprite: s32'djt430_14', 2
-    sprite: s32'djt430_15', 2
-    sprite: s32'djt430_16', 2
-    sprite: s32'djt430_14', 2
-    sprite: s32'djt430_15', 2
-    sprite: s32'djt430_16', 2
-    sprite: s32'djt430_14', 2
-    sprite: s32'djt430_15', 2
-    sprite: s32'djt430_16', 2
-    sprite: s32'djt430_14', 2
-    sprite: s32'djt430_15', 2
-    sprite: s32'djt430_16', 2
-    sprite: s32'djt430_14', 2
-    sprite: s32'djt430_15', 2
-    beginLabel: s32'Niou'
-    sprite: s32'djt204_01', 1
-    sendSignalToAction: s32'DJT_430_Thrust2', (SIGNAL_A)
-    velocityXPercentEachFrame: 50
-    voiceLine: s16'vDJT_ATKO_00_c'
-    createObject: s32'DJT_430_TenseiRay2', (PLAYER)
-    createObject: s32'ten_430_Yumi', (PLAYER)
-    characterSfx: s32'djt_15'
-    sprite: s32'djt204_02ex', 1
-    hit: 
-    characterSfx: s32'djt_15'
-    sprite: s32'djt204_02ex', 1
-    hit: 
-    characterSfx: s32'djt_15'
-    sprite: s32'djt204_02ex', 1
-    hit: 
-    hitstop: 14
-    damageEffect: 4, s32'djt_430_HitEff2'
-    nextHitActionName: s32'OugiHasei_2'
-    characterSfx: s32'djt_15'
-    sprite: s32'djt204_03', 2
-    attackEndDelay: 
-    callSubroutine: s32'OugiNextAction'
-    sprite: s32'djt204_04', 3
-    callSubroutine: s32'AuraChange_1'
-    sprite: s32'djt204_05', 4
-    callSubroutine: s32'AuraChange_2'
-    sprite: s32'djt204_06', 4
-    callSubroutine: s32'AuraChange_3'
-    sprite: s32'djt204_07', 4
-    callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt204_08', 3
-    callSubroutine: s32'AuraChange_5'
-endState: 
-
-beginState: s32'OugiHasei_2'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'OugiHasei_Init'
-        groundHitEffect: (FORCE_CROUCH)
-        Unknown1113: 0x53455F42544C5F486974536C6173684C00000000000000000000000000000000
-        nextHitActionName: s32'OugiHasei_3'
-        gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
-    endUpon: 
-    sprite: s32'djt408_03', 1
-    Unknown2034: 30000
-    voiceLine: s16'vDJT_ATKO_00_d'
-    createObject: s32'DJT_430_TenseiRay3', (PLAYER)
-    createObject: s32'ten_430_Ono', (PLAYER)
-    sprite: s32'djt408_04', 1
-    physicsXImpulse: 5000
-    velocityXPercentEachFrame: 95
-    physicsYImpulse: 10000
-    velocityYPercentEachFrame: 85
-    resetGravity: 
-    pushboxHeightLow: 0
-    sprite: s32'djt408_05', 1
-    velocityYPercentEachFrame: 100
-    gravityPercent: 220
-    sprite: s32'djt408_06', 1
-    sprite: s32'djt408_07', 2147483647
-    cmnSfx: s32'SE_BTL_SwingWeaponSickleL'
-    beginLabel: s32'Landing'
-    sprite: s32'djt408_08', 1
-    hit: 
-    haltMomentum: 1
-    sprite: s32'djt408_09', 2
-    attackEndDelay: 
-    callSubroutine: s32'OugiNextAction'
-    sprite: s32'djt408_10', 2
-    sprite: s32'djt408_11', 2
-    sprite: s32'djt408_12', 3
-    sprite: s32'djt408_13', 2
-    callSubroutine: s32'AuraChange_1'
-    sprite: s32'djt408_14', 2
-    callSubroutine: s32'AuraChange_2'
-    sprite: s32'djt408_15', 2
-    callSubroutine: s32'AuraChange_3'
-    sprite: s32'djt408_16', 3
-    callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt408_17', 3
-    callSubroutine: s32'AuraChange_5'
-endState: 
-
-beginState: s32'OugiHasei_3'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'OugiHasei_Init'
-        hitstop: 7
-        Unknown1113: 0x53455F42544C5F486974536C6173684C00000000000000000000000000000000
-        nextHitActionName: s32'OugiHasei_3'
-    endUpon: 
-    sprite: s32'djt408_10', 1
-    attackOff: 
-    sprite: s32'djt404_01', 1
-    physicsXImpulse: 10000
-    velocityXPercentEachFrame: 75
-    Unknown2034: 10000
-    createObject: s32'DJT_430_TenseiRay4', (PLAYER)
-    createObject: s32'ten_430_ShortSord', (PLAYER)
-    sprite: s32'djt404_02', 1
-    sprite: s32'djt404_03', 1
-    haltMomentum: 1
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalM'
-    characterSfx: s32'djt_03'
-    voiceLine: s16'vDJT_ATKO_00_e'
-    sprite: s32'djt404_04ex', 1
-    hit: 
-    sprite: s32'djt405_00', 1
-    sprite: s32'djt405_01', 1
-    Unknown2034: 10000
-    sprite: s32'djt405_02', 1
-    Unknown2034: 10000
-    sprite: s32'djt405_03', 1
-    physicsXImpulse: 10000
-    velocityXPercentEachFrame: 90
-    Unknown2034: 10000
-    sprite: s32'djt405_04', 1
-    sprite: s32'djt405_05', 1
-    hit: 
-    hitAirPushbackX: 18000
-    hitAirPushbackY: 12000
-    nextHitActionName: s32'OugiHasei_4'
-    haltMomentum: 1
-    cmnSfx: s32'SE_BTL_SwingWeaponNormalL'
-    characterSfx: s32'djt_03'
-    sprite: s32'djt405_06', 1
-    attackEndDelay: 
-    callSubroutine: s32'OugiNextAction'
-    sprite: s32'djt405_07', 4
-    sprite: s32'djt405_08', 3
-    callSubroutine: s32'AuraChange_1'
-    sprite: s32'djt405_09', 4
-    callSubroutine: s32'AuraChange_2'
-    sprite: s32'djt405_10', 3
-    callSubroutine: s32'AuraChange_3'
-    sprite: s32'djt405_11', 3
-    callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt405_12', 3
-    callSubroutine: s32'AuraChange_5'
-endState: 
-
-beginState: s32'OugiHasei_4'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'OugiHasei_Init'
-        groundHitEffect: (FORCE_STAND)
-        Unknown1113: 0x53455F42544C5F486974426C6F774C0000000000000000000000000000000000
-        nextHitActionName: s32'OugiHasei_5'
-    endUpon: 
-    sprite: s32'djt405_07', 1
-    sendSignalToAction: s32'ten_430_ShortSord', (SIGNAL_A)
-    sprite: s32'djt407_01', 1
-    Unknown2034: 10000
-    voiceLine: s16'vDJT_ATKO_00_f'
-    sprite: s32'djt407_02', 1
-    Unknown2034: 5000
-    sprite: s32'djt407_03', 1
-    Unknown2034: 5000
-    createObject: s32'DJT_430_TenseiRay5', (PLAYER)
-    createObject: s32'ten_430_Tue', (PLAYER)
-    sprite: s32'djt407_04', 1
-    Unknown2034: 5000
-    physicsXImpulse: 10000
-    velocityXPercentEachFrame: 75
-    cmnSfx: s32'SE_BTL_SwingWeaponRodL'
-    sprite: s32'djt407_05', 1
-    hit: 
-    Unknown2034: 20000
-    sprite: s32'djt407_06', 2
-    attackEndDelay: 
-    callSubroutine: s32'OugiNextAction'
-    sprite: s32'djt407_07', 5
-    haltMomentum: 1
-    callSubroutine: s32'AuraChange_1'
-    sprite: s32'djt407_08', 4
-    callSubroutine: s32'AuraChange_2'
-    sprite: s32'djt407_09', 3
-    callSubroutine: s32'AuraChange_3'
-    sprite: s32'djt407_10', 3
-    callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt407_11', 3
-    callSubroutine: s32'AuraChange_5'
-endState: 
-
-beginState: s32'OugiHasei_5'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'OugiHasei_Init'
-        hitstop: 1
-        nextHitActionName: s32'OugiHasei_5'
-    endUpon: 
-    sprite: s32'djt407_07', 1
-    haltMomentum: 1
-    sprite: s32'djt400_01', 2
-    createObject: s32'DJT_430_TenseiRay6_1', (PLAYER)
-    createObject: s32'DJT_430_TenseiRay6_2', (PLAYER)
-    createObject: s32'ten_430_Punchi', (PLAYER)
-    voiceLine: s16'vDJT_ATKO_00_g'
-    sprite: s32'djt400_02', 2
-    sprite: s32'djt400_03', 1
-    characterSfx: s32'djt_02'
-    sprite: s32'djt400_04', 1
-    characterSfx: s32'djt_02'
-    sprite: s32'djt400_05ex', 1
-    hit: 
-    sprite: s32'djt400_05ex', 2
-    hit: 
-    hitstop: 14
-    nextHitActionName: s32'OugiHasei_6'
-    sprite: s32'djt400_06', 2
-    attackEndDelay: 
-    callSubroutine: s32'OugiNextAction'
-    sprite: s32'djt400_07', 2
-    sprite: s32'djt400_08', 3
-    callSubroutine: s32'AuraChange_1'
-    sprite: s32'djt400_09', 3
-    callSubroutine: s32'AuraChange_2'
-    sprite: s32'djt400_10', 3
-    callSubroutine: s32'AuraChange_3'
-    sprite: s32'djt400_11', 3
-    callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt400_12', 3
-    callSubroutine: s32'AuraChange_5'
-endState: 
-
-beginState: s32'OugiHasei_6'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'OugiHasei_Init'
-        groundHitEffect: (NORMAL_LOWER)
-        Unknown1113: 0x53455F42544C5F486974536C6173684C00000000000000000000000000000000
-        nextHitActionName: s32'OugiHasei_7'
-    endUpon: 
-    sprite: s32'djt400_09', 1
-    sprite: s32'djt207_01', 1
-    voiceLine: s16'vDJT_ATKO_00_h'
-    sprite: s32'djt207_02', 1
-    sprite: s32'djt207_03', 1
-    createObject: s32'ten_430_LargeSord', (PLAYER)
-    cmnSfx: s32'SE_BTL_SwingWeaponLognL'
-    sprite: s32'djt207_04', 1
-    hit: 
-    sprite: s32'djt207_05', 1
-    sprite: s32'djt207_06', 1
-    attackEndDelay: 
-    callSubroutine: s32'OugiNextAction'
-    sprite: s32'djt207_07', 2
-    sprite: s32'djt207_08', 2
-    sprite: s32'djt207_09', 2
-    sprite: s32'djt207_10', 2
-    callSubroutine: s32'AuraChange_1'
-    sprite: s32'djt207_11', 2
-    callSubroutine: s32'AuraChange_2'
-    sprite: s32'djt207_12', 2
-    callSubroutine: s32'AuraChange_3'
-    sprite: s32'djt207_13', 3
-    callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt207_14', 3
-    callSubroutine: s32'AuraChange_5'
-endState: 
-
-beginState: s32'OugiHasei_7'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'OugiHasei_Init'
-        groundHitEffect: (FORCE_CROUCH)
-        nextHitActionName: s32'OugiHasei_8'
-        gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
-    endUpon: 
-    sprite: s32'djt207_07', 1
-    attackOff: 
-    sprite: s32'djt306_02', 1
-    createObject: s32'DJT_430_TenseiRay8', (PLAYER)
-    createObject: s32'ten_430_Katana', (PLAYER)
-    sprite: s32'djt306_03', 1
-    physicsXImpulse: 14000
-    velocityXPercentEachFrame: 90
-    physicsYImpulse: 8000
-    resetGravity: 
-    pushboxHeightLow: 100
-    voiceLine: s16'vDJT_ATKO_00_i'
-    sprite: s32'djt306_04', 1
-    sprite: s32'djt306_05', 1
-    sprite: s32'djt306_06', 1
-    sprite: s32'djt306_07', 1
-    sprite: s32'djt306_08', 1
-    cmnSfx: s32'SE_BTL_SwingWeaponKatanaL'
-    sprite: s32'djt306_09ex', 1
-    hit: 
-    sprite: s32'djt306_10ex', 1
-    sprite: s32'djt306_11', 2147483647
-    attackEndDelay: 
-    callSubroutine: s32'OugiNextAction'
-    beginLabel: s32'Landing'
-    sprite: s32'djt306_12', 4
-    setCrouch: 1
-    haltMomentum: 1
-    sprite: s32'djt306_13', 3
-    callSubroutine: s32'AuraChange_1'
-    sprite: s32'djt306_14', 3
-    callSubroutine: s32'AuraChange_2'
-    sprite: s32'djt306_15', 3
-    callSubroutine: s32'AuraChange_3'
-    sprite: s32'djt306_16', 3
-    callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt306_17', 3
-    callSubroutine: s32'AuraChange_5'
-    endSprite: 
-    jumpToState: s32'CmnActStand'
-endState: 
-
-beginState: s32'OugiHasei_8'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'OugiHasei_Init'
-        groundHitEffect: (NORMAL_LOWER)
-        Unknown1113: 0x53455F42544C5F486974426C6F774C0000000000000000000000000000000000
-        nextHitActionName: s32'OugiHasei_9'
-        gotoLabelUpon: (TOUCH_GROUND), s32'Landing'
-    endUpon: 
-    sprite: s32'djt306_10ex', 2
-    resetGravity: 
-    pushboxHeightLow: 100
-    sprite: s32'djt306_11', 2147483647
-    beginLabel: s32'Landing'
-    sprite: s32'djt306_12', 1
-    haltMomentum: 1
-    sprite: s32'djt306_13', 1
-    sprite: s32'djt205_00', 2
-    voiceLine: s16'vDJT_ATKO_00_j'
-    createObject: s32'DJT_430_TenseiRay9', (PLAYER)
-    createObject: s32'ten_430_Gakki', (PLAYER)
-    sprite: s32'djt205_01', 1
-    sprite: s32'djt205_02', 1
-    cmnSfx: s32'SE_BTL_SwingBlowL'
-    sprite: s32'djt205_03', 1
-    hit: 
-    sprite: s32'djt205_04', 1
-    sprite: s32'djt205_05', 2
-    attackEndDelay: 
-    callSubroutine: s32'OugiNextAction'
-    sprite: s32'djt205_06', 3
-    callSubroutine: s32'AuraChange_1'
-    sprite: s32'djt205_07', 5
-    callSubroutine: s32'AuraChange_2'
-    sprite: s32'djt205_08', 3
-    callSubroutine: s32'AuraChange_3'
-    sprite: s32'djt205_09', 3
-    callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt205_10', 3
-    callSubroutine: s32'AuraChange_5'
-endState: 
-
-beginState: s32'OugiHasei_9'
-    upon: (IMMEDIATE)
-        callSubroutine: s32'OugiHasei_Init'
-        hitstop: 1
-        damageEffect: 1, s32''
-        nextHitActionName: s32'OugiHasei_9'
-    endUpon: 
-    sprite: s32'djt205_04', 1
-    sprite: s32'djt406_01', 1
-    voiceLine: s16'vDJT_ATKO_00_k'
-    createObject: s32'DJT_430_TenseiRay10', (PLAYER)
-    createObject: s32'ten_430_Gun', (PLAYER)
-    sprite: s32'djt406_02', 1
-    physicsXImpulse: 10000
-    sprite: s32'djt406_03', 1
-    physicsXImpulse: 15000
-    velocityXPercentEachFrame: 75
-    sprite: s32'djt406_04', 1
-    sprite: s32'djt406_05', 1
-    sprite: s32'djt406_06ex', 1
-    hit: 
-    createObject: s32'DJT_430_TenseiRay11', (PLAYER)
-    characterSfx: s32'djt_14'
-    sprite: s32'djt406_07ex', 1
-    hit: 
-    createObject: s32'DJT_430_TenseiRay12', (PLAYER)
-    characterSfx: s32'djt_14'
-    sprite: s32'djt406_08ex', 1
-    hit: 
-    groundHitEffect: (AIR_LAUNCH)
-    hitAirPushbackX: 4000
-    hitAirPushbackY: 16000
-    hitstop: 14
-    damageEffect: 4, s32'djt_430_HitEff'
-    nextHitActionName: s32'OugiHasei_Finish'
-    createObject: s32'DJT_430_TenseiRay13', (PLAYER)
-    characterSfx: s32'djt_14'
-    sprite: s32'djt406_08ex', 2
-    attackEndDelay: 
-    callSubroutine: s32'OugiNextAction'
-    sprite: s32'djt406_09', 10
-    callSubroutine: s32'AuraChange_1'
-    sprite: s32'djt406_10', 4
-    callSubroutine: s32'AuraChange_2'
-    sprite: s32'djt406_11', 4
-    callSubroutine: s32'AuraChange_3'
-    sprite: s32'djt406_12', 4
-    callSubroutine: s32'AuraChange_4'
-    sprite: s32'djt000_00', 3
-    callSubroutine: s32'AuraChange_5'
-endState: 
-
 beginState: s32'OugiHasei_Finish'
     upon: (IMMEDIATE)
         callSubroutine: s32'OugiHasei_Init'
@@ -7059,30 +6283,55 @@ beginState: s32'OugiHasei_Finish'
         groundTech: 0
         killType: (NOT_KILL)
         wallBounceXVelocityPercent: 30
-        damageEffect: 4, s32''
+        damageEffect: 2, s32'djt_431_HitEff'
         atkCameraShake: s32'ShakeYoko', 500, 0, 10, 0
         Unknown1048: 1
         upon: 90
             ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(0)
-                damage: 150
-                hitstop: 2
+                damage: 50
+                hitstop: 1
                 modifyVar: (ADD), Mem(ActReg1), Val(1)
-                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(8)
+                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(29)
                     gotoLabelRequests: s32'Finish'
                 endIf: 
             endIf: 
-            ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal2), Val(1)
+            ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(1)
                 damage: 50
                 hitstop: 1
                 storeValue: Mem(ActReg3), Val(1)
                 modifyVar: (ADD), Mem(ActReg1), Val(1)
-                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(16)
+                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(31)
+                    gotoLabelRequests: s32'Finish'
+                endIf: 
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(2)
+                damage: 50
+                hitstop: 1
+                storeValue: Mem(ActReg3), Val(1)
+                modifyVar: (ADD), Mem(ActReg1), Val(1)
+                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(35)
+                    gotoLabelRequests: s32'Finish'
+                endIf: 
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(3)
+                damage: 50
+                hitstop: 1
+                storeValue: Mem(ActReg3), Val(1)
+                modifyVar: (ADD), Mem(ActReg1), Val(1)
+                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(39)
                     gotoLabelRequests: s32'Finish'
                 endIf: 
             endIf: 
         endUpon: 
     endUpon: 
-    sprite: s32'keep', 1
+    sprite: s32'djt452_10', 3
+    timeSlow: 30
+    sprite: s32'djt452_11', 3
+    sprite: s32'djt452_12', 3
+    sprite: s32'djt452_10', 3
+    sprite: s32'djt452_11', 3
+    sprite: s32'djt452_12', 3
+    timeSlow: 3
     sprite: s32'keep', 1
     superFreeze: 3, 119, 133, 133
     ignoreSuperFreezeFromAlly: 1
@@ -7119,7 +6368,7 @@ beginState: s32'OugiHasei_Finish'
                 characterSfx: s32'djt_ougi_00'
             endIf: 
             ifOnFrame: Val(5)
-                voiceLine: s16'vDJT_ATKO_00_l'
+                voiceLine: s16'vDJT_ATKO_200_b'
             endIf: 
             ifOnFrame: Val(15)
                 Unknown2583: 4500, 0, 3, 210900, 18700, 2600
@@ -7145,12 +6394,7 @@ beginState: s32'OugiHasei_Finish'
                 Unknown2583: 32000, 0, 3, 33200, 29100, 15300
             endIf: 
             ifOnFrame: Val(80)
-                if: Mem(PlayerVal2)
-                    voiceLine: s16'vDJT_ATKO_00_n'
-                endIf: 
-                else: 
-                    voiceLine: s16'vDJT_ATKO_00_m'
-                endElse: 
+                voiceLine: s16'vDJT_ATKO_200_c'
             endIf: 
             ifOnFrame: Val(83)
                 Unknown2583: 32000, 0, 3, 59300, 30700, 15300
@@ -7185,28 +6429,24 @@ beginState: s32'OugiHasei_Finish'
     createObject: s32'DJT_430_FinalBodyAura5', (PLAYER)
     createObject: s32'DJT_430_FinalBodyAura6', (PLAYER)
     beginLabel: s32'loop_tama'
-    sprite: s32'djt430_32', 2
-    setSpriteTime: 1, Mem(ActReg3)
+    sprite: s32'djt430_32', 1
     hit: 
     modifyVar: (ADD), Mem(ActReg2), Val(1)
-    sprite: s32'djt430_33', 2
-    setSpriteTime: 1, Mem(ActReg3)
+    sprite: s32'djt430_33', 1
     hit: 
-    ifOperation: (IS_EQUAL), Mem(ActReg2), Val(4)
-        voiceLine: s16'vDJT_ATKO_00_o'
+    ifOperation: (IS_EQUAL), Mem(ActReg2), Val(1)
+        voiceLine: s16'vDJT_ATKO_200_d'
     endIf: 
-    sprite: s32'djt430_34', 2
-    setSpriteTime: 1, Mem(ActReg3)
+    sprite: s32'djt430_34', 1
     hit: 
-    sprite: s32'djt430_35', 2
-    setSpriteTime: 1, Mem(ActReg3)
+    sprite: s32'djt430_35', 1
     hit: 
     endSprite: 
     ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(0)
         gotoIfOperation: s32'loop_tama', (IS_LESSER_OR_EQUAL), Mem(ActReg2), Val(10)
     endIf: 
-    ifOperation: (IS_EQUAL), Mem(PlayerVal2), Val(1)
-        gotoIfOperation: s32'loop_tama', (IS_LESSER_OR_EQUAL), Mem(ActReg2), Val(20)
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal2), Val(1)
+        gotoIfOperation: s32'loop_tama', (IS_LESSER_OR_EQUAL), Mem(ActReg2), Val(30)
     endIf: 
     beginLabel: s32'Finish'
     sprite: s32'djt430_32', 2
@@ -7216,10 +6456,7 @@ beginState: s32'OugiHasei_Finish'
     sprite: s32'djt430_33', 2
     sprite: s32'djt430_32', 1
     hit: 
-    damage: 400
-    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal2), Val(1)
-        damage: 1200
-    endIf: 
+    damage: 500
     groundHitEffect: (AIR_STRONG)
     airHitEffect: (AIR_STRONG)
     hitAirPushbackX: 65000
@@ -7232,7 +6469,7 @@ beginState: s32'OugiHasei_Finish'
     Unknown1961: 1
     wallPushback: 0, 1000
     killType: (NORMAL)
-    damageEffect: 4, s32'djt_430_HitEff3'
+    damageEffect: 2, s32'djt_431_HitEff2'
     cameraShake: s32'ShakeYoko', 5000, 0, 20, 20
     sendSignalToAction: s32'DJT_430_SuperShot', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_HitCritical'
@@ -7265,7 +6502,7 @@ beginState: s32'OugiHasei_Finish'
     sprite: s32'djt430_44', 4
     sprite: s32'djt430_45', 4
     sprite: s32'djt430_46', 4
-    sprite: s32'djt430_47', 3
+    sprite: s32'djt430_47', 4
     sprite: s32'djt430_48', 3
     sprite: s32'djt430_49', 3
     sprite: s32'djt430_50', 3

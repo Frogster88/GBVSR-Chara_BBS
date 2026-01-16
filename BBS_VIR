@@ -1981,19 +1981,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'SpecialMultiAttack_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialMultiAttack_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialMultiAttack_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         if: Mem(PlayerVal0)
-            Unknown1921: 0, 390
+            skillCooldown: 0, 390
         endIf: 
         Unknown1923: 0
     endIf: 
@@ -2011,19 +2011,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 240
+        skillCooldown: 1, 240
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 600
+        skillCooldown: 1, 600
         if: Mem(PlayerVal0)
-            Unknown1921: 1, 570
+            skillCooldown: 1, 570
         endIf: 
         Unknown1923: 1
     endIf: 
@@ -2041,17 +2041,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'SpecialChevalier_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 999
+        skillCooldown: 2, 999
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialChevalier_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 999
+        skillCooldown: 2, 999
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialChevalier_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 999
+        skillCooldown: 2, 999
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialChevalier_D'
@@ -2064,7 +2064,7 @@ beginSubroutine: s32'AbilityCoolDown_2'
             storeValue: Mem(289), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 2, 999
+            skillCooldown: 2, 999
         endElse: 
         Unknown1923: 2
     endIf: 
@@ -2073,19 +2073,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         if: Mem(PlayerVal0)
-            Unknown1921: 3, 390
+            skillCooldown: 3, 390
         endIf: 
         Unknown1923: 3
     endIf: 
@@ -2832,7 +2832,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3246,7 +3246,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3918,7 +3918,7 @@ beginState: s32'GC_Attack'
     sprite: s32'vir350_05', 3
     sprite: s32'vir350_06', 3
     sprite: s32'vir350_07', 1
-    sendSignalToAction: s32'vir_350_Eff', 23
+    sendSignalToAction: s32'vir_350_Eff', (SIGNAL_A)
     createObject: s32'vir_350_Slash_Eff', (PLAYER)
     sprite: s32'vir350_08', 2
     sprite: s32'vir350_09', 3
@@ -4004,7 +4004,7 @@ beginState: s32'CancelDash'
     sprite: s32'vir306_10', 1
     zLine: 0, 1
     haltMomentum: 1
-    sendSignalToAction: s32'vir_306_BurstEff', 23
+    sendSignalToAction: s32'vir_306_BurstEff', (SIGNAL_A)
     createObject: s32'vir_306_nokoshiEff', (PLAYER)
     sprite: s32'vir306_11', 2
     attackEndDelay: 
@@ -4048,7 +4048,7 @@ beginState: s32'CancelDash'
     sprite: s32'vir310_10', 1
     zLine: 0, 1
     haltMomentum: 1
-    sendSignalToAction: s32'vir_310_BurstEff', 23
+    sendSignalToAction: s32'vir_310_BurstEff', (SIGNAL_A)
     createObject: s32'vir_310_nokoshiEff', (PLAYER)
     Unknown412: 0, 1, 8, 0
     Unknown413: 4, 1, 8, 0
@@ -4698,7 +4698,7 @@ beginState: s32'NmlAtk5D_Limited'
         whiffCancelOptionBufferTime: s32'NmlAtk5D_Limited_Attack', 10
         exitStateUpon: (ACTION_END), s32'NmlAtk5D_Limited_Stand'
         upon: 11
-            sendSignalToAction: s32'vir_210_Bit', 32
+            sendSignalToAction: s32'vir_210_Bit', (SIGNAL_B)
         endUpon: 
     endUpon: 
     sprite: s32'vir210_00', 2
@@ -4759,7 +4759,7 @@ beginState: s32'NmlAtk5D_Limited_Stand'
             endIf: 
         endUpon: 
         upon: 11
-            sendSignalToAction: s32'vir_210_Bit', 32
+            sendSignalToAction: s32'vir_210_Bit', (SIGNAL_B)
         endUpon: 
     endUpon: 
     beginLabel: s32'Loop'
@@ -4778,10 +4778,10 @@ beginState: s32'NmlAtk5D_Limited_Stand'
     sprite: s32'vir020_00ex01', 3
     physicsYImpulse: 8000
     resetGravity: 
-    sendSignalToAction: s32'vir_210_Bit', 32
+    sendSignalToAction: s32'vir_210_Bit', (SIGNAL_B)
     callSubroutine: s32'MeshSet_Limited_sabun_Setting'
     enableWhiffCancel: 0
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     sprite: s32'vir020_03ex01', 3
     sprite: s32'vir020_04ex01', 3
     sprite: s32'vir020_05ex01', 3
@@ -4812,7 +4812,7 @@ beginState: s32'NmlAtk5D_Limited_FDash'
     sprite: s32'vir212_02', 1
     sprite: s32'vir212_03', 2
     physicsXImpulse: 50000
-    sendSignalToAction: s32'vir_210_Bit', 32
+    sendSignalToAction: s32'vir_210_Bit', (SIGNAL_B)
     smartRandomVoiceLine: s16'vVIR_ATKAby_05', 100, s16'', 100, s16'', 0, s16'', 0
     sprite: s32'vir212_04', 2
     enableWhiffCancel: 1
@@ -4848,11 +4848,11 @@ beginState: s32'NmlAtk5D_Limited_BDash'
     sprite: s32'vir213_01', 1
     sprite: s32'vir213_02', 2
     sprite: s32'vir213_03', 3
-    sendSignalToAction: s32'vir_210_Bit', 32
+    sendSignalToAction: s32'vir_210_Bit', (SIGNAL_B)
     physicsXImpulse: -15000
     physicsYImpulse: 15000
     setGravity: 1800
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     smartRandomVoiceLine: s16'vVIR_ATKAby_06', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'vir213_04', 3
     sprite: s32'vir061_02ex01', 3
@@ -4880,7 +4880,7 @@ beginState: s32'NmlAtk5D_Limited_Jump'
     endUpon: 
     sprite: s32'vir214_00', 1
     haltMomentum: 1
-    sendSignalToAction: s32'vir_210_Bit', 32
+    sendSignalToAction: s32'vir_210_Bit', (SIGNAL_B)
     createObject: s32'vir_214_Limited_Jump_Bit', (PLAYER)
     sprite: s32'vir214_01', 1
     sprite: s32'vir214_02', 2
@@ -4889,7 +4889,7 @@ beginState: s32'NmlAtk5D_Limited_Jump'
     physicsXImpulse: 13000
     physicsYImpulse: 30000
     resetGravity: 
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     cmnSfx: s32'SE_BTL_Jump'
     beginLabel: s32'Loop'
     sprite: s32'vir214_04', 3
@@ -4941,9 +4941,9 @@ beginState: s32'NmlAtk5D_Limited_Down'
     haltMomentum: 1
     physicsYImpulse: 8000
     resetGravity: 
-    sendSignalToAction: s32'vir_210_Bit', 32
+    sendSignalToAction: s32'vir_210_Bit', (SIGNAL_B)
     callSubroutine: s32'MeshSet_Limited_sabun_Setting'
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     sprite: s32'vir020_03ex01', 3
     sprite: s32'vir020_04ex01', 3
     sprite: s32'vir020_05ex01', 3
@@ -4994,7 +4994,7 @@ beginState: s32'NmlAtk5D_Limited_Attack'
     physicsYImpulse: 15000
     setGravity: 3300
     setPushboxHeight: 350000
-    sendSignalToAction: s32'vir_210_Bit', 32
+    sendSignalToAction: s32'vir_210_Bit', (SIGNAL_B)
     upon: (FRAME_STEP)
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyFrontDistance), Val(0)
             ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyFrontDistance), Val(150000)
@@ -5030,7 +5030,7 @@ beginState: s32'NmlAtk5D_Limited_Attack'
     sprite: s32'vir211_11', 3
     clearUpon: (FRAME_STEP)
     setPushboxHeight: -1
-    sendSignalToAction: s32'vir_211_ThurustEff', 23
+    sendSignalToAction: s32'vir_211_ThurustEff', (SIGNAL_A)
     sprite: s32'vir211_12', 3
     sprite: s32'vir010_21', 2
 endState: 
@@ -5198,7 +5198,7 @@ beginState: s32'GuardCrash'
     sprite: s32'vir350_06', 3
     sprite: s32'vir350_07', 1
     hit: 
-    sendSignalToAction: s32'vir_350_Eff', 23
+    sendSignalToAction: s32'vir_350_Eff', (SIGNAL_A)
     createObject: s32'vir_350_Slash_Eff', (PLAYER)
     sprite: s32'vir350_08', 2
     sprite: s32'vir350_09', 3
@@ -5399,11 +5399,11 @@ beginState: s32'AirDash'
         attackIgnoreCaution: 1
         doNotBeginCancel: 1
         attackEndDelay: 
-        Unknown1819: 0, 0
+        landingRecovery: 0, 0
     endUpon: 
     sprite: s32'vir214_00ex01', 3
     haltMomentum: 1
-    sendSignalToAction: s32'vir_210_Bit', 32
+    sendSignalToAction: s32'vir_210_Bit', (SIGNAL_B)
     sprite: s32'vir214_01ex01', 3
     createObject: s32'vir_214_Bit', (PLAYER)
     sprite: s32'vir214_02ex01', 3
@@ -5412,7 +5412,7 @@ beginState: s32'AirDash'
     physicsXImpulse: 20000
     physicsYImpulse: 20000
     resetGravity: 
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     cmnSfx: s32'SE_BTL_Jump'
     beginLabel: s32'Loop'
     sprite: s32'vir214_04', 3
@@ -5528,7 +5528,7 @@ beginState: s32'ThrowExe'
     sprite: s32'vir301_04', 3
     sprite: s32'vir301_05', 3
     sprite: s32'vir301_06', 3
-    sendSignalToAction: s32'vir_301_prickle', 23
+    sendSignalToAction: s32'vir_301_prickle', (SIGNAL_A)
     grabOrRelease: 
     sprite: s32'vir301_07', 3
     attackEndDelay: 
@@ -5640,7 +5640,7 @@ beginState: s32'BackThrowExe'
     dontAddComboCount: 0
     nextHitActionName: s32''
     clearUpon: (HIT)
-    sendSignalToAction: s32'vir_309_prickle', 23
+    sendSignalToAction: s32'vir_309_prickle', (SIGNAL_A)
     sprite: s32'vir309_05', 5
     attackEndDelay: 
     setNoCollision: 1
@@ -5674,7 +5674,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'vir302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'vir302_03', 3
     attackEndDelay: 
     sprite: s32'vir302_04', 3
@@ -6595,7 +6595,7 @@ beginState: s32'AntiAir_A'
     velocityXPercentEachFrame: 90
     physicsYImpulse: 25000
     resetGravity: 
-    sendSignalToAction: s32'vir_403_Slash', 23
+    sendSignalToAction: s32'vir_403_Slash', (SIGNAL_A)
     createParticle: s32'bg_GroundBurst', (PLAYER_LAND)
     sprite: s32'vir403_06', 2
     damage: 500
@@ -6662,7 +6662,7 @@ beginState: s32'AntiAir_B'
     velocityXPercentEachFrame: 96
     physicsYImpulse: 40000
     resetGravity: 
-    sendSignalToAction: s32'vir_403_Slash', 23
+    sendSignalToAction: s32'vir_403_Slash', (SIGNAL_A)
     createParticle: s32'bg_GroundBurst', (PLAYER_LAND)
     cmnSfx: s32'SE_BTL_HighJump'
     sprite: s32'vir403_06', 2
@@ -6868,7 +6868,7 @@ beginState: s32'AntiAir_C'
                 endIf: 
                 if: Mem(ActReg2)
                     if: Mem(ActReg1)
-                        sendSignalToAction: s32'AntiAir_C_Bit', 23
+                        sendSignalToAction: s32'AntiAir_C_Bit', (SIGNAL_A)
                         hit: 
                         clearUpon: (HIT)
                         upon: (HIT)
@@ -6914,7 +6914,7 @@ beginState: s32'AntiAir_C'
     velocityXPercentEachFrame: 96
     physicsYImpulse: 40000
     resetGravity: 
-    sendSignalToAction: s32'vir_403_Slash', 23
+    sendSignalToAction: s32'vir_403_Slash', (SIGNAL_A)
     createParticle: s32'bg_GroundBurst', (PLAYER_LAND)
     cmnSfx: s32'SE_BTL_HighJump'
     sprite: s32'vir403_06', 2
@@ -7025,7 +7025,7 @@ beginState: s32'AntiAir_D'
     velocityXPercentEachFrame: 96
     physicsYImpulse: 40000
     resetGravity: 
-    sendSignalToAction: s32'vir_403_Slash', 23
+    sendSignalToAction: s32'vir_403_Slash', (SIGNAL_A)
     createParticle: s32'bg_GroundBurst', (PLAYER_LAND)
     cmnSfx: s32'SE_BTL_HighJump'
     clearUpon: (HIT)
@@ -7206,7 +7206,7 @@ beginState: s32'AntiAir_D'
     characterSfx: s32'vir_15'
     swapMeshSet: s32'limited'
     setDefaultMeshSet: s32'limited'
-    sendSignalToAction: s32'AntiAir_C_Bit', 23
+    sendSignalToAction: s32'AntiAir_C_Bit', (SIGNAL_A)
     sprite: s32'vir408_08', 1
     grabOrRelease: 
     armorBreak: 1
@@ -7932,7 +7932,7 @@ beginState: s32'SpecialChevalier_D'
         callSubroutine: s32'cmnShotCounterUkeru'
         storeValue: Mem(PlayerVal2), Val(0)
         gotoLabelUpon: 31, s32'PreEnd'
-        gotoLabelUpon: 32, s32'End'
+        gotoLabelUpon: (SIGNAL_B), s32'End'
     endUpon: 
     sprite: s32'vir409_00', 3
     sprite: s32'vir409_01', 4
@@ -7954,7 +7954,7 @@ beginState: s32'SpecialChevalier_D'
     beginLabel: s32'PreEnd'
     sprite: s32'vir409_04', 3
     clearUpon: 31
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     sprite: s32'vir409_05', 3
     sprite: s32'vir409_06', 3
     sprite: s32'vir409_04', 3
@@ -7963,7 +7963,7 @@ beginState: s32'SpecialChevalier_D'
     beginLabel: s32'End'
     sprite: s32'vir409_07', 3
     clearUpon: 31
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'vir409_08', 3
     sprite: s32'vir409_09', 3
@@ -8369,7 +8369,7 @@ beginState: s32'vir_Kaihou'
         ifOnFrame: Val(75)
             fadeOutStart: 0, 0
             createObject: s32'vir_441_BG', (PLAYER)
-            sendSignalToAction: s32'vir_441cs_Binet', 23
+            sendSignalToAction: s32'vir_441cs_Binet', (SIGNAL_A)
             Unknown2583: 31000, 0, 3, 256400, 32000, 900
         endIf: 
         ifOnFrame: Val(79)
@@ -8422,7 +8422,7 @@ beginState: s32'vir_Kaihou'
         ifOnFrame: Val(231)
             hideUI: 0
             setLightAlpha: 1
-            sendSignalToAction: s32'vir_441_BG', 23
+            sendSignalToAction: s32'vir_441_BG', (SIGNAL_A)
             sendSignalToAction: s32'vir_441cs_Binet', 25
             deactivateObjectByName: s32'vir_441_CS_prickle01_Eff'
             createObject: s32'vir_441_CS_prickle02_Eff', (PLAYER)
@@ -8522,8 +8522,8 @@ endState:
 
 beginState: s32'vir_Ougi_Limited'
     upon: (IMMEDIATE)
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             invulnForce: 1
         endUpon: 
     endUpon: 
@@ -8626,12 +8626,12 @@ beginState: s32'vir_Ougi_Limited'
     sprite: s32'vir431_07', 5
     sprite: s32'vir431_08', 4
     createObject: s32'vir_431Smoke', (PLAYER)
-    sendSignalToAction: s32'vir_431Beam', 23
+    sendSignalToAction: s32'vir_431Beam', (SIGNAL_A)
     sprite: s32'vir431_09', 4
     physicsXImpulse: -4000
     velocityXPercentEachFrame: 98
     sprite: s32'vir431_10', 3
-    sendSignalToAction: s32'vir431_BeamAtk', 23
+    sendSignalToAction: s32'vir431_BeamAtk', (SIGNAL_A)
     characterSfx: s32'vir_ougi_01'
     sprite: s32'vir431_11', 3
     sprite: s32'vir431_12', 3
@@ -8643,9 +8643,9 @@ beginState: s32'vir_Ougi_Limited'
     sprite: s32'vir431_12', 3
     sprite: s32'vir431_10', 3
     sprite: s32'vir431_11', 3
-    sendSignalToAction: s32'vir_431Beam_Bit', 23
+    sendSignalToAction: s32'vir_431Beam_Bit', (SIGNAL_A)
     deactivateObjectByName: s32'vir_431Smoke'
-    sendSignalToAction: s32'vir_431Beam', 32
+    sendSignalToAction: s32'vir_431Beam', (SIGNAL_B)
     velocityXPercent: 50
     sprite: s32'vir431_12', 3
     sprite: s32'vir431_10', 3
@@ -8657,7 +8657,7 @@ beginState: s32'vir_Ougi_Limited'
     sprite: s32'vir431_13', 4
     sprite: s32'vir431_14', 4
     landingEffect: 100, 1, 1
-    sendSignalToAction: s32'vir_431Bit', 23
+    sendSignalToAction: s32'vir_431Bit', (SIGNAL_A)
     sprite: s32'vir431_15', 4
     haltMomentum: 1
     Unknown1302: 
@@ -8763,7 +8763,7 @@ beginState: s32'vir_Kaihou_Limited'
                 smartRandomVoiceLine: s16'vVIR_ATKK_01_a', 100, s16'', 0, s16'', 0, s16'', 0
             endIf: 
             ifOnFrame: Val(71)
-                sendSignalToAction: s32'vir_443MC', 23
+                sendSignalToAction: s32'vir_443MC', (SIGNAL_A)
                 Unknown2583: 2600, 0, 3, 246500, 35700, 3100
             endIf: 
             ifOnFrame: Val(75)
@@ -8868,7 +8868,7 @@ beginState: s32'vir_Kaihou_Limited'
         Unknown412: 0, 1, 0, 0
     endUpon: 
     sprite: s32'vir443_14', 1
-    sendSignalToAction: s32'vir_443MC_Battle', 23
+    sendSignalToAction: s32'vir_443MC_Battle', (SIGNAL_A)
     Unknown412: 100, 1, 8, 0
     Unknown412: 100, 1, 0, 0
     sprite: s32'vir443_14', 1

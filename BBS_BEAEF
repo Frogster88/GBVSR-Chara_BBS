@@ -106,7 +106,7 @@ beginState: s32'bea_208_StrikeEff'
         linkObjectZ: 3
         addPositionX: 250000
         Unknown2327: 1
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -123,7 +123,7 @@ beginState: s32'bea_208_StrikeEff'
     beginLabel: s32'End'
     sprite: s32'null', 5
     createParticle: s32'bea_208_AuraNokosi', (PLAYER)
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     sprite: s32'null', 30
     setAlphaColor: 500
     setAlphaColorSpeed: -10
@@ -351,7 +351,7 @@ beginState: s32'bea_400_Shot'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 13
             clearUpon: (FRAME_STEP)
             haltMomentum: 1
@@ -414,7 +414,7 @@ beginState: s32'bea_400_Shot'
             upon: (FRAME_STEP)
                 hit: 
             endUpon: 
-            upon: 45
+            upon: (ON_DESTROY)
                 clearUpon: 13
                 ifNot: Mem(ActReg3)
                     clearUpon: (FRAME_STEP)
@@ -529,13 +529,13 @@ beginState: s32'bea_400_Shot'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
     deleteMoveForceDisableFlag: 1
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         if: Mem(417)
@@ -543,7 +543,7 @@ beginState: s32'bea_400_Shot'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 180
+            skillCooldown: 0, 180
         endElse: 
     endIf: 
     Unknown1923: 0
@@ -579,7 +579,7 @@ beginState: s32'bea_401_SlashEff'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkObjectZ: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Fly'
         endUpon: 
     endUpon: 
@@ -609,7 +609,7 @@ beginState: s32'bea_401_SlashEff'
     beginLabel: s32'Fly'
     sprite: s32'null', 20
     linkParticle: s32'bea_401_slash3'
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setPositionX: 40963
     setPositionY: 286841
     setDepth: -13616
@@ -628,7 +628,7 @@ beginState: s32'bea_403_Strike'
         linkObjectPosition: 3
         stopLinkObject: 3
         setObjectSize: 500
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -641,7 +641,7 @@ beginState: s32'bea_403_Strike'
     stopLinkObject: 0
     beginLabel: s32'End'
     sprite: s32'null', 3
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'bea_403_Strike02'
     setPositionX: 65524
     setPositionY: 216227
@@ -675,7 +675,7 @@ beginState: s32'bea_403_Impact'
         setAngleX: 4400
         setAngleY: 303600
         setAngle: 316400
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -694,7 +694,7 @@ beginState: s32'bea_403_EnshutuCamera'
             Unknown2582: 
             haikuEnd: 
         endUpon: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -705,7 +705,7 @@ beginState: s32'bea_403_EnshutuCamera'
     haikuEnd: 
     beginLabel: s32'End'
     sprite: s32'null', 18
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     Unknown2074: 3, -62455, 562421, 130224, -672, 1622, 49, 60, 10, 0, 1500, 0, 2, 0
     sprite: s32'null', 15
     Unknown2876: 15
@@ -756,7 +756,7 @@ beginState: s32'bea_404_UpperEff'
             setAngleY: 23600
             setAngle: 54400
         endUpon: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -767,7 +767,7 @@ beginState: s32'bea_404_UpperEff'
     setObjectSize: 600
     beginLabel: s32'End'
     sprite: s32'null', 5
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setAlphaColorSpeed: -200
     setObjectSizeScaleSpeed: -50
 endState: 
@@ -779,7 +779,7 @@ beginState: s32'bea_404_KickFire'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkObjectZ: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -794,7 +794,7 @@ beginState: s32'bea_404_KickFire'
     setObjectSize: 800
     beginLabel: s32'End'
     sprite: s32'null', 10
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     setAlphaColor: 500
     setAlphaColorSpeed: -50
     setLinkObjectDestroyOnStateChange: 0
@@ -969,8 +969,8 @@ beginState: s32'bea_406_EnshutuCamera'
         setLinkObjectDestroyOnDamage: 3
         ignoreSuperFreezeFromAlly: 1
         ignoreFinishStop: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Aitata'
         endUpon: 
         upon: (BEFORE_EXIT)
@@ -1020,7 +1020,7 @@ beginState: s32'bea_430_SlashEff'
     setObjectDepth: 1200
     sprite: s32'null', 10
     linkParticle: s32'bea_430_slash02'
-    sendSignalToAction: s32'bea_430_SlashEff_Sub', 23
+    sendSignalToAction: s32'bea_430_SlashEff_Sub', (SIGNAL_A)
     setPositionX: 37007
     setPositionY: 267693
     setDepth: -32456
@@ -1045,7 +1045,7 @@ beginState: s32'bea_430_SlashEff_Sub'
         linkObjectPosition: 2
         stopLinkObject: 3
         linkObjectZ: 3
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'Loop'
         endUpon: 
         upon: 24
@@ -1066,7 +1066,7 @@ beginState: s32'bea_430_SlashEff_Sub'
     createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
     beginLabel: s32'Loop'
     sprite: s32'null', 600
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'bea_430_SubLoop'
     setObjectWidth: 2500
     setObjectHeight: 1750
@@ -1876,7 +1876,7 @@ beginState: s32'bea_441_QuakeEff_Hide'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkObjectZ: 3
-        gotoLabelUpon: 23, s32'Start'
+        gotoLabelUpon: (SIGNAL_A), s32'Start'
     endUpon: 
     sprite: s32'null', 600
     linkParticle: s32'bea_441_EarthQuake'
@@ -2052,7 +2052,7 @@ beginState: s32'bea_441_SordMin'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkObjectZ: 3
-        gotoLabelUpon: 23, s32'Move1'
+        gotoLabelUpon: (SIGNAL_A), s32'Move1'
         gotoLabelUpon: 24, s32'Move2'
     endUpon: 
     sprite: s32'null', 120
@@ -2210,7 +2210,7 @@ beginState: s32'BEA_441_WhiteOut'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -2256,7 +2256,7 @@ beginState: s32'BEA_442_WhiteIn'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -2356,7 +2356,7 @@ beginState: s32'bea_600_EnshutuCamera'
             haikuEnd: 
             Unknown2863: 
         endUpon: 
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2377,7 +2377,7 @@ beginState: s32'bea_600_EnshutuCamera'
     Unknown410: 4, 3
     beginLabel: s32'End'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     Unknown2074: 3, 136615, 404439, 96766, 355, -2310, 36, 60, 25, 5, 0, 0, 0, 1
     sprite: s32'null', 900
     Unknown2074: 3, 125548, 390045, 97380, 354, -2141, 35, 60, 300, 600, 10, 0, 2, 2
@@ -2774,7 +2774,7 @@ beginState: s32'bea_700_AuraWipe'
         linkObjectPosition: 3
         stopLinkObject: 3
         linkObjectZ: 3
-        gotoLabelUpon: 23, s32'Move'
+        gotoLabelUpon: (SIGNAL_A), s32'Move'
     endUpon: 
     sprite: s32'null', 60
     setPositionX: 1055773
@@ -3048,7 +3048,7 @@ beginState: s32'bea_ClockEff'
         endIf: 
         linkObjectPosition: 22
         linkObjectZ: 22
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 

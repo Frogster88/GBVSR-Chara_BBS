@@ -47,8 +47,8 @@ beginState: s32'eus_207_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -121,8 +121,8 @@ beginState: s32'eus_208_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -241,8 +241,8 @@ beginState: s32'eus_232_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -343,8 +343,8 @@ beginState: s32'eus_253_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -371,8 +371,8 @@ beginState: s32'eus_301_needle_loopEff'
         addPositionY: 278000
         Unknown1727: 55800
         physicsXImpulse: 48000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Koware'
             createParticle: s32'eus_301_needle_end', (PLAYER)
             linkParticle: s32'eus_301_NeedleHit'
@@ -410,8 +410,8 @@ beginState: s32'eus_301_ElecShock'
         setObjectSize: 3000
         Unknown1727: -55000
         addPositionX: 22500
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Koware'
         endUpon: 
     endUpon: 
@@ -650,8 +650,8 @@ beginState: s32'eus_309_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -738,7 +738,7 @@ beginState: s32'eus_350_WaitSparkEff'
         setPositionX: 248987
         setPositionY: 283392
         setDepth: 42396
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -746,7 +746,7 @@ beginState: s32'eus_350_WaitSparkEff'
     linkParticle: s32'eus_WaitSparkStart'
     beginLabel: s32'End'
     sprite: s32'null', 20
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'eus_WaitSparkEnd'
 endState: 
 
@@ -921,13 +921,13 @@ endState:
 
 beginSubroutine: s32'eus_400_cooldown'
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        Unknown1921: 1, 9
+        skillCooldown: 1, 9
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        Unknown1921: 1, 9
+        skillCooldown: 1, 9
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         if: Mem(417)
@@ -935,7 +935,7 @@ beginSubroutine: s32'eus_400_cooldown'
             storeValue: Mem(288), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 1, 180
+            skillCooldown: 1, 180
         endElse: 
     endIf: 
     Unknown1923: 1
@@ -981,9 +981,9 @@ beginState: s32'eus_400_Shot_A'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 8
             clearUpon: (HIT_OR_GUARD)
             physicsXImpulse: 0
@@ -992,7 +992,7 @@ beginState: s32'eus_400_Shot_A'
         setEventTrigger: 13, 65
         upon: 13
             clearUpon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 8
             clearUpon: (HIT_OR_GUARD)
             velocityXPercentEachFrame: 75
@@ -1049,7 +1049,7 @@ beginState: s32'eus_400_Shot_A'
     beginLabel: s32'Koware'
     sprite: s32'400_ShotAtkEnd', 9
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     if: Mem(405)
         linkParticle: s32'eus_400_Shot_end_SP'
         callSubroutine: s32'cmnWeaponLvMaxColorInit'
@@ -1061,8 +1061,8 @@ beginState: s32'eus_400_Shot_A'
         deactivateObjectByName: s32'eus_400_SPkiraEff'
     endIf: 
     linkObjectPosition: 0
-    sendSignalToAction: s32'eus_400_ShotNokosi', 23
-    sendSignalToAction: s32'eus_400_GroundRay', 23
+    sendSignalToAction: s32'eus_400_ShotNokosi', (SIGNAL_A)
+    sendSignalToAction: s32'eus_400_GroundRay', (SIGNAL_A)
     Unknown409: 100, 1
     Unknown409: 86, 2
     Unknown409: 100, 3
@@ -1118,7 +1118,7 @@ beginState: s32'eus_400_Shot_BEX'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         setEventTrigger: 13, 20
@@ -1137,7 +1137,7 @@ beginState: s32'eus_400_Shot_BEX'
         endUpon: 
         upon: (HIT_OR_GUARD)
             storeValue: Mem(ActReg2), Val(1)
-            sendSignalToAction: s32'eus402_BombC_Set_Atk', 23
+            sendSignalToAction: s32'eus402_BombC_Set_Atk', (SIGNAL_A)
         endUpon: 
         setDepth: -900
         physicsXImpulse: 100000
@@ -1154,12 +1154,12 @@ beginState: s32'eus_400_Shot_BEX'
         sendSignalToAction: s32'eus402_BombC_Set_Atk', 24
     endIf: 
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     beginLabel: s32'End'
     sprite: s32'null', 60
-    sendSignalToAction: s32'eus_400_BeamEff', 23
+    sendSignalToAction: s32'eus_400_BeamEff', (SIGNAL_A)
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     setObjectSize: 1200
     linkParticle: s32''
     if: Mem(405)
@@ -1175,8 +1175,8 @@ beginState: s32'eus_400_ShotNokosi'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1210,8 +1210,8 @@ beginState: s32'eus_400_GroundRay'
         linkObjectPosition: 2
         setPositionY: -226773
         setDepth: -9896
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1258,8 +1258,8 @@ beginState: s32'eus_400_StartRay'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setObjectSize: 900
@@ -1284,8 +1284,8 @@ beginState: s32'eus_400_BeamEff'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setDepth: 64567
@@ -1329,8 +1329,8 @@ beginState: s32'eus_400_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1390,8 +1390,8 @@ beginState: s32'eus_401_BallNokosiEff'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1427,7 +1427,7 @@ beginSubroutine: s32'NormalShot_Init'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: 45
+    upon: (ON_DESTROY)
         gotoLabelRequests: s32'Koware'
         clearUpon: 24
         haltMomentum: 1
@@ -1503,18 +1503,18 @@ beginState: s32'eus_401_ball_loopEff'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: (HIT_OR_GUARD)
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-                Unknown1921: 0, 10
+                skillCooldown: 0, 10
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-                Unknown1921: 0, 10
+                skillCooldown: 0, 10
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-                Unknown1921: 0, 420
+                skillCooldown: 0, 420
             endIf: 
             ifOperation: (IS_LESSER), Mem(ActReg6), Val(20)
                 Unknown1923: 0
@@ -1525,16 +1525,16 @@ beginState: s32'eus_401_ball_loopEff'
         setEventTrigger: 13, 80
         upon: 13
             clearUpon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: (HIT_OR_GUARD)
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-                Unknown1921: 0, 10
+                skillCooldown: 0, 10
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-                Unknown1921: 0, 10
+                skillCooldown: 0, 10
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-                Unknown1921: 0, 420
+                skillCooldown: 0, 420
             endIf: 
             ifOperation: (IS_LESSER), Mem(ActReg6), Val(20)
                 Unknown1923: 0
@@ -1656,9 +1656,9 @@ beginState: s32'eus_401_ball_loopEff'
     sprite: s32'401_ShotAtkEnd', 9
     haltMomentum: 1
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkParticle: s32'eus_401_Ball_Hit'
-    sendSignalToAction: s32'eus_401_BallNokosiEff', 23
+    sendSignalToAction: s32'eus_401_BallNokosiEff', (SIGNAL_A)
     if: Mem(ActReg3)
         sendSignalToAction: s32'eus402_BombC_Set_Atk', 24
     endIf: 
@@ -1682,7 +1682,7 @@ beginState: s32'eus_410_ball_loopEff'
         atkEnemyHitSuperArmor: 1
         Unknown2349: 23
         createObject: s32'eus_401_Ceiling', (PLAYER)
-        upon: 23
+        upon: (SIGNAL_A)
             createParticle: s32'eus_401_Bound', (PLAYER)
             hitAirPushbackY: 17000
             velocityXPercent: 120
@@ -1719,7 +1719,7 @@ beginState: s32'eus_410_ball_loopEff'
                     Unknown1019: 1
                 endIf: 
             endIf: 
-            upon: 23
+            upon: (SIGNAL_A)
                 hit: 
                 createParticle: s32'eus_401_Bound', (PLAYER)
                 hitAirPushbackY: 17000
@@ -1738,17 +1738,17 @@ beginState: s32'eus_410_ball_loopEff'
         Unknown2210: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: (HIT_OR_GUARD)
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             if: Mem(417)
                 modifyVar2: (ADD), Val(180), Mem(287)
                 storeValue: Mem(287), Mem(Tmp)
             endIf: 
             else: 
-                Unknown1921: 0, 180
+                skillCooldown: 0, 180
             endElse: 
             ifOperation: (IS_LESSER), Mem(ActReg6), Val(20)
                 Unknown1923: 0
@@ -1759,15 +1759,15 @@ beginState: s32'eus_410_ball_loopEff'
         setEventTrigger: 13, 80
         upon: 13
             clearUpon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: (HIT_OR_GUARD)
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             if: Mem(417)
                 modifyVar2: (ADD), Val(180), Mem(287)
                 storeValue: Mem(287), Mem(Tmp)
             endIf: 
             else: 
-                Unknown1921: 0, 180
+                skillCooldown: 0, 180
             endElse: 
             ifOperation: (IS_LESSER), Mem(ActReg6), Val(20)
                 Unknown1923: 0
@@ -1834,9 +1834,9 @@ beginState: s32'eus_410_ball_loopEff'
     sprite: s32'401_ShotAtkEnd', 9
     haltMomentum: 1
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkParticle: s32'eus_401_Ball_Hit'
-    sendSignalToAction: s32'eus_401_BallNokosiEff', 23
+    sendSignalToAction: s32'eus_401_BallNokosiEff', (SIGNAL_A)
     sprite: s32'null', 36
 endState: 
 
@@ -1862,8 +1862,8 @@ beginState: s32'eus_401_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2011,7 +2011,7 @@ beginSubroutine: s32'eus402_Bomb_Init'
     numberOfHits: 1
     Unknown2212: 1
     Unknown2213: 0
-    upon: 45
+    upon: (ON_DESTROY)
         clearUpon: (HIT_OR_GUARD)
         clearUpon: 93
         gotoLabelRequests: s32'Koware'
@@ -2095,21 +2095,21 @@ endSubroutine:
 
 beginSubroutine: s32'eus402_BombA_CoolDown'
     clearUpon: (BEFORE_EXIT)
-    Unknown1921: 2, 30
+    skillCooldown: 2, 30
     Unknown1923: 2
     deleteMoveForceDisableFlag: 4
 endSubroutine: 
 
 beginSubroutine: s32'eus402_BombB_CoolDown'
     clearUpon: (BEFORE_EXIT)
-    Unknown1921: 2, 30
+    skillCooldown: 2, 30
     Unknown1923: 2
     deleteMoveForceDisableFlag: 4
 endSubroutine: 
 
 beginSubroutine: s32'eus402_BombC_CoolDown'
     clearUpon: (BEFORE_EXIT)
-    Unknown1921: 2, 300
+    skillCooldown: 2, 300
     Unknown1923: 2
     deleteMoveForceDisableFlag: 4
 endSubroutine: 
@@ -2121,7 +2121,7 @@ beginSubroutine: s32'eus402_BombD_CoolDown'
         storeValue: Mem(289), Mem(Tmp)
     endIf: 
     else: 
-        Unknown1921: 2, 180
+        skillCooldown: 2, 180
     endElse: 
     Unknown1923: 2
     deleteMoveForceDisableFlag: 4
@@ -2145,7 +2145,7 @@ beginState: s32'eus402_BombA_Atk'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: 93
     clearUpon: 5
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkPawnWithAnimation: s32'', s32''
     linkParticle: s32'eus_402_BombA'
     setAngleSpeed: 0
@@ -2166,7 +2166,7 @@ beginState: s32'eus402_BombA_Atk'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: 93
     clearUpon: 5
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkPawnWithAnimation: s32'', s32''
     linkParticle: s32'eus_402_BomBreakA'
     setAngleSpeed: 0
@@ -2219,7 +2219,7 @@ beginState: s32'eus402_BombB_Atk'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: 93
     clearUpon: 5
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkPawnWithAnimation: s32'', s32''
     linkParticle: s32'eus_402_BombB'
     setAngleSpeed: 0
@@ -2240,7 +2240,7 @@ beginState: s32'eus402_BombB_Atk'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: 93
     clearUpon: 5
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkPawnWithAnimation: s32'', s32''
     linkParticle: s32'eus_402_BomBreakB'
     setAngleSpeed: 0
@@ -2268,7 +2268,7 @@ beginState: s32'eus402_BombC_Atk'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: 93
     clearUpon: 5
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     createArgHikitsukiVal: Val(2), Val(0)
     createObjectWithArg: s32'eus402_BombC_Set_Atk', (PLAYER)
     endSprite: 
@@ -2279,7 +2279,7 @@ beginState: s32'eus402_BombC_Atk'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: 93
     clearUpon: 5
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkPawnWithAnimation: s32'', s32''
     linkParticle: s32'eus_402_BombC'
     setAngleSpeed: 0
@@ -2301,7 +2301,7 @@ beginState: s32'eus402_BombC_Atk'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: 93
     clearUpon: 5
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkPawnWithAnimation: s32'', s32''
     linkParticle: s32'eus_402_BomBreakC'
     setAngleSpeed: 0
@@ -2332,16 +2332,16 @@ beginState: s32'eus402_BombD_Atk'
         setObjectSize: 2000
         Unknown2294: 500
         Unknown2348: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             clearUpon: 5
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             gotoLabelRequests: s32'Atk'
         endUpon: 
         upon: 24
             clearUpon: 24
             clearUpon: 5
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             groundHitEffect: (AIR_STRONG)
             airHitEffect: (AIR_STRONG)
             hitAirPushbackX: 18000
@@ -2352,14 +2352,14 @@ beginState: s32'eus402_BombD_Atk'
         upon: 25
             clearUpon: 25
             clearUpon: 5
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             ignoreOtg: 1
             gotoLabelRequests: s32'Atk'
         endUpon: 
         upon: 26
             clearUpon: 26
             clearUpon: 5
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             Unknown1048: 0
             nextHitActionName: s32'eus_Ougi'
             comboLimitScaling: 0
@@ -2368,13 +2368,13 @@ beginState: s32'eus402_BombD_Atk'
         upon: 27
             clearUpon: 27
             clearUpon: 5
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             Unknown1048: 0
             nextHitActionName: s32'eus_Kaihou'
             comboLimitScaling: 0
             gotoLabelRequests: s32'Atk'
         endUpon: 
-        upon: 32
+        upon: (SIGNAL_B)
             Unknown2203: 23
         endUpon: 
         initializeDestroy: 
@@ -2386,7 +2386,7 @@ beginState: s32'eus402_BombD_Atk'
         Unknown2213: 0
         Unknown2210: 3
         Unknown2257: 1
-        upon: 45
+        upon: (ON_DESTROY)
             deactivateObjectByName: s32'eus402_BombD_AtkEff'
             gotoLabelRequests: s32'Koware'
         endUpon: 
@@ -2461,7 +2461,7 @@ beginState: s32'eus402_BombD_Atk'
     clearUpon: 93
     clearUpon: 5
     clearUpon: (TOUCH_GROUND)
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     Unknown2348: 0
     linkPawnWithAnimation: s32'', s32''
     linkParticle: s32'eus_402_BomBreakD'
@@ -2529,12 +2529,12 @@ beginState: s32'eus402_BombC_Set_Atk'
         Unknown2208: 1
         Unknown2257: 1
         Unknown2212: 1
-        upon: 45
+        upon: (ON_DESTROY)
             gotoLabelRequests: s32'End'
         endUpon: 
         addMoveForceDisableFlag: 4
         Unknown1924: 2, 1
-        upon: 23
+        upon: (SIGNAL_A)
             deactivateObjectByName: s32'eus402_EXCharge'
             createObject: s32'eus402_EXCharge', (PLAYER)
             storeValue: Mem(ActReg2), Val(0)
@@ -2598,7 +2598,7 @@ beginState: s32'eus402_BombC_Set_Atk'
             groundTech: 0
             gotoLabelRequests: s32'Bakuhatsu'
         endUpon: 
-        upon: 32
+        upon: (SIGNAL_B)
             groundHitEffect: (AIR_LAUNCH)
             airHitEffect: (AIR_LAUNCH)
             hitAirPushbackX: 3000
@@ -2612,7 +2612,7 @@ beginState: s32'eus402_BombC_Set_Atk'
             endIf: 
             modifyVar: (ADD), Mem(ActReg2), Val(1)
             ifOperation: (IS_EQUAL), Mem(ActReg2), Val(196)
-                sendSignalToAction: s32'eus402_EXCharge', 23
+                sendSignalToAction: s32'eus402_EXCharge', (SIGNAL_A)
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg2), Val(233)
                 deactivateObjectByName: s32'eus402_EXCharge'
@@ -2709,7 +2709,7 @@ beginState: s32'eus402_BombC_Set_Atk'
     beginLabel: s32'Bakuhatsu'
     sprite: s32'null', 2
     clearUpon: (FRAME_STEP)
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: 24
     clearUpon: 25
     clearUpon: 26
@@ -2718,7 +2718,7 @@ beginState: s32'eus402_BombC_Set_Atk'
     clearUpon: 29
     clearUpon: 30
     clearUpon: 31
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     stopLinkObject: 3
     disableDisplay2D: 0
     haltMomentum: 1
@@ -2744,8 +2744,8 @@ beginState: s32'eus402_BombC_Set_Atk'
     sprite: s32'null', 60
     clearUpon: (HIT)
     clearUpon: (FRAME_STEP)
-    clearUpon: 45
-    clearUpon: 23
+    clearUpon: (ON_DESTROY)
+    clearUpon: (SIGNAL_A)
     clearUpon: 24
     clearUpon: 25
     clearUpon: 26
@@ -2754,7 +2754,7 @@ beginState: s32'eus402_BombC_Set_Atk'
     clearUpon: 29
     clearUpon: 30
     clearUpon: 31
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     storeValue: Mem(PlayerVal0), Val(0)
     deactivateObjectByName: s32'eus402_EXCharge'
     Unknown1924: 2, 0
@@ -2781,7 +2781,7 @@ beginState: s32'eus402_EXCharge'
         linkParticle: s32'eus_402_BombC_Charge'
     endElse: 
     endUpon: 
-    upon: 23
+    upon: (SIGNAL_A)
         gotoLabelRequests: s32'verge'
     endUpon: 
     upon: 24
@@ -3000,8 +3000,8 @@ beginState: s32'eus_407_Thrust'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         stopLinkObject: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'2nd'
         endUpon: 
         upon: 24
@@ -3137,7 +3137,7 @@ beginState: s32'eus_408_Shot_Matome'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         upon: 54
@@ -3150,11 +3150,11 @@ beginState: s32'eus_408_Shot_Matome'
         endIf: 
         upon: (HIT_OR_GUARD)
             storeValue: Mem(ActReg3), Val(1)
-            sendSignalToAction: s32'eus402_BombC_Set_Atk', 23
+            sendSignalToAction: s32'eus402_BombC_Set_Atk', (SIGNAL_A)
         endUpon: 
         Unknown1909: 30000
         upon: (TOUCH_GROUND)
-            sendSignalToAction: s32'eus_408_Shot', 32
+            sendSignalToAction: s32'eus_408_Shot', (SIGNAL_B)
             gotoLabelRequests: s32'Koware'
         endUpon: 
         setObjectWidth: 1500
@@ -3186,7 +3186,7 @@ beginState: s32'eus_408_Shot_Matome'
     if: Mem(ActReg3)
         sendSignalToAction: s32'eus402_BombC_Set_Atk', 24
     endIf: 
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
 endState: 
 
 beginState: s32'eus_408_Shot'
@@ -3214,14 +3214,14 @@ beginState: s32'eus_408_Shot'
             setAngleBySpeed: 0
         endIf: 
         addPositionX: -50000
-        gotoLabelUpon: 32, s32'Koware'
+        gotoLabelUpon: (SIGNAL_B), s32'Koware'
     endUpon: 
     sprite: s32'null', 60
     linkParticle: s32'eus_408_ShotLoop'
     createObject: s32'eus_408_GunSmoke', (PLAYER)
     beginLabel: s32'Koware'
     sprite: s32'null', 60
-    clearUpon: 32
+    clearUpon: (SIGNAL_B)
     linkParticle: s32'eus_408_ShotEnd'
     haltMomentum: 1
 endState: 
@@ -3279,8 +3279,8 @@ beginState: s32'eus_409_Spark_Eff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3324,9 +3324,9 @@ beginState: s32'eus_409_Shot'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 8
             clearUpon: (HIT_OR_GUARD)
             if: Mem(ActReg2)
@@ -3407,15 +3407,15 @@ beginState: s32'eus_409_Shot'
     beginLabel: s32'Koware'
     sprite: s32'400_ShotAtkEnd', 9
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     linkParticle: s32'eus_408_ShotEnd'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
     if: Mem(405)
         deactivateObjectByName: s32'eus_400_SPkiraEff'
     endIf: 
     linkObjectPosition: 0
-    sendSignalToAction: s32'eus_400_ShotNokosi', 23
-    sendSignalToAction: s32'eus_400_GroundRay', 23
+    sendSignalToAction: s32'eus_400_ShotNokosi', (SIGNAL_A)
+    sendSignalToAction: s32'eus_400_GroundRay', (SIGNAL_A)
     sprite: s32'null', 51
 endState: 
 
@@ -3459,9 +3459,9 @@ beginState: s32'eus_409_Shot_3rd'
         Unknown2257: 1
         Unknown2212: 0
         Unknown2213: 0
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 8
             clearUpon: (HIT_OR_GUARD)
             gotoLabelRequests: s32'Koware'
@@ -3469,7 +3469,7 @@ beginState: s32'eus_409_Shot_3rd'
         setEventTrigger: 13, 65
         upon: 13
             clearUpon: 13
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 8
             clearUpon: (HIT_OR_GUARD)
             gotoLabelRequests: s32'Koware'
@@ -3489,7 +3489,7 @@ beginState: s32'eus_409_Shot_3rd'
             ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
                 damage: 600
                 hitstop: 12
-                sendSignalToAction: s32'eus402_BombC_Set_Atk', 32
+                sendSignalToAction: s32'eus402_BombC_Set_Atk', (SIGNAL_B)
             endIf: 
             physicsXImpulse: 40000
             storeValue: Mem(ActReg3), Val(1)
@@ -3521,7 +3521,7 @@ beginState: s32'eus_409_Shot_3rd'
     beginLabel: s32'Koware'
     sprite: s32'400_ShotAtkEnd', 9
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     haltMomentum: 1
     linkParticle: s32'eus_400_SPShotEnd'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
@@ -3529,8 +3529,8 @@ beginState: s32'eus_409_Shot_3rd'
         deactivateObjectByName: s32'eus_400_SPkiraEff'
     endIf: 
     linkObjectPosition: 0
-    sendSignalToAction: s32'eus_400_ShotNokosi', 23
-    sendSignalToAction: s32'eus_409_GroundRay_3rd', 23
+    sendSignalToAction: s32'eus_400_ShotNokosi', (SIGNAL_A)
+    sendSignalToAction: s32'eus_409_GroundRay_3rd', (SIGNAL_A)
     privateSE: s32'eus_16_3'
     sprite: s32'null', 51
 endState: 
@@ -3541,8 +3541,8 @@ beginState: s32'eus_409_GroundRay_3rd'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3579,8 +3579,8 @@ beginState: s32'eus_410_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3715,8 +3715,8 @@ beginState: s32'eus_430_ThrustNokosiEff'
         addPositionX: 380000
         addPositionY: 266700
         Unknown1727: 81700
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3824,8 +3824,8 @@ beginState: s32'eus_430_LastBeamEff'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Start2'
         endUpon: 
         upon: 24
@@ -3888,8 +3888,8 @@ beginState: s32'eus_430_ryuhaiEff'
         setObjectHeight: 4500
         setObjectDepth: 4000
         setAngle: 331600
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3936,8 +3936,8 @@ beginState: s32'eus_430_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3999,8 +3999,8 @@ beginState: s32'eus_440_ChargeCoreEff'
         setAngleX: 0
         setAngleY: 0
         setAngle: 120000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4022,8 +4022,8 @@ beginState: s32'eus_440_BeamEff'
         setPositionY: 305000
         setDepth: 2000
         setAngle: 28000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
         setEventTrigger: 13, 300
@@ -4053,7 +4053,7 @@ beginState: s32'eus_440_BeamEff'
     sprite: s32'null', 10
     linkObjectPosition: 0
     createParticle: s32'eus_440_BeamNokoshiEnd', (PLAYER)
-    sendSignalToAction: s32'eus_440_ChargeCoreEff', 23
+    sendSignalToAction: s32'eus_440_ChargeCoreEff', (SIGNAL_A)
     Unknown409: 100, 3
     Unknown410: -3, 3
     sprite: s32'null', 30
@@ -4114,8 +4114,8 @@ beginState: s32'eus_440_FullHit'
         moveToObject: (ENEMY)
         addPositionY: 300000
         setObjectSize: 3000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4135,8 +4135,8 @@ beginState: s32'eus_440_WaitSparkEff'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -4293,8 +4293,8 @@ beginState: s32'eus_441_BG'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'PosChange1'
         endUpon: 
         upon: 24
@@ -4382,8 +4382,8 @@ beginState: s32'eus_441_GunRay'
         addPositionX: -21542
         addPositionY: 558023
         Unknown1727: 4917
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'PosChange'
         endUpon: 
     endUpon: 
@@ -4743,7 +4743,7 @@ beginState: s32'eus_441_WhiteOut'
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -5041,13 +5041,13 @@ beginState: s32'WON_eus601'
             modifyVar2: (SUB), Mem(PosX), Mem(ActReg0)
             if: Mem(Dir)
                 ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(0)
-                    sendSignalToAction: s32'CmnActRoundWin', 23
+                    sendSignalToAction: s32'CmnActRoundWin', (SIGNAL_A)
                     storeValue: Mem(ActReg1), Val(1)
                 endIf: 
             endIf: 
             else: 
                 ifOperation: (IS_GREATER_OR_EQUAL), Mem(Tmp), Val(0)
-                    sendSignalToAction: s32'CmnActRoundWin', 23
+                    sendSignalToAction: s32'CmnActRoundWin', (SIGNAL_A)
                     storeValue: Mem(ActReg1), Val(1)
                 endIf: 
             endElse: 

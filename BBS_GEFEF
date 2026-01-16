@@ -231,8 +231,8 @@ beginState: s32'gef_303_EnshutuCamera'
         linkObjectPosition: 3
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Landing'
         endUpon: 
         upon: (BEFORE_EXIT)
@@ -678,8 +678,8 @@ beginState: s32'gef_DrainTrail'
         if: Mem(Tmp)
             Unknown1799: 0x6765665F426C6F6F64547261696C30310000000000000000000000000000000017000000
         endIf: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             deactivateCurrentObject: 
         endUpon: 
         checkSomething: 2, 1
@@ -841,7 +841,7 @@ beginState: s32'gef_400_ShotEff'
     Unknown2257: 1
     Unknown2212: 0
     Unknown2213: 0
-    upon: 45
+    upon: (ON_DESTROY)
         clearUpon: 37
         clearUpon: 54
         gotoLabelRequests: s32'Koware'
@@ -850,7 +850,7 @@ beginState: s32'gef_400_ShotEff'
         modifyVar: (ADD), Mem(ActReg1), Val(1)
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(61)
             clearUpon: (FRAME_STEP)
-            clearUpon: 45
+            clearUpon: (ON_DESTROY)
             clearUpon: 37
             clearUpon: 54
             attackOff: 
@@ -1003,21 +1003,21 @@ beginState: s32'gef_400_ShotEff'
     beginLabel: s32'Koware'
     sprite: s32'null', 15
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     haltMomentum: 1
-    sendSignalToAction: s32'gef_400_ShotEff_VisualA', 23
-    sendSignalToAction: s32'gef_400_ShotEff_VisualB', 23
-    sendSignalToAction: s32'gef_400_ShotEff_VisualC', 23
-    sendSignalToAction: s32'gef_400_ShotEff_VisualD', 23
+    sendSignalToAction: s32'gef_400_ShotEff_VisualA', (SIGNAL_A)
+    sendSignalToAction: s32'gef_400_ShotEff_VisualB', (SIGNAL_A)
+    sendSignalToAction: s32'gef_400_ShotEff_VisualC', (SIGNAL_A)
+    sendSignalToAction: s32'gef_400_ShotEff_VisualD', (SIGNAL_A)
     deleteMoveForceDisableFlag: 1
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         if: Mem(417)
@@ -1025,7 +1025,7 @@ beginState: s32'gef_400_ShotEff'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 180
+            skillCooldown: 0, 180
         endElse: 
     endIf: 
     Unknown1923: 0
@@ -1037,8 +1037,8 @@ beginState: s32'gef_400_ShotEff_VisualA'
         setLinkObjectDestroyOnStateChange: 2
         linkParticle: s32'gef_400_shotLoop'
         callSubroutine: s32'cmnWeaponLvMaxColorInit'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1082,8 +1082,8 @@ beginState: s32'gef_400_ShotEff_VisualB'
         callSubroutine: s32'cmnWeaponLvMaxColorInit'
         setObjectHeight: 1500
         setObjectWidth: 1200
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1125,8 +1125,8 @@ beginState: s32'gef_400_ShotEff_VisualC'
         setLinkObjectDestroyOnStateChange: 2
         linkParticle: s32'gef_400_shot2Loop'
         callSubroutine: s32'cmnWeaponLvMaxColorInit'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1165,8 +1165,8 @@ beginState: s32'gef_400_ShotEff_VisualD'
         callSubroutine: s32'cmnWeaponLvMaxColorInit'
         setObjectHeight: 1500
         setObjectWidth: 1200
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1449,8 +1449,8 @@ beginState: s32'gef_402_BurstEff'
         setDepth: 107505
         setAngleX: 7200
         linkParticle: s32'gef_402_BurstLoop'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1479,8 +1479,8 @@ beginState: s32'gef_402_Burst2Eff'
         setDepth: 107505
         setAngleX: 7200
         linkParticle: s32'gef_402_Burst2Loop'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1545,8 +1545,8 @@ beginState: s32'gef_402_BurstEff_Buff'
         setDepth: 107505
         setAngleX: 7200
         linkParticle: s32'gef_402_Burst3Loop'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1575,8 +1575,8 @@ beginState: s32'gef_402_BurstEff_Buff2'
         setDepth: 107505
         setAngleX: 7200
         linkParticle: s32'gef_402_Burst4Loop'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2019,8 +2019,8 @@ beginState: s32'gef_411_ThrustLoopEff'
         setPositionY: 261608
         setDepth: 36431
         setAngleY: 344400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2048,8 +2048,8 @@ beginState: s32'gef_411_ThrustLoopEff_Buff'
         setPositionY: 261608
         setDepth: 36431
         setAngleY: 344400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2093,7 +2093,7 @@ beginState: s32'gef_411_Wall'
                 modifyVar: (ADD), Mem(ActReg0), Val(1)
                 ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg0), Val(3)
                     clearUpon: (FRAME_STEP)
-                    sendSignalToAction: s32'Kamae_Add_D_Exe', 23
+                    sendSignalToAction: s32'Kamae_Add_D_Exe', (SIGNAL_A)
                 endIf: 
             endIf: 
         endUpon: 
@@ -2107,8 +2107,8 @@ beginState: s32'gef_411_EnshutuCamera'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         ignoreSuperFreezeFromAlly: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'KabeHit'
         endUpon: 
         upon: (BEFORE_EXIT)
@@ -2353,8 +2353,8 @@ beginState: s32'gef_414_EnshutuCamera'
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
         ignoreSuperFreezeFromAlly: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'Slash'
         endUpon: 
         upon: (BEFORE_EXIT)
@@ -2596,8 +2596,8 @@ beginState: s32'gef_430_ThrustEff'
         setPositionY: -50282
         setDepth: 74902
         setAngle: 33600
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2625,8 +2625,8 @@ beginState: s32'gef_430_Thrust_Nokoshi_Eff'
         setAngleX: 0
         setAngleY: 0
         setAngle: 6400
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2851,8 +2851,8 @@ beginState: s32'gef_440RushEff'
         setPositionY: 268662
         setDepth: -54328
         setAngleY: 326000
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -2895,8 +2895,8 @@ beginState: s32'gef_440_GroundLoop_Eff'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -3148,7 +3148,7 @@ beginState: s32'gef_441_WhiteOut'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -3194,7 +3194,7 @@ beginState: s32'gef_442_WhiteOut'
         setLinkObjectDestroyOnStateChange: 2
         stopLinkObject: 2
         linkObjectPosition: 2
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         upon: (BEFORE_EXIT)
             Unknown409: 0, 1
             Unknown410: 0, 1
@@ -3328,8 +3328,8 @@ beginState: s32'gef_800_Smoke'
         stopLinkObject: 2
         setLinkObjectDestroyOnDamage: 3
         setLinkObjectDestroyOnStateChange: 2
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 

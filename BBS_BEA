@@ -1759,19 +1759,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'SpecialShot_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_D'
@@ -1784,7 +1784,7 @@ beginSubroutine: s32'AbilityCoolDown_N'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 999
+            skillCooldown: 0, 999
         endElse: 
         Unknown1923: 0
     endIf: 
@@ -1793,19 +1793,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 240
+        skillCooldown: 1, 240
         Unknown1923: 1
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 600
+        skillCooldown: 1, 600
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -1822,19 +1822,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'Tosshin_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'Tosshin_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'Tosshin_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Tosshin_D'
@@ -1851,19 +1851,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -2383,7 +2383,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2509,7 +2509,7 @@ beginState: s32'entry_2p01'
                     endIf: 
                     ifOnFrame: Val(112)
                         deactivateObjectByName: s32'bea_700_SordAura'
-                        sendSignalToAction: s32'bea_700_AuraWipe', 23
+                        sendSignalToAction: s32'bea_700_AuraWipe', (SIGNAL_A)
                         createObject: s32'bea_700_AuraLoop', (PLAYER)
                         Unknown2583: 2800, 0, 3, 241200, 11484, 2500
                     endIf: 
@@ -2697,7 +2697,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2743,7 +2743,7 @@ beginState: s32'CmnActRoundWin'
     sprite: s32'bea600_12', 6
     sprite: s32'bea600_13', 4
     sprite: s32'bea600_14', 4
-    sendSignalToAction: s32'bea_600_EnshutuCamera', 23
+    sendSignalToAction: s32'bea_600_EnshutuCamera', (SIGNAL_A)
     sprite: s32'bea600_15', 4
     sprite: s32'bea600_16', 4
     Unknown2172: 0, 100
@@ -3796,7 +3796,7 @@ beginState: s32'NmlAtk5D_Exe'
     endUpon: 
     sprite: s32'bea406_04', 2
     sprite: s32'bea406_05', 2
-    sendSignalToAction: s32'bea_406_EnshutuCamera', 23
+    sendSignalToAction: s32'bea_406_EnshutuCamera', (SIGNAL_A)
     sprite: s32'bea406_05', 1
     grabOrRelease: 
     damage: 0
@@ -4417,7 +4417,7 @@ beginState: s32'NmlAtkAirThrow'
     sprite: s32'bea302_01', 2
     sprite: s32'bea302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'bea302_03', 3
     attackEndDelay: 
@@ -4829,7 +4829,7 @@ beginState: s32'AntiAir_B'
     physicsYImpulse: 32000
     resetGravity: 
     isAirUnblockable: 0
-    sendSignalToAction: s32'bea_401_SlashEff', 23
+    sendSignalToAction: s32'bea_401_SlashEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_Jump'
     endSprite: 
     callSubroutine: s32'cmnMuteki_False'
@@ -4934,7 +4934,7 @@ beginState: s32'AntiAir_C'
     sprite: s32'bea402_00', 3
     physicsYImpulse: 40000
     resetGravity: 
-    sendSignalToAction: s32'bea_401_SlashEff', 23
+    sendSignalToAction: s32'bea_401_SlashEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_Jump'
     beginLabel: s32'UpLoop'
     sprite: s32'bea402_01', 3
@@ -5030,7 +5030,7 @@ beginState: s32'AntiAir_D'
     attackHitPositionType: 0, 0, 0
     physicsYImpulse: 40000
     resetGravity: 
-    sendSignalToAction: s32'bea_401_SlashEff', 23
+    sendSignalToAction: s32'bea_401_SlashEff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_Jump'
     clearUpon: (HIT)
     upon: (HIT)
@@ -5093,8 +5093,8 @@ beginState: s32'AntiAir_D'
     sprite: s32'bea403_07', 3
     sprite: s32'bea403_08', 3
     sprite: s32'bea403_09', 3
-    sendSignalToAction: s32'bea_403_Strike', 23
-    sendSignalToAction: s32'bea_403_EnshutuCamera', 23
+    sendSignalToAction: s32'bea_403_Strike', (SIGNAL_A)
+    sendSignalToAction: s32'bea_403_EnshutuCamera', (SIGNAL_A)
     sprite: s32'bea403_10', 3
     hit: 
     damage: 0
@@ -5182,7 +5182,7 @@ beginState: s32'Assault_A'
     clearUpon: (HIT)
     velocityXPercentEachFrame: 80
     velocityYPercentEachFrame: 80
-    sendSignalToAction: s32'bea_404_UpperEff', 23
+    sendSignalToAction: s32'bea_404_UpperEff', (SIGNAL_A)
     pushboxHeightLow: 0
     sprite: s32'bea404_07', 2
     sprite: s32'bea404_08', 2
@@ -5215,7 +5215,7 @@ beginState: s32'Assault_A'
     sprite: s32'bea404_15', 3
     attackEndDelay: 
     pushboxHeightLow: -1
-    sendSignalToAction: s32'bea_404_KickFire', 23
+    sendSignalToAction: s32'bea_404_KickFire', (SIGNAL_A)
     sprite: s32'bea404_16', 3
     sprite: s32'bea404_17', 3
     sprite: s32'bea404_18', 3
@@ -5306,7 +5306,7 @@ beginState: s32'Assault_B'
     attackEndDelay: 
     setPushboxHeight: -1
     pushboxHeightLow: -1
-    sendSignalToAction: s32'bea_404_KickFire', 23
+    sendSignalToAction: s32'bea_404_KickFire', (SIGNAL_A)
     createArgHikitsukiVal: Val(1), Val(0)
     createObjectWithArg: s32'bea_404_LandingFireEff', (PLAYER)
     sprite: s32'bea404_16ex', 3
@@ -5322,7 +5322,7 @@ beginState: s32'Assault_B'
     attackEndDelay: 
     setPushboxHeight: -1
     pushboxHeightLow: -1
-    sendSignalToAction: s32'bea_404_KickFire', 23
+    sendSignalToAction: s32'bea_404_KickFire', (SIGNAL_A)
     sprite: s32'bea404_16', 3
     sprite: s32'bea404_17', 3
     sprite: s32'bea404_18', 3
@@ -5387,7 +5387,7 @@ beginState: s32'Assault_C'
     clearUpon: (HIT)
     velocityXPercentEachFrame: 80
     velocityYPercentEachFrame: 80
-    sendSignalToAction: s32'bea_404_UpperEff', 23
+    sendSignalToAction: s32'bea_404_UpperEff', (SIGNAL_A)
     sprite: s32'bea404_07', 2
     sprite: s32'bea404_08', 2
     sprite: s32'bea404_09', 2
@@ -5450,7 +5450,7 @@ beginState: s32'Assault_C'
     attackEndDelay: 
     setPushboxHeight: -1
     pushboxHeightLow: -1
-    sendSignalToAction: s32'bea_404_KickFire', 23
+    sendSignalToAction: s32'bea_404_KickFire', (SIGNAL_A)
     createArgHikitsukiVal: Val(2), Val(0)
     createObjectWithArg: s32'bea_404_LandingFireEff', (PLAYER)
     sprite: s32'bea404_16ex', 3
@@ -5467,7 +5467,7 @@ beginState: s32'Assault_C'
     attackEndDelay: 
     setPushboxHeight: -1
     pushboxHeightLow: -1
-    sendSignalToAction: s32'bea_404_KickFire', 23
+    sendSignalToAction: s32'bea_404_KickFire', (SIGNAL_A)
     sprite: s32'bea404_16', 3
     sprite: s32'bea404_17', 3
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
@@ -5526,7 +5526,7 @@ beginState: s32'Assault_D'
     clearUpon: (HIT)
     velocityXPercentEachFrame: 80
     velocityYPercentEachFrame: 80
-    sendSignalToAction: s32'bea_404_UpperEff', 23
+    sendSignalToAction: s32'bea_404_UpperEff', (SIGNAL_A)
     sprite: s32'bea404_07', 2
     sprite: s32'bea404_08', 2
     sprite: s32'bea404_09', 2
@@ -5571,7 +5571,7 @@ beginState: s32'Assault_D'
     clearUpon: (HIT)
     setPushboxHeight: -1
     pushboxHeightLow: -1
-    sendSignalToAction: s32'bea_404_KickFire', 23
+    sendSignalToAction: s32'bea_404_KickFire', (SIGNAL_A)
     createArgHikitsukiVal: Val(3), Val(0)
     createObjectWithArg: s32'bea_404_LandingFireEff_D', (PLAYER)
     sprite: s32'bea404_16', 3
@@ -5759,7 +5759,7 @@ beginState: s32'Tosshin_C'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: (FRAME_STEP)
     velocityXPercent: 30
-    sendSignalToAction: s32'bea_208_StrikeEff', 23
+    sendSignalToAction: s32'bea_208_StrikeEff', (SIGNAL_A)
     sprite: s32'bea208_07', 1
     hit: 
     callSubroutine: s32'cmnSpecialAtkLv5_AtkInit'
@@ -5965,7 +5965,7 @@ beginState: s32'Tosshin_D'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: (FRAME_STEP)
     velocityXPercent: 30
-    sendSignalToAction: s32'bea_208_StrikeEff', 23
+    sendSignalToAction: s32'bea_208_StrikeEff', (SIGNAL_A)
     sprite: s32'bea208_07', 2
     hit: 
     callSubroutine: s32'cmnSpecialAtkLv5_AtkInit'
@@ -6302,8 +6302,8 @@ beginState: s32'bea_Kaihou'
         upon: (HIT)
             callSubroutine: s32'cmnKaihou_Maai_ON_ATTACK'
         endUpon: 
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg1), Val(1)
             upon: (FRAME_STEP)
                 ifOperation: (IS_GREATER_OR_EQUAL), Mem(OnIdlingTime), Val(8)
@@ -6538,8 +6538,8 @@ beginState: s32'bea_Kaihou'
             Unknown2584: 4000, 0, 3, 483300, 68392, 5000, 4
         endIf: 
         ifOnFrame: Val(127)
-            sendSignalToAction: s32'bea_441_SordMin', 23
-            sendSignalToAction: s32'bea_441_QuakeEff_Hide', 23
+            sendSignalToAction: s32'bea_441_SordMin', (SIGNAL_A)
+            sendSignalToAction: s32'bea_441_QuakeEff_Hide', (SIGNAL_A)
             Unknown2583: 4000, 0, 3, 52900, 10467, 12100
         endIf: 
         ifOnFrame: Val(179)
@@ -6698,7 +6698,7 @@ beginState: s32'bea_Kaihou'
     groundBounceXVelocityPercent: 50
     setColor: -385875969
     sprite: s32'bea440_18', 6
-    sendSignalToAction: s32'BEA_441_WhiteOut', 23
+    sendSignalToAction: s32'BEA_441_WhiteOut', (SIGNAL_A)
     runOnObject: (ENEMY)
         addPositionX: -300000
     endRunOnObject: 

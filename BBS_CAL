@@ -1744,8 +1744,8 @@ beginSubroutine: s32'OnFrameStep'
                     ifNot: Mem(Tmp)
                         checkCurrentStateName: (SELF), s32'CmnActAirLockReject'
                         ifNot: Mem(Tmp)
-                            sendSignalToAction: s32'cal_Trap_Land_nee', 23
-                            sendSignalToAction: s32'cal_Trap_Air_spi', 23
+                            sendSignalToAction: s32'cal_Trap_Land_nee', (SIGNAL_A)
+                            sendSignalToAction: s32'cal_Trap_Air_spi', (SIGNAL_A)
                             sendSignalToAction: s32'cal_Trap_Air_spi', 24
                         endIf: 
                     endIf: 
@@ -1754,8 +1754,8 @@ beginSubroutine: s32'OnFrameStep'
         endIf: 
     endIf: 
     ifNot: Mem(HitPoint)
-        sendSignalToAction: s32'cal_Trap_Land_nee', 23
-        sendSignalToAction: s32'cal_Trap_Air_spi', 23
+        sendSignalToAction: s32'cal_Trap_Land_nee', (SIGNAL_A)
+        sendSignalToAction: s32'cal_Trap_Air_spi', (SIGNAL_A)
         sendSignalToAction: s32'cal_Trap_Air_spi', 24
     endIf: 
     if: Mem(PlayerVal5)
@@ -1844,17 +1844,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'Trap_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Trap_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Trap_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Trap_D'
@@ -1868,17 +1868,17 @@ beginSubroutine: s32'AbilityCoolDown_N'
     endIf: 
     checkCurrentStateName: (SELF), s32'Trap_Air_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Trap_Air_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Trap_Air_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Trap_Air_D'
@@ -1895,17 +1895,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -1922,17 +1922,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'Warp_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_D'
@@ -1946,17 +1946,17 @@ beginSubroutine: s32'AbilityCoolDown_2'
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_Air_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_Air_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_Air_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Warp_Air_D'
@@ -1973,17 +1973,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -2476,8 +2476,8 @@ endState:
 
 beginState: s32'CmnActUkemiLeap'
     sprite: s32'cal110_00', 3
-    sendSignalToAction: s32'cal_Trap_Land_nee', 23
-    sendSignalToAction: s32'cal_Trap_Air_spi', 23
+    sendSignalToAction: s32'cal_Trap_Land_nee', (SIGNAL_A)
+    sendSignalToAction: s32'cal_Trap_Air_spi', (SIGNAL_A)
     sprite: s32'cal110_01', 3
     sprite: s32'cal110_02', 2
     voiceLine: s16'vCAL_RCV_00'
@@ -2498,8 +2498,8 @@ endState:
 
 beginState: s32'CmnActUkemiLeap2'
     sprite: s32'cal110_00', 3
-    sendSignalToAction: s32'cal_Trap_Land_nee', 23
-    sendSignalToAction: s32'cal_Trap_Air_spi', 23
+    sendSignalToAction: s32'cal_Trap_Land_nee', (SIGNAL_A)
+    sendSignalToAction: s32'cal_Trap_Air_spi', (SIGNAL_A)
     sprite: s32'cal110_01', 3
     sprite: s32'cal110_02', 2
     voiceLine: s16'vCAL_RCV_00'
@@ -2523,7 +2523,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2933,7 +2933,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2953,7 +2953,7 @@ endState:
 
 beginState: s32'CmnActRoundWin'
     upon: (IMMEDIATE)
-        sendSignalToAction: s32'cal_440_Gold_Matome', 23
+        sendSignalToAction: s32'cal_440_Gold_Matome', (SIGNAL_A)
     endUpon: 
     upon: (FRAME_STEP)
         ifOperation: (IS_EQUAL), Mem(OnIdlingTime), Val(300)
@@ -3503,7 +3503,7 @@ beginState: s32'GC_Attack'
     sprite: s32'cal350_08', 2
     sprite: s32'cal350_09', 4
     attackEndDelay: 
-    sendSignalToAction: s32'cal_350_Eff', 23
+    sendSignalToAction: s32'cal_350_Eff', (SIGNAL_A)
     sprite: s32'cal350_10', 4
     sprite: s32'cal350_11', 4
     sprite: s32'cal350_12', 4
@@ -3565,7 +3565,7 @@ beginState: s32'CancelDash'
     sprite: s32'cal306_05', 4
     sprite: s32'cal306_06', 4
     sprite: s32'cal306_07', 3
-    sendSignalToAction: s32'cal_306_Rock', 23
+    sendSignalToAction: s32'cal_306_Rock', (SIGNAL_A)
     sprite: s32'cal306_08', 3
     hit: 
     createObject: s32'cal_306_StrikeEff', (PLAYER)
@@ -4064,7 +4064,7 @@ beginState: s32'NmlAtk5CFar'
     clearUpon: (HIT_OR_GUARD)
     clearUpon: (FRAME_STEP)
     sprite: s32'cal207_07', 3
-    sendSignalToAction: s32'cal_207_WarmHoleEff', 23
+    sendSignalToAction: s32'cal_207_WarmHoleEff', (SIGNAL_A)
     sprite: s32'cal207_08', 3
     sprite: s32'cal207_09', 3
     sprite: s32'cal207_10', 2
@@ -4441,7 +4441,7 @@ beginState: s32'NmlAtkDash6B'
     deactivateObjectByName: s32'cal_221_Eff'
     deactivateObjectByName: s32'cal_221_SpeedLine'
     createObject: s32'cal_221_WeaponEnd', (PLAYER)
-    sendSignalToAction: s32'cal_221_WeaponSpawn', 23
+    sendSignalToAction: s32'cal_221_WeaponSpawn', (SIGNAL_A)
     sprite: s32'cal221_12', 2
     sprite: s32'cal221_13', 2
     sprite: s32'cal221_14', 2
@@ -4561,7 +4561,7 @@ beginState: s32'GuardCrash'
     hit: 
     sprite: s32'cal350_08', 2
     sprite: s32'cal350_09', 4
-    sendSignalToAction: s32'cal_350_Eff', 23
+    sendSignalToAction: s32'cal_350_Eff', (SIGNAL_A)
     sprite: s32'cal350_10', 4
     sprite: s32'cal350_11', 4
     sprite: s32'cal350_12', 4
@@ -4763,7 +4763,7 @@ beginState: s32'NmlAtkAir5D'
     endRunOnObject: 
     sprite: s32'cal253_04ex', 2
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     isObjectActive: (STACK0)
     ifNot: Mem(Tmp)
         createObject: s32'cal_RenkinBall', (PLAYER)
@@ -4925,7 +4925,7 @@ beginState: s32'NmlAtkAir6D'
     physicsXImpulse: -5000
     physicsYImpulse: 15000
     resetGravity: 
-    Unknown1819: 8, 1
+    landingRecovery: 8, 1
     sprite: s32'cal253_10', 3
     sprite: s32'cal253_11', 3
     sprite: s32'cal253_12', 3
@@ -5037,7 +5037,7 @@ beginState: s32'NmlAtkAir2D'
     physicsXImpulse: -5000
     physicsYImpulse: 15000
     resetGravity: 
-    Unknown1819: 8, 1
+    landingRecovery: 8, 1
     sprite: s32'cal253_10', 3
     sprite: s32'cal253_11', 3
     sprite: s32'cal253_12', 3
@@ -5297,7 +5297,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'cal302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'cal302_03', 3
     attackEndDelay: 
     sprite: s32'cal302_04', 3
@@ -5422,7 +5422,7 @@ beginState: s32'Trap_A'
     sprite: s32'cal404_06', 3
     sprite: s32'cal404_07', 1
     sprite: s32'cal404_07', 2
-    sendSignalToAction: s32'cal_404_Flash_1P', 23
+    sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal404_08', 3
     sprite: s32'cal404_09', 3
     sprite: s32'cal404_10', 3
@@ -5465,7 +5465,7 @@ beginState: s32'Trap_B'
     sprite: s32'cal404_06', 3
     sprite: s32'cal404_07', 1
     sprite: s32'cal404_07', 2
-    sendSignalToAction: s32'cal_404_Flash_1P', 23
+    sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal404_08', 3
     sprite: s32'cal404_09', 3
     sprite: s32'cal404_10', 3
@@ -5481,7 +5481,7 @@ beginState: s32'Trap_C'
     endUpon: 
     sprite: s32'cal404_00', 2
     sprite: s32'cal404_01', 3
-    sendSignalToAction: s32'cal_Trap_Land_nee', 23
+    sendSignalToAction: s32'cal_Trap_Land_nee', (SIGNAL_A)
     sprite: s32'cal404_02', 3
     sprite: s32'cal404_03', 2
     sprite: s32'cal404_04', 2
@@ -5507,7 +5507,7 @@ beginState: s32'Trap_C'
     sprite: s32'cal404_06', 3
     sprite: s32'cal404_07', 1
     sprite: s32'cal404_07', 2
-    sendSignalToAction: s32'cal_404_Flash_1P', 23
+    sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal404_08', 3
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'cal404_09', 3
@@ -5524,8 +5524,8 @@ beginState: s32'Trap_D'
     endUpon: 
     sprite: s32'cal404_00', 2
     sprite: s32'cal404_01', 3
-    sendSignalToAction: s32'cal_Trap_Land_nee', 23
-    sendSignalToAction: s32'cal_Trap_Air_spi', 23
+    sendSignalToAction: s32'cal_Trap_Land_nee', (SIGNAL_A)
+    sendSignalToAction: s32'cal_Trap_Air_spi', (SIGNAL_A)
     Unknown1793: 8, 24
     sprite: s32'cal404_02', 3
     sprite: s32'cal404_03', 2
@@ -5555,7 +5555,7 @@ beginState: s32'Trap_D'
     sprite: s32'cal404_06', 3
     sprite: s32'cal404_07', 1
     sprite: s32'cal404_07', 2
-    sendSignalToAction: s32'cal_404_Flash_1P', 23
+    sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal404_05', 2
     sprite: s32'cal404_08', 3
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
@@ -5573,7 +5573,7 @@ beginState: s32'Trap_Air_A'
     endUpon: 
     sprite: s32'cal405_00', 2
     haltMomentum: 1
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     sprite: s32'cal405_01', 3
     findState: s32'cal_Trap_Air_spi', 6, 0, 0
     if: Mem(Tmp)
@@ -5603,7 +5603,7 @@ beginState: s32'Trap_Air_A'
     sprite: s32'cal405_06', 3
     sprite: s32'cal405_07', 1
     sprite: s32'cal405_07', 2
-    sendSignalToAction: s32'cal_404_Flash_1P', 23
+    sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal405_08', 3
     sprite: s32'cal405_09', 3
     resetGravity: 
@@ -5627,7 +5627,7 @@ beginState: s32'Trap_Air_B'
     endUpon: 
     sprite: s32'cal405_00', 2
     haltMomentum: 1
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     sprite: s32'cal405_01', 3
     findState: s32'cal_Trap_Air_spi', 6, 0, 0
     if: Mem(Tmp)
@@ -5657,7 +5657,7 @@ beginState: s32'Trap_Air_B'
     sprite: s32'cal405_06', 3
     sprite: s32'cal405_07', 1
     sprite: s32'cal405_07', 2
-    sendSignalToAction: s32'cal_404_Flash_1P', 23
+    sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal405_08', 3
     sprite: s32'cal405_09', 3
     resetGravity: 
@@ -5681,9 +5681,9 @@ beginState: s32'Trap_Air_C'
     endUpon: 
     sprite: s32'cal405_00', 2
     haltMomentum: 1
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     sprite: s32'cal405_01', 3
-    sendSignalToAction: s32'cal_Trap_Air_spi', 23
+    sendSignalToAction: s32'cal_Trap_Air_spi', (SIGNAL_A)
     storeValue: Mem(PlayerVal1), Val(1)
     sprite: s32'cal405_02', 3
     sprite: s32'cal405_03', 2
@@ -5711,7 +5711,7 @@ beginState: s32'Trap_Air_C'
     resetGravity: 
     sprite: s32'cal405_07', 1
     sprite: s32'cal405_07', 2
-    sendSignalToAction: s32'cal_404_Flash_1P', 23
+    sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal405_08', 3
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'cal405_09', 3
@@ -5737,10 +5737,10 @@ beginState: s32'Trap_Air_D'
     endUpon: 
     sprite: s32'cal405_00', 2
     haltMomentum: 1
-    Unknown1819: 6, 1
+    landingRecovery: 6, 1
     sprite: s32'cal405_01', 3
-    sendSignalToAction: s32'cal_Trap_Land_nee', 23
-    sendSignalToAction: s32'cal_Trap_Air_spi', 23
+    sendSignalToAction: s32'cal_Trap_Land_nee', (SIGNAL_A)
+    sendSignalToAction: s32'cal_Trap_Air_spi', (SIGNAL_A)
     Unknown1793: 8, 24
     storeValue: Mem(PlayerVal1), Val(1)
     sprite: s32'cal405_02', 3
@@ -5771,7 +5771,7 @@ beginState: s32'Trap_Air_D'
     sprite: s32'cal405_06', 3
     sprite: s32'cal405_07', 1
     sprite: s32'cal405_07', 2
-    sendSignalToAction: s32'cal_404_Flash_1P', 23
+    sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal405_05', 3
     sprite: s32'cal405_06', 3
     sprite: s32'cal405_08', 3
@@ -5830,7 +5830,7 @@ beginState: s32'AntiAir_A'
     endIf: 
     endIf: 
     sprite: s32'cal400_06', 3
-    sendSignalToAction: s32'cal_400_Eff_nee', 23
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_A)
     sprite: s32'cal400_07', 2
     sendSignalToAction: s32'cal_400_Eff_nee', 24
     sprite: s32'cal400_07', 1
@@ -5844,7 +5844,7 @@ beginState: s32'AntiAir_A'
     sprite: s32'cal400_13', 2
     sendSignalToAction: s32'cal_400_Eff_nee', 31
     sprite: s32'cal400_14', 2
-    sendSignalToAction: s32'cal_400_Eff_nee', 32
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_B)
     sprite: s32'cal400_15', 2
     if: Mem(ActReg0)
         deactivateObjectByName: s32'ShotSousaiObject'
@@ -5901,7 +5901,7 @@ beginState: s32'AntiAir_B'
     endIf: 
     endIf: 
     sprite: s32'cal400_06', 3
-    sendSignalToAction: s32'cal_400_Eff_nee', 23
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_A)
     sprite: s32'cal400_07', 2
     sendSignalToAction: s32'cal_400_Eff_nee', 24
     sprite: s32'cal400_07', 1
@@ -5915,7 +5915,7 @@ beginState: s32'AntiAir_B'
     sprite: s32'cal400_13', 2
     sendSignalToAction: s32'cal_400_Eff_nee', 31
     sprite: s32'cal400_14', 2
-    sendSignalToAction: s32'cal_400_Eff_nee', 32
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_B)
     sprite: s32'cal400_15', 2
     if: Mem(ActReg0)
         deactivateObjectByName: s32'ShotSousaiObject'
@@ -5971,7 +5971,7 @@ beginState: s32'AntiAir_C'
     endIf: 
     endIf: 
     sprite: s32'cal400_06', 3
-    sendSignalToAction: s32'cal_400_Eff_nee', 23
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_A)
     sprite: s32'cal400_07', 2
     sendSignalToAction: s32'cal_400_Eff_nee', 24
     sprite: s32'cal400_07', 1
@@ -5986,7 +5986,7 @@ beginState: s32'AntiAir_C'
     sprite: s32'cal400_13', 2
     sendSignalToAction: s32'cal_400_Eff_nee', 31
     sprite: s32'cal400_14', 2
-    sendSignalToAction: s32'cal_400_Eff_nee', 32
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_B)
     sprite: s32'cal400_15', 2
     if: Mem(ActReg0)
         deactivateObjectByName: s32'ShotSousaiObject'
@@ -6007,8 +6007,8 @@ endState:
 beginState: s32'AntiAir_D'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttackD_Init'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             invulnForce: 1
             gotoLabelRequests: s32'Lock'
         endUpon: 
@@ -6024,7 +6024,7 @@ beginState: s32'AntiAir_D'
     smartRandomVoiceLine: s16'vCAL_ATKS_102', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'cal400_05', 5
     sprite: s32'cal400_06', 3
-    sendSignalToAction: s32'cal_400_Eff_nee', 23
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_A)
     sprite: s32'cal400_07', 2
     sendSignalToAction: s32'cal_400_Eff_nee', 24
     sprite: s32'cal400_07', 1
@@ -6039,7 +6039,7 @@ beginState: s32'AntiAir_D'
     sprite: s32'cal400_13', 2
     sendSignalToAction: s32'cal_400_Eff_nee', 31
     sprite: s32'cal400_14', 2
-    sendSignalToAction: s32'cal_400_Eff_nee', 32
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_B)
     sprite: s32'cal400_15', 2
     if: Mem(ActReg0)
         deactivateObjectByName: s32'ShotSousaiObject'
@@ -6063,7 +6063,7 @@ beginState: s32'AntiAir_D'
     sprite: s32'cal400_13', 2
     sendSignalToAction: s32'cal_400_Eff_nee', 31
     sprite: s32'cal400_14', 2
-    sendSignalToAction: s32'cal_400_Eff_nee', 32
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_B)
     sprite: s32'cal400_15', 2
     if: Mem(ActReg0)
         deactivateObjectByName: s32'ShotSousaiObject'
@@ -6084,7 +6084,7 @@ beginState: s32'AntiAir_D'
     sprite: s32'cal224_03', 4
     sprite: s32'cal224_04', 6
     sprite: s32'cal224_05', 2
-    sendSignalToAction: s32'cal400_U_AddAtk', 23
+    sendSignalToAction: s32'cal400_U_AddAtk', (SIGNAL_A)
     sprite: s32'cal224_06', 1
     createObject: s32'cal_400_EnshutuCamera', (PLAYER)
     grabOrRelease: 
@@ -6141,7 +6141,7 @@ beginState: s32'Assault_A'
     sprite: s32'cal403_08', 3
     sprite: s32'cal403_09', 1
     velocityXPercentEachFrame: 90
-    sendSignalToAction: s32'cal_403_Eff', 23
+    sendSignalToAction: s32'cal_403_Eff', (SIGNAL_A)
     sprite: s32'cal403_10', 2147483647
     attackEndDelay: 
     beginLabel: s32'landing'
@@ -6203,7 +6203,7 @@ beginState: s32'Assault_B'
     sprite: s32'cal403_06', 3
     sprite: s32'cal403_09', 1
     velocityXPercentEachFrame: 90
-    sendSignalToAction: s32'cal_403_Eff', 23
+    sendSignalToAction: s32'cal_403_Eff', (SIGNAL_A)
     sprite: s32'cal403_10', 2147483647
     attackEndDelay: 
     beginLabel: s32'landing'
@@ -6264,7 +6264,7 @@ beginState: s32'Assault_C'
     sprite: s32'cal403_06', 3
     sprite: s32'cal403_09', 1
     velocityXPercentEachFrame: 90
-    sendSignalToAction: s32'cal_403_Eff', 23
+    sendSignalToAction: s32'cal_403_Eff', (SIGNAL_A)
     sprite: s32'cal403_10', 2147483647
     attackEndDelay: 
     beginLabel: s32'landing'
@@ -6340,7 +6340,7 @@ beginState: s32'Assault_D'
     sprite: s32'cal403_09', 1
     hit: 
     velocityXPercentEachFrame: 90
-    sendSignalToAction: s32'cal_403_Eff', 23
+    sendSignalToAction: s32'cal_403_Eff', (SIGNAL_A)
     ignorePushback: 1
     sprite: s32'cal403_10ex', 2147483647
     beginLabel: s32'LandingAtk'
@@ -6601,7 +6601,7 @@ beginState: s32'Warp_D'
     callSubroutine: s32'Warp_CollapseEff'
     sprite: s32'keep', 5
     attackEndDelay: 
-    sendSignalToAction: s32'cal_406_Eff_stf', 23
+    sendSignalToAction: s32'cal_406_Eff_stf', (SIGNAL_A)
     sprite: s32'cal307_12', 1
     physicsXImpulse: -280000
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
@@ -6964,7 +6964,7 @@ beginState: s32'Warp_Air_D'
     endIf: 
     attackEndDelay: 
     sprite: s32'cal020_05', 1
-    sendSignalToAction: s32'cal_406_Eff_stf', 23
+    sendSignalToAction: s32'cal_406_Eff_stf', (SIGNAL_A)
     addPositionX: 350000
     setPositionY: 200000
     Unknown310: 12, 23, 2, 17, 0, 1515000
@@ -7449,8 +7449,8 @@ beginState: s32'Cal_Kaihou'
     sprite: s32'cal440_11', 3
     sprite: s32'cal440_12', 3
     sprite: s32'cal440_13', 3
-    sendSignalToAction: s32'cal_440_Gold_Matome', 23
-    sendSignalToAction: s32'cal_440_PPOverRay', 23
+    sendSignalToAction: s32'cal_440_Gold_Matome', (SIGNAL_A)
+    sendSignalToAction: s32'cal_440_PPOverRay', (SIGNAL_A)
     sprite: s32'cal440_14', 3
     sprite: s32'cal440_15', 3
     sprite: s32'cal440_16', 3
@@ -7563,9 +7563,9 @@ beginState: s32'Cal_Kaihou'
             voiceLine: s16'vCAL_ATKK_00_b'
         endIf: 
         ifOnFrame: Val(69)
-            sendSignalToAction: s32'cal_441_PPOverRay', 23
-            sendSignalToAction: s32'cal_441_BG', 23
-            sendSignalToAction: s32'cal_441_Statue', 23
+            sendSignalToAction: s32'cal_441_PPOverRay', (SIGNAL_A)
+            sendSignalToAction: s32'cal_441_BG', (SIGNAL_A)
+            sendSignalToAction: s32'cal_441_Statue', (SIGNAL_A)
             deactivateObjectByName: s32'cal_441_GoldCovered_Front'
             deactivateObjectByName: s32'cal_441_GoldCovered_Hide'
             createObject: s32'cal_441_GroundGold', (PLAYER)
@@ -7746,7 +7746,7 @@ beginState: s32'Cal_Kaihou'
     deactivateObjectByName: s32'cal_441_BG'
     deactivateObjectByName: s32'cal_441_TwinkleLoop'
     deactivateObjectByName: s32'cal_441_GroundGold'
-    sendSignalToAction: s32'cal_441_WhiteOut02', 23
+    sendSignalToAction: s32'cal_441_WhiteOut02', (SIGNAL_A)
     sendSignalToAction: s32'cal_441_PPOverRay', 24
     sendSignalToAction: s32'cal_440_Gold', 25
     createObject: s32'cal_440_Statue', (PLAYER)
@@ -7773,7 +7773,7 @@ beginState: s32'Cal_Kaihou'
             resetGravity: 
             Unknown2050: 1
         endRunOnObject: 
-        sendSignalToAction: s32'cal_440_Gold_Matome', 23
+        sendSignalToAction: s32'cal_440_Gold_Matome', (SIGNAL_A)
     endIf: 
     callSubroutine: s32'cmnLock_End_AtkInit'
     airHitEffect: (AIR_FACE_UP)

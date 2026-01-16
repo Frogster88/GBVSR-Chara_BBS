@@ -2018,19 +2018,19 @@ beginSubroutine: s32'AbilityCoolDown_2_DAMAGE'
     checkCurrentStateName: (SELF), s32'Thunder_A'
     if: Mem(Tmp)
         Unknown1925: 2, 1
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Thunder_B'
     if: Mem(Tmp)
         Unknown1925: 2, 1
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Thunder_C'
     if: Mem(Tmp)
         Unknown1925: 2, 1
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Thunder_D'
@@ -2097,23 +2097,23 @@ beginSubroutine: s32'AbilityCoolDown_N'
             ifOperation: (IS_EQUAL), Mem(ExGage0), Val(0)
                 storeValue: Mem(417), Val(1)
             endIf: 
-            Unknown1921: 0, 180
+            skillCooldown: 0, 180
             Unknown1923: 0
         endElse: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_Thunder_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_Thunder_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_Thunder_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_Thunder_D'
@@ -2130,17 +2130,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'SpecialJump_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_D'
@@ -2157,19 +2157,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'Thunder_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
         Unknown1925: 2, 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Thunder_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
         Unknown1925: 2, 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Thunder_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
         Unknown1925: 2, 0
     endIf: 
@@ -2188,17 +2188,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -2743,7 +2743,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3133,7 +3133,7 @@ beginState: s32'entry_2p03'
             callSubroutine: s32'LYR_End'
         endRunOnObject: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3507,7 +3507,7 @@ beginState: s32'CmnActEmotion'
     sprite: s32'zoo307_13', 4
     sprite: s32'zoo307_14', 60
     sprite: s32'zoo307_15', 4
-    sendSignalToAction: s32'dyr_307_Emotion', 23
+    sendSignalToAction: s32'dyr_307_Emotion', (SIGNAL_A)
     sprite: s32'zoo307_16', 4
     sprite: s32'zoo307_17', 4
     sprite: s32'zoo307_18', 4
@@ -4321,7 +4321,7 @@ beginState: s32'NmlAtkDash6C'
     physicsXImpulse: 60000
     velocityXPercentEachFrame: 90
     createObject: s32'zoo_222_GroundBurst_Eff', (PLAYER)
-    sendSignalToAction: s32'zoo_222_Shield_Eff', 23
+    sendSignalToAction: s32'zoo_222_Shield_Eff', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     sprite: s32'zoo222_05', 3
     sprite: s32'zoo222_06', 2
@@ -4329,7 +4329,7 @@ beginState: s32'NmlAtkDash6C'
     sprite: s32'zoo222_07', 2
     sprite: s32'zoo222_08', 3
     callSubroutine: s32'cmnMuteki_False'
-    sendSignalToAction: s32'zoo_222_Nokoshi_Eff', 23
+    sendSignalToAction: s32'zoo_222_Nokoshi_Eff', (SIGNAL_A)
     if: Mem(ActReg0)
         gotoLabelRequests: s32'Hit'
     endIf: 
@@ -4346,7 +4346,7 @@ beginState: s32'NmlAtkDash6C'
     sprite: s32'keep', 2
     clearUpon: (HIT_OR_GUARD)
     callSubroutine: s32'cmnMuteki_False'
-    sendSignalToAction: s32'zoo_222_Nokoshi_Eff', 23
+    sendSignalToAction: s32'zoo_222_Nokoshi_Eff', (SIGNAL_A)
     physicsXImpulse: 40000
     velocityXPercentEachFrame: 90
     sprite: s32'zoo222_13', 2
@@ -4878,7 +4878,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'zoo302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'zoo302_03', 3
     attackEndDelay: 
     smartRandomVoiceLine: s16'vZOO_THW_00', 100, s16'', 0, s16'', 0, s16'', 0
@@ -5027,7 +5027,7 @@ beginState: s32'SpecialShot_A_Call'
     Unknown1681: 
     sprite: s32'zoo407_02', 1
     sprite: s32'zoo407_02', 1
-    sendSignalToAction: s32'LYR_407_Wait', 23
+    sendSignalToAction: s32'LYR_407_Wait', (SIGNAL_A)
     sprite: s32'zoo407_03', 2
     sprite: s32'zoo407_04', 3
     createObject: s32'ZOO_407OrderEff', (PLAYER)
@@ -5179,7 +5179,7 @@ beginState: s32'SpecialShot_D'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttackD_Init'
         attackIgnoreCaution: 1
-        sendSignalToAction: s32'GND_407_Assalt', 32
+        sendSignalToAction: s32'GND_407_Assalt', (SIGNAL_B)
         ifNot: Mem(PlayerVal298)
             storeValue: Mem(EnvR24), Val(1)
         endIf: 
@@ -5303,7 +5303,7 @@ beginState: s32'Thunder_A'
             storeValue: Mem(ActReg3), Val(1)
         endUpon: 
         upon: (HIT)
-            sendSignalToAction: s32'ZOO_400_Thunder_Fast', 23
+            sendSignalToAction: s32'ZOO_400_Thunder_Fast', (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'zoo400_00', 2
@@ -5364,7 +5364,7 @@ beginState: s32'Thunder_A'
     sprite: s32'zoo400_09', 3
     attackEndDelay: 
     sprite: s32'zoo400_10', 2
-    sendSignalToAction: s32'ZOO_400_SordImpact', 23
+    sendSignalToAction: s32'ZOO_400_SordImpact', (SIGNAL_A)
     Unknown412: 11, 1, 7, 0
     sprite: s32'zoo400_11', 2
     Unknown412: 10, 1, 7, 0
@@ -5401,7 +5401,7 @@ beginState: s32'Thunder_B'
             storeValue: Mem(ActReg3), Val(1)
         endUpon: 
         upon: (HIT)
-            sendSignalToAction: s32'ZOO_400_Thunder_Fast', 23
+            sendSignalToAction: s32'ZOO_400_Thunder_Fast', (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'zoo400_00', 2
@@ -5462,7 +5462,7 @@ beginState: s32'Thunder_B'
     sprite: s32'zoo400_09', 3
     attackEndDelay: 
     sprite: s32'zoo400_10', 2
-    sendSignalToAction: s32'ZOO_400_SordImpact', 23
+    sendSignalToAction: s32'ZOO_400_SordImpact', (SIGNAL_A)
     Unknown412: 11, 1, 7, 0
     sprite: s32'zoo400_11', 2
     Unknown412: 10, 1, 7, 0
@@ -5499,7 +5499,7 @@ beginState: s32'Thunder_C'
             storeValue: Mem(ActReg3), Val(1)
         endUpon: 
         upon: (HIT)
-            sendSignalToAction: s32'ZOO_400_Thunder_Fast', 23
+            sendSignalToAction: s32'ZOO_400_Thunder_Fast', (SIGNAL_A)
             storeValue: Mem(ActReg4), Val(1)
         endUpon: 
     endUpon: 
@@ -5544,7 +5544,7 @@ beginState: s32'Thunder_C'
                                         createObjectWithArg: s32'ZOO_400_Thunder_Fast', (PLAYER)
                                         storeValue: Mem(ActReg2), Val(1)
                                         if: Mem(ActReg4)
-                                            sendSignalToAction: s32'ZOO_400_Thunder_Fast', 23
+                                            sendSignalToAction: s32'ZOO_400_Thunder_Fast', (SIGNAL_A)
                                         endIf: 
                                     endIf: 
                                 endIf: 
@@ -5580,7 +5580,7 @@ beginState: s32'Thunder_C'
     sprite: s32'zoo400_07', 1
     beginLabel: s32'End'
     sprite: s32'zoo400_10', 2
-    sendSignalToAction: s32'ZOO_400_SordImpact', 23
+    sendSignalToAction: s32'ZOO_400_SordImpact', (SIGNAL_A)
     Unknown412: 11, 1, 7, 0
     sprite: s32'zoo400_11', 2
     Unknown412: 10, 1, 7, 0
@@ -5632,7 +5632,7 @@ beginState: s32'Thunder_D'
     sprite: s32'zoo400_24', 3
     sprite: s32'zoo400_25', 3
     sprite: s32'zoo400_23', 1
-    sendSignalToAction: s32'ZOO_400_ChargeDEff', 23
+    sendSignalToAction: s32'ZOO_400_ChargeDEff', (SIGNAL_A)
     sprite: s32'zoo400_26', 3
     sprite: s32'zoo400_02', 3
     createObject: s32'ZOO_400_StartTwinkle', (PLAYER)
@@ -5658,7 +5658,7 @@ beginState: s32'Thunder_D'
     sprite: s32'zoo400_08', 3
     sprite: s32'zoo400_09', 3
     sprite: s32'zoo400_10', 3
-    sendSignalToAction: s32'ZOO_400_SordImpact', 23
+    sendSignalToAction: s32'ZOO_400_SordImpact', (SIGNAL_A)
     Unknown412: 11, 1, 7, 0
     sprite: s32'zoo400_11', 3
     Unknown412: 10, 1, 7, 0
@@ -6249,8 +6249,8 @@ beginState: s32'SpecialJump_A'
     sprite: s32'zoo401_05', 3
     sprite: s32'zoo401_07', 3
     sprite: s32'zoo401_09', 3
-    sendSignalToAction: s32'ZOO_401_Jump_loopEff', 23
-    sendSignalToAction: s32'ZOO_401_Jump_loop2Eff', 23
+    sendSignalToAction: s32'ZOO_401_Jump_loopEff', (SIGNAL_A)
+    sendSignalToAction: s32'ZOO_401_Jump_loop2Eff', (SIGNAL_A)
     sprite: s32'zoo402_00', 2
     createObject: s32'ZOO_402_EnchantEff', (PLAYER)
     characterSfx: s32'zoo_11'
@@ -6288,7 +6288,7 @@ beginState: s32'SpecialJump_A'
     beginLabel: s32'Landing'
     sprite: s32'zoo402_11', 2
     attackEndDelay: 
-    sendSignalToAction: s32'ZOO_402_SpinSlash', 23
+    sendSignalToAction: s32'ZOO_402_SpinSlash', (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     sprite: s32'zoo402_12', 3
     sprite: s32'zoo402_13', 3
@@ -6379,8 +6379,8 @@ beginState: s32'SpecialJump_B'
     uiBattleText: 6
     sprite: s32'zoo401_07ex', 3
     sprite: s32'zoo401_08', 3
-    sendSignalToAction: s32'ZOO_401_Jump_loopEff', 23
-    sendSignalToAction: s32'ZOO_401_Jump_loop2Eff', 23
+    sendSignalToAction: s32'ZOO_401_Jump_loopEff', (SIGNAL_A)
+    sendSignalToAction: s32'ZOO_401_Jump_loop2Eff', (SIGNAL_A)
     callSubroutine: s32'cmnMuteki_False'
     sprite: s32'zoo401_09', 3
     sprite: s32'zoo402_00', 2
@@ -6462,7 +6462,7 @@ beginState: s32'SpecialJump_B'
     beginLabel: s32'Landing'
     sprite: s32'zoo402_11', 3
     attackEndDelay: 
-    sendSignalToAction: s32'ZOO_402_SpinSlash', 23
+    sendSignalToAction: s32'ZOO_402_SpinSlash', (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     appendCollision: 0, 0, 0, 0, 0
     sprite: s32'zoo402_12', 3
@@ -6557,8 +6557,8 @@ beginState: s32'SpecialJump_C'
     sprite: s32'zoo401_05ex', 3
     sprite: s32'zoo401_07ex', 3
     sprite: s32'zoo401_08ex', 3
-    sendSignalToAction: s32'ZOO_401_Jump_loopEff', 23
-    sendSignalToAction: s32'ZOO_401_Jump_loop2Eff', 23
+    sendSignalToAction: s32'ZOO_401_Jump_loopEff', (SIGNAL_A)
+    sendSignalToAction: s32'ZOO_401_Jump_loop2Eff', (SIGNAL_A)
     sprite: s32'zoo401_09', 3
     callSubroutine: s32'cmnMuteki_False'
     sprite: s32'zoo402_00', 2
@@ -6639,7 +6639,7 @@ beginState: s32'SpecialJump_C'
     beginLabel: s32'Landing'
     sprite: s32'zoo402_11', 2
     attackEndDelay: 
-    sendSignalToAction: s32'ZOO_402_SpinSlash', 23
+    sendSignalToAction: s32'ZOO_402_SpinSlash', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     clearUpon: (FRAME_STEP)
     appendCollision: 0, 0, 0, 0, 0
@@ -6740,8 +6740,8 @@ beginState: s32'SpecialJump_D'
     sprite: s32'zoo401_05ex', 3
     sprite: s32'zoo401_07ex', 3
     sprite: s32'zoo401_08ex', 3
-    sendSignalToAction: s32'ZOO_401_Jump_loopEff', 23
-    sendSignalToAction: s32'ZOO_401_Jump_loop2Eff', 23
+    sendSignalToAction: s32'ZOO_401_Jump_loopEff', (SIGNAL_A)
+    sendSignalToAction: s32'ZOO_401_Jump_loop2Eff', (SIGNAL_A)
     sprite: s32'zoo401_09', 3
     ifNot: Mem(ActReg1)
         callSubroutine: s32'cmnMuteki_False'
@@ -6802,7 +6802,7 @@ beginState: s32'SpecialJump_D'
     gotoLabel: s32'downloop'
     beginLabel: s32'Landing'
     sprite: s32'zoo406_05', 2
-    sendSignalToAction: s32'ZOO_402_SpinSlash', 23
+    sendSignalToAction: s32'ZOO_402_SpinSlash', (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     addPositionX: 40000
     deactivateObjectByName: s32'ZOO_402_SpinSlash'
@@ -6865,8 +6865,8 @@ beginState: s32'SpecialJump_Thunder_A'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttack_Init'
         attackIgnoreCaution: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg0), Val(1)
         endUpon: 
         upon: (TOUCH_GROUND)
@@ -6912,7 +6912,7 @@ beginState: s32'SpecialJump_Thunder_A'
     physicsYImpulse: 24000
     resetGravity: 
     velocityXPercentEachFrame: 98
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     Unknown412: 11, 1, 7, 0
     sprite: s32'zoo403_08', 3
@@ -6938,8 +6938,8 @@ beginState: s32'SpecialJump_Thunder_B'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttack_Init'
         attackIgnoreCaution: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg0), Val(1)
         endUpon: 
         upon: (TOUCH_GROUND)
@@ -6985,7 +6985,7 @@ beginState: s32'SpecialJump_Thunder_B'
     physicsYImpulse: 24000
     resetGravity: 
     velocityXPercentEachFrame: 98
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     Unknown412: 15, 1, 7, 0
     sprite: s32'zoo403_08', 3
@@ -7011,8 +7011,8 @@ beginState: s32'SpecialJump_Thunder_C'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttackC_Init'
         attackIgnoreCaution: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg0), Val(1)
         endUpon: 
         upon: (TOUCH_GROUND)
@@ -7057,7 +7057,7 @@ beginState: s32'SpecialJump_Thunder_C'
     physicsYImpulse: 24000
     resetGravity: 
     velocityXPercentEachFrame: 98
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     Unknown412: 15, 1, 7, 0
     sprite: s32'zoo403_08', 3
@@ -7084,8 +7084,8 @@ beginState: s32'SpecialJump_Thunder_D'
     upon: (IMMEDIATE)
         callSubroutine: s32'cmnSpecialAttackD_Init'
         attackIgnoreCaution: 1
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg0), Val(1)
         endUpon: 
         upon: (TOUCH_GROUND)
@@ -7112,7 +7112,7 @@ beginState: s32'SpecialJump_Thunder_D'
     sprite: s32'zoo403_05', 3
     characterSfx: s32'zoo_09'
     sprite: s32'zoo403_06', 3
-    sendSignalToAction: s32'ZOO_403_ThunderBeam', 23
+    sendSignalToAction: s32'ZOO_403_ThunderBeam', (SIGNAL_A)
     sprite: s32'zoo403_04', 3
     characterSfx: s32'zoo_09'
     sprite: s32'zoo403_05', 3
@@ -7125,7 +7125,7 @@ beginState: s32'SpecialJump_Thunder_D'
     physicsYImpulse: 20000
     resetGravity: 
     velocityXPercentEachFrame: 98
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     clearUpon: (FRAME_STEP)
     Unknown412: 15, 1, 7, 0
     sprite: s32'zoo403_08', 3
@@ -7414,7 +7414,7 @@ beginState: s32'Zoo_Ougi'
             Unknown2583: 13500, 0, 3, 70000, 14800, 2000
         endIf: 
         ifOnFrame: Val(55)
-            sendSignalToAction: s32'ZOO_430CS_BG', 23
+            sendSignalToAction: s32'ZOO_430CS_BG', (SIGNAL_A)
             createObject: s32'ZOO_430CS_Ryuhai', (PLAYER)
             Unknown2583: 2500, 0, 3, 2760000, 13900, 1700
         endIf: 
@@ -7686,7 +7686,7 @@ beginState: s32'Zoo_Kaihou'
             endIf: 
             ifOnFrame: Val(59)
                 createObject: s32'ZOO_440CS_Shadow', (PLAYER)
-                sendSignalToAction: s32'ZOO_440CS_Tornado', 23
+                sendSignalToAction: s32'ZOO_440CS_Tornado', (SIGNAL_A)
                 createObject: s32'ZOO_440CS_margeRay', (PLAYER)
                 deactivateObjectByName: s32'ZOO_440CS_Warp'
                 Unknown2583: 15900, 0, 3, 180000, 63400, 1100
@@ -7705,7 +7705,7 @@ beginState: s32'Zoo_Kaihou'
                 createObject: s32'ZOO_440CS_Wind', (PLAYER)
                 deactivateObjectByName: s32'ZOO_440CS_margeRay'
                 deactivateObjectByName: s32'ZOO_440CS_Filter'
-                sendSignalToAction: s32'ZOO_440CS_WhiteOut', 23
+                sendSignalToAction: s32'ZOO_440CS_WhiteOut', (SIGNAL_A)
                 sendSignalToAction: s32'ZOO_440CS_Tornado', 24
                 Unknown2582: 
                 Unknown2858: 3000
@@ -7740,7 +7740,7 @@ beginState: s32'Zoo_Kaihou'
     callSubroutine: s32'cmnKaihou_WLDSTP_End'
     sprite: s32'zoo440_04', 2
     sprite: s32'zoo440_06', 3
-    sendSignalToAction: s32'ZOO_440_SwordRayEff', 23
+    sendSignalToAction: s32'ZOO_440_SwordRayEff', (SIGNAL_A)
     physicsXImpulse: 10000
     sprite: s32'zoo440_07', 3
     hit: 
@@ -7778,7 +7778,7 @@ beginState: s32'Zoo_Kaihou'
     sprite: s32'zoo440_07', 3
     sprite: s32'zoo440_08', 2
     if: Mem(ActReg0)
-        sendSignalToAction: s32'GND_zoo440', 23
+        sendSignalToAction: s32'GND_zoo440', (SIGNAL_A)
     endIf: 
     sprite: s32'zoo440_08', 1
     if: Mem(ActReg0)
@@ -7793,8 +7793,8 @@ beginState: s32'Zoo_Kaihou'
     Unknown1302: 
     velocityXPercentEachFrame: 85
     clearUpon: (HIT_OR_GUARD)
-    sendSignalToAction: s32'ZOO_440_BullAttackEff', 23
-    sendSignalToAction: s32'ZOO_440_BullAttack_Speed', 23
+    sendSignalToAction: s32'ZOO_440_BullAttackEff', (SIGNAL_A)
+    sendSignalToAction: s32'ZOO_440_BullAttack_Speed', (SIGNAL_A)
     deactivateObjectByName: s32'ZOO_400_DashSmoke'
     setPushboxWidth: -1
     sprite: s32'zoo440_11', 3
@@ -7905,7 +7905,7 @@ beginState: s32'Zoo_Kaihou'
             createObject: s32'ZOO_441CS_Smoke2', (PLAYER)
         endIf: 
         ifOnFrame: Val(19)
-            sendSignalToAction: s32'ZOO_441CS_BG', 23
+            sendSignalToAction: s32'ZOO_441CS_BG', (SIGNAL_A)
             createObject: s32'ZOO_441CS_SpeedLine', (PLAYER)
             Unknown2583: 6600, 0, 3, 240100, 76400, 13700
         endIf: 
@@ -8039,7 +8039,7 @@ beginState: s32'Zoo_Kaihou'
     callSubroutine: s32'cmnKaihou_LockCSEnd'
     fadeInStart: 60
     createObject: s32'ZOO_441CS_AfterRay', (PLAYER)
-    sendSignalToAction: s32'ZOO_441CS_WhiteOut', 23
+    sendSignalToAction: s32'ZOO_441CS_WhiteOut', (SIGNAL_A)
     deactivateObjectByName: s32'ZOO_441CS_SpeedLine3'
     deactivateObjectByName: s32'ZOO_441CS_BG'
     deactivateObjectByName: s32'ZOO_441CS_GodRay02'

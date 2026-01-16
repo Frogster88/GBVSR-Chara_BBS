@@ -2580,34 +2580,34 @@ beginSubroutine: s32'OnFrameStep'
     endIf: 
     isObjectActive: (STACK1)
     if: Mem(Tmp)
-        Unknown2035: 5, s32'Search_Icon', 0
-        Unknown2035: 6, s32'NotSearch_Icon', 0
-        Unknown2035: 7, s32'NotSearch_Icon', 0
-        Unknown2035: 8, s32'NotSearch_Icon', 0
+        pawnAnimation: 5, s32'Search_Icon', 0
+        pawnAnimation: 6, s32'NotSearch_Icon', 0
+        pawnAnimation: 7, s32'NotSearch_Icon', 0
+        pawnAnimation: 8, s32'NotSearch_Icon', 0
     endIf: 
     else: 
         isObjectActive: (STACK2)
         if: Mem(Tmp)
-            Unknown2035: 6, s32'Search_Icon', 0
-            Unknown2035: 7, s32'NotSearch_Icon', 0
-            Unknown2035: 8, s32'NotSearch_Icon', 0
+            pawnAnimation: 6, s32'Search_Icon', 0
+            pawnAnimation: 7, s32'NotSearch_Icon', 0
+            pawnAnimation: 8, s32'NotSearch_Icon', 0
         endIf: 
         else: 
             isObjectActive: (STACK3)
             if: Mem(Tmp)
-                Unknown2035: 7, s32'Search_Icon', 0
-                Unknown2035: 8, s32'NotSearch_Icon', 0
+                pawnAnimation: 7, s32'Search_Icon', 0
+                pawnAnimation: 8, s32'NotSearch_Icon', 0
             endIf: 
             else: 
                 isObjectActive: (STACK4)
                 if: Mem(Tmp)
-                    Unknown2035: 8, s32'Search_Icon', 0
+                    pawnAnimation: 8, s32'Search_Icon', 0
                 endIf: 
             endElse: 
         endElse: 
     endElse: 
     ifNot: Mem(BattleDoing)
-        sendSignalToAction: s32'gri_Booster', 32
+        sendSignalToAction: s32'gri_Booster', (SIGNAL_B)
     endIf: 
 endSubroutine: 
 
@@ -2731,17 +2731,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'SpecialShot_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialShot_D'
@@ -2754,7 +2754,7 @@ beginSubroutine: s32'AbilityCoolDown_N'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 999
+            skillCooldown: 0, 999
         endElse: 
         Unknown1923: 0
     endIf: 
@@ -2763,17 +2763,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N_Air'
     checkCurrentStateName: (SELF), s32'Assault_Air_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Air_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Air_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_Air_D'
@@ -2790,17 +2790,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 420
+        skillCooldown: 1, 420
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -2817,17 +2817,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'Booster_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Booster_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Booster_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 600
+        skillCooldown: 2, 600
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Booster_D'
@@ -2841,17 +2841,17 @@ beginSubroutine: s32'AbilityCoolDown_2'
     endIf: 
     checkCurrentStateName: (SELF), s32'Booster_Air_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Booster_Air_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Booster_Air_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 600
+        skillCooldown: 2, 600
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'Booster_Air_D'
@@ -2868,17 +2868,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -3387,7 +3387,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3431,7 +3431,7 @@ beginState: s32'entry_2p01'
             characterSfx: s32'gri_entry_2P_00'
         endIf: 
         ifOnFrame: Val(116)
-            sendSignalToAction: s32'gri_7002PCS_TornadoEff', 23
+            sendSignalToAction: s32'gri_7002PCS_TornadoEff', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(140)
             sendSignalToAction: s32'gri_7002PCS_TornadoEff', 24
@@ -3708,7 +3708,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3938,9 +3938,9 @@ beginState: s32'CmnActMatchWinKaihouOugi'
             characterSfx: s32'gri_kaihou_win'
         endIf: 
         ifOnFrame: Val(143)
-            sendSignalToAction: s32'gri_442CS_Rose', 23
-            sendSignalToAction: s32'gri_442CS_MoonLight', 23
-            sendSignalToAction: s32'gri_442CS_BG', 23
+            sendSignalToAction: s32'gri_442CS_Rose', (SIGNAL_A)
+            sendSignalToAction: s32'gri_442CS_MoonLight', (SIGNAL_A)
+            sendSignalToAction: s32'gri_442CS_BG', (SIGNAL_A)
             createObject: s32'gri_442CS_Moon', (PLAYER)
             Unknown2583: 32000, 0, 3, 113700, 35027, 15700
         endIf: 
@@ -5330,7 +5330,7 @@ beginState: s32'ThrowExe'
     clearUpon: (FRAME_STEP)
     createObject: s32'gri_301_FinAtkEff', (PLAYER)
     characterSfx: s32'gri_03_3'
-    sendSignalToAction: s32'gri_301_WindLoop2', 23
+    sendSignalToAction: s32'gri_301_WindLoop2', (SIGNAL_A)
     deactivateObjectByName: s32'gri_301_WindLoop'
     upon: 89
         clearUpon: 89
@@ -5479,7 +5479,7 @@ beginState: s32'NmlAtkAirThrow'
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'gri302_02', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     sprite: s32'gri302_03', 3
     attackEndDelay: 
     sprite: s32'gri302_04', 3
@@ -5660,8 +5660,8 @@ beginSubroutine: s32'SpecialShot_Init'
     callSubroutine: s32'cmnShotCounterUkeru'
     checkCurrentStateName: (PLAYER), s32'SpecialShot_D'
     ifNot: Mem(Tmp)
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             enableWhiffCancel: 0
         endUpon: 
         bufferSpecialInput: 5
@@ -5842,7 +5842,7 @@ endSubroutine:
 beginState: s32'SpecialShotAdd_A'
     upon: (IMMEDIATE)
         callSubroutine: s32'SpecialShotAdd_Init'
-        Unknown2035: 11, s32'gri_SpecialShot_6', 0
+        pawnAnimation: 11, s32'gri_SpecialShot_6', 0
     endUpon: 
     sprite: s32'gri402_00', 2
     sprite: s32'gri402_01', 2
@@ -5872,7 +5872,7 @@ endState:
 beginState: s32'SpecialShotAdd_B'
     upon: (IMMEDIATE)
         callSubroutine: s32'SpecialShotAdd_Init'
-        Unknown2035: 11, s32'gri_SpecialShot_4', 0
+        pawnAnimation: 11, s32'gri_SpecialShot_4', 0
     endUpon: 
     sprite: s32'gri401_00', 2
     sprite: s32'gri401_01', 2
@@ -5903,7 +5903,7 @@ endState:
 beginState: s32'SpecialShotAdd_C'
     upon: (IMMEDIATE)
         callSubroutine: s32'SpecialShotAdd_Init'
-        Unknown2035: 11, s32'gri_SpecialShot_8', 0
+        pawnAnimation: 11, s32'gri_SpecialShot_8', 0
     endUpon: 
     sprite: s32'gri403_00', 2
     sprite: s32'gri403_01', 2
@@ -6015,7 +6015,7 @@ beginState: s32'AntiAir_A'
     pushboxFix: 0
     createObject: s32'gri_413_WeaponChange2Eff', (PLAYER)
     characterSfx: s32'gri_02_2'
-    sendSignalToAction: s32'gri_413_WindEff', 23
+    sendSignalToAction: s32'gri_413_WindEff', (SIGNAL_A)
     sprite: s32'gri413_11', 3
     sprite: s32'gri413_12', 3
     sprite: s32'gri413_13', 3
@@ -6042,7 +6042,7 @@ beginState: s32'AntiAir_B'
     sprite: s32'gri413_06ex01', 2
     physicsXImpulse: 20000
     physicsYImpulse: 25000
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     smartRandomVoiceLine: s16'vGRI_ATKS_33', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'gri413_07ex01', 2
     hit: 
@@ -6078,7 +6078,7 @@ beginState: s32'AntiAir_B'
     pushboxFix: 0
     createObject: s32'gri_413_WeaponChange2Eff', (PLAYER)
     characterSfx: s32'gri_02_2'
-    sendSignalToAction: s32'gri_413_WindEff', 23
+    sendSignalToAction: s32'gri_413_WindEff', (SIGNAL_A)
     haltMomentum: 1
     physicsYImpulse: 2000
     resetGravity: 
@@ -6109,7 +6109,7 @@ beginState: s32'AntiAir_C'
     sprite: s32'gri413_06ex01', 2
     physicsXImpulse: 20000
     physicsYImpulse: 25000
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     smartRandomVoiceLine: s16'vGRI_ATKS_34', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'gri413_07ex01', 2
     hit: 
@@ -6144,7 +6144,7 @@ beginState: s32'AntiAir_C'
     pushboxFix: 0
     createObject: s32'gri_413_WeaponChange2Eff', (PLAYER)
     characterSfx: s32'gri_02_2'
-    sendSignalToAction: s32'gri_413_WindEff', 23
+    sendSignalToAction: s32'gri_413_WindEff', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     haltMomentum: 1
     physicsYImpulse: 2000
@@ -6291,7 +6291,7 @@ beginState: s32'AntiAir_D'
     callSubroutine: s32'cmnMuteki_False'
     createObject: s32'gri_413_WeaponChange2Eff', (PLAYER)
     characterSfx: s32'gri_02_2'
-    sendSignalToAction: s32'gri_413_WindEff', 23
+    sendSignalToAction: s32'gri_413_WindEff', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     haltMomentum: 1
     physicsYImpulse: 2000
@@ -6305,7 +6305,7 @@ beginState: s32'AntiAir_D'
     gotoLabel: s32'DownLoop'
     beginLabel: s32'Finish'
     sprite: s32'gri414_00', 2
-    sendSignalToAction: s32'gri_413_WindEff', 23
+    sendSignalToAction: s32'gri_413_WindEff', (SIGNAL_A)
     landingAutoAction: 1
     Unknown2165: 1
     Unknown2163: 1
@@ -6448,9 +6448,9 @@ beginState: s32'Assault_A'
     attackEndDelay: 
     setPushboxWidth: -1
     velocityXPercentEachFrame: 70
-    sendSignalToAction: s32'gri_411_WindEff', 23
-    sendSignalToAction: s32'gri_411_GroundLoop_Eff', 23
-    sendSignalToAction: s32'gri_411_Nokosi_Eff', 23
+    sendSignalToAction: s32'gri_411_WindEff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_GroundLoop_Eff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_Nokosi_Eff', (SIGNAL_A)
     sprite: s32'gri411_11', 4
     landingEffect: 100, 1, 1
     sprite: s32'gri411_12', 3
@@ -6465,8 +6465,8 @@ beginState: s32'Assault_A'
     attackEndDelay: 
     setPushboxWidth: -1
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'gri_411_WindEff', 23
-    sendSignalToAction: s32'gri_411_Nokosi_Eff', 23
+    sendSignalToAction: s32'gri_411_WindEff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_Nokosi_Eff', (SIGNAL_A)
     sprite: s32'gri411_11', 4
     landingEffect: 100, 1, 1
     sprite: s32'gri411_12', 3
@@ -6520,9 +6520,9 @@ beginState: s32'Assault_B'
     attackEndDelay: 
     setPushboxWidth: -1
     velocityXPercentEachFrame: 60
-    sendSignalToAction: s32'gri_411_WindEff', 23
-    sendSignalToAction: s32'gri_411_GroundLoop_Eff', 23
-    sendSignalToAction: s32'gri_411_Nokosi_Eff', 23
+    sendSignalToAction: s32'gri_411_WindEff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_GroundLoop_Eff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_Nokosi_Eff', (SIGNAL_A)
     sprite: s32'gri411_11', 2
     landingEffect: 100, 1, 1
     sprite: s32'gri411_12', 2
@@ -6576,9 +6576,9 @@ beginState: s32'Assault_C'
     attackEndDelay: 
     setPushboxWidth: -1
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'gri_411_WindEff', 23
-    sendSignalToAction: s32'gri_411_GroundLoop_Eff', 23
-    sendSignalToAction: s32'gri_411_Nokosi_Eff', 23
+    sendSignalToAction: s32'gri_411_WindEff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_GroundLoop_Eff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_Nokosi_Eff', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'gri411_11', 4
     landingEffect: 100, 1, 1
@@ -6594,9 +6594,9 @@ beginState: s32'Assault_C'
     attackEndDelay: 
     setPushboxWidth: -1
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'gri_411_WindEff', 23
-    sendSignalToAction: s32'gri_411_GroundLoop_Eff', 23
-    sendSignalToAction: s32'gri_411_Nokosi_Eff', 23
+    sendSignalToAction: s32'gri_411_WindEff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_GroundLoop_Eff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_Nokosi_Eff', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'gri411_11', 4
     landingEffect: 100, 1, 1
@@ -6660,9 +6660,9 @@ beginState: s32'Assault_D'
     attackEndDelay: 
     setPushboxWidth: -1
     velocityXPercentEachFrame: 60
-    sendSignalToAction: s32'gri_411_WindEff', 23
-    sendSignalToAction: s32'gri_411_GroundLoop_Eff', 23
-    sendSignalToAction: s32'gri_411_Nokosi_Eff', 23
+    sendSignalToAction: s32'gri_411_WindEff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_GroundLoop_Eff', (SIGNAL_A)
+    sendSignalToAction: s32'gri_411_Nokosi_Eff', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'gri411_11', 3
     landingEffect: 100, 1, 1
@@ -6799,7 +6799,7 @@ beginState: s32'Assault_Air_A'
     endIf: 
     sprite: s32'gri010_03', 3
     attackEndDelay: 
-    sendSignalToAction: s32'gri_412_Sphere', 23
+    sendSignalToAction: s32'gri_412_Sphere', (SIGNAL_A)
     callSubroutine: s32'Booster_FlexChainCancel_End'
     sprite: s32'gri010_04', 3
     sprite: s32'gri010_19', 3
@@ -6861,7 +6861,7 @@ beginState: s32'Assault_Air_B'
     hitstop: 12
     sprite: s32'gri010_03', 3
     attackEndDelay: 
-    sendSignalToAction: s32'gri_412_Sphere', 23
+    sendSignalToAction: s32'gri_412_Sphere', (SIGNAL_A)
     callSubroutine: s32'Booster_FlexChainCancel_End'
     sprite: s32'gri010_04', 3
     sprite: s32'gri010_19', 3
@@ -6936,7 +6936,7 @@ beginState: s32'Assault_Air_C'
     characterSfx: s32'gri_15'
     sprite: s32'gri412_10', 3
     attackEndDelay: 
-    sendSignalToAction: s32'gri_412_Sphere', 23
+    sendSignalToAction: s32'gri_412_Sphere', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_S'
     sprite: s32'gri412_11', 3
     resetGravity: 
@@ -7081,7 +7081,7 @@ beginState: s32'Assault_Air_D'
     hitAirPushbackY: 22000
     hitstop: 20
     sprite: s32'gri412_10', 3
-    sendSignalToAction: s32'gri_412_Sphere', 23
+    sendSignalToAction: s32'gri_412_Sphere', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     attackEndDelay: 
     haltMomentum: 1
@@ -7106,7 +7106,7 @@ beginState: s32'Assault_Air_D'
     endIf: 
     sprite: s32'gri010_03', 3
     attackEndDelay: 
-    sendSignalToAction: s32'gri_412_Sphere', 23
+    sendSignalToAction: s32'gri_412_Sphere', (SIGNAL_A)
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'gri010_04', 3
     sprite: s32'gri010_19', 3
@@ -7121,28 +7121,28 @@ beginSubroutine: s32'Booster_SetUp'
     if: Mem(Tmp)
         Unknown2303: 0x6772695F426F6F73746572000000000000000000000000000000000000000000090000000000000004000000
         if: Mem(Tmp)
-            Unknown2035: 9, s32'HikitsugiVal0_3â4', 0
+            pawnAnimation: 9, s32'HikitsugiVal0_3â4', 0
         endIf: 
     endIf: 
     isObjectActive: (STACK3)
     if: Mem(Tmp)
         Unknown2303: 0x6772695F426F6F73746572000000000000000000000000000000000000000000080000000000000003000000
         if: Mem(Tmp)
-            Unknown2035: 8, s32'HikitsugiVal0_2â3', 0
+            pawnAnimation: 8, s32'HikitsugiVal0_2â3', 0
         endIf: 
     endIf: 
     isObjectActive: (STACK2)
     if: Mem(Tmp)
         Unknown2303: 0x6772695F426F6F73746572000000000000000000000000000000000000000000070000000000000002000000
         if: Mem(Tmp)
-            Unknown2035: 7, s32'HikitsugiVal0_1â2', 0
+            pawnAnimation: 7, s32'HikitsugiVal0_1â2', 0
         endIf: 
     endIf: 
     isObjectActive: (STACK1)
     if: Mem(Tmp)
         Unknown2303: 0x6772695F426F6F73746572000000000000000000000000000000000000000000060000000000000001000000
         if: Mem(Tmp)
-            Unknown2035: 6, s32'HikitsugiVal0_0â1', 0
+            pawnAnimation: 6, s32'HikitsugiVal0_0â1', 0
         endIf: 
     endIf: 
     Unknown1793: 9, 23
@@ -7407,7 +7407,7 @@ beginState: s32'Booster_Air_A'
     pushVelocityY: 
     pushGravity: 
     haltMomentum: 1
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     Unknown1681: 
     sprite: s32'gri405_02', 2
     sprite: s32'gri405_03', 2
@@ -7470,7 +7470,7 @@ beginState: s32'Booster_Air_B'
     pushVelocityY: 
     pushGravity: 
     haltMomentum: 1
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     Unknown1681: 
     sprite: s32'gri407_02', 3
     sprite: s32'gri407_03', 2
@@ -7534,7 +7534,7 @@ beginState: s32'Booster_Air_C'
     pushVelocityY: 
     pushGravity: 
     haltMomentum: 1
-    Unknown1819: 3, 1
+    landingRecovery: 3, 1
     sprite: s32'gri409_02', 3
     sprite: s32'gri409_03', 2
     sprite: s32'gri409_04', 3
@@ -7624,7 +7624,7 @@ beginState: s32'Booster_Air_D'
     pushVelocityY: 
     pushGravity: 
     haltMomentum: 1
-    Unknown1819: 9, 1
+    landingRecovery: 9, 1
     ifNot: Mem(PosY)
         setPositionY: 1
     endIf: 
@@ -8319,7 +8319,7 @@ beginState: s32'Booster_Move_Air'
         untechAmount: 30
         isAirUnblockable: 0
         Unknown2227: 
-        Unknown1819: 3, 1
+        landingRecovery: 3, 1
         storeValue: Mem(ActReg2), Val(12)
         storeValue: Mem(ActReg4), Val(4)
         upon: (FRAME_STEP)
@@ -8575,8 +8575,8 @@ beginState: s32'gri_Ougi'
         damage: 0
         killType: (NOT_KILL)
         damageEffect: 2, s32'gri_430_HitEff'
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             storeValue: Mem(ActReg0), Val(1)
             invulnForce: 1
             gotoLabelRequests: s32'Lock'
@@ -8593,7 +8593,7 @@ beginState: s32'gri_Ougi'
         endUpon: 
         upon: 35
             clearUpon: 35
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
             clearUpon: 24
             clearUpon: 25
         endUpon: 
@@ -8655,7 +8655,7 @@ beginState: s32'gri_Ougi'
     callSubroutine: s32'cmnOugi_WLDSTP_End'
     clearUpon: (FRAME_STEP)
     sprite: s32'gri430_07', 2
-    sendSignalToAction: s32'gri_430_ArmRayEff', 23
+    sendSignalToAction: s32'gri_430_ArmRayEff', (SIGNAL_A)
     createObject: s32'gri_430_Atk', (PLAYER)
     sprite: s32'gri430_08', 2
     sprite: s32'gri430_09', 2
@@ -8676,7 +8676,7 @@ beginState: s32'gri_Ougi'
     sprite: s32'gri430_11', 3
     sprite: s32'gri430_12', 3
     ifNot: Mem(ActReg2)
-        sendSignalToAction: s32'gri_430_Atk', 23
+        sendSignalToAction: s32'gri_430_Atk', (SIGNAL_A)
         gotoLabelRequests: s32'End'
     endIf: 
     beginLabel: s32'AtkLoop'
@@ -8687,7 +8687,7 @@ beginState: s32'gri_Ougi'
     modifyVar: (ADD), Mem(ActReg3), Val(1)
     gotoIfOperation: s32'AtkLoop', (IS_LESSER), Mem(ActReg3), Val(5)
     sprite: s32'gri430_10', 3
-    sendSignalToAction: s32'gri_430_Atk', 23
+    sendSignalToAction: s32'gri_430_Atk', (SIGNAL_A)
     beginLabel: s32'End'
     sprite: s32'gri430_10', 4
     clearUpon: 24
@@ -8865,7 +8865,7 @@ beginState: s32'gri_Ougi'
     sprite: s32'gri432_00', 3
     sprite: s32'gri432_00', 3
     sprite: s32'gri432_00', 3
-    sendSignalToAction: s32'gri_430_SuperTornado', 23
+    sendSignalToAction: s32'gri_430_SuperTornado', (SIGNAL_A)
     moveToObject: (ENEMY)
     addPositionX: -750000
     addPositionY: 750000
@@ -9116,7 +9116,7 @@ beginState: s32'gri_Kaihou'
                 characterSfx: s32'gri_kaihou_00'
             endIf: 
             ifOnFrame: Val(55)
-                sendSignalToAction: s32'gri_440CS_ChargeAura', 23
+                sendSignalToAction: s32'gri_440CS_ChargeAura', (SIGNAL_A)
             endIf: 
             ifOnFrame: Val(59)
                 Unknown2858: 2500
@@ -9294,7 +9294,7 @@ beginState: s32'gri_Kaihou'
         endIf: 
         ifOnFrame: Val(57)
             deactivateObjectByName: s32'gri_441CS_Bomb'
-            sendSignalToAction: s32'gri_441CS_BG', 23
+            sendSignalToAction: s32'gri_441CS_BG', (SIGNAL_A)
             createObject: s32'gri_441CS_Moon', (PLAYER)
             createObject: s32'gri_441CS_Rose1', (PLAYER)
             Unknown2858: 3500
@@ -9306,8 +9306,8 @@ beginState: s32'gri_Kaihou'
             displayGlare: 1, 1000, 800
         endIf: 
         ifOnFrame: Val(95)
-            sendSignalToAction: s32'gri_441CS_Moon', 23
-            sendSignalToAction: s32'gri_441CS_Rose1', 23
+            sendSignalToAction: s32'gri_441CS_Moon', (SIGNAL_A)
+            sendSignalToAction: s32'gri_441CS_Rose1', (SIGNAL_A)
             Unknown2583: 13100, 0, 3, 206200, 61262, 18700
         endIf: 
         ifOnFrame: Val(100)
@@ -9387,7 +9387,7 @@ beginState: s32'gri_Kaihou'
     deactivateObjectByName: s32'gri_441CS_WindRing_Matome2'
     deactivateObjectByName: s32'gri_441CS_BigTornado'
     deactivateObjectByName: s32'gri_441CS_BG'
-    sendSignalToAction: s32'gri_441_WhiteOut', 23
+    sendSignalToAction: s32'gri_441_WhiteOut', (SIGNAL_A)
     createObject: s32'cmn_spwind', (PLAYER)
     sprite: s32'gri440_23', 25
     sprite: s32'gri440_23', 5

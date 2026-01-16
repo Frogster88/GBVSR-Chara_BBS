@@ -9,7 +9,7 @@ beginState: s32'LAN_401_Slash01'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'loop1'
+        gotoLabelUpon: (SIGNAL_A), s32'loop1'
         gotoLabelUpon: 24, s32'loop2'
         gotoLabelUpon: 25, s32'loop3'
         gotoLabelUpon: 26, s32'end'
@@ -17,7 +17,7 @@ beginState: s32'LAN_401_Slash01'
     sprite: s32'null', 40
     beginLabel: s32'loop1'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_401_Slash02'
     beginLabel: s32'loop2'
     sprite: s32'null', 30
@@ -136,7 +136,7 @@ beginState: s32'SpecialShot'
         Unknown2257: 1
         Unknown2212: 1
         Unknown2213: 1
-        upon: 45
+        upon: (ON_DESTROY)
             clearUpon: 37
             clearUpon: 8
             gotoLabelRequests: s32'Koware'
@@ -156,7 +156,7 @@ beginState: s32'SpecialShot'
                 modifyVar: (ADD), Mem(ActReg1), Val(1)
                 ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(61)
                     clearUpon: (FRAME_STEP)
-                    clearUpon: 45
+                    clearUpon: (ON_DESTROY)
                     clearUpon: 37
                     attackOff: 
                     gotoLabelRequests: s32'Koware'
@@ -268,21 +268,21 @@ beginState: s32'SpecialShot'
     beginLabel: s32'Koware'
     sprite: s32'SpecialShot', 10
     clearUpon: 13
-    clearUpon: 45
+    clearUpon: (ON_DESTROY)
     clearUpon: 37
     attackOff: 
     haltMomentum: 1
-    sendSignalToAction: s32'lan401_Loop', 23
-    sendSignalToAction: s32'lan401_LoopD', 23
+    sendSignalToAction: s32'lan401_Loop', (SIGNAL_A)
+    sendSignalToAction: s32'lan401_LoopD', (SIGNAL_A)
     Unknown2050: 0
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        Unknown1921: 0, 40
+        skillCooldown: 0, 40
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        Unknown1921: 0, 40
+        skillCooldown: 0, 40
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         if: Mem(417)
@@ -290,7 +290,7 @@ beginState: s32'SpecialShot'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 180
+            skillCooldown: 0, 180
         endElse: 
         sendSignalToAction: s32'SpecialShot_D', 24
     endIf: 
@@ -305,7 +305,7 @@ beginState: s32'lan401_Loop'
         setLinkObjectDestroyOnStateChange: 2
         ignoreSuperFreeze: 1
         ignoreFinishStop: 1
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         setMaxActionTime: 180
         Unknown2327: 1
     endUpon: 
@@ -325,7 +325,7 @@ beginState: s32'lan401_Loop'
     gotoLabel: s32'loop'
     beginLabel: s32'End'
     sprite: s32'null', 50
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_401_end'
     linkObjectPosition: 0
     linkObjectDirection: 0
@@ -340,7 +340,7 @@ beginState: s32'lan401_LoopD'
         setLinkObjectDestroyOnStateChange: 2
         ignoreSuperFreeze: 1
         ignoreFinishStop: 1
-        gotoLabelUpon: 23, s32'End'
+        gotoLabelUpon: (SIGNAL_A), s32'End'
         setMaxActionTime: 180
     endUpon: 
     sprite: s32'null', 1
@@ -358,7 +358,7 @@ beginState: s32'lan401_LoopD'
     gotoLabel: s32'loop'
     beginLabel: s32'End'
     sprite: s32'null', 50
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_401_end'
     linkObjectPosition: 0
     linkObjectDirection: 0
@@ -628,13 +628,13 @@ beginState: s32'LAN_211_aura01'
         linkObjectPosition: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     sprite: s32'null', 60
     createObject: s32'LAN_211_aura_link', (PLAYER)
     beginLabel: s32'end'
     sprite: s32'null', 60
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     deactivateObjectByName: s32'LAN_211_aura_link'
     createObject: s32'LAN_211_aura_end', (PLAYER)
 endState: 
@@ -662,7 +662,7 @@ endState:
 beginState: s32'LAN_211_auraD_Warp'
     upon: (IMMEDIATE)
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     sprite: s32'null', 60
     linkParticle: s32'lan_211_aura01_endD'
@@ -700,14 +700,14 @@ beginState: s32'Lan_211_appear01'
     upon: (IMMEDIATE)
         linkParticle: s32'lan_211_appear01'
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     sprite: s32'null', 60
     addPositionX: 42957
     addPositionY: 140859
     beginLabel: s32'end'
     sprite: s32'null', 20
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_211_appear01_end'
 endState: 
 
@@ -717,7 +717,7 @@ beginState: s32'Lan_211_appear01_D'
         addPositionY: 150000
     endUpon: 
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_211_AirWarpD'
 endState: 
 
@@ -767,7 +767,7 @@ beginState: s32'LAN_233_Eff'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     sprite: s32'null', 1
     createParticle: s32'bg_GroundBurst', (PLAYER)
@@ -782,7 +782,7 @@ beginState: s32'LAN_233_Eff'
     gotoLabel: s32'Loop'
     beginLabel: s32'end'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_233_speedEnd'
 endState: 
 
@@ -1037,7 +1037,7 @@ beginState: s32'LAN_306_Slash01'
     createObject: s32'LAN_306_dust001', (PLAYER)
     beginLabel: s32'end'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_306_Slash02'
 endState: 
 
@@ -1153,9 +1153,9 @@ beginState: s32'lan_350_IceCrossEff'
         setAngleX: -40000
         setAngle: 25000
         setObjectSize: 400
-        upon: 23
+        upon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
-            clearUpon: 23
+            clearUpon: (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'null', 21
@@ -1205,7 +1205,7 @@ beginState: s32'LAN_403_IceNokosiMatome'
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'lan_403_speedLine_loop'
         callSubroutine: s32'cmnWeaponLvMaxColorInit'
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     beginLabel: s32'loop'
     sprite: s32'null', 4
@@ -1218,7 +1218,7 @@ beginState: s32'LAN_403_IceNokosiMatome'
     gotoLabel: s32'loop'
     beginLabel: s32'end'
     sprite: s32'null', 40
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_403_speedLine_End'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
     stopLinkObject: 0
@@ -1449,8 +1449,8 @@ beginState: s32'LAN_403_Wind_Matome'
     upon: (IMMEDIATE)
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
-            clearUpon: 23
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
             gotoLabelRequests: s32'End'
         endUpon: 
     endUpon: 
@@ -1593,14 +1593,14 @@ beginState: s32'LAN_430_slash_start01'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'loop'
+        gotoLabelUpon: (SIGNAL_A), s32'loop'
         gotoLabelUpon: 24, s32'end1'
         gotoLabelUpon: 25, s32'end2'
     endUpon: 
     sprite: s32'null', 40
     beginLabel: s32'loop'
     sprite: s32'null', 60
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_430_slash_start02'
     beginLabel: s32'end1'
     sprite: s32'null', 60
@@ -1625,7 +1625,7 @@ beginState: s32'LAN_430_syutyusen01'
         setAngleX: 318000
         setAngleY: 306000
         setAngle: 22000
-        gotoLabelUpon: 23, s32'Move'
+        gotoLabelUpon: (SIGNAL_A), s32'Move'
         gotoLabelUpon: 24, s32'Move2'
         setMaxActionTime: 600
     endUpon: 
@@ -1657,7 +1657,7 @@ beginState: s32'LAN_430_slash_ranbu01'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'loop1'
+        gotoLabelUpon: (SIGNAL_A), s32'loop1'
         gotoLabelUpon: 24, s32'loop2'
         gotoLabelUpon: 25, s32'loop3'
         gotoLabelUpon: 26, s32'loop4'
@@ -1797,7 +1797,7 @@ beginState: s32'lan_430_CutInEff'
             createObject: s32'LAN_430_tornado', (PLAYER)
         endIf: 
         ifOnFrame: Val(51)
-            sendSignalToAction: s32'LAN_430_tornado', 23
+            sendSignalToAction: s32'LAN_430_tornado', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(66)
             sendSignalToAction: s32'LAN_430_tornado', 24
@@ -1832,7 +1832,7 @@ beginState: s32'LAN_430_tornado'
         linkObjectPosition: 2
         linkObjectZ: 3
         linkParticle: s32'lan_430_trnado'
-        gotoLabelUpon: 23, s32'Move1'
+        gotoLabelUpon: (SIGNAL_A), s32'Move1'
         gotoLabelUpon: 24, s32'Move2'
     endUpon: 
     sprite: s32'null', 100
@@ -2057,13 +2057,13 @@ beginState: s32'lan_440_aura01'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
         setObjectSize: 1125
     endUpon: 
     sprite: s32'null', 200
     beginLabel: s32'end'
     sprite: s32'null', 90
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     linkParticle: s32'lan_440_aura01_end'
     setPositionY: 96000
 endState: 
@@ -2074,14 +2074,14 @@ beginState: s32'lan_440_Str_Slash01'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     sprite: s32'null', 200
     linkParticle: s32'lan_440_slash01'
     createObject: s32'lan_440_dust01_all', (PLAYER)
     beginLabel: s32'end'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     deactivateObjectByName: s32'lan_440_dust01_all'
     linkParticle: s32'lan_440_slash04'
     createObject: s32'lan_440_dust04', (PLAYER)
@@ -2115,14 +2115,14 @@ beginState: s32'lan_440_Str_Slash02'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     sprite: s32'null', 200
     linkParticle: s32'lan_440_slash02'
     createObject: s32'lan_440_dust02_all', (PLAYER)
     beginLabel: s32'end'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     deactivateObjectByName: s32'lan_440_dust02_all'
     linkParticle: s32'lan_440_slash04'
     createObject: s32'lan_440_dust04', (PLAYER)
@@ -2158,14 +2158,14 @@ beginState: s32'lan_440_Str_Slash03'
         stopLinkObject: 2
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        gotoLabelUpon: 23, s32'end'
+        gotoLabelUpon: (SIGNAL_A), s32'end'
     endUpon: 
     sprite: s32'null', 200
     linkParticle: s32'lan_440_slash03'
     createObject: s32'lan_440_dust03_all', (PLAYER)
     beginLabel: s32'end'
     sprite: s32'null', 30
-    clearUpon: 23
+    clearUpon: (SIGNAL_A)
     deactivateObjectByName: s32'lan_440_dust03_all'
     linkParticle: s32'lan_440_slash04'
     createObject: s32'lan_440_dust04', (PLAYER)
@@ -2364,7 +2364,7 @@ beginState: s32'lan_440_2ndCutInEff'
             endRunOnObject: 
         endIf: 
         ifOnFrame: Val(155)
-            sendSignalToAction: s32'lan_440_BG', 23
+            sendSignalToAction: s32'lan_440_BG', (SIGNAL_A)
             deactivateObjectByName: s32'lan_440_BigIce'
         endIf: 
         ifOnFrame: Val(155)
@@ -2420,7 +2420,7 @@ beginState: s32'lan_440_BG'
         setLinkObjectDestroyOnDamage: 3
         linkParticle: s32'lan_440_BG'
         setObjectSize: 24000
-        gotoLabelUpon: 23, s32'Move'
+        gotoLabelUpon: (SIGNAL_A), s32'Move'
         gotoLabelUpon: 24, s32'Move2'
     endUpon: 
     sprite: s32'null', 400
@@ -2777,7 +2777,7 @@ beginState: s32'lan_700_CutInEff'
         endIf: 
         ifOnFrame: Val(90)
             createObject: s32'lan_700_Speed', (PLAYER)
-            sendSignalToAction: s32'lan_700_Cold', 23
+            sendSignalToAction: s32'lan_700_Cold', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(145)
             deactivateObjectByName: s32'lan_700_Cold'
@@ -2792,7 +2792,7 @@ beginState: s32'lan_700_Cold'
         ignoreSuperFreeze: 1
         setLinkObjectDestroyOnStateChange: 2
         setLinkObjectDestroyOnDamage: 3
-        upon: 23
+        upon: (SIGNAL_A)
             setObjectSizeScaleSpeed: 40
             upon: (FRAME_STEP)
                 objectSizeScaleSpeedPercent: 98

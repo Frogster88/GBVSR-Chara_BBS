@@ -2517,19 +2517,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'Shark_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'Shark_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'Shark_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 999
+        skillCooldown: 0, 999
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'Shark_D'
@@ -2542,7 +2542,7 @@ beginSubroutine: s32'AbilityCoolDown_N'
             storeValue: Mem(287), Mem(Tmp)
         endIf: 
         else: 
-            Unknown1921: 0, 999
+            skillCooldown: 0, 999
         endElse: 
         Unknown1923: 0
     endIf: 
@@ -2582,19 +2582,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Screw_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'Screw_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'Screw_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Screw_D'
@@ -2611,19 +2611,19 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'SpecialJump_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_D'
@@ -2637,19 +2637,19 @@ beginSubroutine: s32'AbilityCoolDown_2'
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_Air_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_Air_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
         Unknown1681: 
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_Air_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'SpecialJump_Air_D'
@@ -3190,7 +3190,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3541,7 +3541,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3781,7 +3781,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
         ifOnFrame: Val(283)
             createObject: s32'skn_441_DezakiFilter', (PLAYER)
             createObject: s32'aag_442_Ray3', (PLAYER)
-            sendSignalToAction: s32'aag_442_Ray2', 23
+            sendSignalToAction: s32'aag_442_Ray2', (SIGNAL_A)
             Unknown412: 0, 1, 11, 0
             Unknown413: 5, 1, 11, 0
         endIf: 
@@ -3957,8 +3957,8 @@ beginState: s32'GC_Attack'
     sprite: s32'aag350_13', 4
     sprite: s32'aag350_14', 4
     sprite: s32'aag350_15', 4
-    sendSignalToAction: s32'aas350', 32
-    sendSignalToAction: s32'gmz350', 32
+    sendSignalToAction: s32'aas350', (SIGNAL_B)
+    sendSignalToAction: s32'gmz350', (SIGNAL_B)
     sprite: s32'aag350_16', 4
     sprite: s32'aag350_17', 3
     sprite: s32'aag350_18', 3
@@ -4330,7 +4330,7 @@ beginState: s32'NmlAtk5CNear'
         addGatlingOption: s32'NmlAtk6D'
         upon: 78
             clearUpon: 78
-            sendSignalToAction: s32'aag_206_BiteEff', 23
+            sendSignalToAction: s32'aag_206_BiteEff', (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'aag206_00', 2
@@ -4361,7 +4361,7 @@ beginState: s32'NmlAtk5CFar'
         addGatlingOption: s32'NmlAtk6D'
         upon: 78
             clearUpon: 78
-            sendSignalToAction: s32'AAS207_Add', 23
+            sendSignalToAction: s32'AAS207_Add', (SIGNAL_A)
         endUpon: 
     endUpon: 
     sprite: s32'aag207_00', 1
@@ -4396,7 +4396,7 @@ beginState: s32'NmlAtk2C'
         addGatlingOption: s32'NmlAtk6D'
         upon: 78
             clearUpon: 78
-            sendSignalToAction: s32'aag_232_Bite', 23
+            sendSignalToAction: s32'aag_232_Bite', (SIGNAL_A)
             storeValue: Mem(ActReg0), Val(1)
         endUpon: 
     endUpon: 
@@ -4412,7 +4412,7 @@ beginState: s32'NmlAtk2C'
     sprite: s32'aag232_05', 3
     createObject: s32'aag_232_Bite', (PLAYER)
     if: Mem(ActReg0)
-        sendSignalToAction: s32'aag_232_Bite', 23
+        sendSignalToAction: s32'aag_232_Bite', (SIGNAL_A)
     endIf: 
     sprite: s32'aag232_06', 3
     attackEndDelay: 
@@ -4637,8 +4637,8 @@ beginState: s32'GuardCrash'
         callSubroutine: s32'cmnGuardCrashAttack_AtkInit'
         damageEffect: 2, s32'AAG_SPHitEff'
         upon: (BEFORE_EXIT)
-            sendSignalToAction: s32'aas350', 32
-            sendSignalToAction: s32'gmz350', 32
+            sendSignalToAction: s32'aas350', (SIGNAL_B)
+            sendSignalToAction: s32'gmz350', (SIGNAL_B)
         endUpon: 
     endUpon: 
     sprite: s32'aag350_00', 2
@@ -4671,8 +4671,8 @@ beginState: s32'GuardCrash'
     sprite: s32'aag350_13', 4
     sprite: s32'aag350_14', 4
     sprite: s32'aag350_15', 4
-    sendSignalToAction: s32'aas350', 32
-    sendSignalToAction: s32'gmz350', 32
+    sendSignalToAction: s32'aas350', (SIGNAL_B)
+    sendSignalToAction: s32'gmz350', (SIGNAL_B)
     sprite: s32'aag350_16', 5
     sprite: s32'aag350_17', 3
     sprite: s32'aag350_18', 3
@@ -4784,7 +4784,7 @@ beginState: s32'NmlAtkAir5D'
     sprite: s32'aag253_01', 4
     velocityXPercentEachFrame: 80
     gravityPercent: 120
-    Unknown1819: 10, 1
+    landingRecovery: 10, 1
     sprite: s32'aag253_02', 4
     sprite: s32'aag253_03', 4
     velocityXPercent: 0
@@ -5073,7 +5073,7 @@ beginState: s32'NmlAtkAirThrow'
     sprite: s32'aag302_02', 2
     sprite: s32'aag302_03', 5
     hit: 
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'aag302_04', 3
     attackEndDelay: 
@@ -5353,7 +5353,7 @@ beginState: s32'Assault_A'
     clearUpon: (FRAME_STEP)
     storeValue: Mem(ActReg0), Val(0)
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'aag_400_WaterBurst', 23
+    sendSignalToAction: s32'aag_400_WaterBurst', (SIGNAL_A)
     characterSfx: s32'aag_00'
     sprite: s32'aag400_09', 3
     hit: 
@@ -5395,7 +5395,7 @@ beginState: s32'Assault_B'
     storeValue: Mem(ActReg0), Val(0)
     physicsXImpulse: 40000
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'aag_400_WaterBurst', 23
+    sendSignalToAction: s32'aag_400_WaterBurst', (SIGNAL_A)
     characterSfx: s32'aag_00'
     sprite: s32'aag400_09', 3
     hit: 
@@ -5439,7 +5439,7 @@ beginState: s32'Assault_C'
     storeValue: Mem(ActReg0), Val(0)
     physicsXImpulse: 40000
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'aag_400_WaterBurst', 23
+    sendSignalToAction: s32'aag_400_WaterBurst', (SIGNAL_A)
     characterSfx: s32'aag_00'
     sprite: s32'aag400_09', 3
     hit: 
@@ -5489,7 +5489,7 @@ beginState: s32'Assault_D'
     storeValue: Mem(ActReg0), Val(0)
     physicsXImpulse: 40000
     velocityXPercentEachFrame: 80
-    sendSignalToAction: s32'aag_400_WaterBurst', 23
+    sendSignalToAction: s32'aag_400_WaterBurst', (SIGNAL_A)
     characterSfx: s32'aag_00'
     sprite: s32'aag400_09', 3
     hit: 
@@ -5810,7 +5810,7 @@ beginState: s32'Assault_HaseiKick'
     gotoLabel: s32'DownLoop'
     beginLabel: s32'Landing'
     sprite: s32'aag402_08', 2
-    sendSignalToAction: s32'aag_402_KickEff', 23
+    sendSignalToAction: s32'aag_402_KickEff', (SIGNAL_A)
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_M'
     sprite: s32'aag402_08', 2
@@ -5940,7 +5940,7 @@ beginState: s32'Assault_HaseiThrow'
     gotoLabel: s32'DownLoop'
     beginLabel: s32'Landing'
     sprite: s32'aag403_10', 4
-    sendSignalToAction: s32'aag_403_MouceWater', 23
+    sendSignalToAction: s32'aag_403_MouceWater', (SIGNAL_A)
     attackEndDelay: 
     physicsXImpulse: 20000
     velocityXPercentEachFrame: 85
@@ -6048,7 +6048,7 @@ beginState: s32'Assault_HaseiThrow_Exe'
     beginLabel: s32'Landing'
     sprite: s32'aag404_00', 45
     callSubroutine: s32'cmn_DelEXSkillEff'
-    sendSignalToAction: s32'aag_403_MouceWater', 23
+    sendSignalToAction: s32'aag_403_MouceWater', (SIGNAL_A)
     Unknown2050: 0
     runOnObject: (ENEMY)
         Unknown2050: 0
@@ -6132,9 +6132,9 @@ beginState: s32'Assault_HaseiThrow_Exe'
     sprite: s32'aag404_03', 4
     attackEndDelay: 
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
-    sendSignalToAction: s32'aag_404_Beam', 32
-    sendSignalToAction: s32'aag_404_BeamEx', 32
-    sendSignalToAction: s32'aag_404_EnshutuCamera', 32
+    sendSignalToAction: s32'aag_404_Beam', (SIGNAL_B)
+    sendSignalToAction: s32'aag_404_BeamEx', (SIGNAL_B)
+    sendSignalToAction: s32'aag_404_EnshutuCamera', (SIGNAL_B)
     sprite: s32'aag404_04', 4
     sprite: s32'aag404_05', 4
     sprite: s32'aag404_03', 4
@@ -6334,7 +6334,7 @@ beginState: s32'SpecialJump_A'
     beginLabel: s32'Attack_1st'
     sprite: s32'keep', 2
     sprite: s32'aag406_12', 2
-    sendSignalToAction: s32'aag_406_Hire', 23
+    sendSignalToAction: s32'aag_406_Hire', (SIGNAL_A)
     smartRandomVoiceLine: s16'vAAG_ATKS_09', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'aag406_13', 3
     hit: 
@@ -6389,7 +6389,7 @@ beginState: s32'SpecialJump_B'
     beginLabel: s32'Attack_1st'
     sprite: s32'keep', 2
     sprite: s32'aag406_12', 2
-    sendSignalToAction: s32'aag_406_Hire', 23
+    sendSignalToAction: s32'aag_406_Hire', (SIGNAL_A)
     smartRandomVoiceLine: s16'vAAG_ATKS_10', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'aag406_13', 3
     hit: 
@@ -6445,7 +6445,7 @@ beginState: s32'SpecialJump_C'
     beginLabel: s32'Attack_1st'
     sprite: s32'keep', 2
     sprite: s32'aag406_12', 2
-    sendSignalToAction: s32'aag_406_Hire', 23
+    sendSignalToAction: s32'aag_406_Hire', (SIGNAL_A)
     smartRandomVoiceLine: s16'vAAG_ATKS_11', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'aag406_13', 3
     clearUpon: (FRAME_STEP)
@@ -6546,7 +6546,7 @@ beginState: s32'SpecialJump_D'
         hit: 
     endIf: 
     zLine: 5, 1
-    sendSignalToAction: s32'aag_407_Hire', 23
+    sendSignalToAction: s32'aag_407_Hire', (SIGNAL_A)
     physicsYImpulse: 20000
     resetGravity: 
     sprite: s32'aag407_04', 3
@@ -6640,7 +6640,7 @@ beginState: s32'SpecialJump_D'
     beginLabel: s32'Attack'
     sprite: s32'keep', 2
     sprite: s32'aag406_12', 2
-    sendSignalToAction: s32'aag_406_Hire', 23
+    sendSignalToAction: s32'aag_406_Hire', (SIGNAL_A)
     voiceLine: s16'vAAG_ATKS_13'
     clearUpon: (FRAME_STEP)
     sprite: s32'aag406_13', 3
@@ -6741,7 +6741,7 @@ beginState: s32'SpecialJump_Air_A'
     gotoLabel: s32'Loop'
     beginLabel: s32'Attack_1st'
     sprite: s32'aag406_12', 2
-    sendSignalToAction: s32'aag_406_Hire', 23
+    sendSignalToAction: s32'aag_406_Hire', (SIGNAL_A)
     sprite: s32'aag406_13', 3
     createObject: s32'aag_406_SlashEff', (PLAYER)
     sendSignalToAction: s32'aag_406_Hire', 26
@@ -6796,7 +6796,7 @@ beginState: s32'SpecialJump_Air_B'
     gotoLabel: s32'Loop'
     beginLabel: s32'Attack_1st'
     sprite: s32'aag406_12', 2
-    sendSignalToAction: s32'aag_406_Hire', 23
+    sendSignalToAction: s32'aag_406_Hire', (SIGNAL_A)
     sprite: s32'aag406_13', 3
     createObject: s32'aag_406_SlashEff', (PLAYER)
     sendSignalToAction: s32'aag_406_Hire', 26
@@ -6855,7 +6855,7 @@ beginState: s32'SpecialJump_Air_C'
     gotoLabel: s32'Loop'
     beginLabel: s32'Attack_1st'
     sprite: s32'aag406_12', 2
-    sendSignalToAction: s32'aag_406_Hire', 23
+    sendSignalToAction: s32'aag_406_Hire', (SIGNAL_A)
     sprite: s32'aag406_13', 3
     createObject: s32'aag_406_SlashEff', (PLAYER)
     sendSignalToAction: s32'aag_406_Hire', 26
@@ -6929,7 +6929,7 @@ beginState: s32'SpecialJump_Air_D'
     gotoLabel: s32'Loop'
     beginLabel: s32'Attack_1st'
     sprite: s32'aag406_12', 2
-    sendSignalToAction: s32'aag_406_Hire', 23
+    sendSignalToAction: s32'aag_406_Hire', (SIGNAL_A)
     sprite: s32'aag406_13', 3
     createObject: s32'aag_406_SlashEff', (PLAYER)
     sendSignalToAction: s32'aag_406_Hire', 26
@@ -6995,7 +6995,7 @@ beginState: s32'SpecialJump_Air_D'
     sprite: s32'aag407_03', 3
     hit: 
     zLine: 5, 1
-    sendSignalToAction: s32'aag_407_Hire', 23
+    sendSignalToAction: s32'aag_407_Hire', (SIGNAL_A)
     physicsYImpulse: 20000
     resetGravity: 
     gotoLabelUpon: (TOUCH_GROUND), s32'Finish_Landing'
@@ -7103,7 +7103,7 @@ beginState: s32'Screw_A'
     hit: 
     characterSfx: s32'aag_00_2'
     sprite: s32'aag208_08', 3
-    sendSignalToAction: s32'AAS208', 32
+    sendSignalToAction: s32'AAS208', (SIGNAL_B)
     clearUpon: (HIT)
     hit: 
     hitAirPushbackX: 15000
@@ -7163,7 +7163,7 @@ beginState: s32'Screw_B'
     sprite: s32'aag208_07', 2
     hit: 
     sprite: s32'aag208_08', 2
-    sendSignalToAction: s32'AAS208', 32
+    sendSignalToAction: s32'AAS208', (SIGNAL_B)
     clearUpon: (HIT)
     hit: 
     hitAirPushbackX: 30000
@@ -7224,7 +7224,7 @@ beginState: s32'Screw_C'
     sprite: s32'aag208_07', 2
     hit: 
     sprite: s32'aag208_08', 2
-    sendSignalToAction: s32'AAS208', 32
+    sendSignalToAction: s32'AAS208', (SIGNAL_B)
     clearUpon: (HIT)
     hit: 
     hitAirPushbackX: 20000
@@ -7340,7 +7340,7 @@ beginState: s32'Screw_D'
     sprite: s32'aag208_07', 2
     hit: 
     sprite: s32'aag208_08', 2
-    sendSignalToAction: s32'AAS208', 32
+    sendSignalToAction: s32'AAS208', (SIGNAL_B)
     clearUpon: (HIT_OR_GUARD)
     clearUpon: (HIT)
     hit: 
@@ -7386,12 +7386,12 @@ beginSubroutine: s32'Shark_Init'
     endUpon: 
     upon: 31
         clearUpon: 31
-        clearUpon: 32
+        clearUpon: (SIGNAL_B)
         gotoLabelRequests: s32'End'
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         clearUpon: 31
-        clearUpon: 32
+        clearUpon: (SIGNAL_B)
         upon: (FRAME_STEP)
             modifyVar: (ADD), Mem(ActReg0), Val(1)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg0), Val(8)
@@ -7717,7 +7717,7 @@ beginState: s32'aag_Ougi'
     characterSfx: s32'aag_08'
     sprite: s32'aag400_06', 2
     sprite: s32'aag400_08', 2
-    sendSignalToAction: s32'aag_400_WaterBurst', 23
+    sendSignalToAction: s32'aag_400_WaterBurst', (SIGNAL_A)
     sprite: s32'aag400_09', 2
     hit: 
     groundHitEffect: (NORMAL_LOWER)
@@ -7893,7 +7893,7 @@ beginState: s32'aag_Kaihou'
                 storeValue: Mem(ActReg2), Val(1)
             endIf: 
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg3), Val(19)
-                sendSignalToAction: s32'aag_440_TronadoEff', 23
+                sendSignalToAction: s32'aag_440_TronadoEff', (SIGNAL_A)
                 if: Mem(ActReg0)
                     displayHitSparks: 1
                 endIf: 
@@ -8076,7 +8076,7 @@ beginState: s32'aag_Kaihou'
     gotoIfOperation: s32'Atk_Loop', (IS_GREATER), Mem(ActReg2), Val(0)
     beginLabel: s32'End'
     sprite: s32'aag440_06', 3
-    sendSignalToAction: s32'aag_440_TronadoEff', 23
+    sendSignalToAction: s32'aag_440_TronadoEff', (SIGNAL_A)
     clearUpon: (HIT_OR_GUARD)
     Unknown1302: 
     callSubroutine: s32'cmnMuteki_False'
@@ -8224,7 +8224,7 @@ beginState: s32'aag_Kaihou'
         ifOnFrame: Val(247)
             Unknown2583: 1000, 0, 3, 453200, 1, 0
             swapMeshSet: s32'high_energy'
-            sendSignalToAction: s32'aag_441cs_Charge', 23
+            sendSignalToAction: s32'aag_441cs_Charge', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(251)
             createObject: s32'aag_441cs_Beam', (PLAYER)
@@ -8241,7 +8241,7 @@ beginState: s32'aag_Kaihou'
             voiceLine: s16'vAAG_ATKK_00_e'
         endIf: 
         ifOnFrame: Val(379)
-            sendSignalToAction: s32'aag_441cs_TornadoBG2', 23
+            sendSignalToAction: s32'aag_441cs_TornadoBG2', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(383)
             hideUI: 0

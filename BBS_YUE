@@ -1933,17 +1933,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_N'
     checkCurrentStateName: (SELF), s32'MultiAttack_A'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'MultiAttack_B'
     if: Mem(Tmp)
-        Unknown1921: 0, 20
+        skillCooldown: 0, 20
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'MultiAttack_C'
     if: Mem(Tmp)
-        Unknown1921: 0, 420
+        skillCooldown: 0, 420
         Unknown1923: 0
     endIf: 
     checkCurrentStateName: (SELF), s32'MultiAttack_D'
@@ -1960,17 +1960,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_6'
     checkCurrentStateName: (SELF), s32'AntiAir_A'
     if: Mem(Tmp)
-        Unknown1921: 1, 20
+        skillCooldown: 1, 20
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_B'
     if: Mem(Tmp)
-        Unknown1921: 1, 240
+        skillCooldown: 1, 240
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_C'
     if: Mem(Tmp)
-        Unknown1921: 1, 600
+        skillCooldown: 1, 600
         Unknown1923: 1
     endIf: 
     checkCurrentStateName: (SELF), s32'AntiAir_D'
@@ -1987,17 +1987,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_2'
     checkCurrentStateName: (SELF), s32'FoxFire_A'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'FoxFire_B'
     if: Mem(Tmp)
-        Unknown1921: 2, 20
+        skillCooldown: 2, 20
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'FoxFire_C'
     if: Mem(Tmp)
-        Unknown1921: 2, 420
+        skillCooldown: 2, 420
         Unknown1923: 2
     endIf: 
     checkCurrentStateName: (SELF), s32'FoxFire_D'
@@ -2014,17 +2014,17 @@ endSubroutine:
 beginSubroutine: s32'AbilityCoolDown_4'
     checkCurrentStateName: (SELF), s32'Assault_A'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_B'
     if: Mem(Tmp)
-        Unknown1921: 3, 20
+        skillCooldown: 3, 20
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_C'
     if: Mem(Tmp)
-        Unknown1921: 3, 420
+        skillCooldown: 3, 420
         Unknown1923: 3
     endIf: 
     checkCurrentStateName: (SELF), s32'Assault_D'
@@ -2592,7 +2592,7 @@ beginState: s32'entry_1p01'
         Unknown1665: 
         setPositionX: 0
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         jumpToState: s32'entry_1p03'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -2938,7 +2938,7 @@ beginState: s32'entry_2p03'
     upon: (IMMEDIATE)
         Unknown1665: 
     endUpon: 
-    upon: 32
+    upon: (SIGNAL_B)
         gotoLabelRequests: s32'end'
     endUpon: 
     sprite: s32'null', 2147483647
@@ -3137,7 +3137,7 @@ beginState: s32'CmnActMatchWin'
         endIf: 
         ifOnFrame: Val(307)
             fadeInStart: 4
-            sendSignalToAction: s32'yue_800_ryuhai', 23
+            sendSignalToAction: s32'yue_800_ryuhai', (SIGNAL_A)
         endIf: 
         ifOnFrame: Val(327)
             Unknown1702: 30
@@ -3201,7 +3201,7 @@ beginState: s32'CmnActMatchWinKaihouOugi'
             storeValue: Mem(ActReg0), Val(1)
         endIf: 
         ifOnFrame: Val(288)
-            sendSignalToAction: s32'yue_442_WhiteOut', 23
+            sendSignalToAction: s32'yue_442_WhiteOut', (SIGNAL_A)
             fadeInStart: 60
         endIf: 
         ifOnFrame: Val(359)
@@ -4228,7 +4228,7 @@ beginState: s32'NmlAtkAir5D'
     sprite: s32'yue253_02', 4
     characterSfx: s32'yue_07'
     sprite: s32'yue253_03', 4
-    sendSignalToAction: s32'yue_253_Slash', 23
+    sendSignalToAction: s32'yue_253_Slash', (SIGNAL_A)
     sprite: s32'yue253_04', 4
     sprite: s32'yue253_05', 3
     sendSignalToAction: s32'yue_253_Slash', 24
@@ -4261,7 +4261,7 @@ beginState: s32'NmlAtkAir5D'
     clearUpon: (BEFORE_EXIT)
     sprite: s32'yue253_08', 3
     sendSignalToAction: s32'yue_253_Slash', 25
-    sendSignalToAction: s32'yue_253_Slash2', 23
+    sendSignalToAction: s32'yue_253_Slash2', (SIGNAL_A)
     attackEndDelay: 
     sprite: s32'yue253_09', 3
     sprite: s32'yue253_10', 3
@@ -4372,7 +4372,7 @@ beginState: s32'NmlAtk5D_Revenge'
             superFreeze: 0, 119, 18, 18
             callSubroutine: s32'cmnMuteki'
             gotoLabelRequests: s32'Attack'
-            sendSignalToAction: s32'YUE_AtemiEff', 23
+            sendSignalToAction: s32'YUE_AtemiEff', (SIGNAL_A)
             characterSfx: s32'yue_12'
         endUpon: 
     endUpon: 
@@ -4812,7 +4812,7 @@ beginState: s32'NmlAtk5D_5C'
     clearUpon: (FRAME_STEP)
     smartRandomVoiceLine: s16'vYUE_ATKAby_01', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'yue215_06', 2
-    sendSignalToAction: s32'YUE_215_FireSlash_Eff', 23
+    sendSignalToAction: s32'YUE_215_FireSlash_Eff', (SIGNAL_A)
     physicsXImpulse: 10000
     characterSfx: s32'yue_10'
     sprite: s32'yue215_07', 2
@@ -5192,7 +5192,7 @@ beginState: s32'NmlAtkAirThrow'
     sprite: s32'yue302_01', 2
     cmnSfx: s32'SE_BTL_SwingBlowM'
     sprite: s32'yue302_02', 5
-    Unknown1819: 5, 1
+    landingRecovery: 5, 1
     hit: 
     sprite: s32'yue302_03', 3
     attackEndDelay: 
@@ -5373,7 +5373,7 @@ beginState: s32'MultiAttack_A'
     sprite: s32'yue400_08', 2
     hit: 
     sprite: s32'yue400_09', 2
-    sendSignalToAction: s32'yue_400_FireThrust', 23
+    sendSignalToAction: s32'yue_400_FireThrust', (SIGNAL_A)
     endSprite: 
     gotoLabelIfNot: s32'End', Mem(ActReg0)
     sprite: s32'yue400_10', 1
@@ -5447,7 +5447,7 @@ beginState: s32'MultiAttack_B'
     hit: 
     sprite: s32'yue400_09', 2
     hit: 
-    sendSignalToAction: s32'yue_400_FireThrust', 23
+    sendSignalToAction: s32'yue_400_FireThrust', (SIGNAL_A)
     endSprite: 
     gotoLabelIfNot: s32'End', Mem(ActReg0)
     sprite: s32'yue400_10', 1
@@ -5521,7 +5521,7 @@ beginState: s32'MultiAttack_C'
     hit: 
     sprite: s32'yue400_09', 2
     hit: 
-    sendSignalToAction: s32'yue_400_FireThrust', 23
+    sendSignalToAction: s32'yue_400_FireThrust', (SIGNAL_A)
     endSprite: 
     gotoLabelIfNot: s32'End', Mem(ActReg0)
     sprite: s32'yue400_10', 1
@@ -5619,7 +5619,7 @@ beginState: s32'MultiAttack_D'
     hit: 
     sprite: s32'yue400_09', 2
     hit: 
-    sendSignalToAction: s32'yue_400_FireThrust++', 23
+    sendSignalToAction: s32'yue_400_FireThrust++', (SIGNAL_A)
     endSprite: 
     gotoLabelIfNot: s32'End', Mem(ActReg0)
     sprite: s32'yue400_10', 1
@@ -6289,7 +6289,7 @@ beginState: s32'Assault_D'
     cmnSfx: s32'SE_BTL_SwingWeaponLognL'
     characterSfx: s32'yue_03'
     smartRandomVoiceLine: s16'vYUE_ATKS_103', 100, s16'', 0, s16'', 0, s16'', 0
-    sendSignalToAction: s32'yue_402_slash_Eff++', 23
+    sendSignalToAction: s32'yue_402_slash_Eff++', (SIGNAL_A)
     sprite: s32'yue402_22', 2
     attackEndDelay: 
     callSubroutine: s32'SetMatParamSpeed10_5F_Slash'
@@ -6409,7 +6409,7 @@ beginState: s32'AntiAir_A'
     velocityXPercentEachFrame: 90
     physicsYImpulse: 27000
     resetGravity: 
-    sendSignalToAction: s32'yue_404_RotateSlash', 23
+    sendSignalToAction: s32'yue_404_RotateSlash', (SIGNAL_A)
     createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
     characterSfx: s32'yue_02'
     cmnSfx: s32'SE_BTL_SwingBlowL'
@@ -6486,7 +6486,7 @@ beginState: s32'AntiAir_B'
     velocityXPercentEachFrame: 90
     physicsYImpulse: 35000
     setGravity: 1400
-    sendSignalToAction: s32'yue_404_RotateSlash', 23
+    sendSignalToAction: s32'yue_404_RotateSlash', (SIGNAL_A)
     createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
     characterSfx: s32'yue_02'
     cmnSfx: s32'SE_BTL_SwingBlowL'
@@ -6594,7 +6594,7 @@ beginState: s32'AntiAir_C'
     velocityXPercentEachFrame: 90
     physicsYImpulse: 40000
     setGravity: 1400
-    sendSignalToAction: s32'yue_404_RotateSlash', 23
+    sendSignalToAction: s32'yue_404_RotateSlash', (SIGNAL_A)
     createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
     characterSfx: s32'yue_02'
     cmnSfx: s32'SE_BTL_SwingBlowL'
@@ -6717,7 +6717,7 @@ beginState: s32'AntiAir_D'
     velocityXPercentEachFrame: 90
     physicsYImpulse: 40000
     setGravity: 1400
-    sendSignalToAction: s32'yue_404_RotateSlash', 23
+    sendSignalToAction: s32'yue_404_RotateSlash', (SIGNAL_A)
     createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
     characterSfx: s32'yue_02'
     cmnSfx: s32'SE_BTL_SwingBlowL'
@@ -6752,7 +6752,7 @@ beginState: s32'AntiAir_D'
     sprite: s32'yue404_09', 2
     hit: 
     sendSignalToAction: s32'yue_404_RotateSlash', 24
-    sendSignalToAction: s32'yue_404_RotateSlashSubSpawn_SP', 23
+    sendSignalToAction: s32'yue_404_RotateSlashSubSpawn_SP', (SIGNAL_A)
     cmnSfx: s32'SE_BTL_SwingBlowL'
     sprite: s32'yue404_10', 4
     sprite: s32'yue222_07', 4
@@ -7037,7 +7037,7 @@ beginState: s32'Yue_Ougi'
     hit: 
     physicsYImpulse: 30000
     setGravity: 1400
-    sendSignalToAction: s32'yue_430_RotateSlash', 23
+    sendSignalToAction: s32'yue_430_RotateSlash', (SIGNAL_A)
     createObject: s32'yue_430_RotateSlashSubSpawn', (PLAYER)
     createParticle: s32'bg_GroundBurstZlink', (PLAYER_LAND)
     characterSfx: s32'yue_02'
@@ -7057,7 +7057,7 @@ beginState: s32'Yue_Ougi'
     sprite: s32'yue404_09', 3
     hit: 
     sendSignalToAction: s32'yue_430_RotateSlash', 24
-    sendSignalToAction: s32'yue_430_RotateSlashSubSpawn', 23
+    sendSignalToAction: s32'yue_430_RotateSlashSubSpawn', (SIGNAL_A)
     sprite: s32'yue404_10', 3
     haltMomentum: 1
     physicsXImpulse: 25000
@@ -7251,7 +7251,7 @@ beginState: s32'Yue_Kaihou'
                 hitAirPushbackX: -1000
                 hitAirPushbackY: 5000
             endIf: 
-            sendSignalToAction: s32'yue_440_SuikomiObj', 23
+            sendSignalToAction: s32'yue_440_SuikomiObj', (SIGNAL_A)
         endUpon: 
         upon: 78
             clearUpon: 78
@@ -7411,7 +7411,7 @@ beginState: s32'Yue_Kaihou'
     hit: 
     sprite: s32'yue440_16', 3
     hit: 
-    sendSignalToAction: s32'yue_440_RotateFox', 23
+    sendSignalToAction: s32'yue_440_RotateFox', (SIGNAL_A)
     sprite: s32'yue440_17', 3
     hit: 
     sprite: s32'yue440_18', 3
@@ -7580,7 +7580,7 @@ beginState: s32'Yue_Kaihou'
         endIf: 
         ifOnFrame: Val(319)
             createObject: s32'YUE_441_ShockRing_Blur', (PLAYER)
-            sendSignalToAction: s32'yue_441_Moon', 23
+            sendSignalToAction: s32'yue_441_Moon', (SIGNAL_A)
             deactivateObjectByName: s32'yue_441_Binet'
             hideUI: 0
         endIf: 
@@ -7620,7 +7620,7 @@ beginState: s32'Yue_Kaihou'
     deactivateObjectByName: s32'yue_441_BG'
     deactivateObjectByName: s32'SOC_yue441cs'
     deactivateObjectByName: s32'SOC_yue441cs'
-    sendSignalToAction: s32'yue_441_WhiteOut', 23
+    sendSignalToAction: s32'yue_441_WhiteOut', (SIGNAL_A)
     createObject: s32'SOC_VoiceTest', (PLAYER)
     fadeOutStart: 0, 0
     fadeInStart: 10
