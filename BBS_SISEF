@@ -115,7 +115,7 @@ beginSubroutine: s32'Initialize_Tame'
         worldCollision: 1
         disableHitstopForSelf: 1
         setProjectileDurability: 0
-        untechAmount: 30
+        untechAmount: 24
         wallPushback: 0, 1500
         wallPushbackOnHit: 0, 1320
         missionName: s32'sba208_Shot_Tame'
@@ -1543,6 +1543,7 @@ beginState: s32'sis_405_Shot'
             damage: 800
             hitAirPushbackX: 14000
             hitstop: 6
+            enemyHitstopAddition: 0, 0, 0
             comboLimitScaling: 1
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
@@ -1575,7 +1576,7 @@ beginState: s32'sis_405_Shot'
         upon: (ON_DESTROY)
             gotoLabelRequests: s32'End'
         endUpon: 
-        setEventTrigger: 13, 80
+        setEventTrigger: 13, 48
         upon: 13
             gotoLabelRequests: s32'End'
         endUpon: 
@@ -1644,6 +1645,7 @@ beginState: s32'sis_405_Shot'
         physicsYImpulse: -15000
         velocityXPercentEachFrame: 98
         velocityYPercentEachFrame: 98
+        onSpriteChange: s32'SpecialShot1st_ex01'
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
         ifNot: Mem(Hikitsugi1)
@@ -5408,6 +5410,7 @@ beginState: s32'BunshinAttackObj'
                 attackOff: 
             endIf: 
         endUpon: 
+        setObjectWidth: 1500
         upon: (SIGNAL_A)
             attackOff: 
         endUpon: 

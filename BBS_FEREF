@@ -287,7 +287,6 @@ beginState: s32'FER_200_GhostDeleteEff'
     upon: (IMMEDIATE)
         linkParticle: s32'fer_ghost_end01'
         linkObjectZ: 3
-        setLinkObjectDestroyOnDamage: 3
     endUpon: 
     sprite: s32'null', 30
     addPositionX: 70997
@@ -6036,6 +6035,29 @@ beginState: s32'FER_610_Enter'
         addPositionY: 171163
         Unknown1727: 89237
     endRunOnObject: 
+endState: 
+
+beginState: s32'Round_enshutu'
+    upon: (IMMEDIATE)
+        linkPawnWithAnimation: s32'mom', s32''
+    endUpon: 
+    sprite: s32'mom610_11', 2147483647
+    Unknown2050: 1
+endState: 
+
+beginState: s32'Round_enshutu_eff'
+    upon: (IMMEDIATE)
+    endUpon: 
+    sprite: s32'null', 60
+    exPointFReset: (PLAYER), -100000, -110000
+    createObject: s32'FER_200_GhostDeleteEff', (EX_POINT_F)
+    runOnObject: (PREVIOUS)
+        setAngle: 38000
+        setObjectSize: 1800
+    endRunOnObject: 
+    linkParticle: s32'fer_430_momaura'
+    setObjectSize: 700
+    setAlphaColorSpeed: -40
 endState: 
 
 beginState: s32'mom_grn441cs'

@@ -4142,6 +4142,42 @@ beginState: s32'aag_800_Filter'
     setObjectDepth: 500
 endState: 
 
+beginState: s32'gmz_RoundEnshutu'
+    upon: (IMMEDIATE)
+        linkPawnWithAnimation: s32'GMZ', s32''
+        beginMeshSet: s32'GMZ_damage'
+            addToMeshSet: s32'body'
+            addToMeshSet: s32'head_low'
+        endMeshSet: 
+        swapMeshSet: s32'GMZ_damage'
+        linkObjectPosition: 0
+        stopLinkObject: 2
+        linkObjectZ: 2
+        addPositionX: 150000
+        Unknown1727: -100000
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+    endUpon: 
+    sprite: s32'gmz401_06', 4
+    sprite: s32'gmz401_07', 4
+    sprite: s32'gmz401_08', 4
+    sprite: s32'gmz401_09', 4
+    sprite: s32'gmz401_10', 4
+    sprite: s32'gmz401_11', 60
+    beginLabel: s32'End'
+    sprite: s32'keep', 1
+    clearUpon: (SIGNAL_B)
+    setAlphaColor: 0
+    createObject: s32'aag_408_RetrunEff', (PLAYER)
+    runOnObject: (PREVIOUS)
+        setPositionX: 0
+        setPositionY: 153853
+        setDepth: 74788
+        setAngleX: 0
+        setAngleY: 0
+        setAngle: 0
+    endRunOnObject: 
+endState: 
+
 beginSubroutine: s32'AAG_HitEffColor'
     Unknown2276: 0, -14663425
 endSubroutine: 

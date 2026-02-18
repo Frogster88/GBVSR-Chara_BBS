@@ -2703,6 +2703,8 @@ beginState: s32'lwa209'
     createObject: s32'luc_209_ThrustEff', (PLAYER)
     commonSE: s32'SE_BTL_SwingWeaponLognL'
     sprite: s32'lwa209_01ex', 5
+    sprite: s32'lwa209_01ex', 5
+    velocityXPercentEachFrame: 80
     beginLabel: s32'End'
     sprite: s32'keep', 10
     clearUpon: (SIGNAL_A)
@@ -2825,7 +2827,7 @@ beginState: s32'lwb211'
     sprite: s32'lwb211_07', 1
     hit: 
     airHitEffect: (AIR_FACE_DOWN)
-    wallPushback: 0, -2000
+    wallPushback: 0, -3000
     hitAirPushbackX: -20000
     hitAirPushbackY: 16000
     atkEnemyHitSuperArmorHitstop: 0, -6000
@@ -2938,10 +2940,19 @@ beginState: s32'lwc213'
     sprite: s32'lwc213_00', 4
     callSubroutine: s32'SwordAtk_Init'
     callSubroutine: s32'Weapon_Appear_50_4'
-    physicsXImpulse: 20000
+    physicsXImpulse: 80000
     velocityXPercentEachFrame: 70
+    upon: 12
+        ifNot: Mem(295)
+            Unknown2329: 3, 23, 100, 22, 100
+            ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(200000)
+                velocityXPercent: 50
+            endIf: 
+        endIf: 
+    endUpon: 
     sprite: s32'keep', 30
     haltMomentum: 1
+    clearUpon: 12
     beginLabel: s32'Shot'
     sprite: s32'lwc213_01', 3
     hit: 
@@ -5025,7 +5036,7 @@ beginState: s32'SpecialShot_Y'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
     privateSE: s32'luc_12'
     beginLabel: s32'Attack'
-    sprite: s32'SpecialShot_Y', 3
+    sprite: s32'SpecialShot_Y', 1
     storeValue: Mem(ActReg0), Val(1)
     linkObjectPosition: 0
     linkParticle: s32'luc_402_SlashSpin01'
@@ -5035,6 +5046,7 @@ beginState: s32'SpecialShot_Y'
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         physicsXImpulse: 36000
+        onSpriteChange: s32'SpecialShot_Y1st'
     endIf: 
     setAngleX: 18800
     setAngleY: 0
@@ -5050,6 +5062,7 @@ beginState: s32'SpecialShot_Y'
         createParticleWithArg2: s32'luc_402_ThunderParticle01', (PLAYER)
     endElse: 
     createParticle: s32'bg_GroundBurst', (PLAYER_LAND)
+    sprite: s32'SpecialShot_Y', 2
     beginLabel: s32'Loop'
     sprite: s32'SpecialShot_Y', 3
     attackRange: 1000000, -125000, -1, -1
@@ -5265,6 +5278,9 @@ beginState: s32'SpecialShot_T'
     Unknown1793: 6, 23
     privateSE: s32'luc_12'
     physicsXImpulse: 4000
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+        physicsXImpulse: 8000
+    endIf: 
     velocityXPercentEachFrame: 97
     beginLabel: s32'Attack'
     sprite: s32'SpecialShot_T', 3

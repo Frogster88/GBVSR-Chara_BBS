@@ -49,7 +49,7 @@ beginState: s32'Food'
                 Unknown2197: 2, 45, 0, 1, 0, 100
             endIf: 
             ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(1)
-                storeValue: Mem(ActReg0), Val(60)
+                storeValue: Mem(ActReg0), Val(70)
             endIf: 
             ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(2)
                 storeValue: Mem(ActReg0), Val(90)
@@ -58,7 +58,7 @@ beginState: s32'Food'
                 storeValue: Mem(ActReg0), Val(100)
             endIf: 
             ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(4)
-                storeValue: Mem(ActReg0), Val(30)
+                storeValue: Mem(ActReg0), Val(20)
             endIf: 
             ifOperation: (IS_EQUAL), Mem(GTmpReg0), Val(5)
                 storeValue: Mem(ActReg0), Val(40)
@@ -67,7 +67,7 @@ beginState: s32'Food'
         else: 
             Unknown2197: 2, 45, 0, 1, 0, 100
         endElse: 
-        ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(30)
+        ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(20)
             linkPawnWithAnimation: s32'Salad_low', s32''
             setAngleX: 30000
             createObject: s32'low_208_Ability_yellow', (PLAYER)
@@ -85,7 +85,7 @@ beginState: s32'Food'
                 storeValue: Mem(ActReg1), Val(2)
             endIf: 
             else: 
-                ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(60)
+                ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(70)
                     linkPawnWithAnimation: s32'Corn_low', s32''
                     setObjectSize: 1500
                     setAngleY: 40000
@@ -150,22 +150,22 @@ beginState: s32'Food'
         uiBattleText: 16
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg1), Val(2)
-        addTensionUnscaled: 0, 3000
+        addTensionUnscaled: 0, 1600
         createObject: s32'low_208_aura_yellow', (PLAYER)
         uiBattleText: 16
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg1), Val(3)
-        modifyHP: 450
+        modifyHP: 500
         createObject: s32'low_208_aura', (PLAYER)
         uiBattleText: 15
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg1), Val(4)
-        modifyHP: 1200
+        modifyHP: 1000
         createObject: s32'low_208_aura', (PLAYER)
         uiBattleText: 15
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg1), Val(5)
-        modifyHP: 2250
+        modifyHP: 2000
         createObject: s32'low_208_aura', (PLAYER)
         uiBattleText: 15
     endIf: 
@@ -1837,8 +1837,15 @@ beginState: s32'tom414'
         storeValue: Mem(PlayerVal3), Val(1)
         addMoveForceDisableFlag: 2
         clearUpon: 90
+        initializeDestroy: 
+        Unknown2212: 1
+        Unknown2213: 1
         Unknown1147: 0
         invulnForce: 1
+        upon: 24
+            Unknown2212: 0
+            Unknown2213: 0
+        endUpon: 
         upon: (FRAME_STEP)
             ifOperation: (IS_GREATER_OR_EQUAL), Mem(SpeedX), Val(47619)
                 physicsXImpulse: 50000
@@ -1860,6 +1867,11 @@ beginState: s32'tom414'
                 worldCollision: 0
                 storeValue: Mem(ActReg4), Val(0)
             endElse: 
+            Unknown2329: 3, 23, 100, 22, 100
+            ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(-150000)
+                Unknown2212: 0
+                Unknown2213: 0
+            endIf: 
             ifOperation: (IS_EQUAL), Mem(Dir), Val(0)
                 ifOperation: (IS_GREATER_OR_EQUAL), Mem(PosX), Val(2000000)
                     clearUpon: (FRAME_STEP)
@@ -1894,6 +1906,8 @@ beginState: s32'tom414'
         clearUpon: 126
         upon: (HIT_OR_GUARD)
             storeValue: Mem(ActReg4), Val(2)
+            Unknown2212: 0
+            Unknown2213: 0
         endUpon: 
         upon: (BEFORE_EXIT)
             storeValue: Mem(PlayerVal3), Val(0)
@@ -2572,6 +2586,10 @@ beginState: s32'tom437_236D'
         upon: (BEFORE_EXIT)
             storeValue: Mem(PlayerVal3), Val(0)
         endUpon: 
+        upon: 24
+            clearUpon: 24
+            gotoLabelRequests: s32'End'
+        endUpon: 
     endUpon: 
     sprite: s32'tom437_00', 2
     sprite: s32'tom437_01', 2
@@ -2581,8 +2599,10 @@ beginState: s32'tom437_236D'
     sprite: s32'tom437_05', 2
     sprite: s32'tom437_06', 4
     sprite: s32'tom437_07', 3
+    beginLabel: s32'End'
     sprite: s32'tom437_08', 3
     sprite: s32'tom437_09', 3
+    clearUpon: 24
     linkObjectPosition: 0
     stopLinkObject: 0
     linkObjectZ: 0
@@ -2627,6 +2647,10 @@ beginState: s32'els437_236D'
         upon: (BEFORE_EXIT)
             storeValue: Mem(PlayerVal2), Val(0)
         endUpon: 
+        upon: 24
+            clearUpon: 24
+            gotoLabelRequests: s32'End'
+        endUpon: 
     endUpon: 
     sprite: s32'els437_00', 2
     sprite: s32'els437_01', 2
@@ -2636,8 +2660,10 @@ beginState: s32'els437_236D'
     sprite: s32'els437_05', 2
     sprite: s32'els437_06', 4
     sprite: s32'els437_07', 3
+    beginLabel: s32'End'
     sprite: s32'els437_08', 3
     sprite: s32'els437_09', 3
+    clearUpon: 24
     linkObjectPosition: 0
     stopLinkObject: 0
     linkObjectZ: 0
@@ -3183,9 +3209,6 @@ beginState: s32'ygd444'
     sprite: s32'ygd444_04', 3
     sprite: s32'ygd444_05', 2
     sprite: s32'ygd444_06', 2
-    sprite: s32'ygd444_07', 3
-    sprite: s32'ygd444_08', 3
-    sprite: s32'ygd444_09', 3
     sprite: s32'ygd444_07', 3
     sprite: s32'ygd444_08', 3
     sprite: s32'ygd444_09', 3
@@ -3831,6 +3854,86 @@ beginState: s32'els610'
     sprite: s32'els610_09', 3
     sprite: s32'els610_10', 3
     sprite: s32'els610_11', 2147483647
+endState: 
+
+beginState: s32'tom_RoundEnshutu'
+    upon: (IMMEDIATE)
+        linkPawnWithAnimation: s32'tom', s32''
+        beginMeshSet: s32'tom'
+            addToMeshSet: s32'body'
+            addToMeshSet: s32'head_low'
+        endMeshSet: 
+        swapMeshSet: s32'tom'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        linkObjectZ: 2
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+    endUpon: 
+    sprite: s32'tom600_00', 2
+    sprite: s32'tom600_01', 2
+    sprite: s32'tom600_02', 2
+    sprite: s32'tom600_03', 2
+    sprite: s32'tom600_04', 2
+    sprite: s32'tom600_05', 2
+    sprite: s32'tom600_06', 2
+    sprite: s32'tom600_07', 2
+    sprite: s32'tom600_08', 2
+    sprite: s32'tom600_09', 2
+    sprite: s32'tom600_10', 40
+    beginLabel: s32'End'
+    sprite: s32'tom600_11', 3
+    sprite: s32'tom402_26', 2
+    addPositionX: -150000
+    physicsXImpulse: 20000
+    randomAddVelocityX: -5000, 10000
+    physicsYImpulse: 40000
+    createParticle: s32'bg_GroundBurstZlink', (PLAYER)
+    sprite: s32'tom402_27', 2
+    endSprite: 
+    beginLabel: s32'loop'
+    sprite: s32'tom402_26', 2
+    sprite: s32'tom402_27', 2
+    endSprite: 
+    modifyVar: (ADD), Mem(ActReg1), Val(1)
+    gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), Mem(ActReg1), Val(5)
+endState: 
+
+beginState: s32'els_RoundEnshutu'
+    upon: (IMMEDIATE)
+        linkPawnWithAnimation: s32'els', s32''
+        beginMeshSet: s32'els'
+            addToMeshSet: s32'body'
+            addToMeshSet: s32'head_low'
+        endMeshSet: 
+        swapMeshSet: s32'els'
+        linkObjectPosition: 2
+        stopLinkObject: 2
+        linkObjectZ: 2
+        gotoLabelUpon: (SIGNAL_B), s32'End'
+    endUpon: 
+    sprite: s32'els600_00', 2
+    sprite: s32'els600_01', 3
+    sprite: s32'els600_02', 3
+    sprite: s32'els600_03', 3
+    sprite: s32'els600_04', 3
+    sprite: s32'els600_05', 3
+    sprite: s32'els600_06', 40
+    beginLabel: s32'End'
+    sprite: s32'els600_07', 3
+    sprite: s32'els401_22', 2
+    addPositionX: -75000
+    physicsXImpulse: 20000
+    randomAddVelocityX: 5000, 20000
+    physicsYImpulse: 40000
+    createParticle: s32'bg_GroundBurstZlink', (PLAYER)
+    sprite: s32'els401_23', 2
+    endSprite: 
+    beginLabel: s32'loop'
+    sprite: s32'els401_22', 2
+    sprite: s32'els401_23', 2
+    endSprite: 
+    modifyVar: (ADD), Mem(ActReg1), Val(1)
+    gotoIfOperation: s32'loop', (IS_LESSER_OR_EQUAL), Mem(ActReg1), Val(5)
 endState: 
 
 beginState: s32'low_001_Eff1'
@@ -6594,8 +6697,8 @@ beginState: s32'LOW_444_LandPillarEff'
         airHitEffect: (AIR_FACE_UP)
         hitAirPushbackX: 25000
         hitAirPushbackY: 20000
-        untechAmount: 35
-        blockstunAmount: 35
+        untechAmount: 26
+        blockstunAmount: 26
         hitstop: 0
         enemyHitstopAddition: 0, 0, 0
         comboLimitScaling: 1

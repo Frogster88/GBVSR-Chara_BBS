@@ -531,12 +531,13 @@ beginState: s32'rnt_208_Atk'
         armorBreak: 1
         if: Mem(Hikitsugi0)
             tensionGainOnConnect: 60
+            groundHitEffect: (CRUMPLE)
             linkParticle: s32'rnt_208'
         endIf: 
         else: 
-            attackRange: 700000, -700000, 0, 0
+            attackRange: 770000, -770000, 0, 0
             linkParticle: s32'rnt_208_WeakNess'
-            setObjectSize: 400
+            setObjectSize: 430
         endElse: 
         upon: 86
             guardEffect: 1, s32''
@@ -545,7 +546,12 @@ beginState: s32'rnt_208_Atk'
         upon: (HIT)
             damageEffect: 1, s32''
             createParticleWithArg2: s32'cmn_hit_l', (ENEMY_LAND)
-            sendSignalToAction: s32'rnt_408_Rock_Test', 25
+            if: Mem(Hikitsugi0)
+                sendSignalToAction: s32'rnt_408_Rock_Test', 26
+            endIf: 
+            else: 
+                sendSignalToAction: s32'rnt_408_Rock_Test', 25
+            endElse: 
         endUpon: 
         upon: (FRAME_STEP)
             checkCurrentStateName: (ENEMY), s32'CmnActJumpPre'
@@ -1409,15 +1415,20 @@ beginState: s32'rnt_405_Shot'
         setLinkObjectDestroyOnStateChange: 3
         setLinkObjectDestroyOnDamage: 3
         linkObjectZ: 3
-        damage: 1000
-        groundHitEffect: (AIR_FACE_UP)
+        groundHitEffect: (FORCE_CROUCH)
         hitAirPushbackY: 20000
         hitAirPushbackX: 10000
         hitstop: 10
-        enemyHitstopAddition: 10, 10, 12
         wallPushback: 0, 500
         damageEffect: 2, s32'RNT_SPHitEff'
         attackRange: 1500000, -30000, -1, -1
+        upon: 8
+            attackRange: -1, -1, -1, -1
+            storeValue: Mem(ActReg0), Val(1)
+            pushVelocityX: 
+            pushVelocityY: 
+            haltMomentum: 1
+        endUpon: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
             linkParticle: s32'rnt_405_TrueShot1Stay'
         endIf: 
@@ -1441,6 +1452,9 @@ beginState: s32'rnt_405_Shot'
         Unknown2257: 1
         Unknown2212: 1
         Unknown2213: 1
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+            numberOfHits: 3
+        endIf: 
         upon: (ON_DESTROY)
             clearUpon: 37
             gotoLabelRequests: s32'ShotEnd'
@@ -1458,7 +1472,7 @@ beginState: s32'rnt_405_Shot'
     endUpon: 
     sprite: s32'null', 60
     beginLabel: s32'Fall'
-    sprite: s32'rnt_405_shotAtk', 2147483647
+    sprite: s32'rnt_405_shotAtk', 1
     hit: 
     linkObjectPosition: 0
     stopLinkObject: 0
@@ -1491,6 +1505,16 @@ beginState: s32'rnt_405_Shot'
     endIf: 
     setAngleBySpeed: 0
     privateSE: s32'rnt_09'
+    beginLabel: s32'loop'
+    sprite: s32'rnt_405_shotAtk', 1
+    hit: 
+    if: Mem(ActReg0)
+        storeValue: Mem(ActReg0), Val(0)
+        popVelocityX: 
+        popVelocityY: 
+    endIf: 
+    endSprite: 
+    gotoLabel: s32'loop'
     beginLabel: s32'ShotEnd'
     sprite: s32'null', 59
     haltMomentum: 1
@@ -1815,6 +1839,7 @@ beginState: s32'rnt_407_AtkRayEff'
         setPositionX: 136947
         setPositionY: 233515
         setDepth: 39217
+        setObjectSize: 1200
     endUpon: 
     sprite: s32'null', 20
     linkParticle: s32'rnt_407_atkEff'
@@ -2402,7 +2427,7 @@ beginState: s32'rnt_408_Rock_Test'
         ifOperation: (IS_EQUAL), Mem(ActReg1), Val(0)
             callSubroutine: s32'cmnSpecialAttackD_AtkInit'
             missionName: s32'SpecialFallingD_Shot'
-            setProjectileDurability: 2
+            setProjectileDurability: 3
             damage: 1600
             chipDamagePercent: 50
             groundBounceYVelocityPercent: 35
@@ -2421,7 +2446,14 @@ beginState: s32'rnt_408_Rock_Test'
             atkCameraShake: s32'', 0, 0, 0, 0
             upon: 25
                 clearUpon: 25
+                clearUpon: 26
                 comboLimitScaling: 0
+            endUpon: 
+            upon: 26
+                clearUpon: 25
+                clearUpon: 26
+                comboLimitScaling: 0
+                groundHitEffect: (CRUMPLE)
             endUpon: 
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg1), Val(2)
@@ -2489,7 +2521,7 @@ beginState: s32'rnt_408_Rock_Test'
     worldCollision: 1
     hideByCutscene: 1
     storeValue: Mem(ActReg0), Mem(PlayerVal0)
-    storeValue: Mem(PlayerVal0), Val(0)
+    modifyVar: (ADD), Mem(PlayerVal0), Val(-2)
     Unknown2298: 1
     ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
         Unknown2294: 1000
@@ -2622,15 +2654,23 @@ beginState: s32'rnt_408_FallSign_Test'
             endIf: 
         endUpon: 
         ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(0)
+            moveToPosType: 22, 123
         endIf: 
         ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(1)
+            moveToPosType: 3, 123
+            addPositionX: 350000
         endIf: 
         ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(2)
+            moveToPosType: 22, 123
         endIf: 
         ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(3)
+            moveToPosType: 22, 123
         endIf: 
-        moveToPosType: 22, 123
         upon: (FRAME_STEP)
+            ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(0)
+                clearUpon: (FRAME_STEP)
+                gotoLabelRequests: s32'End'
+            endIf: 
             ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(1)
                 setObjectSize: 600
             endIf: 
@@ -2651,7 +2691,20 @@ beginState: s32'rnt_408_FallSign_Test'
     beginLabel: s32'Loop'
     sprite: s32'null', 30
     Unknown2347: s32'rnt_FallSign'
-    Unknown2268: 0, 700
+    ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(1)
+        Unknown2268: 0, 600
+    endIf: 
+    ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(2)
+        Unknown2268: 0, 840
+    endIf: 
+    ifOperation: (IS_EQUAL), Mem(PlayerVal0), Val(3)
+        Unknown2268: 0, 1200
+        spriteTimeAdd: -15
+    endIf: 
+    ifOperation: (IS_GREATER_OR_EQUAL), Mem(PlayerVal0), Val(4)
+        Unknown2268: 0, 1500
+        spriteTimeAdd: -15
+    endIf: 
     ifNot: Mem(ActReg0)
         ifOpponentCharacterMain: s16'rnt'
         if: Mem(Tmp)

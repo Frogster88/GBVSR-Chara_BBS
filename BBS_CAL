@@ -1099,6 +1099,15 @@ beginSubroutine: s32'RoundInit'
         moveRecipeEKey: 8, 10
         moveRecipeEMove: s32'NmlAtkDash6B'
     endMove: 
+    addMove: s32'Mission_CAL_02_01'
+        moveRecipeStopTypeEx: 2, 0, 30
+        Unknown1507: 1
+        cpuEstimatePoint: 1
+        moveRecipeEMove: s32'CmnVJump'
+        moveRecipeEKey: 0, 30
+        moveRecipeEMove: s32'Warp_Air_D_Easy'
+        moveRecipeEMove: s32'NmlAtkAir5A'
+    endMove: 
     addMove: s32'Punish_01_01'
         moveRecipeStopTypeEx: 2, 0, 30
         Unknown1507: 1
@@ -1116,6 +1125,449 @@ beginSubroutine: s32'RoundInit'
         moveRecipeEMove: s32'Warp_Air_D_Easy'
         moveRecipeEMove: s32'NmlAtkAir5A'
     endMove: 
+    addMove: s32'NmlAtk5ANear_SA'
+        addMoveFlag: (L_CLOSE_RANGE_TRUE)
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk5ANear'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk5AFar_SA'
+        addMoveFlag: (L_CLOSE_RANGE_FALSE)
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk5AFar'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk2A_SA'
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk2A'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk5BNear_SA'
+        addMoveFlag: (M_CLOSE_RANGE_TRUE)
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk5BNear'
+        isFollowupMove: 1
+        moveInput: 160
+        maxChainIntoSelf: 1
+    endMove: 
+    addMove: s32'NmlAtk5BFar_SA'
+        addMoveFlag: (M_CLOSE_RANGE_FALSE)
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk5BFar'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk2B_SA'
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk2B'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk5CNear_SA'
+        addMoveFlag: (H_CLOSE_RANGE_TRUE)
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk5CNear'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk5CFar_SA'
+        addMoveFlag: (H_CLOSE_RANGE_FALSE)
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk5CFar'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk2C_SA'
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk2C'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk5D_SA'
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk5D'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk6D_SA'
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk6D'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'NmlAtk2D_SA'
+        moveType: (NORMAL)
+        moveAlias: s32'NmlAtk2D'
+        isFollowupMove: 1
+        moveInput: 160
+    endMove: 
+    addMove: s32'Trap_A_SA'
+        moveAlias: s32'Trap_A'
+        moveType: (SPECIAL)
+        moveSubType: 2
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+        Unknown1431: 1919
+        Unknown1514: 0
+        movePriority: 30
+    endMove: 
+    addMove: s32'Trap_B_SA'
+        moveType: (SPECIAL)
+        moveAlias: s32'Trap_B'
+        moveSubType: 3
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+        Unknown1431: 1919
+        movePriority: 30
+    endMove: 
+    addMove: s32'Trap_C_SA'
+        moveType: (SPECIAL)
+        moveAlias: s32'Trap_C'
+        moveSubType: 4
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+        Unknown1431: 1919
+        movePriority: 80
+    endMove: 
+    addMove: s32'Trap_D_SA'
+        moveType: (SPECIAL)
+        moveAlias: s32'Trap_D'
+        moveSubType: 5
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (REQUIRES_50_METER)
+        Unknown1431: 919
+        Unknown1514: 0
+        forceDisableFlag: 262144
+        movePriority: 60
+    endMove: 
+    addMove: s32'Trap_Air_A_SA'
+        moveAlias: s32'Trap_Air_A'
+        moveType: (SPECIAL)
+        moveSubType: 2
+        moveStance: (JUMPING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+        addMoveFlag: (VARIABLE_1_FALSE)
+        minimumHeightRequirement: 100000
+        Unknown1431: 1919
+        Unknown1514: 0
+        movePriority: 30
+    endMove: 
+    addMove: s32'Trap_Air_B_SA'
+        moveAlias: s32'Trap_Air_B'
+        moveType: (SPECIAL)
+        moveSubType: 3
+        moveStance: (JUMPING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+        addMoveFlag: (VARIABLE_1_FALSE)
+        minimumHeightRequirement: 100000
+        Unknown1431: 1919
+        movePriority: 30
+    endMove: 
+    addMove: s32'Trap_Air_C_SA'
+        moveAlias: s32'Trap_Air_C'
+        moveType: (SPECIAL)
+        moveSubType: 4
+        moveStance: (JUMPING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (NEUTRAL_SKILL_CD_FALSE)
+        addMoveFlag: (VARIABLE_1_FALSE)
+        minimumHeightRequirement: 100000
+        Unknown1431: 1919
+        movePriority: 80
+    endMove: 
+    addMove: s32'Trap_Air_D_SA'
+        moveAlias: s32'Trap_Air_D'
+        moveType: (SPECIAL)
+        moveSubType: 5
+        moveStance: (JUMPING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (VARIABLE_1_FALSE)
+        minimumHeightRequirement: 100000
+        addMoveFlag: (REQUIRES_50_METER)
+        Unknown1431: 919
+        Unknown1514: 0
+        forceDisableFlag: 262144
+        movePriority: 60
+    endMove: 
+    addMove: s32'AntiAir_A_SA'
+        moveAlias: s32'AntiAir_A'
+        moveType: (SPECIAL)
+        moveSubType: 2
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (FORWARD_SKILL_CD_FALSE)
+        Unknown1431: 1919
+        Unknown1514: 1
+        movePriority: 30
+    endMove: 
+    addMove: s32'AntiAir_B_SA'
+        moveAlias: s32'AntiAir_B'
+        moveType: (SPECIAL)
+        moveSubType: 3
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (FORWARD_SKILL_CD_FALSE)
+        Unknown1431: 1919
+        movePriority: 50
+    endMove: 
+    addMove: s32'AntiAir_C_SA'
+        moveAlias: s32'AntiAir_C'
+        moveType: (SPECIAL)
+        moveSubType: 4
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (FORWARD_SKILL_CD_FALSE)
+        Unknown1431: 1919
+        movePriority: 90
+    endMove: 
+    addMove: s32'AntiAir_D_SA'
+        moveAlias: s32'AntiAir_D'
+        moveType: (SPECIAL)
+        moveSubType: 5
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (REQUIRES_50_METER)
+        Unknown1431: 919
+        Unknown1514: 1
+        forceDisableFlag: 262144
+        movePriority: 60
+    endMove: 
+    addMove: s32'Assault_A_SA'
+        moveAlias: s32'Assault_A'
+        moveType: (SPECIAL)
+        moveSubType: 2
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
+        Unknown1431: 919
+        Unknown1514: 3
+        movePriority: 40
+    endMove: 
+    addMove: s32'Assault_B_SA'
+        moveAlias: s32'Assault_B'
+        moveType: (SPECIAL)
+        moveSubType: 3
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
+        Unknown1431: 919
+        movePriority: 50
+    endMove: 
+    addMove: s32'Assault_C_SA'
+        moveAlias: s32'Assault_C'
+        moveType: (SPECIAL)
+        moveSubType: 4
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (BACKWARD_SKILL_CD_FALSE)
+        Unknown1431: 919
+        movePriority: 100
+    endMove: 
+    addMove: s32'Assault_D_SA'
+        moveAlias: s32'Assault_D'
+        moveType: (SPECIAL)
+        moveSubType: 5
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (REQUIRES_50_METER)
+        Unknown1431: 919
+        Unknown1514: 3
+        forceDisableFlag: 262144
+        movePriority: 70
+    endMove: 
+    addMove: s32'Warp_A_SA'
+        moveAlias: s32'Warp_A'
+        moveType: (SPECIAL)
+        moveSubType: 2
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        Unknown1431: 1919
+        Unknown1514: 2
+        movePriority: 30
+    endMove: 
+    addMove: s32'Warp_B_SA'
+        moveAlias: s32'Warp_B'
+        moveType: (SPECIAL)
+        moveSubType: 3
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        Unknown1431: 1919
+        movePriority: 30
+    endMove: 
+    addMove: s32'Warp_C_SA'
+        moveAlias: s32'Warp_C'
+        moveType: (SPECIAL)
+        moveSubType: 4
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        Unknown1431: 1919
+        movePriority: 80
+    endMove: 
+    addMove: s32'Warp_D_SA'
+        moveAlias: s32'Warp_D'
+        moveType: (SPECIAL)
+        moveSubType: 5
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (REQUIRES_50_METER)
+        Unknown1431: 919
+        Unknown1514: 2
+        forceDisableFlag: 262144
+        movePriority: 60
+    endMove: 
+    addMove: s32'Warp_Air_A_SA'
+        moveAlias: s32'Warp_Air_A'
+        moveType: (SPECIAL)
+        moveSubType: 2
+        moveStance: (JUMPING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        addMoveFlag: (VARIABLE_0_FALSE)
+        minimumHeightRequirement: 100000
+        Unknown1431: 1919
+        Unknown1514: 2
+        movePriority: 30
+    endMove: 
+    addMove: s32'Warp_Air_B_SA'
+        moveAlias: s32'Warp_Air_B'
+        moveType: (SPECIAL)
+        moveSubType: 3
+        moveStance: (JUMPING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        addMoveFlag: (VARIABLE_0_FALSE)
+        minimumHeightRequirement: 100000
+        Unknown1431: 1919
+        movePriority: 30
+    endMove: 
+    addMove: s32'Warp_Air_C_SA'
+        moveAlias: s32'Warp_Air_C'
+        moveType: (SPECIAL)
+        moveSubType: 4
+        moveStance: (JUMPING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (DOWN_SKILL_CD_FALSE)
+        addMoveFlag: (VARIABLE_0_FALSE)
+        minimumHeightRequirement: 100000
+        Unknown1431: 1919
+        movePriority: 80
+    endMove: 
+    addMove: s32'Warp_Air_D_SA'
+        moveAlias: s32'Warp_Air_D'
+        moveType: (SPECIAL)
+        moveSubType: 5
+        moveStance: (JUMPING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (VARIABLE_0_FALSE)
+        minimumHeightRequirement: 100000
+        addMoveFlag: (REQUIRES_50_METER)
+        Unknown1431: 919
+        Unknown1514: 2
+        forceDisableFlag: 262144
+        movePriority: 60
+    endMove: 
+    addMove: s32'Cal_Ougi_SA'
+        moveType: (SUPER)
+        moveAlias: s32'Cal_Ougi'
+        moveSubType: 4
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (REQUIRES_100_METER)
+        Unknown1431: 919
+        Unknown1447: 1, 0
+        forceDisableFlag: 524288
+        movePriority: 70
+    endMove: 
+    addMove: s32'Cal_Kaihou_SA'
+        moveType: (SUPER)
+        Unknown1511: 1
+        moveAlias: s32'Cal_Kaihou'
+        moveSubType: 5
+        moveStance: (STANDING)
+        isFollowupMove: 1
+        moveInput: 160
+        addMoveFlag: (REQUIRES_100_METER)
+        addMoveFlag: (HEALTH_LEFT_30_TRUE)
+        Unknown1431: 919
+        Unknown1447: 1, 0
+        forceDisableFlag: 524288
+        movePriority: 70
+    endMove: 
+    registerMove: s32'NmlAtk5ANear_SA'
+    registerMove: s32'NmlAtk5AFar_SA'
+    registerMove: s32'NmlAtk2A_SA'
+    registerMove: s32'NmlAtk5BNear_SA'
+    registerMove: s32'NmlAtk5BFar_SA'
+    registerMove: s32'NmlAtk2B_SA'
+    registerMove: s32'NmlAtk5CNear_SA'
+    registerMove: s32'NmlAtk5CFar_SA'
+    registerMove: s32'NmlAtk2C_SA'
+    registerMove: s32'NmlAtk5D_SA'
+    registerMove: s32'NmlAtk6D_SA'
+    registerMove: s32'NmlAtk2D_SA'
+    registerMove: s32'Trap_A_SA'
+    registerMove: s32'Trap_B_SA'
+    registerMove: s32'Trap_C_SA'
+    registerMove: s32'Trap_D_SA'
+    registerMove: s32'Trap_Air_A_SA'
+    registerMove: s32'Trap_Air_B_SA'
+    registerMove: s32'Trap_Air_C_SA'
+    registerMove: s32'Trap_Air_D_SA'
+    registerMove: s32'AntiAir_A_SA'
+    registerMove: s32'AntiAir_B_SA'
+    registerMove: s32'AntiAir_C_SA'
+    registerMove: s32'AntiAir_D_SA'
+    registerMove: s32'Assault_A_SA'
+    registerMove: s32'Assault_B_SA'
+    registerMove: s32'Assault_C_SA'
+    registerMove: s32'Assault_D_SA'
+    registerMove: s32'Warp_A_SA'
+    registerMove: s32'Warp_B_SA'
+    registerMove: s32'Warp_C_SA'
+    registerMove: s32'Warp_D_SA'
+    registerMove: s32'Warp_Air_A_SA'
+    registerMove: s32'Warp_Air_B_SA'
+    registerMove: s32'Warp_Air_C_SA'
+    registerMove: s32'Warp_Air_D_SA'
+    registerMove: s32'Cal_Ougi_SA'
+    registerMove: s32'Cal_Kaihou_SA'
     callSubroutine: s32'cmn_SkillRegist'
     callSubroutine: s32'cmn_SkillRegist_Normal_Land'
     registerMove: s32'NmlAtk6D'
@@ -1182,6 +1634,7 @@ beginSubroutine: s32'RoundInit'
     registerMove: s32'Cal_Ougi_Easy'
     registerMove: s32'Cal_Kaihou_Easy'
     registerMove: s32'Mission_CAL_01_01'
+    registerMove: s32'Mission_CAL_02_01'
     registerMove: s32'Punish_01_01'
     registerMove: s32'Punish_04_01'
     setDamageSprite: 0, s32'cal050_00'
@@ -1663,6 +2116,15 @@ beginSubroutine: s32'RoundInit'
     vsCharaMouthTable2: s16'018', s16'VS_VIR', s16'vCAL_APR_00_b', s32'c1r33c2r33c7r11c4r33c3r19c1r16c4', s32'r32c4r41c8', s32'', s32''
     vsCharaMouthTable2: s16'018', s16'VS_VIR', s16'vCAL_APR_00_c', s32'c2r21c7r5c4r1c16', s32'', s32'', s32''
     vsCharaMouthTable2: s16'018', s16'VS_VIR', s16'vCAL_APR_00_d', s32'c1r11c2r13c2r38c2r30c1r3c32r28c3', s32'r5c3r34c3r6c5r11c2r31c18', s32'', s32''
+    vsCharaMouthTable: s16'VS_SOK', s16'vCAL_APR_00_a', s32'c1r32c4r8c15r7c11r28c18', s32'', s32'', s32''
+    vsCharaMouthTable: s16'VS_SOK', s16'vCAL_APR_00_b', s32'c4r34c4r21c11r11c7r18c4r11c3r5c3', s32'r55c17', s32'', s32''
+    vsCharaMouthTable: s16'VS_SOK', s16'vCAL_APR_00_c', s32'c4r16c12', s32'', s32'', s32''
+    vsCharaMouthTable: s16'VS_SOK', s16'vCAL_APR_00_d', s32'c5r43c3r5c4r7c3r26c1r7c3r7c18r9c', s32'7r29c3r45c5r22c1r19c2r41c17', s32'', s32''
+    vsCharaMouthTable: s16'VS_SOK', s16'vCAL_APR_01_a', s32'c1r37c14', s32'', s32'', s32''
+    vsCharaMouthTable: s16'VS_SOK', s16'vCAL_APR_01_b', s32'r11c2r26c6r16c15', s32'', s32'', s32''
+    vsCharaMouthTable: s16'VS_SOK', s16'vCAL_APR_01_c', s32'c2r31c19', s32'', s32'', s32''
+    vsCharaMouthTable: s16'VS_SOK', s16'vCAL_APR_01_d', s32'c4r71c18r5c15r28c1r21c5r28c3r22c', s32'10r50c9r9c13', s32'', s32''
+    vsCharaMouthTable: s16'VS_SOK', s16'vCAL_WIN_01', s32'c4r19c6r32c6r14c60r8c7r35c4r25c2', s32'r19c7r15c17', s32'', s32''
     linkPawn: s32''
     beginMeshSet: s32'high'
         addToMeshSet: s32'Body'
@@ -1803,9 +2265,662 @@ beginSubroutine: s32'OnActionBegin'
             storeValue: Mem(ObjReg5), Val(0)
         endIf: 
     endIf: 
+    if: Mem(IsAir)
+        if: Mem(ObjReg2)
+            storeValue: Mem(ObjReg2), Val(0)
+            faceOpponent: 
+        endIf: 
+    endIf: 
+    else: 
+        storeValue: Mem(ObjReg2), Val(0)
+    endElse: 
     checkCurrentStateName: (PLAYER), s32'CmnActLockWait'
     if: Mem(Tmp)
         changeDefaultMeshSet: 
+    endIf: 
+    if: Mem(437)
+        ifOperation: (IS_GREATER_OR_EQUAL), Mem(441), Val(2)
+            addMoveForceDisableFlagQuick: 262144
+        endIf: 
+        ifOperation: (IS_GREATER), Mem(442), Val(0)
+            checkCurrentStateName: (SELF), s32'NmlAtkDash6A'
+            if: Mem(Tmp)
+                Unknown1628: 0x4E6D6C41746B35424E6561725F53410000000000000000000000000000000000
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk5ANear'
+            if: Mem(Tmp)
+                addGatlingOption: s32'NmlAtk5A2nd_SA_A'
+                addGatlingOption: s32'NmlAtk5A2nd_SA_B'
+                addGatlingOption: s32'NmlAtk5A2nd_SA_C'
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk5BNear'
+            if: Mem(Tmp)
+                addGatlingOption: s32'NmlAtk5A2nd_SA_A'
+                addGatlingOption: s32'NmlAtk5A2nd_SA_B'
+                addGatlingOption: s32'NmlAtk5A2nd_SA_C'
+                upon: 135
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(470000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(190000)
+                                    Unknown1631: s32'Assault_C_SA'
+                                endIf: 
+                            endIf: 
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(410000)
+                                Unknown1631: s32'Warp_C_SA'
+                            endIf: 
+                            else: 
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(180000)
+                                    Unknown1631: s32'Warp_C_SA'
+                                endIf: 
+                            endElse: 
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(350000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(240000)
+                                    Unknown1631: s32'Cal_Ougi_SA'
+                                endIf: 
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(260000)
+                                    Unknown1631: s32'Cal_Kaihou_SA'
+                                endIf: 
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk5CNear'
+            if: Mem(Tmp)
+                addGatlingOption: s32'NmlAtk5A2nd_SA_A'
+                addGatlingOption: s32'NmlAtk5A2nd_SA_B'
+                upon: 134
+                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(15)
+                        clearUpon: 134
+                        upon: 136
+                            addGatlingOption: s32'NmlAtk5A2nd_SA_C'
+                        endUpon: 
+                        upon: 135
+                            addGatlingOption: s32'NmlAtk5A2nd_SA_C'
+                            checkMoveFlag: 38
+                            if: Mem(Tmp)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(570000)
+                                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(280000)
+                                            Unknown1631: s32'Assault_C_SA'
+                                        endIf: 
+                                    endIf: 
+                                endIf: 
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(580000)
+                                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(480000)
+                                        Unknown1631: s32'AntiAir_C_SA'
+                                    endIf: 
+                                endIf: 
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(280000)
+                                        Unknown1631: s32'Warp_C_SA'
+                                    endIf: 
+                                    else: 
+                                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(210000)
+                                            Unknown1631: s32'Warp_C_SA'
+                                        endIf: 
+                                    endElse: 
+                                endIf: 
+                            endIf: 
+                            checkMoveFlag: 38
+                            if: Mem(Tmp)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(350000)
+                                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(240000)
+                                            Unknown1631: s32'Cal_Ougi_SA'
+                                        endIf: 
+                                    endIf: 
+                                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(260000)
+                                            Unknown1631: s32'Cal_Kaihou_SA'
+                                        endIf: 
+                                    endIf: 
+                                endIf: 
+                            endIf: 
+                        endUpon: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk2A'
+            if: Mem(Tmp)
+                upon: 136
+                    Unknown1628: 0x4E6D6C41746B35414661725F5341000000000000000000000000000000000000
+                endUpon: 
+                upon: 135
+                    Unknown1628: 0x4E6D6C41746B35414661725F5341000000000000000000000000000000000000
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk5A2nd'
+            if: Mem(Tmp)
+                upon: 135
+                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDistanceY), Val(210000)
+                        Unknown1631: s32'Trap_B_SA'
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(350000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(240000)
+                                    Unknown1631: s32'Cal_Ougi_SA'
+                                endIf: 
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(260000)
+                                    Unknown1631: s32'Cal_Kaihou_SA'
+                                endIf: 
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk5A3rd'
+            if: Mem(Tmp)
+                upon: 135
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        Unknown1631: s32'Trap_B_SA'
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(190000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(180000)
+                                Unknown1631: s32'Assault_A_SA'
+                            endIf: 
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(270000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(190000)
+                                    Unknown1631: s32'Assault_C_SA'
+                                endIf: 
+                            endIf: 
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(1200000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(310000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                                    Unknown1631: s32'Assault_D_SA'
+                                endIf: 
+                            endIf: 
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(440000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(390000)
+                                Unknown1631: s32'AntiAir_A_SA'
+                            endIf: 
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(580000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(850000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(390000)
+                                    Unknown1631: s32'AntiAir_C_SA'
+                                endIf: 
+                            endIf: 
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(270000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                                Unknown1631: s32'Warp_C_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    else: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(420000)
+                            Unknown1631: s32'Assault_A_SA'
+                        endIf: 
+                        checkMoveFlag: 47
+                        if: Mem(Tmp)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(290000)
+                                Unknown1631: s32'Assault_B_SA'
+                            endIf: 
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(500000)
+                                Unknown1631: s32'Assault_C_SA'
+                            endIf: 
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(1200000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(650000)
+                                Unknown1631: s32'Assault_D_SA'
+                            endIf: 
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(670000)
+                            Unknown1631: s32'AntiAir_A_SA'
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(580000)
+                            Unknown1631: s32'AntiAir_C_SA'
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(145000)
+                            Unknown1631: s32'AntiAir_D_SA'
+                        endIf: 
+                    endElse: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                        checkMoveFlag: 38
+                        if: Mem(Tmp)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(350000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                                    Unknown1631: s32'Cal_Ougi_SA'
+                                endIf: 
+                            endIf: 
+                        endIf: 
+                        else: 
+                            Unknown1631: s32'Cal_Ougi_SA'
+                        endElse: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                        checkMoveFlag: 38
+                        if: Mem(Tmp)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(350000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(220000)
+                                    Unknown1631: s32'Cal_Kaihou_SA'
+                                endIf: 
+                            endIf: 
+                        endIf: 
+                        else: 
+                            Unknown1631: s32'Cal_Kaihou_SA'
+                        endElse: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk5AFar'
+            if: Mem(Tmp)
+                upon: 135
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        Unknown1631: s32'Trap_B_SA'
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(320000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(130000)
+                            Unknown1631: s32'Assault_A_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(410000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(160000)
+                                Unknown1631: s32'Assault_C_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(1200000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(460000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(150000)
+                                Unknown1631: s32'Assault_D_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(380000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                                Unknown1631: s32'Warp_C_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(240000)
+                            Unknown1631: s32'Cal_Ougi_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(260000)
+                            Unknown1631: s32'Cal_Kaihou_SA'
+                        endIf: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk5BFar'
+            if: Mem(Tmp)
+                upon: 136
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(650000)
+                        Unknown1631: s32'AntiAir_A_SA'
+                    endIf: 
+                endUpon: 
+                upon: 135
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        Unknown1631: s32'Trap_B_SA'
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(360000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(170000)
+                            Unknown1631: s32'Assault_A_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(450000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(170000)
+                                Unknown1631: s32'Assault_C_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(1200000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(570000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(170000)
+                                Unknown1631: s32'Assault_D_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(380000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                                Unknown1631: s32'Warp_C_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(145000)
+                        Unknown1631: s32'AntiAir_D_SA'
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(240000)
+                            Unknown1631: s32'Cal_Ougi_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(260000)
+                            Unknown1631: s32'Cal_Kaihou_SA'
+                        endIf: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk2B'
+            if: Mem(Tmp)
+                upon: 136
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(650000)
+                        Unknown1631: s32'AntiAir_A_SA'
+                    endIf: 
+                endUpon: 
+                upon: 135
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        Unknown1631: s32'Trap_B_SA'
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(360000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(170000)
+                            Unknown1631: s32'Assault_A_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(450000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(170000)
+                                Unknown1631: s32'Assault_C_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(1200000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(570000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(170000)
+                                Unknown1631: s32'Assault_D_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(380000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                                Unknown1631: s32'Warp_C_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(145000)
+                        Unknown1631: s32'AntiAir_D_SA'
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(240000)
+                            Unknown1631: s32'Cal_Ougi_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(260000)
+                            Unknown1631: s32'Cal_Kaihou_SA'
+                        endIf: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk5CFar'
+            if: Mem(Tmp)
+                upon: 134
+                    ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(11)
+                        clearUpon: 134
+                        upon: 136
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(650000)
+                                Unknown1631: s32'AntiAir_A_SA'
+                            endIf: 
+                        endUpon: 
+                        upon: 135
+                            checkMoveFlag: 38
+                            if: Mem(Tmp)
+                                Unknown1631: s32'Trap_B_SA'
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(430000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(220000)
+                                    Unknown1631: s32'Assault_A_SA'
+                                endIf: 
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(510000)
+                                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(230000)
+                                        Unknown1631: s32'Assault_C_SA'
+                                    endIf: 
+                                endIf: 
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(1200000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(660000)
+                                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(220000)
+                                        Unknown1631: s32'Assault_D_SA'
+                                    endIf: 
+                                endIf: 
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(670000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(430000)
+                                    Unknown1631: s32'AntiAir_A_SA'
+                                endIf: 
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(580000)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(430000)
+                                    Unknown1631: s32'AntiAir_C_SA'
+                                endIf: 
+                            endIf: 
+                            checkMoveFlag: 38
+                            if: Mem(Tmp)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(380000)
+                                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(200000)
+                                        Unknown1631: s32'Warp_C_SA'
+                                    endIf: 
+                                endIf: 
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(155000)
+                                Unknown1631: s32'AntiAir_D_SA'
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(240000)
+                                    Unknown1631: s32'Cal_Ougi_SA'
+                                endIf: 
+                            endIf: 
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(260000)
+                                    Unknown1631: s32'Cal_Kaihou_SA'
+                                endIf: 
+                            endIf: 
+                        endUpon: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk2C'
+            if: Mem(Tmp)
+                upon: 136
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(650000)
+                        Unknown1631: s32'AntiAir_A_SA'
+                    endIf: 
+                endUpon: 
+                upon: 135
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        Unknown1631: s32'Trap_B_SA'
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(100000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                                Unknown1631: s32'Trap_C_SA'
+                            endIf: 
+                            else: 
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(260000)
+                                    Unknown1631: s32'Trap_C_SA'
+                                endIf: 
+                            endElse: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(410000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(100000)
+                            Unknown1631: s32'Assault_A_SA'
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 47
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(290000)
+                            Unknown1631: s32'Assault_B_SA'
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(440000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(230000)
+                                Unknown1631: s32'Assault_B_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(480000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(110000)
+                                Unknown1631: s32'Assault_C_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(1200000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(650000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(5000)
+                                Unknown1631: s32'Assault_D_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(550000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(340000)
+                                Unknown1631: s32'AntiAir_A_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    else: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(570000)
+                            Unknown1631: s32'AntiAir_A_SA'
+                        endIf: 
+                    endElse: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(300000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(180000)
+                                Unknown1631: s32'AntiAir_B_SA'
+                            endIf: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(580000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(340000)
+                            Unknown1631: s32'AntiAir_C_SA'
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 38
+                    ifNot: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(135000)
+                            Unknown1631: s32'AntiAir_D_SA'
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(80000)
+                            ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(365000)
+                                Unknown1631: s32'Warp_C_SA'
+                            endIf: 
+                            else: 
+                                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(165000)
+                                    Unknown1631: s32'Warp_C_SA'
+                                endIf: 
+                            endElse: 
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(100000)
+                            Unknown1631: s32'Cal_Ougi_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(120000)
+                            Unknown1631: s32'Cal_Kaihou_SA'
+                        endIf: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+            checkCurrentStateName: (SELF), s32'NmlAtk2D'
+            if: Mem(Tmp)
+                upon: 136
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(650000)
+                        Unknown1631: s32'AntiAir_A_SA'
+                    endIf: 
+                endUpon: 
+                upon: 135
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        Unknown1631: s32'Trap_B_SA'
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(430000)
+                        Unknown1631: s32'Assault_A_SA'
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(620000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(520000)
+                            Unknown1631: s32'Assault_C_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(1200000)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(570000)
+                            Unknown1631: s32'Assault_D_SA'
+                        endIf: 
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(570000)
+                            Unknown1631: s32'AntiAir_A_SA'
+                        endIf: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(580000)
+                            Unknown1631: s32'AntiAir_C_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(FrontWallDistance), Val(360000)
+                        Unknown1631: s32'Warp_C_SA'
+                    endIf: 
+                    checkMoveFlag: 38
+                    if: Mem(Tmp)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(180000)
+                            Unknown1631: s32'Warp_C_SA'
+                        endIf: 
+                    endIf: 
+                    else: 
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(220000)
+                            Unknown1631: s32'Warp_C_SA'
+                        endIf: 
+                    endElse: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(216560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(240000)
+                            Unknown1631: s32'Cal_Ougi_SA'
+                        endIf: 
+                    endIf: 
+                    ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(256560)
+                        ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceY), Val(260000)
+                            Unknown1631: s32'Cal_Kaihou_SA'
+                        endIf: 
+                    endIf: 
+                endUpon: 
+            endIf: 
+        endIf: 
     endIf: 
 endSubroutine: 
 
@@ -1839,6 +2954,7 @@ endSubroutine:
 
 beginSubroutine: s32'OnLanding'
     callSubroutine: s32'cmn_FN_OnLanding'
+    storeValue: Mem(ObjReg2), Val(0)
 endSubroutine: 
 
 beginSubroutine: s32'AbilityCoolDown_N'
@@ -2097,7 +3213,7 @@ beginState: s32'CmnActStand'
     sprite: s32'cal001_01', 4
     sprite: s32'cal001_02', 4
     sprite: s32'cal001_03', 4
-    smartVoiceLine: s16'vCAL_STD_00'
+    smartRandomVoiceLine: s16'vCAL_STD_00', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'cal001_04', 4
     sprite: s32'cal001_05', 4
     sprite: s32'cal001_06', 4
@@ -3927,6 +5043,11 @@ beginState: s32'NmlAtk5CNear'
         atkAngle: 80
         hitEffectSlash: 1
         damageEffect: 2, s32'cal_206_ChakramSlash_s'
+        groundHitEffect: (WALL_STICK)
+        hitstunAmount: 30
+        crouchHitstunAddition: 0
+        enemyHitstopAddition: 1, 1, 12
+        wallPushbackOnHit: 0, 1500
         addGatlingOption: s32'NmlAtk5A2nd'
         addGatlingOption: s32'NmlAtk5D'
         addGatlingOption: s32'NmlAtk6D'
@@ -3958,6 +5079,11 @@ beginState: s32'NmlAtk5CNear'
     sprite: s32'cal206_04', 2
     hit: 
     hitstop: 6
+    resetGroundHitEffect: 
+    resetHitstunAmount: 
+    crouchHitstunAddition: 1
+    enemyHitstopAddition: 0, 0, 12
+    wallPushbackOnHit: 0, 500
     upon: (FRAME_STEP)
         if: Mem(ActReg0)
             clearUpon: (FRAME_STEP)
@@ -4067,11 +5193,10 @@ beginState: s32'NmlAtk5CFar'
     sendSignalToAction: s32'cal_207_WarmHoleEff', (SIGNAL_A)
     sprite: s32'cal207_08', 3
     sprite: s32'cal207_09', 3
-    sprite: s32'cal207_10', 2
-    sprite: s32'cal207_11', 2
+    sprite: s32'cal207_10', 3
+    sprite: s32'cal207_11', 3
     sprite: s32'cal207_12', 2
     sprite: s32'cal207_13', 2
-    callSubroutine: s32'cmnNandemoCancel'
 endState: 
 
 beginState: s32'NmlAtk2C'
@@ -4121,6 +5246,7 @@ beginState: s32'NmlAtk5D'
         callSubroutine: s32'cmnNormalAtkLv3_Land_AtkInit'
         callSubroutine: s32'cmnHACT_Back'
         damage: 900
+        hitAirPushbackX: 5000
         pushbackOnBlockX: 100
         untechAmount: 30
         groundHitEffect: (AIR_FACE_UP)
@@ -4328,7 +5454,7 @@ beginState: s32'NmlAtk6D'
         Unknown1793: 4, 25
     endElse: 
     endElse: 
-    sprite: s32'cal209_02', 2
+    sprite: s32'cal209_02', 3
     sprite: s32'cal209_03', 3
     sprite: s32'cal209_04', 3
     sprite: s32'cal209_05', 3
@@ -4763,7 +5889,6 @@ beginState: s32'NmlAtkAir5D'
     endRunOnObject: 
     sprite: s32'cal253_04ex', 2
     hit: 
-    landingRecovery: 5, 1
     isObjectActive: (STACK0)
     ifNot: Mem(Tmp)
         createObject: s32'cal_RenkinBall', (PLAYER)
@@ -5601,12 +6726,12 @@ beginState: s32'Trap_Air_A'
     createObjectWithArg: s32'cal_Trap_Air_spi', (PLAYER)
     stackObject: (STACK2), (PREVIOUS)
     sprite: s32'cal405_06', 3
+    resetGravity: 
     sprite: s32'cal405_07', 1
     sprite: s32'cal405_07', 2
     sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal405_08', 3
     sprite: s32'cal405_09', 3
-    resetGravity: 
     sprite: s32'cal405_10', 3
     sprite: s32'cal405_11', 2
     sprite: s32'cal405_11', 1
@@ -5655,12 +6780,12 @@ beginState: s32'Trap_Air_B'
     createObjectWithArg: s32'cal_Trap_Air_spi', (PLAYER)
     stackObject: (STACK2), (PREVIOUS)
     sprite: s32'cal405_06', 3
+    resetGravity: 
     sprite: s32'cal405_07', 1
     sprite: s32'cal405_07', 2
     sendSignalToAction: s32'cal_404_Flash_1P', (SIGNAL_A)
     sprite: s32'cal405_08', 3
     sprite: s32'cal405_09', 3
-    resetGravity: 
     sprite: s32'cal405_10', 3
     sprite: s32'cal405_11', 2
     sprite: s32'cal405_11', 1
@@ -6293,9 +7418,18 @@ beginState: s32'Assault_D'
         hitstop: 4
         wallBounceCount: 1
         wallBounceInCornerOnly: 1
-        wallBounceWaitTime: 6
+        wallBounceWaitTime: 8
         damageEffect: 2, s32'CAL_SPHitEff'
         guardEffectEconomy: 1
+        upon: (HIT)
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDistanceY), Val(150000)
+                setPushboxHeight: 340000
+                hitAirPushbackY: -2000
+            endIf: 
+            else: 
+                hitAirPushbackY: 2000
+            endElse: 
+        endUpon: 
         upon: (HIT_OR_GUARD)
             modifyVar: (ADD), Mem(ActReg0), Val(1)
             ifOperation: (IS_EQUAL), Mem(ActReg0), Val(1)
@@ -6345,9 +7479,10 @@ beginState: s32'Assault_D'
     sprite: s32'cal403_10ex', 2147483647
     beginLabel: s32'LandingAtk'
     sprite: s32'cal403_11ex', 2
+    clearUpon: (HIT)
     hit: 
     hitAirPushbackX: 30000
-    hitAirPushbackY: 23000
+    hitAirPushbackY: 16000
     hitstop: 18
     wallPushback: 0, 2800
     guardEffectEconomy: 0
@@ -6489,7 +7624,7 @@ beginState: s32'Warp_C'
         hitAirPushbackY: 26000
         wallPushback: 0, 0
         hitstop: 12
-        enemyHitstopAddition: 11, 0, 4
+        enemyHitstopAddition: 5, 0, 4
         attackThroughArmor: 1
         damageEffect: 2, s32'CAL_SPHitEff_Long'
     endUpon: 
@@ -6806,6 +7941,10 @@ beginState: s32'Warp_Air_C'
         attackThroughArmor: 1
         isAirUnblockable: 0
         damageEffect: 2, s32'CAL_SPHitEff_Long'
+        upon: (HIT)
+            clearUpon: (HIT)
+            storeValue: Mem(ObjReg2), Val(1)
+        endUpon: 
     endUpon: 
     sprite: s32'cal402_00', 3
     haltMomentum: 1
@@ -7905,6 +9044,195 @@ beginState: s32'RoundStart_Fall'
     jumpToState: s32'CmnActStand'
 endState: 
 
+beginState: s32'RoundStart_Performance'
+    upon: (IMMEDIATE)
+        callSubroutine: s32'cmnNandemoCancel'
+        attackEndDelay: 
+        storeValue: Mem(ReactionWait), Val(480)
+    endUpon: 
+    gotoIfOperation: s32'o_win', (IS_EQUAL), Mem(445), Val(2)
+    gotoIfOperation: s32'n_win', (IS_EQUAL), Mem(445), Val(1)
+    gotoIfOperation: s32'lose', (IS_EQUAL), Mem(445), Val(3)
+    gotoLabel: s32'end'
+    beginLabel: s32'o_win'
+    sprite: s32'cal307_00', 4
+    sprite: s32'cal307_01', 4
+    sprite: s32'cal307_02', 4
+    sprite: s32'cal307_03', 4
+    sprite: s32'cal307_04', 4
+    sprite: s32'cal307_05', 5
+    sprite: s32'cal307_06', 5
+    sprite: s32'cal307_07', 4
+    sprite: s32'cal307_08', 4
+    sprite: s32'cal307_09', 4
+    sprite: s32'cal307_10', 6
+    sprite: s32'cal307_11', 4
+    sprite: s32'cal307_12', 4
+    sprite: s32'cal307_13', 4
+    sprite: s32'cal307_14', 4
+    sprite: s32'cal307_15', 4
+    sprite: s32'cal307_16', 4
+    sprite: s32'cal307_17', 4
+    sprite: s32'cal307_18', 4
+    sprite: s32'cal307_19', 4
+    gotoLabel: s32'end'
+    beginLabel: s32'n_win'
+    sprite: s32'cal400_11', 2
+    sprite: s32'cal400_11', 1
+    createObject: s32'cal_400_Eff_nee', (PLAYER)
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_A)
+    deactivateObjectByName: s32'cal_400_SwitchSmokeEff'
+    sprite: s32'cal400_11', 1
+    sendSignalToAction: s32'cal_400_Eff_nee', 24
+    sprite: s32'cal400_11', 60
+    sprite: s32'cal400_12', 5
+    sendSignalToAction: s32'cal_400_Eff_nee', 30
+    runOnObject: (PREVIOUS)
+        setSpriteTime: 5, Mem(Tmp)
+    endRunOnObject: 
+    sprite: s32'cal400_13', 5
+    sendSignalToAction: s32'cal_400_Eff_nee', 31
+    runOnObject: (PREVIOUS)
+        setSpriteTime: 5, Mem(Tmp)
+    endRunOnObject: 
+    sprite: s32'cal400_14', 3
+    sendSignalToAction: s32'cal_400_Eff_nee', (SIGNAL_B)
+    sprite: s32'cal400_15', 3
+    sprite: s32'cal400_16', 3
+    sprite: s32'cal400_17', 3
+    gotoLabel: s32'end'
+    beginLabel: s32'lose'
+    sprite: s32'cal610_14', 60
+    sprite: s32'cal610_08', 4
+    sprite: s32'cal610_07', 4
+    sprite: s32'cal610_06', 4
+    sprite: s32'cal610_05', 4
+    sprite: s32'cal610_04', 4
+    sprite: s32'cal610_03', 5
+    sprite: s32'cal610_02', 5
+    sprite: s32'cal610_00', 4
+    gotoLabel: s32'end'
+    beginLabel: s32'end'
+    sprite: s32'keep', 1
+    Unknown1789: 
+    preSubroutineBegin: s32'CmnActStand'
+endState: 
+
+beginSubroutine: s32'CPUEstimate'
+    if: Mem(438)
+        checkMoveFlag: 48
+        if: Mem(Tmp)
+            checkCurrentStateName: (SELF), s32'GuardCrash'
+            if: Mem(Tmp)
+                skillHighEstimation: s32'CancelDash'
+            endIf: 
+            checkCurrentStateName: (SELF), s32'CancelDash'
+            if: Mem(Tmp)
+                skillHighEstimation: s32'NmlAtk5BNear'
+            endIf: 
+            checkCurrentStateName: (SELF), s32'Assault_C'
+            if: Mem(Tmp)
+                skillHighEstimation: s32'NmlAtk5BNear'
+            endIf: 
+            checkCurrentStateName: (SELF), s32'AntiAir_C'
+            if: Mem(Tmp)
+                skillHighEstimation: s32'NmlAtk5CNear'
+            endIf: 
+            checkCurrentStateName: (SELF), s32'Trap_C'
+            if: Mem(Tmp)
+                skillHighEstimation: s32'NmlAtk5ANear'
+            endIf: 
+            checkMoveFlag: 38
+            if: Mem(Tmp)
+                checkCurrentStateName: (SELF), s32'Trap_C'
+                if: Mem(Tmp)
+                    skillHighEstimation: s32'NmlAtk5BNear'
+                endIf: 
+            endIf: 
+        endIf: 
+        checkCurrentStateName: (ENEMY), s32'CmnActBDown2Stand'
+        if: Mem(Tmp)
+            skillHighEstimation: s32'NmlAtk5D'
+            skillHighEstimation: s32'Trap_A'
+            skillHighEstimation: s32'Trap_B'
+            skillHighEstimation: s32'Trap_C'
+            skillHighEstimation: s32'Trap_Air_A'
+            skillHighEstimation: s32'Trap_Air_B'
+            skillHighEstimation: s32'Trap_Air_C'
+        endIf: 
+        checkCurrentStateName: (ENEMY), s32'CmnActFDown2Stand'
+        if: Mem(Tmp)
+            skillHighEstimation: s32'NmlAtk5D'
+            skillHighEstimation: s32'Trap_A'
+            skillHighEstimation: s32'Trap_B'
+            skillHighEstimation: s32'Trap_C'
+            skillHighEstimation: s32'Trap_Air_A'
+            skillHighEstimation: s32'Trap_Air_B'
+            skillHighEstimation: s32'Trap_Air_C'
+        endIf: 
+        checkCurrentStateName: (ENEMY), s32'CmnActBDownBound'
+        if: Mem(Tmp)
+            skillHighEstimation: s32'NmlAtk5D'
+            skillHighEstimation: s32'Trap_A'
+            skillHighEstimation: s32'Trap_B'
+            skillHighEstimation: s32'Trap_C'
+            skillHighEstimation: s32'Trap_Air_A'
+            skillHighEstimation: s32'Trap_Air_B'
+            skillHighEstimation: s32'Trap_Air_C'
+        endIf: 
+        checkCurrentStateName: (ENEMY), s32'CmnActBDownLoop'
+        if: Mem(Tmp)
+            skillHighEstimation: s32'NmlAtk5D'
+            skillHighEstimation: s32'Trap_A'
+            skillHighEstimation: s32'Trap_B'
+            skillHighEstimation: s32'Trap_C'
+            skillHighEstimation: s32'Trap_Air_A'
+            skillHighEstimation: s32'Trap_Air_B'
+            skillHighEstimation: s32'Trap_Air_C'
+        endIf: 
+        checkCurrentStateName: (ENEMY), s32'CmnActFDownBound'
+        if: Mem(Tmp)
+            skillHighEstimation: s32'NmlAtk5D'
+            skillHighEstimation: s32'Trap_A'
+            skillHighEstimation: s32'Trap_B'
+            skillHighEstimation: s32'Trap_C'
+            skillHighEstimation: s32'Trap_Air_A'
+            skillHighEstimation: s32'Trap_Air_B'
+            skillHighEstimation: s32'Trap_Air_C'
+        endIf: 
+        checkCurrentStateName: (ENEMY), s32'CmnActFDownLoop'
+        if: Mem(Tmp)
+            skillHighEstimation: s32'NmlAtk5D'
+            skillHighEstimation: s32'Trap_A'
+            skillHighEstimation: s32'Trap_B'
+            skillHighEstimation: s32'Trap_C'
+            skillHighEstimation: s32'Trap_Air_A'
+            skillHighEstimation: s32'Trap_Air_B'
+            skillHighEstimation: s32'Trap_Air_C'
+        endIf: 
+        checkCurrentStateName: (ENEMY), s32'CmnActVDownBound'
+        if: Mem(Tmp)
+            skillHighEstimation: s32'NmlAtk5D'
+            skillHighEstimation: s32'Trap_A'
+            skillHighEstimation: s32'Trap_B'
+            skillHighEstimation: s32'Trap_C'
+            skillHighEstimation: s32'Trap_Air_A'
+            skillHighEstimation: s32'Trap_Air_B'
+            skillHighEstimation: s32'Trap_Air_C'
+        endIf: 
+        checkCurrentStateName: (ENEMY), s32'CmnActVDownLoop'
+        if: Mem(Tmp)
+            skillHighEstimation: s32'NmlAtk5D'
+            skillHighEstimation: s32'Trap_A'
+            skillHighEstimation: s32'Trap_B'
+            skillHighEstimation: s32'Trap_C'
+            skillHighEstimation: s32'Trap_Air_A'
+            skillHighEstimation: s32'Trap_Air_B'
+            skillHighEstimation: s32'Trap_Air_C'
+        endIf: 
+    endIf: 
+endSubroutine: 
+
 beginState: s32'CmnActStandTurn'
     ifPlayerCharacter: s16'low'
         if: Mem(PlayerVal0)
@@ -7916,6 +9244,7 @@ beginState: s32'CmnActStandTurn'
     endIf: 
     gotoIfOperation: s32'438_A', (IS_EQUAL), Mem(ActReg7), Val(10)
     gotoIfOperation: s32'003_A', (IS_EQUAL), Mem(ActReg7), Val(11)
+    gotoIfOperation: s32'508_A', (IS_EQUAL), Mem(ActReg7), Val(508)
     sprite: s32'xxx003_00', 3
     sprite: s32'xxx003_01', 2
     sprite: s32'xxx003_02', 2
@@ -7934,6 +9263,13 @@ beginState: s32'CmnActStandTurn'
     sprite: s32'xxx003_01', 2
     sprite: s32'xxx003_02', 2
     sprite: s32'xxx003_03', 2
+    endSprite: 
+    exitState: 
+    beginLabel: s32'508_A'
+    sprite: s32'xxx508_00', 3
+    sprite: s32'xxx508_01', 2
+    sprite: s32'xxx508_02', 2
+    sprite: s32'xxx508_03', 2
     endSprite: 
     exitState: 
 endState: 
@@ -8459,28 +9795,33 @@ beginState: s32'CmnActMidGuardLoop'
     addWhiffCancelOption: s32'CmnActEvasivemove'
     beginLabel: s32'_Pre'
     gotoIfOperation: s32'_Pre_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Pre_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_00', 2
     sprite: s32'xxx040_01', 2
     sprite: s32'xxx040_02', 2
     sprite: s32'xxx040_03', 2
     beginLabel: s32'_Top'
     gotoIfOperation: s32'_Top_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Top_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     beginLabel: s32'loop'
     sprite: s32'xxx040_04', 2
     endSprite: 
     gotoLabel: s32'loop'
     beginLabel: s32'_Lv1'
     gotoIfOperation: s32'_Lv1_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Lv1_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_04', 1
     endSprite: 
     gotoLabel: s32'_Top'
     beginLabel: s32'_Lv2'
     gotoIfOperation: s32'_Lv2_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Lv2_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_05', 5
     endSprite: 
     gotoLabel: s32'_Top'
     beginLabel: s32'_Lv3'
     gotoIfOperation: s32'_Lv3_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Lv3_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_06', 8
     sprite: s32'xxx040_05', 5
     endSprite: 
@@ -8513,6 +9854,29 @@ beginState: s32'CmnActMidGuardLoop'
     sprite: s32'xxx041_05', 5
     endSprite: 
     gotoLabel: s32'_Top_041'
+    beginLabel: s32'_Pre_505'
+    sprite: s32'xxx505_00', 2
+    sprite: s32'xxx505_01', 2
+    sprite: s32'xxx505_02', 2
+    sprite: s32'xxx505_03', 2
+    beginLabel: s32'_Top_505'
+    beginLabel: s32'loop_505'
+    sprite: s32'xxx505_04', 2
+    endSprite: 
+    gotoLabel: s32'loop_505'
+    beginLabel: s32'_Lv1_505'
+    sprite: s32'xxx505_04', 1
+    endSprite: 
+    gotoLabel: s32'_Top_505'
+    beginLabel: s32'_Lv2_505'
+    sprite: s32'xxx505_05', 5
+    endSprite: 
+    gotoLabel: s32'_Top_505'
+    beginLabel: s32'_Lv3_505'
+    sprite: s32'xxx505_06', 8
+    sprite: s32'xxx505_05', 5
+    endSprite: 
+    gotoLabel: s32'_Top_505'
 endState: 
 
 beginState: s32'CmnActMidGuardEnd'
@@ -8525,6 +9889,7 @@ beginState: s32'CmnActMidGuardEnd'
     addWhiffCancelOption: s32'CmnActDodge'
     addWhiffCancelOption: s32'CmnActEvasivemove'
     gotoIfOperation: s32'041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_02', 2
     sprite: s32'xxx040_01', 2
     sprite: s32'xxx040_00', 2
@@ -8534,6 +9899,12 @@ beginState: s32'CmnActMidGuardEnd'
     sprite: s32'xxx041_02', 2
     sprite: s32'xxx041_01', 2
     sprite: s32'xxx041_00', 2
+    endSprite: 
+    exitState: 
+    beginLabel: s32'505'
+    sprite: s32'xxx505_02', 2
+    sprite: s32'xxx505_01', 2
+    sprite: s32'xxx505_00', 2
     endSprite: 
     exitState: 
 endState: 
@@ -8549,28 +9920,33 @@ beginState: s32'CmnActHighGuardLoop'
     addWhiffCancelOption: s32'CmnActEvasivemove'
     beginLabel: s32'_Pre'
     gotoIfOperation: s32'_Pre_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Pre_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_00', 2
     sprite: s32'xxx040_01', 2
     sprite: s32'xxx040_02', 2
     sprite: s32'xxx040_03', 2
     beginLabel: s32'_Top'
     gotoIfOperation: s32'_Top_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Top_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     beginLabel: s32'loop'
     sprite: s32'xxx040_04', 2
     endSprite: 
     gotoLabel: s32'loop'
     beginLabel: s32'_Lv1'
     gotoIfOperation: s32'_Lv1_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Lv1_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_04', 1
     endSprite: 
     gotoLabel: s32'_Top'
     beginLabel: s32'_Lv2'
     gotoIfOperation: s32'_Lv2_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Lv2_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_05', 5
     endSprite: 
     gotoLabel: s32'_Top'
     beginLabel: s32'_Lv3'
     gotoIfOperation: s32'_Lv3_041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'_Lv3_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_06', 8
     sprite: s32'xxx040_05', 5
     endSprite: 
@@ -8603,6 +9979,29 @@ beginState: s32'CmnActHighGuardLoop'
     sprite: s32'xxx041_05', 5
     endSprite: 
     gotoLabel: s32'_Top_041'
+    beginLabel: s32'_Pre_505'
+    sprite: s32'xxx505_00', 2
+    sprite: s32'xxx505_01', 2
+    sprite: s32'xxx505_02', 2
+    sprite: s32'xxx505_03', 2
+    beginLabel: s32'_Top_505'
+    beginLabel: s32'loop_505'
+    sprite: s32'xxx505_04', 2
+    endSprite: 
+    gotoLabel: s32'loop_505'
+    beginLabel: s32'_Lv1_505'
+    sprite: s32'xxx505_04', 1
+    endSprite: 
+    gotoLabel: s32'_Top_505'
+    beginLabel: s32'_Lv2_505'
+    sprite: s32'xxx505_05', 5
+    endSprite: 
+    gotoLabel: s32'_Top_505'
+    beginLabel: s32'_Lv3_505'
+    sprite: s32'xxx505_06', 8
+    sprite: s32'xxx505_05', 5
+    endSprite: 
+    gotoLabel: s32'_Top_505'
 endState: 
 
 beginState: s32'CmnActHighGuardEnd'
@@ -8615,6 +10014,7 @@ beginState: s32'CmnActHighGuardEnd'
     addWhiffCancelOption: s32'CmnActDodge'
     addWhiffCancelOption: s32'CmnActEvasivemove'
     gotoIfOperation: s32'041', (IS_EQUAL), Mem(ActReg7), Val(41)
+    gotoIfOperation: s32'505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx040_02', 2
     sprite: s32'xxx040_01', 2
     sprite: s32'xxx040_00', 2
@@ -8626,6 +10026,12 @@ beginState: s32'CmnActHighGuardEnd'
     sprite: s32'xxx041_00', 2
     endSprite: 
     exitState: 
+    beginLabel: s32'505'
+    sprite: s32'xxx505_02', 2
+    sprite: s32'xxx505_01', 2
+    sprite: s32'xxx505_00', 2
+    endSprite: 
+    exitState: 
 endState: 
 
 beginState: s32'CmnActCrouchGuardLoop'
@@ -8633,24 +10039,29 @@ beginState: s32'CmnActCrouchGuardLoop'
     addWhiffCancelOption: s32'CmnActDodge'
     addWhiffCancelOption: s32'CmnActEvasivemove'
     beginLabel: s32'_Pre'
+    gotoIfOperation: s32'_Pre_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx043_00', 2
     sprite: s32'xxx043_01', 2
     sprite: s32'xxx043_02', 2
     sprite: s32'xxx043_03', 2
     beginLabel: s32'_Top'
+    gotoIfOperation: s32'_Top_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     beginLabel: s32'loop'
     sprite: s32'xxx043_04', 2
     endSprite: 
     gotoLabel: s32'loop'
     beginLabel: s32'_Lv1'
+    gotoIfOperation: s32'_Lv1_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx043_04', 1
     endSprite: 
     gotoLabel: s32'_Top'
     beginLabel: s32'_Lv2'
+    gotoIfOperation: s32'_Lv2_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx043_05', 5
     endSprite: 
     gotoLabel: s32'_Top'
     beginLabel: s32'_Lv3'
+    gotoIfOperation: s32'_Lv3_505', (IS_EQUAL), Mem(ActReg7), Val(505)
     sprite: s32'xxx043_06', 8
     sprite: s32'xxx043_05', 5
     endSprite: 
@@ -8660,6 +10071,29 @@ beginState: s32'CmnActCrouchGuardLoop'
     sprite: s32'xxx013_01', 2
     sprite: s32'xxx013_02', 2
     gotoLabel: s32'_Top'
+    beginLabel: s32'_Pre_505'
+    sprite: s32'xxx505_00', 2
+    sprite: s32'xxx505_01', 2
+    sprite: s32'xxx505_02', 2
+    sprite: s32'xxx505_03', 2
+    beginLabel: s32'_Top_505'
+    beginLabel: s32'loop_505'
+    sprite: s32'xxx505_04', 2
+    endSprite: 
+    gotoLabel: s32'loop_505'
+    beginLabel: s32'_Lv1_505'
+    sprite: s32'xxx505_04', 1
+    endSprite: 
+    gotoLabel: s32'_Top_505'
+    beginLabel: s32'_Lv2_505'
+    sprite: s32'xxx505_05', 5
+    endSprite: 
+    gotoLabel: s32'_Top_505'
+    beginLabel: s32'_Lv3_505'
+    sprite: s32'xxx505_06', 8
+    sprite: s32'xxx505_05', 5
+    endSprite: 
+    gotoLabel: s32'_Top_505'
 endState: 
 
 beginState: s32'CmnActCrouchGuardEnd'
@@ -8669,6 +10103,14 @@ beginState: s32'CmnActCrouchGuardEnd'
     sprite: s32'xxx043_02', 2
     sprite: s32'xxx043_01', 2
     sprite: s32'xxx043_00', 2
+    endSprite: 
+    exitState: 
+    beginLabel: s32'505'
+    sprite: s32'xxx505_02', 2
+    sprite: s32'xxx505_01', 2
+    sprite: s32'xxx505_00', 2
+    endSprite: 
+    exitState: 
 endState: 
 
 beginState: s32'CmnActAirGuardLoop'
@@ -8912,16 +10354,16 @@ beginState: s32'CmnActLockReject'
     sprite: s32'xxx080_00', 13
     attackEndDelay: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        voiceLine: s16'vxxx_THWAvo_00'
+        smartRandomVoiceLine: s16'vxxx_THWAvo_00', 100, s16'', 0, s16'', 0, s16'', 0
     endIf: 
     sprite: s32'xxx080_01', 6
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-        voiceLine: s16'vxxx_THWAvo_00'
+        smartRandomVoiceLine: s16'vxxx_THWAvo_00', 100, s16'', 0, s16'', 0, s16'', 0
     endIf: 
     sprite: s32'xxx080_02', 6
     sprite: s32'xxx080_03', 3
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-        voiceLine: s16'vxxx_THWAvo_00'
+        smartRandomVoiceLine: s16'vxxx_THWAvo_00', 100, s16'', 0, s16'', 0, s16'', 0
     endIf: 
     sprite: s32'xxx080_04', 3
     sprite: s32'xxx080_05', 3
@@ -8934,23 +10376,23 @@ beginState: s32'CmnActLockReject'
     attackEndDelay: 
     sprite: s32'xxx080_08', 3
     ifOperation: (IS_EQUAL), Mem(ActReg7), Val(8)
-        voiceLine: s16'vxxx_THWAvo_01'
+        smartRandomVoiceLine: s16'vxxx_THWAvo_01', 100, s16'', 0, s16'', 0, s16'', 0
     endIf: 
     sprite: s32'xxx080_09', 3
     sprite: s32'xxx080_10', 3
     ifOperation: (IS_EQUAL), Mem(ActReg7), Val(10)
-        voiceLine: s16'vxxx_THWAvo_01'
+        smartRandomVoiceLine: s16'vxxx_THWAvo_01', 100, s16'', 0, s16'', 0, s16'', 0
     endIf: 
     sprite: s32'xxx080_11', 3
     setCrouch: 1
     sprite: s32'xxx080_12', 3
     ifOperation: (IS_EQUAL), Mem(ActReg7), Val(12)
-        voiceLine: s16'vxxx_THWAvo_01'
+        smartRandomVoiceLine: s16'vxxx_THWAvo_01', 100, s16'', 0, s16'', 0, s16'', 0
     endIf: 
     sprite: s32'xxx080_13', 3
     sprite: s32'xxx080_14', 3
     ifOperation: (IS_EQUAL), Mem(ActReg7), Val(14)
-        voiceLine: s16'vxxx_THWAvo_01'
+        smartRandomVoiceLine: s16'vxxx_THWAvo_01', 100, s16'', 0, s16'', 0, s16'', 0
     endIf: 
     cmnSfx: s32'SE_BTL_DownPre'
     ifPlayerCharacter: s16'fas'
@@ -8973,7 +10415,7 @@ beginState: s32'CmnActAirLockReject'
     attackEndDelay: 
     sprite: s32'xxx061_02', 3
     sprite: s32'xxx061_03', 3
-    voiceLine: s16'vxxx_THWAvo_01'
+    smartRandomVoiceLine: s16'vxxx_THWAvo_01', 100, s16'', 0, s16'', 0, s16'', 0
     sprite: s32'xxx061_04', 3
     sprite: s32'xxx061_05', 3
     sprite: s32'xxx061_06', 3

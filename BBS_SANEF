@@ -1397,17 +1397,23 @@ beginState: s32'san_400_ShotWind_Atk'
         endMeshSet: 
         swapMeshSet: s32'sword_wind'
         callSubroutine: s32'400Shot_Init'
-        damage: 600
-        groundHitEffect: (AIR_STRONG)
-        airHitEffect: (AIR_STRONG)
+        damage: 400
         damageEffect: 2, s32'san_SPHitEff_Wind'
+        wallPushback: 0, 1600
+        hitstop: 3
+        enemyHitstopAddition: 0, 2, 2
+        guardEffectEconomy: 1
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+            damage: 600
             groundHitEffect: (AIR_FACE_UP)
             airHitEffect: (AIR_FACE_UP)
+            hitstop: 10
+            wallPushback: 0, 1400
             physicsXImpulse: 10000
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-            damage: 400
+            groundHitEffect: (AIR_STRONG)
+            airHitEffect: (AIR_STRONG)
             hitAirPushbackX: 22000
             untechAmount: 30
             wallBounceCount: 1
@@ -1416,24 +1422,20 @@ beginState: s32'san_400_ShotWind_Atk'
             addPositionX: -162027
             physicsXImpulse: 40000
             velocityXPercentEachFrame: 85
-            upon: 8
-                modifyVar: (ADD), Mem(ActReg3), Val(1)
-                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg3), Val(2)
-                    clearUpon: 8
-                    hitstop: 9
-                endIf: 
-            endUpon: 
+            numberOfHits: 5
+            Unknown2210: 5
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-            damage: 300
+            damage: 500
+            groundHitEffect: (AIR_STRONG)
+            airHitEffect: (AIR_STRONG)
             hitAirPushbackX: 44000
             wallBounceCount: 1
             wallBounceInCornerOnly: 1
             wallBounceXVelocityPercent: 0
             physicsXImpulse: 10000
-            upon: 37
-                gotoLabelRequests: s32'Sousai'
-            endUpon: 
+            numberOfHits: 5
+            Unknown2210: 2
             clearUpon: 126
             upon: 126
                 callSubroutine: s32'cmnSpecialAttackGauge'
@@ -1445,9 +1447,37 @@ beginState: s32'san_400_ShotWind_Atk'
         setObjectSize: 1100
         upon: (HIT_OR_GUARD)
             storeValue: Mem(ActReg1), Val(1)
+            worldCollision: 1
+            Unknown2329: 3, 23, 100, 22, 100
+            ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(125000)
+                physicsXImpulse: 20000
+            endIf: 
+            modifyVar: (ADD), Mem(ActReg3), Val(1)
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg3), Val(2)
+                damage: 100
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg3), Val(5)
+                    hitstop: 4
+                    enemyHitstopAddition: 0, 1, 1
+                    guardEffectEconomy: 0
+                endIf: 
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg3), Val(5)
+                    hitstop: 4
+                    enemyHitstopAddition: 0, 2, 2
+                    guardEffectEconomy: 0
+                endIf: 
+            endIf: 
         endUpon: 
         upon: 86
             storeValue: Mem(ActReg2), Val(1)
+        endUpon: 
+        upon: 8
+            gotoLabelRequests: s32'Sousai'
         endUpon: 
     endUpon: 
     sprite: s32'ssw400_00', 6
@@ -1488,6 +1518,7 @@ beginState: s32'san_400_ShotWind_Atk'
     sprite: s32'ssw400_00ex01', 1
     beginLabel: s32'Loop'
     sprite: s32'ssw400_00', 1
+    worldCollision: 0
     endSprite: 
     gotoLabel: s32'Loop'
     beginLabel: s32'End'
@@ -1905,6 +1936,208 @@ beginState: s32'san_400_ShotEarth_Matome'
     Unknown1923: 0
 endState: 
 
+beginState: s32'san_400_ShotEarth_Matome_LM'
+    upon: (IMMEDIATE)
+        setLinkObjectDestroyOnDamage: 3
+        linkObjectZ: 3
+        callSubroutine: s32'cmnSpecialShot_AtkInit'
+        damage: 400
+        chipDamagePercent: 50
+        hitstop: 2
+        groundHitEffect: (AIR_FACE_UP)
+        hitAirPushbackX: 12000
+        hitAirPushbackY: -25000
+        wallPushback: 0, 1200
+        groundBounceCount: 1
+        Unknown884: 1
+        guardEffectEconomy: 1
+        initializeDestroy: 
+        numberOfHits: 5
+        destroyOnDamageCollision: 5
+        Unknown2207: 1
+        Unknown2208: 1
+        Unknown2209: 1
+        Unknown2210: 5
+        Unknown2257: 1
+        Unknown2212: 0
+        Unknown2213: 0
+        upon: (ON_DESTROY)
+            clearUpon: (ON_DESTROY)
+            clearUpon: (FRAME_STEP)
+            storeValue: Mem(ActReg0), Val(0)
+            gotoLabelRequests: s32'End'
+        endUpon: 
+        addMoveForceDisableFlag: 1
+        upon: (HIT_OR_GUARD)
+            storeValue: Mem(ActReg0), Val(10)
+            modifyVar: (ADD), Mem(ActReg2), Val(1)
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(2)
+                damage: 100
+            endIf: 
+            worldCollision: 1
+            Unknown2329: 3, 23, 100, 22, 100
+            ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(0)
+                physicsXImpulse: 20000
+                velocityXPercentEachFrame: 95
+            endIf: 
+        endUpon: 
+        upon: (SIGNAL_A)
+            clearUpon: (SIGNAL_A)
+            ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+                physicsXImpulse: 35000
+                velocityXPercentEachFrame: 99
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+                physicsXImpulse: 30000
+                velocityXPercentEachFrame: 105
+            endIf: 
+            gotoLabelRequests: s32'Shot'
+        endUpon: 
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+            storeValue: Mem(ObjReg0), Val(43)
+        endIf: 
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+            storeValue: Mem(ObjReg0), Val(33)
+        endIf: 
+        upon: (FRAME_STEP)
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(SpeedX), Val(67000)
+                physicsXImpulse: 70000
+                velocityXPercentEachFrame: 100
+            endIf: 
+            if: Mem(ActReg0)
+                modifyVar: (ADD), Mem(ActReg0), Val(-1)
+                ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg0), Val(0)
+                    clearUpon: (FRAME_STEP)
+                    gotoLabelRequests: s32'End'
+                endIf: 
+            endIf: 
+        endUpon: 
+        upon: 123
+            hitstop: 6
+        endUpon: 
+    endUpon: 
+    sprite: s32'null', 3
+    createObject: s32'san_400_GroundCrackEff', (PLAYER)
+    addPositionX: 125000
+    beginLabel: s32'Pre_Loop'
+    sprite: s32'null', 3
+    endSprite: 
+    gotoLabel: s32'Pre_Loop'
+    beginLabel: s32'Shot'
+    sprite: s32'null', 3
+    storeValue: Mem(ActReg0), Mem(ObjReg0)
+    createArgHikitsukiVal: Mem(Hikitsugi0), Val(0)
+    createObjectWithArg: s32'san_400_ShotEarth_Atk', (PLAYER)
+    cameraShake: s32'ShakeTate', 600, 0, 6, 0
+    Unknown2268: 0, 900
+    createParticleWithArg2: s32'bg_GroundBurst', (PLAYER_LAND)
+    privateSE: s32'san_07'
+    beginLabel: s32'AtkLoop'
+    sprite: s32'earthshot_atk1st', 3
+    setLinkObjectDestroyOnDamage: 0
+    hit: 
+    if: Mem(ObjReg2)
+        onSpriteChange: s32'earthshot_atkjizoku'
+    endIf: 
+    if: Mem(ActReg3)
+        onSpriteChange: s32'earthshot_atk1st'
+    endIf: 
+    ifOperation: (IS_GREATER), Mem(ActReg0), Val(3)
+        createArgHikitsukiVal: Mem(Hikitsugi0), Val(1)
+        createObjectWithArg: s32'san_400_ShotEarth_Atk', (PLAYER)
+        cameraShake: s32'ShakeTate', 500, 0, 4, 0
+        privateSE: s32'san_07'
+    endIf: 
+    sprite: s32'earthshot_atk', 3
+    hit: 
+    if: Mem(ObjReg2)
+        onSpriteChange: s32'earthshot_atkjizoku'
+    endIf: 
+    if: Mem(ActReg3)
+        onSpriteChange: s32'earthshot_atk1st'
+    endIf: 
+    ifOperation: (IS_GREATER), Mem(ActReg0), Val(3)
+        createArgHikitsukiVal: Mem(Hikitsugi0), Val(0)
+        createObjectWithArg: s32'san_400_ShotEarth_Atk', (PLAYER)
+        cameraShake: s32'ShakeTate', 600, 0, 6, 0
+        privateSE: s32'san_07'
+    endIf: 
+    sprite: s32'earthshot_atkjizoku', 3
+    hit: 
+    if: Mem(ActReg3)
+        onSpriteChange: s32'earthshot_atk1st'
+    endIf: 
+    ifOperation: (IS_GREATER), Mem(ActReg0), Val(3)
+        createArgHikitsukiVal: Mem(Hikitsugi0), Val(1)
+        createObjectWithArg: s32'san_400_ShotEarth_Atk', (PLAYER)
+        cameraShake: s32'ShakeTate', 400, 0, 4, 0
+        privateSE: s32'san_07'
+    endIf: 
+    sprite: s32'earthshot_atkjizoku', 3
+    hit: 
+    if: Mem(ActReg3)
+        onSpriteChange: s32'earthshot_atk1st'
+    endIf: 
+    ifOperation: (IS_GREATER), Mem(ActReg0), Val(3)
+        createArgHikitsukiVal: Mem(Hikitsugi0), Val(0)
+        createObjectWithArg: s32'san_400_ShotEarth_Atk', (PLAYER)
+        cameraShake: s32'ShakeTate', 600, 0, 6, 0
+        privateSE: s32'san_07'
+    endIf: 
+    sprite: s32'earthshot_atkjizoku', 3
+    hit: 
+    if: Mem(ActReg3)
+        onSpriteChange: s32'earthshot_atk1st'
+    endIf: 
+    ifOperation: (IS_GREATER), Mem(ActReg0), Val(3)
+        createArgHikitsukiVal: Mem(Hikitsugi0), Val(1)
+        createObjectWithArg: s32'san_400_ShotEarth_Atk', (PLAYER)
+        cameraShake: s32'ShakeTate', 400, 0, 4, 0
+        sendSignalToAction: s32'san_400_GroundCrackEff', (SIGNAL_A)
+        privateSE: s32'san_07'
+    endIf: 
+    sprite: s32'earthshot_atkjizoku', 3
+    hit: 
+    if: Mem(ActReg3)
+        onSpriteChange: s32'earthshot_atk1st'
+    endIf: 
+    ifOperation: (IS_GREATER), Mem(ActReg0), Val(3)
+        createArgHikitsukiVal: Mem(Hikitsugi0), Val(0)
+        createObjectWithArg: s32'san_400_ShotEarth_Atk', (PLAYER)
+        cameraShake: s32'ShakeTate', 600, 0, 6, 0
+        privateSE: s32'san_07'
+    endIf: 
+    sprite: s32'earthshot_atkjizoku', 3
+    hit: 
+    if: Mem(ActReg3)
+        onSpriteChange: s32'earthshot_atk1st'
+    endIf: 
+    ifOperation: (IS_GREATER), Mem(ActReg0), Val(3)
+        createArgHikitsukiVal: Mem(Hikitsugi0), Val(1)
+        createObjectWithArg: s32'san_400_ShotEarth_Atk', (PLAYER)
+        cameraShake: s32'ShakeTate', 400, 0, 4, 0
+        sendSignalToAction: s32'san_400_GroundCrackEff', (SIGNAL_A)
+        privateSE: s32'san_07'
+    endIf: 
+    endSprite: 
+    storeValue: Mem(ObjReg2), Val(1)
+    gotoLabel: s32'AtkLoop'
+    beginLabel: s32'End'
+    sprite: s32'null', 13
+    haltMomentum: 1
+    attackEndDelay: 
+    clearUpon: (FRAME_STEP)
+    sprite: s32'null', 3
+    deleteMoveForceDisableFlag: 1
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+        skillCooldown: 0, 20
+    endIf: 
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
+        skillCooldown: 0, 20
+    endIf: 
+    Unknown1923: 0
+endState: 
+
 beginState: s32'san_400_ShotEarth_Atk'
     upon: (IMMEDIATE)
         linkPawnWithAnimation: s32'sword_earth', s32''
@@ -2002,11 +2235,15 @@ beginState: s32'san_400_ShotWater_Matome'
         endUpon: 
         upon: 24
             clearUpon: 24
-            upon: (FRAME_STEP)
-                clearUpon: (FRAME_STEP)
-                createArgHikitsukiVal: Mem(Hikitsugi0), Val(0)
-                storeValue: Mem(ActReg0), Val(1)
-            endUpon: 
+            clearUpon: 25
+            createArgHikitsukiVal: Mem(Hikitsugi0), Val(0)
+            createObjectWithArg: s32'san_400_ShotWater_Atk', (PLAYER)
+        endUpon: 
+        upon: 25
+            clearUpon: 24
+            clearUpon: 25
+            createArgHikitsukiVal: Mem(Hikitsugi0), Val(1)
+            createObjectWithArg: s32'san_400_ShotWater_Atk', (PLAYER)
         endUpon: 
         setPositionX: 69986
         setPositionY: 316104
@@ -2041,8 +2278,10 @@ beginState: s32'san_400_ShotWater_Matome'
     setDepth: 86290
     setAngleX: 0
     setAngleY: 0
-    createArgHikitsukiVal: Mem(Hikitsugi0), Mem(Hikitsugi0)
-    createObjectWithArg: s32'san_400_ShotWater_Atk', (PLAYER)
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
+        createArgHikitsukiVal: Mem(Hikitsugi0), Mem(Hikitsugi0)
+        createObjectWithArg: s32'san_400_ShotWater_Atk', (PLAYER)
+    endIf: 
     sprite: s32'ssw400_04', 3
     createObject: s32'san_400_SordDellWater', (PLAYER)
     sprite: s32'ssw400_05', 40
@@ -2057,6 +2296,7 @@ beginState: s32'san_400_ShotWater_Atk'
         setLinkObjectDestroyOnDamage: 0
         setLinkObjectDestroyOnStateChange: 0
         linkObjectPosition: 0
+        damage: 600
         damageEffect: 2, s32'san_SPHitEff_Blue'
         hitstop: 10
         airHitEffect: (AIR_LAUNCH)
@@ -2064,34 +2304,75 @@ beginState: s32'san_400_ShotWater_Atk'
         hitAirPushbackX: 8000
         wallPushback: 0, 300
         disableHitstopForSelf: 1
-        numberOfHits: 3
-        destroyOnDamageCollision: 3
-        Unknown2207: 3
-        Unknown2208: 3
-        Unknown2209: 3
+        numberOfHits: 1
+        destroyOnDamageCollision: 1
+        Unknown2207: 1
+        Unknown2208: 1
+        Unknown2209: 1
         Unknown2210: 1
         Unknown2212: 1
         Unknown2213: 1
+        Unknown1727: 11118
+        setObjectSize: 1000
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-            damage: 600
-            setObjectSize: 1000
+            groundHitEffect: (AIR_LAUNCH)
+            if: Mem(Hikitsugi1)
+            endIf: 
+            else: 
+                damage: 300
+                wallPushback: 0, 1000
+                hitstop: 9
+                Unknown1131: 1
+                comboLimitScaling: 0
+            endElse: 
+            Unknown2329: 3, 23, 123, 22, 123
+            storeValue: Mem(ActReg1), Mem(Tmp)
+            ifOperation: (IS_GREATER), Mem(ActReg1), Val(250000)
+                addPositionX: 250000
+            endIf: 
+            else: 
+                ifOperation: (IS_LESSER), Mem(ActReg1), Val(150000)
+                    addPositionX: 150000
+                endIf: 
+                else: 
+                    addPositionX: 200000
+                endElse: 
+            endElse: 
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-            damage: 600
             enemyHitstopAddition: 10, 12, 14
-            setObjectSize: 1000
+            if: Mem(Hikitsugi1)
+            endIf: 
+            else: 
+                damage: 300
+                wallPushback: 0, 1000
+                Unknown1131: 1
+                comboLimitScaling: 0
+            endElse: 
             physicsXImpulse: 5000
+            setAcceleration: 50
+            addPositionX: 150000
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
             damage: 900
             enemyHitstopAddition: 10, 9, 11
             groundHitEffect: (AIR_FACE_UP)
-            setObjectSize: 1000
             physicsXImpulse: 5000
+            addPositionX: 150000
+            setAcceleration: 50
+            numberOfHits: 3
+            destroyOnDamageCollision: 3
+            Unknown2207: 3
+            Unknown2208: 3
+            Unknown2209: 3
+            Unknown2212: 0
+            Unknown2213: 0
+            worldCollision: 1
         endIf: 
-        worldCollision: 1
         upon: 35
-            attackEndDelay: 
+            ifOperation: (IS_NOT_EQUAL), Mem(ActReg6), Val(2)
+                attackEndDelay: 
+            endIf: 
         endUpon: 
         clearUpon: (FRAME_STEP)
         upon: (FRAME_STEP)
@@ -2105,7 +2386,7 @@ beginState: s32'san_400_ShotWater_Atk'
                 endIf: 
             endIf: 
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg0), Val(181)
+                ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg0), Val(121)
                     gotoLabelRequests: s32'End'
                 endIf: 
             endIf: 
@@ -2123,27 +2404,7 @@ beginState: s32'san_400_ShotWater_Atk'
         upon: (BEFORE_EXIT)
             storeValue: Mem(PlayerVal3), Val(0)
         endUpon: 
-        Unknown1727: 11118
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-            Unknown2329: 3, 23, 123, 22, 123
-            storeValue: Mem(ActReg1), Mem(Tmp)
-            ifOperation: (IS_GREATER), Mem(ActReg1), Val(250000)
-                addPositionX: 250000
-            endIf: 
-            else: 
-                ifOperation: (IS_LESSER), Mem(ActReg1), Val(150000)
-                    addPositionX: 150000
-                endIf: 
-                else: 
-                    addPositionX: 200000
-                endElse: 
-            endElse: 
-        endIf: 
-        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
-            addPositionX: 150000
-        endIf: 
-        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-            addPositionX: 150000
         endIf: 
     endUpon: 
     sprite: s32'waterball_atk_1st', 3
@@ -3482,7 +3743,7 @@ beginState: s32'san_406_AtkEff'
     setObjectWidth: 1400
     setObjectHeight: 1400
     setObjectDepth: 1400
-    setPositionX: 136052
+    setPositionX: 171052
     setPositionY: 253916
     setDepth: 149147
     setAngleX: 167200

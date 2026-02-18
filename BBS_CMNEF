@@ -549,11 +549,15 @@ beginSubroutine: s32'cmn_SkillInit'
         moveRecipeEMove: s32'CmnFJump'
         moveRecipeEKey: 4, 25
     endMove: 
+    addMove: s32'RoundStart_Performance'
+        addMoveFlag: 121
+    endMove: 
 endSubroutine: 
 
 beginSubroutine: s32'cmn_SkillRegist'
     registerMove: s32'CmnNeutral'
     registerMove: s32'CmnStandForce'
+    registerMove: s32'RoundStart_Performance'
     registerMove: s32'CPUSetPlay_FJump1'
     registerMove: s32'CPUSetPlay_FJump2'
     registerMove: s32'CPUSetPlay_FJump3'
@@ -1753,6 +1757,9 @@ beginSubroutine: s32'cmnAtk5ANear_AtkInit'
             ifPlayerCharacter: s16'aag'
                 storeValue: Mem(418), Val(1)
             endIf: 
+            ifPlayerCharacter: s16'sok'
+                storeValue: Mem(418), Val(1)
+            endIf: 
             ifOperation: (IS_EQUAL), Mem(418), Val(1)
                 enableWhiffCancel: 1
             endIf: 
@@ -2503,6 +2510,9 @@ beginSubroutine: s32'cmnAtkDash6A_ByChara'
         addVelocityX: 5000
     endIf: 
     ifPlayerCharacter: s16'aag'
+        addVelocityX: 15000
+    endIf: 
+    ifPlayerCharacter: s16'sok'
         addVelocityX: 15000
     endIf: 
 endSubroutine: 

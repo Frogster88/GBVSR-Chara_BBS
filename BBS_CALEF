@@ -907,15 +907,14 @@ beginState: s32'cal_RenkinBall'
         callSubroutine: s32'cmnSpecialShot_AtkInit'
         callSubroutine: s32'cmnNormalAtkLv2_Land_AtkInit'
         damage: 600
-        chipDamagePercent: 5
         hitAirPushbackY: 14000
         hitstop: 7
         comboLimitScaling: 2
         isAirUnblockable: 0
         guardEffectEconomy: 1
         ignorePushbackXScaling: 3
-        chipDamagePercent: 0
         attackComboForceHitEx: 50
+        chipDamagePercent: 0
         initializeDestroy: 
         destroyOnDamageCollision: 1
         Unknown2207: 1
@@ -1320,7 +1319,7 @@ beginState: s32'cal_RenkinBall'
             ifOperation: (IS_EQUAL), Mem(ActReg4), Val(2)
                 hitAirPushbackX: 14000
                 hitAirPushbackY: 19000
-                hitstop: 7
+                hitstop: 10
                 wallPushback: 0, 1031
                 if: Mem(ActReg5)
                     hitAirPushbackX: 10000
@@ -1344,7 +1343,7 @@ beginState: s32'cal_RenkinBall'
                 damage: 400
                 hitAirPushbackX: 14000
                 hitAirPushbackY: 15000
-                hitstop: 7
+                hitstop: 10
                 wallPushback: 0, 1031
                 if: Mem(ActReg5)
                     hitAirPushbackX: 10000
@@ -1372,7 +1371,7 @@ beginState: s32'cal_RenkinBall'
                 clearUpon: 54
                 hitAirPushbackX: 14000
                 hitAirPushbackY: 22000
-                hitstop: 7
+                hitstop: 10
                 wallPushback: 0, 1031
                 if: Mem(ActReg5)
                     hitAirPushbackX: 10000
@@ -1403,7 +1402,7 @@ beginState: s32'cal_RenkinBall'
                 clearUpon: 54
                 hitAirPushbackX: 14000
                 hitAirPushbackY: 15000
-                hitstop: 6
+                hitstop: 9
                 wallPushback: 0, 1031
                 if: Mem(ActReg5)
                     hitAirPushbackX: 10000
@@ -3663,8 +3662,8 @@ beginState: s32'cal_400_Eff_lnc'
     endIf: 
     else: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(350000)
-                addPositionX: 350000
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(450000)
+                addPositionX: 450000
             endIf: 
             else: 
                 linkObjectPosition: 0
@@ -3681,8 +3680,8 @@ beginState: s32'cal_400_Eff_lnc'
             endElse: 
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
-            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(800000)
-                addPositionX: 800000
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg2), Val(900000)
+                addPositionX: 900000
             endIf: 
             else: 
                 linkObjectPosition: 0
@@ -4038,17 +4037,19 @@ beginState: s32'cal400_U_AddAtk'
         damage: 1500
         hitAirPushbackX: 0
         hitAirPushbackY: -60000
-        groundBounceXVelocityPercent: 26
         attackRange: 100000, 100000, 0, -320000
         attackThroughArmor: 1
         Unknown1131: 1
         atkCameraShake: s32'ShakeTate', 1500, 0, 10, 0
         damageEffect: 2, s32'CAL_SPHitEff_Long'
         storeValue: Mem(PlayerVal9), Val(1)
+        hitGravity: 0
+        groundBounceCount: 1
+        groundBounceYVelocityPercent: 45
+        hitstop: 10
         upon: 89
             clearUpon: 89
             if: Mem(BattleDoing)
-                hitstop: 0
                 upon: 95
                     clearUpon: 95
                     ifEnemyPlayerAlive: 0
@@ -4936,7 +4937,7 @@ beginState: s32'cal_Trap_Land_nee'
         endIf: 
     endIf: 
     endUpon: 
-    sprite: s32'nee404_00', 553
+    sprite: s32'nee404_00', 313
     invulnForce: 0
     sprite: s32'nee404_00', 1
     gotoLabelRequests: s32'End'
@@ -5389,9 +5390,8 @@ beginState: s32'cal_Trap_Air_spi'
         endIf: 
     endIf: 
     endUpon: 
-    sprite: s32'spi405_00', 553
+    sprite: s32'spi405_00', 313
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
-        setSpriteTime: 373, Val(1)
     endIf: 
     ifOperation: (IS_LESSER_OR_EQUAL), Mem(ActReg6), Val(2)
         invulnForce: 0

@@ -1549,6 +1549,12 @@ beginState: s32'uno_412_weaponShot_Atk'
                 ifOperation: (IS_EQUAL), Mem(ActReg1), Val(6)
                     velocityXPercentEachFrame: 90
                 endIf: 
+                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyFrontDistance), Val(350000)
+                    checkCurrentStateName: (ENEMY), s32'CmnActEvasivemove'
+                    ifNot: Mem(Tmp)
+                        velocityXPercentEachFrame: 80
+                    endIf: 
+                endIf: 
                 ifOperation: (IS_EQUAL), Mem(ActReg1), Val(18)
                     sendSignalToAction: s32'uno_412_AuraEff', (SIGNAL_A)
                     sendSignalToAction: s32'uno_412_GroundBurstEff', (SIGNAL_A)
@@ -3110,6 +3116,27 @@ beginState: s32'uno_430_ShotRing_214'
             clearUpon: (BEFORE_EXIT)
             gotoLabelRequests: s32'End'
         endUpon: 
+        upon: 27
+            ifOperation: (IS_EQUAL), Mem(ActReg1), Val(0)
+                linkParticle: s32'uno_430_SparkRingLoop5'
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(ActReg1), Val(1)
+                linkParticle: s32'uno_430_SparkRingLoop4'
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(ActReg1), Val(2)
+                linkParticle: s32'uno_430_SparkRingLoop3'
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(ActReg1), Val(3)
+                linkParticle: s32'uno_430_SparkRingLoop2'
+            endIf: 
+            ifOperation: (IS_EQUAL), Mem(ActReg1), Val(4)
+                linkParticle: s32'uno_430_SparkRingLoop'
+            endIf: 
+            ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg1), Val(5)
+                gotoLabelRequests: s32'End'
+            endIf: 
+            modifyVar: (ADD), Mem(ActReg1), Val(2)
+        endUpon: 
         upon: 36
             storeValueFromObject: (SELF), Mem(ActReg4), (PLAYER), Mem(Dir)
             ifOperation: (IS_NOT_EQUAL), Mem(Dir), Mem(ActReg4)
@@ -3458,6 +3485,7 @@ beginSubroutine: s32'uno_430_AtkShotCol_214Atk_Init'
     stopLinkObject: 3
     Unknown1727: 100000
     storeValueFromObject: (SELF), Mem(ActReg6), (PLAYER), Mem(ActReg6)
+    ignoreSuperFreezeFromAlly: 1
     Unknown310: 9, 2, 2, 48, 0, 0
     upon: (FRAME_STEP)
         if: Mem(ActReg0)
@@ -3485,6 +3513,9 @@ beginSubroutine: s32'uno_430_AtkShotCol_214Atk_Init'
                 moveToPosType: 3, 103
             endIf: 
         endIf: 
+        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
+            ignoreSuperFreezeFromAlly: 0
+        endIf: 
     endUpon: 
     endIf: 
     Unknown310: 9, 2, 2, 48, 0, 1
@@ -3504,6 +3535,9 @@ beginSubroutine: s32'uno_430_AtkShotCol_214Atk_Init'
             endRunOnObject: 
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(6)
             endIf: 
+        endIf: 
+        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActionTime), Val(3)
+            ignoreSuperFreezeFromAlly: 0
         endIf: 
     endUpon: 
     endIf: 
@@ -3603,9 +3637,11 @@ beginState: s32'uno_430_weaponShot_214'
     endUpon: 
     beginLabel: s32'Start'
     sprite: s32'uno_UltimateShotAtkCol_214', 1
+    Unknown310: 9, 2, 2, 46, 0, 2
     runOnObject: (PARENT)
         linkParticle: s32'uno_430_SparkRingLoop5'
     endRunOnObject: 
+    endIf: 
     hit: 
     linkParticle: s32'uno_430_WeaponShot01'
     Unknown310: 9, 2, 2, 48, 0, 0
@@ -3659,9 +3695,11 @@ beginState: s32'uno_430_weaponShot02_214'
     endUpon: 
     beginLabel: s32'Start'
     sprite: s32'uno_UltimateShotAtkCol_214', 1
+    Unknown310: 9, 2, 2, 46, 0, 4
     runOnObject: (PARENT)
         linkParticle: s32'uno_430_SparkRingLoop3'
     endRunOnObject: 
+    endIf: 
     hit: 
     linkParticle: s32'uno_430_WeaponShot05'
     Unknown310: 9, 2, 2, 48, 0, 0
@@ -3715,9 +3753,11 @@ beginState: s32'uno_430_weaponShot03_214'
     endUpon: 
     beginLabel: s32'Start'
     sprite: s32'uno_UltimateShotAtkCol_214', 1
+    Unknown310: 9, 2, 2, 46, 0, 3
     runOnObject: (PARENT)
         linkParticle: s32'uno_430_SparkRingLoop4'
     endRunOnObject: 
+    endIf: 
     hit: 
     linkParticle: s32'uno_430_WeaponShot04'
     Unknown310: 9, 2, 2, 48, 0, 0
@@ -3771,9 +3811,11 @@ beginState: s32'uno_430_weaponShot04_214'
     endUpon: 
     beginLabel: s32'Start'
     sprite: s32'uno_UltimateShotAtkCol_214', 1
+    Unknown310: 9, 2, 2, 46, 0, 7
     runOnObject: (PARENT)
         linkParticle: s32'uno_430_SparkRingEnd'
     endRunOnObject: 
+    endIf: 
     hit: 
     linkParticle: s32'uno_430_WeaponShot02'
     Unknown310: 9, 2, 2, 48, 0, 0
@@ -3827,9 +3869,11 @@ beginState: s32'uno_430_weaponShot05_214'
     endUpon: 
     beginLabel: s32'Start'
     sprite: s32'uno_UltimateShotAtkCol_214', 1
+    Unknown310: 9, 2, 2, 46, 0, 6
     runOnObject: (PARENT)
         linkParticle: s32'uno_430_SparkRingLoop'
     endRunOnObject: 
+    endIf: 
     hit: 
     linkParticle: s32'uno_430_WeaponShot06'
     Unknown310: 9, 2, 2, 48, 0, 0
@@ -3883,9 +3927,11 @@ beginState: s32'uno_430_weaponShot06_214'
     endUpon: 
     beginLabel: s32'Start'
     sprite: s32'uno_UltimateShotAtkCol_214', 1
+    Unknown310: 9, 2, 2, 46, 0, 5
     runOnObject: (PARENT)
         linkParticle: s32'uno_430_SparkRingLoop2'
     endRunOnObject: 
+    endIf: 
     hit: 
     linkParticle: s32'uno_430_WeaponShot03'
     Unknown310: 9, 2, 2, 48, 0, 0
@@ -3939,9 +3985,11 @@ beginState: s32'uno_430_weaponShot07_214'
     endUpon: 
     beginLabel: s32'Start'
     sprite: s32'uno_UltimateShotAtkCol_214', 1
+    Unknown310: 9, 2, 2, 46, 0, 1
     runOnObject: (PARENT)
         linkParticle: s32'uno_430_SparkRingLoop6'
     endRunOnObject: 
+    endIf: 
     hit: 
     linkParticle: s32'uno_430_WeaponShot07'
     Unknown310: 9, 2, 2, 48, 0, 0

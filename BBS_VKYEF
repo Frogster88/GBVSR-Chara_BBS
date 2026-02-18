@@ -447,7 +447,7 @@ beginState: s32'vkd206'
         linkObjectZ: 3
     endUpon: 
     sprite: s32'vkd206_00', 2
-    sprite: s32'vkd206_01', 3
+    sprite: s32'vkd206_01', 2
     createObject: s32'vky_206_SpawnEff', (PLAYER)
     Unknown412: 50, 1, 7, 0
     sprite: s32'vkd206_02', 3
@@ -592,7 +592,7 @@ beginState: s32'vkd207'
     endUpon: 
     sprite: s32'vkd207_00', 2
     sprite: s32'vkd207_01', 2
-    sprite: s32'vkd207_02', 3
+    sprite: s32'vkd207_02', 2
     Unknown412: 25, 1, 7, 0
     createObject: s32'vky_207_SpawnEff', (PLAYER)
     sprite: s32'vkd207_03', 3
@@ -1222,10 +1222,10 @@ beginState: s32'vkd252'
         stopLinkObject: 3
         linkObjectZ: 3
     endUpon: 
-    sprite: s32'vkd252_00', 3
+    sprite: s32'vkd252_00', 2
     createObject: s32'vky_252_SpawnEff', (PLAYER)
     Unknown412: 50, 1, 7, 0
-    sprite: s32'vkd252_01', 3
+    sprite: s32'vkd252_01', 2
     Unknown412: 25, 1, 7, 0
     sprite: s32'vkd252_02', 3
     Unknown412: 0, 1, 7, 0
@@ -2784,6 +2784,8 @@ beginState: s32'Item07_ShotAtk'
             createParticle: s32'vky_ItemHealGet', (PLAYER)
             privateSE: s32'vky_31'
             runOnObject: (ENEMY)
+                addTensionUnscaled: 0, 1000
+                uiBattleText: 16
                 modifyHP: 500
                 uiBattleText: 15
             endRunOnObject: 
@@ -2796,6 +2798,8 @@ beginState: s32'Item07_ShotAtk'
                 ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(100000)
                     Unknown2329: 2, 23, 100, 3, 100
                     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(220000)
+                        addTensionUnscaled: 0, 1000
+                        uiBattleText: 16
                         modifyHP: 500
                         uiBattleText: 15
                         createParticle: s32'vky_ItemHealGet', (PLAYER)
@@ -2812,6 +2816,8 @@ beginState: s32'Item07_ShotAtk'
                                 createParticle: s32'vky_ItemHealGet', (PLAYER)
                                 privateSE: s32'vky_31'
                                 runOnObject: (ENEMY)
+                                    addTensionUnscaled: 0, 1000
+                                    uiBattleText: 16
                                     modifyHP: 500
                                     uiBattleText: 15
                                 endRunOnObject: 
@@ -2933,6 +2939,8 @@ beginState: s32'Item08_ShotAtk'
             runOnObject: (ENEMY)
                 addTensionUnscaled: 0, 1000
                 uiBattleText: 16
+                modifyHP: 500
+                uiBattleText: 15
             endRunOnObject: 
             deactivateObjectById: (SELF)
             storeValue: Mem(ActReg4), Val(0)
@@ -2945,6 +2953,8 @@ beginState: s32'Item08_ShotAtk'
                     ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(220000)
                         addTensionUnscaled: 0, 1000
                         uiBattleText: 16
+                        modifyHP: 500
+                        uiBattleText: 15
                         createParticle: s32'vky_ItemHealGet', (PLAYER)
                         deactivateObjectById: (SELF)
                         privateSE: s32'vky_31'
@@ -2961,6 +2971,8 @@ beginState: s32'Item08_ShotAtk'
                                 runOnObject: (ENEMY)
                                     addTensionUnscaled: 0, 1000
                                     uiBattleText: 16
+                                    modifyHP: 500
+                                    uiBattleText: 15
                                 endRunOnObject: 
                                 deactivateObjectById: (SELF)
                             endIf: 
@@ -4687,7 +4699,7 @@ beginSubroutine: s32'SpecialCannon_Init'
     counterUntechAmount: 22
     airHitEffect: (AIR_LAUNCH)
     groundHitEffect: (AIR_LAUNCH)
-    hitAirPushbackX: 15000
+    hitAirPushbackX: 13000
     hitAirPushbackY: 24000
     hitstop: 14
     enemyHitstopAddition: 0, 0, 0
@@ -4876,6 +4888,9 @@ beginState: s32'SpecialCannon_CannonLow'
     upon: (IMMEDIATE)
         linkParticle: s32'vky_cannonShadow'
         callSubroutine: s32'SpecialCannon_Init'
+        ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+            addPositionX: 100000
+        endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(2)
             upon: (HIT_OR_GUARD)
                 clearUpon: (HIT_OR_GUARD)
@@ -5503,15 +5518,18 @@ beginState: s32'CannonBig_ShotAtk'
         damage: 200
         attackComboForceHitEx: 100
         hitstop: 3
-        enemyHitstopAddition: -2, 0, 0
+        enemyHitstopAddition: -2, -2, -2
         missionName: s32'SpecialShot_ShotD'
-        groundHitEffect: (KIRIMOMI)
-        airHitEffect: (KIRIMOMI)
-        hitAirPushbackX: 12000
-        hitAirPushbackY: 44000
+        groundHitEffect: (AIR_STRONG)
+        airHitEffect: (AIR_STRONG)
+        hitAirPushbackX: 35000
+        hitAirPushbackY: -20000
         wallPushback: 0, 5000
         atkEnemyHitSuperArmorHitstop: 0, 100000
         Unknown747: 0, -10000
+        magnetismY: 1, 0, 30000, 100, 0
+        groundBounceCount: 1
+        Unknown884: 1
         objectSizePercent: 300
         ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(0)
             physicsXImpulse: 60000
@@ -5522,30 +5540,60 @@ beginState: s32'CannonBig_ShotAtk'
         endIf: 
         setAngleBySpeed: 0
         upon: (HIT)
-            damage: 2000
+            modifyVar: (ADD), Mem(ActReg0), Val(1)
+            ifOperation: (IS_LESSER), Mem(ActReg0), Val(10)
+                ifOperation: (IS_LESSER_OR_EQUAL), Mem(EnemyDistanceX), Val(250000)
+                    hitAirPushbackY: 4000
+                endIf: 
+                else: 
+                    hitAirPushbackY: -20000
+                endElse: 
+                Unknown310: 13, 22, 2, 18, 0, 30000
+                hitAirPushbackY: 4000
+            endIf: 
+            else: 
+                hitAirPushbackY: -20000
+            endElse: 
+        endIf: 
+        ifOperation: (IS_GREATER_OR_EQUAL), Mem(ActReg0), Val(10)
+            groundHitEffect: (AIR_STRONG)
+            hitAirPushbackX: 80000
+            hitAirPushbackY: 4000
+            hitGravity: 0
+            wallBounceCount: 1
+            wallBounceWaitTime: 8
+            wallBounceXVelocityPercent: 55
             damageEffect: 2, s32'vky_400_hit'
-            storeValue: Mem(ActReg0), Val(1)
+            magnetismY: 0, 0, 0, 0, 0
+            magnetismX: 0, 0, 0, 0, 0
+            groundBounceCount: 0
+            Unknown884: 0
             linkParticle: s32''
-        endUpon: 
-        upon: (HIT_OR_GUARD)
-            worldCollision: 1
-            checkScreenCollision: 1
-        endUpon: 
-        initializeDestroy: 
-        numberOfHits: 10
-        destroyOnDamageCollision: 10
-        Unknown2207: 10
-        Unknown2208: 1
-        Unknown2209: 10
-        Unknown2210: 10
-        Unknown2257: 1
-        Unknown2212: 0
-        Unknown2213: 0
-        upon: (ON_DESTROY)
-            gotoLabelRequests: s32'Koware'
-        endUpon: 
-        Unknown1909: 35000
-        gotoLabelUpon: (TOUCH_GROUND), s32'Koware'
+            Unknown2483: 2, 0, 2, 14
+            ifOperation: (IS_LESSER_OR_EQUAL), Mem(Tmp), Val(600000)
+                wallBounceXVelocityPercent: 30
+            endIf: 
+        endIf: 
+    endUpon: 
+    upon: (HIT_OR_GUARD)
+        worldCollision: 1
+        checkScreenCollision: 1
+    endUpon: 
+    initializeDestroy: 
+    numberOfHits: 10
+    destroyOnDamageCollision: 10
+    Unknown2207: 1
+    Unknown2208: 1
+    Unknown2209: 10
+    Unknown2210: 10
+    Unknown2257: 1
+    Unknown2212: 0
+    Unknown2213: 0
+    upon: (ON_DESTROY)
+        gotoLabelRequests: s32'Koware'
+    endUpon: 
+    Unknown1909: 35000
+    gotoLabelUpon: (TOUCH_GROUND), s32'Koware'
     endUpon: 
     sprite: s32'null', 1
     createObject: s32'Item_CanonShotNokosiEff_U', (PLAYER)
@@ -5556,6 +5604,7 @@ beginState: s32'CannonBig_ShotAtk'
     worldCollision: 0
     checkScreenCollision: 0
     wallPushback: 0, 1800
+    magnetismX: 0, 0, 0, 0, 0
     endSprite: 
     gotoIfOperation: s32'AtkLoop', (IS_LESSER_OR_EQUAL), Mem(ActionTime), Val(300)
     beginLabel: s32'Koware'
@@ -5690,6 +5739,7 @@ beginState: s32'vkn403_Atk'
         hitEffectIce: 1
         damageEffect: 2, s32'vky_SPHitEff'
         magnetismY: 1, 0, 0, 100, 0
+        Unknown1085: 1
         addPositionX: 140000
         addPositionY: 200000
         Unknown1909: 50000
@@ -5701,14 +5751,28 @@ beginState: s32'vkn403_Atk'
             velocityXPercentEachFrame: 93
             storeValue: Mem(ActReg0), Val(30)
             Unknown1909: 150000
+            upon: (TOUCH_GROUND)
+                haltMomentum: 1
+            endUpon: 
             missionName: s32'AntiAirShotA'
-            damage: 900
-            groundCounterHitEffect: (AIR_FACE_UP)
-            hitstop: 10
+            damage: 600
+            groundHitEffect: (AIR_FACE_UP)
+            hitstop: 3
             hitAirPushbackX: 10000
             hitAirPushbackY: 16000
             wallPushback: 0, 1200
             magnetismY: 0, 0, 0, 0, 0
+            enemyHitstopAddition: 2, 2, 2
+            Unknown1085: 0
+            upon: 126
+                modifyVar: (ADD), Mem(ActReg7), Val(1)
+                ifOperation: (IS_EQUAL), Mem(ActReg7), Val(2)
+                    damage: 300
+                    hitstop: 6
+                    enemyHitstopAddition: 0, 0, 0
+                    hitAirPushbackY: 26000
+                endIf: 
+            endUpon: 
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
             addPositionY: 200000
@@ -5734,7 +5798,11 @@ beginState: s32'vkn403_Atk'
             upon: 126
                 modifyVar: (ADD), Mem(ActReg7), Val(1)
                 ifOperation: (IS_EQUAL), Mem(ActReg7), Val(3)
+                    clearUpon: 4
+                    onlyHitAirborne: 0
+                    untechAmount: 24
                     hitAirPushbackX: 10000
+                    hitAirPushbackY: 6000
                     wallPushback: 0, 1200
                     hitstop: 2
                     magnetismY: 0, 0, 0, 0, 0
@@ -5770,8 +5838,8 @@ beginState: s32'vkn403_Atk'
         initializeDestroy: 
         numberOfHits: 5
         destroyOnDamageCollision: 5
-        Unknown2207: 5
-        Unknown2208: 5
+        Unknown2207: 3
+        Unknown2208: 3
         Unknown2209: 5
         Unknown2210: 5
         Unknown2257: 1
@@ -6197,7 +6265,7 @@ beginState: s32'vkd405'
         endIf: 
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
             addPositionY: 100000
-            addVelocityX: 10000
+            setAcceleration: 4000
             createObject: s32'vky_406_NksEff', (PLAYER)
             createArgHikitsukiVal: Val(1), Val(0)
             createObjectWithArg: s32'vky_406_TrailEff', (PLAYER)
@@ -6518,7 +6586,7 @@ beginState: s32'vky_406_TrailEff'
         addAlphaColor: 12
     endIf: 
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(1)
-        addAlphaColor: 15
+        addAlphaColor: 24
     endIf: 
     ifOperation: (IS_EQUAL), Mem(Hikitsugi0), Val(2)
         addAlphaColor: 15
@@ -6801,7 +6869,6 @@ beginState: s32'VKD_402_Low'
         gotoLabelUpon: (ON_DESTROY), s32'End'
         gotoLabelUpon: (SIGNAL_A), s32'Move'
         gotoLabelUpon: (SIGNAL_B), s32'End'
-        gotoLabelUpon: 35, s32'End'
         ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
             Unknown1909: 0
             upon: (TOUCH_GROUND)
@@ -6834,6 +6901,10 @@ beginState: s32'VKD_402_Low'
         endIf: 
     endUpon: 
     physicsXImpulse: 16000
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+        velocityXPercent: 150
+        Unknown2212: 0
+    endIf: 
     createObject: s32'vkd402_NksEff', (PLAYER)
     Unknown413: 0, 1, 7, 0
     Unknown412: 0, 1, 7, 0
@@ -6869,19 +6940,31 @@ beginState: s32'VKD_402_Low'
     if: Mem(ActReg1)
         storeValue: Mem(SpeedX), Mem(EnemyDistanceX)
         velocityXPercent: 7
+        ifOperation: (IS_GREATER), Mem(SpeedX), Val(25000)
+            storeValue: Mem(SpeedX), Val(25000)
+        endIf: 
         ifOperation: (IS_GREATER_OR_EQUAL), Mem(EnemyDistanceY), Val(135000)
             storeValue: Mem(SpeedY), Mem(EnemyDistanceY)
             velocityYPercent: 15
+            ifOperation: (IS_GREATER), Mem(SpeedY), Val(30000)
+                storeValue: Mem(SpeedY), Val(30000)
+            endIf: 
         endIf: 
     endIf: 
     sprite: s32'vkd402_04', 6
     sprite: s32'vkd402_05', 4
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+        spriteTimeAdd: 2
+    endIf: 
     clearUpon: (SIGNAL_B)
     clearUpon: 35
     worldCollision: 1
     hit: 
     privateSE: s32'vky_05'
     sprite: s32'vkd402_06', 4
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
+        spriteTimeAdd: 2
+    endIf: 
     sprite: s32'vkd402_07', 2147483647
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(3)
         ifNot: Mem(ActReg0)

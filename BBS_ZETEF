@@ -1089,8 +1089,11 @@ beginState: s32'zet_401_Tame'
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 3
         stopLinkObject: 2
+        gotoLabelUpon: (SIGNAL_A), s32'2nd'
+        gotoLabelUpon: 24, s32'3rd'
+        gotoLabelUpon: 25, s32'4th'
     endUpon: 
-    sprite: s32'null', 3
+    sprite: s32'null', 10
     linkParticle: s32'zet_400_tame01'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
     setPositionX: -54881
@@ -1099,21 +1102,24 @@ beginState: s32'zet_401_Tame'
     setAngleX: 74000
     setAngleY: 89600
     setAngle: 342400
-    sprite: s32'null', 2
+    beginLabel: s32'2nd'
+    sprite: s32'null', 10
     setPositionX: -38897
     setPositionY: 129847
     setDepth: 305934
     setAngleX: 70800
     setAngleY: 90400
     setAngle: 341600
-    sprite: s32'null', 2
+    beginLabel: s32'3rd'
+    sprite: s32'null', 10
     setPositionX: 118070
     setPositionY: 392674
     setDepth: 269364
     setAngleX: 72400
     setAngleY: 53600
     setAngle: 35200
-    sprite: s32'null', 2
+    beginLabel: s32'4th'
+    sprite: s32'null', 10
     setPositionX: 65103
     setPositionY: 569245
     setDepth: 96916
@@ -1410,11 +1416,12 @@ beginState: s32'zet_402_Tame'
         setLinkObjectDestroyOnStateChange: 2
         linkObjectPosition: 3
         stopLinkObject: 2
-        upon: (SIGNAL_A)
-            gotoLabelRequests: s32'Atk'
-        endUpon: 
+        gotoLabelUpon: (SIGNAL_A), s32'2nd'
+        gotoLabelUpon: 24, s32'3rd'
+        gotoLabelUpon: 25, s32'4th'
+        gotoLabelUpon: 26, s32'5th'
     endUpon: 
-    sprite: s32'null', 2
+    sprite: s32'null', 10
     linkParticle: s32'zet_400_tame01'
     callSubroutine: s32'cmnWeaponLvMaxColorInit'
     setPositionX: -187864
@@ -1423,28 +1430,32 @@ beginState: s32'zet_402_Tame'
     setAngleX: 124800
     setAngleY: 118000
     setAngle: 23600
-    sprite: s32'null', 9
+    beginLabel: s32'2nd'
+    sprite: s32'null', 20
     setPositionX: -97930
     setPositionY: 488011
     setDepth: 309571
     setAngleX: 136800
     setAngleY: 98800
     setAngle: 25600
-    sprite: s32'null', 2
+    beginLabel: s32'3rd'
+    sprite: s32'null', 10
     setPositionX: -91936
     setPositionY: 407436
     setDepth: 298113
     setAngleX: 120800
     setAngleY: 102000
     setAngle: 29600
-    sprite: s32'null', 2
+    beginLabel: s32'4th'
+    sprite: s32'null', 10
     setPositionX: -57930
     setPositionY: 256042
     setDepth: 294513
     setAngleX: 60800
     setAngleY: 86400
     setAngle: 333600
-    sprite: s32'null', 2
+    beginLabel: s32'5th'
+    sprite: s32'null', 10
     setPositionX: -39017
     setPositionY: 124017
     setDepth: 224720
@@ -2040,12 +2051,12 @@ beginState: s32'zet_409_matome'
             missionName: s32'BeamB_Shot'
             damage: 900
             hitAirPushbackX: 35000
-            hitAirPushbackY: 15000
+            counterhitAirPushbackX: 60000
+            hitAirPushbackY: 21000
             groundHitEffect: (AIR_STRONG)
             airHitEffect: (AIR_STRONG)
-            wallBounceCount: 1
-            wallBounceInCornerOnly: 1
-            wallBounceXVelocityPercent: 20
+            counterHitWallBounceCount: 1
+            wallBounceXVelocityPercent: 40
             wallBounceWaitTime: 5
             ifOperation: (IS_EQUAL), Mem(Hikitsugi1), Val(1)
                 addValToDamage: 0, 200
@@ -2123,7 +2134,7 @@ beginState: s32'zet_409_+matome'
     stackObject: (STACK0), (PREVIOUS)
     sprite: s32'null', 7
     setLinkObjectDestroyOnStateChange: 0
-    sprite: s32'null', 8
+    sprite: s32'null', 6
     createObject: s32'zet_409_ChargeAura', (PLAYER)
     stackObject: (STACK1), (PREVIOUS)
     sprite: s32'chargebeam_atk0', 300
@@ -2139,22 +2150,22 @@ beginState: s32'zet_409_+matome'
     stackObject: (STACK3), (PREVIOUS)
     linkObjectCollision: 7
     callSubroutine: s32'cmnSpecialShot_AtkInit'
-    callSubroutine: s32'cmnSpecialAtkLv4_AtkInit'
+    callSubroutine: s32'cmnSpecialAtkLv3_AtkInit'
     callSubroutine: s32'cmnSpecialAttackC_AtkInit'
     callSubroutine: s32'cmnHACT_BlowOff'
     callSubroutine: s32'cmnAtk_AirGuardVectorUp'
     damage: 900
     chipDamagePercent: 20
     groundHitEffect: (AIR_STRONG)
-    hitAirPushbackX: 20000
-    hitAirPushbackY: 12000
+    hitAirPushbackX: 30000
+    hitAirPushbackY: 17000
     wallPushback: 0, 1500
     enemyHitstopAddition: 0, 0, 2
     isAirUnblockable: 0
     wallBounceCount: 1
     wallBounceInCornerOnly: 1
-    wallBounceXVelocityPercent: 20
-    wallBounceWaitTime: 10
+    wallBounceXVelocityPercent: 50
+    wallBounceWaitTime: 5
     disableHitstopForSelf: 1
     projectileHitstopClash: 1
     damageEffect: 2, s32'ZET_SPHitEff_Long'
@@ -2695,7 +2706,8 @@ beginState: s32'zet_410_BeamEff'
         hitstop: 6
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg1), Val(0)
-        wallBounceXVelocityPercent: 55
+        wallBounceXVelocityPercent: 0
+        wallBounceWaitTime: 8
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg1), Val(1)
         wallBounceXVelocityPercent: 0

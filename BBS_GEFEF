@@ -786,13 +786,20 @@ beginState: s32'gef_400_ShotEff'
         storeValue: Mem(PlayerVal9), Val(1)
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
-        untechAmount: 25
+        groundHitEffect: (AIR_FACE_UP)
+        untechAmount: 18
         physicsXImpulse: 32000
+        upon: 37
+            clearUpon: 37
+            physicsXImpulse: 15000
+            storeValue: Mem(ActReg1), Val(45)
+        endUpon: 
     endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
         untechAmount: 25
         groundCounterHitEffect: (AIR_FACE_UP)
         attackRange: 10000000, -250000, 0, 0
+        wallPushback: 0, 500
         physicsXImpulse: 12000
         storeValue: Mem(ActReg0), Val(1)
     endIf: 
@@ -857,6 +864,14 @@ beginState: s32'gef_400_ShotEff'
             gotoLabelRequests: s32'Koware'
         endIf: 
     endUpon: 
+    ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
+        numberOfHits: 2
+        destroyOnDamageCollision: 2
+        Unknown2207: 2
+        Unknown2208: 2
+        Unknown2209: 1
+        Unknown2210: 1
+    endIf: 
     ifOperation: (IS_EQUAL), Mem(ActReg6), Val(1)
         numberOfHits: 2
         destroyOnDamageCollision: 2
@@ -893,9 +908,9 @@ beginState: s32'gef_400_ShotEff'
     addPositionX: 250000
     if: Mem(ExGage2)
         storeValue: Mem(ActReg2), Val(1)
-        storeValue: Mem(PlayerAttackRate), Val(120)
+        storeValue: Mem(PlayerAttackRate), Val(130)
         upon: (HIT)
-            storeValue: Mem(PlayerAttackRate), Val(120)
+            storeValue: Mem(PlayerAttackRate), Val(130)
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
                 createArgHikitsukiVal: Val(120001), Val(1)
             endIf: 
@@ -917,7 +932,7 @@ beginState: s32'gef_400_ShotEff'
             createObjectWithArg: s32'gef_DrainTrail', (ENEMY_CENTER)
         endUpon: 
         upon: 86
-            storeValue: Mem(PlayerAttackRate), Val(120)
+            storeValue: Mem(PlayerAttackRate), Val(130)
             ifOperation: (IS_EQUAL), Mem(ActReg6), Val(0)
                 createArgHikitsukiVal: Val(120001), Val(0)
             endIf: 

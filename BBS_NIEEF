@@ -3272,6 +3272,10 @@ beginSubroutine: s32'NextAction_SignalWait'
     endIf: 
     checkSignalName: s32'dea430'
     if: Mem(Tmp)
+        checkCurrentStateName: (SELF), s32'dea253'
+        if: Mem(Tmp)
+            clearUpon: (TOUCH_GROUND)
+        endIf: 
         faceOpponent: 
         jumpToState: s32'dea430'
     endIf: 
@@ -3351,6 +3355,10 @@ beginSubroutine: s32'koware_init'
         storeValue: Mem(ObjReg7), Val(0)
         callSubroutine: s32'death_Kieta_Flag'
         storeValue: Mem(PlayerVal298), Val(0)
+        checkCurrentStateName: (PLAYER), s32'AntiAir_D'
+        if: Mem(Tmp)
+            Unknown1793: 3, 30
+        endIf: 
     endUpon: 
     Unknown1793: 4, 23
     Unknown1793: 5, 23
@@ -3409,6 +3417,10 @@ beginSubroutine: s32'koware_Setting'
         setPositionY: 0
         storeValue: Mem(EnvR21), Val(1)
         preSubroutineBegin: s32'death_Damage'
+        checkCurrentStateName: (PLAYER), s32'AntiAir_D'
+        if: Mem(Tmp)
+            Unknown1793: 3, 30
+        endIf: 
     endUpon: 
 endSubroutine: 
 
@@ -5509,6 +5521,12 @@ beginState: s32'dea404_D'
             clearUpon: 64
             counterHitType: 0
         endUpon: 
+        upon: (BEFORE_EXIT)
+            checkCurrentStateName: (PLAYER), s32'AntiAir_D'
+            if: Mem(Tmp)
+                Unknown1793: 3, 30
+            endIf: 
+        endUpon: 
     endUpon: 
     sprite: s32'dea404_00', 1
     sprite: s32'dea404_01', 1
@@ -5533,6 +5551,10 @@ beginState: s32'dea404_D'
     enableSuperArmor: 0
     superArmorType: (DODGE)
     Unknown2022: 0
+    checkCurrentStateName: (PLAYER), s32'AntiAir_D'
+    if: Mem(Tmp)
+        Unknown1793: 3, 30
+    endIf: 
     callSubroutine: s32'cmnExSkill_ColorEnd_L'
     callSubroutine: s32'koware_Setting'
     invulnForce: 0
